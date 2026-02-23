@@ -4,6 +4,8 @@ hide:
   - toc
 ---
 
+<img src="assets/images/totto-2014.jpg" class="profile-image" alt="Thor Henning Hetland" />
+
 # Thor Henning Hetland
 
 **Software architect. AI development pioneer. Community builder.**
@@ -11,8 +13,6 @@ hide:
 Founder of [eXOReaction](https://exoreaction.com) and [JavaZone](https://javazone.no). Chairman of [IASA Norway](https://iasaglobal.org). Java Champion. Based in Oslo, Norway.
 
 I've spent 30 years building software, communities, and organizations. These days I'm focused on what happens when experienced architects work _with_ AI, not just alongside it.
-
----
 
 ## What I'm working on
 
@@ -30,9 +30,9 @@ I've spent 30 years building software, communities, and organizations. These day
 
     ---
 
-    Local-first knowledge infrastructure for AI-augmented teams. Indexes hundreds of files per second, sub-second search, zero cloud dependency. Open source.
+    Local-first knowledge infrastructure for AI-augmented teams. Indexes hundreds of files per second, sub-second search, zero cloud dependency.
 
-    [:octicons-arrow-right-24: GitHub](https://github.com/exoreaction/Synthesis)
+    [:octicons-arrow-right-24: Learn more](https://exoreaction.com)
 
 -   :material-rocket-launch: **Workshops & Training**
 
@@ -52,8 +52,6 @@ I've spent 30 years building software, communities, and organizations. These day
 
 </div>
 
----
-
 ## Recent proof
 
 In January 2026, I built **lib-pcb** -- a complete PCB design library in Java. 197,831 lines of code. 7,461 tests. 8 format parsers, 28 validators, 17 auto-fixers. Manufacturing-ready Gerber output.
@@ -62,15 +60,11 @@ In January 2026, I built **lib-pcb** -- a complete PCB design library in Java. 1
 
 This wasn't magic. It was methodology -- Skill-Driven Development applied systematically with Claude Code. The kind of thing I teach in workshops.
 
----
-
 ## Writing
 
 I started blogging about cloud computing in 2009, back when "the cloud" was still a debate. The [archive](blog/index.md) has those early posts. New writing on AI-augmented development and SDD is coming.
 
 [:octicons-arrow-right-24: Read the blog](blog/index.md)
-
----
 
 ## Find me
 

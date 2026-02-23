@@ -1,20 +1,116 @@
-/* Tighten up the homepage hero */
-.md-typeset h1 {
-  font-weight: 700;
-  font-size: 2.2rem;
+/* ============================================
+   Thor Henning Hetland — wiki.totto.org
+   Custom styles for MkDocs Material
+   ============================================ */
+
+/* === HOMEPAGE === */
+
+/* Full-width hero feel */
+.md-content article > h1:first-child {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.25rem;
 }
 
-/* Make grid cards pop */
+/* Tagline under h1 */
+.md-content article > p:first-of-type strong {
+  font-size: 1.1rem;
+  color: var(--md-default-fg-color--light);
+  font-weight: 500;
+}
+
+/* === GRID CARDS === */
 .md-typeset .grid.cards > ul > li {
   border-top: 3px solid var(--md-primary-fg-color);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-/* Blog post metadata styling */
+.md-typeset .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* === BLOG === */
+
+/* Bigger post titles */
+.md-post__header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Better reading line length */
+.md-content {
+  max-width: 780px;
+}
+
+/* Post metadata */
 .md-post__meta {
-  font-size: 0.8rem;
+  opacity: 0.7;
+  font-size: 0.78rem;
 }
 
-/* Nicer code blocks */
+/* === TYPOGRAPHY === */
+.md-typeset {
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* Nicer blockquotes */
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-primary-fg-color);
+  background: var(--md-code-bg-color);
+  border-radius: 0 6px 6px 0;
+  padding: 0.8rem 1.2rem;
+  font-style: italic;
+}
+
+/* === HEADER === */
+/* Subtle gradient on the header */
+.md-header {
+  background: linear-gradient(135deg, #3f51b5 0%, #673ab7 100%);
+}
+
+/* === FOOTER === */
+.md-footer {
+  margin-top: 2rem;
+}
+
+/* === CODE === */
 .highlight {
-  border-radius: 6px;
+  border-radius: 8px;
+}
+
+/* === PROFILE IMAGE (for about page and homepage) === */
+.profile-image {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  float: right;
+  margin: 0 0 1rem 2rem;
+  border: 3px solid var(--md-primary-fg-color);
+}
+
+/* === SECTION DIVIDERS === */
+/* Replace raw <hr> with more polished spacing */
+.md-typeset hr {
+  border: none;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  margin: 2.5rem 0;
+}
+
+/* === READING LIST (sci-fi) === */
+.reading-stats {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.reading-stats .stat {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-left: 3px solid var(--md-primary-fg-color);
 }

@@ -57,8 +57,7 @@ plugins:
       archive_date_format: "yyyy"
       post_readtime: true
       post_readtime_words_per_minute: 200
-  - tags:
-      tags_file: tags.md
+  - tags
 
 markdown_extensions:
   - admonition
@@ -117,10 +116,10 @@ nav:
     - blog/index.md
   - Interests:
     - "Sci-Fi Reading": interests/sci-fi/index.md
-    - interests/sci-fi/books-2015.md
-    - interests/sci-fi/books-2014.md
-    - interests/sci-fi/books-2013.md
-    - interests/sci-fi/books-2012.md
+    - "2015 (33 books)": interests/sci-fi/books-2015.md
+    - "2014 (63 books)": interests/sci-fi/books-2014.md
+    - "2013 (53 books)": interests/sci-fi/books-2013.md
+    - "2012 (69 books)": interests/sci-fi/books-2012.md
     - "Food & Wine": interests/food-and-wine.md
     - "My Tools": interests/tools.md
   - Notes:

@@ -1,3 +1,5 @@
+<img src="../assets/images/totto-2014.jpg" class="profile-image" alt="Thor Henning Hetland" />
+
 # About
 
 I'm Thor Henning Hetland -- most people call me Totto.
