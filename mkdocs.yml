@@ -1,0 +1,80 @@
+site_name: "Thor Henning Hetland"
+site_url: https://wiki.totto.org
+site_description: "Personal wiki and blog of Thor Henning Hetland"
+site_author: "Thor Henning Hetland"
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search
+  - blog:
+      blog_dir: blog
+      post_date_format: long
+      post_url_format: "{date}/{slug}"
+      categories: true
+      authors: true
+      archive: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - About:
+    - about/index.md
+    - "CV (English)": about/cv-english.md
+    - "CV (Norwegian)": about/cv-norwegian.md
+    - Projects: about/projects.md
+    - Presentations: about/presentations.md
+    - Organizations: about/organizations.md
+  - Blog:
+    - blog/index.md
+  - Interests:
+    - "Sci-Fi": interests/sci-fi/index.md
+    - "Books 2015": interests/sci-fi/books-2015.md
+    - "Books 2014": interests/sci-fi/books-2014.md
+    - "Books 2013": interests/sci-fi/books-2013.md
+    - "Books 2012": interests/sci-fi/books-2012.md
+    - "Food & Wine": interests/food-and-wine.md
+    - "My Tools": interests/tools.md
+  - Notes:
+    - "Architecture vs Agile": notes/architecture-vs-agile.md
+    - "Twitter Archive": notes/twitter-archive.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/hetland/
+    - icon: fontawesome/brands/github
+      link: https://github.com/totto
