@@ -1,22 +1,31 @@
 site_name: "Thor Henning Hetland"
 site_url: https://wiki.totto.org
-site_description: "Personal wiki and blog of Thor Henning Hetland"
+site_description: "Software architect, AI development pioneer, founder of JavaZone and eXOReaction"
 site_author: "Thor Henning Hetland"
+copyright: "Copyright &copy; 2026 Thor Henning Hetland"
 
 theme:
   name: material
+  custom_dir: overrides
+  font:
+    text: Inter
+    code: JetBrains Mono
+  logo: assets/images/totto-2014.jpg
+  favicon: assets/images/totto-2014.jpg
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
-      accent: indigo
+      accent: deep purple
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-night
         name: Switch to dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
-      accent: indigo
+      accent: deep purple
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Switch to light mode
   features:
     - navigation.sections
@@ -24,13 +33,19 @@ theme:
     - navigation.top
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.footer
+    - navigation.tracking
     - search.highlight
     - search.suggest
+    - search.share
     - content.code.copy
+    - content.code.annotate
     - toc.follow
+    - announce.dismiss
 
 plugins:
-  - search
+  - search:
+      lang: [en, no]
   - blog:
       blog_dir: blog
       post_date_format: long
@@ -38,16 +53,56 @@ plugins:
       categories: true
       authors: true
       archive: true
+      archive_name: "Archive"
+      archive_date_format: "yyyy"
+      post_readtime: true
+      post_readtime_words_per_minute: 200
+  - tags:
+      tags_file: tags.md
 
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
-  - pymdownx.superfences
+  - tables
+  - footnotes
+  - def_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
+      title: "On this page"
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/hetland/
+      name: LinkedIn
+    - icon: fontawesome/brands/github
+      link: https://github.com/totto
+      name: GitHub
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/javatotto
+      name: Twitter / X
+  generator: false
+
+extra_css:
+  - assets/extra.css
 
 nav:
   - Home: index.md
@@ -55,26 +110,20 @@ nav:
     - about/index.md
     - "CV (English)": about/cv-english.md
     - "CV (Norwegian)": about/cv-norwegian.md
-    - Projects: about/projects.md
-    - Presentations: about/presentations.md
-    - Organizations: about/organizations.md
+    - "Project History": about/projects.md
+    - "Talks & Publications": about/presentations.md
+    - "Organizations": about/organizations.md
   - Blog:
     - blog/index.md
   - Interests:
-    - "Sci-Fi": interests/sci-fi/index.md
-    - "Books 2015": interests/sci-fi/books-2015.md
-    - "Books 2014": interests/sci-fi/books-2014.md
-    - "Books 2013": interests/sci-fi/books-2013.md
-    - "Books 2012": interests/sci-fi/books-2012.md
+    - "Sci-Fi Reading": interests/sci-fi/index.md
+    - interests/sci-fi/books-2015.md
+    - interests/sci-fi/books-2014.md
+    - interests/sci-fi/books-2013.md
+    - interests/sci-fi/books-2012.md
     - "Food & Wine": interests/food-and-wine.md
     - "My Tools": interests/tools.md
   - Notes:
     - "Architecture vs Agile": notes/architecture-vs-agile.md
     - "Twitter Archive": notes/twitter-archive.md
-
-extra:
-  social:
-    - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/hetland/
-    - icon: fontawesome/brands/github
-      link: https://github.com/totto
+  - Tags: tags.md
