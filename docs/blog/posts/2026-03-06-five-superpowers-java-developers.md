@@ -254,17 +254,17 @@ This is the one that surprised us most.
 
 Synthesis has a built-in static security analyzer -- 21 signal types covering traditional vulnerabilities (SQLi, XXE, hardcoded secrets, insecure deserialization, weak crypto) and agentic AI risks (prompt injection, RAG poisoning).
 
-We pointed it at the **Cantara** open-source Java portfolio -- the Whydah SSO system, 60+ repos, production code used across Norwegian enterprise systems.
+We pointed it at a Norwegian open-source Java portfolio -- a production SSO system, 60+ repos, used across enterprise deployments.
 
 ```bash
-synthesis code-graph security -d /src/cantara --severity HIGH
+synthesis code-graph security -d /src/my-portfolio --severity HIGH
 ```
 
 Results: **95 HIGH-severity findings** across the portfolio.
 
 After triaging, the genuine findings included:
 
-**XXE in Whydah-UserIdentityBackend** -- a live `@POST` endpoint accepting XML user credentials with no entity protection:
+**XXE in an authentication service backend** -- a live `@POST` endpoint accepting XML user credentials with no entity protection:
 
 ```java
 // Before: vulnerable
@@ -283,7 +283,7 @@ DocumentBuilder builder = dbf.newDocumentBuilder();
 Document dDoc = builder.parse(input);
 ```
 
-We fixed it, filed the issue, and pushed the PR. Similar story for `DummyUserAuthenticator` in Whydah-SecurityTokenService.
+We fixed it, filed the issue, and pushed the PR. Similar pattern in a second authentication component in the same system.
 
 The workflow: **Synthesis finds it -> Claude Code explains it and writes the fix -> human reviews and merges.**
 

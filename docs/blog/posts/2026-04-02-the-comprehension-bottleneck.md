@@ -31,7 +31,7 @@ Not a quality problem. The code was good. The tests were passing. The architectu
 
 Eleven days. 197,831 lines of Java. 7,461 tests. The AI could generate code faster than I could form a mental map of where it lived.
 
-I built [Synthesis](https://github.com/exoreaction/Synthesis) to solve this. An open-source tool that indexes code, documentation, PDFs, videos, skill files, and makes everything searchable in under a second. Not because search was slow before, but because the volume of things to search had outpaced any manual approach. The codebase was growing faster than my ability to hold its structure in working memory.
+I built Synthesis to solve this. A CLI tool that indexes code, documentation, PDFs, videos, skill files, and makes everything searchable in under a second. Not because search was slow before, but because the volume of things to search had outpaced any manual approach. The codebase was growing faster than my ability to hold its structure in working memory.
 
 The comprehension bottleneck was real enough that solving it required building a new tool.
 

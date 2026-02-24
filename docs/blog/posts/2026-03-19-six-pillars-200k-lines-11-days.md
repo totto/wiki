@@ -172,7 +172,7 @@ What is surprising is how few teams do all six. Most do two or three. They use A
 
 ## What to Call It
 
-Vidar Moe, an architect at SpareBank 1, watched a demonstration of this approach in February and gave it a name: Skill-Driven Development.
+A senior architect at a Norwegian financial institution, watching a demonstration of this approach in February, gave it a name: Skill-Driven Development.
 
 The name captures what distinguishes the methodology from "use AI." It is the systematic encoding of human skill into persistent, versioned, scoped knowledge assets that make AI capability compound over time. Not prompting. Not "AI-first." The deliberate practice of turning what you know into something the AI can apply consistently, session after session, developer after developer.
 

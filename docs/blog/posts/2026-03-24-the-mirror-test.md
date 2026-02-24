@@ -39,7 +39,7 @@ In January 2026, I built lib-pcb in eleven days.
 
 The experience was disorienting in a specific way: the AI could generate code faster than I could understand what it had generated. By day four, I had a problem I hadn't anticipated. Not a quality problem — the code was good. A navigation problem. I couldn't find things anymore.
 
-Synthesis was my answer to that. An open-source tool that indexes everything — code, docs, PDFs, videos, skills — and makes it searchable in under a second. I built it to solve the lib-pcb output explosion. 691 files per day, and I needed to find any of them in under thirty seconds.
+Synthesis was my answer to that. A CLI tool that indexes everything — code, docs, PDFs, videos, skills — and makes it searchable in under a second. I built it to solve the lib-pcb output explosion. 691 files per day, and I needed to find any of them in under thirty seconds.
 
 The question was: did it actually help? Not anecdotally — I knew it helped me. But *how much*? And help with *what*, exactly?
 
