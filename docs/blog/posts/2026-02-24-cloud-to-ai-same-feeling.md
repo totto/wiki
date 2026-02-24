@@ -54,7 +54,7 @@ If those two projects taught me one thing, it is this: the interesting questions
 
 ## What this blog will be
 
-The archive here goes back to 2009. Nineteen posts about a technology shift that most of the industry was getting wrong. I wrote them because I thought the structural argument mattered more than the hype cycle, and because writing is how I think through things I do not yet fully understand.
+In 2009 I wrote nineteen posts about a technology shift that most of the industry was getting wrong. I wrote them because I thought the structural argument mattered more than the hype cycle, and because writing is how I think through things I do not yet fully understand.
 
 This is the same kind of writing. Honest about what I know and what I do not. Technical when it needs to be -- Java, architecture, enterprise systems. Methodological when SDD produces results worth examining. Occasionally about the questions that nobody seems to be asking yet: what does it mean for an architect when building is no longer the hard part? What does "senior developer" mean when the bottleneck is not coding speed?
 
