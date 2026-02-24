@@ -14,13 +14,11 @@ I founded **eXOReaction** to answer that question with today's tools. We're an A
 
 The core of our approach is **Skill-Driven Development (SDD)** -- a methodology I created for structured human-AI collaboration. SDD treats AI skills as composable, versioned building blocks that compound over time. It's been validated across four sectors (manufacturing, finance, renewable energy, AI security) with measured productivity gains of 25--66x compared to traditional approaches.
 
-I also built **Synthesis**, an open-source, local-first knowledge infrastructure tool. It indexes thousands of files per second, provides sub-second search across entire codebases, and tracks cross-repository dependencies -- all without touching the cloud. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built.
+I also built **Synthesis**, a local-first knowledge infrastructure tool. It indexes thousands of files per second, provides sub-second search across entire codebases, and tracks cross-repository dependencies -- all without touching the cloud. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built.
 
 ## Community
 
 Community has always been central to what I do. I co-founded **JavaZone** in 2001 -- it's now Scandinavia's largest developer conference. I served as president of **javaBin** (the Norwegian Java User Group) for a decade. I was appointed **Sun Java Champion** in 2005, the first in Scandinavia.
-
-Today I'm Chairman of **IASA Norway** (International Association of Software Architects), where we work on professionalizing the role of software architecture.
 
 I've spoken at JavaZone, JavaOne, CommunityOne, NDC, Devoxx, and many others. I believe conferences and communities are where the real knowledge transfer happens -- not in vendor whitepapers.
 
@@ -40,12 +38,7 @@ I've spoken at JavaZone, JavaOne, CommunityOne, NDC, Devoxx, and many others. I 
 
 <div class="credential" markdown>
 **Builder**
-<span>Synthesis (open-source)</span>
-</div>
-
-<div class="credential" markdown>
-**Chairman**
-<span>IASA Norway</span>
+<span>Synthesis</span>
 </div>
 
 <div class="credential" markdown>
