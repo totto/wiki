@@ -122,6 +122,7 @@ nav:
     - "2012 (69 books)": interests/sci-fi/books-2012.md
     - "Food & Wine": interests/food-and-wine.md
     - "My Tools": interests/tools.md
+  - "Open Source": open-source.md
   - Notes:
     - "Architecture vs Agile": notes/architecture-vs-agile.md
     - "Twitter Archive": notes/twitter-archive.md
