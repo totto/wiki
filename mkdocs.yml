@@ -2,7 +2,11 @@ site_name: "Thor Henning Hetland"
 site_url: https://wiki.totto.org
 site_description: "Software architect, AI development pioneer, founder of JavaZone and eXOReaction"
 site_author: "Thor Henning Hetland"
-copyright: "Copyright &copy; 2026 Thor Henning Hetland"
+copyright: >-
+  Copyright &copy; 2026 Thor Henning Hetland &nbsp;&middot;&nbsp;
+  Co-authored with <a href="https://claude.ai/claude-code" target="_blank" rel="noopener">Claude Code</a>
+  &nbsp;&middot;&nbsp;
+  Indexed by <a href="https://github.com/exoreaction/Synthesis" target="_blank" rel="noopener">Synthesis</a>
 
 theme:
   name: material
