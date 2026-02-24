@@ -28,6 +28,8 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
   features:
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.sections
     - navigation.indexes
     - navigation.top
@@ -35,11 +37,13 @@ theme:
     - navigation.tabs.sticky
     - navigation.footer
     - navigation.tracking
+    - navigation.path
     - search.highlight
     - search.suggest
     - search.share
     - content.code.copy
     - content.code.annotate
+    - content.tooltips
     - toc.follow
     - announce.dismiss
 
