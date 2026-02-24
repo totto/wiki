@@ -128,6 +128,15 @@ Chief Technical Officer role. Advisor, mentor, software architect, chief develop
 
 <div class="timeline-entry" markdown>
 
+#### Principal Consultant -- Objectware AS (Itera Consulting Group), Oslo
+<span class="timeline-date">2003 -- 2008</span>
+
+Chief software architect and chief software developer. Technical expert in J2EE technologies including EJB, JMS, WebServices. Project leader, mentor, consultant, and trainer. Head of the Java practice.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
 #### Lead eCommerce Architect -- WM-data (Tenpipes / E-Line Group), Oslo
 <span class="timeline-date">2000 -- 2003</span>
 
