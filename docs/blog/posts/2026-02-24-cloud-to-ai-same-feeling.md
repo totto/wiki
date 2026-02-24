@@ -1,5 +1,5 @@
 ---
-date: 2026-02-24
+date: 2026-02-24T08:00:00
 categories:
   - AI-Augmented Development
 tags:
