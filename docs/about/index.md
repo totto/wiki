@@ -24,14 +24,52 @@ Today I'm Chairman of **IASA Norway** (International Association of Software Arc
 
 I've spoken at JavaZone, JavaOne, CommunityOne, NDC, Devoxx, and many others. I believe conferences and communities are where the real knowledge transfer happens -- not in vendor whitepapers.
 
-## The short version
+## At a glance
 
-- **Founder:** eXOReaction AS (AI-augmented development)
-- **Creator:** Skill-Driven Development (SDD) methodology
-- **Builder:** Synthesis (open-source knowledge infrastructure)
-- **Chairman:** IASA Norway
-- **Co-founder:** JavaZone conference
-- **Java Champion** (since 2005)
-- **Education:** Master in Software Development, NTNU (1996)
-- **Based in:** Oslo, Norway
-- **Contact:** [LinkedIn](https://www.linkedin.com/in/hetland/) or totto@totto.org
+<div class="credential-grid" markdown>
+
+<div class="credential" markdown>
+**Founder & Technical Lead**
+<span>eXOReaction AS</span>
+</div>
+
+<div class="credential" markdown>
+**Creator**
+<span>Skill-Driven Development (SDD)</span>
+</div>
+
+<div class="credential" markdown>
+**Builder**
+<span>Synthesis (open-source)</span>
+</div>
+
+<div class="credential" markdown>
+**Chairman**
+<span>IASA Norway</span>
+</div>
+
+<div class="credential" markdown>
+**Co-founder**
+<span>JavaZone conference</span>
+</div>
+
+<div class="credential" markdown>
+**Java Champion**
+<span>Since 2005 (first in Scandinavia)</span>
+</div>
+
+<div class="credential" markdown>
+**Education**
+<span>MSc Software Development, NTNU (1996)</span>
+</div>
+
+<div class="credential" markdown>
+**Based in**
+<span>Oslo, Norway</span>
+</div>
+
+</div>
+
+## Contact
+
+The best way to reach me is [LinkedIn](https://www.linkedin.com/in/hetland/) or email at totto@totto.org.

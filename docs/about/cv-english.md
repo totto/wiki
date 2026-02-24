@@ -1,251 +1,158 @@
-# CV in English
+# CV (English)
 
-- **Name: Thor Henning Hetland**
-- **Address: Mollefaret 30E, N-0750 OSLO, Norway**
-- **Born: 5. April 1969**
-- **Civil status: Married, two kids**
-- **Phone: +47 98 256 071**
-- **Email: totto@totto.org**
+**Thor Henning Hetland** -- Oslo, Norway
+totto@totto.org | [LinkedIn](https://www.linkedin.com/in/hetland/) | [GitHub](https://github.com/totto)
 
-**Short Bio**
+---
 
-Community guy, devoted to sharing knowledge and building great communities and *value* in software systems. Inventor. Opinionated Sun Java Champion, leader of IASA Norway, founder of Cantara AS and former president of the very successful Norwegian JUG javaBin and the great JavaZone Conference. Member of the Advisory Board of java.net. Speaker on several conferences including JavaZone, JavaONE, CommunityONE, XP-conference, Microsoft Application Platform, Smidig, OMG Information Days, the Software conference and various others.
+Community builder, devoted to sharing knowledge and building great communities and *value* in software systems. Inventor. Opinionated Java Champion, leader of IASA Norway, founder of Cantara AS and eXOReaction AS, former president of the very successful Norwegian JUG javaBin and the JavaZone Conference. Speaker at JavaZone, JavaONE, CommunityONE, NDC, Devoxx, and various other conferences internationally and domestically.
 
-With over 30 years of professional programming experience spanning quite a few programming languages he has contributed in both international and domestic projects in various roles, including CTO, project leader, technology mentor, software architect, lead developer, technology strategist and trainer.
+With over 30 years of professional programming experience spanning quite a few programming languages, I have contributed in both international and domestic projects in various roles including CTO, project leader, technology mentor, software architect, lead developer, technology strategist, and trainer.
 
-**Education**
+---
 
-```
-1994 - 1996	The Norwegian University of Technology and Science(NTH),
-                Master degree of Computer Science at the Faculty of Electrical
- 		Engineering and Computer Science, Department of Computer Systems and
-                Telematics.
-		Master thesis: MODS. A role-based Method for analysis
-		and design of distributed object-oriented Systems.
+## Education
 
-1990 - 1993	University Centre of Rogaland.
-		Bachelor degree of Computer Science.
+<div class="timeline-entry" markdown>
 
-1988 - 1990	The Naval Academy.
-		Officer training. Technical branch.  Electronics and weapon
-		systems.
+#### MSc Computer Science -- Norwegian University of Science and Technology (NTNU)
+<span class="timeline-date">1994 -- 1996</span>
 
-1985 - 1988	Persbraten Videregaende skole
-		In depth study of maths, physics and computers.
-```
+Faculty of Electrical Engineering and Computer Science, Department of Computer Systems and Telematics. Thesis: *MODS -- A role-based Method for analysis and design of distributed object-oriented Systems.*
 
-**Experience**
+</div>
 
-**Current**
+<div class="timeline-entry" markdown>
 
-- Principal Consultant / Practice Lead Software Engineering, Altran AS
-- Board Member at Technebies AS
-- Board Member at IASA Norge
+#### BSc Computer Science -- University Centre of Rogaland
+<span class="timeline-date">1990 -- 1993</span>
 
-**Past**
+Bachelor degree in Computer Science.
 
-```
-2012 - 2012     FreeCode AS, Oslo, Norway
-                CTO
+</div>
 
-2009 - 2012     Webstep AS, Oslo, Norway
-                Principal Consultant, Chief software architect and
-                chief software developer.
+<div class="timeline-entry" markdown>
 
-2003 - 2009     Objectware AS (Itera Consulting Group), Oslo, Norway
-                Principal Consultant, Chief software architect and
-                Chief Software Developer.
-                Tecknical expert in J2EE technologies, including EJB,
-                JMS, WebServices. Poroject leader, mentor, consultant
-                and trainer.
+#### Officer Training -- The Naval Academy
+<span class="timeline-date">1988 -- 1990</span>
 
-2000 - 2003     WM-data (Tenpipes AS/ E-Line Group ASA), Oslo, Norway
-		Lead eCommerce Architect and Chief Software Developer for
-		E-Line's advanced multichannel, OneToOne, B2C
-		eCommerce platform. The platform is built technologies like
-		EJB (Enterprise Java beans), JMS, XML and Intershop Enfinity.
-                Project leader, technology mentor, technology strategist and trainer.
-                Responsible for the Java knowledge forum with focus on Java,
-                J2EE (EJB), J2ME, software architectures, UML and processes.
-                Ref: Ole-Martin Halden and Markus Harboe.
+Technical branch. Electronics and weapon systems.
 
-1998 - 2002	Zero Mindset Ltd, London, UK
-		Technical Manager and Lead Developer.
-		SHE (Safety Health and Environment) Management
-                Information Systems
-		Ref: Frank Ingve Huth
+</div>
 
-1997 - 2000     NUMERICA TASKON A/S / MOGUL.COM, Oslo, Norway
-		Software Developer/Senior Consultant. Responsible for
-		the distributed system research.  Project leader, mentor,
-		technology strategist, software architect and training.
-		Java, EJB, CORBA/DCOM, UML, Rational Unified Process
-		Jini, Smalltalk and C++.
-		Ref: Per Wold
+---
 
-1995, 1996      TASKON A/S, Oslo, Norway
-		Distributed systems. Methods. RM-ODP. CORBA.
-                Programming IDM/MIDL export filter for OOram.
-                Smalltalk og C/C++ programming. OLE/COM. Summer.
-                6 months. Ref: Per Wold
+## Current Positions
 
-1995 - 1996	The Norwegian University of Technology and Science / NTH,
-		Department of Computer Systems and Telematics, Trondheim, Norway
-		Student-assistant in data communication course.
-                3 semesters. Ref: Monika Lie Larsen
+- **Founder & Technical Lead**, eXOReaction AS -- AI-augmented software development, SDD methodology
+- **Chairman**, IASA Norway -- International Association of Software Architects
+- **Founder & Board Lead**, Cantara AS -- Open-source infrastructure company
+- **Java Champion** since 2005 (first in Scandinavia)
 
-1993 - 1994	Fujitsu Ltd, Fujitsu Software Laboratories, Kawasaki, Japan
-		Presentation of published articles in Software Maturement
-		and Software Process. Prototyping of Software Process
-		models in RASP (Regatta Automated Software Process)
-		on UNIX systems. 5 months. Ref: Hiroyuki Yoshida
+---
 
-1993		Statoil, Europipe Development Project, Stavanger, Norway
-		Plan-systems and database-systems for control of costs.
-		Project control group. Data-Ease, Paradox, Artemis
-		and Microsoft Project. Summer. Ref: Harald N. Hansen
+## Experience
 
-1991, 1992	Statoil, Zeepipe Development Project, Stavanger, Norway
-		Planing and cost-control in projectcontrolgroup.
-		Data-ease and Artemis. Summers. Ref: Sven-Olav Jorstad
+<div class="timeline-entry" markdown>
 
-1991 - 1992	University Center of Rogaland, Stavanger, Norway
-		Student-assistant in Elementary courses of computing and
-		programming. Ref: Ivar Austvold
+#### CTO -- FreeCode AS, Oslo
+<span class="timeline-date">2012</span>
+</div>
 
-1989 - 1990	The Royal Norwegian Navy, Horten and Bergen, Norway
-		Sub-lieutenant of sonars and torpedoes. Campus officer for
-		about 60 people. Ref: Tor Arne Hansen
+<div class="timeline-entry" markdown>
 
-1986, 1987	Norwegian Petroleum Consultants, Oslo, Norway
-		Maintenance of NORD 100/500 systems. Summers.
-		Ref: Arnt-Louis Olsen
+#### Principal Consultant -- Webstep AS, Oslo
+<span class="timeline-date">2009 -- 2012</span>
 
-1987		Ullevaal hospital. Rescue center, Oslo, Norway
-		Helper and night guard. Summer.
-```
+Chief software architect and chief software developer.
 
-**Skill**
+</div>
 
-Software Architecture, productivity and Object-orientation. Method work. Distributed systems. Planning of software projects. Plan-systems. Data-security. Leadership of object-oriented software teams.
+<div class="timeline-entry" markdown>
 
-**Organization**
+#### Principal Consultant -- Objectware AS (Itera Consulting Group), Oslo
+<span class="timeline-date">2003 -- 2009</span>
 
-```
-2008 -          Stiftelsen for fremme av programvareutvikling i Norge. Founder and member of the Board.
+Chief software architect and chief software developer. Technical expert in J2EE technologies including EJB, JMS, WebServices. Project leader, mentor, consultant, and trainer.
 
-2008 -          Cantara AS. Founder, Lead of the Board and Director of Cantara.
+</div>
 
-2005 -          Sun Java Champion. The first appointed Java Champion in the Scandinavia.
-                Java Champion is appointed to persons which has been central in making
-                Java a worldwide success.
+<div class="timeline-entry" markdown>
 
-2004 - 2008     java.net Community Leader. Comminity Leader for the Java User Group
-                commiunity at java.net
+#### Lead eCommerce Architect -- WM-data (Tenpipes / E-Line Group), Oslo
+<span class="timeline-date">2000 -- 2003</span>
 
-1998 - 2008     President of javaBin. The Norwegian Java User
-		Group.  (http://www.java.no)  Responsible for the biggest developer
-                conference in Scandunavia (JavaZone). JavaZone is a mini-JavaONE with
-                several parallell tracks spawning two full days.
+Chief software developer for E-Line's advanced multichannel B2C eCommerce platform. Built on EJB, JMS, XML, and Intershop Enfinity. Project leader, technology mentor, technology strategist, and trainer. Responsible for the Java knowledge forum.
 
-1998 - 2002	Director of Zero Mindset Ltd.
+</div>
 
-1996		Student-representative of the council of the department
-		of computer systems.
+<div class="timeline-entry" markdown>
 
-1994-1995	Student-leader of the main field trip to San Francisco
-		for IDT, September 1995. Administrating several initiatives
-		of economical support, among those the production and
-		presentation of av Internet-course for over 700 paying
-		students.
+#### Technical Manager -- Zero Mindset Ltd, London
+<span class="timeline-date">1998 -- 2002</span>
 
-1992 - 1993	One of the key persons to start up the student group
-  		for the Computer Science students at the University
-		Center of Rogaland.
+Lead developer for Safety, Health and Environment (SHE) Management Information Systems.
 
-1991 - 1993	IAESTE Norway. Vice president of IAESTE Norway. Arranging
-		reception, lodging and activities for international students
-		training in Norway. Arranging national seminars.
-```
+</div>
 
-**Presentations and publications**
+<div class="timeline-entry" markdown>
 
-*Selected presentations. Full list at [Presentations and Publications](presentations.md).*
+#### Senior Consultant -- Numerica Taskon / Mogul.com, Oslo
+<span class="timeline-date">1997 -- 2000</span>
 
-| Date | Presentation |
-| --- | --- |
-| Sep 23 | Best practice - WTF!, JavaZone 2023 (lightning talk) |
-| Nov 19 | Fixing the problem — sustainable software development communities in Oslo |
-| Nov 14 | Internet of things - what is really happening |
-| Jun 14 | Nyere forskningsresultater som er viktige for software arkitekten |
-| Jun 14 | Neo4Dogs - a data quality platform approach with SolrCloud and graphs, Graph Cafe, Teknologihuset Oslo |
-| Jun 11 | Agile wine accn2011 — An agile tragedy: the agile practitioner visits the wine store |
-| ~2010 | Cloud Psychology - a look at why many businesses will go out of business soon |
-| Apr 09 | Developers guide to server-side productivity and fun with Open Source, GoOpen |
-| Mar 09 | Robust smidig utvikling - naar resultater er viktigere enn religion, Software |
-| Feb 09 | Service categorization and SOA patterns 911, Norstella |
-| Feb 09 | Auto-Taxonomy and Categorization As A Service (ATaCAAS) |
-| Dec 08 | SOA Readiness. Runtime containers |
-| Dec 08 | SOA Readiness. Governance Intro |
-| Dec 08 | SOA Readiness. Governing The Design Time |
-| Dec 08 | SOA Readiness. Governing The Service Lifecycle |
-| Dec 08 | SOA Readiness. Hva er en tjeneste, tjenesteunivers og tjenestemanifest |
-| Dec 08 | SOA Readiness. Security Introduction |
-| Dec 08 | SOA Readiness. Service Endpoints and services in the real world |
-| Dec 08 | SOA Readiness. Tjenestekategorisering |
-| Oct 08 | Fra Produktfokus til Tjeneste og Domenefokus |
-| Sep 08 | Extending functionality in Enterprise Pojos (EDR, Qi4J, Neo4J) |
-| Sep 08 | EDRMDS - a less is more approach to SOA Master Data Management, JavaZone 2008 |
-| Jun 08 | OW SOA readiness Workshop |
-| May 08 | Pimp My Service |
-| May 08 | OW SOA simplified |
-| May 08 | EDR and SOA Mastering Strategies - Workshop |
-| May 08 | Datavarehusets plass i SOA - Workshop |
-| Apr 08 | OW SOA intro |
-| Apr 08 | ED&A Workshop |
-| Mar 08 | Gjennomforing av Governance policies |
-| Mar 08 | Hvilken governence strategi passer min organisasjon |
-| Feb 08 | OW SOA Readiness 2 day workshop |
-| Feb 08 | Sok i en SOA strategi |
-| Feb 08 | BI i en SOA strategi |
-| Feb 08 | MOM og EDA i en SOA strategi |
-| Dec 07 | SOA Readyness, for ledere og sjefskonsulenter |
-| Nov 07 | Smidig 2.0, Smidig 2007 |
-| Nov 07 | Praktiska designmonster for implementering av SOA, Stockholm |
-| Oct 07 | The 2007 Anti-Buzzword session, NTNU |
-| Oct 07 | WebServices workshop |
-| Oct 07 | SOA Workshop BI og enterprise sok i SOA, Stockholm |
-| Sep 07 | Cost-efficient SOA deployment architectures with Solaris Zones and ZFS |
-| Sep 07 | Governing in a SOA world - a role play, JavaZone |
-| Sep 07 | Vurdering av produksjonsplatformer for tjenestebaserte arkitekturer |
-| Sep 07 | Enterprise Domain Repositories og Evolving Service Endpoints |
-| Aug 07 | Intro til Enterprise Design and Architecture |
-| Jun 07 | SOA training course |
-| Jun 07 | Real World SOA |
-| May 07 | What's the buzz from the community, JavaONE |
-| May 07 | EDRMDS - a less is more approach to SOA Master Data Management, JavaONE 2008 |
-| May 07 | Java User Groups: Think Globally, Act Locally, Community One |
-| Apr 07 | MDA tools - a critical run-down of MDA implementations, Sandefjord |
-| Apr 07 | Java technologies for the business layer, Sandefjord |
-| Apr 07 | Modeling tools run-down - what can you get for free?, Sandefjord |
-| Apr 07 | A strategic run-down of the software development tooling options and drawbacks, Sandefjord |
-| Apr 07 | En oversikt over OSS-feltet, DnD Geiloseminar |
-| Apr 07 | Developers have always known how to deliver successful SOA (Real World and contracts), Microsoft AppPlat Connections |
-| Apr 07 | The value of SOA Delivered (Governance), Microsoft AppPlat Connections |
-| Mar 07 | Real World SOA |
-| Mar 07 | OpenESB and SOA at Sun Open Source day, Oslo |
-| Mar 07 | SOA for Teleco companies |
-| Jan 07 | SOA 2.0 for finance institutions |
-| Oct 06 | Enterprise Domain Services |
-| Sep 06 | Hva er en tjeneste - tjenestekategorisering, Kiel |
+Responsible for distributed system research. Project leader, mentor, technology strategist, software architect. Java, EJB, CORBA/DCOM, UML, Rational Unified Process, Jini, Smalltalk, and C++.
 
-**Language**
+</div>
 
-| | |
-| --- | --- |
-| Norwegian | Native. |
-| English | Fluent written and spoken. |
-| German | Good comprehension. A bit rusty, needs maintenance. |
+<div class="timeline-entry" markdown>
+
+#### Researcher -- Fujitsu Software Laboratories, Kawasaki, Japan
+<span class="timeline-date">1993 -- 1994</span>
+
+Presentation of published articles in Software Maturement and Software Process. Prototyping of Software Process models in RASP on UNIX systems. 5 months.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+#### Sub-lieutenant -- Royal Norwegian Navy
+<span class="timeline-date">1989 -- 1990</span>
+
+Sonars and torpedoes. Campus officer for about 60 people.
+
+</div>
+
+---
+
+## Skills
+
+Software architecture, productivity, and object-orientation. Methodology and process. Distributed systems. Planning and governance of software projects. Data security. Leadership of object-oriented software teams. AI-augmented development and Skill-Driven Development (SDD).
+
+---
+
+## Languages
+
+| Language | Level |
+|----------|-------|
+| Norwegian | Native |
+| English | Fluent written and spoken |
+| German | Good comprehension |
 | French | Beginner |
 | Spanish | Beginner |
-| Japanese | Some understanding from 6 months in Japan. |
+| Japanese | Some understanding (6 months in Japan) |
+
+---
+
+## Selected Presentations
+
+*See [Presentations and Publications](presentations.md) for the full list.*
+
+Recent highlights include:
+
+- **Best Practice -- WTF!** -- JavaZone 2023 (lightning talk)
+- **Delivering Continuous Innovation** -- Thousands of releases, zero downtime (~2023)
+- **Neo4Dogs** -- Graph Cafe, Teknologihuset Oslo (2014)
+- **EDRMDS** -- JavaZone 2008 and JavaONE
+- **Governing in a SOA World** -- JavaZone 2007
+
+And 70+ additional conference talks, workshops, and publications from 2006--2023.
