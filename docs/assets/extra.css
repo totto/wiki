@@ -33,6 +33,22 @@
   background: linear-gradient(135deg, #3f51b5 0%, #673ab7 100%);
 }
 
+/* === ANNOUNCEMENT BANNER === */
+.md-announce {
+  background: linear-gradient(135deg, #3f51b5 0%, #673ab7 100%);
+}
+
+.md-announce a,
+.md-announce__inner {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.md-announce a:hover {
+  color: #e8eaf6 !important;
+  text-decoration: underline;
+}
+
 /* === HERO SECTION (homepage) === */
 .hero {
   display: flex;
