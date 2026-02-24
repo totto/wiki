@@ -288,3 +288,41 @@ Real-time dashboards for visualizing microservice environments and service healt
 ### Cloud Computing series (2009)
 
 14 posts arguing that the industry was misunderstanding where cloud computing's benefits came from. Written Feb–Sep 2009. The structural argument — methodology matters more than technology — holds in 2026 for AI.
+
+---
+
+## LinkedIn Writing (linkedin.com/in/hetland)
+
+Selected posts, November 2025 – February 2026. Shorter-form than the blog — more immediate, more mid-build thinking. Full archive: https://wiki.totto.org/notes/linkedin-posts/
+
+### November 2025
+
+**Mastering Deadlines: The 80/50 Rule** (Nov 10) — Revisiting a 2017 piece on developer deadlines, now with AI-assisted analysis and NotebookLM explainer. Psychology of delivery over process compliance.
+
+### January 2026
+
+**AI Testing Discipline: Reality-Based QA** (Jan 23) — Unit tests pass at 100%; real-world files pass at 25%. Battle testing with 195 legacy files got to 93%. The gap between synthetic and real validation.
+
+**Workshop Interest** (Jan 25) — Invitation for a founding cohort: working sessions on verification patterns, guardrails, and testing frameworks for AI-generated code. "Working on YOUR code, not toy examples."
+
+### February 2026
+
+**Day 5: Knowledge Infrastructure** (Feb 4) — Building a self-learning knowledge management system using Claude Code. 1,070 documents organized, 3,536 directories structured, cross-referencing live. Recognizable pattern from lib-pcb day 5.
+
+**Velocity Reflection** (Feb 6) — Three weeks at AI-augmented velocity. "There's a strange difference between moving fast because you have to, and moving fast because you can."
+
+**Synthesis: Looking for Pilot Partners** (Feb 12) — Announcement post for Synthesis early adopters. Problem: AI creates 10-20x more files; finding them later takes 15 minutes. Solution: local-first index, sub-second search. Seeking 3-5 early adopters.
+
+**Reflecting on How We Build Teams** (Feb 13) — How team setup changes when AI does the execution. 2-3 people instead of 8-10. LLMs for domain knowledge from day one. Exploration still takes the same time. Net: 5-10% of the cost.
+
+**Synthesis: The New Bottleneck** (Feb 15) — Creation is 10x faster; absorption is not. The bottleneck shifted from writing code to finding it. Synthesis as local-first answer: code, docs, PDFs, videos, all in one index.
+
+**Synthesis Evolved: We Didn't Plan Executive Reporting** (Feb 17) — 48 hours after the search tool post, Synthesis grew to 37 commands across 8 user roles. Research reports (multi-pass AI analysis), client briefs, executive dashboards. Unplanned. Problem-driven.
+
+**The Gap: SDD vs Vibe Coding** (Feb 20) — Individual AI fluency is common; team AI workflows are rare. "Vibe coding" and "agentic engineering" are individual. Skill-Driven Development is shared, transferable, compounding.
+
+**Synthesis: The Seven-Day Evolution** (Feb 20) — lib-pcb (Jan): 197,831 lines in 11 days, brute force. Synthesis (Feb): 84,692 lines in 7 days, self-correcting. The self-learning loop wasn't designed — a benchmark on day 6 revealed it.
+
+**Software Entropy at Speed** (Feb 22) — 53,000 lines over a weekend. Running Synthesis security scanning on the fresh code: 23 prompt injection vectors, 4 RAG poisoning instances, 12 missing prompt boundaries — all found and fixed before Monday. Also found a Text4Shell RCE in a sibling repo in 30 seconds.
+
+**Who Describes You to AI?** (Feb 24) — Personal website cleanup revealed stale content from 2011. Added llms.txt and llms-full.txt. The hygiene question and the AI-native question are the same question.
