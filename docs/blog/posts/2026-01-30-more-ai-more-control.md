@@ -22,6 +22,8 @@ I have thirty years of shipping software. I have watched entire teams lose contr
 
 <!-- more -->
 
+![Software entropy defying graph: more AI, more systematic control](/assets/images/blog/software-entropy-defying-graph.png)
+
 ## When the fear is right
 
 Let me be honest about the failure mode first, because it is real and I have seen it.

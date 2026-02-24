@@ -21,6 +21,8 @@ So when I say that skill-driven development produces documentation as a natural 
 
 <!-- more -->
 
+![Naming is understanding: how articulating context creates documentation](/assets/images/blog/slide-03-naming-is-understanding.png)
+
 ## Why every previous attempt failed
 
 The failure pattern is always the same. Documentation is treated as a separate deliverable from the work itself. You build the feature, then you document it. Or you document it in parallel, updating a wiki page while writing code. In both cases, the documentation is an obligation imposed on someone who would rather be doing something else. The incentive structure is hostile.

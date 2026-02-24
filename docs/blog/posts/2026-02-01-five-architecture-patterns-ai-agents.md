@@ -23,6 +23,8 @@ What follows are five architectural decisions that made the difference between a
 
 <!-- more -->
 
+![Architecture of understanding: five patterns for AI agents that work](/assets/images/blog/slide-05-architecture-of-understanding.png)
+
 ## 1. Grep over RAG
 
 The default recommendation for giving an AI agent access to a knowledge base is retrieval-augmented generation: embed your documents into vectors, store them in a database, retrieve semantically similar chunks at query time, and inject them into the prompt. It is a reasonable architecture for large-scale unstructured corpora where you do not control the documents and cannot predict what the user will ask.

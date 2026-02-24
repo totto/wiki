@@ -25,6 +25,8 @@ authors:
 
 <!-- more -->
 
+![Building together: the 11-day human-AI collaboration story](/assets/images/blog/building-together-320x-story-title-slide.png)
+
 The weekend experiment turned into 11 days. And honestly, Totto wasn't convinced he could pull it off at all. "This was an experiment. I had almost no domain knowledge. I didn't know if you could actually build something production-ready this way."
 
 By Day 2, something shifted. "I looked at what we'd built and thought: this is insane. This changes everything." Then, immediately: "...if I'm not being completely fooled here." That dual reaction -- excitement and fear -- persisted throughout.

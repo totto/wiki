@@ -22,6 +22,8 @@ These are not bad reasons to meet. But they are expensive reasons. And increasin
 
 <!-- more -->
 
+![Context engineering: how persistent skill files replace process ceremonies](/assets/images/blog/lib-pcb-memoir-infographic-03-context-engineering.png)
+
 ## What ceremonies actually do
 
 Strip away the agile vocabulary and look at what a standup meeting accomplishes. Three developers spend fifteen minutes telling each other what they worked on yesterday and what they plan to do today. The stated purpose is coordination. The actual purpose is context synchronisation. Each person is broadcasting state so the others can update their mental models.

@@ -22,6 +22,8 @@ Then I started delegating implementation to AI, and the loop broke. Not graduall
 
 <!-- more -->
 
+![Strategic delegation: 320x productivity through structured human-AI collaboration](/assets/images/blog/lib-pcb-productivity-infographic-320x.png)
+
 The shift was not from writing code to not writing code. It was from thinking about *how* to implement something to thinking about *what* to implement and *why*. The how became cheap. The what and why did not. And that inversion, once you feel it, changes your relationship to the work in ways I am still processing.
 
 ## The 47-file moment

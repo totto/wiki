@@ -22,6 +22,8 @@ The actual productivity gain from AI does not come from generation speed. It com
 
 <!-- more -->
 
+![Velocity through trust: verification infrastructure as throughput multiplier](/assets/images/blog/slide-06-velocity-through-trust.png)
+
 ## The naive model
 
 The pitch is simple. AI writes code ten times faster than a human. Therefore you ship ten times faster. The math is clean, and it is fiction.

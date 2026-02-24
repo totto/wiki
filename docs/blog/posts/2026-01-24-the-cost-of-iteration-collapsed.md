@@ -22,6 +22,8 @@ That cost has collapsed. Not gradually. Not by half. By orders of magnitude. And
 
 <!-- more -->
 
+![Traditional vs AI-assisted development timeline comparison](/assets/images/blog/traditional-vs-ai-assisted-timeline-comparison.png)
+
 ## The numbers I have observed
 
 I want to be specific, because "iteration is cheaper now" is vague enough to mean nothing. Here is what I have actually seen change, working with AI-assisted development over the past year.

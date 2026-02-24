@@ -20,6 +20,8 @@ The term "skill" keeps appearing in discussions about AI-assisted development, a
 
 <!-- more -->
 
+![Metadata as memory: what a skill file actually encodes](/assets/images/blog/slide-04-metadata-as-memory.png)
+
 In the [Six Pillars](2026-02-13-six-pillars-200k-lines-11-days.md) post, I described Intelligent Context as the foundation pillar of Skill-Driven Development. This post goes deeper into the mechanism. What a skill actually is, what it is not, why the distinction matters, and how 85 of them changed the trajectory of an 11-day build.
 
 ## The problem skills solve
