@@ -182,15 +182,6 @@ Planleggingssystemer og databasesystemer for kostkontroll. Data-Ease, Paradox, A
 
 <div class="timeline-entry" markdown>
 
-#### Styreleder -- IASA Norge
-<span class="timeline-date">2009 --</span>
-
-Frivillig organisasjon for a styrke kunnskapen rundt arkitektur i IT systemer.
-
-</div>
-
-<div class="timeline-entry" markdown>
-
 #### Styreleder -- Cantara AS
 <span class="timeline-date">2009 --</span>
 

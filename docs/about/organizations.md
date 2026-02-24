@@ -42,14 +42,6 @@ Competence management SaaS platform. CTO and lead developer. Responsible for sys
 
 </div>
 
-<div class="timeline-entry" markdown>
-
-#### IASA Norway -- Chairman
-<span class="timeline-date">2009 -- present</span>
-
-The International Association of Software Architects, Norway chapter. Working on professionalizing the role of software architecture and building a community of practice for architects in Norway.
-
-</div>
 
 <div class="timeline-entry" markdown>
 
@@ -81,6 +73,15 @@ Sun Java Champion. Honorary member javaBin/JavaZone. Java Champions are recogniz
 ---
 
 ## Past
+
+<div class="timeline-entry" markdown>
+
+#### OSWA (Oslo Software Architecture) -- Founding Chairman
+<span class="timeline-date">2009 -- 2011</span>
+
+Norway's largest software architecture community. Started as IASA Norway (International Association of Software Architects), rebranded to OSWA in 2011. Working on professionalizing software architecture as a discipline in Norway. Now 3,500+ members.
+
+</div>
 
 <div class="timeline-entry" markdown>
 

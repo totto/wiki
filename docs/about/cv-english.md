@@ -48,7 +48,6 @@ Technical branch. Electronics and weapon systems.
 - **Founder & CTO**, Ægis AS (2023 -- present) -- Security and architecture advisory
 - **Founder & CTO**, Sunstone Tech AS (2019 -- present) -- Consulting and product development
 - **Founder & CTO**, Quadim AS (2019 -- present) -- Competence management SaaS platform
-- **Chairman**, IASA Norway -- International Association of Software Architects
 - **Java Champion** -- Sun(Oracle) Java Champion · Honorary member javaBin/JavaZone
 
 ---
