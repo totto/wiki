@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block announce %}
-{% if page.url != "blog/" and not page.url.startswith("blog/2026/") %}
+{% if page and page.url != "blog/" and not page.url.startswith("blog/2026/") %}
 <a href="/blog/2026/02/24/ironclaw-synthesis-part1/">
   New series: Giving an AI Agent a Brain — Connecting IronClaw to Synthesis via MCP &rarr;
 </a>
