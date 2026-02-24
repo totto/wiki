@@ -1,21 +1,24 @@
-# Mine verktoy (My Tools)
+# My Tools (circa 2010)
 
-### Hvem er du, og hva holder du pa med?
+!!! warning "Time capsule"
+    This page is preserved from around 2010 and reflects the hardware and software I used at that time. It has not been updated. Consider it a snapshot of a working setup from a different era.
 
-### Hva slags maskinvare bruker du?
+---
 
-Jeg har bottevis av hardware. Til daglig loper jeg rundt med en Lenovi Thinkpad X301 med SSD disk og ekstra batteri. Dette er en ekte arbeidshest som forst begynner a skinne nar man far inn siste versjon av Ubuntu og hacker inn bedre drivere for trackpointen. Trackpoint og godt tastatur samt hoy opplosning og en laptop som taler bank er hovedkriteriene for valget.
+## Hardware
 
-Jeg jobber stort sett ute hos kunder, og pa de forskjellige kontorene star det diverse PC-er som kundene eier.
+My daily driver was a **Lenovo ThinkPad X301** with an SSD and extended battery -- a proper workhorse that really came alive once you installed the latest Ubuntu and hacked in better TrackPoint drivers. TrackPoint, good keyboard, high resolution, and a laptop that could take a beating were the main criteria.
 
-Jeg bruker ogsa mye mine egne servere som jeg har staende i et eget server-rom pa forskningsparken. Den serveren jeg bruker mest er en Sun x4600 med 2 CPU-kort og iSCSI SAN.
+I mostly worked on-site at clients, where various client-owned PCs sat at the different offices.
 
-Hjemme har jeg vel en 5-6 laptopper, de fleste Thinkpads, men ogsa noen EeePC-er. Hjemme bruker jeg Mac Mini som servere og som HTPC. Nar det kommer til skjermer, sa er de stort sett 24" eller storre, med minst fullHD opplosning.
+I also made heavy use of my own servers in a dedicated server room at Forskningsparken (the Oslo research park). The one I used the most was a **Sun x4600** with 2 CPU boards and iSCSI SAN.
 
-Nettverksmessig, sa kjorer jeg innebygget 3G i laptoppen sa jeg slipper a ha en million wlan konfigurasjoner liggende. Bruker kun WLAN/3g som fallback til daglig.
+At home: 5--6 laptops (mostly ThinkPads, plus some EeePCs), Mac Minis as servers and HTPCs, and 24"+ screens at minimum full HD resolution.
 
-Pa mobilfronten kjorer jeg for tiden en Samsung Omnia HD. dette er en forholdsvis gammel mobil som lenge har gitt beskjed om onske om utskiftning, men den gode batterilevetiden har holdt meg igjen. Savner dog sterkt et bedre operativsystem og tastatur. Min "nye" drommemobil er enna ikke i produksjon :(
+Networking: built-in 3G in the laptop to avoid juggling WLAN configurations. WLAN/3G only as fallback.
 
-### Og hva slags programvare?
+Mobile: a Samsung Omnia HD at the time -- aging even then, but the battery life kept me from switching. Badly missed a better OS and keyboard.
 
-Jeg er storforbruker av open source programvare. Som utvikler sa har jeg bottevis av open source (ASL2) i verktoykassa til enhver tid. Av sentral kommersiell programvare, sa er jeg helt avhengig av IntelliJ IDEA som IDE.
+## Software
+
+A heavy open-source user. As a developer, I always had a large collection of Apache-licensed tools in the toolbox. The one critical piece of commercial software: **IntelliJ IDEA** as my IDE.

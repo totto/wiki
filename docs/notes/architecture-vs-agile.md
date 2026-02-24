@@ -1,50 +1,64 @@
-# XP Meetup - Software Architecture versus Agile - panel
+# Architecture vs Agile -- XP Meetup Panel
 
-- <http://www.meetup.com/oslo-xp/events/82764912/>
+!!! info "Context"
+    Panel discussion at the [Oslo XP Meetup](http://www.meetup.com/oslo-xp/events/82764912/), ~2012. My notes and positions going into the panel.
 
-Participant:
+## Panelists
 
 - Eamonn J. Casey
 - Magnus Green
 - Robert Smallshire
 - Simon Brown
-- Thor Henning Hetland (Totto)
+- **Thor Henning Hetland (Totto)**
 
-Start about 19:00 and end at 20:00
+---
 
-**The opening question:**
+## Opening question
 
-- *The conflict between agile and architecture -- is it a myth or reality? (5 min each included your own introductions)*
+*The conflict between agile and architecture -- is it a myth or reality?*
 
-1. IASA Norway Manifest
-   1. Architecture as a foundation for value and profit OVER architecture as a result of projects and software development.
-   2. Responsibility and traceability in architecture decisions OVER architecture visions, architecture diagrams and great ideas.
-   3. Architecture as pro-active balance between project(s) and organization OVER architecture to regulate and standardize.
-   4. Architecture as an enabler of business strategy OVER architecture driven from product and technology.
-   5. Architects as promoters of knowledge and learning culture OVER technology focused gurus and decision makers.
-2. *"Must make sense/provide value to **the team** within 3 sprints"* -rule
-3. "Starting out on the right foot" - rule (especially when creating solutions different from previous experience (mainly non-functional requirement game"
+### My position: the IASA Norway Manifesto
 
-It's nice if you manage to discuss these issues:
+1. Architecture as a **foundation for value and profit** OVER architecture as a result of projects and software development.
+2. **Responsibility and traceability** in architecture decisions OVER architecture visions, architecture diagrams and great ideas.
+3. Architecture as **pro-active balance between project(s) and organization** OVER architecture to regulate and standardize.
+4. Architecture as an **enabler of business strategy** OVER architecture driven from product and technology.
+5. Architects as **promoters of knowledge and learning culture** OVER technology focused gurus and decision makers.
 
-- *What kind of signal is telling you that it to much architecture*
+### My rules
 
-1. The developers loose the functional focus/mindset
+- *"Must make sense/provide value to **the team** within 3 sprints"* -- the litmus test for any architectural investment.
+- *"Starting out on the right foot"* -- especially critical when creating solutions different from previous experience (the non-functional requirement game).
+
+---
+
+## Too much architecture -- warning signs
+
+1. The developers lose the functional focus/mindset
 2. Meeting explosion
 3. Impediment explosion
-4. **Non-functional sprints**
+4. **Non-functional sprints** (the clearest signal)
 
-- *What kind of signal is telling you that it is insufficient architecture*
+## Insufficient architecture -- warning signs
 
 1. The backlog includes lots of optimizations for non-functional requirements
-2. The tough/high risk task are delayed to future sprints
-3. The code consist of many way to do the same thing, where none is a good solutions (workarounds)
-4. **Non-functional sprints**
+2. The tough/high risk tasks are delayed to future sprints
+3. The code consists of many ways to do the same thing, where none is a good solution (workarounds)
+4. **Non-functional sprints** (same signal, interestingly)
 
-- *What do you see as the minimum requirement of artifacts you need to make the correct solution*
+!!! note "Both extremes produce the same symptom"
+    Non-functional sprints appear when architecture is either over- or under-invested. The signal is identical. The diagnosis requires understanding whether the team is drowning in constraints or missing guardrails.
 
-1. None, zero, zip..
+---
 
-- *What do you hope will happen with Architecture in software project in the future.*
+## Minimum artifacts for the correct solution?
 
-1. Informed discussions and decisions of the options
+**None. Zero. Zip.**
+
+The artifacts are not the point. The *informed discussions and decisions* are the point.
+
+## What I hoped would happen with architecture
+
+> Informed discussions and decisions of the options.
+
+Not more governance. Not more diagrams. Just better conversations about the choices that matter.
