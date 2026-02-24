@@ -33,11 +33,11 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
 <div class="grid cards" markdown>
 
--   :material-clock-outline:{ .card-icon } **[I Wrote About Cloud in 2009. Seventeen Years Later, Same Feeling.](blog/2026/02/24/cloud-to-ai-same-feeling/)**
+-   :material-robot-outline:{ .card-icon } **[Who Describes You to AI?](blog/2026/02/24/who-describes-you-to-ai/)**
 
     ---
 
-    The structural misunderstanding is nearly identical. With cloud, the benefit was not cheaper servers. With AI, the benefit is not faster typing.
+    My personal website was wrong about me. Fixing it led to a question I hadn't thought about: when AI systems describe you to people, what are they reading?
 
     <span class="card-meta">February 24, 2026</span>
 
