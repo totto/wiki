@@ -105,40 +105,43 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Blog:
+    - blog/index.md
   - About:
     - about/index.md
     - "CV (English)": about/cv-english.md
     - "CV (Norwegian)": about/cv-norwegian.md
     - "Project History": about/projects.md
-    - "Talks & Publications":
-      - "All Presentations": about/presentations.md
+    - "Organizations": about/organizations.md
+  - Talks:
+    - "All Presentations": about/presentations.md
+    - "Recent":
       - presentations/delivering-continuous-innovation.md
       - presentations/thousands-of-releases.md
       - presentations/best-practice-wtf.md
       - presentations/fixing-the-problem.md
       - presentations/internet-of-things.md
+    - "2010--2014":
       - presentations/nyere-forskningsresultater.md
       - presentations/neo4dogs.md
       - presentations/kan-vi-skape-verdi.md
       - presentations/agile-wine-2011.md
       - presentations/cloud-psychology.md
+    - "2006--2009":
       - presentations/robust-smidig-utvikling.md
       - presentations/edr-mds-mdm.md
       - presentations/laws-of-soa.md
       - presentations/design-time-governance.md
-    - "Organizations": about/organizations.md
-  - Blog:
-    - blog/index.md
-  - Interests:
-    - "Sci-Fi Reading": interests/sci-fi/index.md
+  - "Open Source": open-source.md
+  - Reading:
+    - "Overview": interests/sci-fi/index.md
     - "2015 (33 books)": interests/sci-fi/books-2015.md
     - "2014 (63 books)": interests/sci-fi/books-2014.md
     - "2013 (53 books)": interests/sci-fi/books-2013.md
     - "2012 (69 books)": interests/sci-fi/books-2012.md
-    - "Food & Wine": interests/food-and-wine.md
-    - "My Tools": interests/tools.md
-  - "Open Source": open-source.md
   - Notes:
     - "Architecture vs Agile": notes/architecture-vs-agile.md
+    - "Food & Wine": interests/food-and-wine.md
+    - "My Tools (circa 2010)": interests/tools.md
     - "Twitter Archive": notes/twitter-archive.md
   - Tags: tags.md
