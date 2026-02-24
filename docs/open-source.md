@@ -121,6 +121,4 @@ Real-time dashboards for visualizing microservice environments. Shows service he
 
 [github.com/exoreaction](https://github.com/exoreaction)
 
-eXOReaction's public repositories include experimental Xorcery extensions and the company website. Larger projects (including lib-pcb and client work) are maintained privately.
-
 **[xorcery-alchemy](https://github.com/exoreaction/xorcery-alchemy)** — Experimental extensions to the Xorcery framework, exploring temporal analytics and DevSecOps intelligence capabilities.
