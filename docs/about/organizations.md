@@ -8,19 +8,46 @@ Community building and organizational leadership have been a constant thread thr
 
 <div class="timeline-entry" markdown>
 
-#### IASA Norway -- Chairman
-<span class="timeline-date">2009 -- present</span>
+#### Ægis AS -- Founder & CTO
+<span class="timeline-date">2023 -- present</span>
 
-The International Association of Software Architects, Norway chapter. Working on professionalizing the role of software architecture and building a community of practice for architects in Norway.
+Security and architecture advisory company. Advisor, mentor, software architect, chief developer, strategy adviser.
 
 </div>
 
 <div class="timeline-entry" markdown>
 
-#### eXOReaction AS -- Founder & Technical Lead
-<span class="timeline-date">2020 -- present</span>
+#### eXOReaction AS -- Founder, owner & CTO
+<span class="timeline-date">2021 -- present</span>
 
-AI-augmented software development consultancy. Creator of Skill-Driven Development (SDD) methodology. Building tools and practices for the next generation of software development.
+AI-augmented software development consultancy. Creator of Synthesis (AI knowledge infrastructure) and Skill-Driven Development (SDD) methodology. Built 197,831 lines of production Java in 11 days using SDD.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+#### Sunstone Tech AS -- Founder, owner & CTO
+<span class="timeline-date">2019 -- present</span>
+
+Consulting and product development company. Advisor, mentor, software architect, chief developer, strategy adviser.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+#### Quadim AS -- Founder & CTO
+<span class="timeline-date">2019 -- present</span>
+
+Competence management SaaS platform. CTO and lead developer. Responsible for system architecture, team leadership, AI integration, and product development.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+#### IASA Norway -- Chairman
+<span class="timeline-date">2009 -- present</span>
+
+The International Association of Software Architects, Norway chapter. Working on professionalizing the role of software architecture and building a community of practice for architects in Norway.
 
 </div>
 
@@ -44,10 +71,10 @@ Foundation for promoting software development in Norway.
 
 <div class="timeline-entry" markdown>
 
-#### Sun Java Champion
+#### Sun(Oracle) Java Champion
 <span class="timeline-date">2005 -- present</span>
 
-The first appointed Java Champion in Scandinavia. Java Champions are recognized for their central role in making Java a worldwide success.
+Sun Java Champion. Honorary member javaBin/JavaZone. Java Champions are recognized for their central role in making Java a worldwide success.
 
 </div>
 
