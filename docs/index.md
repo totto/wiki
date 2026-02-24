@@ -12,7 +12,7 @@ hide:
 
 **Software architect. AI development pioneer. Community builder.**
 
-30 years building software, communities, and organizations. Founder of [JavaZone](https://javazone.no) and [eXOReaction](https://exoreaction.com). Chairman of [IASA Norway](https://iasaglobal.org). Java Champion since 2005. Based in Oslo.
+30 years building software, communities, and organizations. Co-founder of [JavaZone](https://javazone.no) and founder of [eXOReaction](https://exoreaction.com). Java Champion since 2005. Based in Oslo.
 
 These days I'm focused on what happens when experienced architects work _with_ AI -- not just alongside it.
 
@@ -79,9 +79,25 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
     ---
 
-    Open-source, local-first knowledge infrastructure. Indexes hundreds of files per second, sub-second search, cross-repo dependency graphs -- zero cloud dependency.
+    Local-first knowledge infrastructure. Indexes hundreds of files per second, sub-second search, cross-repo dependency graphs -- zero cloud dependency. Built to manage the output explosion that SDD creates.
 
-    [:octicons-arrow-right-24: GitHub](https://github.com/exoreaction/Synthesis)
+    [:octicons-arrow-right-24: Open Source](open-source.md)
+
+-   :material-chip: **lib-pcb**
+
+    ---
+
+    A complete PCB design file processing library in Java. 8 format parsers, 28 validators, 17 auto-fixers, manufacturing-ready Gerber output. The project that proved SDD at scale -- 197,831 lines in 11 days.
+
+    [:octicons-arrow-right-24: Open Source](open-source.md)
+
+-   :material-shield-search: **Xorcery AAA**
+
+    ---
+
+    Temporal analytics and DevSecOps intelligence platform built on the Xorcery reactive framework. Tracks vulnerability lifecycles, answers "why did this break?", and automates compliance -- without cloud lock-in.
+
+    [:octicons-arrow-right-24: Open Source](open-source.md)
 
 -   :material-rocket-launch: **Workshops & Training**
 
@@ -95,7 +111,7 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
     ---
 
-    Co-founded JavaZone in 2001 -- now Scandinavia's largest developer conference with ~3,000 attendees. Still active in IASA, still believing that communities move the industry forward.
+    Co-founded JavaZone in 2001 -- now Scandinavia's largest developer conference with ~3,000 attendees. Communities are where real knowledge transfer happens.
 
     [:octicons-arrow-right-24: Organizations](about/organizations.md)
 

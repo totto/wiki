@@ -224,8 +224,8 @@ Local-first knowledge infrastructure for AI-augmented development teams. Indexes
 **lib-pcb — PCB Design Library**
 197,831 lines of Java, 7,461 tests (99.8% pass), 8 format parsers (Gerber, Excellon, ODB++, KiCad, Eagle, Altium, GenCAM, IPC-2581), 28 validators, 17 auto-fixers. Manufacturing-ready Gerber output. Built in 11 days using Skill-Driven Development. Apache 2.0.
 
-**xorcery-alchemy**
-Experimental extensions to the Xorcery framework, exploring temporal analytics and DevSecOps intelligence capabilities.
+**Xorcery AAA (Alchemy + Aurora)**
+Temporal analytics and DevSecOps intelligence platform built on the Xorcery reactive framework. Alchemy tracks vulnerability and change lifecycles across repositories; Aurora answers root-cause questions using temporal graph analysis. Use cases: vulnerability lifecycle management, compliance automation (GDPR, NIS2), DevSecOps intelligence. Market: $10B+ DevSecOps Intelligence category.
 
 ### Cantara (github.com/Cantara)
 
