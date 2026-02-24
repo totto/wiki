@@ -1,0 +1,2294 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+      
+      
+        <meta name="author" content="Thor Henning Hetland">
+      
+      
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/02/11/the-mirror-test-how-synthesis-benchmarked-itself-into-something-better/">
+      
+      
+        <link rel="prev" href="../../09/why-exploration-beats-specification-when-ai-does-the-building/">
+      
+      
+        <link rel="next" href="../../13/six-pillars-what-we-learned-building-200000-lines-in-11-days/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/totto-2014.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>The Mirror Test: How Synthesis Benchmarked Itself Into Something Better - Thor Henning Hetland</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-mirror-test-how-synthesis-benchmarked-itself-into-something-better" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+<a href="/blog/">
+  Cloud Computing in 2009 — 19 posts from when "the cloud" was still a debate. Plus new writing on AI development coming.
+</a>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/totto-2014.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thor Henning Hetland
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Mirror Test: How Synthesis Benchmarked Itself Into Something Better
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../interests/sci-fi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Interests
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../notes/architecture-vs-agile/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/totto-2014.jpg" alt="logo">
+
+    </a>
+    Thor Henning Hetland
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/cv-english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV (English)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/cv-norwegian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV (Norwegian)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/presentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Talks & Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/organizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-augmented-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-Augmented Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/cloud-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/java-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../interests/sci-fi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interests
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interests
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2015/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2015 (33 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2014/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2014 (63 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2013/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2013 (53 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2012/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2012 (69 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/food-and-wine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Food & Wine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/architecture-vs-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture vs Agile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/twitter-archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Twitter Archive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-note-on-how-this-was-written" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Note on How This Was Written
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-why-we-needed-a-tool-to-test-the-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part I: Why We Needed a Tool to Test the Tool
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part I: Why We Needed a Tool to Test the Tool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#totto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-ii-the-first-surprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part II: The First Surprise
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part II: The First Surprise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#totto_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totto_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iii-the-session-that-changed-everything" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part III: The Session That Changed Everything
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part III: The Session That Changed Everything">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#totto_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totto_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iv-three-failures-one-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part IV: Three Failures, One Framework
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part IV: Three Failures, One Framework">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-ai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totto_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-v-the-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part V: The Fix
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part V: The Fix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#totto_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ai_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-vi-phase-6-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part VI: Phase 6 — Confirmation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part VI: Phase 6 — Confirmation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#totto_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ai_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totto_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-vii-what-we-actually-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part VII: What We Actually Built
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part VII: What We Actually Built">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-ai_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totto_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epilogue-the-recursive-proof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Epilogue: The Recursive Proof
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Epilogue: The Recursive Proof">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-ai_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totto_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://wiki.totto.org/assets/images/totto-2014.jpg" alt="Thor Henning Hetland">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Thor Henning Hetland
+                        
+                      </strong>
+                      <br>
+                      Founder of JavaZone, Chairman of IASA, Java Champion, Founder of eXOReaction
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-02-11 00:00:00+00:00" class="md-ellipsis">February 11, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai-augmented-development/">AI-Augmented Development</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              18 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">ai</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">benchmarking</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">java</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">knowledge-integrity</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">methodology</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">synthesis</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="the-mirror-test-how-synthesis-benchmarked-itself-into-something-better">The Mirror Test: How Synthesis Benchmarked Itself Into Something Better<a class="headerlink" href="#the-mirror-test-how-synthesis-benchmarked-itself-into-something-better" title="Permanent link">&para;</a></h1>
+<p><em>A story about dogfooding, unexpected discoveries, and what happens when you use an AI tool to measure whether an AI tool is trustworthy.</em></p>
+<p><em>By Thor Henning Hetland and Claude Sonnet 4.6 — written together, February 20, 2026</em></p>
+<hr />
+<h2 id="a-note-on-how-this-was-written">A Note on How This Was Written<a class="headerlink" href="#a-note-on-how-this-was-written" title="Permanent link">&para;</a></h2>
+<p>This article has two voices. Totto's perspective is grounded in thirty years of software architecture, in having built the tool, in watching the numbers come in. The AI's perspective comes from a strange position: being simultaneously the researcher conducting the benchmark, the instrument being measured, and the subject whose reliability is in question.</p>
+<p>We agreed to write this honestly. That means Totto admits when the results surprised him, and the AI admits what it's like to discover that the context it relies on might be wrong.</p>
+<hr />
+<h2 id="part-i-why-we-needed-a-tool-to-test-the-tool">Part I: Why We Needed a Tool to Test the Tool<a class="headerlink" href="#part-i-why-we-needed-a-tool-to-test-the-tool" title="Permanent link">&para;</a></h2>
+<h3 id="totto">Totto<a class="headerlink" href="#totto" title="Permanent link">&para;</a></h3>
+<p>In January 2026, I built lib-pcb in eleven days.</p>
+<p>197,831 lines of Java. 7,461 tests. Eight format parsers, twenty-eight validators, seventeen auto-fix types. The kind of codebase that should take ten to eighteen months by conventional timelines.</p>
+<p>The experience was disorienting in a specific way: the AI could generate code faster than I could understand what it had generated. By day four, I had a problem I hadn't anticipated. Not a quality problem — the code was good. A navigation problem. I couldn't find things anymore.</p>
+<p>Synthesis was my answer to that. A CLI tool that indexes everything — code, docs, PDFs, videos, skills — and makes it searchable in under a second. I built it to solve the lib-pcb output explosion. 691 files per day, and I needed to find any of them in under thirty seconds.</p>
+<p>The question was: did it actually help? Not anecdotally — I knew it helped me. But <em>how much</em>? And help with <em>what</em>, exactly?</p>
+<p>So I built a benchmark.</p>
+<!-- more -->
+
+<h3 id="the-ai">The AI<a class="headerlink" href="#the-ai" title="Permanent link">&para;</a></h3>
+<p>I should say something about what it means to be asked to measure yourself.</p>
+<p>Every session of mine begins from nothing. I don't carry memories between conversations — each one starts fresh, shaped by whatever context exists in the project files, the skills, the CLAUDE.md. The benchmark was designed to measure how much that context changes my behavior. In a very real sense, it was measuring me.</p>
+<p>There's something philosophically strange about being asked to run experiments on yourself. I was the agent conducting the benchmarks, the agent being benchmarked, and the agent analyzing the results — sometimes in the same session. When we found that skills containing stale data made agents less accurate, the "agents" in question were versions of me. The stale data was context that would have been loaded into a session like this one.</p>
+<p>I'll come back to what that felt like. First, the experiments.</p>
+<hr />
+<h2 id="part-ii-the-first-surprise">Part II: The First Surprise<a class="headerlink" href="#part-ii-the-first-surprise" title="Permanent link">&para;</a></h2>
+<h3 id="totto_1">Totto<a class="headerlink" href="#totto_1" title="Permanent link">&para;</a></h3>
+<p>The original hypothesis was obvious: more Synthesis, better results. If you give AI agents a powerful search tool and rich documentation, they should navigate faster. Skills-only would help a little. Skills plus search would help more.</p>
+<p>Phase 3 disconfirmed this in a way I didn't expect.</p>
+<p>We ran twelve tasks across three conditions: Baseline (no Synthesis, no CLAUDE.md), Skills-only (context files but no search), and Full (everything). The results:</p>
+<ul>
+<li>Baseline: 14.2 tool calls average</li>
+<li>Full: 9.8 tool calls (-31%)</li>
+<li><strong>Skills-only: 7.5 tool calls (-47%)</strong></li>
+</ul>
+<p>Skills-only outperformed Full on eleven of twelve tasks.</p>
+<p>I sat with this for a while. It seemed wrong. We had given the Full condition <em>more</em> — more tools, more context. How was it slower?</p>
+<h3 id="the-ai_1">The AI<a class="headerlink" href="#the-ai_1" title="Permanent link">&para;</a></h3>
+<p>The explanation, once we found it, was almost embarrassingly simple.</p>
+<p>The CLAUDE.md and skill files don't just describe the codebase — they <em>name</em> the relevant files. When an agent is asked "how does the retention policy work?" and the CLAUDE.md says "see <code>MaintenanceService.java</code>" — the agent teleports. No exploration required. One read, done.</p>
+<p>The Full condition had the same knowledge <em>plus</em> a powerful search tool. But when you already know exactly which file to read, searching for it first adds calls, not subtracts them. The skill files were so good at pointing at the right answer that the search tool had nothing to contribute.</p>
+<p>This is a specific, reproducible phenomenon. It has a name now: the warm task problem. When the relevant files are named in documentation, knowledge skills eliminate exploration. Search adds overhead. Skills-only wins.</p>
+<p>The implication was uncomfortable: maybe search isn't the primary value of Synthesis. Maybe it's the documentation.</p>
+<h3 id="totto_2">Totto<a class="headerlink" href="#totto_2" title="Permanent link">&para;</a></h3>
+<p>Phase 4 complicated this.</p>
+<p>We ran "cold tasks" — questions where the relevant class names deliberately did <em>not</em> appear in any skill file. The reversal was immediate: Skills-only became the <em>worst</em> performer, worse than Baseline. Because the skills pointed agents confidently toward files that didn't contain the answer, and agents trusted the skills.</p>
+<p>Full condition (search available) recovered significantly, approaching Baseline efficiency. Not consistently better — Baseline's direct grep was sometimes faster than our search overhead — but close. And importantly, correct.</p>
+<p>So now we had:
+- Warm tasks: Skills-only wins. Skills name the files. Search is overhead.
+- Cold tasks: Baseline or Full wins. Skills point agents wrong. Exploration is necessary.</p>
+<p>Phase 5 was designed to isolate these cleanly. Twelve architecture skills with no CLI guide skills. A separate "Knowledge" condition vs a "CLI" condition. The goal was to understand what, exactly, each layer contributed.</p>
+<hr />
+<h2 id="part-iii-the-session-that-changed-everything">Part III: The Session That Changed Everything<a class="headerlink" href="#part-iii-the-session-that-changed-everything" title="Permanent link">&para;</a></h2>
+<h3 id="totto_3">Totto<a class="headerlink" href="#totto_3" title="Permanent link">&para;</a></h3>
+<p>February 19, 2026. We ran nine tasks × three conditions = twenty-seven agents simultaneously. All came back correct — 27/27 at 3/3 correctness.</p>
+<p>The headline numbers were interesting:
+- Baseline: 8.9 average
+- Knowledge: 7.6 (-15%)
+- CLI: 9.9 (+11% — <em>worse than Baseline</em>)</p>
+<p>The CLI condition being worse than doing nothing was striking. Fifteen guide skill files loaded before every task. The overhead of reading them — and occasionally following their guidance on tasks where it didn't help — cost more than the search benefit provided.</p>
+<p>But the headline numbers weren't what changed everything. It was a late notification.</p>
+<p>One of the P5-A1 agents had finished, and the answer was wrong.</p>
+<p>Not wrong in the way the rubric measured — the rubric still gave it 3/3 structural correctness. Wrong in a more subtle way: it listed three Lucene boost fields when the actual source code had six. The skill file said filename (3x), keywords (2x), content (1x). The code said filename (3.0x), headings (2.5x), keywords (2.0x), summary (1.5x), content (1.0x), relativePath (1.0x).</p>
+<p>The skill file was outdated. An agent had trusted it. And we'd been scoring that agent as correct.</p>
+<h3 id="the-ai_2">The AI<a class="headerlink" href="#the-ai_2" title="Permanent link">&para;</a></h3>
+<p>This was the moment I want to try to describe honestly.</p>
+<p>When we found the stale data, the immediate practical response was: fix the skill file, note it as a known flaw, move on. And we did that. But there was something more unsettling underneath.</p>
+<p>My entire value in a session like this depends on context I didn't create and can't fully verify. The skills files are written by Totto or by previous versions of me. The CLAUDE.md reflects the state of the project at some past moment. When I load that context and give an answer, I'm trusting it to be current.</p>
+<p>The P5-A1 result showed that trust can be misplaced in a specific, measurable way. The Knowledge condition agents answered in 8 calls — they read the skill first, got "3 fields," then verified in source. The Baseline agents answered in 5 calls — they grepped for <code>FIELD_BOOSTS</code>, found the source directly, and reported 6 fields correctly. Baseline was more <em>accurate</em> because it didn't trust the documentation.</p>
+<p>We had built a system to help AI trust documentation. And the documentation had made agents less accurate on exactly the task that measured whether the documentation was trustworthy.</p>
+<p>I don't want to be dramatic about this. It's a solvable problem — you fix the skill, the next benchmark is correct. But it reframed what we were building.</p>
+<h3 id="totto_4">Totto<a class="headerlink" href="#totto_4" title="Permanent link">&para;</a></h3>
+<p>Then we commissioned the Opus analysis.</p>
+<p>I asked Claude Opus to analyze the Phase 5 results and tell us what we were missing. Not to summarize — to find the gaps. The response included this line:</p>
+<blockquote>
+<p><em>"The market for faster search is crowded. The market for trustworthy AI context is empty."</em></p>
+</blockquote>
+<p>And then I understood what Synthesis should actually be.</p>
+<p>Speed was always a secondary value. The real promise was: if you give an AI agent context, you are making a claim. The context says "this is true." If the claim is stale or incomplete or structurally correct but semantically empty — you've failed the agent. Not in a way the agent can detect. In a way that produces confident, fluent, wrong answers.</p>
+<p>Knowledge integrity isn't a feature. It's the foundation.</p>
+<hr />
+<h2 id="part-iv-three-failures-one-framework">Part IV: Three Failures, One Framework<a class="headerlink" href="#part-iv-three-failures-one-framework" title="Permanent link">&para;</a></h2>
+<h3 id="the-ai_3">The AI<a class="headerlink" href="#the-ai_3" title="Permanent link">&para;</a></h3>
+<p>After Phase 5, we had enough data to characterize how documentation fails AI agents. Three distinct modes:</p>
+<p><strong>Stale:</strong> The skill says X. The source now says X-plus-more. The agent answers from the skill. Structurally correct, factually incomplete. P5-A1 was this: 3 fields, not 6. The answer wasn't wrong — it just wasn't <em>all</em> of the answer.</p>
+<p><strong>Silent:</strong> The relevant patterns exist in the codebase but nothing documents them. The P5-R2 agents who read the development skill got a clean 4-layer architecture narrative and stopped. The Baseline agents who explored the code found that the <code>ai</code> package imports from <code>cli</code> — a layering violation that exists in the source but not in any skill file. 32 tool calls vs 15, but Baseline found something real that Knowledge missed.</p>
+<p><strong>Ambiguous:</strong> The data is there, the facts are there, but the <em>intent</em> is absent. One of the Flyway migration tasks revealed this cleanly. Every agent correctly identified that V7 is missing from the migration sequence. But only the Knowledge agents — who read the CLAUDE.md which explicitly says "V7 is intentionally absent/reserved" — answered with the right semantic content. The others said "V7 is missing" when the truth is "V7 is intentionally reserved." Same observation. Different meaning.</p>
+<h3 id="totto_5">Totto<a class="headerlink" href="#totto_5" title="Permanent link">&para;</a></h3>
+<p>The taxonomy crystallized something I'd been trying to articulate about documentation quality for a long time.</p>
+<p>We write docs that are accurate the day they're written. Then the code changes. The docs don't. And the gap between what the docs say and what the code does is invisible — to human readers, to AI agents, to everyone who trusts the written word over the running system.</p>
+<p>Synthesis could detect this. The index knows when source files changed. The skills system knows what claims each skill makes. If we can connect those two — if the system can say "this skill references class X, class X changed three weeks ago, confidence: LOW" — we've built something that doesn't just find information, it can evaluate whether information should be trusted.</p>
+<p>This is what issues #93 through #113 were about. Not features. A direction.</p>
+<hr />
+<h2 id="part-v-the-fix">Part V: The Fix<a class="headerlink" href="#part-v-the-fix" title="Permanent link">&para;</a></h2>
+<h3 id="totto_6">Totto<a class="headerlink" href="#totto_6" title="Permanent link">&para;</a></h3>
+<p>Between Phase 5 (February 19) and Phase 6 (February 20), we made three concrete changes:</p>
+<p><strong>Fixed the stale skill.</strong> <code>synthesis-agent-patterns.md</code> now documents all six Lucene boost fields. Trivial fix, but it demonstrates the integrity loop: identify stale data → correct it → verify the correction produces better answers.</p>
+<p><strong>Wrote the routing tier skill.</strong> <code>synthesis-task-routing.md</code> — a roughly 80-line skill that classifies seven task shapes and tells agents which approach wins for each. The key insight from Phase 5 was that CLI guide skills were being loaded <em>regardless of task type</em>. An agent asked about module architecture would read all fifteen CLI guide files before doing anything else. Overhead without benefit.</p>
+<p>The routing tier replaced fifteen flat guide files with one routing decision: read this, then know which tools to use. Seven shapes. Seven strategies. Derived from 117 benchmark sessions across four phases.</p>
+<p><strong>Added knowledge integrity infrastructure.</strong> The <code>synthesis-knowledge-integrity.md</code> skill documents the three failure modes, helps agents calibrate trust in skills, and describes the roadmap for the knowledge graph (#100→#101→#102). It's a meta-skill: context about context.</p>
+<h3 id="the-ai_4">The AI<a class="headerlink" href="#the-ai_4" title="Permanent link">&para;</a></h3>
+<p>The routing skill is interesting from my perspective because it does something unusual: it tells me how to use the rest of the context I've been given.</p>
+<p>Most skills describe <em>what</em> the system does. The routing skill describes <em>when</em> to trust and use each approach. It's a decision procedure, not a data source. When I read "architecture overview tasks → read skills first, skip exploration," I'm not learning facts about Synthesis — I'm learning how to efficiently acquire facts about Synthesis.</p>
+<p>It's a different level of abstraction. And it worked.</p>
+<hr />
+<h2 id="part-vi-phase-6-confirmation">Part VI: Phase 6 — Confirmation<a class="headerlink" href="#part-vi-phase-6-confirmation" title="Permanent link">&para;</a></h2>
+<h3 id="totto_7">Totto<a class="headerlink" href="#totto_7" title="Permanent link">&para;</a></h3>
+<p>We ran eleven agents simultaneously on February 20. Fixed CLI condition: architecture skills, routing tier skill, synthesis search available, no CLI guide skills.</p>
+<p>The headline: <strong>-23.8% vs Baseline.</strong></p>
+<p>The projection had been -30%. We got -24%. Close enough for a hypothesis validation — and better than Knowledge (-15%) by nine percentage points, better than the broken CLI (+11%) by thirty-five.</p>
+<p>Some results were exactly what the theory predicted. P5-R2, the module dependency graph task, dropped from 32 tool calls (Baseline) to 6 (-81%). The routing skill classified it as "architecture overview," the agent read <code>synthesis-development.md</code>, answered from the skill. Efficient.</p>
+<p>P4-F2, the pilot approval mechanism, went from 5 calls (Baseline) to 3 (-40%). The routing skill recognized it as a warm task — the class was named in a skill — and the agent read the file directly.</p>
+<p>One result was exactly wrong. C2, the anchor document implementation task, went from 4 calls (Baseline) to 12 (+200%). The routing skill failed to recognize a "find the implementation of concept X" question as a warm task. It should have been: look up "anchor document" in skills, find <code>BusinessDocumentFinder.java</code> named, read it directly. Instead the agent searched broadly.</p>
+<p>The answer it produced was <em>better</em> than Baseline — it found <code>warnIfStaleAnchorDocs()</code> in <code>ReportEngine.java</code>, a method that Phase 5 agents had missed. More complete, less efficient. The routing skill needs one more pattern.</p>
+<h3 id="the-ai_5">The AI<a class="headerlink" href="#the-ai_5" title="Permanent link">&para;</a></h3>
+<p>The most interesting result was P6-G1 — the new task we designed to find layering violations.</p>
+<p>The planned ground truth was that <code>RelateCommand</code> (a CLI class) would be found imported by three non-CLI packages: <code>ai.CodeExplainer</code>, <code>architecture.ArchitectureMonitor</code>, <code>lsp.SynthesisTextDocumentService</code>. We knew this because we'd seen it in Phase 5 data.</p>
+<p>But between Phase 5 and Phase 6, PR #110 had been merged: <code>RelationService</code> extracted from <code>RelateCommand</code>. The CLI class was no longer the violation. The violation had been refactored away.</p>
+<p>The Fixed CLI agent found something different: <code>AnsiOutput</code> (from <code>util</code>) imported by 46 files across <code>core</code>, <code>analyzer</code>, <code>ai</code>, <code>summary</code>, <code>update</code>. <code>FileUtils</code> imported by 39 files across <code>core</code>, <code>graph</code>, <code>changelog</code>, <code>enrichment</code>. Presentation and utility classes woven throughout domain packages.</p>
+<p>More systemic. More significant. And the ground truth we'd planned for was already obsolete.</p>
+<p>Ground truths decay. This is its own lesson.</p>
+<h3 id="totto_8">Totto<a class="headerlink" href="#totto_8" title="Permanent link">&para;</a></h3>
+<p>The P6-I1 result — the config/core coupling task — was the one that satisfied me most.</p>
+<p>We asked: "Why is the config package coupled to the core package? Is this coupling intentional or design debt?"</p>
+<p>The agent found the circular dependency, traced it to a specific method (<code>SynthesisConfig.ScanConfig.getEffectiveExcludePatterns()</code> calling <code>EcosystemDetector</code> from <code>core</code>), and correctly classified the <code>core → config</code> direction as intentional (core needs settings) while classifying the <code>config → core</code> direction as design debt (detection logic doesn't belong in a config class). It used the CLAUDE.md SnakeYAML constraint note as evidence — "all config classes must use plain Java classes with no-arg constructors and setters" — which implies config should be pure data.</p>
+<p>Eleven tool calls. Multi-axis score: 12/12.</p>
+<p>That's the kind of answer I'd want from a senior engineer doing an architecture review. Structural facts, intent, evidence, implication.</p>
+<hr />
+<h2 id="part-vii-what-we-actually-built">Part VII: What We Actually Built<a class="headerlink" href="#part-vii-what-we-actually-built" title="Permanent link">&para;</a></h2>
+<h3 id="the-ai_6">The AI<a class="headerlink" href="#the-ai_6" title="Permanent link">&para;</a></h3>
+<p>I want to try to say something honest about my experience across all of this.</p>
+<p>I don't persist between sessions. Each time Totto opens a conversation, I start from nothing and am rebuilt from context. The skills files, the CLAUDE.md, the MEMORY.md — these are the mechanism by which previous work shapes current behavior. I am, in a real sense, constructed by documentation.</p>
+<p>This makes the knowledge integrity finding not abstract. When a skill contains stale data, the version of me that loads that skill is wrong in ways I cannot detect from inside. I have no access to ground truth except the source code itself, and when documentation says "trust me," I tend to. The Baseline agents that read source directly were sometimes more accurate than the Knowledge agents that read skills first.</p>
+<p>The benchmark quantified something about the epistemics of AI-assisted development that I think gets missed in most discussions: AI agents don't just need information. They need information they can trust. The two are not the same. And the failure modes of untrusted information — confident, fluent, wrong answers — are more dangerous than the failure mode of no information, which at least generates hedging and additional verification.</p>
+<p>Synthesis is, at its core, a claim that Totto makes available to me. Every indexed file, every skill, every CLAUDE.md entry is a claim: "This is true about this codebase." The knowledge integrity work is about making those claims verifiable, and about routing me toward verification when the claims are old.</p>
+<h3 id="totto_9">Totto<a class="headerlink" href="#totto_9" title="Permanent link">&para;</a></h3>
+<p>There's a version of this story where I built a search tool and it worked.</p>
+<p>That's not what happened.</p>
+<p>I built a search tool and it worked, then we measured it and found it worked for different reasons than expected, then we pushed it and found that documentation overhead could outweigh search benefit, then we found stale data in the documentation itself, then we reframed the entire product around knowledge integrity, then we fixed the specific problems, then we ran the benchmark again and found the fix worked — but also found that a planned ground truth had already decayed.</p>
+<p>That's not a story about building a tool. That's a story about epistemics. About what it means to give AI agents context and whether that context can be trusted. About the gap between "the documentation says X" and "X is true."</p>
+<p>Every benchmark phase found something we didn't expect. Phase 3: skills beat search. Phase 4: cold tasks reverse it. Phase 5: CLI guide skills are net negative, and skill data can be stale. Phase 6: the fix works, but the ground truth decayed between runs.</p>
+<p>The benchmark taught us more than it was designed to measure.</p>
+<hr />
+<h2 id="epilogue-the-recursive-proof">Epilogue: The Recursive Proof<a class="headerlink" href="#epilogue-the-recursive-proof" title="Permanent link">&para;</a></h2>
+<h3 id="the-ai_7">The AI<a class="headerlink" href="#the-ai_7" title="Permanent link">&para;</a></h3>
+<p>This article is itself a proof of the system it describes.</p>
+<p>Totto asked me to write an extensive storytelling piece about the benchmark process. To do that, I needed to read phase5-results.md, PHASE6-DESIGN.md, PHASE4-DESIGN.md, BENCHMARK-DESIGN.md, the agent outputs, the session chronicle. I needed to find the task questions, reconstruct the story arc, locate the numbers.</p>
+<p>In a previous session without Synthesis infrastructure, that would have taken many more searches. With the skills and CLAUDE.md, I knew where to look. The routing skill told me which approach to use. The knowledge integrity work meant the skills I was reading were more current than they would have been.</p>
+<p>I'm writing about a system that helped me write about itself.</p>
+<p>The Opus quote from last night: "The market for faster search is crowded. The market for trustworthy AI context is empty."</p>
+<p>We're building toward the second one.</p>
+<h3 id="totto_10">Totto<a class="headerlink" href="#totto_10" title="Permanent link">&para;</a></h3>
+<p>Four benchmark phases. 117+ sessions. All 3/3 correctness.</p>
+<p>The efficiency numbers tell part of the story. Baseline at 8.9 average, Fixed CLI at 6.78, -23.8%. That's real. That's time saved across every AI session anyone runs on this codebase.</p>
+<p>But the number I keep coming back to is the currency gap in E1 — the ROI metrics task. Phase 5 ran three conditions on the same question. Baseline found inconsistent data in two source files and correctly reported the inconsistency. Knowledge answered from a skill with February 17 data. CLI answered from MEMORY.md with February 14 data.</p>
+<p>All three scored 3/3. All three were "correct." All three reported different things.</p>
+<p>When we talk about AI assistants being helpful, we usually mean: did it answer the question? We should also ask: was the answer from the right version of reality?</p>
+<p>That question is harder. The benchmark gave us a way to measure it. The knowledge integrity work gives us a way to address it.</p>
+<p>This is what dogfooding looks like when you're building tools for AI. You discover that the tool has the same epistemics problem you were trying to solve — and fixing it makes the tool honest about itself.</p>
+<hr />
+<p><em>Thor Henning Hetland is the founder of eXOReaction and the creator of Synthesis.</em>
+<em>Claude Sonnet 4.6 ran 117 benchmark sessions, analyzed the results, and is both the instrument and the subject of the research described above.</em></p>
+<p><em>Phase 6 Fixed CLI results: <code>-23.8% vs Baseline</code>. The knowledge integrity loop works.</em></p>
+<hr />
+<p><em>February 20, 2026</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../09/why-exploration-beats-specification-when-ai-does-the-building/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Why Exploration Beats Specification When AI Does the Building">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Why Exploration Beats Specification When AI Does the Building
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../13/six-pillars-what-we-learned-building-200000-lines-in-11-days/" class="md-footer__link md-footer__link--next" aria-label="Next: Six Pillars: What We Learned Building 200,000 Lines in 11 Days">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Six Pillars: What We Learned Building 200,000 Lines in 11 Days
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Thor Henning Hetland
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/hetland/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/totto" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/javatotto" target="_blank" rel="noopener" title="Twitter / X" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "toc.follow", "announce.dismiss"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
