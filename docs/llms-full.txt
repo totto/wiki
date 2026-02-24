@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026.
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (27 posts).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -248,3 +248,43 @@ Java library for electronic components: MPN normalization, 17 similarity calcula
 
 **Nerthus / Visuale — Service Visualization**
 Real-time dashboards for visualizing microservice environments and service health.
+
+---
+
+## Writing (wiki.totto.org/blog)
+
+27 posts. All 2026 posts co-authored with Claude Code.
+
+### AI-Augmented Development series (Jan–Feb 2026)
+
+- **Context Architecture Replaces Process Ceremonies** (Jan 18) — How persistent, hierarchical context files eliminate standups and onboarding ramp-up. The institutional knowledge equivalent of Spring Boot starter hierarchies.
+- **The Verification Paradox: Why Fast AI Needs Slow Tests** (Jan 20) — The 10x productivity gain comes from verification infrastructure, not generation speed. 7,461 tests as throughput multiplier.
+- **Strategic Delegation: When Developers Become Architects** (Jan 22) — Shifting from task implementation to workflow direction. Four of seven steps remain human; three are AI execution.
+- **The Cost of Iteration Collapsed. Now What?** (Jan 24) — Data structure change: 2 weeks → 30 minutes. New architectural approach: 1 month → 2 hours. What that means for how we make decisions.
+- **Documentation That Writes Itself (No, Really)** (Jan 26) — Why working with AI forces articulation that becomes documentation. 75 skills as executable institutional memory.
+- **Subscription Economics and the AI Development Workflow** (Jan 28) — Per-token pricing makes exploration-first development economically impossible. $100K API cost avoided via flat subscription on a single 11-day project.
+- **The More AI, The More Control** (Jan 30) — Counter-intuitive: systematic verification + directed synthesis means more automation increases developer agency, not less.
+- **Why Temporal Matters: The Time Capsule Graph** (Feb 1) — Combining graph relationships and temporal accuracy as a single model. Why separating them destroys the answers to causality questions.
+- **Five Architecture Patterns for AI Agents That Actually Work** (Feb 1) — grep over RAG, isolated sub-agent context, bash as universal tool, prompt-enforced task tracking, context compression.
+- **From What to Why: When AI Reveals Questions You Didn't Ask** (Feb 2) — Shift from query-driven to discovery-driven analysis. AI surfaces patterns you didn't know to ask about.
+- **Three Decades of Architecture: What AI Actually Changes (And What Doesn't)** (Feb 1) — Thirty years of perspective on which fundamentals survive the shift.
+- **What Synthesis Found in 31 Seconds: An XXE Vulnerability in a Production Java SSO System** (Feb 3) — Security discovery via knowledge graph traversal.
+- **The Comprehension Bottleneck: Why AI Made Creating Easy But Understanding Harder** (Feb 5) — 10x creation speed, 1.5x shipping speed. The gap is context retrieval.
+- **What a "Skill" Actually Is (And Why It's Not a Prompt)** (Feb 7) — Persistent, versioned, scoped domain knowledge vs. one-time instructions.
+- **Why Exploration Beats Specification When AI Does the Building** (Feb 9) — Build in 2 days, discover real requirements, iterate. Faster than 3-month specification.
+- **The Mirror Test: How Synthesis Benchmarked Itself Into Something Better** (Feb 11) — Using Synthesis to analyse Synthesis. What the tool found about its own codebase.
+- **Six Pillars: What We Learned Building 200,000 Lines in 11 Days** (Feb 13) — Methodology synthesis from lib-pcb. Six practices that made the speed possible.
+- **What "Senior Developer" Means When AI Can Code** (Feb 15) — The skills that compound: architecture judgment, domain knowledge, verification design.
+- **The Hallucination Tax: Three More Fears That Made My AI Workflow Better** (Feb 17) — API economics, losing control, and silent failures — and the systems built to handle each.
+- **The Architecture Mistake Cloud Taught Us (That We're Making With AI)** (Feb 19) — 2009 cloud arguments applied to 2026 AI adoption. Same structural misunderstanding.
+- **Claude Code + Synthesis: Five Superpowers for Java Developers** (Feb 21) — Practical capability combinations for Java development workflows.
+- **Building Together: An 11-Day Human-AI Collaboration Story** (Feb 22) — Detailed account of building lib-pcb. What collaboration actually looks like in practice.
+- **I'm Scared of AI. That's Why It Works.** (Feb 23) — Fear of hallucinations, production bugs, and shipping bad code built 7,461 tests and zero production bugs.
+- **I Wrote About Cloud Computing in 2009. Seventeen Years Later, I Have the Same Feeling.** (Feb 24) — Historical comparison. The industry is repeating the same structural error.
+- **Who Describes You to AI?** (Feb 24) — Adding llms.txt as the forcing function for keeping your public record accurate.
+- **Giving an AI Agent a Brain: Connecting IronClaw to Synthesis via MCP** (Feb 24) — Setup walkthrough: EC2, Java 21, Python 3.11, StreamableHTTP, notifications/initialized bug.
+- **When Your AI Lies About Its Tool Calls: Debugging kimi-k2.5** (Feb 24) — XML tool call format mismatch, workspace hallucinations, Docker sandbox hang. Layer isolation as debugging methodology.
+
+### Cloud Computing series (2009)
+
+14 posts arguing that the industry was misunderstanding where cloud computing's benefits came from. Written Feb–Sep 2009. The structural argument — methodology matters more than technology — holds in 2026 for AI.
