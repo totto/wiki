@@ -110,7 +110,22 @@ nav:
     - "CV (English)": about/cv-english.md
     - "CV (Norwegian)": about/cv-norwegian.md
     - "Project History": about/projects.md
-    - "Talks & Publications": about/presentations.md
+    - "Talks & Publications":
+      - "All Presentations": about/presentations.md
+      - presentations/delivering-continuous-innovation.md
+      - presentations/thousands-of-releases.md
+      - presentations/best-practice-wtf.md
+      - presentations/fixing-the-problem.md
+      - presentations/internet-of-things.md
+      - presentations/nyere-forskningsresultater.md
+      - presentations/neo4dogs.md
+      - presentations/kan-vi-skape-verdi.md
+      - presentations/agile-wine-2011.md
+      - presentations/cloud-psychology.md
+      - presentations/robust-smidig-utvikling.md
+      - presentations/edr-mds-mdm.md
+      - presentations/laws-of-soa.md
+      - presentations/design-time-governance.md
     - "Organizations": about/organizations.md
   - Blog:
     - blog/index.md
