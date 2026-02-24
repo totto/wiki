@@ -1,6 +1,20 @@
 # Presentations and Publications
 
-Some of my not very recent presentations...
+## Recent (2010–present)
+
+| Date | Presentation |
+| --- | --- |
+| Sep 23 | Best practice - WTF!, JavaZone 2023 (lightning talk) |
+| Nov 19 | Fixing the problem — sustainable software development communities in Oslo |
+| Nov 14 | Internet of things - what is really happening |
+| Jun 14 | Nyere forskningsresultater som er viktige for software arkitekten (Recent research results important for software architects) |
+| Jun 14 | Neo4Dogs - a data quality platform approach with SolrCloud and graphs, Graph Cafe, Teknologihuset Oslo |
+| ~2014 | Neo4 dogs |
+| ~2014 | Kan vi skape mye mere verdi i softwareprosjekter? (Can we create much more value in software projects?) |
+| Jun 11 | Agile wine accn2011 — An agile tragedy: the agile practitioner visits the wine store |
+| ~2010 | Cloud Psychology - a look at why many businesses will go out of business soon |
+
+## 2006–2009
 
 | Date | Presentation |
 | --- | --- |
@@ -46,7 +60,7 @@ Some of my not very recent presentations...
 | Jun 07 | SOA training course |
 | Jun 07 | Real World SOA |
 | May 07 | What's the buzz from the community, JavaONE |
-| May 07 | EDRMDS - a less is more approach to SOA Master Data Management, JavaONE 2008 |
+| May 07 | EDRMDS - a less is more approach to SOA Master Data Management, JavaONE |
 | May 07 | Java User Groups: Think Globally, Act Locally, Community One |
 | Apr 07 | MDA tools - a critical run-down of MDA implementations, Sandefjord |
 | Apr 07 | Java technologies for the business layer, Sandefjord |

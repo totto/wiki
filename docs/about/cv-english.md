@@ -170,10 +170,17 @@ Software Architecture, productivity and Object-orientation. Method work. Distrib
 
 **Presentations and publications**
 
-Some of my not very recent presentations...
+*Selected presentations. Full list at [Presentations and Publications](presentations.md).*
 
 | Date | Presentation |
 | --- | --- |
+| Sep 23 | Best practice - WTF!, JavaZone 2023 (lightning talk) |
+| Nov 19 | Fixing the problem — sustainable software development communities in Oslo |
+| Nov 14 | Internet of things - what is really happening |
+| Jun 14 | Nyere forskningsresultater som er viktige for software arkitekten |
+| Jun 14 | Neo4Dogs - a data quality platform approach with SolrCloud and graphs, Graph Cafe, Teknologihuset Oslo |
+| Jun 11 | Agile wine accn2011 — An agile tragedy: the agile practitioner visits the wine store |
+| ~2010 | Cloud Psychology - a look at why many businesses will go out of business soon |
 | Apr 09 | Developers guide to server-side productivity and fun with Open Source, GoOpen |
 | Mar 09 | Robust smidig utvikling - naar resultater er viktigere enn religion, Software |
 | Feb 09 | Service categorization and SOA patterns 911, Norstella |
