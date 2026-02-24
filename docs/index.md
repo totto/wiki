@@ -62,7 +62,7 @@ This wasn't magic. It was methodology -- Skill-Driven Development applied system
 
 ## Writing
 
-I started blogging about cloud computing in 2009, back when "the cloud" was still a debate. The [archive](blog/index.md) has those early posts. New writing on AI-augmented development and SDD is coming.
+Writing on AI-augmented development, SDD, and what actually changes when experienced architects work with AI. New posts on the blog.
 
 [:octicons-arrow-right-24: Read the blog](blog/index.md)
 
