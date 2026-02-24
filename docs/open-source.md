@@ -1,6 +1,55 @@
 # Open Source
 
-Most of the open source work I am involved in lives under [Cantara](https://github.com/Cantara) — a framework and infrastructure company I co-founded. Cantara maintains 150+ public repositories, primarily enterprise-grade Java frameworks and libraries used across production systems in Norway and internationally.
+I have been involved in open source for most of my career. The work spans three GitHub organizations and ranges from production IAM systems to AI knowledge infrastructure.
+
+---
+
+## eXOReaction
+
+[github.com/exoreaction](https://github.com/exoreaction)
+
+### Synthesis -- Knowledge Infrastructure
+
+**Repository:** [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
+**Language:** Java | **License:** MIT
+
+Local-first knowledge infrastructure for AI-augmented development teams. Born out of the lib-pcb project, where generating 197,831 lines of code in 11 days created an urgent need for fast, cross-repository search and dependency tracking.
+
+**What it does:**
+
+- Indexes 200--300 files/second across all formats (code, docs, videos, PDFs)
+- Sub-second search (< 1 second, validated at 0.4s)
+- Cross-repo dependency graphs (58 repos, 429 dependencies in < 31 seconds)
+- Bi-directional relationship tracking
+- File movement tracking with hash-based detection
+- Cross-workspace change reporting with daily snapshots
+- Zero cloud dependency -- all processing is local
+
+**Key metrics:**
+
+| Metric | Value |
+|--------|-------|
+| Files indexed | 8,934 across 3 workspaces |
+| Retrieval time reduction | 92--95% (5--15 min down to 10--30 sec) |
+| Storage overhead | 2.7% (11.6 MB index for 434 MB content) |
+
+---
+
+### lib-pcb -- PCB Design Library
+
+**Repository:** [github.com/exoreaction/lib-pcb](https://github.com/exoreaction/lib-pcb)
+**Language:** Java | **License:** Apache 2.0
+
+A complete PCB design file processing library. 197,831 lines of Java, 7,461 tests, 8 format parsers (Gerber, Excellon, ODB++, KiCad, Eagle, Altium, GenCAM, IPC-2581), 28 validators, 17 auto-fixers. Manufacturing-ready Gerber output. Built in 11 days using Skill-Driven Development.
+
+---
+
+### xorcery-alchemy
+
+**Repository:** [github.com/exoreaction/xorcery-alchemy](https://github.com/exoreaction/xorcery-alchemy)
+**Language:** Java | **License:** Apache 2.0
+
+Experimental extensions to the Xorcery framework, exploring temporal analytics and DevSecOps intelligence capabilities.
 
 ---
 
@@ -115,10 +164,3 @@ Real-time dashboards for visualizing microservice environments. Shows service he
 
 **[realestate-metasys-cloudconnector-agent](https://github.com/Cantara/realestate-metasys-cloudconnector-agent)** — Reads sensor data from Johnson Controls Metasys building automation systems and distributes to cloud.
 
----
-
-## eXOReaction
-
-[github.com/exoreaction](https://github.com/exoreaction)
-
-**[xorcery-alchemy](https://github.com/exoreaction/xorcery-alchemy)** — Experimental extensions to the Xorcery framework, exploring temporal analytics and DevSecOps intelligence capabilities.
