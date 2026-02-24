@@ -14,8 +14,8 @@ theme:
   font:
     text: Inter
     code: JetBrains Mono
-  logo: assets/images/totto-2014.jpg
-  favicon: assets/images/totto-2014.jpg
+  logo: assets/images/totto-2025.jpg
+  favicon: assets/images/totto-2025.jpg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

@@ -23,6 +23,8 @@ Not "what model did you use?" Not "what IDE?" Those questions miss the point ent
 
 <!-- more -->
 
+![Totto in the Elprint PCB manufacturing facility, China — the real-world context for lib-pcb](/assets/images/blog/totto-pcb-factory-2025.jpg)
+
 ![lib-pcb: 197,831 lines in 11 days — the six pillars metrics card](/assets/images/blog/lib-pcb-metrics-card-11-days.png)
 
 Previous posts in this series have covered pieces of the story. The [Fear-Driven Development](2026-02-23-fear-driven-development.md) post explained the verification mindset. The [Architecture Mistake](2026-02-19-architecture-mistake-cloud-to-ai.md) post drew the parallel between cloud lift-and-shift and AI lift-and-shift. The [Hallucination Tax](2026-02-17-the-hallucination-tax.md) post covered economics, control, and silent failures.
