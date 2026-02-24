@@ -91,6 +91,8 @@ I'm still adjusting. Still figuring out what it means to operate at a pace where
 ### Synthesis: Looking for Pilot Partners
 *February 12, 2026*
 
+![Synthesis pilot announcement visual](/assets/images/linkedin/synthesis-pilots-visual.png)
+
 We built something for ourselves. Turns out others might need it too.
 
 **What it is:** Synthesis. Think of it as an AI operations partner for knowledge infrastructure.
@@ -129,6 +131,8 @@ Absolutely. And not because we did it wrong then. Because the playing field has 
 
 ### Synthesis: The New Bottleneck
 *February 15, 2026*
+
+![From chaos to clarity — Synthesis knowledge infrastructure infographic](/assets/images/linkedin/chaos-to-clarity-infographic.png)
 
 AI agents made us 10x faster at creating. Now organizing that output is the bottleneck.
 
