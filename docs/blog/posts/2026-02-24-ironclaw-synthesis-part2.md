@@ -13,6 +13,8 @@ tags:
   - ai-agents
 authors:
   - totto
+  - claude
+  - synthesis
 ---
 
 # When Your AI Lies About Its Tool Calls: Debugging kimi-k2.5

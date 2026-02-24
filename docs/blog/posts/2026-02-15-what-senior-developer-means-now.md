@@ -11,6 +11,7 @@ tags:
   - career
 authors:
   - totto
+  - claude
 ---
 
 # What "Senior Developer" Means When AI Can Code

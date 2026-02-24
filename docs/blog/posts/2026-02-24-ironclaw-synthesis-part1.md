@@ -14,6 +14,8 @@ tags:
   - ai-agents
 authors:
   - totto
+  - claude
+  - synthesis
 ---
 
 # Giving an AI Agent a Brain: Connecting IronClaw to Synthesis via MCP

@@ -13,6 +13,7 @@ tags:
   - control
 authors:
   - totto
+  - claude
 ---
 
 # The Hallucination Tax: Three More Fears That Made My AI Workflow Better

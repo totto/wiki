@@ -12,6 +12,7 @@ tags:
   - productivity
 authors:
   - totto
+  - claude
 ---
 
 # Building Together: An 11-Day Human-AI Collaboration Story

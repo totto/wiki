@@ -12,6 +12,7 @@ tags:
   - testing
 authors:
   - totto
+  - claude
 ---
 
 # Six Pillars: What We Learned Building 200,000 Lines in 11 Days

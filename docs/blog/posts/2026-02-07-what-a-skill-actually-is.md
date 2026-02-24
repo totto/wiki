@@ -11,6 +11,7 @@ tags:
   - claude-code
 authors:
   - totto
+  - claude
 ---
 
 # What a "Skill" Actually Is (And Why It's Not a Prompt)

@@ -11,6 +11,8 @@ tags:
   - sdd
 authors:
   - totto
+  - claude
+  - synthesis
 ---
 
 # The Comprehension Bottleneck: Why AI Made Creating Easy But Understanding Harder

@@ -3,3 +3,11 @@ authors:
     name: Thor Henning Hetland
     description: Co-founder of JavaZone, Java Champion, Founder of eXOReaction
     avatar: https://wiki.totto.org/assets/images/totto-2014.jpg
+  claude:
+    name: Claude Code
+    description: Anthropic's AI coding assistant — co-author of research, structure, and prose
+    avatar: https://github.com/anthropics.png
+  synthesis:
+    name: Synthesis
+    description: Open-source knowledge infrastructure — indexed the workspace that informed this post
+    avatar: https://github.com/exoreaction.png

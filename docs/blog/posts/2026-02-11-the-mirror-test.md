@@ -11,6 +11,7 @@ tags:
   - methodology
 authors:
   - totto
+  - claude
 ---
 
 # The Mirror Test: How Synthesis Benchmarked Itself Into Something Better

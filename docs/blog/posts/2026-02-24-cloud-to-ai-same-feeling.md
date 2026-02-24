@@ -10,6 +10,7 @@ tags:
   - sdd
 authors:
   - totto
+  - claude
 ---
 
 # I Wrote About Cloud Computing in 2009. Seventeen Years Later, I Have the Same Feeling.

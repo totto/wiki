@@ -12,6 +12,7 @@ tags:
   - architecture
 authors:
   - totto
+  - claude
 ---
 
 # Claude Code + Synthesis: Five Superpowers for Java Developers

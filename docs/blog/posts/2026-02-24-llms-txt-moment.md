@@ -10,6 +10,7 @@ tags:
   - web
 authors:
   - totto
+  - claude
 ---
 
 # Who Describes You to AI?

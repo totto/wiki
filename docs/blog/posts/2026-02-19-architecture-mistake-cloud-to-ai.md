@@ -11,6 +11,7 @@ tags:
   - methodology
 authors:
   - totto
+  - claude
 ---
 
 # The Architecture Mistake Cloud Taught Us (That We're Making With AI)

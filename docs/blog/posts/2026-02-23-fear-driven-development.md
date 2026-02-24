@@ -11,6 +11,7 @@ tags:
   - methodology
 authors:
   - totto
+  - claude
 ---
 
 # I'm Scared of AI. That's Why It Works.

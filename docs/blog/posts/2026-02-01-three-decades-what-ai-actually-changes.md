@@ -11,6 +11,7 @@ tags:
   - reflection
 authors:
   - totto
+  - claude
 ---
 
 # Three Decades of Architecture: What AI Actually Changes (And What Doesn't)

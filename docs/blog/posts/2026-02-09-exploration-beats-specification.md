@@ -12,6 +12,7 @@ tags:
   - planning
 authors:
   - totto
+  - claude
 ---
 
 # Why Exploration Beats Specification When AI Does the Building
