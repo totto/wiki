@@ -5,9 +5,9 @@ totto@totto.org | [LinkedIn](https://www.linkedin.com/in/hetland/) | [GitHub](ht
 
 ---
 
-Java Champion. Spesialist innen SOA, governance, arkitektur, utviklingsmetoder og omgivelser. Har lang erfaring innen programvareutvikling med bruk av moderne metoder og verktoy. Anerkjent fagressurs og foredragsholder innenfor og utenfor Norges grenser.
+Java Champion. Pioneer innen AI-forsterket programvareutvikling og grunnlegger av eXOReaction AS og Quadim AS. Over 30 ars erfaring innen programvareutvikling, arkitektur og teknologiledelse. Grunnlegger av JavaZone og tidligere president i javaBin. Anerkjent foredragsholder pa JavaZone, NDC, Devoxx og internasjonale konferanser.
 
-**Nokkelkvalifikasjoner:** Prosjektleder, teknisk arkitekt. Fagutvikler og ansvarlig for Enterprise Design og Arkitektur. Herunder SOA, Identity and Access Management, Enterprise Security, BI, Datavarehus, enterprise sokeplatformer, EDA og Distribuerte Systemer.
+**Nokkelkvalifikasjoner:** Programvarearkitekt, CTO, teknologiradgiver, AI-forsterket utvikling (SDD), enterprise-arkitektur, microservices, sikkerhet og governance.
 
 ---
 
@@ -46,31 +46,82 @@ Teknisk bransje, Elektronikk/Vapen-linja.
 
 <div class="timeline-entry" markdown>
 
-#### Principal Consultant / Practice Lead Software Engineering -- Altran AS
-<span class="timeline-date">2012 --</span>
+#### Grunnlegger & CTO -- Ægis AS
+<span class="timeline-date">2023 -- na</span>
+
+Radgiver, mentor, programvarearkitekt, sjefsutvikler, strategiradgiver.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+#### Grunnlegger, eier & CTO -- eXOReaction AS
+<span class="timeline-date">2021 -- na</span>
+
+Radgiver, mentor, programvarearkitekt, sjefsutvikler, strategiradgiver. Skapte Synthesis (AI-kunnskapsinfrastruktur) og pionerte AI-forsterket programvareutvikling og Skill-Driven Development (SDD). Bygget 197 831 linjer produksjonsklar Java pa 11 dager.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+#### Grunnlegger & CTO -- Sunstone Tech AS
+<span class="timeline-date">2019 -- na</span>
+
+Radgiver, mentor, programvarearkitekt, sjefsutvikler, strategiradgiver.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+#### Grunnlegger & CTO -- Quadim AS
+<span class="timeline-date">2019 -- na</span>
+
+CTO og ledende utvikler av Quadim kompetansestyringsplattform (SaaS). Ansvarlig for systemarkitektur, teamledelse, AI-integrasjon og produktutvikling.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+#### Principal Consultant -- Capra Consulting AS
+<span class="timeline-date">2015 -- 2019</span>
+
+Radgiver, mentor, programvarearkitekt, sjefsutvikler, strategiradgiver.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
+#### Principal Consultant / Practice Lead Software Engineering -- Altran Norge AS
+<span class="timeline-date">2012 -- 2015</span>
+
+Bygde Software Engineering-avdelingen fra grunnen til et sterkt team, og var samtidig chief customer officer.
+
 </div>
 
 <div class="timeline-entry" markdown>
 
 #### CTO -- FreeCode AS
-<span class="timeline-date">2012</span>
+<span class="timeline-date">2012 -- 2013</span>
+
+Daglig leder og CTO av FreeCode. Prosjektleder, mentor, programvarearkitekt, teknologiradgiver, sjefsutvikler, strategiradgiver.
+
 </div>
 
 <div class="timeline-entry" markdown>
 
 #### Sjefskonsulent -- Webstep AS
-<span class="timeline-date">2009 -- 2012</span>
+<span class="timeline-date">2008 -- 2012</span>
 
-Sjefkonsulent. Radgiver, mentor, software arkitekt, sjefsutvikler, strategiradgiver.
+Sjefkonsulent. Radgiver, mentor, programvarearkitekt, sjefsutvikler, strategiradgiver.
 
 </div>
 
 <div class="timeline-entry" markdown>
 
-#### Sjefskonsulent og fagansvarlig -- Objectware AS
-<span class="timeline-date">2003 -- 2009</span>
+#### Sjefskonsulent og fagansvarlig -- Objectware AS (Itera Consulting Group)
+<span class="timeline-date">2003 -- 2008</span>
 
-Sjefkonsulent. Prosjektleder, mentor, software arkitekt, teknologiradgiver, sjefsutvikler, strategiradgiver. Fagansvarlig for Java avdelingen.
+Sjefkonsulent. Prosjektleder, mentor, programvarearkitekt, teknologiradgiver, sjefsutvikler, strategiradgiver. Fagansvarlig for Java-avdelingen.
 
 </div>
 
