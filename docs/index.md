@@ -99,6 +99,14 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
     [:octicons-arrow-right-24: Open Source](open-source.md)
 
+-   :material-account-group: **Quadim**
+
+    ---
+
+    A competence management SaaS platform. Helps organisations map, develop, and visualise the skills of their people. Built with the same AI-augmented methodology as lib-pcb.
+
+    [:octicons-arrow-right-24: quadim.no](https://quadim.no)
+
 -   :material-rocket-launch: **Workshops & Training**
 
     ---
