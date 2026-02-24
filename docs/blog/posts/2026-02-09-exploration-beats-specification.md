@@ -75,7 +75,7 @@ Here is the part that the exploration-enthusiast narrative usually omits, and it
 
 Exploration only beats specification when you have rigorous verification. Without it, exploration is not a methodology. It is guessing with momentum.
 
-In the [Six Pillars](2026-03-19-six-pillars-200k-lines-11-days.md) post I described the Trust But Verify pillar: round-trip tests, property-based invariants, a 191-file battle suite, and a PR-only workflow where CI is the final arbiter. That infrastructure is what makes exploration safe. Without it, every iteration accumulates unverified assumptions. You move fast and break things, but you never find out what you broke until production tells you.
+In the [Six Pillars](2026-02-13-six-pillars-200k-lines-11-days.md) post I described the Trust But Verify pillar: round-trip tests, property-based invariants, a 191-file battle suite, and a PR-only workflow where CI is the final arbiter. That infrastructure is what makes exploration safe. Without it, every iteration accumulates unverified assumptions. You move fast and break things, but you never find out what you broke until production tells you.
 
 The lib-pcb verification suite caught hallucinations, logic errors, and edge cases on every single day of the build. The AI produced incorrect code regularly. That is expected. What matters is that incorrect code never survived past CI. Exploration without verification is chaos. Exploration with verification is a learning system.
 
@@ -99,7 +99,7 @@ The courage is not in the building. It is in letting go of the illusion that a p
 
 ## The connection
 
-This is the piece that ties the [Six Pillars](2026-03-19-six-pillars-200k-lines-11-days.md) together into a way of working. The pillars describe what you do: encode context, delegate strategically, verify rigorously, direct the synthesis, maintain discipline, learn continuously. This post describes why it works: because when building is cheap, you learn more by building than by planning.
+This is the piece that ties the [Six Pillars](2026-02-13-six-pillars-200k-lines-11-days.md) together into a way of working. The pillars describe what you do: encode context, delegate strategically, verify rigorously, direct the synthesis, maintain discipline, learn continuously. This post describes why it works: because when building is cheap, you learn more by building than by planning.
 
 Exploration is the engine. Verification is the brake. The methodology is knowing when to use each.
 
@@ -107,4 +107,4 @@ Eleven days. 197,831 lines of Java. 7,461 tests. 191 real-world files. Not becau
 
 ---
 
-*This post is part of the [AI-Augmented Development](/blog/category/ai-augmented-development/) series. Previous entries: [Cloud to AI: Same Feeling](2026-02-24-cloud-to-ai-same-feeling.md), [Fear-Driven Development](2026-02-27-fear-driven-development.md), [Building Together](2026-03-04-building-together-11-day-ai-collaboration.md), [Five Superpowers](2026-03-06-five-superpowers-java-developers.md), [The Architecture Mistake](2026-03-11-architecture-mistake-cloud-to-ai.md), [The Hallucination Tax](2026-03-13-the-hallucination-tax.md), [What Senior Developer Means Now](2026-03-17-what-senior-developer-means-now.md), [Six Pillars](2026-03-19-six-pillars-200k-lines-11-days.md). All examples from [lib-pcb](https://github.com/exoreaction/lib-pcb), built over 11 days (Jan 16-26, 2026).*
+*This post is part of the [AI-Augmented Development](/blog/category/ai-augmented-development/) series. Previous entries: [Cloud to AI: Same Feeling](2026-02-24-cloud-to-ai-same-feeling.md), [Fear-Driven Development](2026-02-23-fear-driven-development.md), [Building Together](2026-02-22-building-together-11-day-ai-collaboration.md), [Five Superpowers](2026-02-21-five-superpowers-java-developers.md), [The Architecture Mistake](2026-02-19-architecture-mistake-cloud-to-ai.md), [The Hallucination Tax](2026-02-17-the-hallucination-tax.md), [What Senior Developer Means Now](2026-02-15-what-senior-developer-means-now.md), [Six Pillars](2026-02-13-six-pillars-200k-lines-11-days.md). All examples from [lib-pcb](https://github.com/exoreaction/lib-pcb), built over 11 days (Jan 16-26, 2026).*

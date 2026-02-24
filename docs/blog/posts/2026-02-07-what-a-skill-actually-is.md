@@ -19,7 +19,7 @@ The term "skill" keeps appearing in discussions about AI-assisted development, a
 
 <!-- more -->
 
-In the [Six Pillars](2026-03-19-six-pillars-200k-lines-11-days.md) post, I described Intelligent Context as the foundation pillar of Skill-Driven Development. This post goes deeper into the mechanism. What a skill actually is, what it is not, why the distinction matters, and how 85 of them changed the trajectory of an 11-day build.
+In the [Six Pillars](2026-02-13-six-pillars-200k-lines-11-days.md) post, I described Intelligent Context as the foundation pillar of Skill-Driven Development. This post goes deeper into the mechanism. What a skill actually is, what it is not, why the distinction matters, and how 85 of them changed the trajectory of an 11-day build.
 
 ## The problem skills solve
 
@@ -127,7 +127,7 @@ This is the mechanism by which institutional knowledge survives team changes, la
 
 There is a failure mode I need to be honest about, because I discovered it empirically.
 
-Skills can go stale. The [Mirror Test](2026-03-24-the-mirror-test.md) benchmarks found that a skill claiming three Lucene boost fields was loaded by agents who then confidently reported three fields. The source code had six. The skill had not been updated after a refactoring. The agents with no skills at all read the source directly and got the right answer.
+Skills can go stale. The [Mirror Test](2026-02-11-the-mirror-test.md) benchmarks found that a skill claiming three Lucene boost fields was loaded by agents who then confidently reported three fields. The source code had six. The skill had not been updated after a refactoring. The agents with no skills at all read the source directly and got the right answer.
 
 Stale skills produce confident, fluent, wrong answers. That is worse than no skills at all, because no skills at least generate hedging and verification behavior. A skill that says "trust me" gets trusted.
 
@@ -145,4 +145,4 @@ The model is the least interesting variable. The methodology is the answer. And 
 
 ---
 
-*This post is part of the [AI-Augmented Development](/blog/category/ai-augmented-development/) series. Previous entries: [Cloud to AI: Same Feeling](2026-02-24-cloud-to-ai-same-feeling.md), [Fear-Driven Development](2026-02-27-fear-driven-development.md), [Building Together](2026-03-04-building-together-11-day-ai-collaboration.md), [Five Superpowers](2026-03-06-five-superpowers-java-developers.md), [The Architecture Mistake](2026-03-11-architecture-mistake-cloud-to-ai.md), [The Hallucination Tax](2026-03-13-the-hallucination-tax.md), [What Senior Developer Means Now](2026-03-17-what-senior-developer-means-now.md), [Six Pillars](2026-03-19-six-pillars-200k-lines-11-days.md), [The Mirror Test](2026-03-24-the-mirror-test.md), [Exploration Beats Specification](2026-03-26-exploration-beats-specification.md). All examples from [lib-pcb](https://github.com/exoreaction/lib-pcb), built over 11 days (Jan 16-26, 2026).*
+*This post is part of the [AI-Augmented Development](/blog/category/ai-augmented-development/) series. Previous entries: [Cloud to AI: Same Feeling](2026-02-24-cloud-to-ai-same-feeling.md), [Fear-Driven Development](2026-02-23-fear-driven-development.md), [Building Together](2026-02-22-building-together-11-day-ai-collaboration.md), [Five Superpowers](2026-02-21-five-superpowers-java-developers.md), [The Architecture Mistake](2026-02-19-architecture-mistake-cloud-to-ai.md), [The Hallucination Tax](2026-02-17-the-hallucination-tax.md), [What Senior Developer Means Now](2026-02-15-what-senior-developer-means-now.md), [Six Pillars](2026-02-13-six-pillars-200k-lines-11-days.md), [The Mirror Test](2026-02-11-the-mirror-test.md), [Exploration Beats Specification](2026-02-09-exploration-beats-specification.md). All examples from [lib-pcb](https://github.com/exoreaction/lib-pcb), built over 11 days (Jan 16-26, 2026).*

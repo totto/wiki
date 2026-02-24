@@ -17,7 +17,7 @@ authors:
 
 # The Hallucination Tax: Three More Fears That Made My AI Workflow Better
 
-The [last post](2026-02-27-fear-driven-development.md) was about hallucinations, production bugs, and shipping bad code. Three fears that built three systems. This post is about the next three: money, control, and silence.
+The [last post](2026-02-23-fear-driven-development.md) was about hallucinations, production bugs, and shipping bad code. Three fears that built three systems. This post is about the next three: money, control, and silence.
 
 <!-- more -->
 
@@ -193,4 +193,4 @@ There are more fears. The next post will cover the last three.
 
 ---
 
-*This is Part 2 of the Fear-Driven Development series. [Part 1](2026-02-27-fear-driven-development.md) covered hallucinations, production bugs, and direct commits. Part 3 will cover the final three fears. All examples are from building [lib-pcb](https://github.com/exoreaction/lib-pcb) over 11 days (Jan 16-26, 2026).*
+*This is Part 2 of the Fear-Driven Development series. [Part 1](2026-02-23-fear-driven-development.md) covered hallucinations, production bugs, and direct commits. Part 3 will cover the final three fears. All examples are from building [lib-pcb](https://github.com/exoreaction/lib-pcb) over 11 days (Jan 16-26, 2026).*
