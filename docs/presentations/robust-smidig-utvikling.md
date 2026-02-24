@@ -12,6 +12,16 @@ title: "Robust smidig utvikling - når resultater er viktigere enn religion"
 
 A pragmatic take on agile methods: what actually works in practice versus what the methodology orthodoxy prescribes. When delivering results should override dogmatic adherence to any single agile framework.
 
+## The argument
+
+Agile methods are valuable. But the software industry has a tendency to turn any successful methodology into dogma, complete with certifications, approved vocabularies, and inquisitors ready to declare you "not really agile." This talk pushes back against that tendency.
+
+The relevant question is not "are we following the process correctly?" but "are we delivering value to the customer?" Goal achievement over requirement achievement. Customer outcomes over ceremony compliance.
+
+A pragmatic agile practice borrows from multiple frameworks, adapts to the team and context, measures itself against business results, and discards what does not help. The opposite — treating methodology as religion — produces teams that are agile in vocabulary but rigid in practice.
+
+**Language:** Norwegian
+
 ---
 
 <div class="pdf-viewer">

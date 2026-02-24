@@ -8,7 +8,34 @@ title: "Neo4Dogs: A Data Quality Platform Approach with SolrCloud and Graphs"
 **Event:** Graph Cafe, Teknologihuset, Oslo
 **Slides:** [slideshare.net/totto](https://www.slideshare.net/slideshow/neo4-dogs-en/35205821)
 
-A case study in using Neo4J and SolrCloud to solve data quality and integration problems across legacy systems. Using dog registry data as a domain: how graph databases enable breed analysis, similarity scoring, and quality corrections at scale — 100–9,000 dogs/second, 200–20,000 queries/second.
+A real-world data quality platform built for Altran to manage dog breed data across multiple legacy systems with conflicting and incomplete records. Uses SolrCloud and Neo4j to discover, map, score, merge, and verify records continuously — demonstrating a practical graph-based approach to data quality at scale.
+
+## The problem
+
+Dog breed data is spread across legacy systems with errors, deviations, and missing information. Merging records from multiple sources with different identifiers requires a platform that can operate continuously across sources rather than batch-reconciling a golden record.
+
+## The platform components
+
+| Service | Role |
+|---------|------|
+| **DogSearch** | SolrCloud-based search and lookup using `json_full` format |
+| **DogPopulationService** | Pedigree and population structure data |
+| **DogIDMapper** | Multi-source identifier mapping across systems |
+| **DogCrawler** | Discovers additional data from external sources |
+| **DogFixer** | Statistical analysis and automated data correction |
+| **DogServiceREST** | Verification and record merging API |
+
+## Performance at scale
+
+| Metric | Value |
+|--------|-------|
+| Request volume | 10 million requests per 24 hours |
+| Latency | 0.2 seconds for 99.7% of requests |
+| DogIDMapper throughput | 4,000 dogs per second |
+
+## Technology
+
+SolrCloud for distributed search and lookup, Neo4j graph database for pedigree and relationship traversal, REST APIs for service integration. The graph model is particularly well-suited to pedigree data — the relationships *are* the data.
 
 ---
 
