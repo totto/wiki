@@ -3,57 +3,20 @@
    Custom styles for MkDocs Material
    ============================================ */
 
-/* === HOMEPAGE === */
-
-/* Full-width hero feel */
-.md-content article > h1:first-child {
-  font-size: 2.4rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 0.25rem;
-}
-
-/* Tagline under h1 */
-.md-content article > p:first-of-type strong {
-  font-size: 1.1rem;
-  color: var(--md-default-fg-color--light);
-  font-weight: 500;
-}
-
-/* === GRID CARDS === */
-.md-typeset .grid.cards > ul > li {
-  border-top: 3px solid var(--md-primary-fg-color);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.md-typeset .grid.cards > ul > li:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
-}
-
-/* === BLOG === */
-
-/* Bigger post titles */
-.md-post__header h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-/* Better reading line length */
-.md-content {
-  max-width: 780px;
-}
-
-/* Post metadata */
-.md-post__meta {
-  opacity: 0.7;
-  font-size: 0.78rem;
-}
-
 /* === TYPOGRAPHY === */
 .md-typeset {
   font-size: 0.95rem;
   line-height: 1.75;
+}
+
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  margin-top: 2.4rem;
 }
 
 /* Nicer blockquotes */
@@ -66,9 +29,133 @@
 }
 
 /* === HEADER === */
-/* Subtle gradient on the header */
 .md-header {
   background: linear-gradient(135deg, #3f51b5 0%, #673ab7 100%);
+}
+
+/* === HERO SECTION (homepage) === */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.25rem;
+  line-height: 1.15;
+}
+
+.hero-content > p:first-of-type strong {
+  font-size: 1.15rem;
+  color: var(--md-default-fg-color--light);
+  font-weight: 500;
+}
+
+.hero-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--md-primary-fg-color);
+  box-shadow: 0 8px 32px rgba(63, 81, 181, 0.18);
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .hero-image img {
+    width: 140px;
+    height: 140px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* === GRID CARDS === */
+.md-typeset .grid.cards > ul > li {
+  border-top: 3px solid var(--md-primary-fg-color);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Card meta text (dates etc.) */
+.card-meta {
+  font-size: 0.78rem;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+/* Card icon color */
+.card-icon {
+  color: var(--md-primary-fg-color);
+}
+
+/* === PROOF BLOCK (homepage) === */
+.proof-block {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--md-primary-fg-color);
+}
+
+.proof-stats table {
+  margin: 1rem 0;
+}
+
+.proof-stats td:first-child {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--md-primary-fg-color);
+  white-space: nowrap;
+  padding-right: 1rem;
+}
+
+.proof-stats th,
+.proof-stats td {
+  border: none !important;
+  padding: 0.3rem 0.8rem 0.3rem 0;
+}
+
+/* Hide table header in proof stats */
+.proof-stats thead {
+  display: none;
+}
+
+/* === BLOG === */
+
+/* Bigger post titles */
+.md-post__header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Post metadata */
+.md-post__meta {
+  opacity: 0.7;
+  font-size: 0.78rem;
+}
+
+/* === SECTION DIVIDERS === */
+.md-typeset hr {
+  border: none;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  margin: 2.5rem 0;
 }
 
 /* === FOOTER === */
@@ -81,7 +168,7 @@
   border-radius: 8px;
 }
 
-/* === PROFILE IMAGE (for about page and homepage) === */
+/* === PROFILE IMAGE (for about page) === */
 .profile-image {
   border-radius: 50%;
   width: 120px;
@@ -89,14 +176,6 @@
   float: right;
   margin: 0 0 1rem 2rem;
   border: 3px solid var(--md-primary-fg-color);
-}
-
-/* === SECTION DIVIDERS === */
-/* Replace raw <hr> with more polished spacing */
-.md-typeset hr {
-  border: none;
-  border-top: 1px solid var(--md-default-fg-color--lightest);
-  margin: 2.5rem 0;
 }
 
 /* === PRESENTATION VIEWER === */
@@ -142,4 +221,115 @@
   padding: 0.6rem 1.2rem;
   font-weight: 600;
   border-left: 3px solid var(--md-primary-fg-color);
+}
+
+/* === CREDENTIAL BADGES (about page) === */
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.credential {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--md-primary-fg-color);
+}
+
+.credential strong {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+.credential span {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* === TIMELINE (for CV pages) === */
+.timeline-entry {
+  border-left: 2px solid var(--md-primary-fg-color);
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-entry::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+}
+
+.timeline-entry h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+.timeline-entry .timeline-date {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+.timeline-entry p {
+  margin: 0.3rem 0 0;
+  font-size: 0.88rem;
+}
+
+/* === PRESENTATION INDEX (grouped) === */
+.presentation-highlight {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.presentation-highlight:hover {
+  background: var(--md-accent-fg-color--transparent);
+}
+
+/* === BUTTONS === */
+.md-typeset .md-button {
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* === TABLES (general) === */
+.md-typeset table:not([class]) {
+  font-size: 0.88rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-code-bg-color);
+  font-weight: 600;
+}
+
+/* === DARK MODE ADJUSTMENTS === */
+[data-md-color-scheme="slate"] .hero-image img {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+[data-md-color-scheme="slate"] .proof-block {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-md-color-scheme="slate"] .credential {
+  background: rgba(255, 255, 255, 0.04);
 }
