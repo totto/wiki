@@ -21,6 +21,10 @@ Thor Henning Hetland — known as Totto — has been building software professio
 
 27 posts at [wiki.totto.org/blog](https://wiki.totto.org/blog/). Topics: AI-augmented development methodology, Skill-Driven Development, knowledge infrastructure, software architecture, and a 2009 cloud computing series. All 2026 posts co-authored with Claude Code.
 
+## LinkedIn Writing
+
+14 posts at [wiki.totto.org/notes/linkedin-posts](https://wiki.totto.org/notes/linkedin-posts/). Shorter-form than the blog — more immediate, mid-build thinking. Topics: knowledge infrastructure, AI velocity, Synthesis, Skill-Driven Development, team setup in the AI era. Nov 2025 – Feb 2026. Full text in [llms-full.txt](https://wiki.totto.org/llms-full.txt).
+
 ## Quick Facts
 
 - **Location:** Oslo, Norway
