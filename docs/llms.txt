@@ -1,0 +1,27 @@
+# Thor Henning Hetland (Totto)
+
+> Software architect, AI development pioneer, co-founder of JavaZone, founder of eXOReaction. Based in Oslo, Norway.
+
+Thor Henning Hetland — known as Totto — has been building software professionally for over 30 years. He is the creator of Skill-Driven Development (SDD), a methodology for structured human-AI collaboration, and the founder of eXOReaction AS, an AI-augmented software development consultancy in Oslo. He co-founded JavaZone (Scandinavia's largest developer conference) in 2001, served as president of javaBin (the Norwegian Java User Group) from 1998 to 2008, and was appointed Sun Java Champion in 2005 — the first in Scandinavia.
+
+## Key Pages
+
+- [About](https://wiki.totto.org/about/): Bio, background, current work, and contact
+- [CV (English)](https://wiki.totto.org/about/cv-english/): Full employment history and credentials
+- [CV (Norwegian)](https://wiki.totto.org/about/cv-norwegian/): Full CV in Norwegian
+- [Organizations](https://wiki.totto.org/about/organizations/): Community and organizational leadership history
+- [Presentations](https://wiki.totto.org/about/presentations/): 70+ conference talks, workshops, and publications (2006–2023)
+- [Open Source](https://wiki.totto.org/open-source/): Projects across eXOReaction and Cantara GitHub organizations
+
+## Full Content (machine-readable)
+
+- [Full profile and CV (clean markdown)](https://wiki.totto.org/llms-full.txt): All content from the above pages concatenated into a single clean markdown document
+
+## Quick Facts
+
+- **Location:** Oslo, Norway
+- **Contact:** totto@totto.org | [LinkedIn](https://www.linkedin.com/in/hetland/) | [GitHub](https://github.com/totto)
+- **Founded:** eXOReaction AS (2021), Ægis AS (2023), Sunstone Tech AS (2019), Quadim AS (2019)
+- **Education:** MSc Computer Science, NTNU (1996); BSc Computer Science, University Centre of Rogaland (1993)
+- **Key achievement:** 197,831 lines of production Java built in 11 days using SDD (25–66x faster than industry standard)
+- **Methodology:** Skill-Driven Development (SDD) — validated across manufacturing, finance, renewable energy, and AI security

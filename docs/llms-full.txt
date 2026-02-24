@@ -1,0 +1,248 @@
+# Thor Henning Hetland — Full Profile
+
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026.
+> Index: https://wiki.totto.org/llms.txt
+
+**Thor Henning Hetland** — Oslo, Norway
+totto@totto.org | https://www.linkedin.com/in/hetland/ | https://github.com/totto
+
+---
+
+## About
+
+I'm Thor Henning Hetland — most people call me Totto.
+
+I've been building software professionally for over 30 years, starting with my Master in Software Development at NTNU (1996). Over those decades I've worked as a CTO, architect, lead developer, technology strategist, and trainer across international and domestic projects.
+
+The question I keep coming back to: **how do we build software better?**
+
+I founded **eXOReaction** to answer that question with today's tools. We're an AI-augmented software development consultancy based in Oslo, focused on helping teams work effectively with AI — not as a gimmick, but as a genuine shift in how software gets built.
+
+The core of our approach is **Skill-Driven Development (SDD)** — a methodology I created for structured human-AI collaboration. SDD treats AI skills as composable, versioned building blocks that compound over time. It's been validated across four sectors (manufacturing, finance, renewable energy, AI security) with measured productivity gains of 25–66x compared to traditional approaches.
+
+I also built **Synthesis**, a local-first knowledge infrastructure tool. It indexes thousands of files per second, provides sub-second search across entire codebases, and tracks cross-repository dependencies — all without touching the cloud. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built.
+
+Community has always been central to what I do. I co-founded **JavaZone** in 2001 — it's now Scandinavia's largest developer conference. I served as president of **javaBin** (the Norwegian Java User Group) for a decade. I was appointed **Sun Java Champion** in 2005, the first in Scandinavia.
+
+---
+
+## Education
+
+#### MSc Computer Science — Norwegian University of Science and Technology (NTNU) (1994–1996)
+
+Faculty of Electrical Engineering and Computer Science, Department of Computer Systems and Telematics. Thesis: *MODS — A role-based Method for analysis and design of distributed object-oriented Systems.*
+
+#### BSc Computer Science — University Centre of Rogaland (1990–1993)
+
+Bachelor degree in Computer Science.
+
+#### Officer Training — The Naval Academy (1988–1990)
+
+Technical branch. Electronics and weapon systems.
+
+---
+
+## Current Positions
+
+- **Founder, owner & CTO**, eXOReaction AS (2021–present) — AI-augmented software development, SDD methodology, Synthesis
+- **Founder & CTO**, Ægis AS (2023–present) — Security and architecture advisory
+- **Founder & CTO**, Sunstone Tech AS (2019–present) — Consulting and product development
+- **Founder & CTO**, Quadim AS (2019–present) — Competence management SaaS platform
+- **Java Champion** — Sun(Oracle) Java Champion · Honorary member javaBin/JavaZone
+
+---
+
+## Employment History
+
+#### Founder & CTO — Ægis AS, Oslo (2023–present)
+
+Advisor, mentor, software architect, chief developer, strategy adviser.
+
+#### Founder, owner & CTO — eXOReaction AS, Oslo (2021–present)
+
+Advisor, mentor, software architect, chief developer, strategy adviser. Creator of Synthesis (AI knowledge infrastructure), pioneer in AI-augmented software development and Skill-Driven Development (SDD). Built 197,831 lines of production Java in 11 days.
+
+#### Founder & CTO — Sunstone Tech AS, Oslo (2019–present)
+
+Advisor, mentor, software architect, chief developer, strategy adviser.
+
+#### Founder & CTO — Quadim AS, Oslo (2019–present)
+
+CTO and lead developer of the Quadim competence management SaaS platform. Responsible for system architecture, team leadership, AI integration, and product development.
+
+#### Principal Consultant — Capra Consulting AS, Oslo (2015–2019)
+
+Advisor, mentor, software architect, chief developer, strategy adviser.
+
+#### Principal Consultant / Practice Lead — Altran Norge AS, Oslo (2012–2015)
+
+Built the Software Engineering practice from scratch into a strong team while also serving as chief customer officer.
+
+#### CTO — FreeCode AS, Oslo (2012–2013)
+
+Chief Executive Officer and CTO of FreeCode. Project manager, mentor, software architect, technology advisor, chief developer, strategy advisor.
+
+#### Principal Consultant — Webstep AS, Oslo (2008–2012)
+
+Chief Technical Officer role. Advisor, mentor, software architect, chief developer, strategy adviser.
+
+#### Principal Consultant — Objectware AS (Itera Consulting Group), Oslo (2003–2008)
+
+Chief software architect and chief software developer. Technical expert in J2EE technologies including EJB, JMS, WebServices. Project leader, mentor, consultant, and trainer. Head of the Java practice.
+
+#### Lead eCommerce Architect — WM-data (Tenpipes / E-Line Group), Oslo (2000–2003)
+
+Chief software developer for E-Line's advanced multichannel B2C eCommerce platform. Built on EJB, JMS, XML, and Intershop Enfinity. Project leader, technology mentor, technology strategist, and trainer.
+
+#### Technical Manager — Zero Mindset Ltd, London (1998–2002)
+
+Lead developer for Safety, Health and Environment (SHE) Management Information Systems using Swing, JGoodies, MySQL/Postgres/Oracle, Java WebStart, and Tomcat/Apache.
+
+#### Senior Consultant — Numerica Taskon / Mogul.com, Oslo (1997–2000)
+
+Responsible for distributed system research. Project leader, mentor, technology strategist, software architect. Java, EJB, CORBA/DCOM, UML, Rational Unified Process, Jini, Smalltalk, and C++.
+
+#### Researcher — Fujitsu Software Laboratories, Kawasaki, Japan (1993–1994)
+
+Software maturement and software process research. Prototyping of Software Process models (CMM) under RASP (Regatta Automated Software Process) on UNIX systems.
+
+---
+
+## Skills
+
+Software architecture, productivity, and object-orientation. Methodology and process. Distributed systems. Planning and governance of software projects. Data security. Leadership of object-oriented software teams. AI-augmented development and Skill-Driven Development (SDD).
+
+---
+
+## Languages
+
+- Norwegian: Native
+- English: Fluent written and spoken
+- German: Good comprehension
+- French: Beginner
+- Spanish: Beginner
+- Japanese: Some understanding (6 months in Japan)
+
+---
+
+## Organizations
+
+### Current
+
+#### eXOReaction AS — Founder, owner & CTO (2021–present)
+
+AI-augmented software development consultancy. Creator of Synthesis (AI knowledge infrastructure) and Skill-Driven Development (SDD) methodology. Built 197,831 lines of production Java in 11 days using SDD.
+
+#### Ægis AS — Founder & CTO (2023–present)
+
+Security and architecture advisory company.
+
+#### Sunstone Tech AS — Founder, owner & CTO (2019–present)
+
+Consulting and product development company.
+
+#### Quadim AS — Founder & CTO (2019–present)
+
+Competence management SaaS platform. CTO and lead developer.
+
+#### Cantara AS — Founder, Board Lead & Director (2008–present)
+
+Open-source infrastructure company. Maintains 150+ repositories of enterprise-grade Java frameworks including Whydah (SSO/IAM), Xorcery (reactive framework), Stingray (microservices), and more.
+
+#### Stiftelsen for fremme av programvareutvikling i Norge — Founder & Board Member (2008–present)
+
+Foundation for promoting software development in Norway.
+
+#### Sun(Oracle) Java Champion (2005–present)
+
+Appointed 2005, first in Scandinavia. Java Champions are recognized for their central role in making Java a worldwide success.
+
+### Past
+
+#### OSWA (Oslo Software Architecture) — Founding Chairman (2009–2011)
+
+Norway's largest software architecture community. Started as IASA Norway (International Association of Software Architects), rebranded to OSWA in 2011. Now 3,500+ members.
+
+#### javaBin — President (1998–2008)
+
+The Norwegian Java User Group (java.no). Ten years leading Norway's Java community. Co-founded and grew JavaZone into Scandinavia's largest developer conference.
+
+#### java.net — Community Leader (2004–2008)
+
+Community Leader for the Java User Group community at java.net, connecting JUGs worldwide.
+
+#### Zero Mindset Ltd — Director (1998–2002)
+
+London-based company focused on Safety, Health and Environment (SHE) Management Information Systems.
+
+#### IAESTE Norway — Vice President (1991–1993)
+
+Arranging reception, lodging and activities for international students training in Norway.
+
+---
+
+## Selected Presentations
+
+70+ conference talks, workshops, and publications from 2006–2023.
+
+### Recent (2010–2023)
+
+- **Best Practice — WTF!** — JavaZone 2023 (lightning talk, video available)
+- **Delivering Continuous Innovation** — ~2023 (thousands of releases, zero downtime)
+- **Thousands of Releases per Year** — Rebel Share ~2022 (11,008 GitHub contributions from a team of 5)
+- **Neo4Dogs** — Graph Cafe, Teknologihuset Oslo, Jun 2014 (data quality with SolrCloud and Neo4j, 10M req/day)
+- **Kan vi skape mye mere verdi i softwareprosjekter?** — ~2014
+- **Nyere forskningsresultater som er viktige for software arkitekten** — Jun 2014
+- **Internet of Things — What Is Really Happening** — Nov 2014
+- **Fixing the Problem** — Oslo, Nov 2019
+- **Agile Wine** — ACCN 2011, Jun 2011
+- **Cloud Psychology** — ~2010
+
+### 2006–2009
+
+- **EDRMDS — a less is more approach to SOA Master Data Management** — JavaZone Sep 2008 and JavaONE May 2007
+- **Governing in a SOA World — a role play** — JavaZone Sep 2007
+- **Java User Groups: Think Globally, Act Locally** — CommunityOne May 2007
+- **The Laws of SOA** — (slides available)
+- **SOA Readiness: Governing the Design Time** — (slides available)
+- **Robust smidig utvikling** — Software 2009, Mar 2009
+- SOA Readiness series (8 talks) — Dec 2008
+- **What's the buzz from the community** — JavaONE May 2007
+- **Smidig 2.0** — Smidig 2007, Nov 2007
+- **The 2007 Anti-Buzzword session** — NTNU Oct 2007
+- **Developers guide to server-side productivity and fun with Open Source** — GoOpen Apr 2009
+
+---
+
+## Open Source
+
+### eXOReaction (github.com/exoreaction)
+
+**Synthesis — Knowledge Infrastructure**
+Local-first knowledge infrastructure for AI-augmented development teams. Indexes 200–300 files/second, sub-second search (validated 0.4s), cross-repo dependency graphs (58 repos, 429 dependencies in <31 seconds), file movement tracking, zero cloud dependency. 8,934 files indexed across 3 workspaces; 92–95% reduction in retrieval time; 2.7% storage overhead.
+
+**lib-pcb — PCB Design Library**
+197,831 lines of Java, 7,461 tests (99.8% pass), 8 format parsers (Gerber, Excellon, ODB++, KiCad, Eagle, Altium, GenCAM, IPC-2581), 28 validators, 17 auto-fixers. Manufacturing-ready Gerber output. Built in 11 days using Skill-Driven Development. Apache 2.0.
+
+**xorcery-alchemy**
+Experimental extensions to the Xorcery framework, exploring temporal analytics and DevSecOps intelligence capabilities.
+
+### Cantara (github.com/Cantara)
+
+**Whydah — SSO / IAM Platform** (16 repositories)
+Complete Single Sign-On and Identity & Access Management solution. Production-deployed across multiple Norwegian enterprise clients. Apache 2.0.
+
+**Xorcery — Reactive Java Framework**
+Modular Java library framework built around HK2 dependency injection, composable YAML/JSON configuration, and reactive streams. 30+ extensions. Apache 2.0.
+
+**Stingray — Microservice Application Framework**
+Java application framework for building microservices. Used as base framework in large-scale deployments (34+ services in production). Apache 2.0.
+
+**Messi — Messaging Abstraction**
+Messaging and streaming abstraction layer with pluggable providers for AWS S3, SQS, and Kinesis.
+
+**lib-electronic-components**
+Java library for electronic components: MPN normalization, 17 similarity calculators, BOM management, 135+ manufacturers.
+
+**Nerthus / Visuale — Service Visualization**
+Real-time dashboards for visualizing microservice environments and service health.
