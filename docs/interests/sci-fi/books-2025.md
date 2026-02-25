@@ -222,7 +222,9 @@ hide:
 </div>
 
 <div class="book-card">
-<span class="book-title">Stranded (Starship of the Ancients Book 1): A Space Opera Adventure</span>
+<span class="book-title">Stranded</span>
+<span class="book-series">Starship of the Ancients Book 1</span>
+<span class="book-author">Shona Knight</span>
 </div>
 
 <div class="book-card">

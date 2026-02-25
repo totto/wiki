@@ -137,14 +137,17 @@ hide:
 <div class="book-card">
 <span class="book-title">Mira Brand Adventures: The Complete Series</span>
 <span class="book-series">The Mira Brand Adventures</span>
+<span class="book-author">Robert J. Crane</span>
 </div>
 
 <div class="book-card">
 <span class="book-title">A Warship Named Sky: A Hero&#x27;s Story</span>
+<span class="book-author">Saxon Andrews</span>
 </div>
 
 <div class="book-card">
 <span class="book-title">A Warship Named Sky 2: The Last Hero</span>
+<span class="book-author">Saxon Andrews</span>
 </div>
 
 <div class="book-card">
@@ -170,6 +173,7 @@ hide:
 
 <div class="book-card">
 <span class="book-title">The Object: Hard Science Fiction</span>
+<span class="book-author">Joshua T. Calvert</span>
 </div>
 
 <div class="book-card">
