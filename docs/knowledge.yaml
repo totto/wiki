@@ -1,0 +1,571 @@
+project: wiki.totto.org
+version: 1.0.0
+updated: 2026-02-25
+
+units:
+  # ── Core identity ────────────────────────────────────────────────────────────
+
+  - id: home
+    path: index.md
+    intent: "Who is Thor Henning Hetland and what is this site about?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    triggers: [totto, thor, hetland, exoreaction, javazone, sdd, overview]
+
+  - id: about
+    path: about/index.md
+    intent: "What has Thor built, what does he believe, and what is he doing now?"
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-02-25
+    triggers: [biography, background, sdd, skill-driven-development, synthesis, eXOReaction, javazone, java-champion]
+
+  # ── CV and credentials ───────────────────────────────────────────────────────
+
+  - id: cv-english
+    path: about/cv-english.md
+    intent: "What is Thor's full professional history, credentials, and employment record?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [cv, resume, employment, credentials, java-champion, ntnu, career]
+
+  - id: cv-norwegian
+    path: about/cv-norwegian.md
+    intent: "Hva er Thors fullstendige CV og yrkeshistorikk på norsk?"
+    scope: global
+    audience: [human]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [cv, norsk, karriere, ntnu]
+
+  - id: projects
+    path: about/projects.md
+    intent: "What client and consulting projects has Thor worked on over his career?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    depends_on: [cv-english]
+    triggers: [projects, consulting, clients, 1996, 2012, norwegian-enterprises]
+
+  - id: organizations
+    path: about/organizations.md
+    intent: "What communities and organizations has Thor founded, led, or contributed to?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [javazone, javabin, iasa, java-champion, community, organizations, leadership]
+
+  # ── Talks and presentations ──────────────────────────────────────────────────
+
+  - id: presentations-all
+    path: about/presentations.md
+    intent: "What conference talks, workshops, and publications has Thor given across his career?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [talks, presentations, conferences, publications, soa, architecture, cloud, agile, 2006, 2023]
+
+  - id: pres-continuous-innovation
+    path: presentations/delivering-continuous-innovation.md
+    intent: "How do you achieve thousands of releases per year with zero downtime?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [continuous-delivery, releases, zero-downtime, devops, innovation]
+
+  - id: pres-thousands-releases
+    path: presentations/thousands-of-releases.md
+    intent: "What does a system architecture that supports thousands of releases look like?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [releases, architecture, continuous-delivery, deployment]
+
+  - id: pres-best-practice-wtf
+    path: presentations/best-practice-wtf.md
+    intent: "Why do best practices often fail, and how should they be evaluated critically?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [best-practice, cargo-cult, methodology, critical-thinking]
+
+  - id: pres-fixing-the-problem
+    path: presentations/fixing-the-problem.md
+    intent: "How do you identify and fix the actual root problem rather than the symptoms?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [root-cause, problem-solving, debugging, architecture]
+
+  - id: pres-internet-of-things
+    path: presentations/internet-of-things.md
+    intent: "What are the architectural challenges and opportunities of the Internet of Things?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [iot, internet-of-things, embedded, connected-devices]
+
+  - id: pres-nyere-forskning
+    path: presentations/nyere-forskningsresultater.md
+    intent: "Hva sier nyere forskning om programvareutvikling og arkitektur?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [forskning, research, programvareutvikling, norsk]
+
+  - id: pres-neo4dogs
+    path: presentations/neo4dogs.md
+    intent: "How can graph databases be applied to real-world domain problems?"
+    scope: project
+    audience: [human, developer]
+    depends_on: [presentations-all]
+    triggers: [neo4j, graph-database, graph, domain-modeling]
+
+  - id: pres-kan-vi-skape-verdi
+    path: presentations/kan-vi-skape-verdi.md
+    intent: "Kan IT og arkitektur skape reell forretningsverdi?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [verdi, forretning, arkitektur, norsk, it-strategi]
+
+  - id: pres-agile-wine
+    path: presentations/agile-wine-2011.md
+    intent: "What does agile methodology have in common with wine-making — and what can each learn from the other?"
+    scope: project
+    audience: [human]
+    depends_on: [presentations-all]
+    triggers: [agile, wine, analogy, 2011, methodology]
+
+  - id: pres-cloud-psychology
+    path: presentations/cloud-psychology.md
+    intent: "What psychological and organizational factors drive (or block) cloud adoption?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [cloud, psychology, adoption, organizational-change]
+
+  - id: pres-robust-smidig
+    path: presentations/robust-smidig-utvikling.md
+    intent: "Hvordan bygger man robuste systemer med smidig utvikling?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [smidig, agile, robust, utvikling, norsk]
+
+  - id: pres-edr-mds-mdm
+    path: presentations/edr-mds-mdm.md
+    intent: "What are the patterns and trade-offs in enterprise data reference, master data, and MDM?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [mdm, master-data, edr, data-governance, reference-data]
+
+  - id: pres-laws-of-soa
+    path: presentations/laws-of-soa.md
+    intent: "What are the fundamental laws and constraints that govern service-oriented architecture?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [soa, service-oriented, laws, web-services, architecture]
+
+  - id: pres-design-time-governance
+    path: presentations/design-time-governance.md
+    intent: "How do you govern a SOA or microservices architecture at design time, before deployment?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [governance, soa, design-time, microservices, policy]
+
+  # ── Open source ──────────────────────────────────────────────────────────────
+
+  - id: open-source
+    path: open-source.md
+    intent: "What open source software has Thor built or contributed to?"
+    scope: global
+    audience: [human, agent, developer]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [open-source, github, synthesis, xorcery, whydah, cantara, exoreaction, mit, java]
+
+  # ── Notes and writing ────────────────────────────────────────────────────────
+
+  - id: linkedin-posts
+    path: notes/linkedin-posts.md
+    intent: "What has Thor written about on LinkedIn from late 2025 through early 2026?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    triggers: [linkedin, posts, writing, 2025, 2026, ai-development, sdd]
+
+  - id: architecture-vs-agile
+    path: notes/architecture-vs-agile.md
+    intent: "Is there a tension between software architecture and agile methods, and how is it resolved?"
+    scope: global
+    audience: [human, developer, architect]
+    triggers: [architecture, agile, xp, panel, methodology, tension, 2012]
+
+  - id: twitter-archive
+    path: notes/twitter-archive.md
+    intent: "What was Thor writing about on Twitter in the 2009 era?"
+    scope: global
+    audience: [human]
+    triggers: [twitter, archive, 2009, javatotto, historical]
+
+  # ── Interests ────────────────────────────────────────────────────────────────
+
+  - id: sci-fi-overview
+    path: interests/sci-fi/index.md
+    intent: "How many sci-fi books has Thor read, across which years, and in what genres?"
+    scope: global
+    audience: [human]
+    validated: 2026-02-25
+    triggers: [sci-fi, science-fiction, reading, books, kindle, space-opera, hard-sci-fi]
+
+  - id: sci-fi-2025
+    path: interests/sci-fi/books-2025.md
+    intent: "What science fiction did Thor read in 2025?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2025, reading, books, sci-fi]
+
+  - id: sci-fi-2024
+    path: interests/sci-fi/books-2024.md
+    intent: "What science fiction did Thor read in 2024?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2024, reading, books, sci-fi]
+
+  - id: sci-fi-2023
+    path: interests/sci-fi/books-2023.md
+    intent: "What science fiction did Thor read in 2023?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2023, reading, books, sci-fi]
+
+  - id: sci-fi-2022
+    path: interests/sci-fi/books-2022.md
+    intent: "What science fiction did Thor read in 2022?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2022, reading, books, sci-fi]
+
+  - id: sci-fi-2021
+    path: interests/sci-fi/books-2021.md
+    intent: "What science fiction did Thor read in 2021?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2021, reading, books, sci-fi]
+
+  - id: sci-fi-2020
+    path: interests/sci-fi/books-2020.md
+    intent: "What science fiction did Thor read in 2020?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2020, reading, books, sci-fi]
+
+  - id: sci-fi-2019
+    path: interests/sci-fi/books-2019.md
+    intent: "What science fiction did Thor read in 2019?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2019, reading, books, sci-fi]
+
+  - id: sci-fi-2018
+    path: interests/sci-fi/books-2018.md
+    intent: "What science fiction did Thor read in 2018?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2018, reading, books, sci-fi]
+
+  - id: sci-fi-2017
+    path: interests/sci-fi/books-2017.md
+    intent: "What science fiction did Thor read in 2017?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2017, reading, books, sci-fi]
+
+  - id: sci-fi-2016
+    path: interests/sci-fi/books-2016.md
+    intent: "What science fiction did Thor read in 2016?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2016, reading, books, sci-fi]
+
+  - id: sci-fi-2015
+    path: interests/sci-fi/books-2015.md
+    intent: "What science fiction did Thor read in 2015?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2015, reading, books, sci-fi]
+
+  - id: sci-fi-2014
+    path: interests/sci-fi/books-2014.md
+    intent: "What science fiction did Thor read in 2014?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2014, reading, books, sci-fi]
+
+  - id: sci-fi-2013
+    path: interests/sci-fi/books-2013.md
+    intent: "What science fiction did Thor read in 2013?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2013, reading, books, sci-fi]
+
+  - id: sci-fi-2012
+    path: interests/sci-fi/books-2012.md
+    intent: "What science fiction did Thor read in 2012?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2012, reading, books, sci-fi]
+
+  - id: sci-fi-2011
+    path: interests/sci-fi/books-2011.md
+    intent: "What science fiction did Thor read in 2011 — the first year of tracked reading?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2011, reading, books, sci-fi, first-year]
+
+  - id: food-and-wine
+    path: interests/food-and-wine.md
+    intent: "What Norwegian restaurants and wine experiences were notable to Thor circa 2007–2009?"
+    scope: global
+    audience: [human]
+    triggers: [food, wine, norway, restaurants, oslo, 2007, 2009]
+
+  - id: tools
+    path: interests/tools.md
+    intent: "What hardware and software tools did Thor use around 2010?"
+    scope: global
+    audience: [human]
+    triggers: [tools, hardware, software, 2010, setup, workflow, historical]
+
+  # ── AI / LLM discoverability ─────────────────────────────────────────────────
+
+  - id: llms-index
+    path: llms.txt
+    intent: "What is the canonical machine-readable entry point for AI agents navigating this site?"
+    scope: global
+    audience: [agent]
+    validated: 2026-02-25
+    triggers: [llms.txt, ai, agent, index, discovery, machine-readable]
+
+  - id: llms-full
+    path: llms-full.txt
+    intent: "Where is the complete machine-readable content of the wiki consolidated for LLM consumption?"
+    scope: global
+    audience: [agent]
+    validated: 2026-02-25
+    depends_on: [llms-index]
+    triggers: [llms-full, full-content, llm, agent, complete, machine-readable]
+
+relationships:
+  # Navigation and orientation
+  - from: llms-index
+    to: about
+    type: context
+
+  - from: llms-index
+    to: llms-full
+    type: enables
+
+  - from: home
+    to: about
+    type: enables
+
+  - from: about
+    to: cv-english
+    type: enables
+
+  - from: about
+    to: cv-norwegian
+    type: enables
+
+  - from: about
+    to: presentations-all
+    type: enables
+
+  - from: about
+    to: organizations
+    type: enables
+
+  - from: about
+    to: open-source
+    type: enables
+
+  - from: cv-english
+    to: open-source
+    type: context
+
+  - from: cv-english
+    to: projects
+    type: enables
+
+  - from: cv-english
+    to: organizations
+    type: context
+
+  # Presentations hierarchy
+  - from: presentations-all
+    to: pres-continuous-innovation
+    type: enables
+
+  - from: presentations-all
+    to: pres-thousands-releases
+    type: enables
+
+  - from: presentations-all
+    to: pres-best-practice-wtf
+    type: enables
+
+  - from: presentations-all
+    to: pres-fixing-the-problem
+    type: enables
+
+  - from: presentations-all
+    to: pres-internet-of-things
+    type: enables
+
+  - from: presentations-all
+    to: pres-nyere-forskning
+    type: enables
+
+  - from: presentations-all
+    to: pres-neo4dogs
+    type: enables
+
+  - from: presentations-all
+    to: pres-kan-vi-skape-verdi
+    type: enables
+
+  - from: presentations-all
+    to: pres-agile-wine
+    type: enables
+
+  - from: presentations-all
+    to: pres-cloud-psychology
+    type: enables
+
+  - from: presentations-all
+    to: pres-robust-smidig
+    type: enables
+
+  - from: presentations-all
+    to: pres-edr-mds-mdm
+    type: enables
+
+  - from: presentations-all
+    to: pres-laws-of-soa
+    type: enables
+
+  - from: presentations-all
+    to: pres-design-time-governance
+    type: enables
+
+  # Thematic relationships among presentations
+  - from: pres-continuous-innovation
+    to: pres-thousands-releases
+    type: context
+
+  - from: pres-laws-of-soa
+    to: pres-design-time-governance
+    type: enables
+
+  - from: pres-best-practice-wtf
+    to: architecture-vs-agile
+    type: context
+
+  - from: pres-robust-smidig
+    to: architecture-vs-agile
+    type: context
+
+  # Sci-fi reading
+  - from: sci-fi-overview
+    to: sci-fi-2025
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2024
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2023
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2022
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2021
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2020
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2019
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2018
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2017
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2016
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2015
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2014
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2013
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2012
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2011
+    type: enables
+
+  # Writing across channels
+  - from: linkedin-posts
+    to: about
+    type: context
+
+  - from: architecture-vs-agile
+    to: about
+    type: context
