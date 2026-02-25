@@ -83,3 +83,78 @@ Mark Wayne McGinnis
 
 USS BATTLESTRIKE (USS Hamilton Book 15)
 Mark Wayne McGinnis
+
+Into the Reckoning (Rise of the Republic Book 10)
+James Rosone
+
+The Wrong Game: The Eden Chronicles - Book Five
+S.M. Anderson
+
+The Ancient Pain: The Eden Chronicles - Book Six
+S.M. Anderson
+
+Bridgehead: The Eden Chronicles - Book Four
+S.M. Anderson
+
+New Shores: The Eden Chronicles - Book Three
+S.M. Anderson
+
+Come and Take It: The Eden Chronicles - Book Two
+S.M. Anderson
+
+A Bright Shore: The Eden Chronicles-Book One
+S.M. Anderson
+
+Into the Breach (Rise of the Republic Book 7)
+James Rosone
+
+Into the Uncertain (Rise of the Republic Book 9)
+James Rosone
+
+Stranded (Starship of the Ancients Book 1): A Space Opera Adventure
+—
+
+Into the Terror (Rise of the Republic Book 8)
+James Rosone
+
+Into the Calm (Rise of the Republic Book 6)
+James Rosone
+
+The Atlantis Equation (The Traveler Book 7)
+—
+
+Neanderthal Planet (The Traveler Book 5)
+—
+
+The Zero Stone (The Traveler Book 3)
+—
+
+The Science of Mu (The Traveler Book 6)
+—
+
+Galactic Marine (The Traveler Book 1)
+—
+
+Sleeper Ship (The Traveler Book 2)
+—
+
+The Pyramid of Mars (The Traveler Book 8)
+—
+
+The Institute (The Traveler Book 4)
+—
+
+Into the Inferno (Rise of the Republic Book 11)
+James Rosone
+
+The Third Artifact (The Artifact Book 3)
+D.R. Swan
+
+The Fourth Artifact (The Artifact Book 4)
+D.R. Swan
+
+The Second Artifact (The Artifact Book 2)
+D.R. Swan
+
+The Artifact
+D.R. Swan

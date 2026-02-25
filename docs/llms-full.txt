@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (27 posts).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (27 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -248,6 +248,31 @@ Java library for electronic components: MPN normalization, 17 similarity calcula
 
 **Nerthus / Visuale — Service Visualization**
 Real-time dashboards for visualizing microservice environments and service health.
+
+---
+
+## Sci-Fi Reading (wiki.totto.org/interests/sci-fi)
+
+583 books tracked across 15 years (2011–2025), pulled from Kindle order history. Mostly space opera, hard sci-fi, and military SF.
+
+### Stats by year
+
+2025: 53 · 2024: 37 · 2023: 46 · 2022: 22 · 2021: 42 · 2020: 29 · 2019: 35 · 2018: 32 · 2017: 12 · 2016: 33 · 2015: 33 · 2014: 66 · 2013: 57 · 2012: 78 · 2011: 8
+
+### Standouts
+
+- **Hyperion** and **Fall of Hyperion** by Dan Simmons — still the benchmark
+- **Blindsight** by Peter Watts — the most unsettling take on consciousness I've read
+- **Children of Time** by Adrian Tchaikovsky — evolution and alien minds done right
+- **The Three-Body Problem** by Cixin Liu — before it was everywhere
+- **Seveneves** by Neal Stephenson — brutal, brilliant, unforgettable
+- **Dark Matter** by Blake Crouch — perfect pacing, genuinely surprising
+- **Shards of Earth** by Adrian Tchaikovsky — the best space opera of the 2020s so far
+- **Wool** by Hugh Howey — indie sci-fi at its best
+- **The Forever War** by Joe Haldeman — timeless
+- **House of Suns** by Alastair Reynolds — galactic-scale and beautiful
+
+Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Heppner (A.I. series, Lost Starship), T.R. Harris (Human Chronicles), William Hertling (Singularity series), James Rosone (Rise of the Republic, Monroe Doctrine), Mark Wayne McGinnis (USS Hamilton), M.R. Forbes (The Convergence War).
 
 ---
 

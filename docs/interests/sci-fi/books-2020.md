@@ -29,3 +29,60 @@ Matt McCormick
 
 The Newton Code: A Mystery Thriller
 Liam Fialkov
+
+The Unicorn Project: A Novel about Developers, Digital Disruption, and Thriving in the Age of Data
+—
+
+The Last Monument
+—
+
+Anomaly
+—
+
+The Twin Paradox
+—
+
+Jane Bond: Moons of Jupiter: Humorous Science Fiction
+V.R. Tapscott
+
+To The Center Of The Earth
+—
+
+The Door: Science Fiction Mystery
+—
+
+First Encounter (Ascension Wars Book 1)
+Jasper T. Scott
+
+In Time For Revenge (A Standalone Sci-Fi Murder Mystery) (Scott Standalones)
+Jasper T. Scott
+
+Into the Unknown (A Standalone Mystery Thriller) (Scott Standalones)
+Jasper T. Scott
+
+Under Darkness (A Standalone Sci-Fi Thriller) (Scott Standalones)
+Jasper T. Scott
+
+Transporter (an Ell Donsaii story #16)
+Laurence Dahners
+
+Ruins of the Earth
+Christopher Hopper
+
+The Visitor: First Contact Hard Science Fiction
+—
+
+Prelude to Extinction: Xenophobia Series - Book 1
+Andreas Karpf
+
+A Pause in Space-Time (The Stasis Stories #1)
+Laurence Dahners
+
+A Door Into Time: An Alex Hawk Time Travel Adventure
+Shawn Inmon
+
+Station Eleven: A Novel (National Book Award Finalist)
+Emily St. John Mandel
+
+The Siberian Incident
+Greig Beck

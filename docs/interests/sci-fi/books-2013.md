@@ -155,3 +155,15 @@ Wray, Phoebe January 3, 2013
 
 Tau Ceti (an Ell Donsaii story #6)
 Dahners, Laurence January 1, 2013
+
+The Riss Gamble (The Riss Series Book 1)
+D. J. Butler
+
+The Riss Proposal (The Riss Series Book 2)
+D. J. Butler
+
+New Girl: A Lesbian Erotica Short Story
+—
+
+The Forever Gate: Books 1-5
+Isaac Hooke

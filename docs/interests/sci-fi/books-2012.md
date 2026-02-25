@@ -266,3 +266,30 @@ I love it
 69. Marooned in Realtime (Peace War)
 by Vernor Vinge
 I like it
+
+Admiral Who? (A Spineward Sectors Novel Book 1)
+Jake Elwood
+
+Different Sex (Erotica)
+—
+
+Rocket! (An Ell Donsaii story #4)
+Laurence Dahners
+
+Wool Omnibus Edition [Kindle in Motion] (Silo series Book 1)
+—
+
+Translight (Galactic Alliance Book 1)
+Doug Farren
+
+Lodestone Trilogy Sci Fi Adventure (Boxed Set): Aliens Space Opera
+Mark Whiteway
+
+Admiral's Gambit (A Spineward Sectors Novel Book 2)
+Jake Elwood
+
+Chroniech (Galactic Alliance Book 2)
+Doug Farren
+
+Honor Thy Enemy (Galactic Alliance Book 3)
+Doug Farren

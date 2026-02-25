@@ -23,3 +23,15 @@ Ray Hammond
 
 The Three-Body Problem
 Cixin Liu, Ken Liu
+
+The List Keepers (The Justar Journal Book 3)
+Brandt Legg
+
+Colony Two Mars: Fast Paced Scifi Thriller (Colony Mars Series Book 2)
+Gerald M. Kilby
+
+The Lost TreeRunner (The Justar Journal Book 2)
+Brandt Legg
+
+Infinity Born
+Douglas E. Richards

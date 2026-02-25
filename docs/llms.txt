@@ -12,6 +12,7 @@ Thor Henning Hetland — known as Totto — has been building software professio
 - [Organizations](https://wiki.totto.org/about/organizations/): Community and organizational leadership history
 - [Presentations](https://wiki.totto.org/about/presentations/): 70+ conference talks, workshops, and publications (2006–2023)
 - [Open Source](https://wiki.totto.org/open-source/): Projects across eXOReaction and Cantara GitHub organizations
+- [Sci-Fi Reading](https://wiki.totto.org/interests/sci-fi/): 583 books tracked across 15 years (2011–2025) — space opera, hard sci-fi, military SF
 
 ## Full Content (machine-readable)
 

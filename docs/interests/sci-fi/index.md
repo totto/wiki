@@ -2,43 +2,45 @@
 
 I read a lot of science fiction -- mostly space opera, hard sci-fi, and the occasional military SF binge. My Kindle is never empty and my to-read list never gets shorter.
 
-These are the books I've tracked from 2012 onwards, pulled from my Kindle order history. Some are great, some are forgettable, and a few completely changed how I think about technology and the future. The lists are unfiltered -- every book I finished that year, in roughly the order I read them.
+These are the books I've tracked from 2011 onwards, pulled from my Kindle order history. Some are great, some are forgettable, and a few completely changed how I think about technology and the future. The lists are unfiltered -- every book I finished that year, in roughly the order I read them.
 
 <div class="reading-stats" markdown>
-<span class="stat">2025: 28 books</span>
-<span class="stat">2024: 12 books</span>
-<span class="stat">2023: 21 books</span>
-<span class="stat">2022: 13 books</span>
-<span class="stat">2021: 14 books</span>
-<span class="stat">2020: 10 books</span>
-<span class="stat">2019: 9 books</span>
-<span class="stat">2018: 10 books</span>
-<span class="stat">2017: 8 books</span>
-<span class="stat">2016: 10 books</span>
+<span class="stat">2025: 53 books</span>
+<span class="stat">2024: 37 books</span>
+<span class="stat">2023: 46 books</span>
+<span class="stat">2022: 22 books</span>
+<span class="stat">2021: 42 books</span>
+<span class="stat">2020: 29 books</span>
+<span class="stat">2019: 35 books</span>
+<span class="stat">2018: 32 books</span>
+<span class="stat">2017: 12 books</span>
+<span class="stat">2016: 33 books</span>
 <span class="stat">2015: 33 books</span>
-<span class="stat">2014: 63 books</span>
-<span class="stat">2013: 53 books</span>
-<span class="stat">2012: 69 books</span>
+<span class="stat">2014: 66 books</span>
+<span class="stat">2013: 57 books</span>
+<span class="stat">2012: 78 books</span>
+<span class="stat">2011: 8 books</span>
 </div>
 
-**Total: 353 books across fourteen years.**
+**Total: 583 books across fifteen years.**
 
 ## By year
 
-- :material-book-open-variant: [2025 -- 28 books](books-2025.md) -- USS Hamilton series, The Convergence War, M.R. Forbes
-- :material-book-open-variant: [2024 -- 12 books](books-2024.md) -- Rise of the Republic, Starship's Mage, Taken to the Stars
-- :material-book-open-variant: [2023 -- 21 books](books-2023.md) -- The Final Architecture, LUX series, Taken to the Stars
-- :material-book-open-variant: [2022 -- 13 books](books-2022.md) -- Shards of Earth, Eversion, Natural Laws Apocalypse
-- :material-book-open-variant: [2021 -- 14 books](books-2021.md) -- Secrets of Mars, Ripple in Time, Joshua T. Calvert
-- :material-book-open-variant: [2020 -- 10 books](books-2020.md) -- Analog Novel series, Eliot Peper, Uncommon Stock
-- :material-book-open-variant: [2019 -- 9 books](books-2019.md) -- The Artifact Series, Sentinel Series, Laurence Dahners
-- :material-book-open-variant: [2018 -- 10 books](books-2018.md) -- Murderbot, Forgotten Colony, Peter Watts
-- :material-book-open-variant: [2017 -- 8 books](books-2017.md) -- Children of Time, Colony Mars, Hugh Howey
-- :material-book-open-variant: [2016 -- 10 books](books-2016.md) -- Seveneves, Dark Matter, Way Station
+- :material-book-open-variant: [2025 -- 53 books](books-2025.md) -- USS Hamilton series, The Convergence War, Rise of the Republic
+- :material-book-open-variant: [2024 -- 37 books](books-2024.md) -- Rise of the Republic, Starship's Mage, Dumb Luck and Dead Heroes
+- :material-book-open-variant: [2023 -- 46 books](books-2023.md) -- Aurora Cycle, Solar System series, Daemon, Project Hail Mary
+- :material-book-open-variant: [2022 -- 22 books](books-2022.md) -- Shards of Earth, The Fold, Yestertime, Signal series
+- :material-book-open-variant: [2021 -- 42 books](books-2021.md) -- Project Hail Mary, Stasis Stories, Earth Song, Kragdon-ah
+- :material-book-open-variant: [2020 -- 29 books](books-2020.md) -- Jasper T. Scott, Jane Bond, Stasis Stories, Laurence Dahners
+- :material-book-open-variant: [2019 -- 35 books](books-2019.md) -- A.I. Series, Singularity Series, Artifact Series, Laurence Dahners
+- :material-book-open-variant: [2018 -- 32 books](books-2018.md) -- Murderbot, Human Chronicles, Three-Body Problem, Revelation Space
+- :material-book-open-variant: [2017 -- 12 books](books-2017.md) -- Children of Time, Colony Mars, Justar Journal
+- :material-book-open-variant: [2016 -- 33 books](books-2016.md) -- Seveneves, Dark Matter, Lost Starship, Trader's Tales
 - :material-book-open-variant: [2015 -- 33 books](books-2015.md) -- The Three-Body Problem, Code Breakers series, Vaughn Heppner
-- :material-book-open-variant: [2014 -- 63 books](books-2014.md) -- Hyperion Cantos, Blindsight, Scrapyard Ship, Ark Royal
-- :material-book-open-variant: [2013 -- 53 books](books-2013.md) -- Hyperion, Koban series, Steel World, Dark Space
-- :material-book-open-variant: [2012 -- 69 books](books-2012.md) -- Wool, Ender's Game, The Forever War, House of Suns, Area 51 series
+- :material-book-open-variant: [2014 -- 66 books](books-2014.md) -- Hyperion Cantos, Blindsight, Scrapyard Ship, Ark Royal
+- :material-book-open-variant: [2013 -- 57 books](books-2013.md) -- Hyperion, Koban series, Steel World, Dark Space
+- :material-book-open-variant: [2012 -- 78 books](books-2012.md) -- Wool, Ender's Game, The Forever War, House of Suns, Area 51 series
+- :material-book-open-variant: [2011 -- 8 books](books-2011.md) -- House of Suns, Vernor Vinge, Rho Agenda
 
 ## Standouts
 

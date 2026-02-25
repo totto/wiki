@@ -215,3 +215,12 @@ Edward W. Robertson
 
 Breakthrough
 Michael C. Grumley
+
+Scrapyard Ship: Anniversary Edition (Scrapyard Ship series Book 1)
+Mark Wayne McGinnis
+
+Atlantis: A Dane Maddock Adventure (Dane Maddock Adventures Book 7)
+David Wood
+
+On The Imperium’s Secret Service (Imperium Cicernus Book 1)
+Christopher Nuttall
