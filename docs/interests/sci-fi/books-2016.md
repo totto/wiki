@@ -1,100 +1,199 @@
-# Books read 2016
+---
+hide:
+  - toc
+---
 
-Fortune's Folly (Outer Bounds Book 2)
-Sara King, Lance MacCarty
+<div class="year-header">
+<h1>Books read 2016</h1>
+<span class="year-meta"><strong>33</strong> books finished</span>
+</div>
 
-Arrival
-Ryk Brown
+<div class="book-grid">
 
-Dark Matter: A Novel
-Blake Crouch
+<div class="book-card">
+<span class="book-title">Fortune&#x27;s Folly</span>
+<span class="book-series">Outer Bounds Book 2</span>
+<span class="book-author">Sara King, Lance MacCarty</span>
+</div>
 
-The Jennifer Project
-Larry Enright
+<div class="book-card">
+<span class="book-title">Arrival</span>
+<span class="book-author">Ryk Brown</span>
+</div>
 
-Seveneves: A Novel
-Neal Stephenson
+<div class="book-card">
+<span class="book-title">Dark Matter: A Novel</span>
+<span class="book-author">Blake Crouch</span>
+</div>
 
-Vessel
-Andrew J. Morgan
+<div class="book-card">
+<span class="book-title">The Jennifer Project</span>
+<span class="book-author">Larry Enright</span>
+</div>
 
-Koban: Conflict and Empire
-Stephen W Bennett
+<div class="book-card">
+<span class="book-title">Seveneves: A Novel</span>
+<span class="book-author">Neal Stephenson</span>
+</div>
 
-Colony One Mars: Fast Paced Scifi Thriller (Colony Mars Series Book 1)
-Gerald M. Kilby
+<div class="book-card">
+<span class="book-title">Vessel</span>
+<span class="book-author">Andrew J. Morgan</span>
+</div>
 
-Way Station
-Clifford D. Simak
+<div class="book-card">
+<span class="book-title">Koban: Conflict and Empire</span>
+<span class="book-author">Stephen W Bennett</span>
+</div>
 
-The Last Librarian (The Justar Journal Book 1)
-Brandt Legg
+<div class="book-card">
+<span class="book-title">Colony One Mars: Fast Paced Scifi Thriller</span>
+<span class="book-series">Colony Mars Series Book 1</span>
+<span class="book-author">Gerald M. Kilby</span>
+</div>
 
-Game Changer
-Douglas E. Richards
+<div class="book-card">
+<span class="book-title">Way Station</span>
+<span class="book-author">Clifford D. Simak</span>
+</div>
 
-Cumulus
-Eliot Peper
+<div class="book-card">
+<span class="book-title">The Last Librarian</span>
+<span class="book-series">The Justar Journal Book 1</span>
+<span class="book-author">Brandt Legg</span>
+</div>
 
-Version Control: A Novel
-Dexter Palmer
+<div class="book-card">
+<span class="book-title">Game Changer</span>
+<span class="book-author">Douglas E. Richards</span>
+</div>
 
-Footfall
-Larry Niven
+<div class="book-card">
+<span class="book-title">Cumulus</span>
+<span class="book-author">Eliot Peper</span>
+</div>
 
-Oasis (The Last Humans Book 1)
-—
+<div class="book-card">
+<span class="book-title">Version Control: A Novel</span>
+<span class="book-author">Dexter Palmer</span>
+</div>
 
-Half Share (Trader's Tales from the Golden Age of the Solar Clipper Book 2)
-Nathan Lowell
+<div class="book-card">
+<span class="book-title">Footfall</span>
+<span class="book-author">Larry Niven</span>
+</div>
 
-Quarter Share (Trader's Tales from the Golden Age of the Solar Clipper Book 1)
-Nathan Lowell
+<div class="book-card">
+<span class="book-title">Oasis</span>
+<span class="book-series">The Last Humans Book 1</span>
+</div>
 
-Metal Boxes
-Alan Black
+<div class="book-card">
+<span class="book-title">Half Share</span>
+<span class="book-series">Trader&#x27;s Tales from the Golden Age of the Solar Clipper Book 2</span>
+<span class="book-author">Nathan Lowell</span>
+</div>
 
-Fringe Runner (Fringe Series Book 1)
-Rachel Aukes
+<div class="book-card">
+<span class="book-title">Quarter Share</span>
+<span class="book-series">Trader&#x27;s Tales from the Golden Age of the Solar Clipper Book 1</span>
+<span class="book-author">Nathan Lowell</span>
+</div>
 
-The Spaceship Next Door (Sorrow Falls Book 1)
-Gene Doucette
+<div class="book-card">
+<span class="book-title">Metal Boxes</span>
+<span class="book-author">Alan Black</span>
+</div>
 
-Fortune's Rising (Outer Bounds Book 1)
-Sara King
+<div class="book-card">
+<span class="book-title">Fringe Runner</span>
+<span class="book-series">Fringe Series Book 1</span>
+<span class="book-author">Rachel Aukes</span>
+</div>
 
-The Lost Command (Lost Starship Series Book 2)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">The Spaceship Next Door</span>
+<span class="book-series">Sorrow Falls Book 1</span>
+<span class="book-author">Gene Doucette</span>
+</div>
 
-The Lost Destroyer (Lost Starship Series Book 3)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">Fortune&#x27;s Rising</span>
+<span class="book-series">Outer Bounds Book 1</span>
+<span class="book-author">Sara King</span>
+</div>
 
-The Lost Starship (Lost Starship Series Book 1)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">The Lost Command</span>
+<span class="book-series">Lost Starship Series Book 2</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-Double Share (Trader's Tales from the Golden Age of the Solar Clipper Book 4)
-Nathan Lowell
+<div class="book-card">
+<span class="book-title">The Lost Destroyer</span>
+<span class="book-series">Lost Starship Series Book 3</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-Full Share (Trader's Tales from the Golden Age of the Solar Clipper Book 3)
-Nathan Lowell
+<div class="book-card">
+<span class="book-title">The Lost Starship</span>
+<span class="book-series">Lost Starship Series Book 1</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-Not Alone
-Craig A. Falconer
+<div class="book-card">
+<span class="book-title">Double Share</span>
+<span class="book-series">Trader&#x27;s Tales from the Golden Age of the Solar Clipper Book 4</span>
+<span class="book-author">Nathan Lowell</span>
+</div>
 
-DNA (an Ell Donsaii story #13)
-Laurence Dahners
+<div class="book-card">
+<span class="book-title">Full Share</span>
+<span class="book-series">Trader&#x27;s Tales from the Golden Age of the Solar Clipper Book 3</span>
+<span class="book-author">Nathan Lowell</span>
+</div>
 
-Captain's Share (Trader's Tales from the Golden Age of the Solar Clipper Book 5)
-Nathan Lowell
+<div class="book-card">
+<span class="book-title">Not Alone</span>
+<span class="book-author">Craig A. Falconer</span>
+</div>
 
-Artifact
-—
+<div class="book-card">
+<span class="book-title">DNA</span>
+<span class="book-series">an Ell Donsaii story #13</span>
+<span class="book-author">Laurence Dahners</span>
+</div>
 
-Owner's Share (Trader's Tales from the Golden Age of the Solar Clipper Book 6)
-Nathan Lowell
+<div class="book-card">
+<span class="book-title">Captain&#x27;s Share</span>
+<span class="book-series">Trader&#x27;s Tales from the Golden Age of the Solar Clipper Book 5</span>
+<span class="book-author">Nathan Lowell</span>
+</div>
 
-The Lost Colony (Lost Starship Series Book 4)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">Artifact</span>
+</div>
 
-ALICE Resurrection
-—
+<div class="book-card">
+<span class="book-title">Owner&#x27;s Share</span>
+<span class="book-series">Trader&#x27;s Tales from the Golden Age of the Solar Clipper Book 6</span>
+<span class="book-author">Nathan Lowell</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Lost Colony</span>
+<span class="book-series">Lost Starship Series Book 4</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">ALICE Resurrection</span>
+</div>
+
+</div>
+
+<div class="year-nav">
+<a href="../books-2015/">&larr; 2015</a>
+<a href="../">All years</a>
+<a href="../books-2017/">2017 &rarr;</a>
+</div>

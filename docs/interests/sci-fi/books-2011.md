@@ -1,25 +1,62 @@
-# Books read 2011
+---
+hide:
+  - toc
+---
 
-House of Suns
-Alastair Reynolds
+<div class="year-header">
+<h1>Books read 2011</h1>
+<span class="year-meta"><strong>8</strong> books finished</span>
+</div>
 
-The Children of the Sky (Zones of Thought series Book 3)
-Vernor Vinge
+<div class="book-grid">
 
-The Peace War
-Vernor Vinge
+<div class="book-card">
+<span class="book-title">House of Suns</span>
+<span class="book-author">Alastair Reynolds</span>
+</div>
 
-Area 51: The Reply
-Bob Mayer
+<div class="book-card">
+<span class="book-title">The Children of the Sky</span>
+<span class="book-series">Zones of Thought series Book 3</span>
+<span class="book-author">Vernor Vinge</span>
+</div>
 
-Vimana: A Science Fiction Thriller
-—
+<div class="book-card">
+<span class="book-title">The Peace War</span>
+<span class="book-author">Vernor Vinge</span>
+</div>
 
-Immune (The Rho Agenda : Book Two 2)
-Richard Phillips
+<div class="book-card">
+<span class="book-title">Area 51: The Reply</span>
+<span class="book-author">Bob Mayer</span>
+</div>
 
-Marooned in Realtime (Peace War Book 2)
-Vernor Vinge
+<div class="book-card">
+<span class="book-title">Vimana: A Science Fiction Thriller</span>
+</div>
 
-The Second Ship (The Rho Agenda : Book One)
-Richard Phillips
+<div class="book-card">
+<span class="book-title">Immune</span>
+<span class="book-series">The Rho Agenda : Book Two 2</span>
+<span class="book-author">Richard Phillips</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Marooned in Realtime</span>
+<span class="book-series">Peace War Book 2</span>
+<span class="book-author">Vernor Vinge</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Second Ship</span>
+<span class="book-series">The Rho Agenda : Book One</span>
+<span class="book-author">Richard Phillips</span>
+</div>
+
+</div>
+
+<div class="year-nav">
+<span></span>
+<a href="../">All years</a>
+<a href="../books-2012/">2012 &rarr;</a>
+</div>

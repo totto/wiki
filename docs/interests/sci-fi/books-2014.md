@@ -1,226 +1,389 @@
-# Sci-fi books read 2014
-
-Tides of Maritinia
-Warren Hammond
-December 14,2014
-
-The Great Space (Scrapyard Ship Book 6)
-Mark Wayne McGinnis
-December 13,2014
-
-Koban: Shattered Worlds
-Stephen W Bennett
-December 13,2014
-
-Veil of Shadows (Book 2 of The Empire of Bones Saga)
-Terry Mixon
-November 14,2014
-
-Critical Path (The Critical Series Book 2)
-Wearmouth and Barnes
-November 10,2014
-
-LEAP (Breakthrough Book 2)
-Michael C. Grumley
-November 2,2014
-
-Empire of Bones (Book 1 of The Empire of Bones Saga)
-Terry Mixon
-November 2,2014
-
-Critical Dawn (The Critical Series Book 1)
-Wearmouth and Barnes
-November 2,2014
-
-The Mothership
-Stephen Renneberg
-October 22,2014
-
-Craing Dominion (Scrapyard Ship Series Book 5)
-Mark Wayne McGinnis
-October 19,2014
-
-Impact! (an Ell Donsaii story #12)
-Laurence Dahners
-October 14,2014
-
-The Siren Project
-Stephen Renneberg
-October 8,2014
-
-The Antaran Codex (Mapped Space Book 1)
-Stephen Renneberg
-October 2,2014
-
-The Fountains of Paradise (Arthur C. Clarke Collection)
-Arthur C. Clarke
-September 8,2014
-
-The Specimen: A Novel of Horror
-Pete Kahle
-August 31,2014
-
-Echopraxia
-Peter Watts
-August 25,2014
-
-Blindsight (Firefall)
-Peter Watts
-August 23,2014
-
-Resolute Victory (The War for Terra Book 4)
-James Prosser
-August 13,2014
-
-A World Without Secrets (Colton James novels Book 1)
-Thomas DePrima
-
-Their Darkest Hour
-Christopher Nuttall
-
-Realms of Time (Scrapyard Ship Book 4)
-Mark Wayne McGinnis
-
-Telekinetic (a Hyllis family story #1)
-Laurence Dahners
-
-The Black Guard
-C. R. Daems
-
-Recruit (The United Federation Marine Corps Book 1)
-Jonathan P. Brazee
-
-KRONOS RISING: After 65 million years, the world's greatest..
-Max Hawthorne
-
-On The Imperium's Secret Service (Imperium Cicernus Book 1)
-Christopher Nuttall
-
-War To The Knife (Laredo War Trilogy Book 1)
-Peter Grant
-
-Yorktown: Katana Krieger #1
-Bill Robinson
-
-The Synchronicity War Part 4
-Dietmar Wehr
-
-Flash Move (The Torian Reclamation Book 2)
-Andy Kasch
-
-Test of Magnitude (The Torian Reclamation Book 1)
-Andy Kasch
-
-Derelict
-LJ Cohen
-
-Fluency
-Jennifer Foehner Wells
-
-Orbital Envy (Regan's Reach Book 2)
-Mark G Brewer
-
-Rescue (an Ell Donsaii story #11)
-Laurence Dahners
-
-Wanted (an Ell Donsaii story #10)
-Laurence Dahners
-
-Regan's Reach
-Mark G Brewer
-
-Renegades: Deserter's Redemption: Book I of The Renegades
-Kal Spriggs
-
-Last Stand of the Legion: Rift (Blood War Book 1)
-Rod Carstens
-
-The Fallen Race (The Shadow Space Chronicles Book 1)
-Kal Spriggs
-
-Star One: Tycho City Survival
-Raymond L. Weil
-
-Star One: Dark Star
-Raymond L. Weil
-
-Star One: Neutron Star
-Raymond L. Weil
-
-Galactic Empire Wars: Destruction (The Galactic Empire Wars..
-Raymond L. Weil
-
-Starshine: Aurora Rising Book One
-G. S. Jennsen
-
-The Terran Gambit (Episode #1: The Pax Humana Saga)
-Endi Webb
-
-Space Vengeance (Scrapyard Ship Book 3)
-Mark Wayne McGinnis
-
-HAB 12 (Scrapyard Ship)
-Mark Wayne McGinnis
-
-Rise of Endymion (Hyperion Cantos Book 4)
-Dan Simmons
-
-Endymion (Hyperion Cantos Book 3)
-Dan Simmons
-
-Atlantis- A Dane Maddock Adventure (Dane Maddock Adventures..
-David Wood
-
-Lost Valley: The Escape (Part 3)
-J.T. Cross
-
-Lost Valley: The Hunted (Part 2)
-J.T. Cross
-
-Lost Valley: The Discovery (Part 1)
-J.T. Cross
-
-Beneath the Deep
-J.T. Cross
-
-The Battle of Titan (Shaitan Wars Book 1)
-Sudipto Majumdar
-
-The Synchronicity War Part 3
-Dietmar Wehr
-
-A Learning Experience
-Christopher Nuttall
-
-Resolute Uprising (The War for Terra Book 3)
-James Prosser
-
-The Mystic Saga Omnibus (Books 1 - 5)
-Scott McElhaney
-
-Ark Royal
-Christopher Nuttall
-
-Koban: Rise of the Kobani
-Stephen W Bennett
-
-The Synchronicity War Part 2
-Dietmar Wehr
-
-The Synchronicity War Part 1
-Dietmar Wehr
-
-The Cutting Room: A Time Travel Thriller
-Edward W. Robertson
-
-Breakthrough
-Michael C. Grumley
-
-Scrapyard Ship: Anniversary Edition (Scrapyard Ship series Book 1)
-Mark Wayne McGinnis
-
-Atlantis: A Dane Maddock Adventure (Dane Maddock Adventures Book 7)
-David Wood
-
-On The Imperium’s Secret Service (Imperium Cicernus Book 1)
-Christopher Nuttall
+---
+hide:
+  - toc
+---
+
+<div class="year-header">
+<h1>Books read 2014</h1>
+<span class="year-meta"><strong>67</strong> books finished</span>
+</div>
+
+<div class="book-grid">
+
+<div class="book-card">
+<span class="book-title">Tides of Maritinia</span>
+<span class="book-author">Warren Hammond</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Great Space</span>
+<span class="book-series">Scrapyard Ship Book 6</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Koban: Shattered Worlds</span>
+<span class="book-author">Stephen W Bennett</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Veil of Shadows</span>
+<span class="book-series">Book 2 of The Empire of Bones Saga</span>
+<span class="book-author">Terry Mixon</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Critical Path</span>
+<span class="book-series">The Critical Series Book 2</span>
+<span class="book-author">Wearmouth and Barnes</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">LEAP</span>
+<span class="book-series">Breakthrough Book 2</span>
+<span class="book-author">Michael C. Grumley</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Empire of Bones</span>
+<span class="book-series">Book 1 of The Empire of Bones Saga</span>
+<span class="book-author">Terry Mixon</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Critical Dawn</span>
+<span class="book-series">The Critical Series Book 1</span>
+<span class="book-author">Wearmouth and Barnes</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Mothership</span>
+<span class="book-author">Stephen Renneberg</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Craing Dominion</span>
+<span class="book-series">Scrapyard Ship Series Book 5</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Impact!</span>
+<span class="book-series">an Ell Donsaii story #12</span>
+<span class="book-author">Laurence Dahners</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Siren Project</span>
+<span class="book-author">Stephen Renneberg</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Antaran Codex</span>
+<span class="book-series">Mapped Space Book 1</span>
+<span class="book-author">Stephen Renneberg</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Fountains of Paradise</span>
+<span class="book-series">Arthur C. Clarke Collection</span>
+<span class="book-author">Arthur C. Clarke</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Specimen: A Novel of Horror</span>
+<span class="book-author">Pete Kahle</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Echopraxia</span>
+<span class="book-author">Peter Watts</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Blindsight (Firefall)</span>
+<span class="book-author">Peter Watts</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Resolute Victory</span>
+<span class="book-series">The War for Terra Book 4</span>
+<span class="book-author">James Prosser</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">A World Without Secrets</span>
+<span class="book-series">Colton James novels Book 1</span>
+<span class="book-author">Thomas DePrima</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Their Darkest Hour</span>
+<span class="book-author">Christopher Nuttall</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Realms of Time</span>
+<span class="book-series">Scrapyard Ship Book 4</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Telekinetic</span>
+<span class="book-series">a Hyllis family story #1</span>
+<span class="book-author">Laurence Dahners</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Black Guard</span>
+<span class="book-author">C. R. Daems</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Recruit</span>
+<span class="book-series">The United Federation Marine Corps Book 1</span>
+<span class="book-author">Jonathan P. Brazee</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">KRONOS RISING: After 65 million years, the world&#x27;s greatest..</span>
+<span class="book-author">Max Hawthorne</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">On The Imperium&#x27;s Secret Service</span>
+<span class="book-series">Imperium Cicernus Book 1</span>
+<span class="book-author">Christopher Nuttall</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">War To The Knife</span>
+<span class="book-series">Laredo War Trilogy Book 1</span>
+<span class="book-author">Peter Grant</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Yorktown: Katana Krieger #1</span>
+<span class="book-author">Bill Robinson</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Synchronicity War Part 4</span>
+<span class="book-author">Dietmar Wehr</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Flash Move</span>
+<span class="book-series">The Torian Reclamation Book 2</span>
+<span class="book-author">Andy Kasch</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Test of Magnitude</span>
+<span class="book-series">The Torian Reclamation Book 1</span>
+<span class="book-author">Andy Kasch</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Derelict</span>
+<span class="book-author">LJ Cohen</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Fluency</span>
+<span class="book-author">Jennifer Foehner Wells</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Orbital Envy</span>
+<span class="book-series">Regan&#x27;s Reach Book 2</span>
+<span class="book-author">Mark G Brewer</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Rescue</span>
+<span class="book-series">an Ell Donsaii story #11</span>
+<span class="book-author">Laurence Dahners</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Wanted</span>
+<span class="book-series">an Ell Donsaii story #10</span>
+<span class="book-author">Laurence Dahners</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Regan&#x27;s Reach</span>
+<span class="book-author">Mark G Brewer</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Renegades: Deserter&#x27;s Redemption: Book I of The Renegades</span>
+<span class="book-author">Kal Spriggs</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Last Stand of the Legion: Rift</span>
+<span class="book-series">Blood War Book 1</span>
+<span class="book-author">Rod Carstens</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Fallen Race</span>
+<span class="book-series">The Shadow Space Chronicles Book 1</span>
+<span class="book-author">Kal Spriggs</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Star One: Tycho City Survival</span>
+<span class="book-author">Raymond L. Weil</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Star One: Dark Star</span>
+<span class="book-author">Raymond L. Weil</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Star One: Neutron Star</span>
+<span class="book-author">Raymond L. Weil</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Galactic Empire Wars: Destruction (The Galactic Empire Wars..</span>
+<span class="book-author">Raymond L. Weil</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Starshine: Aurora Rising Book One</span>
+<span class="book-author">G. S. Jennsen</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Terran Gambit</span>
+<span class="book-series">Episode #1: The Pax Humana Saga</span>
+<span class="book-author">Endi Webb</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Space Vengeance</span>
+<span class="book-series">Scrapyard Ship Book 3</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">HAB 12 (Scrapyard Ship)</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Rise of Endymion</span>
+<span class="book-series">Hyperion Cantos Book 4</span>
+<span class="book-author">Dan Simmons</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Endymion</span>
+<span class="book-series">Hyperion Cantos Book 3</span>
+<span class="book-author">Dan Simmons</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Atlantis- A Dane Maddock Adventure (Dane Maddock Adventures..</span>
+<span class="book-author">David Wood</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Lost Valley: The Escape</span>
+<span class="book-series">Part 3</span>
+<span class="book-author">J.T. Cross</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Lost Valley: The Hunted</span>
+<span class="book-series">Part 2</span>
+<span class="book-author">J.T. Cross</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Lost Valley: The Discovery</span>
+<span class="book-series">Part 1</span>
+<span class="book-author">J.T. Cross</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Beneath the Deep</span>
+<span class="book-author">J.T. Cross</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Battle of Titan</span>
+<span class="book-series">Shaitan Wars Book 1</span>
+<span class="book-author">Sudipto Majumdar</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Synchronicity War Part 3</span>
+<span class="book-author">Dietmar Wehr</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">A Learning Experience</span>
+<span class="book-author">Christopher Nuttall</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Resolute Uprising</span>
+<span class="book-series">The War for Terra Book 3</span>
+<span class="book-author">James Prosser</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Mystic Saga Omnibus</span>
+<span class="book-series">Books 1 - 5</span>
+<span class="book-author">Scott McElhaney</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Ark Royal</span>
+<span class="book-author">Christopher Nuttall</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Koban: Rise of the Kobani</span>
+<span class="book-author">Stephen W Bennett</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Synchronicity War Part 2</span>
+<span class="book-author">Dietmar Wehr</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Synchronicity War Part 1</span>
+<span class="book-author">Dietmar Wehr</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Cutting Room: A Time Travel Thriller</span>
+<span class="book-author">Edward W. Robertson</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Breakthrough</span>
+<span class="book-author">Michael C. Grumley</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">Scrapyard Ship: Anniversary Edition</span>
+<span class="book-series">Scrapyard Ship series Book 1</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
+
+</div>
+
+<div class="year-nav">
+<a href="../books-2013/">&larr; 2013</a>
+<a href="../">All years</a>
+<a href="../books-2015/">2015 &rarr;</a>
+</div>

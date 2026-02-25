@@ -1,160 +1,323 @@
-# Books read 2025
+---
+hide:
+  - toc
+---
 
-Monroe Doctrine: Volume IV
-James Rosone, Alex Aaronson
+<div class="year-header">
+<h1>Books read 2025</h1>
+<span class="year-meta"><strong>53</strong> books finished</span>
+</div>
 
-SUBMERGED: A hacker thriller (West William Wilder Book 2)
-John Wilander
+<div class="book-grid">
 
-Wraith (The Convergence War Book 1)
-M.R. Forbes
+<div class="book-card">
+<span class="book-title">Monroe Doctrine: Volume IV</span>
+<span class="book-author">James Rosone, Alex Aaronson</span>
+</div>
 
-The Unknown (The Convergence War Book 2)
-M.R. Forbes
+<div class="book-card">
+<span class="book-title">SUBMERGED: A hacker thriller</span>
+<span class="book-series">West William Wilder Book 2</span>
+<span class="book-author">John Wilander</span>
+</div>
 
-The Eye (The Convergence War Book 3)
-M.R. Forbes
+<div class="book-card">
+<span class="book-title">Wraith</span>
+<span class="book-series">The Convergence War Book 1</span>
+<span class="book-author">M.R. Forbes</span>
+</div>
 
-The Fist (The Convergence War Book 4)
-M.R. Forbes
+<div class="book-card">
+<span class="book-title">The Unknown</span>
+<span class="book-series">The Convergence War Book 2</span>
+<span class="book-author">M.R. Forbes</span>
+</div>
 
-Convergence (The Convergence War Book 5)
-M.R. Forbes
+<div class="book-card">
+<span class="book-title">The Eye</span>
+<span class="book-series">The Convergence War Book 3</span>
+<span class="book-author">M.R. Forbes</span>
+</div>
 
-Killer Instinct (Tom Walker Book 1)
-Bradley Wright
+<div class="book-card">
+<span class="book-title">The Fist</span>
+<span class="book-series">The Convergence War Book 4</span>
+<span class="book-author">M.R. Forbes</span>
+</div>
 
-Holy Water (Tom Walker Book 2)
-Bradley Wright
+<div class="book-card">
+<span class="book-title">Convergence</span>
+<span class="book-series">The Convergence War Book 5</span>
+<span class="book-author">M.R. Forbes</span>
+</div>
 
-Blind Pass (Tom Walker Book 3)
-Bradley Wright
+<div class="book-card">
+<span class="book-title">Killer Instinct</span>
+<span class="book-series">Tom Walker Book 1</span>
+<span class="book-author">Bradley Wright</span>
+</div>
 
-Deliverance (Tom Walker Book 4)
-Bradley Wright
+<div class="book-card">
+<span class="book-title">Holy Water</span>
+<span class="book-series">Tom Walker Book 2</span>
+<span class="book-author">Bradley Wright</span>
+</div>
 
-The Wrong Man (Tom Walker Book 5)
-Bradley Wright
+<div class="book-card">
+<span class="book-title">Blind Pass</span>
+<span class="book-series">Tom Walker Book 3</span>
+<span class="book-author">Bradley Wright</span>
+</div>
 
-The Receiver: A Hard Sci-Fi First Contact Techno-Thriller
-Seth Jaffe
+<div class="book-card">
+<span class="book-title">Deliverance</span>
+<span class="book-series">Tom Walker Book 4</span>
+<span class="book-author">Bradley Wright</span>
+</div>
 
-USS Hamilton: Ironhold Station
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">The Wrong Man</span>
+<span class="book-series">Tom Walker Book 5</span>
+<span class="book-author">Bradley Wright</span>
+</div>
 
-USS Hamilton: Miasma Burn
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">The Receiver: A Hard Sci-Fi First Contact Techno-Thriller</span>
+<span class="book-author">Seth Jaffe</span>
+</div>
 
-USS Hamilton: Broadsides
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Hamilton: Ironhold Station</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS Jefferson: Charge of the Symbios (USS Hamilton Book 4)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Hamilton: Miasma Burn</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-Starship Oblivion: Sanctuary Outpost (USS Hamilton Book 5)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Hamilton: Broadsides</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS Adams: No Escape (USS Hamilton Book 6)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Jefferson: Charge of the Symbios</span>
+<span class="book-series">USS Hamilton Book 4</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS Lincoln: Mercy Kill (USS Hamilton Book 7)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">Starship Oblivion: Sanctuary Outpost</span>
+<span class="book-series">USS Hamilton Book 5</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS Franklin: When Worlds Collide (USS Hamilton Book 8)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Adams: No Escape</span>
+<span class="book-series">USS Hamilton Book 6</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS Washington: The Black Ship (USS Hamilton Book 9)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Lincoln: Mercy Kill</span>
+<span class="book-series">USS Hamilton Book 7</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS IKE: Quansport Ops (USS Hamilton Book 10)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Franklin: When Worlds Collide</span>
+<span class="book-series">USS Hamilton Book 8</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS Resilience: Honor the Fallen (USS Hamilton Book 11)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Washington: The Black Ship</span>
+<span class="book-series">USS Hamilton Book 9</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS Freedom: Hydromass (USS Hamilton Book 12)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS IKE: Quansport Ops</span>
+<span class="book-series">USS Hamilton Book 10</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS Ironfist (USS Hamilton Book 13)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Resilience: Honor the Fallen</span>
+<span class="book-series">USS Hamilton Book 11</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS Rebellion: Varnathi Territory (USS Hamilton Book 14)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Freedom: Hydromass</span>
+<span class="book-series">USS Hamilton Book 12</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-USS BATTLESTRIKE (USS Hamilton Book 15)
-Mark Wayne McGinnis
+<div class="book-card">
+<span class="book-title">USS Ironfist</span>
+<span class="book-series">USS Hamilton Book 13</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-Into the Reckoning (Rise of the Republic Book 10)
-James Rosone
+<div class="book-card">
+<span class="book-title">USS Rebellion: Varnathi Territory</span>
+<span class="book-series">USS Hamilton Book 14</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-The Wrong Game: The Eden Chronicles - Book Five
-S.M. Anderson
+<div class="book-card">
+<span class="book-title">USS BATTLESTRIKE</span>
+<span class="book-series">USS Hamilton Book 15</span>
+<span class="book-author">Mark Wayne McGinnis</span>
+</div>
 
-The Ancient Pain: The Eden Chronicles - Book Six
-S.M. Anderson
+<div class="book-card">
+<span class="book-title">Into the Reckoning</span>
+<span class="book-series">Rise of the Republic Book 10</span>
+<span class="book-author">James Rosone</span>
+</div>
 
-Bridgehead: The Eden Chronicles - Book Four
-S.M. Anderson
+<div class="book-card">
+<span class="book-title">The Wrong Game: The Eden Chronicles - Book Five</span>
+<span class="book-author">S.M. Anderson</span>
+</div>
 
-New Shores: The Eden Chronicles - Book Three
-S.M. Anderson
+<div class="book-card">
+<span class="book-title">The Ancient Pain: The Eden Chronicles - Book Six</span>
+<span class="book-author">S.M. Anderson</span>
+</div>
 
-Come and Take It: The Eden Chronicles - Book Two
-S.M. Anderson
+<div class="book-card">
+<span class="book-title">Bridgehead: The Eden Chronicles - Book Four</span>
+<span class="book-author">S.M. Anderson</span>
+</div>
 
-A Bright Shore: The Eden Chronicles-Book One
-S.M. Anderson
+<div class="book-card">
+<span class="book-title">New Shores: The Eden Chronicles - Book Three</span>
+<span class="book-author">S.M. Anderson</span>
+</div>
 
-Into the Breach (Rise of the Republic Book 7)
-James Rosone
+<div class="book-card">
+<span class="book-title">Come and Take It: The Eden Chronicles - Book Two</span>
+<span class="book-author">S.M. Anderson</span>
+</div>
 
-Into the Uncertain (Rise of the Republic Book 9)
-James Rosone
+<div class="book-card">
+<span class="book-title">A Bright Shore: The Eden Chronicles-Book One</span>
+<span class="book-author">S.M. Anderson</span>
+</div>
 
-Stranded (Starship of the Ancients Book 1): A Space Opera Adventure
-—
+<div class="book-card">
+<span class="book-title">Into the Breach</span>
+<span class="book-series">Rise of the Republic Book 7</span>
+<span class="book-author">James Rosone</span>
+</div>
 
-Into the Terror (Rise of the Republic Book 8)
-James Rosone
+<div class="book-card">
+<span class="book-title">Into the Uncertain</span>
+<span class="book-series">Rise of the Republic Book 9</span>
+<span class="book-author">James Rosone</span>
+</div>
 
-Into the Calm (Rise of the Republic Book 6)
-James Rosone
+<div class="book-card">
+<span class="book-title">Stranded (Starship of the Ancients Book 1): A Space Opera Adventure</span>
+</div>
 
-The Atlantis Equation (The Traveler Book 7)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">Into the Terror</span>
+<span class="book-series">Rise of the Republic Book 8</span>
+<span class="book-author">James Rosone</span>
+</div>
 
-Neanderthal Planet (The Traveler Book 5)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">Into the Calm</span>
+<span class="book-series">Rise of the Republic Book 6</span>
+<span class="book-author">James Rosone</span>
+</div>
 
-The Zero Stone (The Traveler Book 3)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">The Atlantis Equation</span>
+<span class="book-series">The Traveler Book 7</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-The Science of Mu (The Traveler Book 6)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">Neanderthal Planet</span>
+<span class="book-series">The Traveler Book 5</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-Galactic Marine (The Traveler Book 1)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">The Zero Stone</span>
+<span class="book-series">The Traveler Book 3</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-Sleeper Ship (The Traveler Book 2)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">The Science of Mu</span>
+<span class="book-series">The Traveler Book 6</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-The Pyramid of Mars (The Traveler Book 8)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">Galactic Marine</span>
+<span class="book-series">The Traveler Book 1</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-The Institute (The Traveler Book 4)
-Vaughn Heppner
+<div class="book-card">
+<span class="book-title">Sleeper Ship</span>
+<span class="book-series">The Traveler Book 2</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-Into the Inferno (Rise of the Republic Book 11)
-James Rosone
+<div class="book-card">
+<span class="book-title">The Pyramid of Mars</span>
+<span class="book-series">The Traveler Book 8</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-The Third Artifact (The Artifact Book 3)
-D.R. Swan
+<div class="book-card">
+<span class="book-title">The Institute</span>
+<span class="book-series">The Traveler Book 4</span>
+<span class="book-author">Vaughn Heppner</span>
+</div>
 
-The Fourth Artifact (The Artifact Book 4)
-D.R. Swan
+<div class="book-card">
+<span class="book-title">Into the Inferno</span>
+<span class="book-series">Rise of the Republic Book 11</span>
+<span class="book-author">James Rosone</span>
+</div>
 
-The Second Artifact (The Artifact Book 2)
-D.R. Swan
+<div class="book-card">
+<span class="book-title">The Third Artifact</span>
+<span class="book-series">The Artifact Book 3</span>
+<span class="book-author">D.R. Swan</span>
+</div>
 
-The Artifact
-D.R. Swan
+<div class="book-card">
+<span class="book-title">The Fourth Artifact</span>
+<span class="book-series">The Artifact Book 4</span>
+<span class="book-author">D.R. Swan</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Second Artifact</span>
+<span class="book-series">The Artifact Book 2</span>
+<span class="book-author">D.R. Swan</span>
+</div>
+
+<div class="book-card">
+<span class="book-title">The Artifact</span>
+<span class="book-author">D.R. Swan</span>
+</div>
+
+</div>
+
+<div class="year-nav">
+<a href="../books-2024/">&larr; 2024</a>
+<a href="../">All years</a>
+<span></span>
+</div>
