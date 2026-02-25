@@ -15,22 +15,22 @@ hide:
 
 </div>
 
-<div class="reading-stats" markdown>
-<span class="stat"><span class="stat-year">2025</span><span class="stat-count">53 books</span></span>
-<span class="stat"><span class="stat-year">2024</span><span class="stat-count">37 books</span></span>
-<span class="stat"><span class="stat-year">2023</span><span class="stat-count">46 books</span></span>
-<span class="stat"><span class="stat-year">2022</span><span class="stat-count">22 books</span></span>
-<span class="stat"><span class="stat-year">2021</span><span class="stat-count">42 books</span></span>
-<span class="stat"><span class="stat-year">2020</span><span class="stat-count">29 books</span></span>
-<span class="stat"><span class="stat-year">2019</span><span class="stat-count">35 books</span></span>
-<span class="stat"><span class="stat-year">2018</span><span class="stat-count">32 books</span></span>
-<span class="stat"><span class="stat-year">2017</span><span class="stat-count">12 books</span></span>
-<span class="stat"><span class="stat-year">2016</span><span class="stat-count">33 books</span></span>
-<span class="stat"><span class="stat-year">2015</span><span class="stat-count">33 books</span></span>
-<span class="stat"><span class="stat-year">2014</span><span class="stat-count">66 books</span></span>
-<span class="stat"><span class="stat-year">2013</span><span class="stat-count">57 books</span></span>
-<span class="stat"><span class="stat-year">2012</span><span class="stat-count">78 books</span></span>
-<span class="stat"><span class="stat-year">2011</span><span class="stat-count">8 books</span></span>
+<div class="reading-stats">
+<div class="stat"><span class="stat-year">2025</span><span class="stat-count">53 books</span></div>
+<div class="stat"><span class="stat-year">2024</span><span class="stat-count">37 books</span></div>
+<div class="stat"><span class="stat-year">2023</span><span class="stat-count">46 books</span></div>
+<div class="stat"><span class="stat-year">2022</span><span class="stat-count">22 books</span></div>
+<div class="stat"><span class="stat-year">2021</span><span class="stat-count">42 books</span></div>
+<div class="stat"><span class="stat-year">2020</span><span class="stat-count">29 books</span></div>
+<div class="stat"><span class="stat-year">2019</span><span class="stat-count">35 books</span></div>
+<div class="stat"><span class="stat-year">2018</span><span class="stat-count">32 books</span></div>
+<div class="stat"><span class="stat-year">2017</span><span class="stat-count">12 books</span></div>
+<div class="stat"><span class="stat-year">2016</span><span class="stat-count">33 books</span></div>
+<div class="stat"><span class="stat-year">2015</span><span class="stat-count">33 books</span></div>
+<div class="stat"><span class="stat-year">2014</span><span class="stat-count">66 books</span></div>
+<div class="stat"><span class="stat-year">2013</span><span class="stat-count">57 books</span></div>
+<div class="stat"><span class="stat-year">2012</span><span class="stat-count">78 books</span></div>
+<div class="stat"><span class="stat-year">2011</span><span class="stat-count">8 books</span></div>
 </div>
 
 ## Standouts
