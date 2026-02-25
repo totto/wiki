@@ -121,28 +121,28 @@ Into the Calm (Rise of the Republic Book 6)
 James Rosone
 
 The Atlantis Equation (The Traveler Book 7)
-—
+Vaughn Heppner
 
 Neanderthal Planet (The Traveler Book 5)
-—
+Vaughn Heppner
 
 The Zero Stone (The Traveler Book 3)
-—
+Vaughn Heppner
 
 The Science of Mu (The Traveler Book 6)
-—
+Vaughn Heppner
 
 Galactic Marine (The Traveler Book 1)
-—
+Vaughn Heppner
 
 Sleeper Ship (The Traveler Book 2)
-—
+Vaughn Heppner
 
 The Pyramid of Mars (The Traveler Book 8)
-—
+Vaughn Heppner
 
 The Institute (The Traveler Book 4)
-—
+Vaughn Heppner
 
 Into the Inferno (Rise of the Republic Book 11)
 James Rosone

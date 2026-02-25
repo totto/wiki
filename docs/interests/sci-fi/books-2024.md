@@ -37,7 +37,7 @@ Into the Fire (Rise of the Republic Book 5)
 James Rosone, TC Manning, Tom Edwards
 
 My Homemade Spaceship 8
-—
+Douglas Michaels
 
 The Worst Rescuers in the Republic (Dumb Luck and Dead Heroes Book 4)
 Skyler Ramirez
@@ -52,7 +52,7 @@ The Worst Pirate Hunters in the Fringe (Dumb Luck and Dead Heroes Book 3)
 Skyler Ramirez
 
 My Homemade Spaceship
-—
+Douglas Michaels
 
 Cosmic Crossroads: Inheriting A Space Station
 C. Greenwood
@@ -91,22 +91,22 @@ The Object: Hard Science Fiction
 —
 
 My Homemade Spaceship 7
-—
+Douglas Michaels
 
 My Homemade Spaceship 4
-—
+Douglas Michaels
 
 My Homemade Spaceship 2
-—
+Douglas Michaels
 
 My Homemade Spaceship 6
-—
+Douglas Michaels
 
 My Homemade Spaceship 3
-—
+Douglas Michaels
 
 My Homemade Spaceship 5
-—
+Douglas Michaels
 
 Spectral Prey (Sunken Spaceship Book 4)
 R.M. Clark

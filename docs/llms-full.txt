@@ -272,7 +272,7 @@ Real-time dashboards for visualizing microservice environments and service healt
 - **The Forever War** by Joe Haldeman — timeless
 - **House of Suns** by Alastair Reynolds — galactic-scale and beautiful
 
-Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Heppner (A.I. series, Lost Starship), T.R. Harris (Human Chronicles), William Hertling (Singularity series), James Rosone (Rise of the Republic, Monroe Doctrine), Mark Wayne McGinnis (USS Hamilton), M.R. Forbes (The Convergence War).
+Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Heppner (A.I. series, Lost Starship, The Traveler), T.R. Harris (Human Chronicles), William Hertling (Singularity series), James Rosone (Rise of the Republic, Monroe Doctrine), Mark Wayne McGinnis (USS Hamilton), M.R. Forbes (The Convergence War), Douglas Michaels (My Homemade Spaceship).
 
 ---
 
