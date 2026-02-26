@@ -31,6 +31,8 @@ That result was uncomfortable enough that we measured it three more ways to make
 
 This post is about what we learned from a six-condition benchmark on 9 codebase navigation tasks — why CLI documentation backfired, why MCP tools helped, and why a single line of text in the system prompt turned out to be the most effective intervention of all.
 
+![MCP vs CLI: Optimizing AI Agent Codebase Navigation — benchmark results across 6 conditions](/assets/images/blog/mcp-vs-cli-efficiency-leaderboard.png)
+
 ## The setup
 
 We run [Synthesis](https://github.com/exoreaction/Synthesis), an open-source knowledge infrastructure tool that indexes codebases and makes them queryable in under a second. Synthesis exposes 41 tools via MCP and also ships CLI commands like `synthesis search`, `synthesis relate`, `synthesis graph`. The question we wanted to answer: which way of integrating Synthesis into an AI agent's workflow actually improves agent performance?

@@ -32,6 +32,8 @@ No such date appeared anywhere in the context. The agent did not retrieve it fro
 
 That one wrong date is the most important finding from our Phase 5 benchmark. Not because of the date itself, but because of what it reveals about how we load knowledge into AI agents, and what we need to do differently.
 
+![The KCP-MCP Composability Model: solving the AI agent knowledge gap](/assets/images/blog/kcp-mcp-composability-model.png)
+
 ## What the benchmark was testing
 
 We ran 9 codebase navigation tasks across 6 conditions on the [Synthesis](https://github.com/exoreaction/Synthesis) codebase. The conditions varied how the agent received knowledge: no Synthesis integration (Baseline), pre-loaded context documents (Knowledge), CLI documentation (CLI), MCP tools (MCP), MCP with a system prompt hint (MCP + Hint), and MCP with rewritten tool descriptions (MCP + Descriptions).
