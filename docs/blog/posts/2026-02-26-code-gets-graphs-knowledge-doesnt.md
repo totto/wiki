@@ -19,6 +19,8 @@ authors:
 
 <!-- more -->
 
+![Code Has Graphs, Knowledge Doesn't: Why Your Documents Need a Map, Not a Folder](code-gets-graphs-infographic.png)
+
 ## What gets graphed
 
 If you work on a Java codebase, you have dependency graphs. You can ask which packages import which. You can see the blast radius before you refactor a core class. CI pipelines visualize the build graph. Architecture diagrams show service dependencies. The tooling is mature and the value is taken for granted.
