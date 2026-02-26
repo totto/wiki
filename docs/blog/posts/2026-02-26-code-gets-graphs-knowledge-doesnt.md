@@ -43,6 +43,8 @@ Think about what a Documents workspace contains for a small company or a technic
 - Meeting notes that reference other meeting notes
 - Research threads that started in one context and concluded in another
 
+![Where Organizational Thinking Lives](slide-04.png)
+
 This is where organizational thinking lives. Code repositories contain what the organization *built*. The Documents workspace contains *why*, *how*, and *for whom*.
 
 And it has no graph.
@@ -52,6 +54,8 @@ And it has no graph.
 ## The memory problem
 
 The connections between these documents are real. A business plan connects to the presentation deck it spawned. That deck connects to the technical proof that validates it. The proof connects to the code repository that produced it. The chain exists — but it lives in the heads of the people who made it.
+
+![The Cost of Amnesia](slide-05.png)
 
 When someone leaves, the chain breaks. When you return to a problem six months later, you remember the conclusion but not the reasoning. When a new team member needs context, they search and find fragments.
 
@@ -63,6 +67,8 @@ A knowledge graph answers those questions.
 
 ## What the graph adds
 
+![The Solution: Replace the Library with a Map](slide-06.png)
+
 A knowledge graph of your Documents workspace surfaces three things that folders cannot:
 
 **Cross-references you forgot you made.** Every time a document links to another — explicitly or through shared terminology — that edge exists in the graph. A presentation that quotes a business plan creates an edge. A README that points to an architecture document creates an edge. After months of writing, these edges number in the thousands. You made them. You forgot most of them. The graph remembers.
@@ -71,11 +77,9 @@ A knowledge graph of your Documents workspace surfaces three things that folders
 
 **Tightness as a diagnostic.** This is the one that surprised me most. When we computed tightness — edges divided by possible edges — for each sub-workspace, the numbers told a story:
 
-```
-knowledge-infrastructure/   0.56   (coherent, interconnected)
-Quadim/                     0.26   (reasonable for mixed content)
-eXOReaction/                0.10   (large, but sparse)
-```
+![The New Metric: Tightness](slide-07.png)
+
+![Running the Diagnostic — real data from a production workspace](slide-08.png)
 
 A tightness of 0.10 for the main company workspace means 315 directories with relatively few connections between them. Plans, presentations, and proofs exist — but they don't point at each other. The thinking is fragmented. It lives in silos that happen to share a parent directory.
 
@@ -97,6 +101,8 @@ The gap between how we treat code and how we treat knowledge is partly historica
 
 ## What it changes for AI-augmented teams
 
+![The AI Imperative: AI Needs a Map, Not Just a Search Bar](slide-10.png)
+
 There is a more immediate reason this matters now.
 
 AI tools work on context. Search finds documents. But a graph tells an AI agent *how your knowledge relates* — which business plan connects to which proof, which technical decision was made in response to which constraint. Without the graph, the AI has a library. With it, the AI has a map.
@@ -111,6 +117,8 @@ The graph is that infrastructure.
 
 We ran `synthesis knowledge-graph` on our main workspace. 777 directories, 8,934 files. The result was zero virtual links — a flat directory listing pretending to be a graph.
 
+![Case Study: From Zero to 11,777](slide-12.png)
+
 After a day of fixes, enrichment, and explicit relationship declarations: 11,777 edges. The workspace went from isolated dots to a connected structure. Sub-workspaces that reference each other now show that. Directories that discuss the same product from different angles — technical proof, business plan, sales presentation — are now visibly connected.
 
 The number that mattered most was not 11,777. It was the tightness breakdown showing which parts of our organizational knowledge were coherent and which were fragmented. That is the diagnostic we could not run before.
@@ -119,11 +127,15 @@ The number that mattered most was not 11,777. It was the tightness breakdown sho
 
 ## The second brain argument
 
+![Building a Collective Second Brain](slide-11.png)
+
 The concept of a second brain — externalizing memory into a connected system of notes and references — has been popular in personal knowledge management for years. The tools are well known: Obsidian, Roam, Logseq, Notion. They all center on links and graphs.
 
 Organizations do not apply the same thinking to their shared Documents workspace. They use folders and search. The collective second brain has no graph.
 
 That is what is backwards. Not the technology — the priority. We invest in dependency graphs for code because we learned, through painful experience, what happens when you change a core class without knowing its dependencies. We have not yet felt that same pain sharply enough for knowledge.
+
+![Don't Wait for the Pain.](slide-14.png)
 
 We will.
 
