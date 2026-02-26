@@ -130,3 +130,7 @@ We will.
 ---
 
 *Synthesis is the tool we use for this. Open source: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis). The engineering session that went from zero links to 11,777 is documented [here](/blog/2026/02/26/zero-links-an-engineering-session-with-claude-code-and-opus/).*
+
+---
+
+**Presentation:** [Mapping Organizational Memory (PDF)](Mapping_Organizational_Memory.pdf) — NotebookLM-generated slide deck from this article.
