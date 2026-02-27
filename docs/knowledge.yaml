@@ -18,8 +18,8 @@ units:
     intent: "What has Thor built, what does he believe, and what is he doing now?"
     scope: global
     audience: [human, agent, architect]
-    validated: 2026-02-25
-    triggers: [biography, background, sdd, skill-driven-development, synthesis, eXOReaction, javazone, java-champion]
+    validated: 2026-02-27
+    triggers: [biography, background, sdd, skill-driven-development, synthesis, eXOReaction, quadim, javazone, java-champion, iasa]
 
   # ── CV and credentials ───────────────────────────────────────────────────────
 

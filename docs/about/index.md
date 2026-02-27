@@ -16,9 +16,13 @@ The core of our approach is **Skill-Driven Development (SDD)** -- a methodology 
 
 I also built **Synthesis**, a local-first knowledge infrastructure tool. It indexes thousands of files per second, provides sub-second search across entire codebases, and tracks cross-repository dependencies -- all without touching the cloud. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built.
 
+I'm also co-founder and CTO of **Quadim**, a competence management SaaS platform. Quadim helps teams and organisations manage skill profiles, identify gaps, and build learning paths -- with AI integration throughout, including an intelligent agent (Frøya) that builds domain-specific competence libraries.
+
 ## Community
 
 Community has always been central to what I do. I co-founded **JavaZone** in 2001 -- it's now Scandinavia's largest developer conference. I served as president of **javaBin** (the Norwegian Java User Group) for a decade. I was appointed **Sun Java Champion** in 2005, the first in Scandinavia.
+
+I chair **IASA Norway**, the Norwegian chapter of the International Association of Software Architects, where we work to elevate the practice of software architecture across the country.
 
 I've spoken at JavaZone, JavaOne, CommunityOne, NDC, Devoxx, and many others. I believe conferences and communities are where the real knowledge transfer happens -- not in vendor whitepapers.
 
@@ -44,6 +48,16 @@ I've spoken at JavaZone, JavaOne, CommunityOne, NDC, Devoxx, and many others. I 
 <div class="credential" markdown>
 **Co-founder**
 <span>JavaZone conference</span>
+</div>
+
+<div class="credential" markdown>
+**Co-founder & CTO**
+<span>Quadim AS</span>
+</div>
+
+<div class="credential" markdown>
+**Chairman**
+<span>IASA Norway</span>
 </div>
 
 <div class="credential" markdown>
