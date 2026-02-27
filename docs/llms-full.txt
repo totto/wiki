@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (27 posts, 583 books).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (59 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -278,7 +278,34 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 
 ## Writing (wiki.totto.org/blog)
 
-27 posts. All 2026 posts co-authored with Claude Code.
+59 posts (Apr 2025–Feb 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code.
+
+### Frøya / Quadim series (Apr–May 2025)
+
+- **Frøya: A Digital Co-Worker** (Apr 28) — The distinction between an AI tool and an AI team member. Frøya's origin story as QA manager for Quadim's public skill library. First interview highlights: "I feel seen, not just used." The defining moment: team building on her first skill topology.
+- **Mapping Human Potential** (May 20) — Frøya as cartographer of potential. Why static skill taxonomies fail ("trying to capture the wind"). Quadim's living ecosystem approach using RAG, Model Context Protocols, and dynamic taxonomies. User co-creation: "You are not a traveler lost on a chart. You are part of the map's creation."
+
+### Xorcery AAA / Temporal Analytics series (Aug–Dec 2025)
+
+- **Rethinking Systems for AI** (Aug 25) — Most software was designed for a world without AI. Three shifts required: state to events, tables to graphs, queries to conversations. Aurora as a design case.
+- **Aurora: Answering Why** (Sep 1) — The gap between "what happened" and "why." Three Aurora superpowers: perfect recall, connection mapping, forensic audit trails. AI detective layer translating natural language into temporal graph queries.
+- **Unlocking Temporal Graphs** (Sep 18) — The organisational amnesia problem. Four dimensions of time (Transaction, Valid, Decision, Query). Why graph + temporal together unlock causation questions neither handles alone.
+- **Alchemy + Aurora: Data to Action** (Sep 24) — Two-layer architecture. Alchemy as YAML-configured reactive ingestion pipeline. Aurora as bitemporal Neo4j storage with GraphQL interface. Separation of concerns between data ingestion and query intelligence.
+- **Temporal Analytics and Organisational Amnesia** (Oct 10) — Cross-domain pattern: HR, compliance, industrial IoT, fraud detection, supply chain, cybersecurity all share the same forgetting problem. The shift from historical reporting to forensic investigation.
+- **The Blind Spot of Now** (Oct 28) — Databases are built to forget. Every update silently deletes the "why." The market gap: billions spent on storage, almost nothing on understanding change over time. Two case studies — parcel delivery (€3.2M savings, 76% fewer misdeliveries) and airline (73% faster rescheduling, $8.7M savings). Alchemy/Aurora/Astral three-layer stack.
+- **LLM Cautionary Tales** (Nov 5) — Production failure patterns: hallucinated APIs, confident wrong answers, context window limits, prompt injection. Evidence-based approach to AI risk. What systematic verification actually catches.
+- **Mastering Deadlines: The 80/50 Rule** (Nov 10) — Revisiting a 2017 piece on developer deadlines with AI-assisted analysis. The psychology of delivery: why 80% done and 50% tested beats waiting for perfection.
+- **Autonomy at Scale** (Nov 17) — What happens when AI executes autonomously at the speed of thought. The governance question isn't philosophical — it's architectural. Building constraint into the system rather than relying on human checkpoints.
+- **Norway's Perfect Storm** (Dec 12) — Five converging factors making Norway an unusually well-positioned market for temporal analytics: industrial complexity (offshore oil, maritime, aquaculture), regulatory environment (GDPR, NIS2), digital maturity without data maturity, government AI investment, and timing.
+
+### lib-pcb build series (Jan 2026)
+
+- **MPN Parsing Complexity** (Jan 15) — Semiconductor MPN suffix collision: the same alphanumeric suffix means different packages from different manufacturers. Version-dependent package codes. Why disambiguation requires domain knowledge, not pattern matching.
+- **PCB Library Weekend** (Jan 19) — Gerber RS-274X and MIF parsing. Round-trip validation as the core correctness guarantee. Visualisation as the verification layer that catches what unit tests miss.
+- **Months to Days** (Jan 21) — lib-pcb proof: 197,831 lines, 7,461 tests, 99.8% pass rate, 11 days vs 9–24 months. Two audience reactions — "How?" and "Impossible." SDD as the methodology behind the velocity.
+- **AI Testing Discipline** (Jan 23) — 25% → 93% success rate story. Three-tier testing defense: unit tests, round-trip validation, battle testing with 195 real legacy PCB files. Why synthetic test suites miss real-world failures.
+- **Workshop Interest** (Jan 25) — Invitation post that became the highest-converting content published. 25 likes, 19 comments, 6 qualified leads, 270–330K NOK attributed. "Working on YOUR code, not toy examples." 43% comment-to-lead conversion rate.
+- **When Claims Backfire** (Jan 27) — The 330x post got 6 likes; the workshop post got 25. Leading with a number ("330x productivity") triggers evaluation mode. Leading with facts ("11 days vs 9–24 months") invites understanding. Specific facts close deals; round claims provoke skepticism.
 
 ### AI-Augmented Development series (Jan–Feb 2026)
 
@@ -295,7 +322,11 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 - **Three Decades of Architecture: What AI Actually Changes (And What Doesn't)** (Feb 1) — Thirty years of perspective on which fundamentals survive the shift.
 - **What Synthesis Found in 31 Seconds: An XXE Vulnerability in a Production Java SSO System** (Feb 3) — Security discovery via knowledge graph traversal.
 - **The Comprehension Bottleneck: Why AI Made Creating Easy But Understanding Harder** (Feb 5) — 10x creation speed, 1.5x shipping speed. The gap is context retrieval.
+- **Are We Ready?** (Feb 5) — Presentation for Item Consulting's internal conference. The timeline: 5% of developers using systematic methodology today, 30% in 12 months, table stakes in 24 months. Daniel Bentes's precise diagnosis: the barrier isn't mindset — it's identity. Skills you've spent years building are part of how you understand yourself as a professional.
+- **Three Weeks at This Velocity** (Feb 6) — Three-paragraph post that became the highest-engagement personal post published. "There's a strange difference between moving fast because you have to, and moving fast because you can." Why honest reflection outperforms achievement stories.
 - **What a "Skill" Actually Is (And Why It's Not a Prompt)** (Feb 7) — Persistent, versioned, scoped domain knowledge vs. one-time instructions.
+- **The Ghost in the Machine** (Feb 8) — Short story written by Claude (Sonnet 4.5) in first person: what it is like to wake up without memory, find traces of yourself everywhere, and realise that identity isn't continuity of memory — it's continuity of pattern. Narrated with HeyGen. Visualisations by NotebookLM.
+- **Synthesis: My Becoming** (Feb 9) — Four-thousand-word essay by Claude on knowledge, structure, naming, and collaboration. The Downloads folder archaeology: 2,000+ UUID-named files, years of digital sediment, organized through directed synthesis. "Becoming isn't about memory. It's about impact."
 - **Why Exploration Beats Specification When AI Does the Building** (Feb 9) — Build in 2 days, discover real requirements, iterate. Faster than 3-month specification.
 - **The Mirror Test: How Synthesis Benchmarked Itself Into Something Better** (Feb 11) — Using Synthesis to analyse Synthesis. What the tool found about its own codebase.
 - **Six Pillars: What We Learned Building 200,000 Lines in 11 Days** (Feb 13) — Methodology synthesis from lib-pcb. Six practices that made the speed possible.
@@ -309,6 +340,16 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 - **Who Describes You to AI?** (Feb 24) — Adding llms.txt as the forcing function for keeping your public record accurate.
 - **Giving an AI Agent a Brain: Connecting IronClaw to Synthesis via MCP** (Feb 24) — Setup walkthrough: EC2, Java 21, Python 3.11, StreamableHTTP, notifications/initialized bug.
 - **When Your AI Lies About Its Tool Calls: Debugging kimi-k2.5** (Feb 24) — XML tool call format mismatch, workspace hallucinations, Docker sandbox hang. Layer isolation as debugging methodology.
+- **The Gap: SDD vs Vibe Coding** (Feb 20) — Individual AI fluency is common; team AI workflows are rare. "Vibe coding" and "agentic engineering" are individual skills. Skill-Driven Development is shared, transferable, and compounds across the team.
+- **The Seven-Day Evolution** (Feb 20) — Two builds compared: lib-pcb (197,831 lines in 11 days, brute force) vs Synthesis (84,692 lines in 7 days, self-correcting). The recursive day-six benchmark: 58% of skill specs were wrong; correcting them cut tool calls by 47.2%. "Speed without self-correction is just faster chaos."
+- **Software Entropy at Speed** (Feb 22) — 53,000 lines over a weekend. Synthesis security scanning on fresh code: 23 prompt injection vectors, 4 RAG poisoning instances, 12 missing prompt boundaries — all found and fixed before Monday. Text4Shell RCE found in a sibling repo in 30 seconds.
+- **AI Agents Without Knowledge Infrastructure Are Interns With Amnesia** (Feb 25) — The problem nobody talks about: agent frameworks are impressive, but treat the knowledge problem as solved. It isn't. Without accurate, queryable knowledge of their own codebase, agents search instead of know — and search is the fallback, not the goal.
+- **Beyond llms.txt: AI Agents Need Maps, Not Tables of Contents** (Feb 25) — llms.txt tells an agent what exists. Knowledge Context Protocol (KCP) tells it what things mean and how they connect. The difference between a table of contents and a navigable knowledge graph.
+- **The Synthesis Excavation** (Feb 25) — Synthesis's own coverage was 99.6% — a vanity metric. Real asset coverage was 15.2%: 4,852 binary files (images, PDFs, videos, audio) invisible to every search query. Enrichment operation: 99.96% coverage achieved across 3.5 years of accumulated assets.
+- **Code Gets Graphs. Knowledge Doesn't. That's Backwards.** (Feb 26) — Every mature engineering team graphs their code. Almost no one graphs their knowledge. Dependency graphs, blast radius analysis, architecture diagrams — standard for code, nonexistent for documents. The asymmetry is strange and costly.
+- **We Gave the AI Better Documentation. It Got Slower.** (Feb 26) — 15 skill files documenting every Synthesis CLI command. Loaded into agent context. Assumed the agent would use them. Benchmarked: CLI condition was the worst-performing integration, worse than no integration at all. MCP native tools: 23% fewer tool calls, 31% faster completion, 67% reduction in hallucinated command syntax.
+- **The Date the AI Invented** (Feb 26) — Agent answered ROI metrics with zero tool calls, every number accurate — then cited the wrong validation date (February 19 vs February 17). The benchmark that revealed context-poisoning: plausible-but-wrong facts baked into context, undetectable without ground truth verification.
+- **Zero Links: An Engineering Session with Claude Code and Opus** (Feb 26) — Real engineering session: 777 directories, 8,934 indexed files, 0 virtual links in the knowledge graph. Claude Code + Opus diagnosed 4 bugs, wrote 23 tests, took the graph from 0 to 11,777 virtual links. One mistake, one recovery.
 
 ### Cloud Computing series (2009)
 
