@@ -5,7 +5,7 @@ totto@totto.org | [LinkedIn](https://www.linkedin.com/in/hetland/) | [GitHub](ht
 
 ---
 
-Community builder, devoted to sharing knowledge and building great communities and *value* in software systems. Inventor. Opinionated Java Champion, leader of IASA Norway, founder of Cantara AS and eXOReaction AS, former president of the very successful Norwegian JUG javaBin and the JavaZone Conference. Speaker at JavaZone, JavaONE, CommunityONE, NDC, Devoxx, and various other conferences internationally and domestically.
+Community builder, devoted to sharing knowledge and building great communities and *value* in software systems. Inventor. Opinionated Java Champion, former chair of IASA Norway / OSWA, founder of Cantara AS and eXOReaction AS, former president of the very successful Norwegian JUG javaBin and the JavaZone Conference. Speaker at JavaZone, JavaONE, CommunityONE, NDC, Devoxx, and various other conferences internationally and domestically.
 
 With over 30 years of professional programming experience spanning quite a few programming languages, I have contributed in both international and domestic projects in various roles including CTO, project leader, technology mentor, software architect, lead developer, technology strategist, and trainer.
 

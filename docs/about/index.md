@@ -22,7 +22,7 @@ I'm also co-founder and CTO of **Quadim**, a competence management SaaS platform
 
 Community has always been central to what I do. I co-founded **JavaZone** in 2001 -- it's now Scandinavia's largest developer conference. I served as president of **javaBin** (the Norwegian Java User Group) for a decade. I was appointed **Sun Java Champion** in 2005, the first in Scandinavia.
 
-I chair **IASA Norway**, the Norwegian chapter of the International Association of Software Architects, where we work to elevate the practice of software architecture across the country.
+I was a founding board member and former chair of **IASA Norway** (later rebranded OSWA -- Oslo Software Architecture), where we grew the Norwegian software architecture community from a handful of people to over 3,500 members.
 
 I've spoken at JavaZone, JavaOne, CommunityOne, NDC, Devoxx, and many others. I believe conferences and communities are where the real knowledge transfer happens -- not in vendor whitepapers.
 
@@ -56,8 +56,8 @@ I've spoken at JavaZone, JavaOne, CommunityOne, NDC, Devoxx, and many others. I 
 </div>
 
 <div class="credential" markdown>
-**Chairman**
-<span>IASA Norway</span>
+**Former chair**
+<span>IASA Norway / OSWA</span>
 </div>
 
 <div class="credential" markdown>
