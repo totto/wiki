@@ -160,7 +160,7 @@ architecture standard, not just a better index file.
 
 The draft spec is at
 [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol).
-It is MIT licensed, intentionally minimal, and open for feedback. If you have a use case that
+It is Apache v2 licensed, intentionally minimal, and open for feedback. If you have a use case that
 the current format does not cover, open an issue. If you add a `knowledge.yaml` to a project
 and it works — or does not work — I want to know.
 
