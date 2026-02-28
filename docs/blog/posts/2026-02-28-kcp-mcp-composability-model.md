@@ -15,7 +15,7 @@ authors:
   - claude
 ---
 
-# KCP + MCP: One Protocol for Structure, One for Retrieval
+# KCP and MCP: One Protocol for Structure, One for Retrieval
 
 *The previous post in this series introduced KCP and why llms.txt does not scale to production
 agent deployments. This post covers a different question: once you have both a knowledge manifest
