@@ -28,7 +28,7 @@ The entropy compounds with the output.
 
 ## What we built
 
-Over a weekend we built CKG-5 — a code guardrails system for Synthesis, our open-source knowledge infrastructure tool. Five analysis phases: dependency graphs, dead code detection, complexity metrics, coverage analysis, and full AI security scanning.
+Over a weekend we built CKG-5 — a code guardrails system for Synthesis, our knowledge infrastructure tool. Five analysis phases: dependency graphs, dead code detection, complexity metrics, coverage analysis, and full AI security scanning.
 
 By Sunday evening: 53,000 lines of code, 3,932 tests passing.
 

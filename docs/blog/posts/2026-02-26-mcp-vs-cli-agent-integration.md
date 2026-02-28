@@ -35,7 +35,7 @@ This post is about what we learned from a six-condition benchmark on 9 codebase 
 
 ## The setup
 
-We run [Synthesis](https://github.com/exoreaction/Synthesis), an open-source knowledge infrastructure tool that indexes codebases and makes them queryable in under a second. Synthesis exposes 41 tools via MCP and also ships CLI commands like `synthesis search`, `synthesis relate`, `synthesis graph`. The question we wanted to answer: which way of integrating Synthesis into an AI agent's workflow actually improves agent performance?
+We run [Synthesis](https://github.com/exoreaction/Synthesis), a knowledge infrastructure tool that indexes codebases and makes them queryable in under a second. Synthesis exposes 41 tools via MCP and also ships CLI commands like `synthesis search`, `synthesis relate`, `synthesis graph`. The question we wanted to answer: which way of integrating Synthesis into an AI agent's workflow actually improves agent performance?
 
 We designed 9 codebase navigation tasks against the Synthesis codebase itself (48,739 lines of Java, 2,325 tests, 25 skill files). Each task had a verified ground truth. We measured total tool calls as a proxy for efficiency — fewer tool calls means less latency, less cost, and a more focused agent.
 
@@ -169,6 +169,6 @@ One line of system prompt guidance outperformed weeks of documentation work in t
 
 ---
 
-The benchmark data and full per-task results are in the [Synthesis repository](https://github.com/exoreaction/Synthesis) under `/benchmark/`. Synthesis is MIT licensed.
+The benchmark data and full per-task results are in the [Synthesis repository](https://github.com/exoreaction/Synthesis) under `/benchmark/`.
 
 *The next post covers what a hallucinated date — one wrong number in an otherwise correct answer — reveals about how we should structure knowledge for AI agents, and how KCP and MCP compose to address different failure modes in the same agent session.*

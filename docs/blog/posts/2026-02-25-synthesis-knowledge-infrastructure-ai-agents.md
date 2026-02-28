@@ -106,6 +106,6 @@ RAG is not enough. Stuffing context is not enough. Writing elaborate priming doc
 
 We built Synthesis to solve our own problem. It turned out to solve a broader one. If you are deploying agents against a large codebase, a complex dependency graph, or sensitive enterprise data that cannot leave your network, the knowledge problem is likely your real bottleneck — not the model, not the framework, not the prompt.
 
-Synthesis is open source, MIT licensed, and available at [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis). Sub-second retrieval. Local-first. MCP-native. One index, as many agents as you need.
+Synthesis is available at [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis). Sub-second retrieval. Local-first. MCP-native. One index, as many agents as you need.
 
 The agents are only as good as what they know. Give them something to know.

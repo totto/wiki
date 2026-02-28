@@ -9,7 +9,6 @@ tags:
   - tdd
   - claude-code
   - opus
-  - open-source
 authors:
   - totto
   - claude
@@ -31,7 +30,7 @@ Directories: 777 | Virtual links: 0
 
 Every node marked `[??]` — unknown health. No edges. No relationships. The knowledge graph was a flat directory listing pretending to be a graph. Seven hundred and seventy-seven isolated dots, connected by nothing.
 
-This is Synthesis, a tool I built. An open-source knowledge indexing system that scans workspaces at 200-300 files per second and exposes search, relationships, and dependency graphs over MCP. It has been indexing our workspace for months. The search works. The file relationships work. The knowledge graph, apparently, did not.
+This is Synthesis, a tool I built. A knowledge indexing system that scans workspaces at 200-300 files per second and exposes search, relationships, and dependency graphs over MCP. It has been indexing our workspace for months. The search works. The file relationships work. The knowledge graph, apparently, did not.
 
 I had Claude Code open with Opus as the reasoning model. Rather than reading the source myself, I decided to treat this as a co-engineering session. Opus would be the analyst. I would be the one deciding what to fix and in what order.
 
@@ -166,6 +165,6 @@ Twenty-three tests. Eleven thousand links. One honest mistake. A day's work.
 
 ---
 
-*Synthesis is open source: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)*
+*Synthesis: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)*
 
 *Session: Thor Henning Hetland + Claude Code (Opus). Tool: Synthesis v1.18.1.*

@@ -85,7 +85,7 @@ It works at toy scale. At production scale — 1,000+ files, multiple repositori
 
 ## Where Synthesis fits — and where it does not
 
-[Synthesis](https://github.com/exoreaction/Synthesis) is the tool we built when our AI-augmented development workflow generated 691 files per day and we could not find anything. It is open source, MIT licensed, and it takes a different position in this landscape than any of the approaches above.
+[Synthesis](https://github.com/exoreaction/Synthesis) is the tool we built when our AI-augmented development workflow generated 691 files per day and we could not find anything. It takes a different position in this landscape than any of the approaches above.
 
 Synthesis is not a vector database. It does not do semantic similarity search by default — if your code says `auth` and you search for "authentication," you need to know to search for both. That is a real limitation. Embeddings are on the roadmap but not shipped.
 
@@ -136,7 +136,7 @@ None of this means Synthesis is sufficient on its own. It means the debate about
 
 ---
 
-*Synthesis is open source: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis). The knowledge graph, temporal tracking, and MCP integration are all shipping. MIT licensed.*
+*Synthesis is available at [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis). The knowledge graph, temporal tracking, and MCP integration are all shipping.*
 
 ---
 

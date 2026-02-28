@@ -9,7 +9,6 @@ tags:
   - self-learning
   - recursive-engineering
   - methodology
-  - open-source
 authors:
   - totto
 ---

@@ -282,4 +282,4 @@ The full setup is running. IronClaw sits in Slack, handles tool calls correctly,
 
 *The kimi-proxy and bridge sanitiser code shown here are simplified for clarity. The full versions handle edge cases like malformed XML, streaming chunk reassembly, and concurrent requests. The patterns apply to any non-OpenAI model that uses a different tool call format — which is most of them at the edges.*
 
-*Synthesis is MIT-licensed at [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis).*
+*Synthesis is available at [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis).*

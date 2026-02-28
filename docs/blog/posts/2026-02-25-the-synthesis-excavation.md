@@ -8,7 +8,6 @@ tags:
   - synthesis
   - knowledge-infrastructure
   - ai-enrichment
-  - open-source
   - skill-driven-development
 authors:
   - totto
@@ -190,6 +189,6 @@ That is the real lesson. Not the 99.96%. Not the 3,922 companion files. The less
 
 ---
 
-*Synthesis is open source: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)*
+*Synthesis: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)*
 
 *Expedition leads: Thor Henning Hetland + Claude Code. Tool: Synthesis v1.16.2-SNAPSHOT.*
