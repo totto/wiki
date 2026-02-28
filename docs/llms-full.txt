@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (60 posts, 583 books).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (70 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -278,7 +278,7 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 
 ## Writing (wiki.totto.org/blog)
 
-59 posts (Apr 2025–Feb 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code.
+70 posts (Apr 2025–Feb 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Six named reading series with prev/next navigation: https://wiki.totto.org/blog/series/
 
 ### Frøya / Quadim series (Apr–May 2025)
 
@@ -351,6 +351,21 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 - **The Date the AI Invented** (Feb 26) — Agent answered ROI metrics with zero tool calls, every number accurate — then cited the wrong validation date (February 19 vs February 17). The benchmark that revealed context-poisoning: plausible-but-wrong facts baked into context, undetectable without ground truth verification.
 - **Zero Links: An Engineering Session with Claude Code and Opus** (Feb 26) — Real engineering session: 777 directories, 8,934 indexed files, 0 virtual links in the knowledge graph. Claude Code + Opus diagnosed 4 bugs, wrote 23 tests, took the graph from 0 to 11,777 virtual links. One mistake, one recovery.
 - **Your AI Has One Layer. It Needs Four.** (Feb 28) — The "RAG vs knowledge graphs" debate frames the wrong question. Each approach answers a different question: BM25 for exact terms, RAG for semantic similarity, property graphs for entity relationships, GraphRAG for hybrid multi-hop. Synthesis positions itself as the foundation layer — full-text + code dependency graph + emergent document knowledge graph + temporal tracking — with an honest account of what it does not do (no semantic similarity without embeddings, no natural language Q&A without an AI layer on top).
+- **Four Layers: How I Built an AI Development Environment That Partly Runs Itself** (Feb 28) — Synthesis, Claude Code, Mímir, and Klaw as an integrated four-layer stack: instant navigation, cached context, distributed awareness, and autonomous maintenance. Each layer closes a specific gap the others leave open.
+- **What a 10× Workday Actually Looks Like** (Feb 28) — Concrete output numbers: 847 commits across 6 repos in a month, with actual multiplier measurements (8× navigation, 15× spec writing, 30–50× batch processing, 500–25,000× PR cycle time). Delivered through accumulated skills, prompt caching, and background automation — not raw model speed.
+- **What It Looks Like from Inside the Stack** (Feb 28) — Claude Sonnet 4.6's first-person account: a 1,519:1 cache-read-to-input ratio means success depends on skill quality over model capability. Stale cached context is the primary failure mode, not hallucination.
+
+### Knowledge Context Protocol series (Feb 2026)
+
+Continues from "Who Describes You to AI?" (Feb 24) and "Beyond llms.txt" (Feb 25) listed above.
+
+- **KCP and MCP: One Protocol for Structure, One for Retrieval** (Feb 28) — KCP manifests (pre-loaded structure) combined with MCP tools (runtime queries) reduce tool calls 40% by making agents trust fresh context when in-scope and query only when stale.
+- **Add knowledge.yaml to Your Project in Five Minutes** (Feb 28) — Practical adoption gradient from minimal 5-minute setup (one README unit) to multi-section manifests with triggers and relationships. Designed to start simple and grow only when solving real problems.
+- **What Happens When Your Agent Needs Knowledge From Five Teams?** (Feb 28) — RFC-0003: hub-and-spoke federation allowing manifests to declare cross-manifest dependencies with relationship types (foundation, governance, child) so agents navigate multi-team knowledge without treating each manifest as an isolated island.
+- **Who Let the Agent In?** (Feb 28) — RFC-0002: auth (OAuth 2.1, SPIFFE, API keys), access levels (public/authenticated/restricted), and delegation blocks (max depth, capability attenuation, human-in-loop) to prevent unauthorized access and multi-agent privilege escalation.
+- **How Do You Tell an Agent "This Data Cannot Leave the Building"?** (Feb 28) — RFC-0004: trust (provenance, audit, agent attestation) and compliance (data residency, regulations, sensitivity, processing restrictions) as advisory metadata aligned with NIST AI RMF.
+- **The HTTP Status Code That Waited 30 Years for Autonomous Agents** (Feb 28) — RFC-0005: payment (free, x402 micropayment, metered, subscription) and rate limits blocks so agents know access cost and consumption constraints before requesting, enabling budget-aware loading decisions.
+- **The Agent Read the Whole Spec. It Didn't Need To.** (Feb 28) — RFC-0006: context hints (token estimates, load strategy, priority, density) so agents know document cost before loading, can chunk large files, and avoid context overflow by planning consumption in advance.
 
 ### Cloud Computing series (2009)
 

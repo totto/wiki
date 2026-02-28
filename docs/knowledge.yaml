@@ -1,6 +1,6 @@
 project: wiki.totto.org
 version: 1.0.0
-updated: 2026-02-25
+updated: 2026-02-28
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────
@@ -361,6 +361,16 @@ units:
     audience: [human]
     triggers: [tools, hardware, software, 2010, setup, workflow, historical]
 
+  # ── Blog series navigation ───────────────────────────────────────────────────
+
+  - id: blog-series
+    path: blog/series.md
+    intent: "Which blog posts form a natural reading sequence, and in what order should they be read?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-28
+    triggers: [series, reading-order, sequence, ironclaw, four-layer, kcp, aurora, froya, lib-pcb, prev-next]
+
   # ── AI / LLM discoverability ─────────────────────────────────────────────────
 
   - id: llms-index
@@ -568,4 +578,13 @@ relationships:
 
   - from: architecture-vs-agile
     to: about
+    type: context
+
+  # Blog series index
+  - from: llms-index
+    to: blog-series
+    type: enables
+
+  - from: blog-series
+    to: llms-full
     type: context
