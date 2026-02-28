@@ -1,5 +1,6 @@
 ---
 date: 2026-02-25
+series: "Knowledge Context Protocol"
 categories:
   - AI-Augmented Development
   - Knowledge Infrastructure

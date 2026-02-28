@@ -1,5 +1,6 @@
 ---
-date: 2026-02-28
+date: 2026-02-28T11:00:00
+series: "The Four-Layer AI Stack"
 categories:
   - AI-Augmented Development
   - Knowledge Infrastructure

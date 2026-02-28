@@ -6,4 +6,4 @@ I started writing about cloud computing in 2009 -- nineteen posts arguing that t
 
 The 2026 posts document what I have learned building [lib-pcb](https://github.com/exoreaction/lib-pcb) (197,831 lines of Java in 11 days) and [Synthesis](https://github.com/exoreaction/Synthesis) (knowledge infrastructure). The 2009 posts are historical -- cloud computing arguments that largely held up. The parallels between these two eras are [explored here](/blog/2026/02/24/cloud-to-ai-same-feeling/).
 
-**Browse by topic:** [AI-Augmented Development](/blog/category/ai-augmented-development/) &nbsp;·&nbsp; [AI Infrastructure](/blog/category/ai-infrastructure/) &nbsp;·&nbsp; [Archive](/blog/archive/)
+**Browse by topic:** [AI-Augmented Development](/blog/category/ai-augmented-development/) &nbsp;·&nbsp; [AI Infrastructure](/blog/category/ai-infrastructure/) &nbsp;·&nbsp; [Series](/blog/series/) &nbsp;·&nbsp; [Archive](/blog/archive/)

@@ -1,5 +1,6 @@
 ---
-date: 2026-02-24T18:00:00
+date: 2026-02-24T08:00:00
+series: "Giving an AI Agent a Brain"
 categories:
   - AI Infrastructure
   - IronClaw

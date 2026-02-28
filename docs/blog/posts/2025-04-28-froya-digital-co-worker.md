@@ -1,5 +1,6 @@
 ---
 date: 2025-04-28
+series: "Frøya: Digital Co-Workers"
 categories:
   - AI-Augmented Development
 tags:

@@ -1,5 +1,6 @@
 ---
-date: 2026-02-24T16:00:00
+date: 2026-02-24T09:00:00
+series: "Giving an AI Agent a Brain"
 categories:
   - AI Infrastructure
   - Debugging

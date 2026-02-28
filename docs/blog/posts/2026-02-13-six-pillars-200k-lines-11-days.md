@@ -1,5 +1,6 @@
 ---
 date: 2026-02-13
+series: "Building lib-pcb"
 categories:
   - AI-Augmented Development
 tags:

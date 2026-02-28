@@ -51,6 +51,9 @@ theme:
     - toc.follow
     - announce.dismiss
 
+hooks:
+  - hooks/series_nav.py
+
 plugins:
   - search:
       lang: [en, "no"]
@@ -119,6 +122,7 @@ nav:
   - Home: index.md
   - Blog:
     - blog/index.md
+    - "Series": blog/series.md
   - About:
     - about/index.md
     - "CV (English)": about/cv-english.md

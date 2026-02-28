@@ -1,5 +1,6 @@
 ---
 date: 2025-09-24
+series: "Aurora & Temporal Analytics"
 categories:
   - AI-Augmented Development
 tags:
