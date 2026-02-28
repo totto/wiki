@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (59 posts, 583 books).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (60 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -350,6 +350,7 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 - **We Gave the AI Better Documentation. It Got Slower.** (Feb 26) — 15 skill files documenting every Synthesis CLI command. Loaded into agent context. Assumed the agent would use them. Benchmarked: CLI condition was the worst-performing integration, worse than no integration at all. MCP native tools: 23% fewer tool calls, 31% faster completion, 67% reduction in hallucinated command syntax.
 - **The Date the AI Invented** (Feb 26) — Agent answered ROI metrics with zero tool calls, every number accurate — then cited the wrong validation date (February 19 vs February 17). The benchmark that revealed context-poisoning: plausible-but-wrong facts baked into context, undetectable without ground truth verification.
 - **Zero Links: An Engineering Session with Claude Code and Opus** (Feb 26) — Real engineering session: 777 directories, 8,934 indexed files, 0 virtual links in the knowledge graph. Claude Code + Opus diagnosed 4 bugs, wrote 23 tests, took the graph from 0 to 11,777 virtual links. One mistake, one recovery.
+- **Your AI Has One Layer. It Needs Four.** (Feb 28) — The "RAG vs knowledge graphs" debate frames the wrong question. Each approach answers a different question: BM25 for exact terms, RAG for semantic similarity, property graphs for entity relationships, GraphRAG for hybrid multi-hop. Synthesis positions itself as the foundation layer — full-text + code dependency graph + emergent document knowledge graph + temporal tracking — with an honest account of what it does not do (no semantic similarity without embeddings, no natural language Q&A without an AI layer on top).
 
 ### Cloud Computing series (2009)
 
