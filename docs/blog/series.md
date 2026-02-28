@@ -30,7 +30,7 @@ Some posts form a natural sequence and are best read in order. Each series below
 
     From llms.txt (a table of contents) to KCP (a navigable map): how AI agents actually find and use knowledge, and why the gap between the two matters.
 
-    **3 posts &nbsp;·&nbsp; February 2026**
+    **9 posts &nbsp;·&nbsp; February 2026**
 
     [:octicons-arrow-right-24: Start reading](/blog/2026/02/24/who-describes-you-to-ai/)
 
