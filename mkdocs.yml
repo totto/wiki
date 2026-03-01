@@ -103,6 +103,8 @@ markdown_extensions:
       title: "On this page"
 
 extra:
+  analytics:
+    provider: custom
   social:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/hetland/
