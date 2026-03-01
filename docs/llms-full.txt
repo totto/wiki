@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (71 posts, 583 books).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (72 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -368,6 +368,7 @@ Continues from "Who Describes You to AI?" (Feb 24) and "Beyond llms.txt" (Feb 25
 - **The Agent Read the Whole Spec. It Didn't Need To.** (Feb 28) — RFC-0006: context hints (token estimates, load strategy, priority, density) so agents know document cost before loading, can chunk large files, and avoid context overflow by planning consumption in advance.
 - **KCP on Two Repos, Two Days: What the Numbers Actually Show** (Mar 1) — Before/after benchmarks on two different repository types: an application codebase (plugin wizard, 10 queries, 74% tool call reduction) and a pure documentation repository (infrastructure agents guide, 7 queries, 53% reduction). The contrast shows KCP adds more value where navigation is harder. Repos anonymised pending consent.
 - **KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers** (Mar 1) — KCP applied to smolagents (HuggingFace, 73%), AutoGen (Microsoft, 80%), and CrewAI (76%). Five repos total across the series. Consistent pattern: more complex navigation space = more benefit. Open PRs submitted to all three upstream repos. Benchmark methodology published in CONTRIBUTING.md at cantara/knowledge-context-protocol.
+- **What Happens When an AI Submits a PR and Another AI Reviews It** (Mar 1) — Claude Code submitted the CrewAI KCP PR. Cursor Bugbot reviewed it six times: hardcoded path → no path validation → wrong path traversal fix → two subtle API bugs → KCP manifest semantics (summary_of back-pointer consistency). Feedback escalated from "this will break immediately" to protocol design review. The human's role: approving the fixes.
 
 ### Cloud Computing series (2009)
 
