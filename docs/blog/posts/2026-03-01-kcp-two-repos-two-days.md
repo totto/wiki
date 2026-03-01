@@ -26,6 +26,8 @@ The repos are very different. One is an application codebase — a plugin wizard
 
 The question was whether KCP adds meaningful value in both cases, and whether the nature of the content changes the answer.
 
+![Without a manifest, agents wander. With one, they go straight to the answer.](/assets/images/kcp-slide-spaghetti.png)
+
 <!-- more -->
 
 ## Methodology
@@ -60,6 +62,8 @@ All agents ran in the same session for consistency.
 
 The expensive queries were the revealing ones. "How to create a new agent" cost 16 baseline tool calls — the agent read the README, found no direct answer, read the architecture doc, found a partial answer, then read four more files including source code to piece it together. The KCP agent read the manifest, matched the query to the `agents-guide` unit, and read one file: 3 tool calls total.
 
+![The "create a new agent" query: 16 baseline reads vs 3 with KCP. The manifest replaced searching with routing.](/assets/images/kcp-slide-journey-new-agent.png)
+
 Q8 (icon library, 9 KCP calls) is the honest outlier. There is no dedicated icons unit in the manifest. The KCP agent correctly matched the nearest relevant unit and kept digging through source files. That is the right behaviour. It also tells you exactly where the manifest should grow next.
 
 One baseline agent (Q1, architecture) organically found the TL;DR files without the manifest — 5 tool calls. The KCP agent found them in 2. The manifest makes routing reliable, not just occasionally faster.
@@ -81,11 +85,15 @@ One baseline agent (Q1, architecture) organically found the TL;DR files without 
 | Go-live checklists | 8 | 2 | 6 |
 | **Total** | **53** | **25** | **28** |
 
+![53% fewer tool calls across 7 queries. The best case — go-live checklists — dropped from 8 reads to 2.](/assets/images/kcp-slide-53pct.png)
+
 **53% fewer tool calls.** The best case — go-live checklists — went from 8 reads to 2.
 
 The pattern without the manifest: agent reads the README, gets chapter titles, reads 2-3 chapters looking for the answer, sometimes backtracks. For a 13-chapter guide this is manageable but wasteful. For Q6 (prompt injection), 11 tool calls — the answer is distributed across chapter 4, chapter 8, and the risk framework chapter; the agent read all three without knowing which to prioritise.
 
-With the manifest, the agent read `knowledge.yaml` and found the trigger: `policy-guardrails-tldr` has `prompt-injection` as a declared trigger. Two calls. The TL;DR had enough depth for the answer; the full chapter was not loaded.
+With the manifest, the agent read `knowledge.yaml` and found the trigger: `policy-guardrails-tldr` has `prompt-injection` as a declared trigger. Two calls. The TL;DR had enough depth for the answer; the full chapter was never loaded.
+
+![The prompt injection query: baseline agent read 3 full chapters (11 calls). KCP agent found the trigger and routed to the TL;DR (5 calls).](/assets/images/kcp-slide-journey-prompt-injection.png)
 
 ---
 
@@ -96,6 +104,8 @@ The application codebase produced a 74% reduction. The documentation repository 
 In a code repository, answers are scattered across source files, schemas, and guide documents at different depths. The agent has no structural signal about what kind of file answers what kind of question. A query about "how to add a tool" could live in a guide, a type definition, an example, or the source itself. Baseline navigation is expensive because the search space is wide and the answer distribution is unpredictable.
 
 In a documentation repository, the structure is flatter. Each chapter has a clear topic. A baseline agent can usually narrow to the right chapter in 3-4 reads if the README is well-organised. The savings are real but smaller because the baseline cost was lower to begin with.
+
+![The same KCP mechanism produces 74% reduction in complex codebases and 53% in flat documentation. KCP adds more value where navigation is harder.](/assets/images/kcp-slide-contrast.png)
 
 What KCP adds in both cases is the same thing: the agent arrives knowing what the repo contains, which file answers which question, and how expensive each answer will be to retrieve. It does not have to discover the structure; it reads the structure.
 
@@ -127,7 +137,7 @@ Both repositories are public. The manifests, TL;DR files, and benchmarks are in 
 
 The KCP specification is at [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol). The two experiments here represent two different repository types — application code and pure documentation — and the results suggest the pattern generalises.
 
-The honest summary: KCP adds more value where navigation is harder. The worse the baseline experience, the bigger the improvement. That is not a limitation of the approach; it is the point.
+![The worse the baseline experience, the bigger the improvement. That is not a limitation of the approach; it is the point.](/assets/images/kcp-slide-verdict.png)
 
 ---
 
