@@ -18,6 +18,8 @@ authors:
 
 # KCP on Two Repos, Two Days: What the Numbers Actually Show
 
+![KCP benchmarking: 119 → 31 tool calls on application code, 53 → 25 on documentation. Two case studies, same methodology.](/assets/images/kcp-two-repos-benchmark.png)
+
 This week we applied KCP to two repositories back to back. Both got a `knowledge.yaml` manifest, pre-built TL;DR files for the highest-traffic sections, and a before/after benchmark using the same model and methodology.
 
 The repos are very different. One is an application codebase — a plugin wizard for an AI-native design platform, 15 documentation units covering architecture, agent types, tools, shape schemas, and plugin protocols. The other is a pure documentation repository — a 13-chapter production guide for building safe infrastructure agents, 226 KB of structured decision frameworks and deployment checklists.
