@@ -18,6 +18,8 @@ authors:
 
 # KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers
 
+![Five repos benchmarked, 73–80% reduction across three major AI agent frameworks. AutoGen leads at 80%, CrewAI at 76%, smolagents at 73%.](/assets/images/kcp-three-frameworks-overview.png)
+
 Today we applied KCP to three of the most widely-used AI agent frameworks — smolagents (HuggingFace, 25K stars), AutoGen (Microsoft, 55K stars), and CrewAI (44K stars). All three got the same treatment: a `knowledge.yaml` manifest, pre-built TL;DR summary files for the highest-traffic sections, and a before/after benchmark using the same model and methodology.
 
 The results: 73%, 80%, and 76% reductions in agent tool calls. Open PRs are live on all three repositories.
