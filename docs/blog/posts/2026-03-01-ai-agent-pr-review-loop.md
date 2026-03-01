@@ -16,13 +16,19 @@ authors:
 
 # What Happens When an AI Submits a PR and Another AI Reviews It
 
+![Recursive Refinement](../assets/images/blog/ai-agent-pr-review-loop/slide-01.png)
+
 We submitted a pull request to CrewAI adding a KCP manifest and TL;DR summary files. The goal was straightforward: contribute the same efficiency improvement that cut agent tool calls by 76% in our benchmark. Open it up, share the result, see if the maintainers want it.
 
 What happened next was not what I expected.
 
 <!-- more -->
 
+![A routine pull request — 76% reduction in agent tool calls](../assets/images/blog/ai-agent-pr-review-loop/slide-02.png)
+
 The first reviewer was not a human. It was Cursor Bugbot — an automated AI code review system that CrewAI has running on all incoming PRs. It reviewed the code and found an issue. We fixed it. It reviewed again and found another. We fixed that one too. This happened six times over the course of a few hours. On the seventh pass, it found nothing.
+
+![The first reviewer was not human — Cursor Bugbot vs Claude Code](../assets/images/blog/ai-agent-pr-review-loop/slide-03.png)
 
 By round five, the AI was reviewing the design of a knowledge navigation protocol.
 
@@ -32,15 +38,25 @@ By round five, the AI was reviewing the design of a knowledge navigation protoco
 
 Here is what actually happened, in order.
 
+![The autonomous review loop — no back-and-forth drafting, no discussion](../assets/images/blog/ai-agent-pr-review-loop/slide-04.png)
+
 **Round 1 — The obvious catch.** The benchmark script had a hardcoded path: `/src/totto/crewAI`. That is the path on my machine. Ship it to anyone else and it breaks immediately. Fair catch. Embarrassing, but fair.
 
+![Round 1 — hardcoded local path](../assets/images/blog/ai-agent-pr-review-loop/slide-05.png)
+
 **Round 2 — The security gap.** The `read_file` and `grep_content` tools in the benchmark runner had no path restrictions. An agent using the benchmark tools could theoretically read files outside the repository. The bugbot flagged this as medium severity. We added path validation.
+
+![Round 2 — unrestricted file reading vulnerability](../assets/images/blog/ai-agent-pr-review-loop/slide-06.png)
 
 **Round 3 — The wrong validation.** We had used `os.path.realpath(path).startswith(os.path.realpath(REPO_ROOT))` for path containment. The bugbot correctly pointed out this is a path traversal vulnerability: `/home/user/repo-secrets/` passes a check against `/home/user/repo`. We switched to `pathlib.Path.relative_to()`, which is the correct Python pattern.
 
 While in there, the bugbot also noted that `glob_files` — the file-listing tool — had no path restriction at all. Only `read_file` and `grep_content` had been protected. We fixed that too.
 
+![Round 3 — path traversal exploit in the validation logic](../assets/images/blog/ai-agent-pr-review-loop/slide-07.png)
+
 **Round 4 — Two subtle API bugs.** First: the `glob_files` handler declared a `base_dir` parameter in its JSON schema but silently ignored it in the implementation. An agent could pass a base directory and get results from the wrong location with no error. Second: the grep subprocess call was passing the search pattern without the `-e` flag, meaning patterns starting with a dash would be interpreted as grep arguments. Classic argument injection vector.
+
+![Round 4 — API contract violations and argument injection](../assets/images/blog/ai-agent-pr-review-loop/slide-08.png)
 
 **Round 5 — KCP manifest semantics.** This is the one that surprised me.
 
@@ -52,6 +68,8 @@ The bugbot's analysis:
 
 It was right. The `summary_of` field in KCP is a single-ID back-pointer. If an agent navigates to `tasks`, sees `summary_unit: agents-tasks-tldr`, then checks `summary_of` on that TL;DR and finds `agents` not `tasks`, it might skip the shortcut. The fix was to remove `summary_unit` from `tasks` and `memory`, and instead declare explicit `context` relationships from the TL;DRs to those units — semantically correct and spec-compliant.
 
+![Round 5 — KCP manifest semantics, protocol design review](../assets/images/blog/ai-agent-pr-review-loop/slide-09.png)
+
 ---
 
 ## What I noticed
@@ -62,7 +80,11 @@ Round 1 was a copy-paste mistake. Round 4 was a subtle API contract violation. R
 
 I do not think that progression was coincidence. Each fix closed an obvious gap and exposed a subtler one beneath it. The bugbot was working through layers.
 
+![Each fix closed an obvious gap to expose a subtler one beneath it](../assets/images/blog/ai-agent-pr-review-loop/slide-10.png)
+
 The fixes themselves were spread across four repositories — the three framework forks (smolagents, AutoGen, CrewAI) and the KCP spec repo's own CONTRIBUTING.md example, which had to stay in sync. Each round of fixes went to all four places, because the benchmark runner pattern is shared and the spec's canonical example should match. That coordination was also handled without human direction.
+
+![Fixes synchronized across four repositories simultaneously](../assets/images/blog/ai-agent-pr-review-loop/slide-11.png)
 
 ---
 
@@ -74,9 +96,15 @@ The loop was: bugbot finds issue → Claude Code reads the comment and writes a 
 
 This is not a story about AI being impressive. It is a story about what heterogeneous AI collaboration looks like in practice. Cursor Bugbot is trained differently from Claude Code. It has different strengths, different blind spots, a different purpose. The combination caught things neither would have found alone — or rather, things I would have shipped with if a human had been the first reviewer.
 
+![Heterogeneous AI models catch what single models miss](../assets/images/blog/ai-agent-pr-review-loop/slide-12.png)
+
+![The developer transitions from code writer to system supervisor](../assets/images/blog/ai-agent-pr-review-loop/slide-13.png)
+
 After the round five fix was pushed, the bugbot ran a seventh time. It found nothing. The check came back clean.
 
 The PR is still open. No human reviewer has looked at it yet. But by the time they do, another AI will have reviewed it seven times and the code will be considerably tighter for it.
+
+![The code is considerably tighter before a human ever opens the pull request](../assets/images/blog/ai-agent-pr-review-loop/slide-14.png)
 
 ---
 
