@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated February 2026 (70 posts, 583 books).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (71 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -366,6 +366,7 @@ Continues from "Who Describes You to AI?" (Feb 24) and "Beyond llms.txt" (Feb 25
 - **How Do You Tell an Agent "This Data Cannot Leave the Building"?** (Feb 28) — RFC-0004: trust (provenance, audit, agent attestation) and compliance (data residency, regulations, sensitivity, processing restrictions) as advisory metadata aligned with NIST AI RMF.
 - **The HTTP Status Code That Waited 30 Years for Autonomous Agents** (Feb 28) — RFC-0005: payment (free, x402 micropayment, metered, subscription) and rate limits blocks so agents know access cost and consumption constraints before requesting, enabling budget-aware loading decisions.
 - **The Agent Read the Whole Spec. It Didn't Need To.** (Feb 28) — RFC-0006: context hints (token estimates, load strategy, priority, density) so agents know document cost before loading, can chunk large files, and avoid context overflow by planning consumption in advance.
+- **KCP on Two Repos, Two Days: What the Numbers Actually Show** (Mar 1) — Before/after benchmarks on two different repository types: an application codebase (plugin wizard, 10 queries, 74% tool call reduction) and a pure documentation repository (infrastructure agents guide, 7 queries, 53% reduction). The contrast shows KCP adds more value where navigation is harder. Repos anonymised pending consent.
 
 ### Cloud Computing series (2009)
 
