@@ -24,6 +24,8 @@ Today we applied KCP to three of the most widely-used AI agent frameworks — sm
 
 The results: 73%, 80%, and 76% reductions in agent tool calls. Open PRs are live on all three repositories.
 
+![73% smolagents (HuggingFace), 80% AutoGen (Microsoft), 76% CrewAI — KCP applied to these three widely-used AI frameworks yielded identical patterns of massive tool-call reduction.](/assets/images/kcp-three-frameworks-hero-numbers.png)
+
 <!-- more -->
 
 ## Why frameworks specifically
@@ -31,6 +33,8 @@ The results: 73%, 80%, and 76% reductions in agent tool calls. Open PRs are live
 The [previous post in this series](./2026-03-01-kcp-two-repos-two-days.md) benchmarked two smaller repos — one application codebase (74%) and one documentation repository (53%). The documentation repo produced a lower result, which made sense: a flat 13-chapter guide is navigable without a manifest if the README is well-organised.
 
 AI agent frameworks are a harder problem. They have multiple APIs, dozens of notebooks and concept guides, integration sections, design pattern galleries, and reference material spread across different directories. A baseline agent exploring one of these repos to answer "how do I add memory to my agent?" has no structural signal about which of several plausible directories to look in first.
+
+![A baseline agent asking "how do I add memory to my agent?" has no structural signal about which of several plausible directories to look in first.](/assets/images/kcp-three-frameworks-agents-lost.png)
 
 That is exactly what KCP is designed for.
 
@@ -80,6 +84,8 @@ AutoGen has two distinct Python APIs — Core (low-level, actor model, pub/sub) 
 
 The design patterns query shows this most clearly: 32 baseline tool calls. The agent read the README, explored the Python docs structure, read the user guide index, found the core concepts section, read architecture docs, browsed the design patterns directory, and only then read the pattern notebooks one by one. With KCP: read `knowledge.yaml`, match to `design-patterns-tldr`, read the TL;DR. 4 calls — a one-line description of each pattern and pointers to the notebooks that go deeper.
 
+![AutoGen: design patterns query drops from 32 baseline calls to 4 with KCP. The full navigation path collapsed to knowledge.yaml → design-patterns-tldr.](/assets/images/kcp-three-frameworks-autogen-chart.png)
+
 The model clients query had the smallest gain (36→16): the full provider list required reading a large notebook with many sections, and KCP directed the agent correctly but could not compress the content itself. It still saved 20 calls.
 
 80% is the best result across all repositories benchmarked so far.
@@ -108,6 +114,8 @@ The RAG query is the standout: 33 baseline calls, 3 with KCP. The baseline agent
 
 The hierarchical crew query had the smallest relative improvement (22→9) because it genuinely requires reading two large reference files — `crews.mdx` and `tasks.mdx` — to understand the manager agent configuration. KCP removed the exploration overhead but could not reduce the inherent reading depth.
 
+![KCP eliminates exploration overhead, not reading time. smolagents RAG query: 6→6. CrewAI hierarchical crew: 22→9. The ceiling is the inherent depth of the answer, not a KCP limitation.](/assets/images/kcp-three-frameworks-exploration-ceiling.png)
+
 ---
 
 ## Five repos, one pattern
@@ -127,6 +135,8 @@ The documentation repository (53%) is the outlier. It is also the simplest navig
 Everything else lands between 73% and 80%. The application codebase, despite being small, has wide answer distribution — a question about "how to add a tool" could live in a guide, a type definition, or the source. The frameworks have that problem at scale.
 
 The pattern is consistent enough to state a hypothesis: **KCP adds more value where the navigation problem is harder.** The improvement is not primarily about how much documentation exists — it is about how unpredictable the answer location is without guidance.
+
+![KCP adds the most value where answer locations are unpredictable. Complex frameworks cluster high on the value axis; the simple 13-chapter doc sits low because a baseline agent can narrow to the right chapter in 3–4 reads.](/assets/images/kcp-three-frameworks-unpredictability.png)
 
 ---
 

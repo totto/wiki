@@ -60,9 +60,11 @@ All agents ran in the same session for consistency.
 
 **74% fewer tool calls.** 9 of 10 queries cost ≤3 tool calls with KCP. Zero do without it.
 
+![74% fewer tool calls on an application codebase: 119 baseline calls vs 31 with KCP across 10 queries.](/assets/images/kcp-two-repos-74percent.png)
+
 The expensive queries were the revealing ones. "How to create a new agent" cost 16 baseline tool calls — the agent read the README, found no direct answer, read the architecture doc, found a partial answer, then read four more files including source code to piece it together. The KCP agent read the manifest, matched the query to the `agents-guide` unit, and read one file: 3 tool calls total.
 
-![The "create a new agent" query: 16 baseline reads vs 3 with KCP. The manifest replaced searching with routing.](/assets/images/kcp-slide-journey-new-agent.png)
+![The "create a new agent" query: 16 baseline reads vs 3 with KCP. The manifest replaced searching with routing.](/assets/images/kcp-two-repos-journey-map.png)
 
 Q8 (icon library, 9 KCP calls) is the honest outlier. There is no dedicated icons unit in the manifest. The KCP agent correctly matched the nearest relevant unit and kept digging through source files. That is the right behaviour. It also tells you exactly where the manifest should grow next.
 
@@ -93,7 +95,7 @@ The pattern without the manifest: agent reads the README, gets chapter titles, r
 
 With the manifest, the agent read `knowledge.yaml` and found the trigger: `policy-guardrails-tldr` has `prompt-injection` as a declared trigger. Two calls. The TL;DR had enough depth for the answer; the full chapter was never loaded.
 
-![The prompt injection query: baseline agent read 3 full chapters (11 calls). KCP agent found the trigger and routed to the TL;DR (5 calls).](/assets/images/kcp-slide-journey-prompt-injection.png)
+![The prompt injection query: baseline agent read 3 full chapters (11 calls). KCP agent found the trigger and routed to the TL;DR (5 calls).](/assets/images/kcp-two-repos-trigger-routing.png)
 
 ---
 
@@ -137,7 +139,7 @@ Both repositories are public. The manifests, TL;DR files, and benchmarks are in 
 
 The KCP specification is at [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol). The two experiments here represent two different repository types — application code and pure documentation — and the results suggest the pattern generalises.
 
-![The worse the baseline experience, the bigger the improvement. That is not a limitation of the approach; it is the point.](/assets/images/kcp-slide-verdict.png)
+![The worse the baseline experience, the bigger the improvement. That is not a limitation of the approach; it is the point.](/assets/images/kcp-two-repos-closing.png)
 
 ---
 
