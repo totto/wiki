@@ -22,7 +22,7 @@ What happened next was not what I expected.
 
 <!-- more -->
 
-The first reviewer was not a human. It was Cursor Bugbot — an automated AI code review system that CrewAI has running on all incoming PRs. It reviewed the code and found an issue. We fixed it. It reviewed again and found another. We fixed that one too. This happened six times over the course of a few hours.
+The first reviewer was not a human. It was Cursor Bugbot — an automated AI code review system that CrewAI has running on all incoming PRs. It reviewed the code and found an issue. We fixed it. It reviewed again and found another. We fixed that one too. This happened six times over the course of a few hours. On the seventh pass, it found nothing.
 
 By round five, the AI was reviewing the design of a knowledge navigation protocol.
 
@@ -74,7 +74,9 @@ The loop was: bugbot finds issue → Claude Code reads the comment and writes a 
 
 This is not a story about AI being impressive. It is a story about what heterogeneous AI collaboration looks like in practice. Cursor Bugbot is trained differently from Claude Code. It has different strengths, different blind spots, a different purpose. The combination caught things neither would have found alone — or rather, things I would have shipped with if a human had been the first reviewer.
 
-The PR is still open. No human reviewer has looked at it yet. But by the time they do, another AI will have reviewed it six times and the code will be considerably tighter for it.
+After the round five fix was pushed, the bugbot ran a seventh time. It found nothing. The check came back clean.
+
+The PR is still open. No human reviewer has looked at it yet. But by the time they do, another AI will have reviewed it seven times and the code will be considerably tighter for it.
 
 ---
 
