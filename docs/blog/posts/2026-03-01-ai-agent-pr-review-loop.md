@@ -80,4 +80,8 @@ The PR is still open. No human reviewer has looked at it yet. But by the time th
 
 ---
 
+[Download the NotebookLM presentation: Recursive Refinement](../assets/presentations/recursive-refinement.pdf)
+
+---
+
 *The CrewAI PR is at [github.com/crewAIInc/crewAI/pull/4658](https://github.com/crewAIInc/crewAI/pull/4658). The benchmark runner pattern used in all three framework PRs is documented in [CONTRIBUTING.md](https://github.com/Cantara/knowledge-context-protocol/blob/main/CONTRIBUTING.md) in the KCP spec repo.*
