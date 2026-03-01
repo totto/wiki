@@ -367,6 +367,7 @@ Continues from "Who Describes You to AI?" (Feb 24) and "Beyond llms.txt" (Feb 25
 - **The HTTP Status Code That Waited 30 Years for Autonomous Agents** (Feb 28) — RFC-0005: payment (free, x402 micropayment, metered, subscription) and rate limits blocks so agents know access cost and consumption constraints before requesting, enabling budget-aware loading decisions.
 - **The Agent Read the Whole Spec. It Didn't Need To.** (Feb 28) — RFC-0006: context hints (token estimates, load strategy, priority, density) so agents know document cost before loading, can chunk large files, and avoid context overflow by planning consumption in advance.
 - **KCP on Two Repos, Two Days: What the Numbers Actually Show** (Mar 1) — Before/after benchmarks on two different repository types: an application codebase (plugin wizard, 10 queries, 74% tool call reduction) and a pure documentation repository (infrastructure agents guide, 7 queries, 53% reduction). The contrast shows KCP adds more value where navigation is harder. Repos anonymised pending consent.
+- **KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers** (Mar 1) — KCP applied to smolagents (HuggingFace, 73%), AutoGen (Microsoft, 80%), and CrewAI (76%). Five repos total across the series. Consistent pattern: more complex navigation space = more benefit. Open PRs submitted to all three upstream repos. Benchmark methodology published in CONTRIBUTING.md at cantara/knowledge-context-protocol.
 
 ### Cloud Computing series (2009)
 
