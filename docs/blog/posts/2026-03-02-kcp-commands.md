@@ -186,24 +186,36 @@ Phase A and B are pre-configured for 244 commands across twenty groups:
 
 **Kubernetes** — `kubectl get` · `kubectl logs` · `kubectl describe` · `kubectl apply` · `kubectl exec` · `kubectl port-forward` · `kubectl delete` · `kubectl rollout` · `kubectl scale` · `kubectl top` · `kubectl config` · `kubectl create`
 
-**Cloud / IaC** — `aws` · `gcloud` · `az` · `terraform` · `helm` · `ansible` · `ansible-playbook` · `vagrant` · `pulumi` · `serverless` · `minikube` · `kind`
+**Cloud / IaC** — `aws` · `gcloud` · `az` · `terraform` · `helm` · `ansible` · `ansible-playbook` · `vagrant` · `pulumi` · `serverless` · `minikube` · `kind` · `packer` · `eksctl`
 
-**Database CLIs** — `psql` · `mysql` · `redis-cli` · `sqlite3` · `mongosh` · `influx`
+**Database CLIs** — `psql` · `mysql` · `redis-cli` · `sqlite3` · `mongosh` · `influx` · `pg_dump` · `pg_restore` · `mysqldump`
 
-**Security** — `gpg` · `ssh-keygen` · `ssh-add` · `certbot` · `keytool` · `age`
+**Security / secrets** — `gpg` · `ssh-keygen` · `ssh-add` · `certbot` · `keytool` · `age` · `vault` · `consul`
 
 **System diagnostics** — `htop` · `vmstat` · `dstat` · `iotop` · `strace` · `dmesg` · `lsblk` · `iostat` · `uptime` · `id` · `who` · `crontab` · `tmux`
 
 **Networking** — `nmap` · `nc` · `traceroute` · `ip` · `mtr` · `nslookup` · `whois`
 
-**Modern CLI** — `fzf` · `rg` · `fd` · `bat` · `delta` · `eza` · `hyperfine` · `tldr` · `jless` · `parallel`
+**Modern CLI** — `fzf` · `rg` · `fd` · `bat` · `delta` · `eza` · `hyperfine` · `tldr` · `jless` · `parallel` · `lazygit`
 
 **Linters / CI** — `shellcheck` · `hadolint` · `act` · `k9s`
+
+**GitOps** — `kustomize` · `argocd` · `flux`
+
+**Deployment platforms** — `fly` · `vercel` · `wrangler` · `heroku` · `doctl`
+
+**Version managers** — `asdf` · `mise` · `nvm` · `pyenv` · `rustup`
+
+**Build / media / docs** — `cmake` · `ffmpeg` · `pytest` · `mkdocs` · `rclone`
+
+**HTTP clients** — `http` (HTTPie)
+
+**AI / LLM** — `ollama`
 
 **Windows** — `dir` · `tasklist` · `taskkill` · `ipconfig` · `netstat` · `where` ·
 `robocopy` · `type` · `xcopy` (all include PowerShell equivalents)
 
-![214 primed manifests ready out of the box — Git, Linux/macOS, text processing, build tools, package managers, GitHub CLI, Docker, Kubernetes/Cloud, Windows and more](/assets/images/blog/kcp-commands-slide-11-62-manifests.png)
+![244 primed manifests ready out of the box — 20 groups from Git and Linux to GitOps, version managers, AI/LLM, and deployment platforms](/assets/images/blog/kcp-commands-slide-11-62-manifests.png)
 
 For unknown commands, the hook runs `<cmd> --help`, parses the output, and saves a
 generated manifest to `~/.kcp/commands/` for next time.
