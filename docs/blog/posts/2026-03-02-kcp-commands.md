@@ -31,6 +31,8 @@ The full number across our benchmark session: **67,352 tokens saved**.
 
 <!-- more -->
 
+![kcp-commands: recover 33% of your Claude Code context window — Phase A syntax injection, Phase B noise filtering, 62 bundled manifests, Java daemon + Node.js fallback](/assets/images/blog/kcp-commands-context-window-overview.png)
+
 ---
 
 ## The two problems it solves
