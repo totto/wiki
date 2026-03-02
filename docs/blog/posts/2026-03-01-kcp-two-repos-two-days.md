@@ -135,7 +135,11 @@ Neither benchmark tests answer quality. Both sets of agents produced correct ans
 
 ## What comes next
 
-Both repositories are public. The manifests, TL;DR files, and benchmarks are in the repos. When the authors give consent to be named, this post will be updated with links.
+Both repositories are public. The manifests, TL;DR files, and benchmarks are in the repos.
+
+Repo 2 is [Cloudgeni-ai/infrastructure-agents-guide](https://github.com/Cloudgeni-ai/infrastructure-agents-guide) by Davlet Dzhakishev — a 13-chapter production guide for building safe infrastructure agents. The KCP manifest and TL;DR files are in the fork at [totto/infrastructure-agents-guide](https://github.com/totto/infrastructure-agents-guide). Thanks to Davlet for allowing the benchmark to be published.
+
+Repo 1 will be linked when consent is confirmed.
 
 The KCP specification is at [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol). The two experiments here represent two different repository types — application code and pure documentation — and the results suggest the pattern generalises.
 
@@ -143,4 +147,4 @@ The KCP specification is at [github.com/cantara/knowledge-context-protocol](http
 
 ---
 
-*Repos will be named when consent is confirmed. Methodology and raw benchmark numbers are in the BENCHMARK.md files in each repository.*
+*Repo 1 will be named when consent is confirmed. Methodology and raw benchmark numbers are in the BENCHMARK.md files in each repository.*
