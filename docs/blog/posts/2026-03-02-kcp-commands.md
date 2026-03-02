@@ -334,6 +334,21 @@ Good candidates:
 
 ---
 
+## Release history
+
+| Version | Manifests | Notes |
+|---------|-----------|-------|
+| v0.1.0 | 18 | Initial: git, Linux/macOS basics, curl, ssh, docker, kubectl |
+| v0.2.0 | 32 | Windows, extended git, networking |
+| v0.3.0 | 62 | Full initial library |
+| v0.4.0 | 114 | Text processing, build tools, package managers, cloud/IaC |
+| v0.5.0 | 214 | System tools, DB CLIs, security, modern CLI, monitoring |
+| v0.6.0 | 244 | ollama, HTTPie, ffmpeg, pytest, cmake, mkdocs, rclone, pg_dump/restore, mysqldump, glab, fly/vercel/wrangler/heroku/doctl/eksctl, vault/consul/packer, kustomize/argocd/flux, asdf/mise/nvm/pyenv/rustup, dbt, lazygit |
+| v0.6.1 | 244 | Fix: index.txt auto-generated; install to `~/.kcp/`; `cli.js` released as artifact |
+| v0.7.0 | 244 | README install section clarifications; Releases changelog; v0.6.1 patch docs |
+
+---
+
 ## v0.6.1 patch (2026-03-02)
 
 Two bugs were discovered on the day of release and fixed in v0.6.1.
