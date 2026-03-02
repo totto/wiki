@@ -332,6 +332,10 @@ KCP gives agents a map of a project's knowledge units. kcp-commands gives agents
 of its shell command vocabulary. Both reduce the search overhead that compounds across
 every session.
 
+kcp-commands is now listed as a reference implementation in the
+[KCP specification](https://github.com/Cantara/knowledge-context-protocol/blob/main/SPEC.md)
+(Appendix D) alongside [Synthesis](https://github.com/exoreaction/synthesis).
+
 The repository is at [github.com/Cantara/kcp-commands](https://github.com/Cantara/kcp-commands).
 Apache 2.0. Issues and manifest contributions welcome.
 
