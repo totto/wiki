@@ -31,7 +31,7 @@ The full number across our benchmark session: **67,352 tokens saved**.
 
 <!-- more -->
 
-![kcp-commands: recover 33% of your Claude Code context window — Phase A syntax injection, Phase B noise filtering, 62 bundled manifests, Java daemon + Node.js fallback](/assets/images/blog/kcp-commands-context-window-overview.png)
+![kcp-commands: recover 33% of your Claude Code context window — Phase A syntax injection, Phase B noise filtering, 114 bundled manifests, Java daemon + Node.js fallback](/assets/images/blog/kcp-commands-context-window-overview.png)
 
 ![Key numbers: 67,352 tokens saved, 33.7% of context window recovered, 33 additional tool call results](/assets/images/blog/kcp-commands-slide-03-key-numbers.png)
 
@@ -158,25 +158,36 @@ is the recommended path for sessions with many tool calls.
 
 ---
 
-## 62 bundled manifests
+## 114 bundled manifests
 
-Phase A and B are pre-configured for 62 commands across four platform groups:
+Phase A and B are pre-configured for 114 commands across nine groups:
 
 **Git** — `git log` · `git diff` · `git status` · `git add` · `git commit` · `git push` ·
 `git pull` · `git fetch` · `git branch` · `git checkout` · `git stash` · `git merge` ·
-`git rebase` · `git clone` · `git reset` · `git tag` · `git remote` · `git show`
+`git rebase` · `git clone` · `git reset` · `git tag` · `git remote` · `git show` ·
+`git cherry-pick` · `git bisect` · `git worktree` · `git submodule`
 
 **Linux / macOS** — `ls` · `ps` · `find` · `cp` · `mv` · `rm` · `mkdir` · `cat` ·
 `head` · `tail` · `grep` · `chmod` · `df` · `du` · `tar` · `ln` · `rsync` · `top` ·
-`kill` · `systemctl` · `journalctl` · `lsof` · `netstat` · `ss` · `ping`
+`kill` · `systemctl` · `journalctl` · `lsof` · `netstat` · `ss` · `ping` ·
+`free` · `watch` · `wget` · `dig` · `openssl` · `scp`
 
-**Cross-platform** — `curl` · `npm` · `node` · `ssh` · `docker ps` · `docker images` ·
-`docker logs` · `kubectl get` · `kubectl logs` · `kubectl describe`
+**Text processing** — `jq` · `sed` · `awk` · `sort` · `uniq` · `wc` · `cut` · `xargs` · `tee` · `tr` · `diff` · `make`
+
+**Build tools** — `mvn` · `gradle` · `cargo` · `go build` · `go test` · `go mod`
+
+**Package managers** — `npm` · `yarn` · `pnpm` · `bun` · `pip` · `brew` · `apt` · `yum`
+
+**GitHub CLI** — `gh pr` · `gh issue` · `gh repo` · `gh workflow`
+
+**Docker** — `docker ps` · `docker images` · `docker logs` · `docker build` · `docker run` · `docker exec` · `docker compose`
+
+**Kubernetes / Cloud / IaC** — `kubectl get` · `kubectl logs` · `kubectl describe` · `kubectl apply` · `kubectl exec` · `kubectl port-forward` · `kubectl delete` · `aws` · `gcloud` · `az` · `terraform` · `helm`
 
 **Windows** — `dir` · `tasklist` · `taskkill` · `ipconfig` · `netstat` · `where` ·
 `robocopy` · `type` · `xcopy` (all include PowerShell equivalents)
 
-![62 primed manifests ready out of the box — Git, Linux/macOS, Cross-platform, Windows platform groups](/assets/images/blog/kcp-commands-slide-11-62-manifests.png)
+![114 primed manifests ready out of the box — Git, Linux/macOS, text processing, build tools, package managers, GitHub CLI, Docker, Kubernetes/Cloud, Windows](/assets/images/blog/kcp-commands-slide-11-62-manifests.png)
 
 For unknown commands, the hook runs `<cmd> --help`, parses the output, and saves a
 generated manifest to `~/.kcp/commands/` for next time.
