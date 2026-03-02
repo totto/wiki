@@ -31,7 +31,7 @@ The full number across our benchmark session: **67,352 tokens saved**.
 
 <!-- more -->
 
-![kcp-commands: recover 33% of your Claude Code context window — Phase A syntax injection, Phase B noise filtering, 214 bundled manifests, Java daemon + Node.js fallback](/assets/images/blog/kcp-commands-context-window-overview.png)
+![kcp-commands: recover 33% of your Claude Code context window — Phase A syntax injection, Phase B noise filtering, 244 bundled manifests, Java daemon + Node.js fallback](/assets/images/blog/kcp-commands-context-window-overview.png)
 
 ![Key numbers: 67,352 tokens saved, 33.7% of context window recovered, 33 additional tool call results](/assets/images/blog/kcp-commands-slide-03-key-numbers.png)
 
@@ -158,9 +158,9 @@ is the recommended path for sessions with many tool calls.
 
 ---
 
-## 214 bundled manifests
+## 244 bundled manifests
 
-Phase A and B are pre-configured for 214 commands across seventeen groups:
+Phase A and B are pre-configured for 244 commands across twenty groups:
 
 **Git** — `git log` · `git diff` · `git status` · `git add` · `git commit` · `git push` ·
 `git pull` · `git fetch` · `git branch` · `git checkout` · `git stash` · `git merge` ·
