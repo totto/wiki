@@ -158,9 +158,9 @@ is the recommended path for sessions with many tool calls.
 
 ---
 
-## 244 bundled manifests
+## 283 bundled manifests
 
-Phase A and B are pre-configured for 244 commands across twenty groups:
+Phase A and B are pre-configured for 283 commands across twenty-eight groups:
 
 **Git** — `git log` · `git diff` · `git status` · `git add` · `git commit` · `git push` ·
 `git pull` · `git fetch` · `git branch` · `git checkout` · `git stash` · `git merge` ·
@@ -213,9 +213,27 @@ Phase A and B are pre-configured for 244 commands across twenty groups:
 **AI / LLM** — `ollama`
 
 **Windows** — `dir` · `tasklist` · `taskkill` · `ipconfig` · `netstat` · `where` ·
-`robocopy` · `type` · `xcopy` (all include PowerShell equivalents)
+`robocopy` · `type` · `xcopy` · `winget` (all include PowerShell equivalents)
 
-![244 primed manifests ready out of the box — 20 groups from Git and Linux to GitOps, version managers, AI/LLM, and deployment platforms](/assets/images/blog/kcp-commands-slide-11-62-manifests.png)
+**Linters / formatters** — `ruff` · `eslint` · `prettier` · `mypy` · `golangci-lint` · `yamllint` · `markdownlint`
+
+**Testing** — `jest` · `vitest` · `playwright` · `cypress` · `k6` · `grpcurl`
+
+**Containers+** — `podman` · `trivy` · `cosign`
+
+**Monorepo / task runners** — `nx` · `turbo` · `just` · `bazel` · `task`
+
+**Secrets / config** — `sops` · `op` · `direnv`
+
+**Modern CLI+** — `zoxide` · `btm` · `dust` · `procs`
+
+**Package managers+** — `uv` · `apk` · `dnf` · `pipx`
+
+**Runtimes+** — `deno` · `go run` · `php` · `swift`
+
+**Dev workflow** — `pre-commit` · `gh codespace`
+
+![283 primed manifests ready out of the box — 28 groups from Git and Linux to GitOps, version managers, AI/LLM, and deployment platforms](/assets/images/blog/kcp-commands-slide-11-62-manifests.png)
 
 For unknown commands, the hook runs `<cmd> --help`, parses the output, and saves a
 generated manifest to `~/.kcp/commands/` for next time.
@@ -346,6 +364,7 @@ Good candidates:
 | v0.6.0 | 244 | ollama, HTTPie, ffmpeg, pytest, cmake, mkdocs, rclone, pg_dump/restore, mysqldump, glab, fly/vercel/wrangler/heroku/doctl/eksctl, vault/consul/packer, kustomize/argocd/flux, asdf/mise/nvm/pyenv/rustup, dbt, lazygit |
 | v0.6.1 | 244 | Fix: index.txt auto-generated; install to `~/.kcp/`; `cli.js` released as artifact |
 | v0.7.0 | 244 | README install section clarifications; Releases changelog; v0.6.1 patch docs |
+| v0.8.0 | 283 | Linters (ruff, eslint, prettier, mypy, golangci-lint, yamllint, markdownlint), testing (jest, vitest, playwright, cypress, k6, grpcurl), containers (podman, trivy, cosign), monorepo (nx, turbo, just, bazel, task), secrets (sops, op, direnv), modern CLI (zoxide, btm, dust, procs), package managers (uv, apk, dnf, pipx, winget), runtimes (deno, go run, php, swift), dev workflow (pre-commit, gh codespace) |
 
 ---
 
