@@ -1,3 +1,9 @@
+---
+tags:
+  - Presentations
+  - Career
+---
+
 # Presentations and Publications
 
 Conference talks, workshops, and publications spanning 2006--2023. Topics cover architecture, SOA, cloud computing, productivity, data quality, and development methodology.

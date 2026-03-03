@@ -1,3 +1,10 @@
+---
+tags:
+  - AI
+  - Synthesis
+  - Open Source
+---
+
 # Synthesis — Release History
 
 Synthesis is a knowledge infrastructure platform for AI-augmented development. It indexes workspaces (code, documentation, PDFs, media), builds a multi-layer knowledge graph, and exposes everything through a CLI, an MCP server for AI agents, and an LSP server for IDEs.

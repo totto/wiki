@@ -1,6 +1,9 @@
 ---
 hide:
   - toc
+tags:
+  - Reading
+  - Sci-Fi
 ---
 
 <div class="scifi-hero" markdown>

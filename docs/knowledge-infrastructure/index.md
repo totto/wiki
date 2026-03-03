@@ -1,3 +1,11 @@
+---
+tags:
+  - AI
+  - Synthesis
+  - Knowledge Infrastructure
+  - Open Source
+---
+
 # Knowledge Infrastructure
 
 Over the past three months I have been building and writing about a specific problem: AI agents create faster than humans comprehend. The bottleneck in AI-augmented development is not code generation -- it is finding, understanding, and connecting what has already been generated. Knowledge infrastructure is the missing layer.

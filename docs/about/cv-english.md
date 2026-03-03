@@ -1,3 +1,9 @@
+---
+tags:
+  - CV
+  - Career
+---
+
 # CV (English)
 
 **Thor Henning Hetland** -- Oslo, Norway

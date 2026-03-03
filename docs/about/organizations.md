@@ -1,3 +1,9 @@
+---
+tags:
+  - Community
+  - Career
+---
+
 # Organizations
 
 Community building and organizational leadership have been a constant thread throughout my career -- from student groups in the early 1990s to co-founding Scandinavia's largest developer conference.

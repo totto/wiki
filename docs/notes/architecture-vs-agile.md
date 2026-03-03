@@ -1,3 +1,9 @@
+---
+tags:
+  - Architecture
+  - Methodology
+---
+
 # Architecture vs Agile -- XP Meetup Panel
 
 !!! info "Context"

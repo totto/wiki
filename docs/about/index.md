@@ -1,3 +1,9 @@
+---
+tags:
+  - Bio
+  - Career
+---
+
 <img src="../assets/images/totto-2014.jpg" class="profile-image" alt="Thor Henning Hetland" />
 
 # About

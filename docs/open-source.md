@@ -1,3 +1,9 @@
+---
+tags:
+  - Open Source
+  - AI
+---
+
 # Open Source
 
 I have been involved in open source for most of my career. The work spans three GitHub organizations and ranges from production IAM systems to AI knowledge infrastructure.

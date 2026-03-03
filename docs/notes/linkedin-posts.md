@@ -1,3 +1,9 @@
+---
+tags:
+  - Writing
+  - AI
+---
+
 # LinkedIn Writing
 
 Selected posts from [LinkedIn](https://www.linkedin.com/in/hetland/), November 2025 – February 2026.
