@@ -6,6 +6,55 @@ This page maps the body of work that emerged from that problem. It spans four co
 
 ---
 
+## State of the work
+
+<div class="grid cards" markdown>
+
+-   :material-magnify: **Synthesis** · v1.21.0
+
+    ---
+
+    Local-first knowledge infrastructure platform. Indexes workspaces, builds multi-layer knowledge graphs, exposes everything through CLI, MCP, and LSP.
+
+    **55** CLI commands · **4,170** tests · **8** MCP tools
+
+    [:octicons-arrow-right-24: Release history](../notes/synthesis-releases.md) · [:octicons-link-external-16: GitHub](https://github.com/exoreaction/Synthesis)
+
+-   :material-map: **Knowledge Context Protocol** · v0.5 draft
+
+    ---
+
+    YAML file format that makes knowledge navigable by AI agents. Topology, intent, freshness, audience targeting, context window hints. Submitted to the Agentic AI Foundation.
+
+    **5** RFCs · **3** reference implementations
+
+    [:octicons-arrow-right-24: Spec](https://github.com/Cantara/knowledge-context-protocol/blob/main/SPEC.md) · [:octicons-link-external-16: GitHub](https://github.com/Cantara/knowledge-context-protocol)
+
+-   :material-console: **kcp-commands** · v0.8.0
+
+    ---
+
+    Claude Code hook that intercepts Bash tool calls. Injects flag guidance before execution, strips noise after. Java daemon at 12ms/call.
+
+    **283** bundled manifests · **67,352** tokens saved per session
+
+    [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-commands)
+
+-   :material-robot: **IronClaw**
+
+    ---
+
+    Open-source AI agent framework. Runs on Linux, connects to Slack, supports MCP tool registration. Powers Mimir and Klaw in the four-layer stack.
+
+    [:octicons-link-external-16: GitHub](https://github.com/nearai/ironclaw)
+
+</div>
+
+!!! abstract "At a glance"
+    **~30 posts** across 4 blog series · **Jan 15 -- Mar 3, 2026** · Latest: [Three-Layer AI Memory](/blog/2026/03/03/three-layer-ai-memory-episodic-memory-semantic-memory-your-agent-has-one/)
+
+---
+
 ## The argument in five minutes
 
 1. **AI made creating easy but understanding harder.** Output velocity increased 10--50x. Shipping speed improved 2x. The gap is comprehension -- navigation, context-gathering, relationship-tracking. ([The Comprehension Bottleneck](/blog/2026/02/05/the-comprehension-bottleneck-why-ai-made-creating-easy-but-understanding-harder/))
