@@ -239,10 +239,18 @@ any prior knowledge of the repository structure — the same pattern used by OAu
 
 ![What's Next: Standardizing Discovery — /.well-known/kcp.json IANA registration](/assets/images/blog/kcp-history-slide-whats-next-discovery.png)
 
-**Framework PRs under review.** Three major AI agent frameworks have open PRs adding
+**opencode-kcp-plugin published.** The first KCP plugin for a major AI coding tool is live on
+npm: [`opencode-kcp-plugin`](https://www.npmjs.com/package/opencode-kcp-plugin). It works with
+[OpenCode](https://github.com/anomalyco/opencode) (114K stars), injecting the `knowledge.yaml`
+knowledge map into the system prompt and annotating glob/grep results with KCP intent strings.
+Install: `npm install opencode-kcp-plugin`. A PR adding `knowledge.yaml` to the OpenCode repo
+itself is also [open for review](https://github.com/anomalyco/opencode/pull/15839).
+
+**Framework PRs under review.** Four AI agent frameworks now have open PRs adding
 `knowledge.yaml` manifests. If you maintain one of these repositories, or you use them
 and want KCP adopted upstream, this is the moment to comment:
 
+- [anomalyco/opencode #15839](https://github.com/anomalyco/opencode/pull/15839) — 73–80% reduction (+ plugin on npm)
 - [microsoft/autogen #7329](https://github.com/microsoft/autogen/pull/7329) — 80% reduction
 - [huggingface/smolagents #2026](https://github.com/huggingface/smolagents/pull/2026) — 73% reduction
 - [crewAIInc/crewAI #4658](https://github.com/crewAIInc/crewAI/pull/4658) — 76% reduction

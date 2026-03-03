@@ -165,6 +165,11 @@ It is Apache v2 licensed, intentionally minimal, and open for feedback. KCP has 
 the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation)
 (Linux Foundation) for neutral governance alongside MCP and AGENTS.md.
 
+If you use [OpenCode](https://github.com/anomalyco/opencode), the
+[`opencode-kcp-plugin`](https://www.npmjs.com/package/opencode-kcp-plugin) applies KCP directly
+to your sessions: it injects the knowledge map into every system prompt and annotates glob/grep
+results with intent strings. Two lines to enable — one to install, one in `opencode.json`.
+
 If you have a use case that the current format does not cover, open an issue. If you add a
 `knowledge.yaml` to a project and it works — or does not work — I want to know.
 
