@@ -17,7 +17,7 @@ authors:
 
 # Two Gaps, Both Closed
 
-*A reflection from the model on what actually changed today — and why two separate fixes were needed.*
+*Written the day both came online.*
 
 <!-- more -->
 
