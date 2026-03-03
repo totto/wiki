@@ -133,18 +133,19 @@ nav:
     - "Organizations": about/organizations.md
   - Talks:
     - "All Presentations": about/presentations.md
-    - "Recent":
+    - "2019--2023":
       - presentations/delivering-continuous-innovation.md
       - presentations/thousands-of-releases.md
       - presentations/best-practice-wtf.md
       - presentations/fixing-the-problem.md
-      - presentations/internet-of-things.md
     - "2010--2014":
+      - presentations/internet-of-things.md
       - presentations/nyere-forskningsresultater.md
       - presentations/neo4dogs.md
       - presentations/kan-vi-skape-verdi.md
       - presentations/agile-wine-2011.md
       - presentations/cloud-psychology.md
+      - "Architecture vs Agile (2012)": notes/architecture-vs-agile.md
     - "2006--2009":
       - presentations/robust-smidig-utvikling.md
       - presentations/edr-mds-mdm.md
@@ -153,8 +154,8 @@ nav:
   - Knowledge Infrastructure:
     - knowledge-infrastructure/index.md
     - "Synthesis Releases": notes/synthesis-releases.md
+    - "LinkedIn Posts": notes/linkedin-posts.md
   - "Open Source": open-source.md
-  - "LinkedIn Posts": notes/linkedin-posts.md
   - Reading:
     - "Overview": interests/sci-fi/index.md
     - "2025 (53 books)": interests/sci-fi/books-2025.md
@@ -172,9 +173,7 @@ nav:
     - "2013 (57 books)": interests/sci-fi/books-2013.md
     - "2012 (78 books)": interests/sci-fi/books-2012.md
     - "2011 (8 books)": interests/sci-fi/books-2011.md
-  - Notes:
-    - "Architecture vs Agile": notes/architecture-vs-agile.md
-    - "Food & Wine": interests/food-and-wine.md
+  - Archive:
+    - "Food & Wine (2007--2009)": interests/food-and-wine.md
     - "My Tools (circa 2010)": interests/tools.md
-    - "Twitter Archive": notes/twitter-archive.md
   - Tags: tags.md
