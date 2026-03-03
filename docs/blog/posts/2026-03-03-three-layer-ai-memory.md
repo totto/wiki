@@ -87,6 +87,8 @@ The limitation is the same as episodic memory's limitation in humans: it is grea
 
 **Same day — kcp-memory v0.3.0:** The episodic layer is now queryable from *within* a session. kcp-memory ships an MCP stdio server: register `java -jar ~/.kcp/kcp-memory-daemon.jar mcp` in `~/.claude/settings.json` under `mcpServers`, and Claude can call `kcp_memory_search`, `kcp_memory_events_search`, `kcp_memory_list`, and `kcp_memory_stats` inline — without you having to manually surface context. The loop closes: Claude runs → kcp-memory indexes → Claude queries its own past in the next session.
 
+**Same day — kcp-memory v0.4.0:** Two more MCP tools address the remaining gaps. `kcp_memory_session_detail(session_id)` completes the find → read flow: once search returns a session, Claude can read its full content — all user messages, every file touched, tools used. `kcp_memory_project_context()` flips the episodic layer from pull to push: it reads `PWD` from the process environment, requires no query, and returns the last 5 sessions and 20 tool events for the current project. Called at session start, it means Claude arrives knowing what it was doing here — not because you told it, but because the infrastructure did.
+
 ---
 
 ![Layer 2: Episodic Memory — data source: session JSONL transcripts. Tool: Claude History MCP, Jaccard similarity clustering, 170 sessions in 9 seconds, search in sub-200ms. Genuine episodic memory built from what actually happened in your sessions.](/assets/images/blog/ai-memory-slide-06-layer2-episodic-memory.png)
@@ -126,6 +128,8 @@ A well-equipped AI agent needs both — plus working memory management at the se
 As of v1.21.0, Synthesis handles both questions natively. The `sessions` module indexes the same JSONL transcripts as Claude History MCP and surfaces them through the same MCP server that already provides workspace search — so Layers 2 and 3 are queryable through a single integration point. The indexing gap between the layers is closed: `synthesis sessions search` and `synthesis search` share the same session and can be invoked from the same agent context.
 
 kcp-memory v0.3.0 takes the same step for the standalone path. The episodic layer is now an MCP server: four tools, stdio transport, registered with one entry in `mcpServers`. If you are not running Synthesis, the gap is now equally closed — Claude queries kcp-memory directly, without requiring you to copy-paste search results into the context window.
+
+kcp-memory v0.4.0 goes further: the episodic layer shifts from pull to push. `kcp_memory_project_context` reads the current working directory from the process environment and surfaces recent session history automatically — no query, no session ID, no user prompt. The blank slate is no longer something the agent has to work around. It is structurally resolved at session start.
 
 What remains manual is the deeper integration: architectural decisions documented in your session history are not automatically reflected as constraints in your semantic memory. "We decided to avoid synchronous database calls in the API layer" lives in a session transcript. The dependency graph in Synthesis does not know about that decision. Propagating episodic constraints into the semantic layer — tagging decisions, surfacing relevant history when the agent touches related code — is the next step. The infrastructure for it now exists. The plumbing between layers is still work to be done.
 
@@ -177,7 +181,7 @@ Add semantic memory first if your primary pain is "the agent doesn't know how th
 
 Add episodic memory first if your primary pain is "I keep re-explaining decisions I've already made." Three options exist today:
 
-- **[kcp-memory](https://github.com/Cantara/kcp-memory)** — standalone daemon, one-curl install, no other dependencies required. Session-level: `kcp-memory search`, `list`, `stats`. Tool-level (v0.2.0, requires kcp-commands v0.9.0): `kcp-memory events search "kubectl apply"`. MCP server (v0.3.0): register in `mcpServers` — Claude queries inline. PostToolUse hook for near-real-time indexing. Open-source, Apache 2.0.
+- **[kcp-memory](https://github.com/Cantara/kcp-memory)** — standalone daemon, one-curl install, no other dependencies required. Session-level: `kcp-memory search`, `list`, `stats`. Tool-level (v0.2.0, requires kcp-commands v0.9.0): `kcp-memory events search "kubectl apply"`. MCP server (v0.3.0): 6 tools, register in `mcpServers` — Claude queries inline. `kcp_memory_project_context` (v0.4.0): reads `PWD`, returns last 5 sessions + 20 events at session start — no query needed. PostToolUse hook for near-real-time indexing. Open-source, Apache 2.0.
 - **`synthesis sessions`** — if you are already running Synthesis v1.21.0+, run `synthesis sessions scan` — indexes your existing transcripts retroactively and is searchable immediately through the same MCP server.
 - **[Claude History MCP](https://github.com/jhammant/claude-history-mcp)** — standalone tool with Jaccard similarity clustering that extracts learnings at a different granularity from the raw session events.
 
