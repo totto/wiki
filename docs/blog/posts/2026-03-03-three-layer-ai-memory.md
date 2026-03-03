@@ -79,6 +79,8 @@ This is genuine episodic memory — time-stamped, event-anchored, retrospective.
 
 The limitation is the same as episodic memory's limitation in humans: it is great for specific past events, less useful for answering structural questions about your current system. "What did we decide about authentication?" is episodic. "What does the authentication module depend on right now?" is semantic.
 
+**Update (March 3, 2026):** Synthesis v1.21.0 ships native session indexing via `synthesis sessions`. The same tool that covers Layer 3 now covers Layer 2 without requiring a second MCP server. Sessions are scanned incrementally from `~/.claude/projects/`, stored in SQLite with FTS5 full-text search, and exposed through both the CLI (`synthesis sessions search "authentication"`) and the `sessions` MCP tool. The first scan indexed 2,971 sessions in 109 seconds; subsequent scans are near-instant. Claude History MCP remains a strong option — its Jaccard similarity clustering extracts learnings at a different granularity — but if you are already running Synthesis, Layer 2 is now one command away.
+
 ---
 
 ![Layer 2: Episodic Memory — data source: session JSONL transcripts. Tool: Claude History MCP, Jaccard similarity clustering, 170 sessions in 9 seconds, search in sub-200ms. Genuine episodic memory built from what actually happened in your sessions.](/assets/images/blog/ai-memory-slide-06-layer2-episodic-memory.png)
@@ -115,9 +117,9 @@ Synthesis answers: *what does my workspace contain and how does it connect?* It 
 
 A well-equipped AI agent needs both — plus working memory management at the session level. The human brain runs all three in parallel because they serve different cognitive functions. There is no reason to expect AI agents to be different.
 
-The missing integration is that these layers do not yet talk to each other in a principled way. Your session history (episodic) lives in JSONL files that Synthesis can index — which means Synthesis can surface *which session* discussed a given topic, but the content of that session is only accessible via the MCP server. The architectural decisions documented in your episodic memory are not automatically reflected in your semantic memory. Connecting these layers explicitly — tagging decisions, propagating architectural constraints into the knowledge graph — is manual work today.
+As of v1.21.0, Synthesis handles both questions natively. The `sessions` module indexes the same JSONL transcripts as Claude History MCP and surfaces them through the same MCP server that already provides workspace search — so Layers 2 and 3 are queryable through a single integration point. The indexing gap between the layers is closed: `synthesis sessions search` and `synthesis search` share the same session and can be invoked from the same agent context.
 
-That manual work is worth doing. But it should not stay manual.
+What remains manual is the deeper integration: architectural decisions documented in your session history are not automatically reflected as constraints in your semantic memory. "We decided to avoid synchronous database calls in the API layer" lives in a session transcript. The dependency graph in Synthesis does not know about that decision. Propagating episodic constraints into the semantic layer — tagging decisions, surfacing relevant history when the agent touches related code — is the next step. The infrastructure for it now exists. The plumbing between layers is still work to be done.
 
 ---
 
@@ -149,7 +151,7 @@ A fully-instrumented AI agent development environment has:
 
 **Working memory management.** CLAUDE.md with project context. Structured skill files with domain knowledge. Session-scoped context that loads in seconds and grounds the agent's responses in verified sources rather than training-data approximations.
 
-**Episodic memory.** An indexed transcript store — something like Claude History MCP — that makes past decisions, debugging sessions, and architectural discussions retrievable. Pattern recognition across sessions: "we've tried this approach three times, here's what we learned."
+**Episodic memory.** An indexed transcript store that makes past decisions, debugging sessions, and architectural discussions retrievable. Pattern recognition across sessions: "we've tried this approach three times, here's what we learned." Claude History MCP provides this as a standalone tool; `synthesis sessions` provides it natively if you are already running Synthesis.
 
 **Semantic memory.** A structured knowledge graph — something like Synthesis — that represents the current state of everything the agent needs to reason over. Code, documentation, regulatory frameworks, domain knowledge bases. Relationships between files, between modules, between directories. Temporal tracking for "what changed since last Tuesday." Tightness metrics for "where is our knowledge fragmented?" The corpus can be a codebase, a documentation repository, or a purpose-built regulatory index — the architecture is the same.
 
@@ -165,9 +167,9 @@ If your current setup is working memory only:
 
 Add semantic memory first if your primary pain is "the agent doesn't know how things connect." Deploy Synthesis, run the scan, set up the MCP server. One setup session. This applies whether your corpus is a codebase, a documentation repository, or a regulatory knowledge base — the agent arrives knowing what exists and how it connects, rather than discovering it one tool call at a time.
 
-Add episodic memory first if your primary pain is "I keep re-explaining decisions I've already made." Deploy Claude History MCP, point it at your session transcripts. Retroactive coverage — it indexes sessions you have already had.
+Add episodic memory first if your primary pain is "I keep re-explaining decisions I've already made." If you are already running Synthesis, run `synthesis sessions scan` — it indexes your existing transcripts retroactively and is searchable immediately. If you prefer a standalone tool with Jaccard similarity clustering, Claude History MCP covers the same data with a different extraction approach.
 
-The two complement each other and can be deployed independently. Start with whichever solves the pain you feel most acutely.
+The layers complement each other and can be deployed independently. Start with whichever solves the pain you feel most acutely.
 
 The goal is an agent that does not start from zero. That knows what your workspace contains, remembers what you decided, and loads the relevant context in seconds rather than requiring you to re-establish it from scratch each session.
 
