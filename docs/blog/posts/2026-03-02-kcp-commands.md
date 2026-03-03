@@ -30,7 +30,7 @@ at two critical points.
 The full number across our benchmark session: **67,352 tokens saved**.
 
 **Update (March 3, 2026 — v0.9.0):** kcp-commands now writes a JSON event to
-`~/.kcp/events.jsonl` on every Phase A Bash hook call. [kcp-memory v0.2.0](./2026-03-03-kcp-memory.md)
+`~/.kcp/events.jsonl` on every Phase A Bash hook call. [kcp-memory v0.4.0](./2026-03-03-kcp-memory.md)
 ingests that stream to provide tool-level episodic memory — `kcp-memory events search
 "kubectl apply"` returns every time Claude ran that command across all your projects.
 Phase A gives Claude vocabulary. Phase B cleans output. Phase C remembers what ran.
@@ -295,7 +295,7 @@ blocks the hook response. If `~/.kcp/` does not exist it is created on first wri
 event is always logged — even for commands where no manifest was found — so the stream is
 a complete record of every Bash tool call Claude made.
 
-[kcp-memory v0.2.0](./2026-03-03-kcp-memory.md) reads this file incrementally using a
+[kcp-memory v0.4.0](./2026-03-03-kcp-memory.md) reads this file incrementally using a
 byte-offset cursor in its SQLite database. Each PostToolUse-triggered scan processes only
 the lines appended since the last pass — typically one event in under 1ms. The result is
 tool-level episodic memory queryable in milliseconds:
@@ -411,7 +411,7 @@ Good candidates:
 | v0.6.1 | 244 | Fix: index.txt auto-generated; install to `~/.kcp/`; `cli.js` released as artifact |
 | v0.7.0 | 244 | README install section clarifications; Releases changelog; v0.6.1 patch docs |
 | v0.8.0 | 283 | Linters (ruff, eslint, prettier, mypy, golangci-lint, yamllint, markdownlint), testing (jest, vitest, playwright, cypress, k6, grpcurl), containers (podman, trivy, cosign), monorepo (nx, turbo, just, bazel, task), secrets (sops, op, direnv), modern CLI (zoxide, btm, dust, procs), package managers (uv, apk, dnf, pipx, winget), runtimes (deno, go run, php, swift), dev workflow (pre-commit, gh codespace) |
-| v0.9.0 | 283 | **Phase C: EventLogger** — every Phase A Bash call writes a JSON event to `~/.kcp/events.jsonl`. Consumed by kcp-memory v0.2.0 for tool-level episodic memory. |
+| v0.9.0 | 283 | **Phase C: EventLogger** — every Phase A Bash call writes a JSON event to `~/.kcp/events.jsonl`. Consumed by kcp-memory v0.4.0 for tool-level episodic memory. |
 
 ---
 
