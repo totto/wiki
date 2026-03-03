@@ -23,6 +23,8 @@ authors:
 
 ![Beyond the Context Window: The 3-Layer Memory Architecture for AI Agents — working memory, episodic memory, and semantic memory explained](/assets/images/blog/three-layer-ai-memory-architecture.png)
 
+![Your AI Agent Forgets Everything — the missing architecture for cross-session memory](/assets/images/blog/ai-memory-slide-01-title.png)
+
 ---
 
 A few days ago, Jon Hammant published a LinkedIn post that got 757 reactions and triggered one of the more interesting comment threads I have seen in the AI tools space. He built a tool called [Claude History MCP](https://github.com/jhammant/claude-history-mcp) that indexes your Claude Code session transcripts and makes the resulting knowledge searchable — sub-200ms, no LLM required, 170 sessions in 9 seconds.
@@ -32,6 +34,8 @@ One commenter, Stefan Christoph, noted that what Jon built maps to episodic memo
 That observation is more precise than it might seem. It describes exactly what is missing — and it suggests a specific architecture for fixing it.
 
 ---
+
+![Every session starts from zero — last Tuesday's architectural decision, last week's debugging session, last month's codebase patterns. All erased.](/assets/images/blog/ai-memory-slide-02-every-session-zero.png)
 
 ## The memory problem is not what you think
 
@@ -43,9 +47,13 @@ These are different problems with different solutions. The context window proble
 
 The human brain runs three memory systems in parallel. Working memory holds what you are actively thinking about right now — small capacity, fast access, volatile. Episodic memory holds autobiographical events — what happened when, who said what, what you tried and how it turned out. Semantic memory holds structured world knowledge — facts, relationships, patterns, concepts — abstracted from specific episodes and stable over time.
 
+![We are treating an infrastructure problem like a model limitation — within-session forgetting is a model layer concern; cross-session forgetting is an infrastructure problem addressed by almost nobody](/assets/images/blog/ai-memory-slide-03-infrastructure-problem.png)
+
 AI agents in 2026 typically have one of these. Working memory only. The context window. Every session starts from the blank slate — unable to remember decisions from last week, bugs fixed last month, or architectural patterns established last quarter. Call it the Blank Slate Trap.
 
 ---
+
+![The missing architecture mimics human cognition — Working Memory (active session, volatile), Episodic Memory (autobiographical events, past decisions), Semantic Memory (structured world knowledge, present-state facts). AI agents in 2026 typically only have one of these.](/assets/images/blog/ai-memory-slide-04-three-memory-types.png)
 
 ## Layer 1: Working memory (what you have)
 
@@ -56,6 +64,8 @@ Working memory is powerful — modern context windows are long enough to hold su
 Most teams manage this with system prompts and CLAUDE.md files — structured context that loads automatically at session start. This is the common response to the Blank Slate Trap, and it is a reasonable one. But it is still working memory, pre-populated. It addresses within-session context. It does nothing for the decisions made in past sessions, or for structural knowledge about the corpus the agent needs to navigate.
 
 ---
+
+![Layer 1: Working Memory — data source: context window and CLAUDE.md. What it is, how we manage it, the limitation: when the session ends, everything is gone.](/assets/images/blog/ai-memory-slide-05-layer1-working-memory.png)
 
 ## Layer 2: Episodic memory — retrospective, what happened?
 
@@ -70,6 +80,8 @@ This is genuine episodic memory — time-stamped, event-anchored, retrospective.
 The limitation is the same as episodic memory's limitation in humans: it is great for specific past events, less useful for answering structural questions about your current system. "What did we decide about authentication?" is episodic. "What does the authentication module depend on right now?" is semantic.
 
 ---
+
+![Layer 2: Episodic Memory — data source: session JSONL transcripts. Tool: Claude History MCP, Jaccard similarity clustering, 170 sessions in 9 seconds, search in sub-200ms. Genuine episodic memory built from what actually happened in your sessions.](/assets/images/blog/ai-memory-slide-06-layer2-episodic-memory.png)
 
 ## Layer 3: Semantic memory — present-state, what is?
 
@@ -89,6 +101,8 @@ The KCP benchmark extended this to documentation repositories: 53–80% reductio
 
 ---
 
+![Layer 3: Semantic Memory — data source: the workspace (code, PDFs, configs). Tool: Synthesis and KCP. Multi-layer knowledge graph tracking dependencies and entities. Present-state representation of your system.](/assets/images/blog/ai-memory-slide-07-layer3-semantic-memory.png)
+
 ## The three layers are complements, not alternatives
 
 This is the point worth pausing on.
@@ -107,6 +121,8 @@ That manual work is worth doing. But it should not stay manual.
 
 ---
 
+![These layers are complements not alternatives — episodic memory answers what happened in past sessions (event-based, retrospective, from transcripts); semantic memory answers what the workspace contains and how it connects (structure-based, present-state, from files on disk)](/assets/images/blog/ai-memory-slide-08-complements-not-alternatives.png)
+
 ## The adoption gap
 
 The uncomfortable part of this picture is that most teams are not running any of these layers intentionally.
@@ -119,9 +135,13 @@ Jon Hammant built his episodic layer because he encountered the problem directly
 
 The gap between "the tools exist" and "teams are running them" is not a technical gap. It is an infrastructure mindset gap. Developers invest in the agent's capability (model selection, prompt engineering, context management) because that investment is visible and fast-feedback. Memory architecture investment is slower to pay off and harder to attribute.
 
+![Better memory maps eliminate unnecessary tool calls — 35% reduction (MCP benchmark) and 53-80% reduction across five repositories including smolagents, AutoGen, and CrewAI (KCP benchmark)](/assets/images/blog/ai-memory-slide-09-tool-call-reduction.png)
+
 The payoff is real. The 53–80% tool call reduction is not from a better model. It is from a better map. A better map, not a better model — that is the reframe the field has not yet made.
 
 ---
+
+![The gap is not technical, it is an infrastructure mindset — we invest heavily in agent capabilities, model selection, prompt engineering; we invest nothing in episodic memory (transcripts sit unindexed) or semantic memory (workspaces remain flat files with no graph structure)](/assets/images/blog/ai-memory-slide-10-infrastructure-mindset.png)
 
 ## What the architecture looks like when it is complete
 
@@ -136,6 +156,8 @@ A fully-instrumented AI agent development environment has:
 None of this is science fiction. All three layers exist as tools you can deploy today. The missing piece is treating them as a system rather than as isolated experiments.
 
 ---
+
+![A fully-instrumented AI development environment — Working Memory Management (CLAUDE.md, structured skills), Episodic Memory (indexed transcript store, cross-session pattern recognition), and Semantic Memory (workspace knowledge graph, temporal tracking, tightness metrics) all feeding the AI Agent Engine](/assets/images/blog/ai-memory-slide-11-fully-instrumented.png)
 
 ## The practical starting point
 
@@ -152,6 +174,8 @@ The goal is an agent that does not start from zero. That knows what your workspa
 This is not a model capability question. It is a memory architecture question. The architecture is buildable now.
 
 ---
+
+![Stop starting from scratch — if pain is the agent doesn't know how things connect: deploy Synthesis; if pain is re-explaining decisions: deploy Claude History MCP. The tools exist. The architecture is buildable now.](/assets/images/blog/ai-memory-slide-12-stop-starting-scratch.png)
 
 *Claude History MCP: [github.com/jhammant/claude-history-mcp](https://github.com/jhammant/claude-history-mcp)*
 
