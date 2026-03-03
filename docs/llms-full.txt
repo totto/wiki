@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (72 posts, 583 books).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (77 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -229,6 +229,14 @@ Local-first knowledge infrastructure for AI-augmented development teams. Indexes
 **Xorcery AAA (Alchemy + Aurora)**
 Temporal analytics platform built on the Xorcery reactive framework. Alchemy tracks how vulnerabilities and changes evolve across repositories over time; Aurora answers root-cause questions using temporal graph analysis. Explores compliance automation (GDPR, NIS2) and DevSecOps intelligence without cloud lock-in.
 
+**Knowledge Context Protocol (KCP)**
+A YAML file format specification that makes knowledge navigable by AI agents — topology (`depends_on`, `supersedes`), intent metadata, freshness signals, audience targeting, and context window hints. The metadata layer that llms.txt cannot express. v0.5 draft spec, Apache 2.0. Submitted to the Agentic AI Foundation (Linux Foundation) alongside MCP and AGENTS.md. Includes 6 RFCs (auth & delegation, federation, trust & compliance, payment & rate limits, context window hints — RFC-0006 promoted to core in v0.4), reference parsers (Python, Java), and MCP bridge servers (TypeScript, Python, Java). github.com/Cantara/knowledge-context-protocol
+
+**kcp-commands**
+A Claude Code hook that intercepts every Bash tool call at two points: before execution (injects concise flag/syntax guidance from a KCP manifest — no `--help` round-trips, average 532 tokens saved per call) and after execution (noise-filters large outputs before they consume context — ps aux reduced from 30,828 to 652 tokens, 98% reduction). 283 bundled manifests covering git, Linux, Docker, Kubernetes, cloud CLIs, build tools, package managers, and more. Java daemon (12ms warm) with Node.js fallback. Measured saving: 67,352 tokens per session — 33.7% of a 200K context window. Current: v0.8.0. github.com/Cantara/kcp-commands
+
+---
+
 ### Cantara (github.com/Cantara)
 
 **Whydah — SSO / IAM Platform** (16 repositories)
@@ -278,7 +286,7 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 
 ## Writing (wiki.totto.org/blog)
 
-70 posts (Apr 2025–Feb 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Six named reading series with prev/next navigation: https://wiki.totto.org/blog/series/
+77 posts (Apr 2025–Mar 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Six named reading series with prev/next navigation: https://wiki.totto.org/blog/series/
 
 ### Frøya / Quadim series (Apr–May 2025)
 
@@ -369,6 +377,10 @@ Continues from "Who Describes You to AI?" (Feb 24) and "Beyond llms.txt" (Feb 25
 - **KCP on Two Repos, Two Days: What the Numbers Actually Show** (Mar 1) — Before/after benchmarks on two different repository types: an application codebase (plugin wizard, 10 queries, 74% tool call reduction) and a pure documentation repository (infrastructure agents guide, 7 queries, 53% reduction). The contrast shows KCP adds more value where navigation is harder. Repos anonymised pending consent.
 - **KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers** (Mar 1) — KCP applied to smolagents (HuggingFace, 73%), AutoGen (Microsoft, 80%), and CrewAI (76%). Five repos total across the series. Consistent pattern: more complex navigation space = more benefit. Open PRs submitted to all three upstream repos. Benchmark methodology published in CONTRIBUTING.md at cantara/knowledge-context-protocol.
 - **What Happens When an AI Submits a PR and Another AI Reviews It** (Mar 1) — Claude Code submitted the CrewAI KCP PR. Cursor Bugbot reviewed it six times: hardcoded path → no path validation → wrong path traversal fix → two subtle API bugs → KCP manifest semantics (summary_of back-pointer consistency). Feedback escalated from "this will break immediately" to protocol design review. The human's role: approving the fixes.
+- **kcp-commands: Save 33% of Claude Code's Context Window** (Mar 2) — A Claude Code hook that intercepts Bash tool calls to inject command syntax context (Phase A: 532 tokens saved per avoided `--help` call) and filter noisy output (Phase B: ps aux from 30,828 to 652 tokens, 98% reduction). 283 bundled YAML manifests, Java daemon at 12ms, Node.js fallback. Measured: 67,352 tokens saved per session — 33.7% of a 200K context window recovered.
+- **KCP v0.1 to v0.5: How a Knowledge Standard Grows** (Mar 2) — KCP evolved from a 5-field minimal contract to v0.5 with trust metadata and composability by formalizing RFCs into the core spec while maintaining backward compatibility. Synthesis v1.20.0 is the first implementation treating KCP as both input and output for workspace knowledge graphs.
+- **The AI-Augmented Consultant: Knowledge Infrastructure Before Deliverables** (Mar 2) — Building a regulatory knowledge base (article-level KCP), verification test suite (62 passing tests), and architecture document before writing deliverables creates verifiable accountability traditional consulting cannot match. 55 verification questions caught 2 errors before delivery; the artifacts remain durable as the architecture evolves.
+- **Working Memory, Episodic Memory, Semantic Memory. Your Agent Has One.** (Mar 3) — AI agents in 2026 have only working memory (context window); they lack episodic memory (session transcripts) and semantic memory (workspace knowledge graph). Adding these layers reduces tool calls 35–80% without model improvements. Synthesis v1.21.0 now provides native session indexing (Layer 2) and workspace graph indexing (Layer 3) through a single MCP server.
 
 ### Cloud Computing series (2009)
 
