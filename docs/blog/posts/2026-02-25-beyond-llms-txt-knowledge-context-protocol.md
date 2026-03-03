@@ -159,11 +159,14 @@ llms.txt is the current best practice. It is good for what it is. But it was des
 simpler problem than the one we are now trying to solve. The ecosystem needs a knowledge
 architecture standard, not just a better index file.
 
-The draft spec is at
+The spec is at
 [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol).
-It is Apache v2 licensed, intentionally minimal, and open for feedback. If you have a use case that
-the current format does not cover, open an issue. If you add a `knowledge.yaml` to a project
-and it works — or does not work — I want to know.
+It is Apache v2 licensed, intentionally minimal, and open for feedback. KCP has been submitted to
+the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation)
+(Linux Foundation) for neutral governance alongside MCP and AGENTS.md.
+
+If you have a use case that the current format does not cover, open an issue. If you add a
+`knowledge.yaml` to a project and it works — or does not work — I want to know.
 
 ![Strategic positioning — from static files to proprietary engines to open standard](/assets/images/blog/kcp-strategic-positioning-past-present-future.png)
 

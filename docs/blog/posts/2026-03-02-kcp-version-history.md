@@ -229,6 +229,8 @@ arrays in every workspace that has a manifest.
 
 ## What is coming next
 
+**AAIF submission.** KCP has been submitted to the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Linux Foundation) for consideration as a neutral-governance project. The AAIF is the home of MCP and AGENTS.md — 146 member organizations including AWS, Anthropic, Google, Microsoft, and OpenAI. Acceptance would place KCP alongside the two other standards that describe how agents interact with tools (MCP) and codebases (AGENTS.md), completing the picture with how agents interact with knowledge.
+
 **IANA well-known URI registration.** The `/.well-known/kcp.json` discovery endpoint
 (§1.4) is documented and a formal IANA registration document is ready for submission to
 `wellknown-uri-review@ietf.org`. This makes KCP discoverable via standard HTTP without
