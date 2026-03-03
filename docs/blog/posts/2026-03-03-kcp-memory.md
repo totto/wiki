@@ -37,6 +37,12 @@ milliseconds.
 searchable via `kcp-memory events search`. Session-level and tool-level memory in one
 daemon, one database, zero additional dependencies.
 
+**Update (same day — v0.3.0):** kcp-memory now ships as an MCP server. Run
+`java -jar ~/.kcp/kcp-memory-daemon.jar mcp` — registered in `mcpServers` in
+`~/.claude/settings.json` — and Claude Code can call `kcp_memory_search`,
+`kcp_memory_events_search`, `kcp_memory_list`, and `kcp_memory_stats` inline during a
+session, without leaving the context window.
+
 <!-- more -->
 
 ![kcp-memory: three-layer memory model for Claude Code — working memory (context window), episodic memory (kcp-memory), semantic memory (Synthesis)](/assets/images/blog/kcp-memory-three-layer-model.png)
@@ -212,6 +218,40 @@ hook exits silently. It never blocks.
 
 ---
 
+## MCP server (v0.3.0)
+
+kcp-memory exposes its search capabilities as MCP tools for Claude Code. Add one entry
+to `~/.claude/settings.json` and Claude can query its own session history inline during
+a session — no manual CLI call, no context-switching:
+
+```json
+{
+  "mcpServers": {
+    "kcp-memory": {
+      "command": "java",
+      "args": ["-jar", "/home/totto/.kcp/kcp-memory-daemon.jar", "mcp"]
+    }
+  }
+}
+```
+
+Four tools are registered:
+
+| Tool | What it answers |
+|------|----------------|
+| `kcp_memory_search` | "What did we do with OAuth last month?" — FTS5 over session transcripts |
+| `kcp_memory_events_search` | "Which projects did I run `kubectl apply` in?" — FTS5 over tool-call events |
+| `kcp_memory_list` | Recent sessions, optionally filtered to the current project |
+| `kcp_memory_stats` | Total sessions, turns, tool calls, top tools |
+
+The MCP server runs an initial scan at startup and calls `EventLogScanner` inline before
+`kcp_memory_events_search` queries — so the most recently written events are always
+searchable. Transport: stdio (newline-delimited JSON-RPC 2.0). Cold start under 2 seconds.
+
+The loop is now closed: Claude runs → kcp-memory indexes → Claude queries.
+
+---
+
 ## Performance
 
 | Operation | Time |
@@ -295,7 +335,7 @@ project Z at 14:32") from the same daemon and the same database.
 The project is at
 [github.com/Cantara/kcp-memory](https://github.com/Cantara/kcp-memory). Apache 2.0.
 
-~200 lines of SQL and schema across two migrations, ~1,600 lines of Java across sixteen
+~200 lines of SQL and schema across two migrations, ~1,850 lines of Java across seventeen
 source files. The only dependencies are `sqlite-jdbc`, `jackson-databind`, and `picocli`.
 No Spring, no framework, no cloud calls.
 
