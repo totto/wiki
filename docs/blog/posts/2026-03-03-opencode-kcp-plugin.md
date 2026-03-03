@@ -205,3 +205,4 @@ MCP and AGENTS.md.
 
 *This post is part of a series on knowledge infrastructure for AI agents.*
 *Previous: [kcp-commands: Save 33% of Claude Code's Context Window](./2026-03-02-kcp-commands.md)*
+*Next: [kcp-memory: Give Claude Code a Memory](./2026-03-03-kcp-memory.md)*
