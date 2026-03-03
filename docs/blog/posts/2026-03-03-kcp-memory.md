@@ -43,6 +43,13 @@ daemon, one database, zero additional dependencies.
 `kcp_memory_events_search`, `kcp_memory_list`, and `kcp_memory_stats` inline during a
 session, without leaving the context window.
 
+**Update (same day — v0.4.0):** Two new MCP tools close the remaining gaps.
+`kcp_memory_session_detail(session_id)` returns full session content — user messages,
+files touched, tools used — completing the search → read flow. `kcp_memory_project_context()`
+reads `PWD` from the process environment and returns the last 5 sessions and 20 tool events
+for the current project, with no query needed. Call it at the start of every session and
+Claude immediately knows what it was doing here last time.
+
 <!-- more -->
 
 ![kcp-memory: three-layer memory model for Claude Code — working memory (context window), episodic memory (kcp-memory), semantic memory (Synthesis)](/assets/images/blog/kcp-memory-three-layer-model.png)
@@ -243,12 +250,73 @@ Four tools are registered:
 | `kcp_memory_events_search` | "Which projects did I run `kubectl apply` in?" — FTS5 over tool-call events |
 | `kcp_memory_list` | Recent sessions, optionally filtered to the current project |
 | `kcp_memory_stats` | Total sessions, turns, tool calls, top tools |
+| `kcp_memory_session_detail` | Full session content — user messages, files touched, tools used *(v0.4.0)* |
+| `kcp_memory_project_context` | Auto-detect `PWD`, return last 5 sessions + 20 events — no query needed *(v0.4.0)* |
 
 The MCP server runs an initial scan at startup and calls `EventLogScanner` inline before
 `kcp_memory_events_search` queries — so the most recently written events are always
 searchable. Transport: stdio (newline-delimited JSON-RPC 2.0). Cold start under 2 seconds.
 
 The loop is now closed: Claude runs → kcp-memory indexes → Claude queries.
+
+---
+
+## Session detail and project context (v0.4.0)
+
+v0.4.0 adds two tools that make the MCP integration proactive rather than reactive.
+
+**`kcp_memory_session_detail`** closes the find → read gap. `kcp_memory_search` returns
+session metadata — date, project, first message. Once you find a relevant session, you
+want to read what actually happened. `session_detail` takes a session ID and returns the
+full content: all user messages (up to 4,000 chars), every file touched, and the tools
+used.
+
+```
+Session: ad732c58-af84-48dd-8c4e-80fe074800b0
+Project: /src/cantara/kcp-memory
+Model:   claude-sonnet-4-6
+Date:    2026-03-03
+Turns:   47  Tool calls: 183
+
+Tools used: Read, Edit, Bash, Write, Glob, Grep
+
+Files touched (12):
+  java/src/main/java/com/cantara/kcp/memory/mcp/McpServer.java
+  java/src/main/java/com/cantara/kcp/memory/cli/KcpMemoryCli.java
+  ...
+
+User messages:
+"ok, should we push further down the line for kcp-memory?"
+"yes, let's do it"
+...
+```
+
+**`kcp_memory_project_context`** makes memory proactive. It reads `PWD` from the process
+environment — no query, no session ID, no argument — and returns the last 5 sessions and
+20 tool-call events for the current project. Call it at the start of a session and Claude
+immediately has the context it needs: what was being worked on, which commands were run,
+what files were touched.
+
+```
+Project context: /src/cantara/kcp-memory
+
+Recent sessions (3):
+
+2026-03-03  /src/cantara/kcp-memory
+ad732c58  turns=47  tools=183
+"ok, should we push further down the line for kcp-memory?"
+
+Recent tool-call events (7):
+
+2026-03-03 16:35  /src/cantara/kcp-memory
+ad732c58  [git-tag]
+$ git tag v0.3.0 && git push && git push --tags
+...
+```
+
+With `project_context` in the MCP toolset, the blank slate problem is structurally
+solved for the current project: the agent arrives knowing what it was doing, not just
+what the codebase contains.
 
 ---
 
