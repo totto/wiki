@@ -29,6 +29,12 @@ at two critical points.
 
 The full number across our benchmark session: **67,352 tokens saved**.
 
+**Update (March 3, 2026 — v0.9.0):** kcp-commands now writes a JSON event to
+`~/.kcp/events.jsonl` on every Phase A Bash hook call. [kcp-memory v0.2.0](./2026-03-03-kcp-memory.md)
+ingests that stream to provide tool-level episodic memory — `kcp-memory events search
+"kubectl apply"` returns every time Claude ran that command across all your projects.
+Phase A gives Claude vocabulary. Phase B cleans output. Phase C remembers what ran.
+
 <!-- more -->
 
 ![kcp-commands: recover 33% of your Claude Code context window — Phase A syntax injection, Phase B noise filtering, 244 bundled manifests, Java daemon + Node.js fallback](/assets/images/blog/kcp-commands-context-window-overview.png)
@@ -266,6 +272,46 @@ no Node.js dependency for Phase B when the daemon is active.
 
 ---
 
+## Phase C: Event stream (v0.9.0)
+
+Every Phase A Bash hook call now appends a JSON event to `~/.kcp/events.jsonl`:
+
+```json
+{
+  "ts": "2026-03-03T14:32:11.482Z",
+  "session_id": "ad732c58-af84-48dd-8c4e-80fe074800b0",
+  "project_dir": "/src/cantara/kcp-memory/java",
+  "tool": "Bash",
+  "command": "mvn package -q",
+  "manifest_key": "mvn"
+}
+```
+
+`manifest_key` is the resolved manifest identifier — or `null` for commands that had no
+manifest and received only an auto-generated context block.
+
+The write is async (virtual thread), file-safe (process-wide `ReentrantLock`), and never
+blocks the hook response. If `~/.kcp/` does not exist it is created on first write. The
+event is always logged — even for commands where no manifest was found — so the stream is
+a complete record of every Bash tool call Claude made.
+
+[kcp-memory v0.2.0](./2026-03-03-kcp-memory.md) reads this file incrementally using a
+byte-offset cursor in its SQLite database. Each PostToolUse-triggered scan processes only
+the lines appended since the last pass — typically one event in under 1ms. The result is
+tool-level episodic memory queryable in milliseconds:
+
+```bash
+kcp-memory events search "kubectl apply"
+kcp-memory events search "flyway migrate"
+kcp-memory events search "docker build"
+```
+
+No extra hook configuration is needed. The event stream is produced by kcp-commands and
+consumed by kcp-memory. Running both gives session-level and tool-level memory from a
+single `~/.kcp/memory.db` database.
+
+---
+
 ## Manifest format
 
 One YAML file per command or subcommand. Three sections:
@@ -365,6 +411,7 @@ Good candidates:
 | v0.6.1 | 244 | Fix: index.txt auto-generated; install to `~/.kcp/`; `cli.js` released as artifact |
 | v0.7.0 | 244 | README install section clarifications; Releases changelog; v0.6.1 patch docs |
 | v0.8.0 | 283 | Linters (ruff, eslint, prettier, mypy, golangci-lint, yamllint, markdownlint), testing (jest, vitest, playwright, cypress, k6, grpcurl), containers (podman, trivy, cosign), monorepo (nx, turbo, just, bazel, task), secrets (sops, op, direnv), modern CLI (zoxide, btm, dust, procs), package managers (uv, apk, dnf, pipx, winget), runtimes (deno, go run, php, swift), dev workflow (pre-commit, gh codespace) |
+| v0.9.0 | 283 | **Phase C: EventLogger** — every Phase A Bash call writes a JSON event to `~/.kcp/events.jsonl`. Consumed by kcp-memory v0.2.0 for tool-level episodic memory. |
 
 ---
 
