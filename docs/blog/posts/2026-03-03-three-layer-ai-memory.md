@@ -81,6 +81,8 @@ The limitation is the same as episodic memory's limitation in humans: it is grea
 
 **Update (March 3, 2026):** Synthesis v1.21.0 ships native session indexing via `synthesis sessions`. The same tool that covers Layer 3 now covers Layer 2 without requiring a second MCP server. Sessions are scanned incrementally from `~/.claude/projects/`, stored in SQLite with FTS5 full-text search, and exposed through both the CLI (`synthesis sessions search "authentication"`) and the `sessions` MCP tool. The first scan indexed 2,971 sessions in 109 seconds; subsequent scans are near-instant. Claude History MCP remains a strong option — its Jaccard similarity clustering extracts learnings at a different granularity — but if you are already running Synthesis, Layer 2 is now one command away.
 
+**Also released today:** [**kcp-memory**](https://github.com/Cantara/kcp-memory) — a standalone open-source Java daemon that covers Layer 2 without requiring Synthesis. If you use Claude Code but not Synthesis, kcp-memory gives you episodic memory as a single install: `curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-memory/main/bin/install.sh | bash`. It indexes `~/.claude/projects/**/*.jsonl` into SQLite with FTS5, runs on port 7735, and exposes a `kcp-memory search` CLI and a PostToolUse hook for near-real-time indexing. Part of the [KCP ecosystem](https://github.com/Cantara/knowledge-context-protocol) alongside kcp-commands (port 7734).
+
 ---
 
 ![Layer 2: Episodic Memory — data source: session JSONL transcripts. Tool: Claude History MCP, Jaccard similarity clustering, 170 sessions in 9 seconds, search in sub-200ms. Genuine episodic memory built from what actually happened in your sessions.](/assets/images/blog/ai-memory-slide-06-layer2-episodic-memory.png)
@@ -111,9 +113,9 @@ This is the point worth pausing on.
 
 Claude History MCP and Synthesis are not competing approaches to the same problem. They answer different questions from different data sources with different temporal orientations.
 
-Claude History MCP answers: *what happened in my past sessions?* It is retrospective, event-based, built from conversation transcripts.
+Claude History MCP and kcp-memory answer: *what happened in my past sessions?* Retrospective, event-based, built from conversation transcripts. kcp-memory is the standalone option; Synthesis v1.21.0 sessions covers the same ground if you are already running Synthesis.
 
-Synthesis answers: *what does my workspace contain and how does it connect?* It is present-state, structure-based, built from files on disk.
+Synthesis answers: *what does my workspace contain and how does it connect?* Present-state, structure-based, built from files on disk.
 
 A well-equipped AI agent needs both — plus working memory management at the session level. The human brain runs all three in parallel because they serve different cognitive functions. There is no reason to expect AI agents to be different.
 
@@ -167,7 +169,11 @@ If your current setup is working memory only:
 
 Add semantic memory first if your primary pain is "the agent doesn't know how things connect." Deploy Synthesis, run the scan, set up the MCP server. One setup session. This applies whether your corpus is a codebase, a documentation repository, or a regulatory knowledge base — the agent arrives knowing what exists and how it connects, rather than discovering it one tool call at a time.
 
-Add episodic memory first if your primary pain is "I keep re-explaining decisions I've already made." If you are already running Synthesis, run `synthesis sessions scan` — it indexes your existing transcripts retroactively and is searchable immediately. If you prefer a standalone tool with Jaccard similarity clustering, Claude History MCP covers the same data with a different extraction approach.
+Add episodic memory first if your primary pain is "I keep re-explaining decisions I've already made." Three options exist today:
+
+- **[kcp-memory](https://github.com/Cantara/kcp-memory)** — standalone daemon, one-curl install, no other dependencies required. `kcp-memory search`, `list`, `stats`. PostToolUse hook for near-real-time indexing. Open-source, Apache 2.0.
+- **`synthesis sessions`** — if you are already running Synthesis v1.21.0+, run `synthesis sessions scan` — indexes your existing transcripts retroactively and is searchable immediately through the same MCP server.
+- **[Claude History MCP](https://github.com/jhammant/claude-history-mcp)** — standalone tool with Jaccard similarity clustering that extracts learnings at a different granularity from the raw session events.
 
 The layers complement each other and can be deployed independently. Start with whichever solves the pain you feel most acutely.
 
@@ -178,6 +184,8 @@ This is not a model capability question. It is a memory architecture question. T
 ---
 
 ![Stop starting from scratch — if pain is the agent doesn't know how things connect: deploy Synthesis; if pain is re-explaining decisions: deploy Claude History MCP. The tools exist. The architecture is buildable now.](/assets/images/blog/ai-memory-slide-12-stop-starting-scratch.png)
+
+*kcp-memory: [github.com/Cantara/kcp-memory](https://github.com/Cantara/kcp-memory)*
 
 *Claude History MCP: [github.com/jhammant/claude-history-mcp](https://github.com/jhammant/claude-history-mcp)*
 
