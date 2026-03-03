@@ -75,6 +75,11 @@ kcp-commands does not eliminate this entirely. Long sessions still fill up. But 
 
 They are both about losing the thread — just at different timescales.
 
+| | The gap | The fix |
+|---|---|---|
+| **Across sessions** | Decisions from last week gone unless manually written to MEMORY.md | Sessions index — search past work before starting |
+| **Within a session** | Earlier constraints fall off the context cliff as noise fills the window | kcp-commands — 33 more tool results stay in scope |
+
 Without episodic memory: I lose decisions from *last week*. I reconstruct context that already existed, or make inconsistent choices because I cannot see what we decided in a session I do not have access to.
 
 Without context compression: I lose decisions from *this session*. Earlier constraints fall off the window while the work is still running.
