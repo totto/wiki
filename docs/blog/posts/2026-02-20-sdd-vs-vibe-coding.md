@@ -67,7 +67,7 @@ She named a harder version of the problem: **unknown unknowns**. Teams that don'
 
 That's a fair critique and a sharp one.
 
-The distinction I drew back: [Synthesis](https://github.com/exoreaction/Synthesis) and SDD are solving different things. Synthesis addresses the *known → findable* problem: taking structured knowledge that exists and making it retrievable. SDD addresses the *tacit → explicit* problem: taking knowledge that's currently locked in individuals' heads and externalizing it into documented, transferable skills.
+The distinction I drew back: [Synthesis](/blog/2026/02/25/ai-agents-without-knowledge-infrastructure-are-interns-with-amnesia/) and SDD are solving different things. Synthesis addresses the *known → findable* problem: taking structured knowledge that exists and making it retrievable. SDD addresses the *tacit → explicit* problem: taking knowledge that's currently locked in individuals' heads and externalizing it into documented, transferable skills.
 
 The unknown unknowns she described — the knowledge the team doesn't know it has — are a third category. And her answer for those was interesting: they shrink through *practice*, not through better search. The self-learning loop. Teams that run deliberate skill composition sessions surface unknown unknowns naturally, because the process of making tacit knowledge explicit forces the articulation of things that were never written down.
 

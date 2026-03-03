@@ -165,6 +165,6 @@ Twenty-three tests. Eleven thousand links. One honest mistake. A day's work.
 
 ---
 
-*Synthesis: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)*
+*Synthesis is the knowledge infrastructure tool described in this series.*
 
 *Session: Thor Henning Hetland + Claude Code (Opus). Tool: Synthesis v1.18.1.*

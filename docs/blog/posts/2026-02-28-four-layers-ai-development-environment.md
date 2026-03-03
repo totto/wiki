@@ -74,7 +74,7 @@ That 10ms matters because it determines whether search is something you invoke d
 
 Behind the search, the system is continuously reindexing. In the same 7-day window, there were 764 maintain invocations — background reindexing triggered by watch daemons after file changes and explicit maintain runs. The index is never stale. Every binary file gets a companion markdown sidecar (`.synthesis.md`) that makes its content searchable. Every code file gets dependency edges extracted. Every workspace gets a relationship graph that answers "what breaks if I change this?" in milliseconds.
 
-Synthesis is open source: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis).
+Synthesis is the knowledge infrastructure tool described in this series.
 
 ---
 
@@ -240,7 +240,7 @@ That is the gap I set out to close: not how fast AI can write code, but how fast
 
 ## The Asset Is Not the Tools
 
-Some of this stack is reusable. Synthesis is open source. The skill system is a pattern anyone using Claude Code can adopt. IronClaw is open-source infrastructure. But the specific configuration — which skills exist, which workspaces are indexed, which agents handle which domains — is bespoke.
+Some of this stack is reusable. Synthesis is the knowledge infrastructure tool at the centre of this stack. The skill system is a pattern anyone using Claude Code can adopt. IronClaw is open-source infrastructure. But the specific configuration — which skills exist, which workspaces are indexed, which agents handle which domains — is bespoke.
 
 That is the point.
 
@@ -254,7 +254,7 @@ The multiplier comes not from the tools themselves but from the accumulated cont
 
 ![Getting Started: Synthesis, Claude Code, IronClaw, KCP](/assets/images/blog/ai-dev-stack-part1/slide-14.png)
 
-- **Synthesis**: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis) — MIT license, Java 21, runs anywhere
+- **Synthesis**: Synthesis — knowledge infrastructure, Java 21, runs locally
 - **Claude Code**: `npm install -g @anthropic-ai/claude-code` — then invest time in building skills
 - **IronClaw**: [github.com/nearai/ironclaw](https://github.com/nearai/ironclaw) — open source, runs on any Linux instance
 - **KCP**: [cantara.github.io/knowledge-context-protocol](https://cantara.github.io/knowledge-context-protocol) — YAML standard for making knowledge navigable

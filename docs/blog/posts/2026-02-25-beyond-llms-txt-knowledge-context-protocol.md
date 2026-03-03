@@ -137,7 +137,7 @@ documentation. The structure grows with your need for it.
 
 ## How this connects to Synthesis
 
-[Synthesis](https://github.com/exoreaction/Synthesis) is the reference implementation of a
+[Synthesis](/blog/2026/02/25/ai-agents-without-knowledge-infrastructure-are-interns-with-amnesia/) is the reference implementation of a
 KCP-native knowledge server. It indexes a workspace — code, documentation, configuration,
 PDFs — and serves it via MCP with sub-second retrieval.
 

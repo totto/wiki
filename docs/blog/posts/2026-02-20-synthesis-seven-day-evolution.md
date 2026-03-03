@@ -93,6 +93,6 @@ Not because search is unimportant. Because search is what you fall back on when 
 
 *Originally published on [LinkedIn](https://www.linkedin.com/feed/update/urn:li:ugcPost:7430670493357191168/), February 20, 2026, with a 14-slide document carousel.*
 
-*→ [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)*
+*Synthesis is the knowledge infrastructure tool described in this series.*
 
 *This post is part of the [AI-Augmented Development](/blog/category/ai-augmented-development/) series.*

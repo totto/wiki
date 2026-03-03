@@ -104,7 +104,7 @@ We built the detector. It found entropy in itself. We fixed it.
 
 That's the loop. That's what managing entropy at speed actually requires.
 
-→ [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
+→ Synthesis — the knowledge infrastructure tool described in this series.
 
 ---
 

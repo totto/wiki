@@ -189,6 +189,6 @@ That is the real lesson. Not the 99.96%. Not the 3,922 companion files. The less
 
 ---
 
-*Synthesis: [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)*
+*Synthesis is the knowledge infrastructure tool described in this series.*
 
 *Expedition leads: Thor Henning Hetland + Claude Code. Tool: Synthesis v1.16.2-SNAPSHOT.*

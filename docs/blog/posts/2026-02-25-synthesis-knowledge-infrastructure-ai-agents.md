@@ -38,7 +38,7 @@ The deeper issue is this: an agent that cannot reliably access the knowledge it 
 
 ## What Synthesis does differently
 
-We built [Synthesis](https://github.com/exoreaction/Synthesis) to solve a specific problem: our AI-assisted development was generating output at ten to fifty times the previous rate, but our shipping speed only improved by a factor of two. The bottleneck was not code generation — it was comprehension. Developers were spending forty percent of their time searching for context across thousands of files, understanding how changes would propagate, figuring out what already existed before writing something new.
+We built [Synthesis](/blog/2026/02/25/ai-agents-without-knowledge-infrastructure-are-interns-with-amnesia/) to solve a specific problem: our AI-assisted development was generating output at ten to fifty times the previous rate, but our shipping speed only improved by a factor of two. The bottleneck was not code generation — it was comprehension. Developers were spending forty percent of their time searching for context across thousands of files, understanding how changes would propagate, figuring out what already existed before writing something new.
 
 Synthesis indexes the entire workspace — code, documentation, configuration files, SQL, PDFs, shell scripts — and makes it searchable in under a second. But more importantly, it builds a dependency graph. It tracks which module imports which, what breaks when something changes, how files relate across repository boundaries. This is the structural knowledge that a developer holds in their head after working on a system for months. Synthesis makes it queryable by anyone — or anything — from day one.
 
@@ -106,6 +106,6 @@ RAG is not enough. Stuffing context is not enough. Writing elaborate priming doc
 
 We built Synthesis to solve our own problem. It turned out to solve a broader one. If you are deploying agents against a large codebase, a complex dependency graph, or sensitive enterprise data that cannot leave your network, the knowledge problem is likely your real bottleneck — not the model, not the framework, not the prompt.
 
-Synthesis is available at [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis). Sub-second retrieval. Local-first. MCP-native. One index, as many agents as you need.
+Synthesis is the knowledge infrastructure tool described in this series. Sub-second retrieval. Local-first. MCP-native. One index, as many agents as you need.
 
 The agents are only as good as what they know. Give them something to know.

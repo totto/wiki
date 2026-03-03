@@ -36,7 +36,7 @@ That one wrong date is the most important finding from our Phase 5 benchmark. No
 
 ## What the benchmark was testing
 
-We ran 9 codebase navigation tasks across 6 conditions on the [Synthesis](https://github.com/exoreaction/Synthesis) codebase. The conditions varied how the agent received knowledge: no Synthesis integration (Baseline), pre-loaded context documents (Knowledge), CLI documentation (CLI), MCP tools (MCP), MCP with a system prompt hint (MCP + Hint), and MCP with rewritten tool descriptions (MCP + Descriptions).
+We ran 9 codebase navigation tasks across 6 conditions on the [Synthesis](/blog/2026/02/25/ai-agents-without-knowledge-infrastructure-are-interns-with-amnesia/) codebase. The conditions varied how the agent received knowledge: no Synthesis integration (Baseline), pre-loaded context documents (Knowledge), CLI documentation (CLI), MCP tools (MCP), MCP with a system prompt hint (MCP + Hint), and MCP with rewritten tool descriptions (MCP + Descriptions).
 
 The E1 task asked: *List Synthesis's validated performance metrics — indexing throughput, search latency, validation date.*
 
@@ -179,6 +179,6 @@ For teams deploying agents against real knowledge bases:
 
 ---
 
-The benchmark data and full results are in the [Synthesis repository](https://github.com/exoreaction/Synthesis) under `/benchmark/`. The KCP draft specification is at [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol).
+The benchmark data and full results are in our benchmark data (available on request) under `/benchmark/`. The KCP draft specification is at [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol).
 
 *Previous in this series: [Beyond llms.txt: AI Agents Need Maps, Not Tables of Contents](../2026-02-25-beyond-llms-txt-knowledge-context-protocol/) — introducing the KCP protocol concept. This post provides the benchmark evidence.*

@@ -27,7 +27,7 @@ IronClaw is the internal AI agent I run for eXOReaction. It sits on an EC2 insta
 
 Every conversation starts from zero. Ask it about our skill library, our methodology, a specific client engagement, and it either hallucinates or tells you it doesn't have that context. This is fine for a generic assistant. It is less fine when you want the agent to actually *know your company* — to be able to search 100+ YAML skill definitions, read memory files, and surface relevant documentation without you pasting everything into the prompt each time.
 
-The fix is to give it a connected knowledge base. We already have one: [Synthesis](https://github.com/exoreaction/Synthesis), a knowledge infrastructure tool that indexes files at 200–300 files/second and exposes search, graph, and relationship queries over MCP. Synthesis runs locally, keeps everything on-prem, and produces sub-second search across thousands of files.
+The fix is to give it a connected knowledge base. We already have one: [Synthesis](/blog/2026/02/25/ai-agents-without-knowledge-infrastructure-are-interns-with-amnesia/), a knowledge infrastructure tool that indexes files at 200–300 files/second and exposes search, graph, and relationship queries over MCP. Synthesis runs locally, keeps everything on-prem, and produces sub-second search across thousands of files.
 
 The plan: sync the relevant files to the EC2 instance, run Synthesis against them, bridge its stdio MCP interface to HTTP, and register it as an MCP server in IronClaw. Four steps. It took most of a day, and almost all the time was spent on surprises I didn't anticipate.
 
@@ -290,4 +290,4 @@ Whether it actually does that reliably is what [Part 2](/blog/2026/02/24/ironcla
 
 ---
 
-*Synthesis is available at [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis).*
+*Synthesis is the knowledge infrastructure tool described in this series.*

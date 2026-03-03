@@ -86,7 +86,7 @@ It works at toy scale. At production scale — 1,000+ files, multiple repositori
 
 ## Where Synthesis fits — and where it does not
 
-[Synthesis](https://github.com/exoreaction/Synthesis) is the tool we built when our AI-augmented development workflow generated 691 files per day and we could not find anything. It takes a different position in this landscape than any of the approaches above.
+[Synthesis](/blog/2026/02/25/ai-agents-without-knowledge-infrastructure-are-interns-with-amnesia/) is the tool we built when our AI-augmented development workflow generated 691 files per day and we could not find anything. It takes a different position in this landscape than any of the approaches above.
 
 Synthesis is not a vector database. It does not do semantic similarity search by default — if your code says `auth` and you search for "authentication," you need to know to search for both. That is a real limitation. Embeddings are on the roadmap but not shipped.
 
@@ -137,7 +137,7 @@ None of this means Synthesis is sufficient on its own. It means the debate about
 
 ---
 
-*Synthesis is available at [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis). The knowledge graph, temporal tracking, and MCP integration are all shipping.*
+*Synthesis is the knowledge infrastructure tool described throughout this series. The knowledge graph, temporal tracking, and MCP integration are all shipping.*
 
 ---
 
@@ -147,7 +147,7 @@ This post is the capstone of a series exploring what happens when you treat AI a
 
 ??? abstract "How the posts connect to this framework"
 
-    The four-layer argument did not start as a framework. It started as a collection of problems encountered while building and deploying [Synthesis](https://github.com/exoreaction/Synthesis) against real workspaces. Each post below contributed a specific insight:
+    The four-layer argument did not start as a framework. It started as a collection of problems encountered while building and deploying [Synthesis](/blog/2026/02/25/ai-agents-without-knowledge-infrastructure-are-interns-with-amnesia/) against real workspaces. Each post below contributed a specific insight:
 
     - The **MCP benchmark** revealed that tool integration architecture matters more than documentation quality — and that one line of guidance outperforms 41 rewritten tool descriptions.
     - The **invented date** proved that temporal confabulation is a *representation* failure, not a *model* failure — you cannot prompt-engineer around missing metadata.
