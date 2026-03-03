@@ -26,10 +26,16 @@ it solved a similar problem three sessions ago. Each session is day one.
 
 That is not a limitation of the model. It is a missing infrastructure layer.
 
-Today we are releasing **kcp-memory**: a standalone Java daemon that indexes
+Today we are releasing **kcp-memory v0.1.0**: a standalone Java daemon that indexes
 `~/.claude/projects/**/*.jsonl` session transcripts into a local SQLite database with
 FTS5 full-text search. Ask it "what was I working on last week?" and it answers in
 milliseconds.
+
+**Update (same day — v0.2.0):** kcp-memory now ships with tool-level granularity.
+[kcp-commands v0.9.0](./2026-03-02-kcp-commands.md) writes every Bash tool call to
+`~/.kcp/events.jsonl`; kcp-memory ingests that stream and makes individual commands
+searchable via `kcp-memory events search`. Session-level and tool-level memory in one
+daemon, one database, zero additional dependencies.
 
 <!-- more -->
 
@@ -113,6 +119,11 @@ kcp-memory list --project /src/myapp
 
 # Aggregate statistics
 kcp-memory stats
+
+# Search individual tool-call events (v0.2.0 — requires kcp-commands v0.9.0)
+kcp-memory events search "kubectl apply"
+kcp-memory events search "flyway migrate"
+kcp-memory events search "docker build"
 ```
 
 A stats output from a real session history:
@@ -158,10 +169,11 @@ kcp-memory runs as a local HTTP daemon on port 7735:
 | Endpoint | Method | Description |
 |----------|--------|-------------|
 | `/health` | GET | Liveness check + session count |
-| `/search?q=...&limit=20` | GET | FTS5 full-text search |
+| `/search?q=...&limit=20` | GET | FTS5 search over session transcripts |
 | `/sessions?project=...&limit=50` | GET | List recent sessions |
 | `/stats` | GET | Aggregate statistics |
 | `/scan?force=true` | POST | Trigger an incremental scan |
+| `/events/search?q=...&limit=20` | GET | FTS5 search over tool-call events *(v0.2.0)* |
 
 Built on `com.sun.net.httpserver` with virtual threads — the same architecture as
 kcp-commands. Cold start is under 2 seconds. Queries return in under 5ms on a 1,000-session
@@ -262,12 +274,19 @@ different points in the tool call lifecycle — one before, one after.
 
 ![Ecosystem synergy: kcp-commands (7734, PreToolUse) vs kcp-memory (7735, PostToolUse) — complementary tools covering the full tool call lifecycle](/assets/images/blog/kcp-memory-slide-11-ecosystem.png)
 
-The [v0.2.0 roadmap](https://github.com/Cantara/kcp-memory) adds a direct event stream
-from kcp-commands: tool events will be written to `~/.kcp/events.jsonl` and ingested by
-kcp-memory, giving the episodic index tool-level granularity rather than session-level
-granularity.
+**v0.2.0 — shipped today:** kcp-commands v0.9.0 now writes a JSON event to
+`~/.kcp/events.jsonl` on every Phase A Bash hook call. Each event carries `ts`,
+`session_id`, `project_dir`, `tool`, `command` (first 500 chars), and `manifest_key`.
+kcp-memory v0.2.0 reads that file incrementally using a byte-offset cursor — so each
+PostToolUse-triggered scan processes only the lines appended since the last scan, typically
+one event in under 1ms.
 
-![The v0.2.0 roadmap: Tool-level granularity — kcp-commands → individual tool events → ~/.kcp/events.jsonl → kcp-memory, enabling per-tool resolution in the episodic index](/assets/images/blog/kcp-memory-slide-13-roadmap.png)
+The result: `kcp-memory events search "kubectl apply"` returns every time Claude ran that
+command across all your projects, with project directory, session ID, and exact timestamp.
+Session-level granularity ("I was working on X") and tool-level granularity ("I ran Y in
+project Z at 14:32") from the same daemon and the same database.
+
+![Tool-level granularity shipped: kcp-commands → individual tool events → ~/.kcp/events.jsonl → kcp-memory, incremental byte-offset ingestion, per-command FTS5 search](/assets/images/blog/kcp-memory-slide-13-roadmap.png)
 
 ---
 
@@ -276,9 +295,9 @@ granularity.
 The project is at
 [github.com/Cantara/kcp-memory](https://github.com/Cantara/kcp-memory). Apache 2.0.
 
-120 lines of SQL and schema, ~1,100 lines of Java across twelve source files. The only
-dependencies are `sqlite-jdbc`, `jackson-databind`, and `picocli`. No Spring, no
-framework, no cloud calls.
+~200 lines of SQL and schema across two migrations, ~1,600 lines of Java across sixteen
+source files. The only dependencies are `sqlite-jdbc`, `jackson-databind`, and `picocli`.
+No Spring, no framework, no cloud calls.
 
 The [KCP ecosystem](https://github.com/Cantara/knowledge-context-protocol) now has three
 tools covering three different surfaces of the AI coding workflow:
