@@ -2,7 +2,7 @@
 
 Over the past three months I have been building and writing about a specific problem: AI agents create faster than humans comprehend. The bottleneck in AI-augmented development is not code generation -- it is finding, understanding, and connecting what has already been generated. Knowledge infrastructure is the missing layer.
 
-This page maps the body of work that emerged from that problem. It spans three codebases, four blog series, and roughly thirty posts -- from the first observation that comprehension was the bottleneck, through building Synthesis and the Knowledge Context Protocol, to the three-layer memory architecture for AI agents.
+This page maps the body of work that emerged from that problem. It spans four codebases, four blog series, and roughly thirty posts -- from the first observation that comprehension was the bottleneck, through building Synthesis and the Knowledge Context Protocol, to the three-layer memory architecture for AI agents.
 
 ---
 
@@ -106,15 +106,33 @@ These standalone posts document specific discoveries -- benchmarks, failure mode
 
 ## The codebases
 
-Three open-source projects underpin this work:
+Four open-source projects underpin this work:
 
-**[Synthesis](https://github.com/exoreaction/Synthesis)** -- Knowledge infrastructure for AI-augmented development. Local-first indexing, sub-second search, knowledge graphs, MCP server, session indexing. Java 21. Currently at v1.21.0 with 4,170 tests.
+**[Synthesis](https://github.com/exoreaction/Synthesis)** -- Knowledge infrastructure for AI-augmented development. Local-first indexing (200–300 files/second), sub-second search, multi-layer knowledge graphs, MCP server (8 tools), session indexing (episodic memory). Java 21. v1.21.0, 4,170 tests, 55 CLI commands.
 
 - [Release history](../notes/synthesis-releases.md)
 
-**[Knowledge Context Protocol (KCP)](https://cantara.github.io/knowledge-context-protocol)** -- A YAML standard for making knowledge navigable by AI agents. Describes topology, intent, freshness, audience, and loading order. Published under Cantara.
+---
 
-- Repository: [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol)
+**[Knowledge Context Protocol](https://cantara.github.io/knowledge-context-protocol)** -- A YAML file format specification that makes knowledge navigable by AI agents. KCP is to knowledge what MCP is to tools: it adds topology (`depends_on`, `supersedes`), intent (what question each unit answers), freshness (`validated` dates), audience targeting, and context window hints — the metadata layer that `llms.txt` cannot express.
+
+- **Status:** v0.5 draft spec — published under Cantara, submitted to the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Linux Foundation) alongside MCP and AGENTS.md
+- **Spec:** [SPEC.md](https://github.com/Cantara/knowledge-context-protocol/blob/main/SPEC.md) · [PROPOSAL.md](https://github.com/Cantara/knowledge-context-protocol/blob/main/PROPOSAL.md)
+- **RFCs:** Auth & Delegation (RFC-0002) · Federation (RFC-0003) · Trust & Compliance (RFC-0004) · Payment & Rate Limits (RFC-0005) · Context Window Hints (RFC-0006, accepted into v0.4 core)
+- **Reference implementations:** parsers in Python and Java · MCP bridge servers in TypeScript, Python, and Java
+- **Repository:** [github.com/Cantara/knowledge-context-protocol](https://github.com/Cantara/knowledge-context-protocol)
+
+---
+
+**[kcp-commands](https://github.com/Cantara/kcp-commands)** -- A Claude Code hook that applies KCP at the Bash tool boundary. Intercepts every Bash tool call at two points: before execution (injects concise flag/syntax guidance from a KCP manifest — no `--help` round-trips) and after execution (strips noise from large outputs before they consume context). 283 bundled manifests covering git, Linux, Docker, Kubernetes, cloud CLIs, build tools, package managers, and more.
+
+- **Measured saving:** 67,352 tokens per session — 33.7% of a 200K context window recovered
+- **Performance:** Java daemon (12ms/call warm) · Node.js fallback (250ms) · unknown commands auto-generate manifests from `--help`
+- **Current version:** v0.8.0
+- **Install:** `curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/install.sh | bash -s -- --java`
+- **Repository:** [github.com/Cantara/kcp-commands](https://github.com/Cantara/kcp-commands)
+
+---
 
 **[IronClaw](https://github.com/nearai/ironclaw)** -- Open-source AI agent framework. Runs on Linux, connects to Slack, supports MCP tool registration. Powers Mimir (awareness agent) and Klaw (maintenance agent) in the four-layer stack.
 
