@@ -195,7 +195,7 @@ database.
 The daemon runs an initial scan on startup and re-scans every 30 minutes in the
 background. Existing sessions that have not changed since the last scan are skipped.
 
-![A lightweight background daemon built on virtual threads — 5 API endpoints on port 7735, cold start under 2 seconds](/assets/images/blog/kcp-memory-slide-06-daemon.png)
+![A lightweight background daemon built on virtual threads — 6 API endpoints on port 7735, cold start under 2 seconds](/assets/images/blog/kcp-memory-slide-06-daemon.png)
 
 ---
 
@@ -242,7 +242,7 @@ a session — no manual CLI call, no context-switching:
 }
 ```
 
-Four tools are registered:
+Six tools are registered (four in v0.3.0, two added in v0.4.0):
 
 | Tool | What it answers |
 |------|----------------|
