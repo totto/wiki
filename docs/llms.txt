@@ -18,7 +18,7 @@ Thor Henning Hetland — known as Totto — has been building software professio
 
 ## Full Content (machine-readable)
 
-- [Full profile and CV (clean markdown)](https://wiki.totto.org/llms-full.txt): Full profile, CV, open source work, and all 73 blog posts (Apr 2025–Mar 2026, plus 19-post 2009 cloud series)
+- [Full profile and CV (clean markdown)](https://wiki.totto.org/llms-full.txt): Full profile, CV, open source work, and all 77 blog posts (Apr 2025–Mar 2026, plus 19-post 2009 cloud series)
 
 ## Writing
 
