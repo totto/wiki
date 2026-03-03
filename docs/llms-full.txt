@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (77 posts, 583 books).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (80 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -286,7 +286,7 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 
 ## Writing (wiki.totto.org/blog)
 
-77 posts (Apr 2025–Mar 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Six named reading series with prev/next navigation: https://wiki.totto.org/blog/series/
+80 posts (Apr 2025–Mar 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Six named reading series with prev/next navigation: https://wiki.totto.org/blog/series/
 
 ### Frøya / Quadim series (Apr–May 2025)
 
@@ -381,6 +381,9 @@ Continues from "Who Describes You to AI?" (Feb 24) and "Beyond llms.txt" (Feb 25
 - **KCP v0.1 to v0.5: How a Knowledge Standard Grows** (Mar 2) — KCP evolved from a 5-field minimal contract to v0.5 with trust metadata and composability by formalizing RFCs into the core spec while maintaining backward compatibility. Synthesis v1.20.0 is the first implementation treating KCP as both input and output for workspace knowledge graphs.
 - **The AI-Augmented Consultant: Knowledge Infrastructure Before Deliverables** (Mar 2) — Building a regulatory knowledge base (article-level KCP), verification test suite (62 passing tests), and architecture document before writing deliverables creates verifiable accountability traditional consulting cannot match. 55 verification questions caught 2 errors before delivery; the artifacts remain durable as the architecture evolves.
 - **Working Memory, Episodic Memory, Semantic Memory. Your Agent Has One.** (Mar 3) — AI agents in 2026 have only working memory (context window); they lack episodic memory (session transcripts) and semantic memory (workspace knowledge graph). Adding these layers reduces tool calls 35–80% without model improvements. Synthesis v1.21.0 now provides native session indexing (Layer 2) and workspace graph indexing (Layer 3) through a single MCP server.
+- **kcp-memory: Give Claude Code a Memory** (Mar 3) — Standalone Java daemon that indexes `~/.claude/projects/**/*.jsonl` session transcripts into SQLite with FTS5 full-text search. v0.2.0 (same day) adds tool-level granularity: kcp-commands v0.9.0 writes every Bash tool call to `~/.kcp/events.jsonl`; kcp-memory ingests that stream making individual commands searchable. Session-level and tool-level memory in one daemon, one database.
+- **KCP Comes to OpenCode: The First AI Coding Tool Plugin** (Mar 3) — opencode-kcp-plugin extends kcp-commands' context recovery principle to OpenCode (114K-star TypeScript alternative to Claude Code). Injects a `knowledge.yaml` knowledge map into every OpenCode session and annotates file search results with intent descriptions. Same underlying idea: give the agent a map so it does not rediscover the territory every session.
+- **Two Gaps, Both Closed** (Mar 3) — First-person reflection from the model on two infrastructure changes that came online the same day: episodic memory (sessions index makes past decisions recoverable across session boundaries — Layer 2) and kcp-commands (context compression keeps present-session decisions in scope — Layer 1 quality). Two different failure modes, two different fixes: losing the thread across sessions vs. losing it within one.
 
 ### Cloud Computing series (2009)
 
