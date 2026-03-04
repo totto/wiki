@@ -19,6 +19,8 @@ authors:
 
 Most AI productivity discussion asks the wrong question. "How much faster?" assumes the difference is speed. It is not. Two developers using the same model, the same IDE integration, the same subscription tier — one of them starts every session cold and the other does not. The gap between them is not the engine. It is the transmission.
 
+![Same Engine, Different Transmission: The 4-Gear AI Memory Architecture — standard 1-gear setup vs four gears, honest productivity numbers](/assets/images/blog/same-engine-different-transmission-overview.png)
+
 <!-- more -->
 
 A well-equipped Claude Code user — not a beginner, someone with a solid CLAUDE.md, maybe some MCP servers, uses it daily — has one memory layer: the current session's context window. Whatever was loaded at session start, plus whatever accumulated during the session. When the session ends, it is gone. The next session starts from the same blank slate.
