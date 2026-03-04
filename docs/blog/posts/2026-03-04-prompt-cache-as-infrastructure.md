@@ -17,6 +17,8 @@ authors:
 
 # The Prompt Cache as Infrastructure: Lessons from 3,007 Claude Code Sessions
 
+![The 12 Billion Token Dividend: Prompt Cache as Infrastructure](/assets/images/blog/prompt-cache-infrastructure/prompt-cache-infrastructure.png)
+
 I extracted the token usage from 55 days of Claude Code sessions. The number that stopped me:
 
 **12,198,713,224 cache read tokens.**
