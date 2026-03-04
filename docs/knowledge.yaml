@@ -1,6 +1,7 @@
+kcp_version: "0.5"
 project: wiki.totto.org
-version: 1.0.0
-updated: 2026-02-28
+version: 1.1.0
+updated: 2026-03-04
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────
@@ -181,6 +182,26 @@ units:
     audience: [human, architect]
     depends_on: [presentations-all]
     triggers: [governance, soa, design-time, microservices, policy]
+
+  # ── Knowledge infrastructure hub ─────────────────────────────────────────────
+
+  - id: knowledge-infrastructure
+    path: knowledge-infrastructure/index.md
+    intent: "What is the full body of work on AI agent knowledge infrastructure — Synthesis, KCP, kcp-commands, IronClaw, and the blog series covering all four?"
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-03-03
+    depends_on: [about]
+    triggers: [synthesis, kcp, kcp-commands, ironclaw, knowledge-infrastructure, four-layer, episodic-memory, context-window, ai-agents, memory-architecture]
+
+  - id: synthesis-releases
+    path: notes/synthesis-releases.md
+    intent: "What is the full Synthesis release history, from v1.0.0 to the latest version, with changelog and feature details?"
+    scope: global
+    audience: [human, agent, developer]
+    validated: 2026-03-03
+    depends_on: [knowledge-infrastructure]
+    triggers: [synthesis, releases, changelog, v1.0, v1.21, versions, release-history]
 
   # ── Open source ──────────────────────────────────────────────────────────────
 
@@ -588,3 +609,20 @@ relationships:
   - from: blog-series
     to: llms-full
     type: context
+
+  # Knowledge infrastructure hub
+  - from: about
+    to: knowledge-infrastructure
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: synthesis-releases
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: open-source
+    type: context
+
+  - from: llms-index
+    to: knowledge-infrastructure
+    type: enables

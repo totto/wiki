@@ -18,11 +18,11 @@ Thor Henning Hetland — known as Totto — has been building software professio
 
 ## Full Content (machine-readable)
 
-- [Full profile and CV (clean markdown)](https://wiki.totto.org/llms-full.txt): Full profile, CV, open source work, and all 80 blog posts (Apr 2025–Mar 2026, plus 19-post 2009 cloud series)
+- [Full profile and CV (clean markdown)](https://wiki.totto.org/llms-full.txt): Full profile, CV, open source work, and all 81 blog posts (Apr 2025–Mar 2026, plus 19-post 2009 cloud series)
 
 ## Writing
 
-80 posts at [wiki.totto.org/blog](https://wiki.totto.org/blog/). Topics: AI-augmented development methodology, Skill-Driven Development, knowledge infrastructure, temporal analytics, AI co-workers, software architecture, and a 2009 cloud computing series. Most 2025–2026 posts co-authored with Claude Code. Six named reading series (IronClaw agent integration, Four-Layer AI Stack, Knowledge Context Protocol, Aurora & Temporal Analytics, Frøya, Building lib-pcb) with prev/next navigation at [wiki.totto.org/blog/series](https://wiki.totto.org/blog/series/).
+81 posts at [wiki.totto.org/blog](https://wiki.totto.org/blog/). Topics: AI-augmented development methodology, Skill-Driven Development, knowledge infrastructure, temporal analytics, AI co-workers, software architecture, and a 2009 cloud computing series. Most 2025–2026 posts co-authored with Claude Code. Six named reading series (IronClaw agent integration, Four-Layer AI Stack, Knowledge Context Protocol, Aurora & Temporal Analytics, Frøya, Building lib-pcb) with prev/next navigation at [wiki.totto.org/blog/series](https://wiki.totto.org/blog/series/).
 
 ## LinkedIn Writing
 

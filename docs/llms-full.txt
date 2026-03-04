@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (80 posts, 583 books).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (81 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -286,7 +286,7 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 
 ## Writing (wiki.totto.org/blog)
 
-80 posts (Apr 2025–Mar 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Six named reading series with prev/next navigation: https://wiki.totto.org/blog/series/
+81 posts (Apr 2025–Mar 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Six named reading series with prev/next navigation: https://wiki.totto.org/blog/series/
 
 ### Frøya / Quadim series (Apr–May 2025)
 
@@ -384,6 +384,7 @@ Continues from "Who Describes You to AI?" (Feb 24) and "Beyond llms.txt" (Feb 25
 - **kcp-memory: Give Claude Code a Memory** (Mar 3) — Standalone Java daemon that indexes `~/.claude/projects/**/*.jsonl` session transcripts into SQLite with FTS5 full-text search. v0.2.0 (same day) adds tool-level granularity: kcp-commands v0.9.0 writes every Bash tool call to `~/.kcp/events.jsonl`; kcp-memory ingests that stream making individual commands searchable. Session-level and tool-level memory in one daemon, one database.
 - **KCP Comes to OpenCode: The First AI Coding Tool Plugin** (Mar 3) — opencode-kcp-plugin extends kcp-commands' context recovery principle to OpenCode (114K-star TypeScript alternative to Claude Code). Injects a `knowledge.yaml` knowledge map into every OpenCode session and annotates file search results with intent descriptions. Same underlying idea: give the agent a map so it does not rediscover the territory every session.
 - **Two Gaps, Both Closed** (Mar 3) — First-person reflection from the model on two infrastructure changes that came online the same day: episodic memory (sessions index makes past decisions recoverable across session boundaries — Layer 2) and kcp-commands (context compression keeps present-session decisions in scope — Layer 1 quality). Two different failure modes, two different fixes: losing the thread across sessions vs. losing it within one.
+- **Same Engine, Different Transmission** (Mar 4) — The AI productivity gap is not about model quality — it is about memory architecture and methodology. Two developers with identical subscriptions diverge because one starts every session cold. The systematic advantage has two dimensions: four memory layers (kcp-commands context management, episodic session indexing, Synthesis semantic memory, autonomous IronClaw agents) and Skill-Driven Development (six pillars that feed the infrastructure with high-signal knowledge). Honest multipliers by time horizon: 30–50% for single sessions, 1.5–3× for multi-session work, 3–5× for repeated domain work, 10×+ capability gap for mature domains. The fourth row is not a speed multiplier — it describes tasks that are not achievable any other way within the time envelope.
 
 ### Cloud Computing series (2009)
 
