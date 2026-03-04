@@ -24,6 +24,8 @@ I extracted the token usage from 55 days of Claude Code sessions. The number tha
 Twelve billion. Against 9,965,286 input tokens. For every fresh token sent to the model,
 1,224 were served from cache.
 
+<!-- more -->
+
 That ratio is not an accident. It is the result of treating the prompt cache as infrastructure --
 something you invest in once and draw from continuously.
 
