@@ -162,6 +162,9 @@ Each PR includes the `knowledge.yaml` manifest, TL;DR files, `BENCHMARK.md`, and
 
 The benchmark methodology is now documented at [github.com/cantara/knowledge-context-protocol/CONTRIBUTING.md](https://github.com/cantara/knowledge-context-protocol/blob/main/CONTRIBUTING.md) — same model, same tool-counting approach, same system prompts. Anyone applying KCP to a new repo can produce results that are directly comparable to the ones here.
 
+The PR status and all live adopters are tracked in
+[ADOPTERS.md](https://github.com/Cantara/knowledge-context-protocol/blob/main/ADOPTERS.md).
+
 ---
 
 *The KCP specification is at [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol). The previous post in this series covered the first two repos: [KCP on Two Repos, Two Days](./2026-03-01-kcp-two-repos-two-days.md).*

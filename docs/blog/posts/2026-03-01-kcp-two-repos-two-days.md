@@ -148,3 +148,7 @@ The KCP specification is at [github.com/cantara/knowledge-context-protocol](http
 ---
 
 *Repo 1 will be named when consent is confirmed. Methodology and raw benchmark numbers are in the BENCHMARK.md files in each repository.*
+
+*This post is part of the Knowledge Context Protocol series.*
+*Previous: [Add knowledge.yaml to Your Project in Five Minutes](./2026-02-28-kcp-adoption-guide.md)*
+*Next: [KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers](./2026-03-01-kcp-three-frameworks.md)*

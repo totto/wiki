@@ -179,7 +179,12 @@ The agents are only as good as what they know. Give them something well-structur
 
 ![Give the agents a map](/assets/images/blog/kcp-give-agents-a-map.png)
 
+Projects already running KCP in production — including wiki.totto.org, wiki.cantara.no,
+and active PRs against crewAI, AutoGen, and smolagents — are listed in
+[ADOPTERS.md](https://github.com/Cantara/knowledge-context-protocol/blob/main/ADOPTERS.md).
+
 ---
 
-*This post is part of a series on knowledge infrastructure for AI agents. Previous post:
-[AI Agents Without Knowledge Infrastructure Are Interns With Amnesia](../2026-02-25-synthesis-knowledge-infrastructure-ai-agents/).*
+*This post is part of a series on knowledge infrastructure for AI agents.*
+*Previous: [AI Agents Without Knowledge Infrastructure Are Interns With Amnesia](../2026-02-25-synthesis-knowledge-infrastructure-ai-agents/)*
+*Next: [Add knowledge.yaml to Your Project in Five Minutes](./2026-02-28-kcp-adoption-guide.md)*

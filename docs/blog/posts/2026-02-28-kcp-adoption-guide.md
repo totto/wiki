@@ -36,7 +36,7 @@ express. You can start in five minutes and grow from there.
 The smallest valid `knowledge.yaml`:
 
 ```yaml
-kcp_version: "0.3"
+kcp_version: "0.5"
 project: my-project
 version: 1.0.0
 
@@ -82,7 +82,7 @@ have read the installation guide should declare that dependency. The agent loads
 right order instead of guessing.
 
 ```yaml
-kcp_version: "0.3"
+kcp_version: "0.5"
 project: wiki.example.org
 version: 1.0.0
 updated: "2026-02-28"
@@ -239,5 +239,14 @@ All available unit fields, for reference:
 Spec, examples, parsers, and bridge implementations:
 [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol)
 
+Projects already running KCP in production are listed in
+[ADOPTERS.md](https://github.com/Cantara/knowledge-context-protocol/blob/main/ADOPTERS.md).
+
+For benchmark numbers showing what a `knowledge.yaml` actually does to agent tool-call
+counts, see the follow-up posts:
+[KCP on Two Repos, Two Days](./2026-03-01-kcp-two-repos-two-days.md) (53–74% reduction)
+and [KCP on Three Agent Frameworks](./2026-03-01-kcp-three-frameworks.md) (73–80% reduction).
+
 *This post is part of a series on knowledge infrastructure for AI agents.*
 *Previous: [KCP and MCP: One Protocol for Structure, One for Retrieval](/blog/2026/02/28/kcp-and-mcp-one-protocol-for-structure-one-for-retrieval/)*
+*Next: [KCP on Two Repos, Two Days](./2026-03-01-kcp-two-repos-two-days.md)*
