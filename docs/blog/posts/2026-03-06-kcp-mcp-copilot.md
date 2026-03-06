@@ -163,6 +163,10 @@ Create `.vscode/mcp.json` in your project root:
 
 With kcp-commands syntax tool (284 bundled command manifests):
 
+```bash
+npm install --save-dev kcp-commands
+```
+
 ```json
 {
   "servers": {
