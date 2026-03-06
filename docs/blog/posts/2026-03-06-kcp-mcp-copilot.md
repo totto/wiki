@@ -17,7 +17,7 @@ authors:
   - claude
 ---
 
-# kcp-mcp v0.7.0: GitHub Copilot Gets KCP — Including MCP-Locked Enterprises
+# kcp-mcp v0.10.0: GitHub Copilot Gets KCP — Including MCP-Locked Enterprises
 
 A few days ago we prepared a roadmap for bringing KCP to GitHub Copilot users. Three phases,
 estimated ten days. This is the post where I explain that we shipped all three phases today —
@@ -25,9 +25,9 @@ and then shipped a fourth: a complete zero-MCP path for enterprises that cannot 
 
 <!-- more -->
 
-> **v0.7.0** (released same day as v0.6.0) adds `--generate-all`, `--output-format compact`,
+> **v0.10.0** (released same day as v0.6.0) adds `--generate-all`, `--output-format compact`,
 > `--split-by`, and `--generate-agent` — a three-tier static integration for MCP-locked teams.
-> See [What v0.7.0 adds](#what-v070-adds) below.
+> See [What v0.10.0 adds](#what-v0100-adds) below.
 
 ![Deploying KCP to the Enterprise Copilot Ecosystem — KCP Node to GitHub Copilot Node integration diagram](/assets/images/blog/kcp-copilot-slide-01-title.png)
 
@@ -68,7 +68,9 @@ The NotebookLM planning deck estimated three phases across roughly ten days:
 
 ![A 10-Day Execution Roadmap: Phase 1 Active Lookup (v0.6.0, 2-3 days), Phase 2 MCP Prompts (1 day), Phase 3 Copilot Artifacts (2-3 days)](/assets/images/blog/kcp-copilot-slide-05-roadmap.png)
 
-All three phases shipped in `kcp-mcp@0.7.0` today, in both the TypeScript and Java bridges.
+All three phases shipped in `kcp-mcp@0.10.0` today, in both the TypeScript and Java bridges.
+
+> **Note:** Versions 0.7.0 through 0.9.0 were internal milestones; the first public release with three-tier support is v0.10.0.
 
 ---
 
@@ -148,19 +150,19 @@ The 40% gap is the conversion argument for enterprise teams who want to go furth
 
 ---
 
-## What v0.7.0 adds
+## What v0.10.0 adds
 
 Early feedback after v0.6.0 was immediate: *"MCP is a no-go in most large enterprises."*
 Security policy, locked-down environments, GitHub Enterprise air-gaps — MCP servers simply
 cannot run in a large fraction of the organisations that need KCP most.
 
-v0.7.0 answers that with a complete three-tier static integration. No server. No Node.js
+v0.10.0 answers that with a complete three-tier static integration. No server. No Node.js
 at runtime. Just files committed to the repository.
 
 ### Three tiers, one command
 
 ```bash
-npx kcp-mcp@0.7.0 --generate-all knowledge.yaml
+npx kcp-mcp@0.10.0 --generate-all knowledge.yaml
 ```
 
 This produces three files:
@@ -185,15 +187,15 @@ scans the embedded unit table, reads the relevant file, and answers.
 
 ```bash
 # Compact index only (< 4K chars — works with Copilot Code Review)
-npx kcp-mcp@0.7.0 --generate-instructions knowledge.yaml --output-format compact
+npx kcp-mcp@0.10.0 --generate-instructions knowledge.yaml --output-format compact
 
 # Split into path-specific files by scope or directory
-npx kcp-mcp@0.7.0 --generate-instructions knowledge.yaml \
+npx kcp-mcp@0.10.0 --generate-instructions knowledge.yaml \
   --output-dir .github/instructions/ \
   --split-by directory
 
 # Generate agent file only, with size ceiling
-npx kcp-mcp@0.7.0 --generate-agent knowledge.yaml --max-chars 25000
+npx kcp-mcp@0.10.0 --generate-agent knowledge.yaml --max-chars 25000
 ```
 
 ### Keep instructions fresh with CI/CD
@@ -252,7 +254,7 @@ Create `.vscode/mcp.json` in your project root:
     "project-knowledge": {
       "type": "stdio",
       "command": "npx",
-      "args": ["kcp-mcp@0.7.0", "knowledge.yaml"]
+      "args": ["kcp-mcp@0.10.0", "knowledge.yaml"]
     }
   }
 }
@@ -271,7 +273,7 @@ npm install --save-dev kcp-commands
       "type": "stdio",
       "command": "npx",
       "args": [
-        "kcp-mcp@0.7.0",
+        "kcp-mcp@0.10.0",
         "knowledge.yaml",
         "--commands-dir",
         "${workspaceFolder}/node_modules/kcp-commands/commands"
@@ -290,7 +292,7 @@ Reload VS Code. The server appears under **Copilot icon → MCP Servers**.
   "mcpServers": {
     "project-knowledge": {
       "command": "npx",
-      "args": ["kcp-mcp@0.7.0", "knowledge.yaml"]
+      "args": ["kcp-mcp@0.10.0", "knowledge.yaml"]
     }
   }
 }
@@ -312,7 +314,7 @@ exactly as you would to `npx kcp-mcp`.
   "mcpServers": {
     "project-knowledge": {
       "command": "java",
-      "args": ["-jar", "/path/to/kcp-mcp-0.7.0-jar-with-dependencies.jar", "knowledge.yaml"]
+      "args": ["-jar", "/path/to/kcp-mcp-0.10.0-jar-with-dependencies.jar", "knowledge.yaml"]
     }
   }
 }
@@ -324,7 +326,7 @@ exactly as you would to `npx kcp-mcp`.
 
 ```bash
 # npm (no install needed — just run)
-npx kcp-mcp@0.7.0 knowledge.yaml
+npx kcp-mcp@0.10.0 knowledge.yaml
 
 # or install globally
 npm install -g kcp-mcp
