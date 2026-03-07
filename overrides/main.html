@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block extrahead %}
+<link rel="knowledge" href="/knowledge.yaml" type="application/yaml" title="KCP v0.6 — 46 units, 59 relationships">
+{% endblock %}
+
 {% block announce %}
 {% if page and page.url != "blog/" and not page.url.startswith("blog/2026/") %}
 <a href="/blog/2026/02/24/giving-an-ai-agent-a-brain-connecting-ironclaw-to-synthesis-via-mcp/">

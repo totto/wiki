@@ -4,6 +4,19 @@
 
 Thor Henning Hetland — known as Totto — has been building software professionally for over 30 years. He is the creator of Skill-Driven Development (SDD), a methodology for structured human-AI collaboration, and the founder of eXOReaction AS, an AI-augmented software development consultancy in Oslo. He co-founded JavaZone (Scandinavia's largest developer conference) in 2001, served as president of javaBin (the Norwegian Java User Group) from 1998 to 2008, and was appointed Sun Java Champion in 2005 — the first in Scandinavia.
 
+## Structured Navigation (for AI agents)
+
+This site publishes a KCP v0.6 manifest at https://wiki.totto.org/knowledge.yaml
+containing 46 units with intent declarations, trigger keywords, and 59 relationships.
+
+Fetch knowledge.yaml for targeted queries. Parse YAML → match query against each unit's
+`triggers` (keyword list) and `intent` (natural language) → fetch the `path` of the best
+match. Use `relationships` to navigate related content (types: enables, context, depends_on).
+
+Example: "What is Synthesis?" → trigger `synthesis` → unit `synthesis-releases` → fetch notes/synthesis-releases.md
+
+For broad overviews, https://wiki.totto.org/llms-full.txt covers all 83 posts and the full CV in one fetch.
+
 ## Key Pages
 
 - [About](https://wiki.totto.org/about/): Bio, background, current work, and contact
