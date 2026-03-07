@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wiki.totto.org/sitemap.xml
