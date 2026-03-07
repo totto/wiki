@@ -1,6 +1,6 @@
-kcp_version: "0.5"
+kcp_version: "0.6"
 project: wiki.totto.org
-version: 1.1.0
+version: 1.2.0
 updated: 2026-03-07
 
 units:
@@ -411,6 +411,198 @@ units:
     depends_on: [llms-index]
     triggers: [llms-full, full-content, llm, agent, complete, machine-readable]
 
+  # ── Blog posts — KCP / Knowledge Context Protocol ────────────────────────
+
+  - id: blog-beyond-llms-txt
+    path: blog/posts/2026-02-25-beyond-llms-txt-knowledge-context-protocol.md
+    intent: "What is the Knowledge Context Protocol (KCP) and why does llms.txt alone fall short for AI agents?"
+    scope: global
+    audience: [human, agent, developer, architect]
+    validated: 2026-02-25
+    triggers: [kcp, knowledge-context-protocol, llms.txt, ai-agents, discovery, yaml-manifest, knowledge.yaml]
+
+  - id: blog-kcp-adoption-guide
+    path: blog/posts/2026-02-28-kcp-adoption-guide.md
+    intent: "How do you adopt KCP in an existing project — what are the steps and trade-offs?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-28
+    depends_on: [blog-beyond-llms-txt]
+    triggers: [kcp, adoption, implementation, knowledge.yaml, agents, steps, how-to]
+
+  - id: blog-kcp-commands
+    path: blog/posts/2026-03-02-kcp-commands.md
+    intent: "What is kcp-commands and how does it distribute 284 structured command manifests to AI agents?"
+    scope: global
+    audience: [human, developer, agent]
+    validated: 2026-03-02
+    depends_on: [blog-beyond-llms-txt]
+    triggers: [kcp-commands, command-manifests, cli, structured-commands, agent-tooling, 284]
+
+  - id: blog-kcp-version-history
+    path: blog/posts/2026-03-02-kcp-version-history.md
+    intent: "What are the major versions of KCP from v0.1 to v0.6 and what changed in each?"
+    scope: global
+    audience: [human, agent, developer]
+    validated: 2026-03-02
+    depends_on: [blog-beyond-llms-txt]
+    triggers: [kcp, version-history, changelog, v0.1, v0.6, evolution, spec]
+
+  - id: blog-kcp-mcp-copilot
+    path: blog/posts/2026-03-06-kcp-mcp-copilot.md
+    intent: "How does KCP integrate with MCP and GitHub Copilot for different agent integration tiers?"
+    scope: global
+    audience: [human, developer, agent]
+    validated: 2026-03-06
+    depends_on: [blog-kcp-commands]
+    triggers: [kcp, mcp, copilot, integration, github-copilot, static, three-tier, 60-100-rule]
+
+  - id: blog-sdd-vs-spec
+    path: blog/posts/2026-03-07-sdd-vs-spec-driven.md
+    intent: "How does Skill-Driven Development compare to spec-driven approaches for AI-assisted development?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-07
+    depends_on: [blog-what-a-skill-is]
+    triggers: [sdd, skill-driven-development, spec-driven, comparison, methodology, ai-development]
+
+  # ── Blog posts — Synthesis ────────────────────────────────────────────────
+
+  - id: blog-comprehension-bottleneck
+    path: blog/posts/2026-02-05-the-comprehension-bottleneck.md
+    intent: "Why is code comprehension (not generation) the real bottleneck in AI-assisted development, and how does Synthesis solve it?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-05
+    triggers: [synthesis, comprehension, bottleneck, ai-development, context, search, retrieval, 10x]
+
+  - id: blog-synthesis-knowledge-infra
+    path: blog/posts/2026-02-25-synthesis-knowledge-infrastructure-ai-agents.md
+    intent: "How does Synthesis serve as knowledge infrastructure for AI agents — indexing, retrieval, and graph navigation?"
+    scope: global
+    audience: [human, developer, agent, architect]
+    validated: 2026-02-25
+    depends_on: [blog-comprehension-bottleneck]
+    triggers: [synthesis, knowledge-infrastructure, agents, indexing, graph, retrieval, sub-second, 65000-files]
+
+  - id: blog-two-gaps
+    path: blog/posts/2026-03-03-two-gaps-both-closed.md
+    intent: "What are the two gaps in AI development tooling (context retrieval and episodic memory) and how are both now closed?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-03
+    depends_on: [blog-synthesis-knowledge-infra]
+    triggers: [synthesis, two-gaps, episodic-memory, context-retrieval, sessions, closed, v1.21]
+
+  - id: blog-prompt-cache-infra
+    path: blog/posts/2026-03-04-prompt-cache-as-infrastructure.md
+    intent: "How should prompt caching be treated as infrastructure rather than an optimization trick?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-04
+    triggers: [prompt-cache, caching, infrastructure, latency, cost, ai-development, anthropic]
+
+  - id: blog-ironclaw-part1
+    path: blog/posts/2026-02-24-ironclaw-synthesis-part1.md
+    intent: "How was IronClaw (a persistent AI agent) built and integrated with Synthesis for real-time workspace context?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-24
+    depends_on: [blog-synthesis-knowledge-infra]
+    triggers: [ironclaw, synthesis, persistent-agent, slack, briefing, ec2, knowledge-infrastructure, mimir]
+
+  - id: blog-three-layer-memory
+    path: blog/posts/2026-03-03-three-layer-ai-memory.md
+    intent: "What are the three layers of AI agent memory and how do they complement each other?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-03
+    triggers: [memory, three-layers, episodic, semantic, working-memory, ai-agents, architecture]
+
+  # ── Blog posts — lib-pcb AI sprint ───────────────────────────────────────
+
+  - id: blog-six-pillars
+    path: blog/posts/2026-02-13-six-pillars-200k-lines-11-days.md
+    intent: "What are the six methodology pillars that enabled building 200,000 lines of Java in 11 days?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-13
+    triggers: [lib-pcb, six-pillars, 200k-lines, 11-days, methodology, sdd, productivity, java, gerber]
+
+  - id: blog-building-together
+    path: blog/posts/2026-02-22-building-together-11-day-ai-collaboration.md
+    intent: "What was the full story of building a production PCB design library in 11 days with AI collaboration?"
+    scope: global
+    audience: [human, developer]
+    validated: 2026-02-22
+    depends_on: [blog-six-pillars]
+    triggers: [lib-pcb, building-together, 11-days, collaboration, ai-development, story, java, pcb]
+
+  - id: blog-six-weeks
+    path: blog/posts/2026-03-07-six-weeks-after-the-sprint.md
+    intent: "What happened in the six weeks after the AI development sprint — what held, what was learned, what was real?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-07
+    depends_on: [blog-building-together]
+    triggers: [six-weeks, after-the-sprint, reflection, lib-pcb, methodology, results, cohorts, marathon, sustained]
+
+  # ── Blog posts — SDD / Methodology ───────────────────────────────────────
+
+  - id: blog-what-a-skill-is
+    path: blog/posts/2026-02-07-what-a-skill-actually-is.md
+    intent: "What is a Claude Code skill, how does it differ from a prompt, and why does it matter for SDD?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-07
+    triggers: [skill, claude-code, sdd, skill-driven-development, prompt, definition, methodology, yaml]
+
+  - id: blog-sdd-vs-vibe
+    path: blog/posts/2026-02-20-sdd-vs-vibe-coding.md
+    intent: "How does Skill-Driven Development differ from vibe coding, and why does the distinction matter?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-20
+    depends_on: [blog-what-a-skill-is]
+    triggers: [sdd, vibe-coding, skill-driven-development, methodology, comparison, ai-development, discipline]
+
+  - id: blog-ai-augmented-consultant
+    path: blog/posts/2026-03-02-ai-augmented-consultant.md
+    intent: "What does the AI-augmented consultant role look like — different from a developer, different from a manager?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-02
+    depends_on: [blog-sdd-vs-vibe]
+    triggers: [ai-augmented, consultant, advisory, methodology, enterprise, sdd, role, practitioner]
+
+  - id: blog-twenty-codebases
+    path: blog/posts/2026-03-05-twenty-codebases-one-method.md
+    intent: "How does SDD apply consistently across 20 different codebases — what is transferable and what is not?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-05
+    depends_on: [blog-ai-augmented-consultant]
+    triggers: [twenty-codebases, sdd, methodology, transferable, multi-repo, patterns, consultant]
+
+  # ── Blog posts — AI agent architecture ───────────────────────────────────
+
+  - id: blog-four-layers
+    path: blog/posts/2026-02-28-four-layers-ai-development-environment.md
+    intent: "What are the four layers of an AI development environment and why does each matter?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-28
+    triggers: [four-layers, ai-development, environment, knowledge, context, tools, memory, architecture, synthesis, kcp]
+
+  - id: blog-ai-agent-pr-review
+    path: blog/posts/2026-03-01-ai-agent-pr-review-loop.md
+    intent: "How does an AI agent PR review loop work end-to-end, and what makes it reliable?"
+    scope: global
+    audience: [human, developer]
+    validated: 2026-03-01
+    depends_on: [blog-four-layers]
+    triggers: [ai-agent, pr-review, pull-request, loop, automation, ironclaw, github, klaw]
+
 relationships:
   # Navigation and orientation
   - from: llms-index
@@ -626,3 +818,97 @@ relationships:
   - from: llms-index
     to: knowledge-infrastructure
     type: enables
+
+  # Blog posts → hub connections
+  - from: knowledge-infrastructure
+    to: blog-four-layers
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: blog-beyond-llms-txt
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: blog-comprehension-bottleneck
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: blog-ironclaw-part1
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: blog-three-layer-memory
+    type: enables
+
+  - from: synthesis-releases
+    to: blog-synthesis-knowledge-infra
+    type: enables
+
+  - from: synthesis-releases
+    to: blog-two-gaps
+    type: enables
+
+  - from: synthesis-releases
+    to: blog-prompt-cache-infra
+    type: context
+
+  - from: about
+    to: blog-six-pillars
+    type: context
+
+  # KCP blog chain
+  - from: blog-beyond-llms-txt
+    to: blog-kcp-adoption-guide
+    type: enables
+
+  - from: blog-beyond-llms-txt
+    to: blog-kcp-commands
+    type: enables
+
+  - from: blog-beyond-llms-txt
+    to: blog-kcp-version-history
+    type: enables
+
+  - from: blog-kcp-commands
+    to: blog-kcp-mcp-copilot
+    type: enables
+
+  # lib-pcb sprint chain
+  - from: blog-six-pillars
+    to: blog-building-together
+    type: enables
+
+  - from: blog-building-together
+    to: blog-six-weeks
+    type: enables
+
+  # SDD chain
+  - from: blog-what-a-skill-is
+    to: blog-sdd-vs-vibe
+    type: enables
+
+  - from: blog-sdd-vs-vibe
+    to: blog-ai-augmented-consultant
+    type: enables
+
+  - from: blog-ai-augmented-consultant
+    to: blog-twenty-codebases
+    type: enables
+
+  # AI agent architecture chain
+  - from: blog-four-layers
+    to: blog-ai-agent-pr-review
+    type: enables
+
+  - from: blog-four-layers
+    to: blog-three-layer-memory
+    type: context
+
+  # Cross-cluster
+  - from: blog-six-weeks
+    to: blog-ai-augmented-consultant
+    type: context
+
+  - from: blog-kcp-adoption-guide
+    to: blog-kcp-commands
+    type: context

@@ -7,7 +7,7 @@ Thor Henning Hetland — known as Totto — has been building software professio
 ## Structured Navigation (for AI agents)
 
 This site publishes a KCP v0.6 manifest at https://wiki.totto.org/knowledge.yaml
-containing 46 units with intent declarations, trigger keywords, and 59 relationships.
+containing 67 units with intent declarations, trigger keywords, and 83 relationships.
 
 Fetch knowledge.yaml for targeted queries. Parse YAML → match query against each unit's
 `triggers` (keyword list) and `intent` (natural language) → fetch the `path` of the best
