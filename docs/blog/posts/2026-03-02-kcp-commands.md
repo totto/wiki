@@ -1,5 +1,6 @@
 ---
-date: 2026-03-02
+date: 2026-03-03
+slug: kcp-commands-save-33-of-claude-codes-context-window
 series: "Knowledge Context Protocol"
 categories:
   - AI-Augmented Development

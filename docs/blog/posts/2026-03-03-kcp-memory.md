@@ -1,5 +1,6 @@
 ---
 date: 2026-03-03
+slug: kcp-memory-give-claude-code-a-memory
 series: "Knowledge Context Protocol"
 categories:
   - AI-Augmented Development
