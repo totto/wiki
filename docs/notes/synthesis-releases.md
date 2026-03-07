@@ -13,7 +13,48 @@ Synthesis is a knowledge infrastructure platform for AI-augmented development. I
 
 ---
 
-## Current Release: v1.21.0 (March 3, 2026)
+## Current Release: v1.23.0 (March 7, 2026)
+
+**58 CLI commands · 11 MCP tools · 4,230 tests**
+
+The v1.23.0 release completes the multi-agent awareness layer by adding **`synthesis dispatch`** — a single command that composes skill matching, file search, and team conflict detection into a ready-to-use agent dispatch plan.
+
+### What's new in v1.23.0
+
+**`synthesis dispatch`** — given a task description, returns the skills to load, files to pre-read, any team conflicts, and an estimated token cost. Designed for injection into an agent's spawn prompt to skip the 40–60% blind retrieval phase.
+
+```bash
+synthesis dispatch "fix OAuth2 token refresh"          # full table
+synthesis dispatch "query" --compact                   # single line for spawn prompt
+synthesis dispatch "query" --json                      # machine-readable JSON
+synthesis dispatch "query" --no-team                   # skip conflict check
+```
+
+**Compact output** (for `--compact`):
+```
+skills:kcp-mcp,legacy-modernization | files:TokenRefresher.java,OAuth2Config.java | conflicts:none | ~4200 tokens
+```
+
+The `dispatch` MCP tool exposes the same logic to AI agents via JSON-RPC. All failures are graceful — missing skills directory, index unavailable, or no active team → empty result, no crash.
+
+---
+
+## v1.22.0 — Multi-Agent Awareness (March 7, 2026)
+
+**`synthesis skills match`** and **`synthesis team-context`** — skill discovery and team briefing commands for Claude Code multi-agent sessions.
+
+```bash
+synthesis skills match "parse Gerber format"   # ranked skills from ~/.claude/skills/
+synthesis skills list                          # all skills with descriptions
+synthesis team-context                         # briefing for active agent team
+synthesis team-context --compact               # single line for Agent spawn prompt
+```
+
+`skills match` scores `~/.claude/skills/*.yaml` using trigger phrases (5 pts), name/description (2 pts), and instructions (1 pt). `team-context` enriches each task with related files from the index, skill recommendations, and conflict warnings when two tasks share files. MCP tools: `match_skills`, `team_context`. 4,177 tests.
+
+---
+
+## v1.21.0 — Episodic Memory (March 3, 2026)
 
 **55 CLI commands · 8 MCP tools · 4,170 tests · 18 database migrations**
 
@@ -142,4 +183,6 @@ Core indexing engine (Apache Lucene 10.1.0), 6 file analyzers (code, markdown, Y
 | v1.12.0–v1.12.2 | Feb 21–22 | 9-phase maintain, guided init, Code Knowledge Graph |
 | v1.13.0–v1.13.1 | Feb 22 | CKG dogfooding fixes, 3,893 tests |
 | v1.18.2 | Feb 28 | Session lifecycle hooks, session-context, claude-md, 4,107 tests |
-| **v1.21.0** | **Mar 3** | **Episodic memory: Claude sessions module, FTS5 search, 4,170 tests** |
+| v1.21.0 | Mar 3 | Episodic memory: Claude sessions module, FTS5 search, 4,170 tests |
+| v1.22.0 | Mar 7 | Multi-agent awareness: skills match, team-context, match_skills + team_context MCP tools, 4,177 tests |
+| **v1.23.0** | **Mar 7** | **Agent dispatch planner: synthesis dispatch, dispatch MCP tool, 4,230 tests** |
