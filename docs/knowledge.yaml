@@ -457,6 +457,15 @@ units:
     depends_on: [blog-kcp-commands]
     triggers: [kcp, mcp, copilot, integration, github-copilot, static, three-tier, 60-100-rule]
 
+  - id: blog-kcp-a2a
+    path: blog/posts/2026-03-08-a2a-cards-and-kcp.md
+    intent: "How do A2A Agent Cards and KCP manifests compose as complementary layers in a multi-agent system?"
+    scope: global
+    audience: [human, developer, architect, agent]
+    validated: 2026-03-08
+    depends_on: [blog-kcp-auth-and-delegation]
+    triggers: [a2a, agent-card, multi-agent, agent-to-agent, front-door, filing-cabinet, invocation, knowledge-access, complementary, google-a2a]
+
   - id: blog-sdd-vs-spec
     path: blog/posts/2026-03-07-sdd-vs-spec-driven.md
     intent: "How does Skill-Driven Development compare to spec-driven approaches for AI-assisted development?"
@@ -871,6 +880,10 @@ relationships:
 
   - from: blog-kcp-commands
     to: blog-kcp-mcp-copilot
+    type: enables
+
+  - from: blog-kcp-mcp-copilot
+    to: blog-kcp-a2a
     type: enables
 
   # lib-pcb sprint chain
