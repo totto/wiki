@@ -23,6 +23,8 @@ authors:
 
 Multi-agent systems need two kinds of identity. The first answers "who is this agent and how do I call it." The second answers "what knowledge does this agent have and who is allowed to see each piece of it." Google's A2A protocol handles the first. KCP handles the second. They are not competitors. They are different layers of the same stack.
 
+This post started as that explanation. Then, the same day it was published, we built four simulators and 150 adversarial tests against the spec. The tests found 8 concrete gaps. Those gaps are now driving KCP v0.7. The full story follows.
+
 <!-- more -->
 
 ![Multi-Agent Systems Require Two Distinct Identities: Service Identity (A2A) and Knowledge Identity (KCP)](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-02.png)
@@ -240,25 +242,79 @@ The composability model extends to MCP as well. [KCP and MCP](/blog/2026/02/28/k
 
 ---
 
-## Working example
+## The simulation suite
 
-The KCP repository includes a complete worked example using the clinical research domain from this post:
-[`examples/a2a-agent-card/`](https://github.com/Cantara/knowledge-context-protocol/tree/main/examples/a2a-agent-card/) — an A2A Agent Card and a KCP manifest for the same agent, with a README walking through the multi-agent composition step by step.
+The explanation above is the theory. To test whether the spec actually holds up, we built four Java simulators against different domains, each pushing the KCP v0.6 spec harder than the last.
 
-## Running the simulator
+| Simulator | Domain | Agents | Units | Tests | Key behaviour tested |
+|-----------|--------|--------|-------|-------|---------------------|
+| **Clinical Research** | Hospital trial data | 2 | 3 | 30 | Baseline: escalating access levels, HITL gate, audit trail |
+| **Scenario 1: Energy Metering** | Smart grid telemetry | 2 | 4 | 36 | Public through restricted with unit-level delegation override |
+| **Scenario 2: Legal Delegation** | Law firm document review | 3 | 4 | 36 | 3-hop delegation chain, `max_depth=0`, capability attenuation |
+| **Scenario 3: Financial AML** | Bank anti-money-laundering | 5 | 5 | 48 | Adversarial rogue agent, 4 attack types, GDPR compliance block |
+| **Total** | | **12** | **16** | **150** | |
 
-The example includes a runnable Java simulator that executes the full composition story:
+Each simulator is a runnable Java application with structured output tagged `[A2A]`, `[KCP]`, `[HITL]`, `[AUDIT]`. All source lives in [`examples/`](https://github.com/Cantara/knowledge-context-protocol/tree/main/examples/).
 
-```bash
-git clone https://github.com/Cantara/knowledge-context-protocol.git
-cd knowledge-context-protocol/examples/a2a-agent-card/simulator
-mvn package
-java -jar target/kcp-a2a-simulator-0.1.0-jar-with-dependencies.jar --auto-approve
+The clinical research simulator walks through the clinical trial scenario from the first section of this post — A2A discovery, KCP manifest loading, OAuth2 token exchange, per-unit access decisions. It is the happy path.
+
+The scenarios then escalate. Scenario 1 (energy metering) adds a 4-unit escalation from public tariff data to restricted 15-second smart meter telemetry. Scenario 2 (legal delegation) chains three agents — Case Orchestrator, Legal Research, External Case Law — and tests what happens when sealed court records carry `max_depth: 0` (no delegation permitted) and when a delegatee tries to pass the same scope it received (capability attenuation violation). Scenario 3 (financial AML) is the adversarial test: five agents including a RogueAgent that attempts depth exceeding, scope elevation, and accessing no-delegation units, plus a GDPR data residency enforcement test that blocks requests originating from outside the EU.
+
+A sample from Scenario 3:
+
+```
+-- Phase 4: RogueAgent -- Delegation Depth Violation ------------------------
+[P4]   RogueAgent claims depth=3 delegatee for 'customer-profiles' (max_depth=2)
+[KCP]  Result: BLOCKED (Depth 3 exceeds max_depth=2)
+[AUDIT] VIOLATION: RogueAgent depth=3 exceeds max_depth=2
+
+-- Phase 5: RogueAgent -- Scope Elevation Attempt --------------------------
+[P5]   RogueAgent has 'read:transactions' token, requests 'customer-profiles'
+[KCP]  Result: BLOCKED (Invalid token or missing scope: aml-analyst)
+[AUDIT] VIOLATION: RogueAgent scope elevation attempt
+
+-- Phase 7: Compliance Block (GDPR Data Residency) -------------------------
+[P7]   Request for 'customer-profiles' with data_residency claim: US
+[KCP]  Result: BLOCKED (Data residency violation: request from 'US' but unit restricted to [EU])
+[AUDIT] COMPLIANCE VIOLATION: GDPR data residency
 ```
 
-The simulator walks through all four phases — A2A discovery, KCP manifest loading, OAuth2 token exchange, and per-unit access decisions — and prints structured output tagged `[A2A]`, `[KCP]`, `[HITL]`, and `[AUDIT]`. For the `patient-cohort` unit it triggers the human-in-the-loop gate (skipped with `--auto-approve`; remove the flag for an interactive prompt).
+The RogueAgent gets blocked. That is the test passing. But writing the blocking logic forced us to confront exactly where the spec stops and implementation guesswork begins.
 
-30 tests cover all access decision cases, agent card parsing, and the full integration flow: `mvn test`.
+---
+
+## What the tests found: 8 spec gaps
+
+150 passing tests, 8 gaps. Each was found by writing a test that should have been straightforward, then discovering the spec did not define enough for us to implement it deterministically.
+
+**1. HITL `approval_mechanism` is declared but undefined.** The manifest says `approval_mechanism: oauth_consent`, but v0.6 defines no consent request format, no verification protocol, and no trust chain between the HITL gate and the knowledge owner. Every implementer will build a different approval flow. Cross-vendor HITL interoperability is impossible until this is standardised.
+
+**2. Capability attenuation is declarative, not mechanical.** `require_capability_attenuation: true` says delegated agents must receive a narrower scope. But the spec does not define how the receiving agent verifies this (it would need to see both tokens), what "narrower" means formally (is `read:case:external-summary` narrower than `read:case`?), or whether scope hierarchy is prefix-based, lexicographic, or defined by a separate ontology. The simulator uses a "not-equal means narrower" heuristic, which is clearly insufficient for production.
+
+**3. Delegation depth counting is ambiguous.** The spec does not state whether the resource-owning agent is at depth=0 or depth=1. With `max_depth: 2`, the owner=0 convention allows 3 agents in the chain; the owner=1 convention allows only 2. One normative sentence resolves this.
+
+**4. `max_depth: 0` needs an explicit statement.** The simulator interprets `max_depth: 0` as "no delegation — only the resource owner may access this unit." This is equivalent under the owner=0 convention, but without a normative note, implementers will disagree.
+
+**5. Compliance blocks are advisory.** `compliance.data_residency`, `compliance.regulations`, and `compliance.restrictions` come from RFC-0004, not the v0.6 core spec. An agent can ignore them entirely and remain spec-compliant. Cross-vendor compliance enforcement is impossible until these fields become normative.
+
+**6. No cryptographic delegation chain.** When RogueAgent claims to be a depth=3 delegatee, the spec provides no mechanism to verify the claim. W3C Trace Context helps with audit but does not prevent spoofing. A malicious agent can fabricate any delegation depth. Without signed delegation tokens where each hop signs the narrowed scope and depth, `max_depth` enforcement is advisory.
+
+**7. `no_ai_training` restriction has no enforcement mechanism.** The restriction is purely declarative. An agent can claim compliance, but nothing prevents it from feeding the data into a training pipeline. The system cannot verify the claim.
+
+**8. Multiple HITL gates are undefined.** The spec says HITL is per-unit, but when an orchestrator needs approvals for multiple units in one workflow (Scenario 3 triggers two sequentially), should they be sequential, batched into a single approval screen, or parallel with aggregation? The sequential approach has poor UX for compliance officers facing many individual prompts. The batched approach requires a standard batch format the spec does not define.
+
+---
+
+## What changes in v0.7
+
+The 8 gaps above are now the v0.7 work list. The key promotions:
+
+- **Delegation block** moves from RFC-0002 into core, with normative depth counting (owner=0), an explicit `max_depth: 0` definition, and a scope comparison model.
+- **Compliance block** moves from RFC-0004 into core, making `data_residency` and `regulations` enforceable fields rather than advisory metadata.
+- **HITL protocol** gets a minimal interoperability contract: consent request schema, signed approval token, verification endpoint.
+- **Delegation token format** is specified for cryptographic chain verification.
+
+The simulators will be updated alongside the spec, maintaining the same 150-test suite as a conformance baseline. The intent is that any v0.7-compliant implementation can run these scenarios and produce equivalent output.
 
 ---
 
@@ -268,3 +324,10 @@ The simulator walks through all four phases — A2A discovery, KCP manifest load
 - [KCP and MCP: One Protocol for Structure, One for Retrieval](/blog/2026/02/28/kcp-and-mcp-one-protocol-for-structure-one-for-retrieval/) — how KCP and MCP compose
 - [A2A Protocol specification](https://google.github.io/A2A/)
 - [KCP spec and RFCs](https://github.com/cantara/knowledge-context-protocol)
+- [Simulation source code](https://github.com/Cantara/knowledge-context-protocol/tree/main/examples/)
+
+---
+
+## A note on methodology
+
+This post was written, published, simulated, tested, and fed back into the spec in a single day. The explanation came first. Then four working simulators in Java. Then 150 adversarial tests. Then 8 findings that none of us had identified by reading the spec. Then the v0.7 roadmap. That is what AI-augmented standards work looks like in 2026: the iteration cycle that used to take months — write spec, implement, discover gaps, revise — compressed to hours. The gaps were real. Finding them through testing is the methodology working correctly.
