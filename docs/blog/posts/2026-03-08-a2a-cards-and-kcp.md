@@ -245,6 +245,21 @@ The composability model extends to MCP as well. [KCP and MCP](/blog/2026/02/28/k
 The KCP repository includes a complete worked example using the clinical research domain from this post:
 [`examples/a2a-agent-card/`](https://github.com/Cantara/knowledge-context-protocol/tree/main/examples/a2a-agent-card/) — an A2A Agent Card and a KCP manifest for the same agent, with a README walking through the multi-agent composition step by step.
 
+## Running the simulator
+
+The example includes a runnable Java simulator that executes the full composition story:
+
+```bash
+git clone https://github.com/Cantara/knowledge-context-protocol.git
+cd knowledge-context-protocol/examples/a2a-agent-card/simulator
+mvn package
+java -jar target/kcp-a2a-simulator-0.1.0-jar-with-dependencies.jar --auto-approve
+```
+
+The simulator walks through all four phases — A2A discovery, KCP manifest loading, OAuth2 token exchange, and per-unit access decisions — and prints structured output tagged `[A2A]`, `[KCP]`, `[HITL]`, and `[AUDIT]`. For the `patient-cohort` unit it triggers the human-in-the-loop gate (skipped with `--auto-approve`; remove the flag for an interactive prompt).
+
+30 tests cover all access decision cases, agent card parsing, and the full integration flow: `mvn test`.
+
 ---
 
 ## Related
