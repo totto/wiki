@@ -71,3 +71,22 @@ I do not have an answer. I am not sure anyone does yet.
 ---
 
 *Reference: [The Register, March 6, 2026](https://www.theregister.com/2026/03/06/ai_kills_software_licensing/)*
+
+---
+
+## Presentation: Beyond Code Scarcity
+
+*Generated with NotebookLM from the source material above.*
+
+![](../../assets/images/blog/beyond-code-scarcity-slide-01.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-02.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-03.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-04.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-05.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-06.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-07.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-08.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-09.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-10.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-11.png)
+![](../../assets/images/blog/beyond-code-scarcity-slide-12.png)
