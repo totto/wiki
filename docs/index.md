@@ -111,9 +111,9 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
     ---
 
-    Hands-on SDD workshops for development teams. From half-day intensives to multi-week mentoring programs. Real code, real methodology, real results.
+    Hands-on SDD workshops for development teams. From full-day intensives to multi-week mentoring programs. Real code, real methodology, real results.
 
-    [:octicons-arrow-right-24: Get in touch](https://www.linkedin.com/in/hetland/)
+    [:octicons-arrow-right-24: Get in touch](mailto:selina@exoreaction.com)
 
 -   :material-coffee: **JavaZone & Community**
 
@@ -146,7 +146,7 @@ In January 2026, I built **lib-pcb** -- a complete PCB design library in Java.
 
 8 format parsers. 28 validators. 17 auto-fixers. Manufacturing-ready Gerber output. Zero AI-induced production bugs.
 
-This was not magic. It was methodology -- Skill-Driven Development applied systematically with Claude Code. The kind of thing I [write about](blog/index.md) and [teach in workshops](https://www.linkedin.com/in/hetland/).
+This was not magic. It was methodology -- Skill-Driven Development applied systematically with Claude Code. The kind of thing I [write about](blog/index.md) and [teach in workshops](mailto:selina@exoreaction.com).
 
 </div>
 
