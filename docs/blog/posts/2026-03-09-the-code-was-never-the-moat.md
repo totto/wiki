@@ -30,7 +30,11 @@ I have been thinking about this since I read it, and not because of the licensin
 
 In January I built lib-pcb — a Java library for parsing and validating PCB design files. 197,831 lines of code. 7,461 tests. Eight format parsers, twenty-eight validators, seventeen auto-fix types. Eleven days. The industry standard for that scope of work is ten to eighteen months.
 
+![lib-pcb: 10–18 months industry standard compressed to 11 days — 197,831 lines, 8 parsers, 28 validators, 17 auto-fix types, 7,461 tests](../../assets/images/blog/beyond-code-scarcity-slide-05-lib-pcb-timeline.png)
+
 The speed was not the interesting part. The interesting part was what made the speed possible. I had no prior PCB domain knowledge. The domain was reverse-engineered — from a web viewer that could render the files, and from a set of real-world .mif files the client provided. That is actually the same method the article is describing: no access to the original implementation, only the observable behaviour and the outputs. My contribution was software architecture judgment — knowing how to structure a parser, what a validator needs to check, how to build a test harness against real manufacturing data. The AI did the typing. Directing it toward correct output required understanding the problem, not just the code. Those are not the same skill.
+
+![The AI did the typing, but the human provided the architecture — judgment versus commodity](../../assets/images/blog/beyond-code-scarcity-slide-06-human-vs-ai-roles.png)
 
 ---
 
@@ -39,6 +43,8 @@ The chardet rewrite in the article is a clean example of this. Dan Blanchard did
 The FSF's position is that the copyleft chain persists regardless of textual similarity — that if the functional intent derives from the original work, the rewrite is derivative. I understand why they hold that position. If functional equivalence is enough to escape copyleft, then every copyleft license becomes a speed bump rather than a barrier. AI makes the speed bump negligible.
 
 But the counterargument is equally uncomfortable: if you cannot independently implement a published specification without being considered derivative, then the specification itself is the copyrighted work, and interoperability becomes a licensing question. That has implications far beyond chardet.
+
+![FSF position versus interoperability threat — the unresolved tension at the heart of AI-era licensing](../../assets/images/blog/beyond-code-scarcity-slide-07-fsf-vs-interoperability.png)
 
 I do not think courts will resolve this cleanly. The legal system is not well-equipped for cases where the distinction between "derived from" and "independently implementing the same specification" has collapsed to a few hours of AI interaction. The precedents were set in a world where reimplementation was expensive enough to be its own evidence of independent effort. That evidence no longer exists.
 
