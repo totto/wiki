@@ -15,7 +15,7 @@ match. Use `relationships` to navigate related content (types: enables, context,
 
 Example: "What is Synthesis?" → trigger `synthesis` → unit `synthesis-releases` → fetch notes/synthesis-releases.md
 
-For broad overviews, https://wiki.totto.org/llms-full.txt covers all 83 posts and the full CV in one fetch.
+For broad overviews, https://wiki.totto.org/llms-full.txt covers all 84 posts and the full CV in one fetch.
 
 ## Key Pages
 
@@ -35,7 +35,7 @@ For broad overviews, https://wiki.totto.org/llms-full.txt covers all 83 posts an
 
 ## Writing
 
-83 posts at [wiki.totto.org/blog](https://wiki.totto.org/blog/). Topics: AI-augmented development methodology, Skill-Driven Development, knowledge infrastructure, temporal analytics, AI co-workers, software architecture, and a 2009 cloud computing series. Most 2025–2026 posts co-authored with Claude Code. Six named reading series (IronClaw agent integration, Four-Layer AI Stack, Knowledge Context Protocol, Aurora & Temporal Analytics, Frøya, Building lib-pcb) with prev/next navigation at [wiki.totto.org/blog/series](https://wiki.totto.org/blog/series/).
+84 posts at [wiki.totto.org/blog](https://wiki.totto.org/blog/). Topics: AI-augmented development methodology, Skill-Driven Development, knowledge infrastructure, temporal analytics, AI co-workers, software architecture, and a 2009 cloud computing series. Most 2025–2026 posts co-authored with Claude Code. Six named reading series (IronClaw agent integration, Four-Layer AI Stack, Knowledge Context Protocol, Aurora & Temporal Analytics, Frøya, Building lib-pcb) with prev/next navigation at [wiki.totto.org/blog/series](https://wiki.totto.org/blog/series/).
 
 ## LinkedIn Writing
 
