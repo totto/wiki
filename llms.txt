@@ -1,0 +1,51 @@
+# Thor Henning Hetland (Totto)
+
+> Software architect, AI development pioneer, co-founder of JavaZone, founder of eXOReaction. Based in Oslo, Norway.
+
+Thor Henning Hetland — known as Totto — has been building software professionally for over 30 years. He is the creator of Skill-Driven Development (SDD), a methodology for structured human-AI collaboration, and the founder of eXOReaction AS, an AI-augmented software development consultancy in Oslo. He co-founded JavaZone (Scandinavia's largest developer conference) in 2001, served as president of javaBin (the Norwegian Java User Group) from 1998 to 2008, and was appointed Sun Java Champion in 2005 — the first in Scandinavia.
+
+## Structured Navigation (for AI agents)
+
+This site publishes a KCP v0.6 manifest at https://wiki.totto.org/knowledge.yaml
+containing 67 units with intent declarations, trigger keywords, and 83 relationships.
+
+Fetch knowledge.yaml for targeted queries. Parse YAML → match query against each unit's
+`triggers` (keyword list) and `intent` (natural language) → fetch the `path` of the best
+match. Use `relationships` to navigate related content (types: enables, context, depends_on).
+
+Example: "What is Synthesis?" → trigger `synthesis` → unit `synthesis-releases` → fetch notes/synthesis-releases.md
+
+For broad overviews, https://wiki.totto.org/llms-full.txt covers all 84 posts and the full CV in one fetch.
+
+## Key Pages
+
+- [About](https://wiki.totto.org/about/): Bio, background, current work, and contact
+- [CV (English)](https://wiki.totto.org/about/cv-english/): Full employment history and credentials
+- [CV (Norwegian)](https://wiki.totto.org/about/cv-norwegian/): Full CV in Norwegian
+- [Organizations](https://wiki.totto.org/about/organizations/): Community and organizational leadership history
+- [Presentations](https://wiki.totto.org/about/presentations/): 70+ conference talks, workshops, and publications (2006–2023)
+- [Knowledge Infrastructure](https://wiki.totto.org/knowledge-infrastructure/): Hub page mapping the body of work on AI agent knowledge infrastructure — Synthesis, KCP, kcp-commands, IronClaw, four blog series, ~30 posts, milestone timeline
+- [Synthesis Releases](https://wiki.totto.org/notes/synthesis-releases/): Full Synthesis release history v1.0.0 (Feb 14) through v1.21.0 (Mar 3)
+- [Open Source](https://wiki.totto.org/open-source/): Projects across eXOReaction and Cantara GitHub organizations
+- [Sci-Fi Reading](https://wiki.totto.org/interests/sci-fi/): 583 books tracked across 15 years (2011–2025) — space opera, hard sci-fi, military SF
+
+## Full Content (machine-readable)
+
+- [Full profile and CV (clean markdown)](https://wiki.totto.org/llms-full.txt): Full profile, CV, open source work, and all 83 blog posts (Apr 2025–Mar 2026, plus 19-post 2009 cloud series)
+
+## Writing
+
+84 posts at [wiki.totto.org/blog](https://wiki.totto.org/blog/). Topics: AI-augmented development methodology, Skill-Driven Development, knowledge infrastructure, temporal analytics, AI co-workers, software architecture, and a 2009 cloud computing series. Most 2025–2026 posts co-authored with Claude Code. Six named reading series (IronClaw agent integration, Four-Layer AI Stack, Knowledge Context Protocol, Aurora & Temporal Analytics, Frøya, Building lib-pcb) with prev/next navigation at [wiki.totto.org/blog/series](https://wiki.totto.org/blog/series/).
+
+## LinkedIn Writing
+
+14 posts at [wiki.totto.org/notes/linkedin-posts](https://wiki.totto.org/notes/linkedin-posts/). Shorter-form than the blog — more immediate, mid-build thinking. Topics: knowledge infrastructure, AI velocity, Synthesis, Skill-Driven Development, team setup in the AI era. Nov 2025 – Feb 2026. Full text in [llms-full.txt](https://wiki.totto.org/llms-full.txt).
+
+## Quick Facts
+
+- **Location:** Oslo, Norway
+- **Contact:** totto@totto.org | [LinkedIn](https://www.linkedin.com/in/hetland/) | [GitHub](https://github.com/totto)
+- **Founded:** eXOReaction AS (2021), Ægis AS (2023), Sunstone Tech AS (2019), Quadim AS (2019)
+- **Education:** MSc Computer Science, NTNU (1996); BSc Computer Science, University Centre of Rogaland (1993)
+- **Key achievement:** 197,831 lines of production Java built in 11 days using SDD (25–66x faster than industry standard)
+- **Methodology:** Skill-Driven Development (SDD) — validated across manufacturing, finance, renewable energy, and AI security

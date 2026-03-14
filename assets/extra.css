@@ -1,0 +1,845 @@
+/* ============================================
+   Thor Henning Hetland — wiki.totto.org
+   Custom styles for MkDocs Material
+   ============================================ */
+
+/* === TYPOGRAPHY === */
+.md-typeset {
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.md-typeset h1 {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.md-typeset h2 {
+  font-weight: 700;
+  margin-top: 2.4rem;
+}
+
+/* Nicer blockquotes */
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-primary-fg-color);
+  background: var(--md-code-bg-color);
+  border-radius: 0 6px 6px 0;
+  padding: 0.8rem 1.2rem;
+  font-style: italic;
+}
+
+/* === HEADER === */
+.md-header {
+  background: linear-gradient(135deg, #3f51b5 0%, #673ab7 100%);
+}
+
+/* === ANNOUNCEMENT BANNER === */
+.md-announce {
+  background: linear-gradient(135deg, #3f51b5 0%, #673ab7 100%);
+}
+
+.md-announce a,
+.md-announce__inner {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.md-announce a:hover {
+  color: #e8eaf6 !important;
+  text-decoration: underline;
+}
+
+/* === HERO SECTION (homepage) === */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 0 0.5rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.25rem;
+  line-height: 1.15;
+}
+
+.hero-content > p:first-of-type strong {
+  font-size: 1.15rem;
+  color: var(--md-default-fg-color--light);
+  font-weight: 500;
+}
+
+.hero-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--md-primary-fg-color);
+  box-shadow: 0 8px 32px rgba(63, 81, 181, 0.18);
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .hero-image img {
+    width: 140px;
+    height: 140px;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* === GRID CARDS === */
+.md-typeset .grid.cards > ul > li {
+  border-top: 3px solid var(--md-primary-fg-color);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Card meta text (dates etc.) */
+.card-meta {
+  font-size: 0.78rem;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+/* Card icon color */
+.card-icon {
+  color: var(--md-primary-fg-color);
+}
+
+/* === PROOF BLOCK (homepage) === */
+.proof-block {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--md-primary-fg-color);
+}
+
+.proof-stats table {
+  margin: 1rem 0;
+}
+
+.proof-stats td:first-child {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--md-primary-fg-color);
+  white-space: nowrap;
+  padding-right: 1rem;
+}
+
+.proof-stats th,
+.proof-stats td {
+  border: none !important;
+  padding: 0.3rem 0.8rem 0.3rem 0;
+}
+
+/* Hide table header in proof stats */
+.proof-stats thead {
+  display: none;
+}
+
+/* === BLOG === */
+
+/* Bigger post titles */
+.md-post__header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Post metadata */
+.md-post__meta {
+  opacity: 0.7;
+  font-size: 0.78rem;
+}
+
+/* === SECTION DIVIDERS === */
+.md-typeset hr {
+  border: none;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  margin: 2.5rem 0;
+}
+
+/* === FOOTER === */
+.md-footer {
+  margin-top: 2rem;
+}
+
+/* === CODE === */
+.highlight {
+  border-radius: 8px;
+}
+
+/* === PROFILE IMAGE (for about page) === */
+.profile-image {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  float: right;
+  margin: 0 0 1rem 2rem;
+  border: 3px solid var(--md-primary-fg-color);
+}
+
+/* === PRESENTATION VIEWER === */
+.pdf-viewer object,
+.pdf-viewer iframe {
+  width: 100%;
+  height: 720px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+.presentation-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 6px;
+  display: block;
+  margin: 1.5rem 0;
+}
+
+.pdf-fallback {
+  background: var(--md-code-bg-color);
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* === READING LIST (sci-fi) — Visual Refresh === */
+
+/* --- Hero banner for sci-fi index --- */
+.scifi-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 40%, #1a1040 70%, #0d1117 100%);
+  border-radius: 16px;
+  padding: 3rem 2.5rem 2.5rem;
+  margin: 0 0 2.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.scifi-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1.5px 1.5px at 20% 30%, rgba(255, 255, 255, 0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 100%),
+    radial-gradient(1.2px 1.2px at 60% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 50%, rgba(255, 255, 255, 0.12) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 10% 80%, rgba(255, 255, 255, 0.18) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, rgba(255, 255, 255, 0.14) 0%, transparent 100%),
+    radial-gradient(1.3px 1.3px at 50% 90%, rgba(255, 255, 255, 0.16) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 100%),
+    radial-gradient(1.2px 1.2px at 70% 80%, rgba(255, 255, 255, 0.13) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 15%, rgba(255, 255, 255, 0.11) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.scifi-hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.5), rgba(168, 85, 247, 0.5), transparent);
+}
+
+.scifi-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.scifi-hero h1 {
+  color: #e2e8f0 !important;
+  font-size: 2.4rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem !important;
+  background: linear-gradient(135deg, #e2e8f0 0%, #a78bfa 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.scifi-hero .scifi-subtitle {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0;
+}
+
+/* Light mode: slightly lighter background */
+[data-md-color-scheme="default"] .scifi-hero {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #3730a3 70%, #1e1b4b 100%);
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+/* --- Total counter --- */
+.scifi-total {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.5rem 0 0;
+  padding: 0.6rem 1.4rem;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 100px;
+  color: #c4b5fd;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+[data-md-color-scheme="default"] .scifi-total {
+  background: rgba(255, 255, 255, 0.15);
+  color: #e0e7ff;
+}
+
+.scifi-total .scifi-total-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #a78bfa;
+  line-height: 1;
+}
+
+[data-md-color-scheme="default"] .scifi-total .scifi-total-number {
+  color: #c4b5fd;
+}
+
+/* --- Stats grid (index page) --- */
+.reading-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.reading-stats .stat {
+  background: var(--md-code-bg-color);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+  border-left: 3px solid var(--md-primary-fg-color);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.reading-stats .stat:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
+}
+
+.reading-stats .stat .stat-year {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--md-primary-fg-color);
+  line-height: 1.2;
+}
+
+.reading-stats .stat .stat-count {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  opacity: 0.65;
+  margin-top: 2px;
+}
+
+/* --- Year navigation cards (index page) --- */
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.year-card {
+  display: block;
+  background: var(--md-code-bg-color);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  text-decoration: none !important;
+  color: var(--md-default-fg-color) !important;
+  border: 1px solid transparent;
+  border-left: 4px solid var(--md-primary-fg-color);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.year-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.04));
+  transition: width 0.3s ease;
+  pointer-events: none;
+}
+
+.year-card:hover {
+  border-color: rgba(99, 102, 241, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+}
+
+.year-card:hover::after {
+  width: 100px;
+}
+
+.year-card .year-card-year {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--md-primary-fg-color);
+  line-height: 1;
+}
+
+.year-card .year-card-count {
+  font-size: 0.82rem;
+  font-weight: 600;
+  opacity: 0.55;
+  margin-left: 0.5rem;
+}
+
+.year-card .year-card-highlights {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.4rem;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+/* Dark mode year cards */
+[data-md-color-scheme="slate"] .year-card {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-md-color-scheme="slate"] .year-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Standouts section --- */
+.standouts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.standout-card {
+  background: var(--md-code-bg-color);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.standout-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  border-radius: 12px 12px 0 0;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.standout-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.08);
+}
+
+.standout-card:hover::before {
+  opacity: 1;
+}
+
+.standout-card .standout-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--md-default-fg-color);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.standout-card .standout-author {
+  font-size: 0.82rem;
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.standout-card .standout-note {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--md-primary-fg-color);
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+[data-md-color-scheme="slate"] .standout-card {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+[data-md-color-scheme="slate"] .standout-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Book cards (yearly pages) --- */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.9rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.book-card {
+  background: var(--md-code-bg-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  border: 1px solid transparent;
+  border-left: 3px solid var(--md-primary-fg-color);
+  transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.book-card:hover {
+  border-color: rgba(99, 102, 241, 0.2);
+  border-left-color: var(--md-accent-fg-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.08);
+}
+
+.book-card .book-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color);
+  line-height: 1.35;
+}
+
+.book-card .book-series {
+  font-size: 0.75rem;
+  color: var(--md-primary-fg-color);
+  opacity: 0.75;
+  font-weight: 500;
+}
+
+.book-card .book-author {
+  font-size: 0.8rem;
+  opacity: 0.55;
+  font-weight: 500;
+  margin-top: auto;
+  padding-top: 0.3rem;
+}
+
+/* Dark mode book cards */
+[data-md-color-scheme="slate"] .book-card {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+[data-md-color-scheme="slate"] .book-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Year page header --- */
+.year-header {
+  position: relative;
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a1040 100%);
+  border-radius: 14px;
+  padding: 2rem 2rem 1.5rem;
+  margin: 0 0 2rem;
+  overflow: hidden;
+  border: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+.year-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1px 1px at 15% 25%, rgba(255, 255, 255, 0.2) 0%, transparent 100%),
+    radial-gradient(1.2px 1.2px at 45% 65%, rgba(255, 255, 255, 0.15) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 35%, rgba(255, 255, 255, 0.12) 0%, transparent 100%),
+    radial-gradient(1.3px 1.3px at 85% 75%, rgba(255, 255, 255, 0.18) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 85%, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.year-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.4), transparent);
+}
+
+.year-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.year-header h1 {
+  color: #e2e8f0 !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 0.3rem !important;
+  background: linear-gradient(135deg, #e2e8f0 0%, #a78bfa 60%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.year-header .year-meta {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.year-header .year-meta strong {
+  color: #c4b5fd;
+  font-weight: 700;
+}
+
+[data-md-color-scheme="default"] .year-header {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #3730a3 100%);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* --- Year page navigation (prev/next) --- */
+.year-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.year-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: var(--md-primary-fg-color) !important;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.year-nav a:hover {
+  border-color: rgba(99, 102, 241, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+}
+
+[data-md-color-scheme="slate"] .year-nav a {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 768px) {
+  .scifi-hero {
+    padding: 2rem 1.5rem 1.8rem;
+  }
+
+  .scifi-hero h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .year-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .standouts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reading-stats {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .year-header {
+    padding: 1.5rem;
+  }
+
+  .year-header h1 {
+    font-size: 1.6rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .scifi-hero {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .reading-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .reading-stats .stat {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.78rem;
+  }
+}
+
+/* === CREDENTIAL BADGES (about page) === */
+.credential-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.credential {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--md-primary-fg-color);
+}
+
+.credential strong {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+}
+
+.credential span {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* === TIMELINE (for CV pages) === */
+.timeline-entry {
+  border-left: 2px solid var(--md-primary-fg-color);
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-entry::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+}
+
+.timeline-entry h4 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+.timeline-entry .timeline-date {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+.timeline-entry p {
+  margin: 0.3rem 0 0;
+  font-size: 0.88rem;
+}
+
+/* === PRESENTATION INDEX (grouped) === */
+.presentation-highlight {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: background 0.2s ease;
+}
+
+.presentation-highlight:hover {
+  background: var(--md-accent-fg-color--transparent);
+}
+
+/* === BUTTONS === */
+.md-typeset .md-button {
+  border-radius: 6px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* === TABLES (general) === */
+.md-typeset table:not([class]) {
+  font-size: 0.88rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-code-bg-color);
+  font-weight: 600;
+}
+
+/* === DARK MODE ADJUSTMENTS === */
+[data-md-color-scheme="slate"] .hero-image img {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+[data-md-color-scheme="slate"] .proof-block {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-md-color-scheme="slate"] .credential {
+  background: rgba(255, 255, 255, 0.04);
+}

@@ -1,0 +1,927 @@
+kcp_version: "0.6"
+project: wiki.totto.org
+version: 1.2.0
+updated: 2026-03-07
+
+units:
+  # ── Core identity ────────────────────────────────────────────────────────────
+
+  - id: home
+    path: index.md
+    intent: "Who is Thor Henning Hetland and what is this site about?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    triggers: [totto, thor, hetland, exoreaction, javazone, sdd, overview]
+
+  - id: about
+    path: about/index.md
+    intent: "What has Thor built, what does he believe, and what is he doing now?"
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-02-27
+    triggers: [biography, background, sdd, skill-driven-development, synthesis, eXOReaction, quadim, javazone, java-champion, iasa]
+
+  # ── CV and credentials ───────────────────────────────────────────────────────
+
+  - id: cv-english
+    path: about/cv-english.md
+    intent: "What is Thor's full professional history, credentials, and employment record?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [cv, resume, employment, credentials, java-champion, ntnu, career]
+
+  - id: cv-norwegian
+    path: about/cv-norwegian.md
+    intent: "Hva er Thors fullstendige CV og yrkeshistorikk på norsk?"
+    scope: global
+    audience: [human]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [cv, norsk, karriere, ntnu]
+
+  - id: projects
+    path: about/projects.md
+    intent: "What client and consulting projects has Thor worked on over his career?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-27
+    depends_on: [cv-english]
+    triggers: [projects, consulting, clients, 1996, 2024, norwegian-enterprises, elprint, pasientsky, nmd, opplysningen, quadim, entra, catalystone, greps]
+
+  - id: organizations
+    path: about/organizations.md
+    intent: "What communities and organizations has Thor founded, led, or contributed to?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [javazone, javabin, iasa, java-champion, community, organizations, leadership]
+
+  # ── Talks and presentations ──────────────────────────────────────────────────
+
+  - id: presentations-all
+    path: about/presentations.md
+    intent: "What conference talks, workshops, and publications has Thor given across his career?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [talks, presentations, conferences, publications, soa, architecture, cloud, agile, 2006, 2023]
+
+  - id: pres-continuous-innovation
+    path: presentations/delivering-continuous-innovation.md
+    intent: "How do you achieve thousands of releases per year with zero downtime?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [continuous-delivery, releases, zero-downtime, devops, innovation]
+
+  - id: pres-thousands-releases
+    path: presentations/thousands-of-releases.md
+    intent: "What does a system architecture that supports thousands of releases look like?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [releases, architecture, continuous-delivery, deployment]
+
+  - id: pres-best-practice-wtf
+    path: presentations/best-practice-wtf.md
+    intent: "Why do best practices often fail, and how should they be evaluated critically?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [best-practice, cargo-cult, methodology, critical-thinking]
+
+  - id: pres-fixing-the-problem
+    path: presentations/fixing-the-problem.md
+    intent: "How do you identify and fix the actual root problem rather than the symptoms?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [root-cause, problem-solving, debugging, architecture]
+
+  - id: pres-internet-of-things
+    path: presentations/internet-of-things.md
+    intent: "What are the architectural challenges and opportunities of the Internet of Things?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [iot, internet-of-things, embedded, connected-devices]
+
+  - id: pres-nyere-forskning
+    path: presentations/nyere-forskningsresultater.md
+    intent: "Hva sier nyere forskning om programvareutvikling og arkitektur?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [forskning, research, programvareutvikling, norsk]
+
+  - id: pres-neo4dogs
+    path: presentations/neo4dogs.md
+    intent: "How can graph databases be applied to real-world domain problems?"
+    scope: project
+    audience: [human, developer]
+    depends_on: [presentations-all]
+    triggers: [neo4j, graph-database, graph, domain-modeling]
+
+  - id: pres-kan-vi-skape-verdi
+    path: presentations/kan-vi-skape-verdi.md
+    intent: "Kan IT og arkitektur skape reell forretningsverdi?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [verdi, forretning, arkitektur, norsk, it-strategi]
+
+  - id: pres-agile-wine
+    path: presentations/agile-wine-2011.md
+    intent: "What does agile methodology have in common with wine-making — and what can each learn from the other?"
+    scope: project
+    audience: [human]
+    depends_on: [presentations-all]
+    triggers: [agile, wine, analogy, 2011, methodology]
+
+  - id: pres-cloud-psychology
+    path: presentations/cloud-psychology.md
+    intent: "What psychological and organizational factors drive (or block) cloud adoption?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [cloud, psychology, adoption, organizational-change]
+
+  - id: pres-robust-smidig
+    path: presentations/robust-smidig-utvikling.md
+    intent: "Hvordan bygger man robuste systemer med smidig utvikling?"
+    scope: project
+    audience: [human, developer, architect]
+    depends_on: [presentations-all]
+    triggers: [smidig, agile, robust, utvikling, norsk]
+
+  - id: pres-edr-mds-mdm
+    path: presentations/edr-mds-mdm.md
+    intent: "What are the patterns and trade-offs in enterprise data reference, master data, and MDM?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [mdm, master-data, edr, data-governance, reference-data]
+
+  - id: pres-laws-of-soa
+    path: presentations/laws-of-soa.md
+    intent: "What are the fundamental laws and constraints that govern service-oriented architecture?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [soa, service-oriented, laws, web-services, architecture]
+
+  - id: pres-design-time-governance
+    path: presentations/design-time-governance.md
+    intent: "How do you govern a SOA or microservices architecture at design time, before deployment?"
+    scope: project
+    audience: [human, architect]
+    depends_on: [presentations-all]
+    triggers: [governance, soa, design-time, microservices, policy]
+
+  # ── Knowledge infrastructure hub ─────────────────────────────────────────────
+
+  - id: knowledge-infrastructure
+    path: knowledge-infrastructure/index.md
+    intent: "What is the full body of work on AI agent knowledge infrastructure — Synthesis, KCP, kcp-commands, IronClaw, and the blog series covering all four?"
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-03-03
+    depends_on: [about]
+    triggers: [synthesis, kcp, kcp-commands, ironclaw, knowledge-infrastructure, four-layer, episodic-memory, context-window, ai-agents, memory-architecture]
+
+  - id: synthesis-releases
+    path: notes/synthesis-releases.md
+    intent: "What is the full Synthesis release history, from v1.0.0 to the latest version, with changelog and feature details?"
+    scope: global
+    audience: [human, agent, developer]
+    validated: 2026-03-03
+    depends_on: [knowledge-infrastructure]
+    triggers: [synthesis, releases, changelog, v1.0, v1.21, versions, release-history]
+
+  # ── Open source ──────────────────────────────────────────────────────────────
+
+  - id: open-source
+    path: open-source.md
+    intent: "What open source software has Thor built or contributed to?"
+    scope: global
+    audience: [human, agent, developer]
+    validated: 2026-02-25
+    depends_on: [about]
+    triggers: [open-source, github, synthesis, xorcery, whydah, cantara, exoreaction, mit, java]
+
+  # ── Notes and writing ────────────────────────────────────────────────────────
+
+  - id: linkedin-posts
+    path: notes/linkedin-posts.md
+    intent: "What has Thor written about on LinkedIn from late 2025 through early 2026?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-25
+    triggers: [linkedin, posts, writing, 2025, 2026, ai-development, sdd]
+
+  - id: architecture-vs-agile
+    path: notes/architecture-vs-agile.md
+    intent: "Is there a tension between software architecture and agile methods, and how is it resolved?"
+    scope: global
+    audience: [human, developer, architect]
+    triggers: [architecture, agile, xp, panel, methodology, tension, 2012]
+
+  - id: twitter-archive
+    path: notes/twitter-archive.md
+    intent: "What was Thor writing about on Twitter in the 2009 era?"
+    scope: global
+    audience: [human]
+    triggers: [twitter, archive, 2009, javatotto, historical]
+
+  # ── Interests ────────────────────────────────────────────────────────────────
+
+  - id: sci-fi-overview
+    path: interests/sci-fi/index.md
+    intent: "How many sci-fi books has Thor read, across which years, and in what genres?"
+    scope: global
+    audience: [human]
+    validated: 2026-02-25
+    triggers: [sci-fi, science-fiction, reading, books, kindle, space-opera, hard-sci-fi]
+
+  - id: sci-fi-2025
+    path: interests/sci-fi/books-2025.md
+    intent: "What science fiction did Thor read in 2025?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2025, reading, books, sci-fi]
+
+  - id: sci-fi-2024
+    path: interests/sci-fi/books-2024.md
+    intent: "What science fiction did Thor read in 2024?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2024, reading, books, sci-fi]
+
+  - id: sci-fi-2023
+    path: interests/sci-fi/books-2023.md
+    intent: "What science fiction did Thor read in 2023?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2023, reading, books, sci-fi]
+
+  - id: sci-fi-2022
+    path: interests/sci-fi/books-2022.md
+    intent: "What science fiction did Thor read in 2022?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2022, reading, books, sci-fi]
+
+  - id: sci-fi-2021
+    path: interests/sci-fi/books-2021.md
+    intent: "What science fiction did Thor read in 2021?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2021, reading, books, sci-fi]
+
+  - id: sci-fi-2020
+    path: interests/sci-fi/books-2020.md
+    intent: "What science fiction did Thor read in 2020?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2020, reading, books, sci-fi]
+
+  - id: sci-fi-2019
+    path: interests/sci-fi/books-2019.md
+    intent: "What science fiction did Thor read in 2019?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2019, reading, books, sci-fi]
+
+  - id: sci-fi-2018
+    path: interests/sci-fi/books-2018.md
+    intent: "What science fiction did Thor read in 2018?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2018, reading, books, sci-fi]
+
+  - id: sci-fi-2017
+    path: interests/sci-fi/books-2017.md
+    intent: "What science fiction did Thor read in 2017?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2017, reading, books, sci-fi]
+
+  - id: sci-fi-2016
+    path: interests/sci-fi/books-2016.md
+    intent: "What science fiction did Thor read in 2016?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2016, reading, books, sci-fi]
+
+  - id: sci-fi-2015
+    path: interests/sci-fi/books-2015.md
+    intent: "What science fiction did Thor read in 2015?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2015, reading, books, sci-fi]
+
+  - id: sci-fi-2014
+    path: interests/sci-fi/books-2014.md
+    intent: "What science fiction did Thor read in 2014?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2014, reading, books, sci-fi]
+
+  - id: sci-fi-2013
+    path: interests/sci-fi/books-2013.md
+    intent: "What science fiction did Thor read in 2013?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2013, reading, books, sci-fi]
+
+  - id: sci-fi-2012
+    path: interests/sci-fi/books-2012.md
+    intent: "What science fiction did Thor read in 2012?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2012, reading, books, sci-fi]
+
+  - id: sci-fi-2011
+    path: interests/sci-fi/books-2011.md
+    intent: "What science fiction did Thor read in 2011 — the first year of tracked reading?"
+    scope: module
+    audience: [human]
+    depends_on: [sci-fi-overview]
+    triggers: [2011, reading, books, sci-fi, first-year]
+
+  - id: food-and-wine
+    path: interests/food-and-wine.md
+    intent: "What Norwegian restaurants and wine experiences were notable to Thor circa 2007–2009?"
+    scope: global
+    audience: [human]
+    triggers: [food, wine, norway, restaurants, oslo, 2007, 2009]
+
+  - id: tools
+    path: interests/tools.md
+    intent: "What hardware and software tools did Thor use around 2010?"
+    scope: global
+    audience: [human]
+    triggers: [tools, hardware, software, 2010, setup, workflow, historical]
+
+  # ── Blog series navigation ───────────────────────────────────────────────────
+
+  - id: blog-series
+    path: blog/series.md
+    intent: "Which blog posts form a natural reading sequence, and in what order should they be read?"
+    scope: global
+    audience: [human, agent]
+    validated: 2026-02-28
+    triggers: [series, reading-order, sequence, ironclaw, four-layer, kcp, aurora, froya, lib-pcb, prev-next]
+
+  # ── AI / LLM discoverability ─────────────────────────────────────────────────
+
+  - id: llms-index
+    path: llms.txt
+    intent: "What is the canonical machine-readable entry point for AI agents navigating this site?"
+    scope: global
+    audience: [agent]
+    validated: 2026-02-25
+    triggers: [llms.txt, ai, agent, index, discovery, machine-readable]
+
+  - id: llms-full
+    path: llms-full.txt
+    intent: "Where is the complete machine-readable content of the wiki consolidated for LLM consumption?"
+    scope: global
+    audience: [agent]
+    validated: 2026-02-25
+    depends_on: [llms-index]
+    triggers: [llms-full, full-content, llm, agent, complete, machine-readable]
+
+  # ── Blog posts — KCP / Knowledge Context Protocol ────────────────────────
+
+  - id: blog-beyond-llms-txt
+    path: blog/posts/2026-02-25-beyond-llms-txt-knowledge-context-protocol.md
+    intent: "What is the Knowledge Context Protocol (KCP) and why does llms.txt alone fall short for AI agents?"
+    scope: global
+    audience: [human, agent, developer, architect]
+    validated: 2026-02-25
+    triggers: [kcp, knowledge-context-protocol, llms.txt, ai-agents, discovery, yaml-manifest, knowledge.yaml]
+
+  - id: blog-kcp-adoption-guide
+    path: blog/posts/2026-02-28-kcp-adoption-guide.md
+    intent: "How do you adopt KCP in an existing project — what are the steps and trade-offs?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-28
+    depends_on: [blog-beyond-llms-txt]
+    triggers: [kcp, adoption, implementation, knowledge.yaml, agents, steps, how-to]
+
+  - id: blog-kcp-commands
+    path: blog/posts/2026-03-02-kcp-commands.md
+    intent: "What is kcp-commands and how does it distribute 284 structured command manifests to AI agents?"
+    scope: global
+    audience: [human, developer, agent]
+    validated: 2026-03-02
+    depends_on: [blog-beyond-llms-txt]
+    triggers: [kcp-commands, command-manifests, cli, structured-commands, agent-tooling, 284]
+
+  - id: blog-kcp-version-history
+    path: blog/posts/2026-03-02-kcp-version-history.md
+    intent: "What are the major versions of KCP from v0.1 to v0.6 and what changed in each?"
+    scope: global
+    audience: [human, agent, developer]
+    validated: 2026-03-02
+    depends_on: [blog-beyond-llms-txt]
+    triggers: [kcp, version-history, changelog, v0.1, v0.6, evolution, spec]
+
+  - id: blog-kcp-mcp-copilot
+    path: blog/posts/2026-03-06-kcp-mcp-copilot.md
+    intent: "How does KCP integrate with MCP and GitHub Copilot for different agent integration tiers?"
+    scope: global
+    audience: [human, developer, agent]
+    validated: 2026-03-06
+    depends_on: [blog-kcp-commands]
+    triggers: [kcp, mcp, copilot, integration, github-copilot, static, three-tier, 60-100-rule]
+
+  - id: blog-kcp-a2a
+    path: blog/posts/2026-03-08-a2a-cards-and-kcp.md
+    intent: "How do A2A Agent Cards and KCP manifests compose as complementary layers in a multi-agent system?"
+    scope: global
+    audience: [human, developer, architect, agent]
+    validated: 2026-03-08
+    depends_on: [blog-kcp-auth-and-delegation]
+    triggers: [a2a, agent-card, multi-agent, agent-to-agent, front-door, filing-cabinet, invocation, knowledge-access, complementary, google-a2a]
+
+  - id: blog-sdd-vs-spec
+    path: blog/posts/2026-03-07-sdd-vs-spec-driven.md
+    intent: "How does Skill-Driven Development compare to spec-driven approaches for AI-assisted development?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-07
+    depends_on: [blog-what-a-skill-is]
+    triggers: [sdd, skill-driven-development, spec-driven, comparison, methodology, ai-development]
+
+  # ── Blog posts — Synthesis ────────────────────────────────────────────────
+
+  - id: blog-comprehension-bottleneck
+    path: blog/posts/2026-02-05-the-comprehension-bottleneck.md
+    intent: "Why is code comprehension (not generation) the real bottleneck in AI-assisted development, and how does Synthesis solve it?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-05
+    triggers: [synthesis, comprehension, bottleneck, ai-development, context, search, retrieval, 10x]
+
+  - id: blog-synthesis-knowledge-infra
+    path: blog/posts/2026-02-25-synthesis-knowledge-infrastructure-ai-agents.md
+    intent: "How does Synthesis serve as knowledge infrastructure for AI agents — indexing, retrieval, and graph navigation?"
+    scope: global
+    audience: [human, developer, agent, architect]
+    validated: 2026-02-25
+    depends_on: [blog-comprehension-bottleneck]
+    triggers: [synthesis, knowledge-infrastructure, agents, indexing, graph, retrieval, sub-second, 65000-files]
+
+  - id: blog-two-gaps
+    path: blog/posts/2026-03-03-two-gaps-both-closed.md
+    intent: "What are the two gaps in AI development tooling (context retrieval and episodic memory) and how are both now closed?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-03
+    depends_on: [blog-synthesis-knowledge-infra]
+    triggers: [synthesis, two-gaps, episodic-memory, context-retrieval, sessions, closed, v1.21]
+
+  - id: blog-prompt-cache-infra
+    path: blog/posts/2026-03-04-prompt-cache-as-infrastructure.md
+    intent: "How should prompt caching be treated as infrastructure rather than an optimization trick?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-04
+    triggers: [prompt-cache, caching, infrastructure, latency, cost, ai-development, anthropic]
+
+  - id: blog-ironclaw-part1
+    path: blog/posts/2026-02-24-ironclaw-synthesis-part1.md
+    intent: "How was IronClaw (a persistent AI agent) built and integrated with Synthesis for real-time workspace context?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-24
+    depends_on: [blog-synthesis-knowledge-infra]
+    triggers: [ironclaw, synthesis, persistent-agent, slack, briefing, ec2, knowledge-infrastructure, mimir]
+
+  - id: blog-three-layer-memory
+    path: blog/posts/2026-03-03-three-layer-ai-memory.md
+    intent: "What are the three layers of AI agent memory and how do they complement each other?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-03
+    triggers: [memory, three-layers, episodic, semantic, working-memory, ai-agents, architecture]
+
+  # ── Blog posts — lib-pcb AI sprint ───────────────────────────────────────
+
+  - id: blog-six-pillars
+    path: blog/posts/2026-02-13-six-pillars-200k-lines-11-days.md
+    intent: "What are the six methodology pillars that enabled building 200,000 lines of Java in 11 days?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-13
+    triggers: [lib-pcb, six-pillars, 200k-lines, 11-days, methodology, sdd, productivity, java, gerber]
+
+  - id: blog-building-together
+    path: blog/posts/2026-02-22-building-together-11-day-ai-collaboration.md
+    intent: "What was the full story of building a production PCB design library in 11 days with AI collaboration?"
+    scope: global
+    audience: [human, developer]
+    validated: 2026-02-22
+    depends_on: [blog-six-pillars]
+    triggers: [lib-pcb, building-together, 11-days, collaboration, ai-development, story, java, pcb]
+
+  - id: blog-six-weeks
+    path: blog/posts/2026-03-07-six-weeks-after-the-sprint.md
+    intent: "What happened in the six weeks after the AI development sprint — what held, what was learned, what was real?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-07
+    depends_on: [blog-building-together]
+    triggers: [six-weeks, after-the-sprint, reflection, lib-pcb, methodology, results, cohorts, marathon, sustained]
+
+  # ── Blog posts — SDD / Methodology ───────────────────────────────────────
+
+  - id: blog-what-a-skill-is
+    path: blog/posts/2026-02-07-what-a-skill-actually-is.md
+    intent: "What is a Claude Code skill, how does it differ from a prompt, and why does it matter for SDD?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-07
+    triggers: [skill, claude-code, sdd, skill-driven-development, prompt, definition, methodology, yaml]
+
+  - id: blog-sdd-vs-vibe
+    path: blog/posts/2026-02-20-sdd-vs-vibe-coding.md
+    intent: "How does Skill-Driven Development differ from vibe coding, and why does the distinction matter?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-20
+    depends_on: [blog-what-a-skill-is]
+    triggers: [sdd, vibe-coding, skill-driven-development, methodology, comparison, ai-development, discipline]
+
+  - id: blog-ai-augmented-consultant
+    path: blog/posts/2026-03-02-ai-augmented-consultant.md
+    intent: "What does the AI-augmented consultant role look like — different from a developer, different from a manager?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-02
+    depends_on: [blog-sdd-vs-vibe]
+    triggers: [ai-augmented, consultant, advisory, methodology, enterprise, sdd, role, practitioner]
+
+  - id: blog-twenty-codebases
+    path: blog/posts/2026-03-05-twenty-codebases-one-method.md
+    intent: "How does SDD apply consistently across 20 different codebases — what is transferable and what is not?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-03-05
+    depends_on: [blog-ai-augmented-consultant]
+    triggers: [twenty-codebases, sdd, methodology, transferable, multi-repo, patterns, consultant]
+
+  # ── Blog posts — AI agent architecture ───────────────────────────────────
+
+  - id: blog-four-layers
+    path: blog/posts/2026-02-28-four-layers-ai-development-environment.md
+    intent: "What are the four layers of an AI development environment and why does each matter?"
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-02-28
+    triggers: [four-layers, ai-development, environment, knowledge, context, tools, memory, architecture, synthesis, kcp]
+
+  - id: blog-ai-agent-pr-review
+    path: blog/posts/2026-03-01-ai-agent-pr-review-loop.md
+    intent: "How does an AI agent PR review loop work end-to-end, and what makes it reliable?"
+    scope: global
+    audience: [human, developer]
+    validated: 2026-03-01
+    depends_on: [blog-four-layers]
+    triggers: [ai-agent, pr-review, pull-request, loop, automation, ironclaw, github, klaw]
+
+relationships:
+  # Navigation and orientation
+  - from: llms-index
+    to: about
+    type: context
+
+  - from: llms-index
+    to: llms-full
+    type: enables
+
+  - from: home
+    to: about
+    type: enables
+
+  - from: about
+    to: cv-english
+    type: enables
+
+  - from: about
+    to: cv-norwegian
+    type: enables
+
+  - from: about
+    to: presentations-all
+    type: enables
+
+  - from: about
+    to: organizations
+    type: enables
+
+  - from: about
+    to: open-source
+    type: enables
+
+  - from: cv-english
+    to: open-source
+    type: context
+
+  - from: cv-english
+    to: projects
+    type: enables
+
+  - from: cv-english
+    to: organizations
+    type: context
+
+  # Presentations hierarchy
+  - from: presentations-all
+    to: pres-continuous-innovation
+    type: enables
+
+  - from: presentations-all
+    to: pres-thousands-releases
+    type: enables
+
+  - from: presentations-all
+    to: pres-best-practice-wtf
+    type: enables
+
+  - from: presentations-all
+    to: pres-fixing-the-problem
+    type: enables
+
+  - from: presentations-all
+    to: pres-internet-of-things
+    type: enables
+
+  - from: presentations-all
+    to: pres-nyere-forskning
+    type: enables
+
+  - from: presentations-all
+    to: pres-neo4dogs
+    type: enables
+
+  - from: presentations-all
+    to: pres-kan-vi-skape-verdi
+    type: enables
+
+  - from: presentations-all
+    to: pres-agile-wine
+    type: enables
+
+  - from: presentations-all
+    to: pres-cloud-psychology
+    type: enables
+
+  - from: presentations-all
+    to: pres-robust-smidig
+    type: enables
+
+  - from: presentations-all
+    to: pres-edr-mds-mdm
+    type: enables
+
+  - from: presentations-all
+    to: pres-laws-of-soa
+    type: enables
+
+  - from: presentations-all
+    to: pres-design-time-governance
+    type: enables
+
+  # Thematic relationships among presentations
+  - from: pres-continuous-innovation
+    to: pres-thousands-releases
+    type: context
+
+  - from: pres-laws-of-soa
+    to: pres-design-time-governance
+    type: enables
+
+  - from: pres-best-practice-wtf
+    to: architecture-vs-agile
+    type: context
+
+  - from: pres-robust-smidig
+    to: architecture-vs-agile
+    type: context
+
+  # Sci-fi reading
+  - from: sci-fi-overview
+    to: sci-fi-2025
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2024
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2023
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2022
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2021
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2020
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2019
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2018
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2017
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2016
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2015
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2014
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2013
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2012
+    type: enables
+
+  - from: sci-fi-overview
+    to: sci-fi-2011
+    type: enables
+
+  # Writing across channels
+  - from: linkedin-posts
+    to: about
+    type: context
+
+  - from: architecture-vs-agile
+    to: about
+    type: context
+
+  # Blog series index
+  - from: llms-index
+    to: blog-series
+    type: enables
+
+  - from: blog-series
+    to: llms-full
+    type: context
+
+  # Knowledge infrastructure hub
+  - from: about
+    to: knowledge-infrastructure
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: synthesis-releases
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: open-source
+    type: context
+
+  - from: llms-index
+    to: knowledge-infrastructure
+    type: enables
+
+  # Blog posts → hub connections
+  - from: knowledge-infrastructure
+    to: blog-four-layers
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: blog-beyond-llms-txt
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: blog-comprehension-bottleneck
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: blog-ironclaw-part1
+    type: enables
+
+  - from: knowledge-infrastructure
+    to: blog-three-layer-memory
+    type: enables
+
+  - from: synthesis-releases
+    to: blog-synthesis-knowledge-infra
+    type: enables
+
+  - from: synthesis-releases
+    to: blog-two-gaps
+    type: enables
+
+  - from: synthesis-releases
+    to: blog-prompt-cache-infra
+    type: context
+
+  - from: about
+    to: blog-six-pillars
+    type: context
+
+  # KCP blog chain
+  - from: blog-beyond-llms-txt
+    to: blog-kcp-adoption-guide
+    type: enables
+
+  - from: blog-beyond-llms-txt
+    to: blog-kcp-commands
+    type: enables
+
+  - from: blog-beyond-llms-txt
+    to: blog-kcp-version-history
+    type: enables
+
+  - from: blog-kcp-commands
+    to: blog-kcp-mcp-copilot
+    type: enables
+
+  - from: blog-kcp-mcp-copilot
+    to: blog-kcp-a2a
+    type: enables
+
+  # lib-pcb sprint chain
+  - from: blog-six-pillars
+    to: blog-building-together
+    type: enables
+
+  - from: blog-building-together
+    to: blog-six-weeks
+    type: enables
+
+  # SDD chain
+  - from: blog-what-a-skill-is
+    to: blog-sdd-vs-vibe
+    type: enables
+
+  - from: blog-sdd-vs-vibe
+    to: blog-ai-augmented-consultant
+    type: enables
+
+  - from: blog-ai-augmented-consultant
+    to: blog-twenty-codebases
+    type: enables
+
+  # AI agent architecture chain
+  - from: blog-four-layers
+    to: blog-ai-agent-pr-review
+    type: enables
+
+  - from: blog-four-layers
+    to: blog-three-layer-memory
+    type: context
+
+  # Cross-cluster
+  - from: blog-six-weeks
+    to: blog-ai-augmented-consultant
+    type: context
+
+  - from: blog-kcp-adoption-guide
+    to: blog-kcp-commands
+    type: context

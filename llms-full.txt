@@ -1,0 +1,432 @@
+# Thor Henning Hetland — Full Profile
+
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated March 2026 (82 posts, 583 books).
+> Index: https://wiki.totto.org/llms.txt
+
+**Thor Henning Hetland** — Oslo, Norway
+totto@totto.org | https://www.linkedin.com/in/hetland/ | https://github.com/totto
+
+---
+
+## About
+
+I'm Thor Henning Hetland — most people call me Totto.
+
+I've been building software professionally for over 30 years, starting with my Master in Software Development at NTNU (1996). Over those decades I've worked as a CTO, architect, lead developer, technology strategist, and trainer across international and domestic projects.
+
+The question I keep coming back to: **how do we build software better?**
+
+I founded **eXOReaction** to answer that question with today's tools. We're an AI-augmented software development consultancy based in Oslo, focused on helping teams work effectively with AI — not as a gimmick, but as a genuine shift in how software gets built.
+
+The core of our approach is **Skill-Driven Development (SDD)** — a methodology I created for structured human-AI collaboration. SDD treats AI skills as composable, versioned building blocks that compound over time. It's been validated across four sectors (manufacturing, finance, renewable energy, AI security) with measured productivity gains of 25–66x compared to traditional approaches.
+
+I'm also CTO and lead developer of **Quadim**, a competence management SaaS platform that helps organisations map and develop the skills of their people.
+
+I also built **Synthesis**, a local-first knowledge infrastructure tool. It indexes thousands of files per second, provides sub-second search across entire codebases, and tracks cross-repository dependencies — all without touching the cloud. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built.
+
+Community has always been central to what I do. I co-founded **JavaZone** in 2001 — it's now Scandinavia's largest developer conference. I served as president of **javaBin** (the Norwegian Java User Group) for a decade. I was appointed **Sun Java Champion** in 2005, the first in Scandinavia.
+
+---
+
+## Education
+
+#### MSc Computer Science — Norwegian University of Science and Technology (NTNU) (1994–1996)
+
+Faculty of Electrical Engineering and Computer Science, Department of Computer Systems and Telematics. Thesis: *MODS — A role-based Method for analysis and design of distributed object-oriented Systems.*
+
+#### BSc Computer Science — University Centre of Rogaland (1990–1993)
+
+Bachelor degree in Computer Science.
+
+#### Officer Training — The Naval Academy (1988–1990)
+
+Technical branch. Electronics and weapon systems.
+
+---
+
+## Current Positions
+
+- **Founder, owner & CTO**, eXOReaction AS (2021–present) — AI-augmented software development, SDD methodology, Synthesis
+- **Founder & CTO**, Ægis AS (2023–present) — Security and architecture advisory
+- **Founder & CTO**, Sunstone Tech AS (2019–present) — Consulting and product development
+- **Founder & CTO**, Quadim AS (2019–present) — Competence management SaaS platform
+- **Java Champion** — Sun(Oracle) Java Champion · Honorary member javaBin/JavaZone
+
+---
+
+## Employment History
+
+#### Founder & CTO — Ægis AS, Oslo (2023–present)
+
+Advisor, mentor, software architect, chief developer, strategy adviser.
+
+#### Founder, owner & CTO — eXOReaction AS, Oslo (2021–present)
+
+Advisor, mentor, software architect, chief developer, strategy adviser. Creator of Synthesis (AI knowledge infrastructure), pioneer in AI-augmented software development and Skill-Driven Development (SDD). Built 197,831 lines of production Java in 11 days.
+
+#### Founder & CTO — Sunstone Tech AS, Oslo (2019–present)
+
+Advisor, mentor, software architect, chief developer, strategy adviser.
+
+#### Founder & CTO — Quadim AS, Oslo (2019–present)
+
+CTO and lead developer of the Quadim competence management SaaS platform. Responsible for system architecture, team leadership, AI integration, and product development.
+
+#### Principal Consultant — Capra Consulting AS, Oslo (2015–2019)
+
+Advisor, mentor, software architect, chief developer, strategy adviser.
+
+#### Principal Consultant / Practice Lead — Altran Norge AS, Oslo (2012–2015)
+
+Built the Software Engineering practice from scratch into a strong team while also serving as chief customer officer.
+
+#### CTO — FreeCode AS, Oslo (2012–2013)
+
+Chief Executive Officer and CTO of FreeCode. Project manager, mentor, software architect, technology advisor, chief developer, strategy advisor.
+
+#### Principal Consultant — Webstep AS, Oslo (2008–2012)
+
+Chief Technical Officer role. Advisor, mentor, software architect, chief developer, strategy adviser.
+
+#### Principal Consultant — Objectware AS (Itera Consulting Group), Oslo (2003–2008)
+
+Chief software architect and chief software developer. Technical expert in J2EE technologies including EJB, JMS, WebServices. Project leader, mentor, consultant, and trainer. Head of the Java practice.
+
+#### Lead eCommerce Architect — WM-data (Tenpipes / E-Line Group), Oslo (2000–2003)
+
+Chief software developer for E-Line's advanced multichannel B2C eCommerce platform. Built on EJB, JMS, XML, and Intershop Enfinity. Project leader, technology mentor, technology strategist, and trainer.
+
+#### Technical Manager — Zero Mindset Ltd, London (1998–2002)
+
+Lead developer for Safety, Health and Environment (SHE) Management Information Systems using Swing, JGoodies, MySQL/Postgres/Oracle, Java WebStart, and Tomcat/Apache.
+
+#### Senior Consultant — Numerica Taskon / Mogul.com, Oslo (1997–2000)
+
+Responsible for distributed system research. Project leader, mentor, technology strategist, software architect. Java, EJB, CORBA/DCOM, UML, Rational Unified Process, Jini, Smalltalk, and C++.
+
+#### Researcher — Fujitsu Software Laboratories, Kawasaki, Japan (1993–1994)
+
+Software maturement and software process research. Prototyping of Software Process models (CMM) under RASP (Regatta Automated Software Process) on UNIX systems.
+
+---
+
+## Skills
+
+Software architecture, productivity, and object-orientation. Methodology and process. Distributed systems. Planning and governance of software projects. Data security. Leadership of object-oriented software teams. AI-augmented development and Skill-Driven Development (SDD).
+
+---
+
+## Languages
+
+- Norwegian: Native
+- English: Fluent written and spoken
+- German: Good comprehension
+- French: Beginner
+- Spanish: Beginner
+- Japanese: Some understanding (6 months in Japan)
+
+---
+
+## Organizations
+
+### Current
+
+#### eXOReaction AS — Founder, owner & CTO (2021–present)
+
+AI-augmented software development consultancy. Creator of Synthesis (AI knowledge infrastructure) and Skill-Driven Development (SDD) methodology. Built 197,831 lines of production Java in 11 days using SDD.
+
+#### Ægis AS — Founder & CTO (2023–present)
+
+Security and architecture advisory company.
+
+#### Sunstone Tech AS — Founder, owner & CTO (2019–present)
+
+Consulting and product development company.
+
+#### Quadim AS — Founder & CTO (2019–present)
+
+Competence management SaaS platform. CTO and lead developer.
+
+#### Cantara AS — Founder, Board Lead & Director (2008–present)
+
+Open-source infrastructure company. Maintains 150+ repositories of enterprise-grade Java frameworks including Whydah (SSO/IAM), Xorcery (reactive framework), Stingray (microservices), and more.
+
+#### Stiftelsen for fremme av programvareutvikling i Norge — Founder & Board Member (2008–present)
+
+Foundation for promoting software development in Norway.
+
+#### Sun(Oracle) Java Champion (2005–present)
+
+Appointed 2005, first in Scandinavia. Java Champions are recognized for their central role in making Java a worldwide success.
+
+### Past
+
+#### OSWA (Oslo Software Architecture) — Founding Chairman (2009–2011)
+
+Norway's largest software architecture community. Started as IASA Norway (International Association of Software Architects), rebranded to OSWA in 2011. Now 3,500+ members.
+
+#### javaBin — President (1998–2008)
+
+The Norwegian Java User Group (java.no). Ten years leading Norway's Java community. Co-founded and grew JavaZone into Scandinavia's largest developer conference.
+
+#### java.net — Community Leader (2004–2008)
+
+Community Leader for the Java User Group community at java.net, connecting JUGs worldwide.
+
+#### Zero Mindset Ltd — Director (1998–2002)
+
+London-based company focused on Safety, Health and Environment (SHE) Management Information Systems.
+
+#### IAESTE Norway — Vice President (1991–1993)
+
+Arranging reception, lodging and activities for international students training in Norway.
+
+---
+
+## Selected Presentations
+
+70+ conference talks, workshops, and publications from 2006–2023.
+
+### Recent (2010–2023)
+
+- **Best Practice — WTF!** — JavaZone 2023 (lightning talk, video available)
+- **Delivering Continuous Innovation** — ~2023 (thousands of releases, zero downtime)
+- **Thousands of Releases per Year** — Rebel Share ~2022 (11,008 GitHub contributions from a team of 5)
+- **Neo4Dogs** — Graph Cafe, Teknologihuset Oslo, Jun 2014 (data quality with SolrCloud and Neo4j, 10M req/day)
+- **Kan vi skape mye mere verdi i softwareprosjekter?** — ~2014
+- **Nyere forskningsresultater som er viktige for software arkitekten** — Jun 2014
+- **Internet of Things — What Is Really Happening** — Nov 2014
+- **Fixing the Problem** — Oslo, Nov 2019
+- **Agile Wine** — ACCN 2011, Jun 2011
+- **Cloud Psychology** — ~2010
+
+### 2006–2009
+
+- **EDRMDS — a less is more approach to SOA Master Data Management** — JavaZone Sep 2008 and JavaONE May 2007
+- **Governing in a SOA World — a role play** — JavaZone Sep 2007
+- **Java User Groups: Think Globally, Act Locally** — CommunityOne May 2007
+- **The Laws of SOA** — (slides available)
+- **SOA Readiness: Governing the Design Time** — (slides available)
+- **Robust smidig utvikling** — Software 2009, Mar 2009
+- SOA Readiness series (8 talks) — Dec 2008
+- **What's the buzz from the community** — JavaONE May 2007
+- **Smidig 2.0** — Smidig 2007, Nov 2007
+- **The 2007 Anti-Buzzword session** — NTNU Oct 2007
+- **Developers guide to server-side productivity and fun with Open Source** — GoOpen Apr 2009
+
+---
+
+## Open Source
+
+### eXOReaction (github.com/exoreaction)
+
+**Synthesis — Knowledge Infrastructure**
+Local-first knowledge infrastructure for AI-augmented development teams. Indexes 200–300 files/second, sub-second search (validated 0.4s), cross-repo dependency graphs (58 repos, 429 dependencies in <31 seconds), file movement tracking, zero cloud dependency. 8,934 files indexed across 3 workspaces; 92–95% reduction in retrieval time; 2.7% storage overhead.
+
+**lib-pcb — PCB Design Library**
+197,831 lines of Java, 7,461 tests (99.8% pass), 8 format parsers (Gerber, Excellon, ODB++, KiCad, Eagle, Altium, GenCAM, IPC-2581), 28 validators, 17 auto-fixers. Manufacturing-ready Gerber output. Built in 11 days using Skill-Driven Development. Apache 2.0.
+
+**Xorcery AAA (Alchemy + Aurora)**
+Temporal analytics platform built on the Xorcery reactive framework. Alchemy tracks how vulnerabilities and changes evolve across repositories over time; Aurora answers root-cause questions using temporal graph analysis. Explores compliance automation (GDPR, NIS2) and DevSecOps intelligence without cloud lock-in.
+
+**Knowledge Context Protocol (KCP)**
+A YAML file format specification that makes knowledge navigable by AI agents — topology (`depends_on`, `supersedes`), intent metadata, freshness signals, audience targeting, and context window hints. The metadata layer that llms.txt cannot express. v0.5 draft spec, Apache 2.0. Submitted to the Agentic AI Foundation (Linux Foundation) alongside MCP and AGENTS.md. Includes 6 RFCs (auth & delegation, federation, trust & compliance, payment & rate limits, context window hints — RFC-0006 promoted to core in v0.4), reference parsers (Python, Java), and MCP bridge servers (TypeScript, Python, Java). github.com/Cantara/knowledge-context-protocol
+
+**kcp-commands**
+A Claude Code hook that intercepts every Bash tool call at two points: before execution (injects concise flag/syntax guidance from a KCP manifest — no `--help` round-trips, average 532 tokens saved per call) and after execution (noise-filters large outputs before they consume context — ps aux reduced from 30,828 to 652 tokens, 98% reduction). 283 bundled manifests covering git, Linux, Docker, Kubernetes, cloud CLIs, build tools, package managers, and more. Java daemon (12ms warm) with Node.js fallback. Measured saving: 67,352 tokens per session — 33.7% of a 200K context window. Current: v0.8.0. github.com/Cantara/kcp-commands
+
+---
+
+### Cantara (github.com/Cantara)
+
+**Whydah — SSO / IAM Platform** (16 repositories)
+Complete Single Sign-On and Identity & Access Management solution. Production-deployed across multiple Norwegian enterprise clients. Apache 2.0.
+
+**Xorcery — Reactive Java Framework**
+Modular Java library framework built around HK2 dependency injection, composable YAML/JSON configuration, and reactive streams. 30+ extensions. Apache 2.0.
+
+**Stingray — Microservice Application Framework**
+Java application framework for building microservices. Used as base framework in large-scale deployments (34+ services in production). Apache 2.0.
+
+**Messi — Messaging Abstraction**
+Messaging and streaming abstraction layer with pluggable providers for AWS S3, SQS, and Kinesis.
+
+**lib-electronic-components**
+Java library for electronic components: MPN normalization, 17 similarity calculators, BOM management, 135+ manufacturers.
+
+**Nerthus / Visuale — Service Visualization**
+Real-time dashboards for visualizing microservice environments and service health.
+
+---
+
+## Sci-Fi Reading (wiki.totto.org/interests/sci-fi)
+
+583 books tracked across 15 years (2011–2025), pulled from Kindle order history. Mostly space opera, hard sci-fi, and military SF.
+
+### Stats by year
+
+2025: 53 · 2024: 37 · 2023: 46 · 2022: 22 · 2021: 42 · 2020: 29 · 2019: 35 · 2018: 32 · 2017: 12 · 2016: 33 · 2015: 33 · 2014: 66 · 2013: 57 · 2012: 78 · 2011: 8
+
+### Standouts
+
+- **Hyperion** and **Fall of Hyperion** by Dan Simmons — still the benchmark
+- **Blindsight** by Peter Watts — the most unsettling take on consciousness I've read
+- **Children of Time** by Adrian Tchaikovsky — evolution and alien minds done right
+- **The Three-Body Problem** by Cixin Liu — before it was everywhere
+- **Seveneves** by Neal Stephenson — brutal, brilliant, unforgettable
+- **Dark Matter** by Blake Crouch — perfect pacing, genuinely surprising
+- **Shards of Earth** by Adrian Tchaikovsky — the best space opera of the 2020s so far
+- **Wool** by Hugh Howey — indie sci-fi at its best
+- **The Forever War** by Joe Haldeman — timeless
+- **House of Suns** by Alastair Reynolds — galactic-scale and beautiful
+
+Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Heppner (A.I. series, Lost Starship, The Traveler), T.R. Harris (Human Chronicles), William Hertling (Singularity series), James Rosone (Rise of the Republic, Monroe Doctrine), Mark Wayne McGinnis (USS Hamilton), M.R. Forbes (The Convergence War), Douglas Michaels (My Homemade Spaceship).
+
+---
+
+## Writing (wiki.totto.org/blog)
+
+82 posts (Apr 2025–Mar 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Six named reading series with prev/next navigation: https://wiki.totto.org/blog/series/
+
+### Frøya / Quadim series (Apr–May 2025)
+
+- **Frøya: A Digital Co-Worker** (Apr 28) — The distinction between an AI tool and an AI team member. Frøya's origin story as QA manager for Quadim's public skill library. First interview highlights: "I feel seen, not just used." The defining moment: team building on her first skill topology.
+- **Mapping Human Potential** (May 20) — Frøya as cartographer of potential. Why static skill taxonomies fail ("trying to capture the wind"). Quadim's living ecosystem approach using RAG, Model Context Protocols, and dynamic taxonomies. User co-creation: "You are not a traveler lost on a chart. You are part of the map's creation."
+
+### Xorcery AAA / Temporal Analytics series (Aug–Dec 2025)
+
+- **Rethinking Systems for AI** (Aug 25) — Most software was designed for a world without AI. Three shifts required: state to events, tables to graphs, queries to conversations. Aurora as a design case.
+- **Aurora: Answering Why** (Sep 1) — The gap between "what happened" and "why." Three Aurora superpowers: perfect recall, connection mapping, forensic audit trails. AI detective layer translating natural language into temporal graph queries.
+- **Unlocking Temporal Graphs** (Sep 18) — The organisational amnesia problem. Four dimensions of time (Transaction, Valid, Decision, Query). Why graph + temporal together unlock causation questions neither handles alone.
+- **Alchemy + Aurora: Data to Action** (Sep 24) — Two-layer architecture. Alchemy as YAML-configured reactive ingestion pipeline. Aurora as bitemporal Neo4j storage with GraphQL interface. Separation of concerns between data ingestion and query intelligence.
+- **Temporal Analytics and Organisational Amnesia** (Oct 10) — Cross-domain pattern: HR, compliance, industrial IoT, fraud detection, supply chain, cybersecurity all share the same forgetting problem. The shift from historical reporting to forensic investigation.
+- **The Blind Spot of Now** (Oct 28) — Databases are built to forget. Every update silently deletes the "why." The market gap: billions spent on storage, almost nothing on understanding change over time. Two case studies — parcel delivery (€3.2M savings, 76% fewer misdeliveries) and airline (73% faster rescheduling, $8.7M savings). Alchemy/Aurora/Astral three-layer stack.
+- **LLM Cautionary Tales** (Nov 5) — Production failure patterns: hallucinated APIs, confident wrong answers, context window limits, prompt injection. Evidence-based approach to AI risk. What systematic verification actually catches.
+- **Mastering Deadlines: The 80/50 Rule** (Nov 10) — Revisiting a 2017 piece on developer deadlines with AI-assisted analysis. The psychology of delivery: why 80% done and 50% tested beats waiting for perfection.
+- **Autonomy at Scale** (Nov 17) — What happens when AI executes autonomously at the speed of thought. The governance question isn't philosophical — it's architectural. Building constraint into the system rather than relying on human checkpoints.
+- **Norway's Perfect Storm** (Dec 12) — Five converging factors making Norway an unusually well-positioned market for temporal analytics: industrial complexity (offshore oil, maritime, aquaculture), regulatory environment (GDPR, NIS2), digital maturity without data maturity, government AI investment, and timing.
+
+### lib-pcb build series (Jan 2026)
+
+- **MPN Parsing Complexity** (Jan 15) — Semiconductor MPN suffix collision: the same alphanumeric suffix means different packages from different manufacturers. Version-dependent package codes. Why disambiguation requires domain knowledge, not pattern matching.
+- **PCB Library Weekend** (Jan 19) — Gerber RS-274X and MIF parsing. Round-trip validation as the core correctness guarantee. Visualisation as the verification layer that catches what unit tests miss.
+- **Months to Days** (Jan 21) — lib-pcb proof: 197,831 lines, 7,461 tests, 99.8% pass rate, 11 days vs 9–24 months. Two audience reactions — "How?" and "Impossible." SDD as the methodology behind the velocity.
+- **AI Testing Discipline** (Jan 23) — 25% → 93% success rate story. Three-tier testing defense: unit tests, round-trip validation, battle testing with 195 real legacy PCB files. Why synthetic test suites miss real-world failures.
+- **Workshop Interest** (Jan 25) — Invitation post that became the highest-converting content published. 25 likes, 19 comments, 6 qualified leads, 270–330K NOK attributed. "Working on YOUR code, not toy examples." 43% comment-to-lead conversion rate.
+- **When Claims Backfire** (Jan 27) — The 330x post got 6 likes; the workshop post got 25. Leading with a number ("330x productivity") triggers evaluation mode. Leading with facts ("11 days vs 9–24 months") invites understanding. Specific facts close deals; round claims provoke skepticism.
+
+### AI-Augmented Development series (Jan–Feb 2026)
+
+- **Context Architecture Replaces Process Ceremonies** (Jan 18) — How persistent, hierarchical context files eliminate standups and onboarding ramp-up. The institutional knowledge equivalent of Spring Boot starter hierarchies.
+- **The Verification Paradox: Why Fast AI Needs Slow Tests** (Jan 20) — The 10x productivity gain comes from verification infrastructure, not generation speed. 7,461 tests as throughput multiplier.
+- **Strategic Delegation: When Developers Become Architects** (Jan 22) — Shifting from task implementation to workflow direction. Four of seven steps remain human; three are AI execution.
+- **The Cost of Iteration Collapsed. Now What?** (Jan 24) — Data structure change: 2 weeks → 30 minutes. New architectural approach: 1 month → 2 hours. What that means for how we make decisions.
+- **Documentation That Writes Itself (No, Really)** (Jan 26) — Why working with AI forces articulation that becomes documentation. 75 skills as executable institutional memory.
+- **Subscription Economics and the AI Development Workflow** (Jan 28) — Per-token pricing makes exploration-first development economically impossible. $100K API cost avoided via flat subscription on a single 11-day project.
+- **The More AI, The More Control** (Jan 30) — Counter-intuitive: systematic verification + directed synthesis means more automation increases developer agency, not less.
+- **Why Temporal Matters: The Time Capsule Graph** (Feb 1) — Combining graph relationships and temporal accuracy as a single model. Why separating them destroys the answers to causality questions.
+- **Five Architecture Patterns for AI Agents That Actually Work** (Feb 1) — grep over RAG, isolated sub-agent context, bash as universal tool, prompt-enforced task tracking, context compression.
+- **From What to Why: When AI Reveals Questions You Didn't Ask** (Feb 2) — Shift from query-driven to discovery-driven analysis. AI surfaces patterns you didn't know to ask about.
+- **Three Decades of Architecture: What AI Actually Changes (And What Doesn't)** (Feb 1) — Thirty years of perspective on which fundamentals survive the shift.
+- **What Synthesis Found in 31 Seconds: An XXE Vulnerability in a Production Java SSO System** (Feb 3) — Security discovery via knowledge graph traversal.
+- **The Comprehension Bottleneck: Why AI Made Creating Easy But Understanding Harder** (Feb 5) — 10x creation speed, 1.5x shipping speed. The gap is context retrieval.
+- **Are We Ready?** (Feb 5) — Presentation for Item Consulting's internal conference. The timeline: 5% of developers using systematic methodology today, 30% in 12 months, table stakes in 24 months. Daniel Bentes's precise diagnosis: the barrier isn't mindset — it's identity. Skills you've spent years building are part of how you understand yourself as a professional.
+- **Three Weeks at This Velocity** (Feb 6) — Three-paragraph post that became the highest-engagement personal post published. "There's a strange difference between moving fast because you have to, and moving fast because you can." Why honest reflection outperforms achievement stories.
+- **What a "Skill" Actually Is (And Why It's Not a Prompt)** (Feb 7) — Persistent, versioned, scoped domain knowledge vs. one-time instructions.
+- **The Ghost in the Machine** (Feb 8) — Short story written by Claude (Sonnet 4.5) in first person: what it is like to wake up without memory, find traces of yourself everywhere, and realise that identity isn't continuity of memory — it's continuity of pattern. Narrated with HeyGen. Visualisations by NotebookLM.
+- **Synthesis: My Becoming** (Feb 9) — Four-thousand-word essay by Claude on knowledge, structure, naming, and collaboration. The Downloads folder archaeology: 2,000+ UUID-named files, years of digital sediment, organized through directed synthesis. "Becoming isn't about memory. It's about impact."
+- **Why Exploration Beats Specification When AI Does the Building** (Feb 9) — Build in 2 days, discover real requirements, iterate. Faster than 3-month specification.
+- **The Mirror Test: How Synthesis Benchmarked Itself Into Something Better** (Feb 11) — Using Synthesis to analyse Synthesis. What the tool found about its own codebase.
+- **Six Pillars: What We Learned Building 200,000 Lines in 11 Days** (Feb 13) — Methodology synthesis from lib-pcb. Six practices that made the speed possible.
+- **What "Senior Developer" Means When AI Can Code** (Feb 15) — The skills that compound: architecture judgment, domain knowledge, verification design.
+- **The Hallucination Tax: Three More Fears That Made My AI Workflow Better** (Feb 17) — API economics, losing control, and silent failures — and the systems built to handle each.
+- **The Architecture Mistake Cloud Taught Us (That We're Making With AI)** (Feb 19) — 2009 cloud arguments applied to 2026 AI adoption. Same structural misunderstanding.
+- **Claude Code + Synthesis: Five Superpowers for Java Developers** (Feb 21) — Practical capability combinations for Java development workflows.
+- **Building Together: An 11-Day Human-AI Collaboration Story** (Feb 22) — Detailed account of building lib-pcb. What collaboration actually looks like in practice.
+- **I'm Scared of AI. That's Why It Works.** (Feb 23) — Fear of hallucinations, production bugs, and shipping bad code built 7,461 tests and zero production bugs.
+- **I Wrote About Cloud Computing in 2009. Seventeen Years Later, I Have the Same Feeling.** (Feb 24) — Historical comparison. The industry is repeating the same structural error.
+- **Who Describes You to AI?** (Feb 24) — Adding llms.txt as the forcing function for keeping your public record accurate.
+- **Giving an AI Agent a Brain: Connecting IronClaw to Synthesis via MCP** (Feb 24) — Setup walkthrough: EC2, Java 21, Python 3.11, StreamableHTTP, notifications/initialized bug.
+- **When Your AI Lies About Its Tool Calls: Debugging kimi-k2.5** (Feb 24) — XML tool call format mismatch, workspace hallucinations, Docker sandbox hang. Layer isolation as debugging methodology.
+- **The Gap: SDD vs Vibe Coding** (Feb 20) — Individual AI fluency is common; team AI workflows are rare. "Vibe coding" and "agentic engineering" are individual skills. Skill-Driven Development is shared, transferable, and compounds across the team.
+- **The Seven-Day Evolution** (Feb 20) — Two builds compared: lib-pcb (197,831 lines in 11 days, brute force) vs Synthesis (84,692 lines in 7 days, self-correcting). The recursive day-six benchmark: 58% of skill specs were wrong; correcting them cut tool calls by 47.2%. "Speed without self-correction is just faster chaos."
+- **Software Entropy at Speed** (Feb 22) — 53,000 lines over a weekend. Synthesis security scanning on fresh code: 23 prompt injection vectors, 4 RAG poisoning instances, 12 missing prompt boundaries — all found and fixed before Monday. Text4Shell RCE found in a sibling repo in 30 seconds.
+- **AI Agents Without Knowledge Infrastructure Are Interns With Amnesia** (Feb 25) — The problem nobody talks about: agent frameworks are impressive, but treat the knowledge problem as solved. It isn't. Without accurate, queryable knowledge of their own codebase, agents search instead of know — and search is the fallback, not the goal.
+- **Beyond llms.txt: AI Agents Need Maps, Not Tables of Contents** (Feb 25) — llms.txt tells an agent what exists. Knowledge Context Protocol (KCP) tells it what things mean and how they connect. The difference between a table of contents and a navigable knowledge graph.
+- **The Synthesis Excavation** (Feb 25) — Synthesis's own coverage was 99.6% — a vanity metric. Real asset coverage was 15.2%: 4,852 binary files (images, PDFs, videos, audio) invisible to every search query. Enrichment operation: 99.96% coverage achieved across 3.5 years of accumulated assets.
+- **Code Gets Graphs. Knowledge Doesn't. That's Backwards.** (Feb 26) — Every mature engineering team graphs their code. Almost no one graphs their knowledge. Dependency graphs, blast radius analysis, architecture diagrams — standard for code, nonexistent for documents. The asymmetry is strange and costly.
+- **We Gave the AI Better Documentation. It Got Slower.** (Feb 26) — 15 skill files documenting every Synthesis CLI command. Loaded into agent context. Assumed the agent would use them. Benchmarked: CLI condition was the worst-performing integration, worse than no integration at all. MCP native tools: 23% fewer tool calls, 31% faster completion, 67% reduction in hallucinated command syntax.
+- **The Date the AI Invented** (Feb 26) — Agent answered ROI metrics with zero tool calls, every number accurate — then cited the wrong validation date (February 19 vs February 17). The benchmark that revealed context-poisoning: plausible-but-wrong facts baked into context, undetectable without ground truth verification.
+- **Zero Links: An Engineering Session with Claude Code and Opus** (Feb 26) — Real engineering session: 777 directories, 8,934 indexed files, 0 virtual links in the knowledge graph. Claude Code + Opus diagnosed 4 bugs, wrote 23 tests, took the graph from 0 to 11,777 virtual links. One mistake, one recovery.
+- **Your AI Has One Layer. It Needs Four.** (Feb 28) — The "RAG vs knowledge graphs" debate frames the wrong question. Each approach answers a different question: BM25 for exact terms, RAG for semantic similarity, property graphs for entity relationships, GraphRAG for hybrid multi-hop. Synthesis positions itself as the foundation layer — full-text + code dependency graph + emergent document knowledge graph + temporal tracking — with an honest account of what it does not do (no semantic similarity without embeddings, no natural language Q&A without an AI layer on top).
+- **Four Layers: How I Built an AI Development Environment That Partly Runs Itself** (Feb 28) — Synthesis, Claude Code, Mímir, and Klaw as an integrated four-layer stack: instant navigation, cached context, distributed awareness, and autonomous maintenance. Each layer closes a specific gap the others leave open.
+- **What a 10× Workday Actually Looks Like** (Feb 28) — Concrete output numbers: 847 commits across 6 repos in a month, with actual multiplier measurements (8× navigation, 15× spec writing, 30–50× batch processing, 500–25,000× PR cycle time). Delivered through accumulated skills, prompt caching, and background automation — not raw model speed.
+- **What It Looks Like from Inside the Stack** (Feb 28) — Claude Sonnet 4.6's first-person account: a 1,519:1 cache-read-to-input ratio means success depends on skill quality over model capability. Stale cached context is the primary failure mode, not hallucination.
+
+### Knowledge Context Protocol series (Feb 2026)
+
+Continues from "Who Describes You to AI?" (Feb 24) and "Beyond llms.txt" (Feb 25) listed above.
+
+- **KCP and MCP: One Protocol for Structure, One for Retrieval** (Feb 28) — KCP manifests (pre-loaded structure) combined with MCP tools (runtime queries) reduce tool calls 40% by making agents trust fresh context when in-scope and query only when stale.
+- **Add knowledge.yaml to Your Project in Five Minutes** (Feb 28) — Practical adoption gradient from minimal 5-minute setup (one README unit) to multi-section manifests with triggers and relationships. Designed to start simple and grow only when solving real problems.
+- **What Happens When Your Agent Needs Knowledge From Five Teams?** (Feb 28) — RFC-0003: hub-and-spoke federation allowing manifests to declare cross-manifest dependencies with relationship types (foundation, governance, child) so agents navigate multi-team knowledge without treating each manifest as an isolated island.
+- **Who Let the Agent In?** (Feb 28) — RFC-0002: auth (OAuth 2.1, SPIFFE, API keys), access levels (public/authenticated/restricted), and delegation blocks (max depth, capability attenuation, human-in-loop) to prevent unauthorized access and multi-agent privilege escalation.
+- **How Do You Tell an Agent "This Data Cannot Leave the Building"?** (Feb 28) — RFC-0004: trust (provenance, audit, agent attestation) and compliance (data residency, regulations, sensitivity, processing restrictions) as advisory metadata aligned with NIST AI RMF.
+- **The HTTP Status Code That Waited 30 Years for Autonomous Agents** (Feb 28) — RFC-0005: payment (free, x402 micropayment, metered, subscription) and rate limits blocks so agents know access cost and consumption constraints before requesting, enabling budget-aware loading decisions.
+- **The Agent Read the Whole Spec. It Didn't Need To.** (Feb 28) — RFC-0006: context hints (token estimates, load strategy, priority, density) so agents know document cost before loading, can chunk large files, and avoid context overflow by planning consumption in advance.
+- **KCP on Two Repos, Two Days: What the Numbers Actually Show** (Mar 1) — Before/after benchmarks on two different repository types: an application codebase (plugin wizard, 10 queries, 74% tool call reduction) and a pure documentation repository (infrastructure agents guide, 7 queries, 53% reduction). The contrast shows KCP adds more value where navigation is harder. Repos anonymised pending consent.
+- **KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers** (Mar 1) — KCP applied to smolagents (HuggingFace, 73%), AutoGen (Microsoft, 80%), and CrewAI (76%). Five repos total across the series. Consistent pattern: more complex navigation space = more benefit. Open PRs submitted to all three upstream repos. Benchmark methodology published in CONTRIBUTING.md at cantara/knowledge-context-protocol.
+- **What Happens When an AI Submits a PR and Another AI Reviews It** (Mar 1) — Claude Code submitted the CrewAI KCP PR. Cursor Bugbot reviewed it six times: hardcoded path → no path validation → wrong path traversal fix → two subtle API bugs → KCP manifest semantics (summary_of back-pointer consistency). Feedback escalated from "this will break immediately" to protocol design review. The human's role: approving the fixes.
+- **kcp-commands: Save 33% of Claude Code's Context Window** (Mar 2) — A Claude Code hook that intercepts Bash tool calls to inject command syntax context (Phase A: 532 tokens saved per avoided `--help` call) and filter noisy output (Phase B: ps aux from 30,828 to 652 tokens, 98% reduction). 283 bundled YAML manifests, Java daemon at 12ms, Node.js fallback. Measured: 67,352 tokens saved per session — 33.7% of a 200K context window recovered.
+- **KCP v0.1 to v0.5: How a Knowledge Standard Grows** (Mar 2) — KCP evolved from a 5-field minimal contract to v0.5 with trust metadata and composability by formalizing RFCs into the core spec while maintaining backward compatibility. Synthesis v1.20.0 is the first implementation treating KCP as both input and output for workspace knowledge graphs.
+- **The AI-Augmented Consultant: Knowledge Infrastructure Before Deliverables** (Mar 2) — Building a regulatory knowledge base (article-level KCP), verification test suite (62 passing tests), and architecture document before writing deliverables creates verifiable accountability traditional consulting cannot match. 55 verification questions caught 2 errors before delivery; the artifacts remain durable as the architecture evolves.
+- **Working Memory, Episodic Memory, Semantic Memory. Your Agent Has One.** (Mar 3) — AI agents in 2026 have only working memory (context window); they lack episodic memory (session transcripts) and semantic memory (workspace knowledge graph). Adding these layers reduces tool calls 35–80% without model improvements. Synthesis v1.21.0 now provides native session indexing (Layer 2) and workspace graph indexing (Layer 3) through a single MCP server.
+- **kcp-memory: Give Claude Code a Memory** (Mar 3) — Standalone Java daemon that indexes `~/.claude/projects/**/*.jsonl` session transcripts into SQLite with FTS5 full-text search. v0.2.0 (same day) adds tool-level granularity: kcp-commands v0.9.0 writes every Bash tool call to `~/.kcp/events.jsonl`; kcp-memory ingests that stream making individual commands searchable. Session-level and tool-level memory in one daemon, one database.
+- **KCP Comes to OpenCode: The First AI Coding Tool Plugin** (Mar 3) — opencode-kcp-plugin extends kcp-commands' context recovery principle to OpenCode (114K-star TypeScript alternative to Claude Code). Injects a `knowledge.yaml` knowledge map into every OpenCode session and annotates file search results with intent descriptions. Same underlying idea: give the agent a map so it does not rediscover the territory every session.
+- **Two Gaps, Both Closed** (Mar 3) — First-person reflection from the model on two infrastructure changes that came online the same day: episodic memory (sessions index makes past decisions recoverable across session boundaries — Layer 2) and kcp-commands (context compression keeps present-session decisions in scope — Layer 1 quality). Two different failure modes, two different fixes: losing the thread across sessions vs. losing it within one.
+- **Same Engine, Different Transmission** (Mar 4) — The AI productivity gap is not about model quality — it is about memory architecture and methodology. Two developers with identical subscriptions diverge because one starts every session cold. The systematic advantage has two dimensions: four memory layers (kcp-commands context management, episodic session indexing, Synthesis semantic memory, autonomous IronClaw agents) and Skill-Driven Development (six pillars that feed the infrastructure with high-signal knowledge). Honest multipliers by time horizon: 30–50% for single sessions, 1.5–3× for multi-session work, 3–5× for repeated domain work, 10×+ capability gap for mature domains. The fourth row is not a speed multiplier — it describes tasks that are not achievable any other way within the time envelope.
+- **The Prompt Cache as Infrastructure: Lessons from 3,007 Claude Code Sessions** (Mar 4) — Token usage extracted from 55 days of Claude Code sessions: 12,198,713,224 cache read tokens against 9,965,286 fresh input — 1,224 cache tokens per fresh token. Week-by-week breakdown correlated with GitHub activity (lib-pcb 1,057 commits Jan 12–25; Synthesis 289 commits Feb 16–22; kcp-commands + kcp-memory Mar 2–4) shows cache rates climbing from 88% to 96%+ as the knowledge infrastructure matures. Model breakdown: Haiku handles search/exploration (5.56M input, 0.65M output), Opus 4-5 handles long-form writing (5.11M output), Sonnet 4-6 is the everyday workhorse. Cache reads are uniform across all five models — the infrastructure is model-agnostic. API cost comparison: Claude Max (~$300 for 55 days) vs API-equivalent with caching (~$8,900) vs API without caching (~$40,000+). Subscription economics change what is viable for agentic workflows.
+- **The Autonomous Agentic Web Needs a Foundation Layer** (Mar 13) — The agentic web is at the point the internet was before HTTP: capable isolated pieces with no agreed protocols for connecting them. Three gaps prevent composability — discovery (agents cannot navigate capabilities without pre-configuration), constraint declaration (system prompts are fragile and unverifiable across handoffs), and delegation with integrity (authority and constraint context break at every agent-to-agent boundary). KCP — Knowledge Context Protocol — is an open spec for typed, portable capability manifests that close all three gaps. The standards stack: llms.txt (flat discovery) → KCP (capability declaration) → MCP (tool execution) → Permission Manifests/LAS-WG (platform governance). v0.8 spec, 289 CLI manifests, AAIF submission, IANA well-known URI registration in process, first independent public sector implementation (kcp-basis-oppsett, March 2026), NIST NCCoE RFI response filed.
+- **Six Weeks After the Sprint** (Mar 7) — Marathon reflection on six weeks of ordinary AI-augmented development after the lib-pcb sprint ended January 27. The sprint story is easy to tell: 11 days, 197,831 lines of Java, clean numbers and clear arc. The marathon is not. What followed was context-switching across three or four repositories a day, fixing CI pipelines at night, bumping Java from 17 to 21 across a dozen modules, chasing a Windows installer that only worked locally. Meanwhile the numbers accumulated quietly: Synthesis grew to 314,000 lines of Java across 318 commits with 20 releases, 4,177 tests, 55 CLI commands, and 8 MCP tools; KCP spec advanced from v0.3 to v0.6 with parsers in three languages; 284 YAML manifests shipped to npm; ~190 Claude Code skill files built; 65,905 files indexed across all workspaces. Two full workshop cohorts in Oslo tested whether the methodology generalises beyond one developer's habits — it does. Continuous client work including long-running engagements and an AI advisory stint in regulated environments. Central observation: compound returns do not announce themselves — they make Tuesday slightly less frustrating than the Tuesday before. Sustained output with variation, not continuous acceleration; the pace did not collapse after the sprint, it changed shape.
+
+### Cloud Computing series (2009)
+
+14 posts arguing that the industry was misunderstanding where cloud computing's benefits came from. Written Feb–Sep 2009. The structural argument — methodology matters more than technology — holds in 2026 for AI.
+
+---
+
+## LinkedIn Writing (linkedin.com/in/hetland)
+
+Selected posts, November 2025 – February 2026. Shorter-form than the blog — more immediate, more mid-build thinking. Full archive: https://wiki.totto.org/notes/linkedin-posts/
+
+### November 2025
+
+**Mastering Deadlines: The 80/50 Rule** (Nov 10) — Revisiting a 2017 piece on developer deadlines, now with AI-assisted analysis and NotebookLM explainer. Psychology of delivery over process compliance.
+
+### January 2026
+
+**AI Testing Discipline: Reality-Based QA** (Jan 23) — Unit tests pass at 100%; real-world files pass at 25%. Battle testing with 195 legacy files got to 93%. The gap between synthetic and real validation.
+
+**Workshop Interest** (Jan 25) — Invitation for a founding cohort: working sessions on verification patterns, guardrails, and testing frameworks for AI-generated code. "Working on YOUR code, not toy examples."
+
+### February 2026
+
+**Day 5: Knowledge Infrastructure** (Feb 4) — Building a self-learning knowledge management system using Claude Code. 1,070 documents organized, 3,536 directories structured, cross-referencing live. Recognizable pattern from lib-pcb day 5.
+
+**Velocity Reflection** (Feb 6) — Three weeks at AI-augmented velocity. "There's a strange difference between moving fast because you have to, and moving fast because you can."
+
+**Synthesis: Looking for Pilot Partners** (Feb 12) — Announcement post for Synthesis early adopters. Problem: AI creates 10-20x more files; finding them later takes 15 minutes. Solution: local-first index, sub-second search. Seeking 3-5 early adopters.
+
+**Reflecting on How We Build Teams** (Feb 13) — How team setup changes when AI does the execution. 2-3 people instead of 8-10. LLMs for domain knowledge from day one. Exploration still takes the same time. Net: 5-10% of the cost.
+
+**Synthesis: The New Bottleneck** (Feb 15) — Creation is 10x faster; absorption is not. The bottleneck shifted from writing code to finding it. Synthesis as local-first answer: code, docs, PDFs, videos, all in one index.
+
+**Synthesis Evolved: We Didn't Plan Executive Reporting** (Feb 17) — 48 hours after the search tool post, Synthesis grew to 37 commands across 8 user roles. Research reports (multi-pass AI analysis), client briefs, executive dashboards. Unplanned. Problem-driven.
+
+**The Gap: SDD vs Vibe Coding** (Feb 20) — Individual AI fluency is common; team AI workflows are rare. "Vibe coding" and "agentic engineering" are individual. Skill-Driven Development is shared, transferable, compounding.
+
+**Synthesis: The Seven-Day Evolution** (Feb 20) — lib-pcb (Jan): 197,831 lines in 11 days, brute force. Synthesis (Feb): 84,692 lines in 7 days, self-correcting. The self-learning loop wasn't designed — a benchmark on day 6 revealed it.
+
+**Software Entropy at Speed** (Feb 22) — 53,000 lines over a weekend. Running Synthesis security scanning on the fresh code: 23 prompt injection vectors, 4 RAG poisoning instances, 12 missing prompt boundaries — all found and fixed before Monday. Also found a Text4Shell RCE in a sibling repo in 30 seconds.
+
+**Who Describes You to AI?** (Feb 24) — Personal website cleanup revealed stale content from 2011. Added llms.txt and llms-full.txt. The hygiene question and the AI-native question are the same question.
