@@ -99,3 +99,7 @@ We are in a window where every layer is being rebuilt simultaneously, mostly by 
 But the real constraint is the integration between layers. The informal assumptions. The undocumented contracts.
 
 Who is working on the seams?
+
+---
+
+*The visual companion to this post — a slide deck generated from these field notes — is available here: [Agentic Infrastructure: The Stack That's Being Rebuilt](/assets/presentations/agentic-stack-layer-by-layer.pdf)*
