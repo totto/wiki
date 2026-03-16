@@ -64,7 +64,7 @@ Steve Jones made a parallel observation about the JVM: abstractions work when th
 
 André Lindenberg pointed out something that matches my own experience: agents don't fail at the action. They fail at what they knew before they acted.
 
-This is the knowledge/context layer, and it is where I've spent most of my building time. When I started working on [KCP (Knowledge Context Protocol)](https://github.com/Cantara/knowledge-context-protocol) and [Synthesis](https://github.com/Cantara/Synthesis), it was because I kept running into the same problem: an agent with access to powerful tools but insufficient context makes confidently wrong decisions. The failure is upstream of the action, not at the point of execution.
+This is the knowledge/context layer, and it is where I've spent most of my building time. When I started working on [KCP (Knowledge Context Protocol)](https://github.com/Cantara/knowledge-context-protocol) and [Synthesis](/blog/2026/02/25/ai-agents-without-knowledge-infrastructure-are-interns-with-amnesia/), it was because I kept running into the same problem: an agent with access to powerful tools but insufficient context makes confidently wrong decisions. The failure is upstream of the action, not at the point of execution.
 
 Structured, machine-readable context is not a nice-to-have for agentic workflows. It is load-bearing infrastructure. Without it, every other layer in the stack operates on incomplete information.
 
