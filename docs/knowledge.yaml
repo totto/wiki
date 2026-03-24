@@ -466,6 +466,24 @@ units:
     depends_on: [blog-kcp-auth-and-delegation]
     triggers: [a2a, agent-card, multi-agent, agent-to-agent, front-door, filing-cabinet, invocation, knowledge-access, complementary, google-a2a]
 
+  - id: blog-kcp-manifest-quality
+    path: blog/posts/2026-03-24-kcp-manifest-quality-feedback.md
+    intent: "How does the manifest quality feedback loop work — exit_code_hint, retry rates, help-followup rates, error rates, and manifest version tracking?"
+    scope: global
+    audience: [human, developer, agent]
+    validated: 2026-03-24
+    depends_on: [blog-kcp-commands]
+    triggers: [kcp-commands, kcp-memory, manifest-quality, feedback-loop, retry-rate, exit-code-hint, analyze, version-tracking, sha-256, quality-score]
+
+  - id: blog-kcp-instrumentation-to-infrastructure
+    path: blog/posts/2026-03-24-kcp-tools-from-instrumentation-to-infrastructure.md
+    intent: "What is the full arc from kcp-commands/kcp-memory v0.9 passive logging to v0.18 self-maintaining infrastructure — suppression, version tracking, subagent memory, inline analysis, auto-update?"
+    scope: global
+    audience: [human, developer, agent, architect]
+    validated: 2026-03-24
+    depends_on: [blog-kcp-commands, blog-kcp-manifest-quality]
+    triggers: [kcp-commands, kcp-memory, suppression-list, version-tracking, subagent-memory, auto-update, self-maintaining, infrastructure, v0.18, passive-to-active]
+
   - id: blog-sdd-vs-spec
     path: blog/posts/2026-03-07-sdd-vs-spec-driven.md
     intent: "How does Skill-Driven Development compare to spec-driven approaches for AI-assisted development?"
@@ -925,3 +943,11 @@ relationships:
   - from: blog-kcp-adoption-guide
     to: blog-kcp-commands
     type: context
+
+  - from: blog-kcp-commands
+    to: blog-kcp-manifest-quality
+    type: enables
+
+  - from: blog-kcp-manifest-quality
+    to: blog-kcp-instrumentation-to-infrastructure
+    type: enables
