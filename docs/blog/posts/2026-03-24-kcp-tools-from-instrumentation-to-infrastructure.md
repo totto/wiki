@@ -21,6 +21,8 @@ authors:
 
 # From Instrumentation to Infrastructure
 
+kcp-commands and kcp-memory are built around manifests -- YAML files that tell an AI agent how to use a CLI tool correctly: key flags, preferred invocations, output patterns to strip. kcp-commands injects the right manifest before each Bash call so the agent doesn't have to rediscover how `kubectl apply` or `terraform plan` work on every attempt.
+
 kcp-commands v0.9.0 and kcp-memory v0.4.0 were passive observers. They watched what Claude did, logged it, made it searchable. Useful, but limited. The tools had no opinions about their own data.
 
 The work since then -- through kcp-commands v0.18.0 and kcp-memory v0.18.0 today -- has been about a different question: what happens when the tools know what to ignore, can measure their own quality, and maintain themselves?
