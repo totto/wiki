@@ -21,7 +21,15 @@ authors:
 
 # From Instrumentation to Infrastructure
 
-kcp-commands and kcp-memory are built around manifests -- YAML files that tell an AI agent how to use a CLI tool correctly: key flags, preferred invocations, output patterns to strip. kcp-commands injects the right manifest before each Bash call so the agent doesn't have to rediscover how `kubectl apply` or `terraform plan` work on every attempt.
+AI agents like Claude Code run dozens of CLI commands per session, orchestrating complex multi-step workflows. Without structured knowledge of each tool, the agent guesses flags, calls `--help` to discover syntax, or retries when the first attempt fails. Each mistake compounds: a wrong flag in step 3 can invalidate everything that follows.
+
+kcp-commands solves this with manifests -- YAML files that encode exactly what an agent needs to use a CLI tool correctly: key flags, preferred invocations, output patterns to strip. The daemon injects the right manifest before each Bash call, turning an uninformed first attempt into a guided one.
+
+kcp-memory adds the second dimension: episodic memory. Every session is indexed. Every tool call is logged. The agent can search what it did last week, recover the reasoning from a delegated subagent, and see which manifests are actually working in practice.
+
+Together they make Claude Code measurably smarter: 33% of the context window recovered, `--help` calls eliminated, and an agent that learns from its own history instead of starting from zero every session.
+
+The latest addition closes the loop: the tools now learn from their own performance. Every Bash call produces an outcome signal. kcp-memory tracks retry rates, help-followup rates, and error rates per manifest -- surfacing which ones are guiding the agent well and which ones are steering it wrong. The highest-failure manifests have already been rewritten based on the data. The infrastructure measures its own effectiveness and improves.
 
 kcp-commands v0.9.0 and kcp-memory v0.4.0 were passive observers. They watched what Claude did, logged it, made it searchable. Useful, but limited. The tools had no opinions about their own data.
 
