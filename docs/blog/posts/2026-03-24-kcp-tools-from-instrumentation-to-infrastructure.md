@@ -27,7 +27,7 @@ The work since then -- through kcp-commands v0.18.0 and kcp-memory v0.18.0 today
 
 <!-- more -->
 
-![KCP: The Evolution from Instrumentation to Infrastructure — four phases from passive logging to self-maintaining infrastructure](/assets/images/blog/kcp-instrumentation-to-infrastructure-overview.png)
+![The Evolution of KCP: From Passive Tools to Active Infrastructure — four phases: efficiency through suppression, data-driven quality loops, deep memory and subagents, self-maintenance and agent agency](/assets/images/blog/kcp-instrumentation-to-infrastructure-overview.png)
 
 ## The tool that learned what it does not need to teach
 
