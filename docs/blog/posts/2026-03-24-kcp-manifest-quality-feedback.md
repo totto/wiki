@@ -21,9 +21,9 @@ authors:
 
 # The Manifest Quality Feedback Loop
 
-kcp-commands ships 289 manifests. Each one is a bet: that the flags we chose are the ones the agent will actually need, that the output filter is tight enough, that the preferred invocations match real usage. Some of those bets pay off. Some do not.
+kcp-commands ships 291 manifests. Each one is a bet: that the flags we chose are the ones the agent will actually need, that the output filter is tight enough, that the preferred invocations match real usage. Some of those bets pay off. Some do not.
 
-Until now there was no way to know which. A manifest for `kubectl apply` could be steering the agent into the wrong flags on every invocation, and we would never see it unless we happened to watch the session in real time. At 289 manifests and hundreds of tool calls per day, that does not scale.
+Until now there was no way to know which. A manifest for `kubectl apply` could be steering the agent into the wrong flags on every invocation, and we would never see it unless we happened to watch the session in real time. At 291 manifests and hundreds of tool calls per day, that does not scale.
 
 Today we are shipping two small releases that close that gap: **kcp-commands v0.15.0** and **kcp-memory v0.7.0**. Together they create a feedback loop from agent behaviour back to manifest quality -- not by guessing, but by measuring what actually happened.
 
@@ -35,7 +35,7 @@ Today we are shipping two small releases that close that gap: **kcp-commands v0.
 
 ## Every manifest is a blind bet
 
-![Every manifest is a bet on future agent behavior — 289 manifests, no feedback](/assets/images/blog/kcp-feedback-slide-02.jpg)
+![Every manifest is a bet on future agent behavior — 291 manifests, no feedback](/assets/images/blog/kcp-feedback-slide-02.jpg)
 
 Every manifest in the library was authored by a human making a prediction about what a future agent will need. Those predictions are informed — they come from reading docs, running the commands, watching real sessions — but they are still predictions. There is no mechanism that closes the loop and tells you which ones were right.
 
@@ -129,18 +129,18 @@ That is a harder problem. For now, the ranked list is enough to make the improve
 ![Run the analysis. Submit the PR. — The complete feedback loop: Human Author → Manifest → Agent Execution → Telemetry → Analyze → Human Author](/assets/images/blog/kcp-feedback-slide-12.jpg)
 
 ```bash
-# kcp-commands v0.15.0
 curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/install.sh | bash -s -- --java
-
-# kcp-memory v0.7.0
 curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-memory/main/bin/install.sh | bash
 
-# Then run:
 kcp-memory analyze
 ```
 
-If you have been using kcp-commands for a while, you already have the event data. `kcp-memory analyze` will read it and show you which of your manifests are working and which ones need attention. If you find improvements, submit a PR -- 289 manifests is a lot of surface area, and the data now tells us exactly where to look.
+If you have been using kcp-commands for a while, you already have the event data. `kcp-memory analyze` will read it and show you which of your manifests are working and which ones need attention. If you find improvements, submit a PR -- 291 manifests is a lot of surface area, and the data now tells us exactly where to look.
 
 - [kcp-commands on GitHub](https://github.com/Cantara/kcp-commands)
 - [kcp-memory on GitHub](https://github.com/Cantara/kcp-memory)
 - [Knowledge Context Protocol spec](https://github.com/Cantara/knowledge-context-protocol)
+
+---
+
+*This is one part of the story. The full arc -- suppression list, version tracking, subagent memory, analysis as an MCP tool, and auto-update -- is in the companion post: [From Instrumentation to Infrastructure](./2026-03-24-kcp-tools-from-instrumentation-to-infrastructure.md).*
