@@ -200,6 +200,15 @@ Utnevnt som den forste Java Champion i Skandinavia.
 
 <div class="timeline-entry" markdown>
 
+#### Medlem -- NIST SAJACC Cloud Computing arbeidsgruppe
+<span class="timeline-date">2012 -- 2013</span>
+
+Medlem av NIST Standards Acceleration to Jumpstart Adoption of Cloud Computing (SAJACC) arbeidsgruppe -- et amerikansk statlig initiativ for å utvikle brukscaser og standardanbefalinger for skyinteroperabilitet, innsendt til NIST.
+
+</div>
+
+<div class="timeline-entry" markdown>
+
 #### President -- javaBin (Norsk Java brukerforening)
 <span class="timeline-date">1999 -- 2008</span>
 

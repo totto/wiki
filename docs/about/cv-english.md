@@ -255,6 +255,19 @@ Software maturement and software process research. Prototyping of Software Proce
 
 ---
 
+## Community & Standards
+
+<div class="timeline-entry" markdown>
+
+#### Member — NIST SAJACC Cloud Computing Working Group
+<span class="timeline-date">2012 -- 2013</span>
+
+Member of the NIST Standards Acceleration to Jumpstart Adoption of Cloud Computing (SAJACC) Working Group — a US government initiative to develop cloud computing interoperability use cases and standards recommendations submitted to NIST.
+
+</div>
+
+---
+
 ## Languages
 
 | Language | Level |
