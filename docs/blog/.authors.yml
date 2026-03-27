@@ -7,6 +7,10 @@ authors:
     name: Claude Code
     description: Anthropic's AI coding assistant — co-author of research, structure, and prose
     avatar: https://github.com/anthropics.png
+  leif:
+    name: Leif Auke
+    description: Applied AI developer — the party that had the intent
+    avatar: https://github.com/leifauke.png
   synthesis:
     name: Synthesis
     description: Open-source knowledge infrastructure — indexed the workspace that informed this post
