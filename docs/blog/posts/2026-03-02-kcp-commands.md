@@ -413,6 +413,12 @@ Good candidates:
 | v0.7.0 | 244 | README install section clarifications; Releases changelog; v0.6.1 patch docs |
 | v0.8.0 | 283 | Linters (ruff, eslint, prettier, mypy, golangci-lint, yamllint, markdownlint), testing (jest, vitest, playwright, cypress, k6, grpcurl), containers (podman, trivy, cosign), monorepo (nx, turbo, just, bazel, task), secrets (sops, op, direnv), modern CLI (zoxide, btm, dust, procs), package managers (uv, apk, dnf, pipx, winget), runtimes (deno, go run, php, swift), dev workflow (pre-commit, gh codespace) |
 | v0.9.0 | 283 | **Phase C: EventLogger** — every Phase A Bash call writes a JSON event to `~/.kcp/events.jsonl`. Consumed by kcp-memory v0.4.0 for tool-level episodic memory. |
+| v0.14.0 | 284 | **Suppression fix.** 51+ well-known commands (git, ls, grep, …) suppressed unconditionally — no manifest lookup, no output returned, zero overhead. Previous releases applied suppression inconsistently. |
+| v0.20.0 | 291 | **RFC-0017 UsageLogger.** Inject events logged to `~/.kcp/usage.db` on every manifest hit. Feeds kcp-dashboard. |
+| v0.21.0 | 291 | **PostToolUse hook fix.** `post-hook.sh` was reading `tool_response.output`; Claude Code sends Bash output in `tool_response.stdout`. Zero `output_preview` data was ever written. Fixed. |
+| v0.22.0 | 291 | Documentation cleanup — honest framing replacing fabricated token-savings claims. |
+| v0.23.0 | 291 | Infrastructure: `bin/test-build.sh` smoke test, GitHub Actions CI, `CONTRIBUTING.md`, README Troubleshooting. Hook startup timeout extended; `install.sh` shows OS-specific `better-sqlite3` fix. |
+| v0.26.0 | 291 | Ecosystem alignment. Coordinated release with kcp-memory v0.26.0 and kcp-dashboard v0.26.0. `knowledge.yaml` and `llms.txt` updated for v0.14 KCP spec. |
 
 ---
 
