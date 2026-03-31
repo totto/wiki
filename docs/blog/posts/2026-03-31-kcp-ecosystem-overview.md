@@ -45,6 +45,8 @@ What's missing is infrastructure. Not smarter prompting. Not longer context. Inf
 
 That infrastructure is KCP.
 
+<!-- more -->
+
 ---
 
 ## KCP: The Missing Infrastructure Layer
