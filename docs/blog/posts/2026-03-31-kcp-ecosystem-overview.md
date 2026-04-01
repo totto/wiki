@@ -81,11 +81,11 @@ The hook operates in three phases on every command:
 
 **Phase A — Proactive guidance (before execution).** When Claude is about to run a command, kcp-commands injects a compact `additionalContext` block with use-case flags and preferred invocations. Instead of Claude running `ps --help` first and parsing the output, it already has the signal it needs. That is roughly 532 tokens saved per avoided `--help` call.
 
-**Phase B — Output noise filtering (after execution).** Commands like `mvn`, `terraform`, and `kubectl` produce enormous outputs. Phase B filters strip the scaffolding and return only what matters. `ps aux` output drops from 30,828 tokens to 652 tokens in the benchmark. That is not rounding error — that is recovering a meaningful slice of the context window.
+**Phase B — Output noise filtering (after execution).** Commands like `mvn`, `terraform`, and `kubectl` produce enormous outputs. Phase B applies per-command output filters defined in the same YAML manifests. For `mvn`, the filter strips lifecycle boilerplate and keeps compiler errors, test failures, and the final build status. For `terraform plan`, it keeps resource changes and drops the unchanged infrastructure noise. The filters are explicit, readable, and configurable — if a filter is dropping something you care about, you can edit the manifest or disable filtering for that command entirely. `ps aux` output drops from 30,828 tokens to 652 tokens in the benchmark; the kept portion is the process list, not a summary of it.
 
 **Phase C — Event logging (after execution).** Every Bash call gets written to `~/.kcp/events.jsonl`. This is how kcp-commands feeds the rest of the ecosystem.
 
-The headline metric: approximately 84% of Bash calls are suppressed outright — the daemon returns HTTP 204 immediately for well-known, unambiguous tools like `git`, `ls`, and `grep`. Zero overhead, zero injection, just pass-through. The 16% that do get guidance are the calls where guidance has measurable value. Across a benchmark set of 33 commands, 72% received suppression, eliminating an estimated 7,659 tokens per session. Measured total token savings: 67,352 tokens — 33.7% of a 200K context window recovered.
+For most everyday commands, kcp-commands does nothing at all. When Claude runs `git status`, `ls`, or `grep`, the daemon recognises these as commands where injecting guidance would be noise, not signal — it responds with an empty "no action needed" reply and the command runs normally with zero overhead. This pass-through covers approximately 84% of Bash calls in benchmarks. The remaining 16% — commands like `mvn`, `kubectl`, `terraform`, `docker` — are where the guidance and filtering actually run. Token savings figures in the benchmarks are from controlled simulations and should be treated as indicative rather than precise; real-world results vary by project and workflow.
 
 The daemon runs as a background process with two backend implementations: Java (12ms per call at steady state) and Node.js (approximately 250ms). The Java daemon is the recommended default.
 
@@ -107,7 +107,7 @@ kcp-memory fills the middle layer. Without it, "what was I doing in this project
 
 ![Surgical recall: memory.db → CLI / HTTP API / MCP server with 8 inline tools](/assets/images/blog/kcp-ecosystem-slide-08-kcp-memory-recall.png)
 
-The indexing is incremental — only new or changed files are processed on each scan. Source inputs are the `.jsonl` session transcripts from `~/.claude/projects/`, plus the `~/.kcp/events.jsonl` event log written by kcp-commands. The tool also supports Gemini CLI and Codex CLI transcripts.
+kcp-memory reads two sources: the `.jsonl` session transcript files Claude Code writes to `~/.claude/projects/`, and the `~/.kcp/events.jsonl` event log produced by kcp-commands. It indexes both into a local SQLite database. Indexing is incremental — on each scan, only new or changed transcripts are processed, so re-scanning a large project history is fast. The tool also supports Gemini CLI and Codex CLI transcripts.
 
 The events search is the more surgical interface: `kcp-memory events search "kubectl apply"` returns every time Claude ran that command, with project directory, session ID, and timestamp. Useful for debugging deployment patterns or understanding what actually happened in a long session.
 
