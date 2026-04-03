@@ -1,7 +1,7 @@
 kcp_version: "0.6"
 project: wiki.totto.org
 version: 1.3.0
-updated: 2026-03-25
+updated: 2026-04-03
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────
@@ -492,6 +492,15 @@ units:
     validated: 2026-03-25
     depends_on: [blog-kcp-instrumentation-to-infrastructure]
     triggers: [kcp, v0.14, query vocabulary, query, token budget, has_capabilities, exclude_stale, federation_scope, scored results, manifest composition, includes, overrides, excludes, rfc-0014, rfc-0007, rfc-0008, fork, inherit]
+
+  - id: blog-squash-merge-murders
+    path: blog/posts/2026-04-03-the-squash-merge-murders.md
+    intent: "What does AI-augmented development at scale actually look like? A påskekrim crime story covering TS2783/TS2322 CI failures, ADO squash-merge cascade across 6 stacked PRs, and the SDD workshop twist: a student ships 15,500 LOC / 326 tests / 82% coverage in 2 days."
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-04-03
+    depends_on: [blog-kcp-v014-query-composition]
+    triggers: [exocortex, claude-code, typescript, ts2783, ts2322, azure-devops, squash-merge, rebase, ci-cd, vitest, esbuild, tsc, paskekrim, easter, sdd, workshop, velocity, friction, greenfield, wasm, 15500-loc, 326-tests, 82-percent-coverage]
 
   - id: blog-sdd-vs-spec
     path: blog/posts/2026-03-07-sdd-vs-spec-driven.md
