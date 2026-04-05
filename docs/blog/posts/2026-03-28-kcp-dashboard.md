@@ -29,7 +29,7 @@ Today we are releasing **kcp-dashboard v0.22.0** -- a terminal UI that reads bot
 
 <!-- more -->
 
-![kcp-dashboard v0.22.0 terminal UI showing guidance effects, session profile, and command coverage panels](/assets/images/blog/kcp-dashboard-overview.png)
+![kcp-dashboard v0.22.0 — live terminal UI: 159 commands guided, 69% manifest coverage, 3 of 53 searches recalled prior work, session profile histogram, commands guided bar chart](/assets/images/blog/kcp-dashboard-v0.22.0-screenshot.png)
 
 ---
 
