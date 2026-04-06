@@ -511,6 +511,14 @@ units:
     depends_on: [blog-what-a-skill-is]
     triggers: [sdd, skill-driven-development, spec-driven, comparison, methodology, ai-development]
 
+  - id: blog-quantum-hardware-abstractions-leak
+    path: blog/posts/2026-04-06-the-abstractions-leak.md
+    intent: "What does it actually take to run a quantum physics experiment on real IBM hardware, and why do the abstractions leak at every layer — hardware selection, qubit topology, and gate orientation?"
+    scope: global
+    audience: [human, developer, physicist, architect, agent]
+    validated: 2026-04-06
+    triggers: [quantum, ibm-quantum, ibm-strasbourg, eagle-r3, heron-r2, ecr-gate, coupling-map, heavy-hex, cnot, transpiler, gate-direction, circuit-depth, fidelity, coherence, debugging, experimentation, quantum-computing, leaky-abstraction, subgraph-matching, syndrome-extraction]
+
   - id: blog-agent-memory-rots
     path: blog/posts/2026-04-06-agent-memory-rots.md
     intent: "Why does agent memory rot, how do you detect it, and what is the maintenance system (topic-health, topic-triage, ConsolidateState) built to stop it?"
