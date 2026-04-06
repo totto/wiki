@@ -1,7 +1,7 @@
 kcp_version: "0.6"
 project: wiki.totto.org
-version: 1.3.1
-updated: 2026-04-05
+version: 1.3.2
+updated: 2026-04-06
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────
@@ -511,6 +511,15 @@ units:
     depends_on: [blog-what-a-skill-is]
     triggers: [sdd, skill-driven-development, spec-driven, comparison, methodology, ai-development]
 
+  - id: blog-agent-memory-rots
+    path: blog/posts/2026-04-06-agent-memory-rots.md
+    intent: "Why does agent memory rot, how do you detect it, and what is the maintenance system (topic-health, topic-triage, ConsolidateState) built to stop it?"
+    scope: global
+    audience: [human, developer, architect, agent]
+    validated: 2026-04-06
+    depends_on: [blog-synthesis-practitioners-journal, blog-three-layer-ai-memory]
+    triggers: [agent-memory, memory-rot, topic-health, topic-triage, consolidate-state, memory-maintenance, freshness, completeness, hot-warm-cold, archive-prune-update-keep, exocortex, synthesis, fts5, behavioral-scoring, nightly-cron, circular-dependency, llm-maintenance, episodic-semantic-gap, false-hot, memory-lies, index-lies]
+
   - id: blog-synthesis-practitioners-journal
     path: blog/posts/2026-04-05-synthesis-practitioners-journal.md
     intent: "What is Synthesis, how did it evolve from a search tool into an 8-layer ExoCortex memory system, and what do the benchmark results actually show?"
@@ -900,6 +909,14 @@ relationships:
 
   - from: synthesis-releases
     to: blog-two-gaps
+    type: enables
+
+  - from: blog-synthesis-practitioners-journal
+    to: blog-agent-memory-rots
+    type: enables
+
+  - from: blog-three-layer-ai-memory
+    to: blog-agent-memory-rots
     type: enables
 
   - from: synthesis-releases
