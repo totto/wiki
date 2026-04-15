@@ -27,7 +27,7 @@ The reason it caught my eye is that the ExoCortex -- the eight-layer stack runni
 
 This is not a scorecard. Boris Cherny's work is good. Several of the patterns in his repository are things the ExoCortex should adopt. But the reverse is also true. The comparison is useful because two practitioners working independently on the same problem -- making Claude Code reliable at scale -- arrived at different answers, and the gap between those answers is where the next generation of tooling lives.
 
-![The Claude Code Architecture Divergence](../assets/images/exocortex-vs-claude-code-best-practice/slide-001.png)
+![The Claude Code Architecture Divergence](../../assets/images/exocortex-vs-claude-code-best-practice/slide-001.png)
 
 ---
 
@@ -35,7 +35,7 @@ This is not a scorecard. Boris Cherny's work is good. Several of the patterns in
 
 Both setups start from the same observation: Claude Code out of the box is capable but amnesiac. It forgets everything between sessions. It wastes tokens rediscovering context. It makes the same mistakes repeatedly.
 
-![The Shared Baseline: Capable but Amnesiac](../assets/images/exocortex-vs-claude-code-best-practice/slide-002.png)
+![The Shared Baseline: Capable but Amnesiac](../../assets/images/exocortex-vs-claude-code-best-practice/slide-002.png)
 
 ---
 
@@ -43,7 +43,7 @@ Both setups start from the same observation: Claude Code out of the box is capab
 
 The repository is organized around operational patterns. Eighty-four concrete tips spanning subagents, slash commands, skills, hooks, MCP server integration, and orchestration workflows. The strongest contributions are structural, not cosmetic.
 
-![Path A: Memory as Configuration](../assets/images/exocortex-vs-claude-code-best-practice/slide-004.png)
+![Path A: Memory as Configuration](../../assets/images/exocortex-vs-claude-code-best-practice/slide-004.png)
 
 **Orchestration grammar.** A formalized Command-Agent-Skill pattern where a command triggers an agent, which invokes a skill chain. The `/weather-orchestrator` demo is small but demonstrates the principle: reusable, version-controlled chains that compose. Eight different development workflows are compared side by side -- Superpowers, Spec Kit, BMAD, Get Shit Done, OpenSpec, HumanLayer, and more. That comparative work alone is worth the read.
 
@@ -63,7 +63,7 @@ The repository also includes honest reporting on CLAUDE.md best practices, memor
 
 The ExoCortex is eight layers. Each solves a specific failure mode that the layer below cannot address alone.
 
-![Path B: Memory as Infrastructure](../assets/images/exocortex-vs-claude-code-best-practice/slide-005.png)
+![Path B: Memory as Infrastructure](../../assets/images/exocortex-vs-claude-code-best-practice/slide-005.png)
 
 **Layer 1 -- Working Memory.** Claude Code plus a CLAUDE.md hierarchy. Standard, and the foundation everything else builds on.
 
@@ -95,13 +95,13 @@ claude-code-best-practice treats memory as configuration. CLAUDE.md files, skill
 
 The ExoCortex treats memory as infrastructure. Synthesis indexes 65,905 files and scores their relevance behaviourally. topic-health detects when knowledge goes cold. topic-triage recommends lifecycle actions. ConsolidateState prevents redundant maintenance runs. A nightly cron cycle keeps the system from rotting while the practitioner sleeps.
 
-![The Core Divergence: When Configuration Breaks](../assets/images/exocortex-vs-claude-code-best-practice/slide-006.png)
+![The Core Divergence: When Configuration Breaks](../../assets/images/exocortex-vs-claude-code-best-practice/slide-006.png)
 
 This is not a difference of degree. It is a difference of kind. Configuration-as-memory works for small setups and motivated individuals. Infrastructure-as-memory works when the knowledge surface area exceeds what any individual can manually maintain. 289 repos is past that threshold. So is 65,905 files.
 
 The claude-code-best-practice repository documents LLM degradation as a known problem. Models get worse at certain tasks over time. Their response is candid about the problem but stops at documentation. The connection they do not make: their own memory model degrades identically. CLAUDE.md files go stale. Skill definitions drift from reality. Topic knowledge accumulates without pruning. The degradation they observe in models is mirrored in their own knowledge layer, and they have no maintenance story for it.
 
-![The Hidden Failure Mode: Memory Rot](../assets/images/exocortex-vs-claude-code-best-practice/slide-007.png)
+![The Hidden Failure Mode: Memory Rot](../../assets/images/exocortex-vs-claude-code-best-practice/slide-007.png)
 
 The ExoCortex is the only setup I have seen that treats knowledge as infrastructure requiring lifecycle management -- creation, scoring, maintenance, and retirement. Not because the idea is novel. Because the implementation is hard, and most practitioners stop at creation.
 
@@ -111,7 +111,7 @@ The ExoCortex is the only setup I have seen that treats knowledge as infrastruct
 
 Honesty requires listing the concrete gaps the ExoCortex has that claude-code-best-practice solved.
 
-![Mutual Blindspots: What The ExoCortex Lacks](../assets/images/exocortex-vs-claude-code-best-practice/slide-010.png)
+![Mutual Blindspots: What The ExoCortex Lacks](../../assets/images/exocortex-vs-claude-code-best-practice/slide-010.png)
 
 **Formalized orchestration chains.** The Command-Agent-Skill grammar is something the ExoCortex lacks entirely. Skills exist. Hooks exist. But there is no reusable, version-controlled chain that composes them into multi-step workflows. Every orchestration in my setup is ad hoc -- a CLAUDE.md instruction that says "first do X, then do Y." That works for simple sequences. It breaks for anything with branching logic or conditional execution.
 
@@ -131,13 +131,13 @@ These are not theoretical gaps. Each one has cost me time in the past ten weeks.
 
 The reverse list is equally concrete.
 
-![Mutual Blindspots: What The Public Repo Lacks](../assets/images/exocortex-vs-claude-code-best-practice/slide-011.png)
+![Mutual Blindspots: What The Public Repo Lacks](../../assets/images/exocortex-vs-claude-code-best-practice/slide-011.png)
 
 **Semantic memory infrastructure.** Synthesis is not an incremental improvement over CLAUDE.md files. It is a different category of tool. 65,905 files indexed with sub-second FTS5 queries, behavioural scoring via topic-health, automated triage recommendations, session history spanning 3,000+ interactions. claude-code-best-practice has no equivalent and no path to one within their current architecture. The gap is not a missing feature. It is a missing layer.
 
 **Push-based context injection.** KCP injects context before the agent asks for it. claude-code-best-practice relies on pull-based context -- the agent decides what to look for, searches for it, and loads it. The benchmarks on this are clear: push-based injection produces 53-80% fewer tool calls because the agent does not waste turns discovering what it needs. Every tool call the agent does not make is context window space preserved for actual work.
 
-![Context Architecture & Token Efficiency](../assets/images/exocortex-vs-claude-code-best-practice/slide-009.png)
+![Context Architecture & Token Efficiency](../../assets/images/exocortex-vs-claude-code-best-practice/slide-009.png)
 
 **Expert lens skills.** This is the sharpest distinction. claude-code-best-practice skills are procedural -- they tell Claude what to do. ExoCortex lens skills are epistemological -- they change how Claude reasons. A Kent Beck lens does not say "write tests first." It says "think about design as the activity that testing enables. Coupling is a design smell. Simplicity is achieved through small steps with continuous feedback." The lens shifts the reasoning frame, not the action list. claude-code-best-practice has nothing in this category.
 
@@ -151,7 +151,7 @@ The reverse list is equally concrete.
 
 Both setups use skills. Both consider skills important. Neither has named what is actually happening: the word "skill" refers to two fundamentally different concepts.
 
-![The Skills Revelation: Actions vs. Lenses](../assets/images/exocortex-vs-claude-code-best-practice/slide-008.png)
+![The Skills Revelation: Actions vs. Lenses](../../assets/images/exocortex-vs-claude-code-best-practice/slide-008.png)
 
 In claude-code-best-practice, a skill is an **orchestration primitive**. It encodes a procedure: steps to follow, tools to invoke, output formats to produce. The `/weather-orchestrator` skill chains API calls. The deployment skill runs commands in sequence. Skills are verbs. They do things.
 
@@ -167,7 +167,7 @@ Neither setup has formalized this split. The ExoCortex has it in practice (the A
 
 The comparison produces a clean matrix. Neither setup dominates. The ideal merge is column three.
 
-![The Architectural Matrix](../assets/images/exocortex-vs-claude-code-best-practice/slide-013.png)
+![The Architectural Matrix](../../assets/images/exocortex-vs-claude-code-best-practice/slide-013.png)
 
 ---
 
@@ -175,7 +175,7 @@ The comparison produces a clean matrix. Neither setup dominates. The ideal merge
 
 The comparison produced a concrete list.
 
-![The Blueprint for the Next Generation](../assets/images/exocortex-vs-claude-code-best-practice/slide-014.png)
+![The Blueprint for the Next Generation](../../assets/images/exocortex-vs-claude-code-best-practice/slide-014.png)
 
 **Orchestration chains.** Adopting the Command-Agent-Skill grammar from claude-code-best-practice, adapted to work with KCP's push-based context injection. The chain definition becomes a YAML file alongside the skills it invokes. Version-controlled, composable, testable.
 
@@ -193,13 +193,13 @@ The comparison produced a concrete list.
 
 Both setups independently discovered that hooks are the highest-leverage primitive in Claude Code. Not the model, not the prompts, not even the skills -- the hooks. What you inject before the agent thinks and what you intercept after it acts. That convergence from independent practitioners is a strong signal about where the tool's real extension points live.
 
-![The Convergence Point: Hooks](../assets/images/exocortex-vs-claude-code-best-practice/slide-012.png)
+![The Convergence Point: Hooks](../../assets/images/exocortex-vs-claude-code-best-practice/slide-012.png)
 
 claude-code-best-practice is the best public resource on Claude Code workflows that exists. The orchestration patterns, the parallel agent model, the autonomous retry loop, the cross-model review -- these are production-grade ideas backed by the team that built the tool. Any practitioner using Claude Code should read it.
 
 The ExoCortex solves a different problem. Not "how do I use Claude Code effectively" but "how do I keep an AI-augmented development practice coherent across 289 repos, 65,905 files, 476 skills, and 3,000+ sessions over months of continuous use." The answer turned out to be infrastructure: semantic memory, push-based context, behavioural scoring, deterministic maintenance. None of those are visible in a tips-and-tricks format because they are not tips. They are systems.
 
-![The Final Verdict](../assets/images/exocortex-vs-claude-code-best-practice/slide-015.png)
+![The Final Verdict](../../assets/images/exocortex-vs-claude-code-best-practice/slide-015.png)
 
 Two architects solved the same class of problem from different starting points. One optimised for breadth of patterns. The other optimised for depth of infrastructure. Both have something the other needs. The interesting work is in the merge.
 
