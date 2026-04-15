@@ -1,7 +1,7 @@
 kcp_version: "0.6"
 project: wiki.totto.org
-version: 1.3.2
-updated: 2026-04-06
+version: 1.3.3
+updated: 2026-04-15
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────
@@ -511,6 +511,15 @@ units:
     depends_on: [blog-what-a-skill-is]
     triggers: [sdd, skill-driven-development, spec-driven, comparison, methodology, ai-development]
 
+  - id: blog-meeting-was-never-the-problem
+    path: blog/posts/2026-04-15-the-meeting-was-never-the-problem.md
+    intent: "Why do architecture review meetings exist, what happens when you replace the discovery phase with a KCP query, and why is the missing knowledge infrastructure — not the meeting — the real problem?"
+    scope: global
+    audience: [human, developer, architect, agent]
+    validated: 2026-04-15
+    depends_on: [blog-kcp-v014-query-composition, blog-synthesis-practitioners-journal]
+    triggers: [meeting, architecture-review, blast-radius, dependency-graph, kcp, knowledge-yaml, synthesis, queryable, query, discovery, payment-service, api-contract, batch-job, enterprise, knowledge-infrastructure, organisational-knowledge, change-impact, deprecation]
+
   - id: blog-quantum-hardware-abstractions-leak
     path: blog/posts/2026-04-06-the-abstractions-leak.md
     intent: "What does it actually take to run a quantum physics experiment on real IBM hardware, and why do the abstractions leak at every layer — hardware selection, qubit topology, and gate orientation?"
@@ -1015,3 +1024,11 @@ relationships:
   - from: blog-kcp-instrumentation-to-infrastructure
     to: blog-kcp-v014-query-composition
     type: enables
+
+  - from: blog-kcp-v014-query-composition
+    to: blog-meeting-was-never-the-problem
+    type: enables
+
+  - from: blog-synthesis-practitioners-journal
+    to: blog-meeting-was-never-the-problem
+    type: context
