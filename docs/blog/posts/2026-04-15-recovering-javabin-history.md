@@ -101,6 +101,16 @@ days will have something to point to.
 
 ---
 
+## Podcast
+
+*NotebookLM Audio Overview — "The forensic recovery of javaBin history"*
+
+<audio controls style="width:100%">
+  <source src="../../assets/javabin-history/podcast.m4a" type="audio/mp4">
+</audio>
+
+---
+
 ## Video
 
 <video controls style="width:100%;border-radius:4px">
