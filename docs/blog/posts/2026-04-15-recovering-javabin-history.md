@@ -132,7 +132,7 @@ days will have something to point to.
 *NotebookLM Audio Overview — "The forensic recovery of javaBin history"*
 
 <audio controls style="width:100%">
-  <source src="../../assets/javabin-history/podcast.m4a" type="audio/mp4">
+  <source src="/assets/javabin-history/podcast.m4a" type="audio/mp4">
 </audio>
 
 ---
@@ -140,5 +140,5 @@ days will have something to point to.
 ## Video
 
 <video controls style="width:100%;border-radius:4px">
-  <source src="../../assets/javabin-history/recovering-javabin-history.mp4" type="video/mp4">
+  <source src="/assets/javabin-history/recovering-javabin-history.mp4" type="video/mp4">
 </video>
