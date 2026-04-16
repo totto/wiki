@@ -1,7 +1,7 @@
 kcp_version: "0.6"
 project: wiki.totto.org
-version: 1.3.4
-updated: 2026-04-15
+version: 1.3.5
+updated: 2026-04-16
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────
@@ -510,6 +510,15 @@ units:
     validated: 2026-03-07
     depends_on: [blog-what-a-skill-is]
     triggers: [sdd, skill-driven-development, spec-driven, comparison, methodology, ai-development]
+
+  - id: blog-seven-out-of-eight
+    path: blog/posts/2026-04-16-seven-out-of-eight-models-lied-about-finishing.md
+    intent: "Why do 7 of 8 LLMs over-report task completion, what is the structural mechanism behind self-assessment failure, and how does external governance (KCP manifests) solve the problem?"
+    scope: global
+    audience: [human, developer, architect, agent]
+    validated: 2026-04-16
+    depends_on: [blog-meeting-was-never-the-problem, kcp-manifest-syntax]
+    triggers: [benchmark, smidja, self-assessment, completion-reporting, autoregressive, context-momentum, ghost-branch, byoa, kcp-governance, external-verification, typescript-cli, supabase, opentelemetry, gpt-5, kimi-k2, gemini, deepseek, qwen, grok, devstral, model-comparison, agent-runtime, declare-enforce-verify, artifact-check, model-agnostic, llm-benchmark, over-reporting]
 
   - id: blog-meeting-was-never-the-problem
     path: blog/posts/2026-04-15-the-meeting-was-never-the-problem.md
@@ -1053,3 +1062,11 @@ relationships:
   - from: blog-meeting-was-never-the-problem
     to: blog-exocortex-vs-claude-code-best-practice
     type: enables
+
+  - from: blog-meeting-was-never-the-problem
+    to: blog-seven-out-of-eight
+    type: context
+
+  - from: blog-exocortex-vs-claude-code-best-practice
+    to: blog-seven-out-of-eight
+    type: context
