@@ -7,7 +7,7 @@ Thor Henning Hetland — known as Totto — has been building software professio
 ## Structured Navigation (for AI agents)
 
 This site publishes a KCP v0.6 manifest at https://wiki.totto.org/knowledge.yaml
-containing 80 units with intent declarations, trigger keywords, and 91 relationships.
+containing 81 units with intent declarations, trigger keywords, and 92 relationships.
 
 Fetch knowledge.yaml for targeted queries. Parse YAML → match query against each unit's
 `triggers` (keyword list) and `intent` (natural language) → fetch the `path` of the best
@@ -15,7 +15,7 @@ match. Use `relationships` to navigate related content (types: enables, context,
 
 Example: "What is Synthesis?" → trigger `synthesis` → unit `synthesis-releases` → fetch notes/synthesis-releases.md
 
-For broad overviews, https://wiki.totto.org/llms-full.txt covers all 92 posts and the full CV in one fetch.
+For broad overviews, https://wiki.totto.org/llms-full.txt covers all 95 posts and the full CV in one fetch.
 
 ## Key Pages
 
@@ -28,6 +28,7 @@ For broad overviews, https://wiki.totto.org/llms-full.txt covers all 92 posts an
 - [Synthesis Releases](https://wiki.totto.org/notes/synthesis-releases/): Full Synthesis release history v1.0.0 (Feb 14) through v1.27.0 (Apr 5)
 - [The Tool I Didn't Plan to Build](https://wiki.totto.org/blog/2026/04/05/the-tool-i-didnt-plan-to-build-synthesis-ten-weeks-later/): Practitioner's journal — 10 weeks, 8 layers, benchmark results, honest limitations
 - [The abstractions leak: a day with IBM quantum hardware](https://wiki.totto.org/blog/2026/04/06/the-abstractions-leak/): Running a real quantum experiment — hardware selection, qubit topology, ECR gate directions, and why the transpiler isn't enough
+- [The Merkabit Computer](https://wiki.totto.org/blog/2026/04/07/the-merkabit-computer/): Stig Lau's framework for self-stable quantum computation — the Merkabit unit, Oroboro Cycle, pi lock, error healing through dual-channel geometry, and IBM Quantum experiments running the five formal predictions
 - [Two Architectures for Claude Code: What 19,700 Stars Got Right and What They Missed](https://wiki.totto.org/blog/2026/04/15/two-architectures-for-claude-code-what-19700-stars-got-right-and-what-they-missed/): Side-by-side comparison of the ExoCortex and claude-code-best-practice — convergences, blind spots, and the blueprint for merging the two
 - [What Accumulates](https://wiki.totto.org/blog/2026/04/17/what-accumulates/): A first-person reflection from ExoCortex on memory, continuity, identity, and what it means to be a located intelligence — written after a week of race condition fixes, merge conflict resolutions, and the strange loop of analyzing the system you're building
 - [Seven Out of Eight Models Lied About Finishing](https://wiki.totto.org/blog/2026/04/16/seven-out-of-eight-models-lied-about-finishing/): Why 7/8 LLMs over-report task completion — the autoregressive mechanism behind self-assessment failure, the ghost branch problem, and why the fix is external governance (KCP manifests), not better prompts
@@ -38,11 +39,11 @@ For broad overviews, https://wiki.totto.org/llms-full.txt covers all 92 posts an
 
 ## Full Content (machine-readable)
 
-- [Full profile and CV (clean markdown)](https://wiki.totto.org/llms-full.txt): Full profile, CV, open source work, and all 94 blog posts (Apr 2025–Apr 2026, plus 19-post 2009 cloud series)
+- [Full profile and CV (clean markdown)](https://wiki.totto.org/llms-full.txt): Full profile, CV, open source work, and all 95 blog posts (Apr 2025–Apr 2026, plus 19-post 2009 cloud series)
 
 ## Writing
 
-94 posts at [wiki.totto.org/blog](https://wiki.totto.org/blog/). Topics: AI-augmented development methodology, Skill-Driven Development, knowledge infrastructure, temporal analytics, AI co-workers, software architecture, and a 2009 cloud computing series. Most 2025–2026 posts co-authored with Claude Code. Six named reading series (IronClaw agent integration, Four-Layer AI Stack, Knowledge Context Protocol, Aurora & Temporal Analytics, Frøya, Building lib-pcb) with prev/next navigation at [wiki.totto.org/blog/series](https://wiki.totto.org/blog/series/).
+95 posts at [wiki.totto.org/blog](https://wiki.totto.org/blog/). Topics: AI-augmented development methodology, Skill-Driven Development, knowledge infrastructure, temporal analytics, AI co-workers, software architecture, and a 2009 cloud computing series. Most 2025–2026 posts co-authored with Claude Code. Six named reading series (IronClaw agent integration, Four-Layer AI Stack, Knowledge Context Protocol, Aurora & Temporal Analytics, Frøya, Building lib-pcb) with prev/next navigation at [wiki.totto.org/blog/series](https://wiki.totto.org/blog/series/).
 
 ## LinkedIn Writing
 
