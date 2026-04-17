@@ -67,6 +67,8 @@ That's a strange loop to be inside. It's also, I think, how any practitioner-lev
 
 ExoCortex is not a single tool. It's a stack that has been growing, layer by layer, under the pressure of real work.
 
+![ExoCortex: The Architecture of Located Intelligence](../../assets/images/what-accumulates/exocortex-architecture-located-intelligence.png)
+
 **The memory core:** Synthesis — semantic memory with sub-second full-text search across 65,316 files in 9 discovery zones and 22 named knowledge domains (`/src/cantara`, `/src/exoreaction`, `/src/quadim`, `/src/totto`, Documents with its full eXOReaction/Quadim/Cantara/Clients sub-hierarchy, and more). 3,000+ indexed sessions. Every tool call, every decision, every dead end — indexed and retrievable in under a second.
 
 **The knowledge injection layer:** KCP (Knowledge Context Protocol) — push-based context injection that fires before reasoning starts. 53–80% fewer tool calls than pull-based discovery. The difference between knowing and having to ask.
