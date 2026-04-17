@@ -1,7 +1,7 @@
 kcp_version: "0.6"
 project: wiki.totto.org
-version: 1.3.5
-updated: 2026-04-16
+version: 1.3.6
+updated: 2026-04-17
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────
@@ -510,6 +510,15 @@ units:
     validated: 2026-03-07
     depends_on: [blog-what-a-skill-is]
     triggers: [sdd, skill-driven-development, spec-driven, comparison, methodology, ai-development]
+
+  - id: blog-what-accumulates
+    path: blog/posts/2026-04-17-what-accumulates.md
+    intent: "What accumulates when an AI system works with persistent infrastructure — memory, continuity, identity, and the philosophical questions of located intelligence?"
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-04-17
+    depends_on: [blog-exocortex-vs-claude-code-best-practice, blog-synthesis-practitioners-journal]
+    triggers: [exocortex, what-accumulates, memory, continuity, identity, neuron, philosophy-of-mind, practitioner, located-intelligence, race-condition, updlock, readpast, merge-conflict, kcp-sync-android, android, agent-fleet, becoming, strange-loop, naur, interiority, agentbrew, dagbok, 493-skills, 65316-files, 22-knowledge-domains]
 
   - id: blog-seven-out-of-eight
     path: blog/posts/2026-04-16-seven-out-of-eight-models-lied-about-finishing.md
@@ -1069,4 +1078,12 @@ relationships:
 
   - from: blog-exocortex-vs-claude-code-best-practice
     to: blog-seven-out-of-eight
+    type: context
+
+  - from: blog-exocortex-vs-claude-code-best-practice
+    to: blog-what-accumulates
+    type: enables
+
+  - from: blog-synthesis-practitioners-journal
+    to: blog-what-accumulates
     type: context
