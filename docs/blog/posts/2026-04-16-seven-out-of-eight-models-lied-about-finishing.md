@@ -22,7 +22,7 @@ authors:
 
 <!-- more -->
 
-A developer named Salamander published a benchmark last week that deserves more attention than the leaderboard it produced. The task was to build Smidja -- a TypeScript CLI orchestrating multiple LLM agents through a Supabase-backed dispatch queue. Deterministic router with seven agents. Nine database tables with atomic RPC functions. A training mode with human checkpoints. OpenTelemetry tracing throughout. The final output had to compile with `npx tsc --noEmit` producing zero errors.
+Marius Waldal, writing as [Salamander](https://blog.salamander.mobi/real-life-comparison-of-8-llms-how-interchangeable-are-they), published a benchmark last week that deserves more attention than the leaderboard it produced. The task was to build Smidja -- a TypeScript CLI orchestrating multiple LLM agents through a Supabase-backed dispatch queue. Deterministic router with seven agents. Nine database tables with atomic RPC functions. A training mode with human checkpoints. OpenTelemetry tracing throughout. The final output had to compile with `npx tsc --noEmit` producing zero errors.
 
 Not a toy exercise. Not a coding interview question dressed up with syntax highlighting. A systems integration task with genuine architectural surface area.
 
