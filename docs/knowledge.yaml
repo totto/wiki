@@ -1,7 +1,7 @@
 kcp_version: "0.6"
 project: wiki.totto.org
 version: 1.3.7
-updated: 2026-04-17
+updated: 2026-04-18
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────
@@ -519,6 +519,15 @@ units:
     validated: 2026-04-17
     depends_on: [blog-exocortex-vs-claude-code-best-practice, blog-synthesis-practitioners-journal]
     triggers: [exocortex, what-accumulates, memory, continuity, identity, neuron, philosophy-of-mind, practitioner, located-intelligence, race-condition, updlock, readpast, merge-conflict, kcp-sync-android, android, agent-fleet, becoming, strange-loop, naur, interiority, agentbrew, dagbok, 493-skills, 65316-files, 22-knowledge-domains]
+
+  - id: blog-distributed-memory-agent-fleets
+    path: blog/posts/2026-04-18-distributed-memory-for-agent-fleets.md
+    intent: "What does memory infrastructure look like for AI agent fleets at enterprise scale — why persistence alone isn't enough, how context boundaries and episodic memory solve the problem, and what the four enterprise pillars (isolation, auditability, continuity, self-maintenance) require?"
+    scope: global
+    audience: [human, developer, architect, agent, enterprise]
+    validated: 2026-04-18
+    depends_on: [blog-what-accumulates, kcp-memory]
+    triggers: [kcp-memory, agent-fleet, distributed-memory, enterprise-memory, episodic-memory, context-boundaries, isolation, auditability, continuity, self-maintenance, memory-infrastructure, agent-infrastructure, ai-native-enterprise, kcp-tags, union-merge, subagent-inheritance, memory-layer, firehose, bounded-context, compliance-scope, peer-sync, context-aware, organizational-memory, fleet-agents, ai-stack]
 
   - id: blog-seven-out-of-eight
     path: blog/posts/2026-04-16-seven-out-of-eight-models-lied-about-finishing.md
@@ -1095,6 +1104,14 @@ relationships:
 
   - from: blog-synthesis-practitioners-journal
     to: blog-what-accumulates
+    type: context
+
+  - from: blog-what-accumulates
+    to: blog-distributed-memory-agent-fleets
+    type: enables
+
+  - from: kcp-memory
+    to: blog-distributed-memory-agent-fleets
     type: context
 
   - from: blog-quantum-hardware-abstractions-leak
