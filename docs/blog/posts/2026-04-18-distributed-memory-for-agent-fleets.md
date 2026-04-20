@@ -27,6 +27,10 @@ For a personal productivity tool, that's fine. For an enterprise deploying a fle
 
 The question we've been working on: what does memory infrastructure look like for AI agents at organizational scale?
 
+<video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
+  <source src="/assets/videos/distributed-memory-agent-fleets.mp4" type="video/mp4">
+</video>
+
 ![Individual developer with a blank session vs. an enterprise fleet in chaos — missing context, unsynced state, isolated memory silos](../../assets/images/agent-memory-infrastructure/slide-02.png)
 
 ---
