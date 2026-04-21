@@ -21,6 +21,8 @@ Synthesis v1.29.0 adds Notion as a first-class workspace source — 7 classes, 1
 
 <!-- more -->
 
+![Synthesis v1.29.0: Bridging the gap between the codebase and organizational context. Blueprint and topographic map aesthetic — a terminal on the left, context nodes on the right.](/assets/images/blog/notion-workspace-source/slide-01.png)
+
 ## The wall
 
 It always started the same way. I would point an ExoCortex agent at a codebase — say, a Spring Boot service with a couple hundred files — and ask it to figure out why the authentication flow worked the way it did. The agent would do what it does well: read the code, trace the call chain, build a model of the technical structure. And then it would stop. Not because it ran out of files, but because the *why* was not in the files.
@@ -31,15 +33,23 @@ For a while I just lived with it. I would paste relevant Notion excerpts into ag
 
 So Synthesis learned to read Notion.
 
+![The Execution Path Does Not Explain the Reasoning. The agent sees the code — GET /api/transaction, TransactionController, validate, ComplianceCheck — but misses "The Why": the architecture decision, the compliance requirement, the meeting notes saying "we cannot use OAuth implicit flow because the regulator said no."](/assets/images/blog/notion-workspace-source/slide-02.png)
+
 ## The realization that made it simple
 
 Notion, if you squint past the block-based UI, is a document store with a tree structure and an HTTP API. Pages have parents. Pages have children. Pages contain blocks that render as text, headings, lists, code, tables. Strip away the product design and you are looking at something structurally identical to a filesystem with Markdown files in nested directories.
 
+![Squinting Past the Product Design. Notion is simply a document store with a tree structure and an HTTP API. Pages with Parents → Nested Directories. Pages with Children → Sub-folders. Blocks (Text, Headings, Code) → Markdown Content. Strip away the UI, and Notion is structurally identical to a filesystem containing Markdown files.](/assets/images/blog/notion-workspace-source/slide-03.png)
+
 Once you frame it that way, the integration design is almost boring. You need five things: an API client (with rate limiting, because Notion's API will throttle you at 3 requests per second), a block-to-Markdown converter, a mapper that turns the page hierarchy into virtual filesystem paths, a sync state tracker, and a watcher for incremental updates. That is exactly what was built.
+
+![The Architecture of a Bridge: five components in sequence. 1. API Client — Java 21 HttpClient, rate-limited to 3 req/s, automatic pagination. 2. Converter — translates 15+ block types and rich text annotations to standard Markdown. 3. Mapper — hierarchy traversal, turns parent chains into virtual paths, depth limits at 10 levels. 4. Tracker — sync state management stored via a V21 Flyway migration. 5. Watcher — incremental syncs and virtual thread polling for updates.](/assets/images/blog/notion-workspace-source/slide-04.png)
 
 The `NotionPageMapper` walks up the parent chain for each page and constructs a path. A page called "Architecture" under "Engineering" becomes `Engineering/Architecture.md`. Cycle detection, depth limits at 10 levels, collision resolution by appending an ID suffix when two pages produce the same path. The virtual files get indexed in Lucene with a `notion://` prefix so they are distinguishable from filesystem documents in search results.
 
 The block converter handles 15+ block types: paragraphs, three heading levels, bulleted and numbered lists, to-do items, code blocks with language hints, quotes, callouts, dividers, images, bookmarks, tables, child page references, child databases. Unknown types render as HTML comments — lossless awareness rather than silent data loss. Rich text annotations map to Markdown formatting: bold, italic, strikethrough, inline code, links. Combined annotations work. It is the kind of tedious, detail-oriented work that benefits from having 33 tests specifically for the converter.
+
+![Lossless Awareness Over Silent Data Loss. Supported Formats: 15+ block types handled. Safety Mechanism: unknown types do not disappear — they render as HTML comments for lossless awareness. Combined Annotations: properly maps overlapping bold, italic, strikethrough, and inline code to Markdown. Backed by 33 dedicated unit tests for block conversion accuracy.](/assets/images/blog/notion-workspace-source/slide-05.png)
 
 The configuration is minimal:
 
@@ -72,13 +82,19 @@ This was implemented by ExoCortex — specifically, Claude Opus working through 
 
 104 new tests across 9 test classes. Zero Notion API calls in any test — a custom `StubHttpClient` that delegates to a configurable response handler, no Mockito or WireMock involved. The total test suite after the feature landed: 4,428 tests, 0 failures.
 
+![The Six-Phase Execution Staircase. Each step reaches a passing test suite before the next begins: 1. DB Schema & Sync State DAO → 2. NotionClient (429 retries) → 3. NotionBlockToMarkdown → 4. NotionPageMapper (collision resolution) → 5. WorkspaceSource & NotionWatcher → 6. Health Checks & Command Integration. Testing Metrics: 104 new tests across 9 classes. 0 Notion API calls in tests (custom StubHttpClient). Total test suite: 4,428 tests, 0 failures.](/assets/images/blog/notion-workspace-source/slide-07.png)
+
 The interesting question is not "can AI write code?" — that discourse is over. The interesting question is how you decompose a feature so that an AI agent can build it phase by phase without losing coherence. The answer is to think like an architect rather than a prompt engineer. Define the interfaces between phases. Ensure each phase is independently testable. Let the agent run each phase to green before starting the next. The discipline is identical to what makes software projects work with human teams — clear boundaries, verifiable intermediate states, no phase that depends on vibes from a previous phase.
+
+![Think Like an Architect, Not a Prompt Engineer. The Paradigm Shift: the question is no longer "can AI write code?" but "how do you decompose a feature so an agent can build it coherently?" Four principles: Structural Boundaries — define strict architectural interfaces between phases. Independent Verification — ensure each phase is independently testable before moving to the next. No Ambiguity — never rely on "vibes" or assumptions from a previous execution phase.](/assets/images/blog/notion-workspace-source/slide-06.png)
 
 One small war story along the way: another PR landed the V20 Flyway migration on the same day we needed it for Notion. Classic. We bumped to V21 and resolved it in one commit.
 
 ## The sleeper feature: health signals as organizational intelligence
 
 I almost shipped this without the health checks. Search works, incremental sync works, pages show up in the knowledge graph — done, right? But Synthesis already had health signals for filesystem content, and it felt wrong to add an entire workspace source without the same observability.
+
+![The Sleeper Feature. The Missing Observability: Synthesis already had health signals for filesystem content. Adding external workspaces without the same observability felt fundamentally incomplete. The Unintended Discovery: what started as basic operational health monitoring — ensuring pages were syncing correctly — evolved into something vastly more valuable than just search indexing.](/assets/images/blog/notion-workspace-source/slide-08.png)
 
 Three new signals:
 
@@ -90,6 +106,8 @@ Three new signals:
 
 What surprised me is that these checks, taken together, function as a lightweight audit of documentation culture. W022 tells you if your sync pipeline is healthy. W023 tells you if someone reorganized without cleaning up. W024 tells you if naming conventions have drifted. None of this was the goal — the goal was operational health monitoring — but the side effect is organizational linting.
 
+![Diagnostic Matrix: Decoding System Health. W022 (notion-stale): workspace hasn't synced in >3x the configured poll interval → a broken pipeline nobody noticed, or a forgotten configuration. W023 (notion-orphan): page parent ID does not match any known page → structural drift, someone sloppily reorganized the workspace without moving children. W024 (notion-conflict): two pages produce the exact same virtual path → naming convention drift and human confusion (auto-resolved via 8-char ID suffix).](/assets/images/blog/notion-workspace-source/slide-09.png)
+
 ## What this actually enables
 
 When an ExoCortex agent picks up a task now, it can navigate:
@@ -99,6 +117,8 @@ When an ExoCortex agent picks up a task now, it can navigate:
 - The product requirements — Notion
 - The compliance context — Notion (for some clients, this is a private regulatory knowledge base)
 - The meeting notes — Notion
+
+![Synthesis v1.29.0: Giving AI Agents the "Why" Behind the Code. The Context Gap: AI agents see what (code) but not why (context). The Bridge: Notion as a virtual filesystem — 15+ block types, intelligent path mapping, health signals. Full Context Agents: navigate codebase, architecture, requirements, compliance, and meeting notes in a single unified view. The 6-Phase Build Process: Foundation & Connectivity → Mapping & Conversion → Sync & Observability. Understanding Intent, Not Just Syntax: "The value is not better search. The value is agents with full organizational context."](/assets/images/blog/notion-workspace-source/infographic.png)
 
 The difference is not incremental. An agent that can read your code but not your architecture decisions is making guesses about intent. An agent that can also read the decision log, the requirements, the constraints — that agent understands the *context* the code lives in. It can answer "why is the auth flow like this?" not by inferring from code structure, but by reading the page where someone wrote down the reasoning.
 
