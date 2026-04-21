@@ -108,6 +108,8 @@ What surprised me is that these checks, taken together, function as a lightweigh
 
 ![Diagnostic Matrix: Decoding System Health. W022 (notion-stale): workspace hasn't synced in >3x the configured poll interval → a broken pipeline nobody noticed, or a forgotten configuration. W023 (notion-orphan): page parent ID does not match any known page → structural drift, someone sloppily reorganized the workspace without moving children. W024 (notion-conflict): two pages produce the exact same virtual path → naming convention drift and human confusion (auto-resolved via 8-char ID suffix).](/assets/images/blog/notion-workspace-source/slide-09.png)
 
+![Operational Checks as Organizational Linting. The Core Insight: taken together, these three technical error codes function as a lightweight audit of a team's documentation culture. The Unintended Value: the original goal was purely operational health monitoring. The side effect was the creation of a "linter" for human organizational chaos.](/assets/images/blog/notion-workspace-source/slide-10.png)
+
 ## What this actually enables
 
 When an ExoCortex agent picks up a task now, it can navigate:
@@ -118,15 +120,21 @@ When an ExoCortex agent picks up a task now, it can navigate:
 - The compliance context — Notion (for some clients, this is a private regulatory knowledge base)
 - The meeting notes — Notion
 
+![The Contextual Breakthrough. ExoCortex Agent at the centre, connected to five sources: 1. The Codebase (Filesystem Source), 2. Architecture Decisions, 3. Product Requirements, 4. Compliance Context, 5. Meeting Notes. "An agent that reads code but not decisions is just making guesses. An agent reading the decision log understands the complete reality of the system."](/assets/images/blog/notion-workspace-source/slide-11.png)
+
 ![Synthesis v1.29.0: Giving AI Agents the "Why" Behind the Code. The Context Gap: AI agents see what (code) but not why (context). The Bridge: Notion as a virtual filesystem — 15+ block types, intelligent path mapping, health signals. Full Context Agents: navigate codebase, architecture, requirements, compliance, and meeting notes in a single unified view. The 6-Phase Build Process: Foundation & Connectivity → Mapping & Conversion → Sync & Observability. Understanding Intent, Not Just Syntax: "The value is not better search. The value is agents with full organizational context."](/assets/images/blog/notion-workspace-source/infographic.png)
 
 The difference is not incremental. An agent that can read your code but not your architecture decisions is making guesses about intent. An agent that can also read the decision log, the requirements, the constraints — that agent understands the *context* the code lives in. It can answer "why is the auth flow like this?" not by inferring from code structure, but by reading the page where someone wrote down the reasoning.
 
 This is the value: not better search. The value is agents with full organizational context.
 
+![The Evolution of Agent Intelligence. Isolated Agent (v1.28): guesses intent based purely on code structure, confined strictly to the local filesystem, blind to external rules. Contextual Agent (v1.29): reads the actual decision log to understand the why, navigates the entire filesystem + corporate workspace, fully aware of regulatory and compliance blockers natively. "The value is not just better search; the value is agents with full organizational context."](/assets/images/blog/notion-workspace-source/slide-12.png)
+
 ## What is not there yet
 
 Notion support is read-only. There is no write-back — agents cannot create or update Notion pages. Database properties (status, assignee, dates) are not indexed as structured metadata. There is no embedding-based semantic search over page content; Lucene full-text is good enough for most queries, but "which pages discuss rate limiting?" would benefit from vector retrieval. The incremental sync re-fetches the full page list and filters by `last_edited_time` client-side; Notion's API makes server-side filtering on edit time harder than it should be.
+
+![Known Boundaries and the Implementation Roadmap. 1. Read-Only Operations: no write-back capabilities, agents cannot create or update pages yet. 2. Metadata Extraction: database properties (status, assignee, dates) not yet indexed as structured metadata. 3. Semantic Search: relying entirely on Lucene full-text, lacks embedding-based vector retrieval. 4. Sync Filtering: incremental sync relies on client-side filtering via last_edited_time due to API limitations.](/assets/images/blog/notion-workspace-source/slide-13.png)
 
 These are natural next steps, each one an independent feature with clear boundaries and testable intermediate states.
 
@@ -135,6 +143,8 @@ These are natural next steps, each one an independent feature with clear boundar
 Every few weeks, ExoCortex gets a little more complete as a picture of how to work with AI agents properly. Not "throw everything at GPT and hope," but structured, disciplined augmentation: clear interfaces, verified states, health monitoring, proper test coverage. Synthesis started as a filesystem indexer and is now something closer to a unified workspace intelligence layer — code, documentation, organizational knowledge, all searchable, all health-checked, all exportable as KCP for agent consumption.
 
 The Notion integration is 7 classes and 104 tests. It took about a day to build and review. The thing it enables — agents that understand *why*, not just *what* — is the part worth building toward.
+
+![ExoCortex Unified Layer. Synthesis has evolved from a basic filesystem indexer into a comprehensive workspace intelligence layer. Code, documentation, and organizational knowledge are now unified. Everything is fully searchable, health-checked, and exportable as Knowledge Context Providers (KCP) for agent consumption. "The ultimate goal is not throwing everything at an LLM and hoping. It is building structured, verified access so agents can finally understand why, not just what."](/assets/images/blog/notion-workspace-source/slide-14.png)
 
 ---
 
