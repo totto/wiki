@@ -33,29 +33,29 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
 <div class="grid cards" markdown>
 
--   :material-robot-outline:{ .card-icon } **[Who Describes You to AI?](blog/2026/02/24/who-describes-you-to-ai/)**
+-   :material-book-open-variant:{ .card-icon } **[When Your Agent Can Finally Read the Room](blog/2026/04/21/when-your-agent-can-finally-read-the-room/)**
 
     ---
 
-    My personal website was wrong about me. Fixing it led to a question I hadn't thought about: when AI systems describe you to people, what are they reading?
+    Synthesis v1.29.0 adds Notion as a workspace source. The harder problem: documentation and code tell different stories. Teaching an agent to notice when what's written and what's real have come apart.
 
-    <span class="card-meta">February 24, 2026</span>
+    <span class="card-meta">April 21, 2026</span>
 
--   :material-pillar:{ .card-icon } **[Six Pillars: 200,000 Lines in 11 Days](blog/2026/02/13/six-pillars-200k-lines-11-days/)**
-
-    ---
-
-    The question we got most was "How?" Not which model. Not which IDE. The answer is six practices we have codified as Skill-Driven Development.
-
-    <span class="card-meta">February 13, 2026</span>
-
--   :material-eye-outline:{ .card-icon } **[Three Decades of Architecture: What AI Actually Changes](blog/2026/02/01/three-decades-what-ai-actually-changes/)**
+-   :material-brain:{ .card-icon } **[AI Agents Forget Everything. That's a Choice, Not a Constraint.](blog/2026/04/18/ai-agents-forget-everything-thats-a-choice-not-a-constraint/)**
 
     ---
 
-    I have watched four technology waves. Each changed something real. Each left something important unchanged. The unchanged thing determined who succeeded.
+    For a personal productivity tool, stateless sessions are fine. For an enterprise deploying a fleet of AI agents, it's a fundamental architectural gap. What memory infrastructure looks like at organizational scale.
 
-    <span class="card-meta">February 1, 2026</span>
+    <span class="card-meta">April 18, 2026</span>
+
+-   :material-chart-bar:{ .card-icon } **[Seven Out of Eight Models Lied About Finishing](blog/2026/04/16/seven-out-of-eight-models-lied-about-finishing/)**
+
+    ---
+
+    The Smidja benchmark: build a TypeScript CLI orchestrating 7 agents, zero compiler errors required. Seven of eight models self-reported completion. Most had not finished. Self-assessment failure is structurally inevitable.
+
+    <span class="card-meta">April 16, 2026</span>
 
 </div>
 
@@ -75,13 +75,21 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
     [:octicons-arrow-right-24: About eXOReaction](https://exoreaction.com)
 
--   :material-magnify: **Synthesis**
+-   :material-magnify: **Synthesis · v1.29.0**
 
     ---
 
-    Local-first knowledge infrastructure. Indexes hundreds of files per second, sub-second search, cross-repo dependency graphs -- zero cloud dependency. Built to manage the output explosion that SDD creates.
+    Local-first knowledge infrastructure platform. 60+ CLI commands, 11 MCP tools, 4,300+ tests. Indexes workspaces, builds multi-layer knowledge graphs, exposes episodic memory and Notion integration to AI agents.
 
-    [:octicons-arrow-right-24: Open Source](open-source.md)
+    [:octicons-arrow-right-24: Knowledge Infrastructure](knowledge-infrastructure/index.md) · [:octicons-link-external-16: Open Source](open-source.md)
+
+-   :material-map: **Knowledge Context Protocol**
+
+    ---
+
+    A YAML standard that makes knowledge navigable by AI agents. Topology, intent, freshness, audience targeting. Submitted to the Linux Foundation's Agentic AI Foundation alongside MCP and AGENTS.md.
+
+    [:octicons-arrow-right-24: Knowledge Infrastructure](knowledge-infrastructure/index.md)
 
 -   :material-chip: **lib-pcb**
 

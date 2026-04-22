@@ -54,7 +54,7 @@ Competence management SaaS platform. CTO and lead developer. Responsible for sys
 #### Cantara AS -- Founder, Board Lead & Director
 <span class="timeline-date">2008 -- present</span>
 
-Open-source infrastructure company. Maintains 150+ repositories of enterprise-grade Java frameworks including Whydah (SSO/IAM), Xorcery (reactive framework), Stingray (microservices), and more.
+Open-source infrastructure company. Maintains 150+ repositories of enterprise-grade Java frameworks and AI knowledge protocols, including Whydah (SSO/IAM), Xorcery (reactive framework), Stingray (microservices), Knowledge Context Protocol (KCP), kcp-commands, and kcp-memory.
 
 </div>
 

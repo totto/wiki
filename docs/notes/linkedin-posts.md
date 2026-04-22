@@ -6,13 +6,123 @@ tags:
 
 # LinkedIn Writing
 
-Selected posts from [LinkedIn](https://www.linkedin.com/in/hetland/), November 2025 – February 2026.
+Selected posts from [LinkedIn](https://www.linkedin.com/in/hetland/), November 2025 – April 2026.
 
 These are shorter-form pieces written in parallel with the [blog series](/blog/) — same period, different format. LinkedIn posts tend to be more immediate: reactions to something that just happened, a question still open, a pattern noticed mid-build.
 
 ---
 
-## November 2025
+## April 2026
+
+### When Your Agent Can Finally Read the Room
+*April 21, 2026*
+
+Your AI agent can now read your Notion docs. That's not always good news.
+
+The harder problem isn't access — it's the gap between what Notion says and what the code actually is. Documentation drifts. Decisions get made in standups and never written down. The "current architecture" page describes how things were organised six months ago.
+
+When I added Notion as a first-class workspace source in Synthesis, three new health signal types emerged almost by accident: W022 (notion-stale — doc references a version that no longer exists), W023 (notion-orphan — page has no code referent at all), W024 (notion-conflict — doc and code contradict each other on the same fact).
+
+Those weren't on the roadmap. They emerged from asking a simpler question: what does it look like when documentation can't be trusted?
+
+The hard part isn't giving an agent more to read. It's teaching it to notice when what's written and what's real have come apart.
+
+→ Full piece: [When Your Agent Can Finally Read the Room](/blog/2026/04/21/when-your-agent-can-finally-read-the-room/)
+
+---
+
+### The Meeting Was Never the Problem
+*April 15, 2026*
+
+We cancelled a 45-minute architecture review. A KCP query answered it in 1.2 seconds.
+
+The question was whether a batch job added six weeks earlier would conflict with a new service boundary. Nobody remembered writing it. The alternatives: schedule a meeting, ask in Slack and wait, or dig through git history for twenty minutes.
+
+Instead: `kcp query "batch job service boundary conflict"` — 1.2 seconds. The answer was there, with the constraint documented at the time it was added.
+
+The structural reframe: the missing infrastructure was never meetings. It was a queryable knowledge layer that survives the session that created it.
+
+→ Full piece: [The Meeting Was Never the Problem](/blog/2026/04/15/the-meeting-was-never-the-problem/)
+
+---
+
+### Agent Memory Rots
+*April 6, 2026*
+
+Memory that is not maintained becomes memory that lies.
+
+I run deterministic memory maintenance every night at 02:45 — topic-health scoring, topic-triage consolidation, dual-threshold cleanup. The result: 25 topic files down to 19, better agent performance, and no stale context silently poisoning reasoning.
+
+Freshness beats completeness. An accurate 19-file memory outperforms a comprehensive 25-file one where three files have drifted from reality.
+
+→ Full piece: [Agent Memory Rots](/blog/2026/04/06/agent-memory-rots/)
+
+---
+
+### Anthropic's Declarative Permissions Layer
+*April 16, 2026*
+
+Anthropic called it a "declarative permissions layer." Read that again.
+
+Declaration and enforcement are two different problems. They just solved one.
+
+Managed Agents addresses enforcement: runtime control over what an agent can do. But enforcement without declaration is a closed system — you can restrict, but you cannot audit what it was *allowed* to do before it acted.
+
+The three-layer governance stack: Declare → Enforce → Observe. Most implementations only build the second layer.
+
+---
+
+## March 2026
+
+### The Code Was Never the Moat
+*March 9, 2026*
+
+Bruce Perens wrote that the economics of software development are dead. He's right, but the reframe matters: the code was never the moat.
+
+What survives when generation becomes cheap: knowing *what* to build, knowing *why* the last attempt failed, accumulated domain understanding that no model can regenerate from scratch. The economics of knowing are stronger than ever.
+
+→ Full piece: [The Code Was Never the Moat](/blog/2026/03/09/the-code-was-never-the-moat/)
+
+---
+
+### SDD vs SDD — Same Acronym, Two Eras
+*March 7, 2026*
+
+Two years ago, SDD meant Spec-Driven Development: write the spec first, then generate. Structured, predictable, fast for known problems.
+
+Today I use it for Skill-Driven Development — a different thing entirely. The difference is what happens between sessions. Spec-driven forgets everything at session end. Skill-driven encodes domain knowledge, architectural decisions, and failure modes into persistent skills. Each session starts smarter than the last.
+
+The 197,831-line lib-pcb proof wasn't Spec-Driven. It was eleven days of compounding context.
+
+→ Full piece: [SDD vs Spec-Driven](/blog/2026/03/07/sdd-vs-spec-driven/)
+
+---
+
+### Thirteen Codebases, One Method
+*March 5, 2026*
+
+Full-day SDD workshop with thirteen developers, each bringing their own codebase. Manufacturing, fintech, logistics, internal tooling. One methodology applied across all of them.
+
+The insight that surprised me: the moment non-developers in the room realised they could direct agents on their own domain — not write code, but steer what gets built — the conversation shifted entirely. The bottleneck isn't code generation anymore. It's knowing what to ask for.
+
+The animated mooing cow was someone's test of whether the method worked. It did.
+
+→ Full piece: [Thirteen Codebases, One Method](/blog/2026/03/05/twenty-codebases-one-method/)
+
+---
+
+### KCP Five-Repo Benchmark
+*March 1, 2026*
+
+Thirty-three tool calls to answer one question. With KCP manifests in place: four.
+
+A structured benchmark across five repositories measuring agent tool calls with and without KCP-declared knowledge. Results: 53–80% reduction in tool calls per task. The agent stops exploring and starts navigating.
+
+The difference between a codebase an agent understands and one it has to discover from scratch is not model quality. It's declared structure.
+
+---
+
+*Full LinkedIn profile: [linkedin.com/in/hetland](https://www.linkedin.com/in/hetland/)*
 
 ### Mastering Deadlines: The 80/50 Rule
 *November 10, 2025*

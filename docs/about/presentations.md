@@ -6,7 +6,7 @@ tags:
 
 # Presentations and Publications
 
-Conference talks, workshops, and publications spanning 2006--2023. Topics cover architecture, SOA, cloud computing, productivity, data quality, and development methodology.
+Conference talks, workshops, and publications spanning 2006--2026. Topics cover architecture, SOA, cloud computing, productivity, data quality, and development methodology.
 
 Presentations with slides or video recordings are linked to their own pages.
 
@@ -33,6 +33,16 @@ Presentations with slides or video recordings are linked to their own pages.
     Graph Cafe 2014 -- Data quality with SolrCloud and Neo4j. 10M requests/day, 0.2s latency, with slides.
 
 </div>
+
+---
+
+## 2026
+
+| Date | Presentation | Venue |
+|------|-------------|-------|
+| Apr 2026 | Agent Pilsen — Skill-Driven Development (ongoing) | Eileff Landhandleri, Oslo (weekly) |
+| Mar 2026 | Skill-Driven Development — full-day workshop | Item Consulting, Oslo |
+| Mar 2026 | Skill-Driven Development | OSWA / Oslo Software Architecture |
 
 ---
 

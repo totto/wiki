@@ -7,13 +7,105 @@ tags:
 
 # Synthesis — Release History
 
-Synthesis is a knowledge infrastructure platform for AI-augmented development. It indexes workspaces (code, documentation, PDFs, media), builds a multi-layer knowledge graph, and exposes everything through a CLI, an MCP server for AI agents, and an LSP server for IDEs.
+Synthesis is a knowledge infrastructure platform for AI-augmented development. It indexes workspaces (code, documentation, PDFs, media, Notion), builds a multi-layer knowledge graph, and exposes everything through a CLI, an MCP server for AI agents, and an LSP server for IDEs.
 
 **Repository:** [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
 
 ---
 
-## Current Release: v1.23.0 (March 7, 2026)
+## Current Release: v1.29.0 (April 21, 2026)
+
+**60+ CLI commands · 11 MCP tools · 4,356 tests**
+
+The v1.29.0 release adds **Notion as a first-class workspace source** and **git signal analysis**. Synthesis can now index Notion workspaces alongside code and documentation — and detect when documentation and code have drifted apart.
+
+### What's new in v1.29.0
+
+**Notion workspace source** (6-phase implementation) — Notion pages become part of the Synthesis knowledge graph as virtual filesystem paths. Full and incremental syncs via BFS traversal; block-to-Markdown conversion covering all block types; rate-limited API client (3 req/s, automatic pagination, 429 retry).
+
+Three new health signal types emerged from building this:
+
+- **W022 notion-stale** — a Notion page references a code entity that no longer exists
+- **W023 notion-orphan** — a Notion page has no corresponding code referent
+- **W024 notion-conflict** — a Notion page and the codebase contradict each other on the same fact
+
+These signals make documentation drift visible before it misleads an agent. See the blog post: [When Your Agent Can Finally Read the Room](/blog/2026/04/21/when-your-agent-can-finally-read-the-room/)
+
+**Git signal analysis** — four history-based signals using exponential decay (half-life 180 days):
+
+```bash
+synthesis hotspots                  # files by temporally-decayed commit churn
+synthesis archaeology --since 90d  # knowledge buried in old code paths
+```
+
+Co-change coupling and bus factor analysis also included. Inspired by temporal decay techniques in Repowise; all computation is local.
+
+---
+
+## v1.28.0 — Onboarding Improvements (April 11, 2026)
+
+**4,300+ tests**
+
+Explicit API key guidance when AI features are unavailable. When `synthesis` detects AI is enabled but no `ANTHROPIC_API_KEY` is configured, it now prints an actionable message with the exact command to fix it — instead of producing confusing silent failures. The same guidance surfaces during `synthesis init` guided setup.
+
+---
+
+## v1.27.1 — Memory Maintenance (April 10, 2026)
+
+Two new commands for keeping ExoCortex memory topic files healthy:
+
+**`synthesis topic-health`** — scans `~/.claude/projects/.../memory/*.md`, queries FTS5 session hits per keyword, prints a HOT/WARM/COLD table with delta from baseline. Hotness score weights recency (60%) and age (40%).
+
+**`synthesis topic-triage`** — four-dimension scored triage (Recency, Recurrence, Actionability, Staleness) → ARCHIVE / PRUNE / UPDATE / KEEP suggestions for top-5 files. Advisory only; no writes unless `--auto` is passed.
+
+`--auto` uses dual-threshold logic (24h + 5 sessions) via `ConsolidateState` — the same pattern as `ReflectState`. Nightly cron at 02:45 runs `topic-triage --auto` after `synthesis maintain` at 02:30.
+
+Three bundled Claude Code skills added for workshop users who don't have Synthesis source access.
+
+See the blog post: [Agent Memory Rots](/blog/2026/04/06/agent-memory-rots/)
+
+---
+
+## v1.26.0 — Skills Graph & Subagent Session Linking (March 14, 2026)
+
+**`synthesis skills-graph`** — a self-contained interactive Cytoscape.js visualization of all `~/.claude/skills/` with three modes:
+
+```bash
+synthesis skills-graph              # skill dependency graph (199 skills, 30 clusters)
+synthesis skills-graph --mode workspace  # cross-repo dependency view
+synthesis skills-graph --mode modules   # directory-level module graph
+```
+
+Per-cluster colour palette, collapsible sidebar, search box, hover tooltips, keyboard navigation. FCose layout with CDN fallback for offline use.
+
+**Parent-child subagent session linking** (V19 Flyway migration) — parent Claude Code sessions that spawn subagents are now linked in the session index, enabling full chain tracing via `synthesis sessions`.
+
+**Reflect quality fixes** — noise filter, version batching, TTY detection for scan progress, session freshness checks.
+
+**`knowledge.yaml`** — Synthesis now ships its own KCP manifest, making it self-indexing.
+
+---
+
+## v1.24.0 — Skill Reflection (March 9, 2026)
+
+**4,255 tests**
+
+**`synthesis reflect`** — closes the dispatch→reflect learning loop. Analyzes recent Claude Code sessions and automatically creates or updates skill YAML files in `~/.claude/skills/`.
+
+Signal extraction heuristics look for five patterns in session text: `CORRECTION` (AI was corrected), `EXPLICIT_RULE` ("always"/"never" instructions), `DOMAIN_TERM` (recurring domain vocabulary), `TOOL_PATTERN` (command sequences), and `WORKFLOW_STEP` (procedural sequences). Patterns scoring ≥ 5.0 update existing skills; patterns without a match create new `reflect-*.yaml` files.
+
+```bash
+synthesis reflect                   # update skills from recent sessions
+synthesis reflect --dry-run         # preview changes without writing
+synthesis reflect --since 7d        # limit to last 7 days of sessions
+synthesis reflect --max-new 5       # cap new skill files per run
+```
+
+`ReflectState` tracks `lastReflectedAt` in `~/.synthesis/reflect-state.json` for fast short-circuit (< 10ms) when skills are already up to date. MCP tool `reflect` exposes the same logic to AI agents.
+
+---
+
+## v1.23.0 (March 7, 2026)
 
 **58 CLI commands · 11 MCP tools · 4,230 tests**
 

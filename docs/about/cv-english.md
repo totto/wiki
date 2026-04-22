@@ -29,7 +29,7 @@ Software architect, community builder, and AI development pioneer with 30+ years
 | **197,831** | Lines of production Java built in 11 days (25--66x industry standard) |
 | **70+** | Conference talks and publications (2006--2023) |
 | **4** | Companies founded as CTO/owner |
-| **~2008** | Java Champion since |
+| **2005** | Java Champion since (first in Scandinavia) |
 
 </div>
 </div>
@@ -70,7 +70,7 @@ Security and architecture advisory. Strategy advisor and mentor.
 
 <div class="credential" markdown>
 **Java Champion**
-Sun / Oracle · since ~2008
+Sun / Oracle · since 2005 (first in Scandinavia)
 
 Honorary recognition from the Java ecosystem. Honorary member of javaBin and the JavaZone Conference.
 </div>

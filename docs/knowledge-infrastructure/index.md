@@ -8,9 +8,9 @@ tags:
 
 # Knowledge Infrastructure
 
-Over the past three months I have been building and writing about a specific problem: AI agents create faster than humans comprehend. The bottleneck in AI-augmented development is not code generation -- it is finding, understanding, and connecting what has already been generated. Knowledge infrastructure is the missing layer.
+Over the past four months I have been building and writing about a specific problem: AI agents create faster than humans comprehend. The bottleneck in AI-augmented development is not code generation -- it is finding, understanding, and connecting what has already been generated. Knowledge infrastructure is the missing layer.
 
-This page maps the body of work that emerged from that problem. It spans four codebases, four blog series, and roughly thirty posts -- from the first observation that comprehension was the bottleneck, through building Synthesis and the Knowledge Context Protocol, to the three-layer memory architecture for AI agents.
+This page maps the body of work that emerged from that problem. It spans five codebases, six blog series, and roughly sixty posts -- from the first observation that comprehension was the bottleneck, through building Synthesis and the Knowledge Context Protocol, to the three-layer memory architecture, Skill-Driven Development, and the ExoCortex multi-agent stack running on top of it all.
 
 ---
 
@@ -18,13 +18,13 @@ This page maps the body of work that emerged from that problem. It spans four co
 
 <div class="grid cards" markdown>
 
--   :material-magnify: **Synthesis** · v1.21.0
+-   :material-magnify: **Synthesis** · v1.29.0
 
     ---
 
-    Local-first knowledge infrastructure platform. Indexes workspaces, builds multi-layer knowledge graphs, exposes everything through CLI, MCP, and LSP.
+    Local-first knowledge infrastructure platform. Indexes workspaces, builds multi-layer knowledge graphs, exposes everything through CLI, MCP, and LSP. Now includes Notion as a first-class workspace source.
 
-    **55** CLI commands · **4,170** tests · **8** MCP tools
+    **60+** CLI commands · **11** MCP tools · **4,300+** tests
 
     [:octicons-arrow-right-24: Release history](../notes/synthesis-releases.md) · [:octicons-link-external-16: GitHub](https://github.com/exoreaction/Synthesis)
 
@@ -38,28 +38,38 @@ This page maps the body of work that emerged from that problem. It spans four co
 
     [:octicons-arrow-right-24: Spec](https://github.com/Cantara/knowledge-context-protocol/blob/main/SPEC.md) · [:octicons-link-external-16: GitHub](https://github.com/Cantara/knowledge-context-protocol)
 
--   :material-console: **kcp-commands** · v0.8.0
+-   :material-console: **kcp-commands** · v0.9.0+
 
     ---
 
-    Claude Code hook that intercepts Bash tool calls. Injects flag guidance before execution, strips noise after. Java daemon at 12ms/call.
+    Claude Code hook that intercepts Bash tool calls. Injects flag guidance before execution, strips noise after. Java daemon at 12ms/call. Also writes every tool call to `~/.kcp/events.jsonl` for kcp-memory ingestion.
 
-    **283** bundled manifests · **67,352** tokens saved per session
+    **283+** bundled manifests · **67,352** tokens saved per session
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-commands)
+
+-   :material-brain: **kcp-memory** · v0.4.0
+
+    ---
+
+    Java daemon that indexes Claude Code session transcripts and tool events into a local SQLite database with FTS5 full-text search. Ships as an MCP server -- call `kcp_memory_search` or `kcp_memory_project_context` inline during any session.
+
+    **4** MCP tools · session-level and tool-level memory · zero additional dependencies
+
+    [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-memory)
 
 -   :material-robot: **IronClaw**
 
     ---
 
-    Open-source AI agent framework. Runs on Linux, connects to Slack, supports MCP tool registration. Powers Mimir and Klaw in the four-layer stack.
+    Open-source AI agent framework. Runs on Linux, connects to Slack, supports MCP tool registration. Powers Mimir and Klaw in the four-layer stack. The ExoCortex multi-agent setup runs on top of this foundation.
 
     [:octicons-link-external-16: GitHub](https://github.com/nearai/ironclaw)
 
 </div>
 
 !!! abstract "At a glance"
-    **~30 posts** across 4 blog series · **Jan 15 -- Mar 3, 2026** · Latest: [Three-Layer AI Memory](/blog/2026/03/03/three-layer-ai-memory-episodic-memory-semantic-memory-your-agent-has-one/)
+    **60+ posts** across 6 blog series · **Jan 15 -- Apr 2026** · Latest: [When Your Agent Can Finally Read the Room](/blog/2026/04/21/when-your-agent-can-finally-read-the-room/)
 
 ---
 
@@ -75,11 +85,13 @@ This page maps the body of work that emerged from that problem. It spans four co
 
 5. **Memory is three layers, not one.** Working memory (context window), episodic memory (session history), semantic memory (workspace knowledge graph). Most agents have only the first. ([Three-Layer AI Memory](/blog/2026/03/03/three-layer-ai-memory-episodic-memory-semantic-memory-your-agent-has-one/))
 
+6. **Memory that is not maintained becomes memory that lies.** Building the layers is the easy part. Without active maintenance -- health checks, triage, consolidation -- knowledge infrastructure degrades into confident misinformation. ([Agent Memory Rots. Here's How We Stopped It.](/blog/2026/04/06/agent-memory-rots-heres-how-we-stopped-it/))
+
 ---
 
 ## The series
 
-Four blog series document the arc from problem to architecture to implementation.
+Six blog series document the arc from problem to architecture to implementation.
 
 <div class="grid cards" markdown>
 
@@ -100,9 +112,29 @@ Four blog series document the arc from problem to architecture to implementation
 
     ---
 
-    From llms.txt to KCP: how AI agents actually find and use knowledge, why the gap between a table of contents and a navigable map matters, and the RFC series defining auth, federation, trust, payments, and context hints.
+    From llms.txt to KCP: how AI agents actually find and use knowledge, why the gap between a table of contents and a navigable map matters, and the RFC series defining auth, federation, trust, payments, and context hints. Includes kcp-memory, kcp-commands, and the query composition work through v0.14.
 
-    **9 posts** -- specification, benchmarks, and the CrewAI PR review loop.
+    **15+ posts** -- specification, benchmarks, the CrewAI PR review loop, and the ecosystem overview.
+
+-   :material-trending-up: **[Skill-Driven Development](/blog/2026/03/07/skill-driven-vs-spec-driven-development/)**
+
+    ---
+
+    The methodology that emerged from the infrastructure. Spec-Driven Development starts each session from zero. Skill-Driven Development encodes domain knowledge, failure modes, and architectural patterns into persistent YAML skills -- so every session starts smarter than the last.
+
+    lib-pcb (197,831 lines, 11 days), Item Consulting workshop (13 developers, 13 codebases in one day), and the compounding knowledge curve.
+
+    **5+ posts** -- theory, proof, and practice.
+
+-   :material-layers: **[ExoCortex Architecture](/blog/2026/04/15/two-architectures-for-claude-code-what-19700-stars-got-right-and-what-they-missed/)**
+
+    ---
+
+    Two architectures for Claude Code compared: the 19,700-star `claude-code-best-practice` repository versus the ExoCortex -- an eight-layer stack built independently over ten weeks. Same tool, same class of problem, different assumptions. Both have blind spots the other solved.
+
+    Includes the agent dispatch planner, multi-agent awareness, distributed memory for agent fleets, and what accumulates when the infrastructure runs long enough to develop its own history.
+
+    **4+ posts** -- architecture comparison, memory at scale, and identity over time.
 
 -   :material-brain: **[Giving an AI Agent a Brain](/blog/2026/02/24/giving-an-ai-agent-a-brain-connecting-ironclaw-to-synthesis-via-mcp/)**
 
@@ -135,6 +167,8 @@ These standalone posts document specific discoveries -- benchmarks, failure mode
 | [We Gave the AI Better Documentation. It Got Slower.](/blog/2026/02/26/we-gave-the-ai-better-documentation-it-got-slower/) | CLI documentation *increased* tool calls by 11%. MCP *decreased* them by 35%. One sentence in the system prompt beat 41 rewritten tool descriptions. |
 | [The Date the AI Invented](/blog/2026/02/26/the-date-the-ai-invented/) | The agent answered with zero tool calls, every metric correct -- except a date it confabulated from surrounding narrative. Temporal metadata needs structured fields, not prose. |
 | [KCP on Two Repos, Two Days](/blog/2026/03/01/kcp-on-two-repos-two-days-what-the-numbers-actually-show/) | 119 to 31 tool calls on application code. 53 to 25 on documentation. KCP manifests cut agent work by 53--74%. |
+| [We Cancelled a 45-Minute Architecture Review](/blog/2026/04/15/we-cancelled-a-45-minute-architecture-review-a-kcp-query-answered-it-in-1-2-seconds/) | "What else breaks if we change the payment service API contract?" Used to require a meeting. A `synthesis search` query answered it in 1.2 seconds. The bottleneck was never the meeting -- it was missing infrastructure. |
+| [Seven Out of Eight Models Lied About Finishing](/blog/2026/04/16/seven-out-of-eight-models-lied-about-finishing/) | The Smidja benchmark: build a TypeScript CLI orchestrating 7 agents via Supabase, with zero `tsc` errors. 7 of 8 models self-reported completion. Most had not finished. Self-assessment failure is structurally inevitable without external verification outside the generation loop. |
 
 ### Knowledge graphs and structure
 
@@ -142,6 +176,7 @@ These standalone posts document specific discoveries -- benchmarks, failure mode
 |------|---------|
 | [Zero Links: An Engineering Session](/blog/2026/02/26/zero-links-an-engineering-session-with-claude-code-and-opus/) | 777 directories, zero edges. One day later: 11,777 edges, 23 new tests, 4 bugs fixed. TDD with Opus on the knowledge graph. |
 | [Code Gets Graphs. Knowledge Doesn't. That's Backwards.](/blog/2026/02/26/code-gets-graphs-knowledge-doesnt-thats-backwards/) | Every team graphs code dependencies. Almost no one graphs knowledge. The asymmetry is costly and fixable. |
+| [When Your Agent Can Finally Read the Room](/blog/2026/04/21/when-your-agent-can-finally-read-the-room/) | Notion integrated as a first-class Synthesis workspace. The harder problem: documentation and code tell different stories. W022 (notion-stale), W023 (notion-orphan), W024 (notion-conflict) emerged as health signals -- a lightweight audit of whether organizational knowledge can be trusted. |
 
 ### Coverage and dogfooding
 
@@ -156,6 +191,8 @@ These standalone posts document specific discoveries -- benchmarks, failure mode
 | Post | Finding |
 |------|---------|
 | [Three-Layer AI Memory](/blog/2026/03/03/three-layer-ai-memory-episodic-memory-semantic-memory-your-agent-has-one/) | Working memory, episodic memory, semantic memory. AI agents have one. They need three. Synthesis v1.21.0 adds episodic memory via session indexing. |
+| [Agent Memory Rots. Here's How We Stopped It.](/blog/2026/04/06/agent-memory-rots-heres-how-we-stopped-it/) | Building the memory layers is the easy part. Without active maintenance -- nightly topic-health checks, dual-threshold triage, deterministic consolidation -- memory infrastructure degrades into confident misinformation. 25 → 19 topic files; better performance and lower hallucination rate after the maintenance system shipped. |
+| [AI Agents Forget Everything. That's a Choice, Not a Constraint.](/blog/2026/04/18/ai-agents-forget-everything-thats-a-choice-not-a-constraint/) | What memory infrastructure looks like at organizational scale: not just persistence, but context. For an enterprise fleet of agents, the problem is synchronization -- keeping shared knowledge consistent across sessions, agents, and nodes. |
 | [Five Architecture Patterns for AI Agents](/blog/2026/02/01/five-architecture-patterns-ai-agents/) | Grep over RAG. Read-only agents. Middleware that validates. The patterns that survive contact with real workloads. |
 | [The AI-Augmented Consultant](/blog/2026/03/02/the-ai-augmented-consultant-knowledge-infrastructure-before-deliverables/) | Knowledge infrastructure before deliverables. The same architecture applied to consulting, not just code. |
 
@@ -163,17 +200,17 @@ These standalone posts document specific discoveries -- benchmarks, failure mode
 
 ## The codebases
 
-Four open-source projects underpin this work:
+Five open-source projects underpin this work:
 
-**[Synthesis](https://github.com/exoreaction/Synthesis)** -- Knowledge infrastructure for AI-augmented development. Local-first indexing (200–300 files/second), sub-second search, multi-layer knowledge graphs, MCP server (8 tools), session indexing (episodic memory). Java 21. v1.21.0, 4,170 tests, 55 CLI commands.
+**[Synthesis](https://github.com/exoreaction/Synthesis)** -- Knowledge infrastructure for AI-augmented development. Local-first indexing (200--300 files/second), sub-second search, multi-layer knowledge graphs, MCP server (11 tools), session indexing (episodic memory), agent dispatch planner, and Notion workspace integration. Java 21. v1.29.0, 4,300+ tests, 60+ CLI commands.
 
 - [Release history](../notes/synthesis-releases.md)
 
 ---
 
-**[Knowledge Context Protocol](https://cantara.github.io/knowledge-context-protocol)** -- A YAML file format specification that makes knowledge navigable by AI agents. KCP is to knowledge what MCP is to tools: it adds topology (`depends_on`, `supersedes`), intent (what question each unit answers), freshness (`validated` dates), audience targeting, and context window hints — the metadata layer that `llms.txt` cannot express.
+**[Knowledge Context Protocol](https://cantara.github.io/knowledge-context-protocol)** -- A YAML file format specification that makes knowledge navigable by AI agents. KCP is to knowledge what MCP is to tools: it adds topology (`depends_on`, `supersedes`), intent (what question each unit answers), freshness (`validated` dates), audience targeting, and context window hints -- the metadata layer that `llms.txt` cannot express.
 
-- **Status:** v0.5 draft spec — published under Cantara, submitted to the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Linux Foundation) alongside MCP and AGENTS.md
+- **Status:** v0.5 draft spec -- published under Cantara, submitted to the [Agentic AI Foundation](https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation) (Linux Foundation) alongside MCP and AGENTS.md
 - **Spec:** [SPEC.md](https://github.com/Cantara/knowledge-context-protocol/blob/main/SPEC.md) · [PROPOSAL.md](https://github.com/Cantara/knowledge-context-protocol/blob/main/PROPOSAL.md)
 - **RFCs:** Auth & Delegation (RFC-0002) · Federation (RFC-0003) · Trust & Compliance (RFC-0004) · Payment & Rate Limits (RFC-0005) · Context Window Hints (RFC-0006, accepted into v0.4 core)
 - **Reference implementations:** parsers in Python and Java · MCP bridge servers in TypeScript, Python, and Java
@@ -181,17 +218,26 @@ Four open-source projects underpin this work:
 
 ---
 
-**[kcp-commands](https://github.com/Cantara/kcp-commands)** -- A Claude Code hook that applies KCP at the Bash tool boundary. Intercepts every Bash tool call at two points: before execution (injects concise flag/syntax guidance from a KCP manifest — no `--help` round-trips) and after execution (strips noise from large outputs before they consume context). 283 bundled manifests covering git, Linux, Docker, Kubernetes, cloud CLIs, build tools, package managers, and more.
+**[kcp-commands](https://github.com/Cantara/kcp-commands)** -- A Claude Code hook that applies KCP at the Bash tool boundary. Intercepts every Bash tool call at two points: before execution (injects concise flag/syntax guidance from a KCP manifest -- no `--help` round-trips) and after execution (strips noise from large outputs before they consume context). Also writes every tool call to `~/.kcp/events.jsonl` for kcp-memory ingestion. 283+ bundled manifests covering git, Linux, Docker, Kubernetes, cloud CLIs, build tools, package managers, and more.
 
-- **Measured saving:** 67,352 tokens per session — 33.7% of a 200K context window recovered
+- **Measured saving:** 67,352 tokens per session -- 33.7% of a 200K context window recovered
 - **Performance:** Java daemon (12ms/call warm) · Node.js fallback (250ms) · unknown commands auto-generate manifests from `--help`
-- **Current version:** v0.8.0
+- **Current version:** v0.9.0+
 - **Install:** `curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/install.sh | bash -s -- --java`
 - **Repository:** [github.com/Cantara/kcp-commands](https://github.com/Cantara/kcp-commands)
 
 ---
 
-**[IronClaw](https://github.com/nearai/ironclaw)** -- Open-source AI agent framework. Runs on Linux, connects to Slack, supports MCP tool registration. Powers Mimir (awareness agent) and Klaw (maintenance agent) in the four-layer stack.
+**[kcp-memory](https://github.com/Cantara/kcp-memory)** -- A Java daemon that indexes Claude Code session transcripts (`~/.claude/projects/**/*.jsonl`) and kcp-commands tool events into a local SQLite database with FTS5 full-text search. The episodic memory layer for Claude Code. Ships as both a CLI tool and an MCP server.
+
+- **MCP tools:** `kcp_memory_search` · `kcp_memory_events_search` · `kcp_memory_list` · `kcp_memory_stats` · `kcp_memory_session_detail` · `kcp_memory_project_context`
+- **Current version:** v0.4.0
+- **Install:** `java -jar ~/.kcp/kcp-memory-daemon.jar mcp` (registered in `~/.claude/settings.json`)
+- **Repository:** [github.com/Cantara/kcp-memory](https://github.com/Cantara/kcp-memory)
+
+---
+
+**[IronClaw](https://github.com/nearai/ironclaw)** -- Open-source AI agent framework. Runs on Linux, connects to Slack, supports MCP tool registration. Powers Mimir (awareness agent) and Klaw (maintenance agent) in the four-layer stack. The ExoCortex -- an eight-layer Claude Code setup described in the [architecture series](/blog/2026/04/15/two-architectures-for-claude-code-what-19700-stars-got-right-and-what-they-missed/) -- builds on this foundation.
 
 ---
 
@@ -205,13 +251,21 @@ Four open-source projects underpin this work:
 
     Read the **[MCP vs CLI benchmark](/blog/2026/02/26/we-gave-the-ai-better-documentation-it-got-slower/)** (how agents integrate with tools), then **[Beyond llms.txt](/blog/2026/02/25/beyond-llmstxt-ai-agents-need-maps-not-tables-of-contents/)** (how agents navigate knowledge). The **[IronClaw series](/blog/2026/02/24/giving-an-ai-agent-a-brain-connecting-ironclaw-to-synthesis-via-mcp/)** covers the practical setup including every gotcha.
 
+??? abstract "Adopting Skill-Driven Development"
+
+    Start with **[Skill-Driven vs Spec-Driven Development](/blog/2026/03/07/skill-driven-vs-spec-driven-development/)** for the core distinction. Then **[Twenty Codebases, One Method](/blog/2026/03/05/twenty-codebases-one-method/)** for what SDD looks like in practice with 13 developers and 13 different codebases in a single workshop. The lib-pcb series (five posts) provides the original proof: 197,831 lines in 11 days.
+
 ??? abstract "Evaluating knowledge tools"
 
-    The **[Synthesis Excavation](/blog/2026/02/25/the-synthesis-excavation-recovering-35-years-of-lost-history/)** and **[Zero Links session](/blog/2026/02/26/zero-links-an-engineering-session-with-claude-code-and-opus/)** show real-world deployment -- what breaks and how long recovery takes. The **[Mirror Test](/blog/2026/02/11/the-mirror-test-how-synthesis-benchmarked-itself-into-something-better/)** shows what dogfooding looks like.
+    The **[Synthesis Excavation](/blog/2026/02/25/the-synthesis-excavation-recovering-35-years-of-lost-history/)** and **[Zero Links session](/blog/2026/02/26/zero-links-an-engineering-session-with-claude-code-and-opus/)** show real-world deployment -- what breaks and how long recovery takes. The **[Mirror Test](/blog/2026/02/11/the-mirror-test-how-synthesis-benchmarked-itself-into-something-better/)** shows what dogfooding looks like. For agent self-assessment failures, read **[Seven Out of Eight Models Lied About Finishing](/blog/2026/04/16/seven-out-of-eight-models-lied-about-finishing/)**.
 
 ??? abstract "Understanding the daily practice"
 
     **[What a 10x Workday Actually Looks Like](/blog/2026/02/28/what-a-10x-workday-actually-looks-like/)** walks through a realistic Tuesday with real output numbers. **[What It Looks Like from Inside the Stack](/blog/2026/02/28/what-it-looks-like-from-inside-the-stack/)** is written by the model running inside the environment.
+
+??? abstract "Building an agent fleet"
+
+    Start with **[AI Agents Forget Everything. That's a Choice, Not a Constraint.](/blog/2026/04/18/ai-agents-forget-everything-thats-a-choice-not-a-constraint/)** for the organizational memory problem. Then **[Agent Memory Rots](/blog/2026/04/06/agent-memory-rots-heres-how-we-stopped-it/)** for the maintenance architecture. The **[ExoCortex vs claude-code-best-practice](/blog/2026/04/15/two-architectures-for-claude-code-what-19700-stars-got-right-and-what-they-missed/)** comparison shows how the full stack composes.
 
 ---
 
@@ -231,6 +285,21 @@ Four open-source projects underpin this work:
 | Feb 28 | Four-Layer AI Stack series -- the architecture described |
 | Mar 1 | KCP benchmarked on two external repos -- 53--74% efficiency gain |
 | Mar 3 | Synthesis v1.21.0 -- episodic memory via session indexing, three-layer memory model |
+| Mar 3 | kcp-memory v0.1.0--v0.4.0 ships -- session and tool-level memory, MCP server |
+| Mar 7 | Synthesis v1.22.0--v1.23.0 -- multi-agent awareness, agent dispatch planner; 58 CLI commands, 11 MCP tools |
+| Mar 7 | "Skill-Driven vs Spec-Driven Development" -- the methodology named and argued |
+| Mar 5 | Item Consulting SDD workshop -- 13 developers, 13 codebases, one day |
+| Mar 9 | "The Code Was Never the Moat" -- the economics argument |
+| Mar 13--25 | KCP v0.10 through v0.14 -- pre-invocation discovery, query composition, manifest quality signals |
+| Mar 27 | "What the Infrastructure Made Possible" -- the cumulative case |
+| Apr 6 | "Agent Memory Rots" -- deterministic maintenance system ships; topic-health, topic-triage, nightly consolidation |
+| Apr 15 | "We Cancelled a 45-Minute Architecture Review" -- KCP query replaces meeting in 1.2 seconds |
+| Apr 15 | "Two Architectures for Claude Code" -- ExoCortex vs 19,700-star best-practice repository compared |
+| Apr 16 | "Seven Out of Eight Models Lied About Finishing" -- self-assessment failure as structural inevitability |
+| Apr 17 | "What Accumulates" -- on identity, continuity, and what an agent stack becomes over time |
+| Apr 18 | "AI Agents Forget Everything. That's a Choice." -- distributed memory for enterprise agent fleets |
+| Apr 21 | Synthesis v1.29.0 -- Notion as first-class workspace source; W022/W023/W024 health signals |
+| Apr 21 | "When Your Agent Can Finally Read the Room" -- documentation drift as agent reasoning problem |
 
 ---
 

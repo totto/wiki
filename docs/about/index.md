@@ -20,7 +20,9 @@ I founded **eXOReaction** to answer that question with today's tools. We're an A
 
 The core of our approach is **Skill-Driven Development (SDD)** -- a methodology I created for structured human-AI collaboration. SDD treats AI skills as composable, versioned building blocks that compound over time. It's been validated across four sectors (manufacturing, finance, renewable energy, AI security) with measured productivity gains of 25--66x compared to traditional approaches.
 
-I also built **Synthesis**, a local-first knowledge infrastructure tool. It indexes thousands of files per second, provides sub-second search across entire codebases, and tracks cross-repository dependencies -- all without touching the cloud. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built.
+I also built **Synthesis** (v1.29.0), a local-first knowledge infrastructure platform. It indexes workspaces at 200--300 files/second, builds multi-layer knowledge graphs, exposes 60+ CLI commands and 11 MCP tools, and now integrates Notion as a first-class workspace source. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built -- and to keep AI agents from reasoning over stale or contradictory information.
+
+Alongside Synthesis, I created the **Knowledge Context Protocol (KCP)** -- a YAML specification that makes knowledge navigable by AI agents (submitted to the Linux Foundation's Agentic AI Foundation), **kcp-commands** (a Claude Code hook that saves ~67,000 tokens per session), and **kcp-memory** (episodic memory for Claude Code via session indexing). Together these form the ExoCortex -- the knowledge infrastructure stack I run daily.
 
 I'm also co-founder and CTO of **Quadim**, a competence management SaaS platform. Quadim helps teams and organisations manage skill profiles, identify gaps, and build learning paths -- with AI integration throughout, including an intelligent agent (Frøya) that builds domain-specific competence libraries.
 

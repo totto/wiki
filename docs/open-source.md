@@ -14,6 +14,27 @@ I have been involved in open source for most of my career. The work spans three 
 
 [github.com/exoreaction](https://github.com/exoreaction)
 
+### Synthesis — Knowledge Infrastructure Platform
+
+**Repository:** [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
+**Language:** Java 21 | **License:** Apache 2.0 | **Current version:** v1.29.0
+
+Local-first knowledge infrastructure for AI-augmented development. Indexes workspaces (code, docs, PDFs, media, Notion), builds multi-layer knowledge graphs, and exposes everything through a CLI, MCP server, and LSP server.
+
+**Key stats:** 60+ CLI commands · 11 MCP tools · 4,300+ tests · 200--300 files/second indexing
+
+**Capabilities:**
+- Sub-second full-text and semantic search across entire workspaces
+- Code knowledge graph (dependency tracking, cross-repo relationships)
+- Episodic memory via session indexing (Claude Code session transcripts → searchable SQLite)
+- Agent dispatch planner (`synthesis dispatch`) — pre-populates agent spawn prompts
+- Notion workspace integration with health signals (W022/W023/W024)
+- Executive reporting, research engine, maintain/validate/health commands
+
+[:octicons-arrow-right-24: Release history](notes/synthesis-releases.md) · [:octicons-arrow-right-24: Knowledge Infrastructure](knowledge-infrastructure/index.md)
+
+---
+
 ### xorcery-alchemy
 
 **Repository:** [github.com/exoreaction/xorcery-alchemy](https://github.com/exoreaction/xorcery-alchemy)
@@ -27,7 +48,54 @@ Experimental extensions to the Xorcery framework, exploring temporal analytics a
 
 [github.com/Cantara](https://github.com/Cantara)
 
-Cantara builds open-source infrastructure for Java applications: authentication systems, reactive frameworks, messaging abstractions, and microservice tooling. Most projects are Apache 2.0 licensed and production-ready.
+Cantara builds open-source infrastructure for Java applications: authentication systems, reactive frameworks, messaging abstractions, microservice tooling, and AI knowledge protocols. Most projects are Apache 2.0 licensed and production-ready.
+
+### Knowledge Context Protocol (KCP)
+
+**Repository:** [github.com/Cantara/knowledge-context-protocol](https://github.com/Cantara/knowledge-context-protocol)
+**Spec:** [cantara.github.io/knowledge-context-protocol](https://cantara.github.io/knowledge-context-protocol)
+**License:** Apache 2.0 | **Status:** v0.5 draft — submitted to the Linux Foundation Agentic AI Foundation
+
+A YAML file format specification that makes knowledge navigable by AI agents. KCP is to knowledge what MCP is to tools: it adds topology (`depends_on`, `supersedes`), intent (what question each unit answers), freshness (`validated` dates), audience targeting, and context window hints.
+
+**RFCs:** Auth & Delegation · Federation · Trust & Compliance · Payment & Rate Limits · Context Window Hints (accepted into v0.4 core)
+
+**Reference implementations:** parsers in Python and Java · MCP bridge servers in TypeScript, Python, and Java
+
+---
+
+### kcp-commands
+
+**Repository:** [github.com/Cantara/kcp-commands](https://github.com/Cantara/kcp-commands)
+**Language:** Java (daemon) + shell | **License:** Apache 2.0 | **Current version:** v0.9.0+
+
+A Claude Code hook that applies KCP at the Bash tool boundary. Intercepts every Bash tool call: injects concise flag/syntax guidance before execution (no `--help` round-trips), strips noise after. Also writes every tool call to `~/.kcp/events.jsonl` for kcp-memory ingestion.
+
+**Measured saving:** 67,352 tokens per session — 33.7% of a 200K context window recovered
+
+**283+ bundled manifests** covering git, Linux, Docker, Kubernetes, cloud CLIs, build tools, package managers, and more. Unknown commands auto-generate manifests from `--help`.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/install.sh | bash -s -- --java
+```
+
+---
+
+### kcp-memory
+
+**Repository:** [github.com/Cantara/kcp-memory](https://github.com/Cantara/kcp-memory)
+**Language:** Java | **License:** Apache 2.0 | **Current version:** v0.4.0
+
+A Java daemon that indexes Claude Code session transcripts and kcp-commands tool events into a local SQLite database with FTS5 full-text search. The episodic memory layer for Claude Code. Ships as both a CLI tool and an MCP server.
+
+**MCP tools:** `kcp_memory_search` · `kcp_memory_events_search` · `kcp_memory_list` · `kcp_memory_stats` · `kcp_memory_session_detail` · `kcp_memory_project_context`
+
+```bash
+# Register as MCP server in ~/.claude/settings.json
+java -jar ~/.kcp/kcp-memory-daemon.jar mcp
+```
+
+---
 
 ---
 
