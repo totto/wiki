@@ -201,11 +201,13 @@ The practical configuration: rotate the third lens based on what the PR touches.
 
 ![Scaling the diagonal — Phase 1 detection complete, Phase 2 remediation quality, Phase 3 methodology lenses (Site Reliability, Data Governance, Accessibility)](../../assets/images/blog/review-lenses/slide-12.png)
 
-The planted defect set is the right benchmark pattern. Four diffs, four known defects, binary scoring, a diagonal that should be 4/4. This is now the regression test for the lens library — any new lens gets a planted defect designed for it, and the existing diagonal must still hold.
+The planted defect set is now the regression test for the lens library. Any new lens gets a planted defect designed for it; the existing diagonal must still hold. That's the maintenance contract: N lenses, N defects, N/N on the diagonal.
 
-The current set tests detection. The next set should test *recommendation quality* — when the lens catches the defect, does it suggest the right fix? A security lens that catches SQL injection but recommends input validation instead of parameterized queries is correct on detection and wrong on remediation. That's the next metric.
+The current benchmark tests detection. The next version tests *remediation quality* — not just "did the lens flag it?" but "did it suggest the right fix?" A security lens that catches SQL injection but recommends input validation instead of parameterized queries is right on detection, wrong on what matters. That's measurable with the same planted defect approach: four defects, four expected fixes, binary scoring.
 
-And the WWTD result suggests something worth exploring further: lenses based on methodology rather than code patterns. What would a reliability engineer's lens catch? A data governance lens? An accessibility lens? The planted defect approach scales — one defect per lens, one diagonal to maintain.
+The WWTD result points to something harder to scope. The other eight lenses encode frameworks from books — finite, enumerable, well-defined. WWTD encodes a way of thinking that came from the practice itself: the experience of state disappearing at session boundaries, of hard-won context not surviving the next restart. No book teaches that question. The lens had to come from someone who'd lived it.
+
+Which means the next lenses — reliability engineering, data governance, accessibility — aren't just about adding more YAMLs. They're about finding the questions that practitioners in those fields ask that don't appear anywhere in the literature. The planted defect approach will validate them. Finding the right questions is the actual work.
 
 ---
 
