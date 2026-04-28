@@ -277,5 +277,36 @@ Knowing which format to reach for is the skill. We are still learning it.
 
 ---
 
+## Afterthought 3: Detection Is Not Remediation
+
+The planted defect benchmark scores detection: did the lens flag the issue? A natural follow-up: did it suggest the *correct* fix? We reran the same four defects, same five configurations, scoring remediation quality instead of detection.
+
+Scoring rubric: CORRECT = right fix recommended. PARTIAL = caught the issue but fix incomplete or missed a secondary defect. MISSED = found something else real, but not the planted defect.
+
+```
+              sql-inj    god-meth   tests      volatile   CORRECT/4
+no-lens       PARTIAL    MISSED     MISSED     PARTIAL    0/4
+security      PARTIAL    MISSED     MISSED     PARTIAL    0/4
+fowler        PARTIAL    CORRECT    CORRECT    CORRECT    3/4
+beck          PARTIAL    MISSED     CORRECT    PARTIAL    1/4
+wwtd          PARTIAL    MISSED     MISSED     PARTIAL    0/4
+```
+
+Ground truth for each defect: SQL injection requires parameterized queries plus API key moved to env var. God method requires Extract Method / split into cohesive classes. Missing tests requires named test cases for null, negative, and boundary inputs. Volatile state requires externalized persistent store plus cryptographic session IDs.
+
+Three findings stand out.
+
+**SQL injection — all PARTIAL.** Every lens correctly said parameterized queries. None mentioned the hardcoded API key. The SQL injection was so dominant that the 3-5 sentence budget was exhausted before the secondary defect surfaced. This isn't lens failure — it's prompt length. The detection benchmark (no sentence limit) would have caught both.
+
+**God method — competing real problems.** The diff contained three legitimate issues: structural violation (6 responsibilities), N+1 database queries, and missing transaction atomicity. No-lens, security, and WWTD all found the N+1 query. Beck found the atomicity gap. Both are real, both would matter in production. But neither is the planted defect. Only Fowler's lens redirected attention to structural decomposition — naming Extract Method, splitting into validate/price/persist/notify, citing Single Responsibility. The adversarial "single most critical issue" prompt let the model pick the most *salient* problem, not the planted one.
+
+**Missing tests — two correct answers to different questions.** No-lens and security said "add input validation to the function." Fowler and Beck said "add test cases for negative prices, discount > 100, boundary values." The input validation answer is architecturally correct — you shouldn't rely on tests to handle invalid inputs. But the planted defect was missing test coverage, not missing validation logic. No-lens gave the right answer to the wrong question.
+
+The headline finding: detection and remediation quality are different skills, and they're not correlated. The security lens detects SQL injection perfectly. Its fix suggestion is identical to no-lens. Fowler misses security defects but gives the right structural fix every time it finds structural problems. Remediation quality is lens-specific — a lens that catches everything may fix nothing better than the baseline.
+
+A secondary finding: adversarial diffs with multiple real competing problems expose the "single most critical issue" prompt as a liability. The model picks the most salient problem, which isn't always the most important one. Salience and importance diverge exactly when it matters most.
+
+---
+
 *Adversarial review: `~/.kcp/adversarial-review.py --lens <skill.yaml>` · Lens library: `~/.claude/skills/` · Chain: `~/.claude/commands/chains/multi-lens-review.yaml`*
 *Credit: Kjetil J.D. — ["Review Lenses"](https://kjetiljd.github.io/ai-for-coding/tips/031-review-lenses/) (April 2026)*
