@@ -211,5 +211,36 @@ Which means the next lenses — reliability engineering, data governance, access
 
 ---
 
+## Afterthought: What Happens on Messy Diffs?
+
+The planted defect benchmark is clean by design — one defect per diff, one target lens. Real code isn't like that.
+
+After the benchmark ran, we tested three *messy* diffs: each containing two overlapping defects from different domains.
+
+**MESSY-1 — JWT bypass hidden inside a god method.** The security issue (JWT decoded without signature verification) and the structural issue (five responsibilities in one method) coexist in the same 40 lines. Security target: security lens. Fowler target: Fowler lens.
+
+**MESSY-2 — Untestable code: business logic mixed with I/O.** Beck sees missing tests made impossible by the design. Fowler sees the design flaw that caused the untestability. Both defects are real; they're just upstream and downstream of each other.
+
+**MESSY-3 — Predictable session ID and volatile in-memory state.** The session ID is MD5(user_id + timestamp) — guessable. And the entire session store evaporates on restart. Security defect and operational defect, same function.
+
+Summary table across all three diffs:
+
+```
+                           security  fowler  beck  wwtd
+JWT bypass in god method     BOTH    BOTH
+Untestable mixed I/O                 BOTH   BOTH
+Session ID + volatile state  BOTH                 BOTH
+```
+
+Every cell: **BOTH (overlap)**. No lens limited itself to its own defect. When two defects share the same code, every specialist fires on both.
+
+The clean 4/4 diagonal worked because each diff had exactly one defect. The moment two defects overlap, the lenses stop separating them.
+
+One nuance worth noting: in MESSY-2, Beck and Fowler fired on different angles. Beck asked *where are the tests for this?* Fowler asked *why is this untestable?* Same code, different questions, complementary findings. That's not noise — that's both lenses doing their job correctly. The overlap is signal, not false positive.
+
+The practical implication: use lenses when you suspect what kind of defect might be present, not as a general-purpose separator. If a PR looks like it might have security issues, run the security lens. Don't expect it to ignore the god method it finds along the way. Lenses sharpen focus on clean code. On messy code, they amplify everything visible.
+
+---
+
 *Adversarial review: `~/.kcp/adversarial-review.py --lens <skill.yaml>` · Lens library: `~/.claude/skills/` · Chain: `~/.claude/commands/chains/multi-lens-review.yaml`*
 *Credit: Kjetil J.D. — ["Review Lenses"](https://kjetiljd.github.io/ai-for-coding/tips/031-review-lenses/) (April 2026)*
