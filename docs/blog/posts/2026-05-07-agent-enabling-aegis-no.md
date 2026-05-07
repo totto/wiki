@@ -28,7 +28,7 @@ federated, and cryptographically signed. Here's what I did and what I learned.
 
 <!-- more -->
 
-![The invisible AI-era firm](../../assets/images/blog/agent-enabling-aegis-no/slide-02.png)
+![What humans see vs what agents see](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-02.png)
 
 ## Start with the obvious: `/llms.txt`
 
@@ -42,9 +42,19 @@ have an `llms.txt`. The bar is extremely low and the upside is that any agent
 querying your site gets a clean starting point instead of reverse-engineering
 your navigation structure.
 
-![The bare minimum: /llms.txt](../../assets/images/blog/agent-enabling-aegis-no/slide-04.png)
+![The low bar: /llms.txt in 10 minutes](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-04.png)
 
 That was the easy part.
+
+## There are three levels, not two
+
+Before going further it's worth naming the progression explicitly.
+
+![The AI-Visibility Maturity Scale](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-03.png)
+
+Most people stop at Level 1 and call it done. Level 2 is where the interesting
+properties emerge: structured, federated, verifiable. That's what the rest of
+this post is about.
 
 ## KCP federation: the interesting part
 
@@ -61,7 +71,7 @@ index that federates to eleven sub-manifests in `/knowledge/`:
   KCP itself, kcp-commands, kcp-memory, kcp-triage, kcp-dashboard,
   skills-library
 
-![The ægis.no capability graph](../../assets/images/blog/agent-enabling-aegis-no/slide-07.png)
+![KCP Federation blueprint — the exact files we built](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-06.png)
 
 Each sub-manifest is self-contained. It has its own `discovery` block, its own
 `authority` block, its own `signing` block. The root just knows where to find
@@ -82,7 +92,7 @@ different keys. A partner contributing a sub-manifest could sign it with their
 own key. The root manifest trusts the federation structure; signing anchors the
 provenance of each piece. You can verify who vouches for what.
 
-![Option A: independent per-manifest signing](../../assets/images/blog/agent-enabling-aegis-no/slide-08.png)
+![Establishing verifiable trust — the provenance pathway](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-08.png)
 
 For now, all eleven manifests are signed by the same key — a GitHub Actions
 workflow that triggers on any push touching `knowledge.yaml` or `knowledge/**`.
@@ -101,7 +111,7 @@ The first run of the signing action failed with:
 Error: operation not supported for this keytype
 ```
 
-![The Ed25519 -rawin gotcha](../../assets/images/blog/agent-enabling-aegis-no/slide-10.png)
+![The automation loop and the Ed25519 -rawin gotcha](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-09.png)
 
 The issue: Ed25519 doesn't use an external digest algorithm. The hash is
 internal to the algorithm — you sign the raw bytes directly. `openssl pkeyutl`
@@ -120,8 +130,6 @@ hitting it.
 
 ## What this actually means
 
-![Architectural paradigm shift](../../assets/images/blog/agent-enabling-aegis-no/slide-11.png)
-
 `ægis.no` is now a live reference implementation of KCP federation with
 independent per-manifest signing. Any agent that understands KCP can traverse
 the graph, verify provenance, and understand what Ægis offers —
@@ -133,4 +141,15 @@ this not because it's difficult, but because nobody has made it a priority.
 
 In an AI-first world, that's a choice worth revisiting.
 
+![The machine-readable mandate](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-10.png)
+
 ![Architecting the machine-readable firm — full overview](../../assets/images/blog/agent-enabling-aegis-no/overview.png)
+
+---
+
+## Slide decks
+
+Both NotebookLM presentations used to develop this post are available to browse:
+
+- [Machine-Readable Consulting — Implementing KCP and LLM-Friendly Structures](../../assets/presentations/Machine_Readable_Consulting.pdf) (10 slides)
+- [Architecting the Machine-Readable Firm](../../assets/presentations/Architecting_the_Machine_Readable_Firm.pdf) (12 slides)
