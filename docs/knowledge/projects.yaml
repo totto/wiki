@@ -24,6 +24,7 @@ projects:
       knowledge.yaml files declare what agents need to understand your org
       without prompt-stuffing. Federation, signing, and governance built in.
     repo: https://github.com/Cantara/kcp
+    manifest: https://cantara.github.io/knowledge-context-protocol/knowledge.yaml
     current_version: "0.14"
     license: Apache 2.0
     toolchain:
