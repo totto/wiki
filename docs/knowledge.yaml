@@ -1,7 +1,44 @@
-kcp_version: "0.6"
-project: wiki.totto.org
-version: 1.3.7
-updated: 2026-04-18
+# wiki.totto.org — KCP root manifest (federated)
+# KCP v0.14 — see https://github.com/Cantara/kcp
+version: "0.14"
+
+entity:
+  name: Thor Henning Hetland (Totto)
+  domain: wiki.totto.org
+  type: personal-knowledge-hub
+  description: >
+    Personal wiki and blog of Thor Henning Hetland — four decades of software
+    engineering, agentic development methodology, knowledge infrastructure,
+    and conference speaking.
+
+authority:
+  owner: Thor Henning Hetland
+  email: totto@exoreaction.com
+  url: https://wiki.totto.org/about/
+
+discovery:
+  provenance: canonical
+  confidence: high
+  staleness_days: 7
+
+signing:
+  scheme: ed25519
+  scope: this-manifest
+  public_key: https://wiki.totto.org/.well-known/kcp-signing-key.pub
+  signature: https://wiki.totto.org/knowledge.yaml.sig
+
+includes:
+  - knowledge/about.yaml
+  - knowledge/projects.yaml
+  - knowledge/talks.yaml
+  - knowledge/blog.yaml
+
+# Legacy v0.6 units preserved below for backwards compatibility
+# Agents capable of KCP v0.14 should follow the includes above.
+# -------------------------------------------------------------------
+_legacy_v06:
+  kcp_version: "0.6"
+  updated: 2026-04-18
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────

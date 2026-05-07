@@ -1,0 +1,63 @@
+# wiki.totto.org — Talks sub-manifest
+# Parent: https://wiki.totto.org/knowledge.yaml
+version: "0.14"
+
+id: talks
+parent: https://wiki.totto.org/knowledge.yaml
+
+discovery:
+  provenance: canonical
+  confidence: high
+  staleness_days: 90
+
+signing:
+  scheme: ed25519
+  scope: this-manifest
+  public_key: https://wiki.totto.org/.well-known/kcp-signing-key.pub
+  signature: https://wiki.totto.org/knowledge/talks.yaml.sig
+
+current_topics:
+  - Skill-Driven Development (SDD) — six-pillar AI-era methodology
+  - Fear-Driven Development — systematic testing under uncertainty
+  - Agent memory architecture — episodic, semantic, procedural layers
+  - KCP and knowledge infrastructure
+  - Agentic development in production — what actually works
+  - Quantum computing on real IBM hardware
+
+venues:
+  - javaBin Oslo meetups (regular)
+  - Agentbrew Oslo (regular)
+  - JavaZone (historical — co-founder)
+  - NDC (historical)
+  - Company internal events across the Nordics
+
+selected_talks:
+  - title: Delivering Continuous Innovation
+    url: https://wiki.totto.org/presentations/delivering-continuous-innovation/
+    era: "2019–2023"
+
+  - title: Thousands of Releases
+    url: https://wiki.totto.org/presentations/thousands-of-releases/
+    era: "2019–2023"
+
+  - title: Best Practice WTF
+    url: https://wiki.totto.org/presentations/best-practice-wtf/
+    era: "2019–2023"
+
+  - title: Fixing the Problem
+    url: https://wiki.totto.org/presentations/fixing-the-problem/
+    era: "2019–2023"
+
+  - title: Internet of Things
+    url: https://wiki.totto.org/presentations/internet-of-things/
+    era: "2010–2014"
+
+  - title: Cloud Psychology
+    url: https://wiki.totto.org/presentations/cloud-psychology/
+    era: "2010–2014"
+
+  - title: Laws of SOA
+    url: https://wiki.totto.org/presentations/laws-of-soa/
+    era: "2006–2009"
+
+full_list: https://wiki.totto.org/about/presentations/

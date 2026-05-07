@@ -1,0 +1,69 @@
+name: Update and sign KCP manifests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/blog/posts/**'
+      - 'docs/knowledge.yaml'
+      - 'docs/knowledge/**'
+      - 'scripts/generate-blog-manifest.py'
+  workflow_dispatch:
+
+jobs:
+  update-and-sign:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip-sign]')"
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install PyYAML
+        run: pip install pyyaml --quiet
+
+      - name: Regenerate blog.yaml
+        run: python scripts/generate-blog-manifest.py
+
+      - name: Restore signing key
+        env:
+          KCP_SIGNING_KEY: ${{ secrets.KCP_SIGNING_KEY }}
+        run: |
+          printf '%s' "$KCP_SIGNING_KEY" > /tmp/kcp-signing.pem
+          chmod 600 /tmp/kcp-signing.pem
+
+      - name: Sign all KCP manifests
+        run: |
+          set -euo pipefail
+          sign_manifest() {
+            local f="$1"
+            openssl pkeyutl -sign -rawin -inkey /tmp/kcp-signing.pem -in "$f" \
+              | base64 -w0 > "${f}.sig"
+            echo "  signed: $f"
+          }
+
+          sign_manifest docs/knowledge.yaml
+          find docs/knowledge/ -name "*.yaml" | sort | while IFS= read -r f; do
+            sign_manifest "$f"
+          done
+
+      - name: Commit and push
+        run: |
+          git config user.name  "kcp-bot[bot]"
+          git config user.email "actions@wiki.totto.org"
+
+          git add docs/knowledge.yaml docs/knowledge/ docs/knowledge.yaml.sig
+          find docs/knowledge/ -name "*.sig" -exec git add {} +
+
+          if git diff --staged --quiet; then
+            echo "Nothing changed — skipping commit"
+          else
+            git commit -m "chore: regenerate blog manifest + refresh signatures [skip-sign]"
+            git push
+          fi

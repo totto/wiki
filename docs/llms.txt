@@ -6,16 +6,11 @@ Thor Henning Hetland — known as Totto — has been building software professio
 
 ## Structured Navigation (for AI agents)
 
-This site publishes a KCP v0.6 manifest at https://wiki.totto.org/knowledge.yaml
-containing 82 units with intent declarations, trigger keywords, and 94 relationships.
+This site publishes a KCP v0.14 federated manifest at https://wiki.totto.org/knowledge.yaml
+with sub-manifests covering the author (about), projects, talks, and an auto-generated blog
+index. All manifests are Ed25519-signed; public key at https://wiki.totto.org/.well-known/kcp-signing-key.pub
 
-Fetch knowledge.yaml for targeted queries. Parse YAML → match query against each unit's
-`triggers` (keyword list) and `intent` (natural language) → fetch the `path` of the best
-match. Use `relationships` to navigate related content (types: enables, context, depends_on).
-
-Example: "What is Synthesis?" → trigger `synthesis` → unit `synthesis-releases` → fetch notes/synthesis-releases.md
-
-For broad overviews, https://wiki.totto.org/llms-full.txt covers all 95 posts and the full CV in one fetch.
+For broad overviews, https://wiki.totto.org/llms-full.txt covers all 136 posts and the full CV in one fetch.
 
 ## Key Pages
 
