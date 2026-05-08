@@ -19,4 +19,9 @@ jobs:
       - name: Install dependencies
         run: pip install mkdocs==1.6.1 mkdocs-material==9.7.2 mkdocs-rss-plugin
       - name: Deploy
-        run: mkdocs gh-deploy --force
+        run: |
+          for i in 1 2 3; do
+            mkdocs gh-deploy --force && break
+            echo "Attempt $i failed, retrying in 15s..."
+            sleep 15
+          done
