@@ -27,6 +27,8 @@ The ruling was correct. But the more interesting problem was underneath: when th
 
 That's the provenance problem. And every organization running AI agents at enterprise scale is about to hit a version of it.
 
+<!-- more -->
+
 ![The Air Canada Liability Trap: Action → Failure → Ruling. The provenance problem: the audit trail recorded the deployment date but could not record what the system knew, what policy version it consulted, or if a human had ever reviewed it.](../../assets/images/kcp-provenance-02-air-canada.png)
 
 ---
