@@ -1,5 +1,5 @@
 ---
-date: 2026-06-01T14:00:00
+date: 2026-06-01T09:30:00
 series: "Knowledge Context Protocol"
 categories:
   - AI-Augmented Development
