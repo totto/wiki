@@ -21,6 +21,8 @@ authors:
 
 # The Compound Developer
 
+![A developer at their desk, knowledge network nodes glowing through the dark](/assets/images/blog/compound-developer/hero.jpg)
+
 In the most rigorous study of AI coding tools conducted to date — a randomized controlled trial by METR published in July 2025 — sixteen experienced open-source developers used AI assistance on tasks in their own projects. Projects they had worked on for an average of five years. Before each task, they predicted AI would reduce their completion time by 24%. After each task, they estimated they had been sped up by 20%.
 
 The actual measurement: they were 19% slower.
@@ -79,7 +81,9 @@ This matters not because retrieval is faster. It matters because I'm not spendin
 
 Most AI tools are stateless by design. Every session starts fresh. An arXiv paper published in March 2026, *"Your Code Agent Can Grow Alongside You with Structured Memory,"* names this as the root problem: *"Existing systems fail to internalize human-verified solutions, trapping collaboration in amnesic cycles where agents repeat errors."* The technology to solve this exists. Almost nobody is using it.
 
-**Expertise encoded in skills.** We use a development methodology I call [Skill-Driven Development (SDD)](/blog/2026/03/05/thirteen-codebases-one-method/). A skill is a structured, reusable procedure — an encoded workflow that captures *why* a process works, not just what it does.
+**Expertise encoded in skills.** We use a development methodology I call [Skill-Driven Development (SDD)](/blog/2026/03/05/thirteen-codebases-one-method/).
+
+![SDD Skills Compound — expertise stacking as an exponential curve](/assets/images/blog/compound-developer/sdd-skills-compound.jpg) A skill is a structured, reusable procedure — an encoded workflow that captures *why* a process works, not just what it does.
 
 When a developer on the team writes a new database migration, they run a preflight skill. It contains checks learned from specific past mistakes: particular failure modes that actually happened, encoded once, applied every time. Not generic advice — the precise problems this specific team has encountered.
 
