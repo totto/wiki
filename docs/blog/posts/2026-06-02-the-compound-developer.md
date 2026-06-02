@@ -31,6 +31,8 @@ The perception-reality gap in that study is between 39 and 44 percentage points.
 
 <!-- more -->
 
+![The Compound Developer Framework — problem, failing models, solution, and institutional resilience](/assets/images/blog/compound-developer/framework.jpg)
+
 ---
 
 ## The two models that fail
