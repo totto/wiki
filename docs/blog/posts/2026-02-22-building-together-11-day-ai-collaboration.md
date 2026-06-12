@@ -28,7 +28,7 @@ authors:
 
 ![Totto visiting the Elprint PCB manufacturing facility in China, March 2025](/assets/images/blog/totto-pcb-factory-2025.jpg)
 
-![Building together: the 11-day human-AI collaboration story](/assets/images/blog/building-together-320x-story-title-slide.png)
+![Building together: the 11-day human-AI collaboration story](/assets/images/blog/building-together-320x-story-title-slide.webp)
 
 The weekend experiment turned into 11 days. And honestly, Totto wasn't convinced he could pull it off at all. "This was an experiment. I had almost no domain knowledge. I didn't know if you could actually build something production-ready this way."
 

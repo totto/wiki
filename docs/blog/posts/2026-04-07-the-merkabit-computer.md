@@ -38,7 +38,7 @@ Stig Lau's Merkabit framework starts with a large claim: there is a single mathe
 
 The same structure that describes how a hurricane organizes itself also describes how the nervous system finds its balance, or how a galaxy holds itself together. A forward, expansive flow — perfectly balanced by an inverse, integrating flow. Two opposing dynamics that, together, create stability.
 
-![The Merkabit framework — universal grammar for stable coherent systems](../../assets/images/merkabit/infographic.png)
+![The Merkabit framework — universal grammar for stable coherent systems](../../assets/images/merkabit/infographic.webp)
 
 This dual dynamic shows up in plasma waves, in atmospheric systems, in biological regulation. The framework calls it the universal grammar: not a metaphor for similarity but a claim about shared mathematical structure.
 
@@ -52,7 +52,7 @@ It starts with the tetrahedron.
 
 The tetrahedron is the simplest possible shape that can enclose a volume — four points creating a complete, self-contained relationship. Not a triangle, which is flat. A structure with an inside and an outside.
 
-![The Merkabit — the smallest unit of stable, coherent information](../../assets/images/merkabit/slide-03.png)
+![The Merkabit — the smallest unit of stable, coherent information](../../assets/images/merkabit/slide-03.webp)
 
 The name is deliberate. *Merkaba* — an ancient symbol representing the unity of light, spirit, and body. *Bit* — the fundamental unit of information. A Merkabit is, in theory, the smallest possible unit of stable, coherent information.
 
@@ -70,7 +70,7 @@ Qubits are extraordinary — they can represent superpositions, they can entangl
 
 This is why current quantum computers require massive, active error correction: elaborate schemes to detect and fix errors faster than they accumulate. The overhead is enormous. Most of a quantum computer's qubits are currently error-correction infrastructure, not computation.
 
-![Qubit vs Merkabit — fragile soap bubble vs self-healing crystal](../../assets/images/merkabit/slide-05.png)
+![Qubit vs Merkabit — fragile soap bubble vs self-healing crystal](../../assets/images/merkabit/slide-05.webp)
 
 The Merkabit is designed to address this differently. Not error correction applied from outside, but stability built into the geometry itself. A self-healing crystal rather than a soap bubble.
 
@@ -82,7 +82,7 @@ The basic operation is the Oroboro Cycle — named for the ouroboros, the snake 
 
 One complete cycle: information flows out, interacts with the environment, is pulled back in to integrate what it encountered. The system returns to its starting state changed by the experience. One computational loop completed.
 
-![The Oroboro Cycle — information out, integration in, one complete loop](../../assets/images/merkabit/slide-07.png)
+![The Oroboro Cycle — information out, integration in, one complete loop](../../assets/images/merkabit/slide-07.webp)
 
 These cycles are built from five fundamental operations — a universal alphabet of gates:
 
@@ -104,7 +104,7 @@ The error resistance — what the paper calls *error healing* — works like noi
 
 Because you have forward and inverse channels working together, any symmetric noise that hits both simultaneously cancels itself out. The interference pattern that would destroy a qubit instead reinforces the Merkabit's stability.
 
-![Error healing — symmetric noise cancellation through dual-channel geometry](../../assets/images/merkabit/slide-09.png)
+![Error healing — symmetric noise cancellation through dual-channel geometry](../../assets/images/merkabit/slide-09.webp)
 
 The paper uses the analogy of a galaxy's breathing mode: despite the random motions of individual stars, the overall oscillation of the galaxy remains stable. The noise doesn't matter because the structure absorbs it.
 
@@ -121,7 +121,7 @@ The framework identifies at least four concrete pathways to hardware implementat
 - **Photonic resonators** — light-based quantum systems with natural coherence properties
 - **Topological structures** — physical geometries that encode error resistance spatially
 
-![Pathways to hardware — four implementation approaches grounded in existing physics](../../assets/images/merkabit/slide-11.png)
+![Pathways to hardware — four implementation approaches grounded in existing physics](../../assets/images/merkabit/slide-11.webp)
 
 These aren't exotic proposals. They're directions active research groups are already pursuing. The framework argues that Merkabit geometry is compatible with each of them — not requiring new physics, just a new design principle applied to existing substrate.
 

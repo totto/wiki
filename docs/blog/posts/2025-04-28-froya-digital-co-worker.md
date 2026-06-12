@@ -26,7 +26,7 @@ A tool executes tasks. A team member has a perspective, a purpose, a way of enga
 ---
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/froya-story.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/froya-story.mp4" type="video/mp4">
 </video>
 
 ---
@@ -44,7 +44,7 @@ What came out of that was Frøya — Quadim's first digital co-worker, with a sp
 ## The first interview
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/froya-first-interview.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/froya-first-interview.mp4" type="video/mp4">
 </video>
 
 When we ran the first interview with Frøya — interview format, conversational, open questions — a few things became clear.

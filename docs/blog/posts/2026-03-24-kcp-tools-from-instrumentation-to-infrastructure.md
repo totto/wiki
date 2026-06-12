@@ -37,9 +37,9 @@ The work since then -- through kcp-commands v0.18.0 and kcp-memory v0.18.0 today
 
 <!-- more -->
 
-![The Evolution of Autonomous AI Infrastructure — how KCP tools transitioned from passive instrumentation to self-governing systems, v0.9.0 through v0.18.0](/assets/images/blog/kcp-infra-01-isometric-blueprint.png)
+![The Evolution of Autonomous AI Infrastructure — how KCP tools transitioned from passive instrumentation to self-governing systems, v0.9.0 through v0.18.0](/assets/images/blog/kcp-infra-01-isometric-blueprint.webp)
 
-![Moving from passive observation to active infrastructure — Level 1 v0.9 vs Level 3 v0.18: data stance, resource usage, telemetry, maintenance](/assets/images/blog/kcp-infra-02-comparison-table.png)
+![Moving from passive observation to active infrastructure — Level 1 v0.9 vs Level 3 v0.18: data stance, resource usage, telemetry, maintenance](/assets/images/blog/kcp-infra-02-comparison-table.webp)
 
 ## The tool that learned what it does not need to teach
 
@@ -53,7 +53,7 @@ The result: 63% of hook calls in a typical session never touch the manifest libr
 
 Users can override with `~/.kcp/suppress.txt`. One command per line. The default list is opinionated but replaceable.
 
-![Recognizing what the system does not need to teach — traffic control: fast lane (git, ls, grep → 204, 63% bypass) vs deep inspection lane (kubectl, aws, mvn → manifest library)](/assets/images/blog/kcp-infra-03-traffic-control.png)
+![Recognizing what the system does not need to teach — traffic control: fast lane (git, ls, grep → 204, 63% bypass) vs deep inspection lane (kubectl, aws, mvn → manifest library)](/assets/images/blog/kcp-infra-03-traffic-control.webp)
 
 ## Knowing which version of the truth was active
 
@@ -63,7 +63,7 @@ This sounds like bookkeeping. It is not. Without version tracking, all history i
 
 The quality metrics (next section) depend on this. A manifest with a 38% retry rate that drops to 12% after a rewrite is evidence that the rewrite worked. Without the version hash, those two rates are averaged into a single 25% and the signal is invisible.
 
-![Version tracking uncovers the hidden signals of improvement — Artifact A (d4e9b7c1) at 38% retry vs Artifact B at 12% after rewrite; flat average 25% obscures reality](/assets/images/blog/kcp-infra-04-version-tracking-graph.png)
+![Version tracking uncovers the hidden signals of improvement — Artifact A (d4e9b7c1) at 38% retry vs Artifact B at 12% after rewrite; flat average 25% obscures reality](/assets/images/blog/kcp-infra-04-version-tracking-graph.webp)
 
 ## The quality loop closed
 
@@ -71,7 +71,7 @@ The manifest quality feedback loop -- `exit_code_hint` in kcp-commands v0.15.0, 
 
 What matters for this post: the first round of data-driven improvements has shipped. The six manifests with the highest failure rates -- ssh at 69% retry, gh-api at 71%, curl at 46% error plus 26% help-followup, find at 62% retry across 949 calls, head at 79%, sed at 66% -- have been rewritten based on what the data showed was failing. The loop closed. This is the proof-of-concept that the observation infrastructure was worth building.
 
-![Closing the loop transforms telemetry into targeted action — manifest quality dashboard: ssh 69%, gh-api 71%, curl 46%+26%, find 62% (949 calls), head 79%, sed 66%. All six rewritten based on data.](/assets/images/blog/kcp-infra-05-quality-dashboard.png)
+![Closing the loop transforms telemetry into targeted action — manifest quality dashboard: ssh 69%, gh-api 71%, curl 46%+26%, find 62% (949 calls), head 79%, sed 66%. All six rewritten based on data.](/assets/images/blog/kcp-infra-05-quality-dashboard.webp)
 
 ## Subagent memory
 
@@ -81,7 +81,7 @@ kcp-memory v0.5.0 indexes those subagent files and links them to their parent se
 
 The numbers: in a typical session with heavy delegation, subagents contain 19% of total transcript data. The summaries that the main session sees compress at 40:1 to 100:1. What was previously unrecoverable -- the full investigation trail of a delegated task -- is now queryable.
 
-![Subagent memory captures the complete investigation trail — main session compressed summaries (40:1 to 100:1), subagent transcripts contain 19% of data, now fully indexed via kcp_memory_subagent_search and kcp_memory_session_tree](/assets/images/blog/kcp-infra-06-subagent-network.png)
+![Subagent memory captures the complete investigation trail — main session compressed summaries (40:1 to 100:1), subagent transcripts contain 19% of data, now fully indexed via kcp_memory_subagent_search and kcp_memory_session_tree](/assets/images/blog/kcp-infra-06-subagent-network.webp)
 
 ## Analysis as a working tool, not a separate operation
 
@@ -89,7 +89,7 @@ The numbers: in a typical session with heavy delegation, subagents contain 19% o
 
 kcp-memory v0.17.0 exposes the analysis as `kcp_memory_analyze` -- the 9th MCP tool. Claude can call it inline during a session. Same parameters: `since_days`, `min_calls`, `top`, `by_version`. The analysis is now part of the working context, not a detour.
 
-![Analysis becomes a working tool within the agent's context — old workflow: context break, switch to CLI terminal; new workflow: inline kcp_memory_analyze, the 9th MCP tool](/assets/images/blog/kcp-infra-07-inline-analysis.png)
+![Analysis becomes a working tool within the agent's context — old workflow: context break, switch to CLI terminal; new workflow: inline kcp_memory_analyze, the 9th MCP tool](/assets/images/blog/kcp-infra-07-inline-analysis.webp)
 
 ## The tools maintain themselves
 
@@ -99,13 +99,13 @@ kcp-commands: `--update` and `--check-update` as pre-daemon flags. kcp-memory: `
 
 The update itself: `.tmp` staging, `.bak` rollback, JAR validation before any swap. If the new JAR fails validation, the old one stays. On first startup each day, a notification tells you if an update is available. Once. Not every session.
 
-![The infrastructure governs and updates itself — check phase (last-update-check, 1×/24h) → staging (.tmp) → validation gate (JAR validation before swap) → success: swap active file / failure: rollback to .bak](/assets/images/blog/kcp-infra-08-governance-flow.png)
+![The infrastructure governs and updates itself — check phase (last-update-check, 1×/24h) → staging (.tmp) → validation gate (JAR validation before swap) → success: swap active file / failure: rollback to .bak](/assets/images/blog/kcp-infra-08-governance-flow.webp)
 
 This is the last piece of the arc. The tools started as passive hooks that helped an agent. They now suppress what they should not inject, stamp their artifacts with content hashes, measure their own quality, index previously invisible data, expose their analysis to the agent, and update themselves. The infrastructure knows its own limitations and maintains itself.
 
-![The closed-loop environment of self-improving infrastructure — Act (selective suppression) → Track (SHA-256 version tracking + subagent transcripts) → Analyze (inline kcp_memory_analyze) → Adapt (data-driven rewrites + auto-updates)](/assets/images/blog/kcp-infra-09-closed-loop.png)
+![The closed-loop environment of self-improving infrastructure — Act (selective suppression) → Track (SHA-256 version tracking + subagent transcripts) → Analyze (inline kcp_memory_analyze) → Adapt (data-driven rewrites + auto-updates)](/assets/images/blog/kcp-infra-09-closed-loop.webp)
 
-![Systems that know their own limitations — the infrastructure now suppresses what it should not inject, stamps its artifacts, measures its own quality, indexes invisible data, exposes its analysis, and updates itself safely](/assets/images/blog/kcp-infra-10-systems-know-limits.png)
+![Systems that know their own limitations — the infrastructure now suppresses what it should not inject, stamps its artifacts, measures its own quality, indexes invisible data, exposes its analysis, and updates itself safely](/assets/images/blog/kcp-infra-10-systems-know-limits.webp)
 
 ## Try it
 

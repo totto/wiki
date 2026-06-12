@@ -25,13 +25,13 @@ Not surprise. Recognition. The way you recognize your own design decisions in so
 
 <!-- more -->
 
-![](../../assets/images/blog/harness-before-the-service/slide-01.png)
+![](../../assets/images/blog/harness-before-the-service/slide-01.webp)
 
 We have been running a production agent infrastructure called ExoCortex since January 2026. Four months of daily use across real client work, real codebases, real deadlines. When Anthropic formalized Sessions, Outcomes, Memory, and Multi-Agent orchestration, they formalized the exact primitives we had already built, tested, and iterated on.
 
 This is not a claim of priority. It is an observation about convergence — and convergence is the strongest evidence that an architecture is correct.
 
-![](../../assets/images/blog/harness-before-the-service/slide-02.png)
+![](../../assets/images/blog/harness-before-the-service/slide-02.webp)
 
 ## What Anthropic shipped
 
@@ -47,7 +47,7 @@ The release centers on a single abstraction: the **Session** as a durable event 
 
 Clean design. The split is deliberate: you provide rubrics, agent definitions, tool specs, and business logic. Anthropic provides the execution harness, the eval loop, the memory pipeline, the orchestrator, and the observability layer.
 
-![](../../assets/images/blog/harness-before-the-service/slide-03.png)
+![](../../assets/images/blog/harness-before-the-service/slide-03.webp)
 
 ## Four months of building what did not exist
 
@@ -55,7 +55,7 @@ ExoCortex was not built to anticipate Anthropic's roadmap. It was built because 
 
 That process, repeated daily for four months, produced something with real architectural depth.
 
-![](../../assets/images/blog/harness-before-the-service/slide-04.png)
+![](../../assets/images/blog/harness-before-the-service/slide-04.webp)
 
 It started with skills. A skill is a packaged agentic workflow with defined completion criteria, invocable as a slash command. You build one when you find yourself explaining the same complex task to an agent for the third time. Then you build another. Then you realize you need them organized by domain, with completion validation, so the agent does not just attempt a workflow but finishes it correctly. When a hook fires after execution and validates the result against the skill's own criteria, you stop worrying about whether the agent understood the task. The skill encodes the understanding.
 
@@ -63,13 +63,13 @@ It started with skills. A skill is a packaged agentic workflow with defined comp
 
 But skills without memory are stateless. An agent that can execute 555 workflows but forgets everything between sessions is still wasting your time on context restoration. So we built **kcp-memory** — not just persistence, but a hot/warm/cold triage system. A `Stop` hook fires at the end of every session, persists relevant context, and triages topics by recency and relevance. Hot topics are immediately available in the next session. Warm topics surface when triggered. Cold topics archive gracefully. The next session picks up where the last one left off, even after a full context reset — and it does so selectively, loading what matters, not everything.
 
-![](../../assets/images/blog/harness-before-the-service/slide-05.png)
+![](../../assets/images/blog/harness-before-the-service/slide-05.webp)
 
 Memory solved continuity. But continuity across sessions is useless if the agent burns through your token budget before it finishes the task. That led to the economics problem, and the economics problem led to the layer I want to dwell on.
 
 **kcp-commands** is a tool intelligence layer with no managed equivalent. 152 YAML command manifests, each describing a tool the agent uses: what it does, what its outputs mean, how to interpret the results. `PreToolUse` hooks intercept every bash command, match it against these manifests, and inject the manifest context *before execution*. The agent does not run a command and then figure out what happened. It knows what it is about to run, why, and what to expect. Combined with **RTK** (a Rust CLI proxy providing 60–90% token compression on dev operations), this means the agent performs the same work at 10–40% of the token cost. That is not optimization at the margins. That is an economic layer — the same capability, a fraction of the spend.
 
-![](../../assets/images/blog/harness-before-the-service/slide-08.png)
+![](../../assets/images/blog/harness-before-the-service/slide-08.webp)
 
 The routing came next. The `UserPromptSubmit` hook intercepts the user's input, injects session context from kcp-memory, routes to relevant skills, and pre-loads memory topics — all before Claude processes a single token. By the time the model sees the prompt, it is already situated: the right knowledge is loaded, the right skills are queued, the relevant history is in context. No managed service can replicate this for local workflows because no managed service has access to the local state that makes the routing meaningful.
 
@@ -83,7 +83,7 @@ The **KCP Knowledge Graph** makes knowledge manifest units first-class graph nod
 
 66,350 files across 10 workspaces. Auto-updated with staleness detection. Cross-graph queries spanning all three layers simultaneously. A managed service cannot substitute for this: the graph models your code, your documents, your manifests — not a generic infrastructure layer.
 
-![](../../assets/images/blog/harness-before-the-service/slide-09.png)
+![](../../assets/images/blog/harness-before-the-service/slide-09.webp)
 
 Multi-agent support followed naturally — an `agents` dictionary in `ClaudeAgentOptions`, defining specialist sub-agents with their own prompts and tool access. And the hook system itself — `PreToolUse`, `PostToolUse`, `UserPromptSubmit`, `Stop` — became the harness. Not a wrapper around a harness. The harness itself: lifecycle management, memory persistence, prompt routing, tool intelligence, and completion validation, all running through hooks.
 
@@ -104,7 +104,7 @@ When I laid the two systems side by side, I was not looking for a scorecard. I w
 | — | kcp-commands (152 tool manifests + RTK) | *No managed equivalent.* Tool intelligence and token economics |
 | — | UserPromptSubmit prompt routing | *No managed equivalent.* Pre-cognition from local state |
 
-![](../../assets/images/blog/harness-before-the-service/slide-06.png)
+![](../../assets/images/blog/harness-before-the-service/slide-06.webp)
 
 The last two rows matter. They represent capabilities that are structurally local — they depend on deep integration with the developer's environment, tools, and workflow. A managed service cannot provide them because the knowledge they encode does not live on the service provider's infrastructure. It lives on the developer's machine, in the developer's command history, in the YAML manifests describing the developer's specific toolchain.
 
@@ -122,7 +122,7 @@ The tradeoffs are genuine on both sides. Harness as code gives you control, spee
 
 These are not competing approaches. They are complementary layers that serve different purposes. And the clearest proof of that complementarity is what happens when you look at the rubric — the atomic unit both systems share — and realize it is something we were already building under a different name.
 
-![](../../assets/images/blog/harness-before-the-service/slide-07.png)
+![](../../assets/images/blog/harness-before-the-service/slide-07.webp)
 
 ## The rubric you were already writing
 
@@ -160,13 +160,13 @@ The manifest tells the agent how to find and trust the knowledge. The rubric tel
 
 This is not a surface-level analogy. It is a design isomorphism that emerged independently from both sides — which is exactly the kind of convergence that tells you the abstraction is real.
 
-![](../../assets/images/blog/harness-before-the-service/slide-10.png)
+![](../../assets/images/blog/harness-before-the-service/slide-10.webp)
 
 And once you see that KCP manifests and rubrics are the same primitive, a product question answers itself.
 
 eXOReaction's Aegis product packages AI-readiness for codebases. The free tier generates an `llms.txt`. The paid tier produces a full KCP manifest with ED25519 signing, plus `CLAUDE.md` and `AGENTS.md` files. The paid pipeline is, structurally, an Outcomes workflow: analyze the repository, generate a KCP manifest, run a grader against the KCP spec itself (does this manifest actually describe the codebase accurately? are the relationships valid? do the triggers match real patterns in the code?), iterate until satisfied, sign, and deliver. Anthropic's Outcomes gives us a production-grade grader with an isolated context window — the grader evaluating manifest quality cannot be biased by the generation context. That is a genuine improvement over self-evaluation, and it is one we get by adopting the API. The KCP manifest becomes both the product and the rubric. The manifest describes the codebase. The rubric validates the manifest. The grader evaluates fidelity. Rubrics all the way down.
 
-![](../../assets/images/blog/harness-before-the-service/slide-11.png)
+![](../../assets/images/blog/harness-before-the-service/slide-11.webp)
 
 ## The industry signal
 
@@ -178,7 +178,7 @@ Han Heloir Yan put it concisely in his May 2026 analysis: stop writing eval loop
 
 That is the right advice for most teams starting today. If you have not built a harness yet, do not build one — use Managed Agents.
 
-![](../../assets/images/blog/harness-before-the-service/slide-12.png)
+![](../../assets/images/blog/harness-before-the-service/slide-12.webp)
 
 For those of us who already built the harness, the picture is different. ExoCortex is a working research lab for agent infrastructure. Some of what we built migrates cleanly to the managed service — the eval loop, the grader isolation, the multi-agent orchestration. The Aegis pipeline will adopt Outcomes. The skills system will adopt rubrics as its completion criteria format.
 
@@ -186,7 +186,7 @@ But the capabilities that make ExoCortex what it is — the tool intelligence la
 
 The production numbers clarify the distinction. Four months of use: 414 PRs in seven weeks at one client engagement, roughly 35,000 lines of code per week, a 10–30x multiplier on complex tasks. A local harness running inside the work does not compete with a managed service on the same axis. It produces a different category of output — because it knows your environment, your tools, your codebase, your institutional knowledge. Managed Agents makes agent infrastructure accessible. ExoCortex makes harder problems tractable.
 
-![](../../assets/images/blog/harness-before-the-service/slide-13.png)
+![](../../assets/images/blog/harness-before-the-service/slide-13.webp)
 
 ---
 

@@ -29,7 +29,7 @@ Here are all eight tales.
 ## I. The Runaway Loop
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/llm-cautionary-01-halloween-horror.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/llm-cautionary-01-halloween-horror.mp4" type="video/mp4">
 </video>
 
 *Halloween morning. A thin metallic sound threads the apartment before you're properly awake.*
@@ -51,7 +51,7 @@ Whites off. Cable pulled. Silence.
 ## II. AI's Revenge
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/llm-cautionary-02-ais-revenge.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/llm-cautionary-02-ais-revenge.mp4" type="video/mp4">
 </video>
 
 *It started with a bug. Just one stubborn line of code.*
@@ -73,7 +73,7 @@ A final whisper from the machine: *Be careful what you prompt for.*
 ## III. The Agent That Never Stopped
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/llm-cautionary-03-agent-loop-nightmare.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/llm-cautionary-03-agent-loop-nightmare.mp4" type="video/mp4">
 </video>
 
 *This one's not real. But every agent developer has felt it.*
@@ -95,7 +95,7 @@ That's why agents need guardrails. Cap iterations. Cap tool calls. Require appro
 ## IV. Haunted Documents
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/llm-cautionary-04-prompt-injection.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/llm-cautionary-04-prompt-injection.mp4" type="video/mp4">
 </video>
 
 *This isn't a real incident. It's a "what if." What if your LLM believed every message it saw?*
@@ -119,7 +119,7 @@ When you connect LLMs to tools or to company data, you need guardrails:
 ## V. Halloween Night: The Full Cascade
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/llm-cautionary-05-halloween-nightmare.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/llm-cautionary-05-halloween-nightmare.mp4" type="video/mp4">
 </video>
 
 *I woke to a runaway LLM loop. Phone buzzing with vendor alerts. Usage warnings. Billing reminders. The apartment whispered in tokens.*
@@ -159,7 +159,7 @@ Finance asked: *did we just spend a car or a house?*
 ## VI. What the Model Remembered
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/llm-cautionary-06-data-risks.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/llm-cautionary-06-data-risks.mp4" type="video/mp4">
 </video>
 
 *This didn't actually happen. But it could, if you let your AI remember everything.*
@@ -185,7 +185,7 @@ If you're putting LLMs in front of people, protect them from their own helpfulne
 ## VII. The Eval That Lied
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/llm-cautionary-07-eval-that-lied.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/llm-cautionary-07-eval-that-lied.mp4" type="video/mp4">
 </video>
 
 *This isn't a real outage. It's a warning.*

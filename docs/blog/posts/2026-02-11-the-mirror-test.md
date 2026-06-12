@@ -48,7 +48,7 @@ So I built a benchmark.
 
 <!-- more -->
 
-![The journey of human-AI collaboration: Synthesis benchmarking itself](/assets/images/blog/Synthesis-Infographic-02-Journey-Human-AI-Collaboration.png)
+![The journey of human-AI collaboration: Synthesis benchmarking itself](/assets/images/blog/Synthesis-Infographic-02-Journey-Human-AI-Collaboration.webp)
 
 ### The AI
 

@@ -21,7 +21,7 @@ There is an asymmetry at the heart of AI-assisted development that I do not see 
 
 <!-- more -->
 
-![From chaos to intelligence infrastructure: the comprehension bottleneck](/assets/images/blog/Synthesis-Infographic-01-Chaos-to-Intelligence-Infrastructure.png)
+![From chaos to intelligence infrastructure: the comprehension bottleneck](/assets/images/blog/Synthesis-Infographic-01-Chaos-to-Intelligence-Infrastructure.webp)
 
 The result is straightforward: you can create much faster than you can understand. The bottleneck has shifted from writing code to comprehending what you have written.
 

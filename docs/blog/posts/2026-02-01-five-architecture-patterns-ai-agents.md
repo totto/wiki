@@ -23,7 +23,7 @@ What follows are five architectural decisions that made the difference between a
 
 <!-- more -->
 
-![Architecture of understanding: five patterns for AI agents that work](/assets/images/blog/slide-05-architecture-of-understanding.png)
+![Architecture of understanding: five patterns for AI agents that work](/assets/images/blog/slide-05-architecture-of-understanding.webp)
 
 ## 1. Grep over RAG
 

@@ -22,7 +22,7 @@ That cost has collapsed. Not gradually. Not by half. By orders of magnitude. And
 
 <!-- more -->
 
-![Traditional vs AI-assisted development timeline comparison](/assets/images/blog/traditional-vs-ai-assisted-timeline-comparison.png)
+![Traditional vs AI-assisted development timeline comparison](/assets/images/blog/traditional-vs-ai-assisted-timeline-comparison.webp)
 
 ## The numbers I have observed
 

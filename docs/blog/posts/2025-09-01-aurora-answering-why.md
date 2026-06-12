@@ -26,7 +26,7 @@ They're drowning in data. Dashboards for everything. Metrics to the decimal poin
 ---
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/aurora-answering-why.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/aurora-answering-why.mp4" type="video/mp4">
 </video>
 
 ---

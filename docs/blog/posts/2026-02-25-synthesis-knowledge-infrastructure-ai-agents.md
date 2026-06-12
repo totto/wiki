@@ -24,7 +24,7 @@ It is not solved. It is barely addressed. And until it is, all the reasoning cap
 
 <!-- more -->
 
-![The AI paradox: 10-50x output increase vs 1.5-2x shipping speed improvement](/assets/images/blog/synthesis-ai-agents-paradox-bottleneck.png)
+![The AI paradox: 10-50x output increase vs 1.5-2x shipping speed improvement](/assets/images/blog/synthesis-ai-agents-paradox-bottleneck.webp)
 
 ## The problem nobody talks about
 
@@ -42,7 +42,7 @@ We built [Synthesis](/blog/2026/02/25/ai-agents-without-knowledge-infrastructure
 
 Synthesis indexes the entire workspace — code, documentation, configuration files, SQL, PDFs, shell scripts — and makes it searchable in under a second. But more importantly, it builds a dependency graph. It tracks which module imports which, what breaks when something changes, how files relate across repository boundaries. This is the structural knowledge that a developer holds in their head after working on a system for months. Synthesis makes it queryable by anyone — or anything — from day one.
 
-![Synthesis as the context engine for high-performance AI agents](/assets/images/blog/synthesis-context-engine-ai-agents.png)
+![Synthesis as the context engine for high-performance AI agents](/assets/images/blog/synthesis-context-engine-ai-agents.webp)
 
 The numbers we have validated: 8,934 files indexed across three workspaces, sub-second retrieval (0.4 seconds measured), 92-95% reduction in context-gathering time, 2.7% storage overhead. The index for 434 MB of content takes 11.6 MB.
 
@@ -58,7 +58,7 @@ With Synthesis exposed as an MCP server, an agent does not receive a dump of eve
 
 This is the shift from *fat context* to *thin context plus rich retrieval*. It is the same shift that happened in database design decades ago, from loading entire tables into memory to indexed queries. Synthesis is, in effect, a query engine for the knowledge an agent needs.
 
-![Synthesis MCP Server: connecting agents to structured knowledge](/assets/images/blog/synthesis-mcp-server-overview.png)
+![Synthesis MCP Server: connecting agents to structured knowledge](/assets/images/blog/synthesis-mcp-server-overview.webp)
 
 ## One index, multiple agents
 
@@ -82,7 +82,7 @@ Every cloud-based knowledge solution I have evaluated requires your code to leav
 
 Synthesis processes everything locally. The index lives on your machine or your server. The MCP server runs on your infrastructure. When an agent queries Synthesis, no data leaves your network. This is not a privacy checkbox — it is an architectural constraint that enables deployment in environments where cloud-based alternatives simply cannot go.
 
-![Local-first security architecture: 100% local processing, zero telemetry](/assets/images/blog/synthesis-local-first-security-architecture.png)
+![Local-first security architecture: 100% local processing, zero telemetry](/assets/images/blog/synthesis-local-first-security-architecture.webp)
 
 The practical consequence: you can give agents access to your most sensitive assets. Proprietary algorithms. Internal security reports. Personnel and skills data. Financial projections. Not because you have accepted a risk — but because the risk was designed away by making the system local in the first place.
 

@@ -30,51 +30,51 @@ This essay is built on that conversation. But the idea they landed on has nothin
 
 <!-- more -->
 
-![AI does not remove the hard part of your job. It exposes it.](../../assets/images/blog/the-faster-pencil/slide-01.png)
+![AI does not remove the hard part of your job. It exposes it.](../../assets/images/blog/the-faster-pencil/slide-01.webp)
 
 ---
 
 Here is the simplest way to say it: AI is a very fast pencil. It writes, draws, calculates, and composes at a speed no human can match. But a fast pencil still needs someone who knows what to write. And knowing what to write — really knowing, with enough clarity to say it precisely — turns out to be the hard part of most jobs. It always was. We just had somewhere to hide it before.
 
-![The more capable the tool gets, the more it demands of the user.](../../assets/images/blog/the-faster-pencil/slide-02.png)
+![The more capable the tool gets, the more it demands of the user.](../../assets/images/blog/the-faster-pencil/slide-02.webp)
 
 When the work was slow, vague thinking had time to become clearer. You figured out what you meant while you were doing it — drafting the report revealed what the argument actually was, building the prototype showed you what the design should be, writing the brief helped you understand the problem. The friction of making something was also the process of understanding it. AI removes that friction. Which means the understanding has to arrive before the work starts, not during it. It has to be explicit. It has to be declared.
 
-![The friction of making something used to be the process of understanding it.](../../assets/images/blog/the-faster-pencil/slide-05.png)
+![The friction of making something used to be the process of understanding it.](../../assets/images/blog/the-faster-pencil/slide-05.webp)
 
 *You don't become an author by learning to spell.*
 
-![The Friction Shift: Moving from clarity through making, to clarity before making.](../../assets/images/blog/the-faster-pencil/slide-04.png)
+![The Friction Shift: Moving from clarity through making, to clarity before making.](../../assets/images/blog/the-faster-pencil/slide-04.webp)
 
 ---
 
 A lawyer who can file a perfect brief but cannot identify which facts matter will lose. A doctor who can recite every guideline but cannot listen to a patient will misdiagnose. A manager who can produce a flawless strategy deck but has no real model of how their organisation works will watch it fail. In each case, the technical skill — the spelling, so to speak — was never the point. It was just the means of expressing the point. AI takes over the means. The point is still yours.
 
-![Technical skill is merely the means of expression. The point is still yours.](../../assets/images/blog/the-faster-pencil/slide-07.png)
+![Technical skill is merely the means of expression. The point is still yours.](../../assets/images/blog/the-faster-pencil/slide-07.webp)
 
 ---
 
 Build a chess algorithm and forget to tell it the goal is to win. It will still move pieces correctly — and on pure statistics, white will capture a pawn more often than black. Now tell it to win. Set it against itself. You get the same results, but something completely different happens: you get chess. An actual game, not random legal moves. The difference is not in the algorithm. It is in the declared intent. Without a goal, the system optimises for whatever it can measure. With one, it plays to win. Every AI system works this way. The quality of what it produces is bounded, always, by the quality of what you wanted.
 
-![An algorithm without a declared goal optimizes for whatever it can measure.](../../assets/images/blog/the-faster-pencil/slide-08.png)
+![An algorithm without a declared goal optimizes for whatever it can measure.](../../assets/images/blog/the-faster-pencil/slide-08.webp)
 
 Gödel showed that every formal system — every set of rules, including every algorithm — has at least one truth it cannot reach from within itself.[^godel] Something from outside must supply it. In chess without a declared goal, that missing truth is the point of the game. The algorithm cannot invent it. Only a person can bring it. Output is a crystallisation of thought, not a replacement for it.[^naur] Consciousness is what fills the gap that no formal system can close on its own.[^penrose]
 
-![Every formal system has a gap that only human consciousness can close.](../../assets/images/blog/the-faster-pencil/slide-09.png)
+![Every formal system has a gap that only human consciousness can close.](../../assets/images/blog/the-faster-pencil/slide-09.webp)
 
 ---
 
 This is the part that is being missed in almost every conversation about AI and work. The assumption — stated or not — is that the difficult part of most jobs was always the execution: producing the document, writing the code, generating the analysis. Master the tool, and the problem is solved. But execution was never where the difficulty lived. It was where the difficulty showed up. The difficulty itself was always earlier: deciding what the work was actually for, what good would look like, what the real problem was beneath the stated one. That part has not been automated. It has been exposed.
 
-![Execution was never where the difficulty lived. It was just where it showed up.](../../assets/images/blog/the-faster-pencil/slide-03.png)
+![Execution was never where the difficulty lived. It was just where it showed up.](../../assets/images/blog/the-faster-pencil/slide-03.webp)
 
 When you hand a task to AI without knowing exactly what you want, the system does not hesitate or push back. It produces something — fast, confident, and shaped entirely by whatever intention it could infer from what you said. If your intention was clear, the output is useful. If it was vague, the output is polished vagueness. The tool is a mirror for the quality of your thinking, and it shows you the reflection very quickly.
 
-![The tool is a frictionless mirror for the quality of your thinking.](../../assets/images/blog/the-faster-pencil/slide-10.png)
+![The tool is a frictionless mirror for the quality of your thinking.](../../assets/images/blog/the-faster-pencil/slide-10.webp)
 
 If clarity does not start high, the result is an instant flatline. Execution is immediate. The ceiling is wherever your intent was when you started.
 
-![If clarity does not start high, the result is an instant flatline.](../../assets/images/blog/the-faster-pencil/slide-06.png)
+![If clarity does not start high, the result is an instant flatline.](../../assets/images/blog/the-faster-pencil/slide-06.webp)
 
 *The requirement to understand what you want goes up, not down.*
 
@@ -84,7 +84,7 @@ The people who will use AI well are the ones who understand this. They will get 
 
 The people who will struggle are the ones who took the promise literally — that the hard part has been automated, that you can hand the problem to the machine and collect the answer. They will produce faster, more polished versions of whatever they were already producing. If the thinking behind it was good, the results will be better. If the thinking was not there, they will discover that very quickly too.
 
-![The requirement to understand what you want goes up, not down.](../../assets/images/blog/the-faster-pencil/slide-11.png)
+![The requirement to understand what you want goes up, not down.](../../assets/images/blog/the-faster-pencil/slide-11.webp)
 
 ---
 
@@ -92,7 +92,7 @@ The two developers talking late at night had already figured this out — not as
 
 That is the real shift. Not that the tool is powerful — it is — but that its power flows entirely through whoever is using it, and only as far as their understanding reaches. The pencil got faster. Whether you have something to write is still entirely up to you.
 
-![Master the intent, not just the tool.](../../assets/images/blog/the-faster-pencil/slide-12.png)
+![Master the intent, not just the tool.](../../assets/images/blog/the-faster-pencil/slide-12.webp)
 
 ---
 

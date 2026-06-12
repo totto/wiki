@@ -22,7 +22,7 @@ I revisited the original piece in November 2025 with a bit of help from AI — r
 <!-- more -->
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/mastering-deadlines-80-50-rule.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/mastering-deadlines-80-50-rule.mp4" type="video/mp4">
 </video>
 
 ---

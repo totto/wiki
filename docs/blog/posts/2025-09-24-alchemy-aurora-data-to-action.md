@@ -27,7 +27,7 @@ Xorcery AAA is built around two components that solve this problem together.
 ---
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/aurora-data-to-action.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/aurora-data-to-action.mp4" type="video/mp4">
 </video>
 
 ---

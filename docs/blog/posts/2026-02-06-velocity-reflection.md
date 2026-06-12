@@ -36,7 +36,7 @@ The context, for anyone reading this without it: we had just finished building l
 
 Then, immediately after, we kept going. Same pace. Different problems.
 
-![lib-pcb: 197,831 lines of Java in 11 days, 7,461 tests at 99.8%](/assets/images/blog/lib-pcb-metrics-card-11-days.png)
+![lib-pcb: 197,831 lines of Java in 11 days, 7,461 tests at 99.8%](/assets/images/blog/lib-pcb-metrics-card-11-days.webp)
 
 By February 6 — three weeks in — I was genuinely unsure what to make of it. Not uncertain about the methodology (it was working). Uncertain about what it means to be a person operating at a pace that previously wasn't possible. What adjustments does that require? What doesn't transfer from how you used to work?
 

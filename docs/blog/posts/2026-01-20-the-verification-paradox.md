@@ -22,7 +22,7 @@ The actual productivity gain from AI does not come from generation speed. It com
 
 <!-- more -->
 
-![Velocity through trust: verification infrastructure as throughput multiplier](/assets/images/blog/slide-06-velocity-through-trust.png)
+![Velocity through trust: verification infrastructure as throughput multiplier](/assets/images/blog/slide-06-velocity-through-trust.webp)
 
 ## The naive model
 

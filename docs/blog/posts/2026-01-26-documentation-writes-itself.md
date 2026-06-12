@@ -21,7 +21,7 @@ So when I say that skill-driven development produces documentation as a natural 
 
 <!-- more -->
 
-![Naming is understanding: how articulating context creates documentation](/assets/images/blog/slide-03-naming-is-understanding.png)
+![Naming is understanding: how articulating context creates documentation](/assets/images/blog/slide-03-naming-is-understanding.webp)
 
 ## Why every previous attempt failed
 

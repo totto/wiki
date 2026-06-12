@@ -29,9 +29,9 @@ The real cause was more concrete — and more fixable.
 
 <!-- more -->
 
-![The Amnesia Bug — a forensic analysis of kcp-memory, ExoCortex architectures, and the 100:1 compression gap](/assets/images/blog/kcp-memory-amnesia-bug-title.png)
+![The Amnesia Bug — a forensic analysis of kcp-memory, ExoCortex architectures, and the 100:1 compression gap](/assets/images/blog/kcp-memory-amnesia-bug-title.webp)
 
-![The context window reset: heavy delegation to subagents, results accurate — but new sessions return a blank slate. Initial hypothesis: handover loss during model transition from Opus to Sonnet.](/assets/images/blog/kcp-memory-context-window-reset.png)
+![The context window reset: heavy delegation to subagents, results accurate — but new sessions return a blank slate. Initial hypothesis: handover loss during model transition from Opus to Sonnet.](/assets/images/blog/kcp-memory-context-window-reset.webp)
 
 ## What kcp-memory is supposed to do
 
@@ -45,7 +45,7 @@ kcp-memory solves the blank-slate problem. Every Claude Code session starts with
 
 Or so I thought.
 
-![Anatomy of the ExoCortex Memory Layers — Working (context window), Episodic (kcp-memory / SQLite+FTS5), Semantic (Synthesis). The kcp_memory_project_context call was failing to retrieve prior agent work.](/assets/images/blog/kcp-memory-exocortex-memory-layers.png)
+![Anatomy of the ExoCortex Memory Layers — Working (context window), Episodic (kcp-memory / SQLite+FTS5), Semantic (Synthesis). The kcp_memory_project_context call was failing to retrieve prior agent work.](/assets/images/blog/kcp-memory-exocortex-memory-layers.webp)
 
 ## The forensic analysis
 
@@ -57,7 +57,7 @@ There's something genuinely strange about watching an AI agent do introspective 
 
 And the numbers were stark.
 
-![The Forensic Discovery: 1,433 subagent JSONL files, 303 MB of total data — sitting on disk, completely invisible to kcp-memory.](/assets/images/blog/kcp-memory-forensic-discovery.png)
+![The Forensic Discovery: 1,433 subagent JSONL files, 303 MB of total data — sitting on disk, completely invisible to kcp-memory.](/assets/images/blog/kcp-memory-forensic-discovery.webp)
 
 Claude Code stores subagent transcripts separately from main sessions:
 
@@ -72,11 +72,11 @@ Claude Code stores subagent transcripts separately from main sessions:
 
 When a subagent finishes, the main session receives a compressed summary. The ratio Opus measured was 40:1 to 100:1. Meaning 95–98% of the reasoning trail — the tool calls, the dead ends, the intermediate discoveries — was stored to disk but never indexed.
 
-![The 100:1 Compression Gap — the compressed summary is indexed and remembered; the full subagent transcript (40–100x larger) is dumped to disk, unindexed, and effectively lost.](/assets/images/blog/kcp-memory-100-1-compression-gap.png)
+![The 100:1 Compression Gap — the compressed summary is indexed and remembered; the full subagent transcript (40–100x larger) is dumped to disk, unindexed, and effectively lost.](/assets/images/blog/kcp-memory-100-1-compression-gap.webp)
 
 The root cause was simple once you saw it: the kcp-memory scanner was strictly walking `*.jsonl` files at the project level. It had zero logic to look inside the `subagents/` folder. The transcripts were there, but the system literally never looked.
 
-![The Root Cause: A Scanner Blindspot — the flaw wasn't an LLM hallucination. It was a hardcoded script blindspot. The scanner possessed zero logic to look inside the subagents/ folder.](/assets/images/blog/kcp-memory-scanner-blindspot.png)
+![The Root Cause: A Scanner Blindspot — the flaw wasn't an LLM hallucination. It was a hardcoded script blindspot. The scanner possessed zero logic to look inside the subagents/ folder.](/assets/images/blog/kcp-memory-scanner-blindspot.webp)
 
 ## What was being lost
 
@@ -88,7 +88,7 @@ This matters more than it sounds. Subagent transcripts aren't just logs. They co
 - **Domain corrections**: "co-events is the CatalystOne HRIS integration layer, not a generic event bus" — the kind of nuance that doesn't survive a 100:1 compression ratio. An agent that explored this once should never have to discover it from scratch.
 - **Investigation methodology**: the sequence of reads and searches that actually worked. For Java multi-module Maven projects, several agents independently converged on the same approach: read knowledge.yaml first, then root pom.xml for versions, then module-level poms, then interfaces before implementations. That pattern was rediscovered every time because it was never indexed.
 
-![The Anatomy of a Lost Transcript — Reasoning Trails, Dead Ends, Cross-Repo Discoveries, Investigation Methodology. Summaries capture the destination. Transcripts capture the map.](/assets/images/blog/kcp-memory-anatomy-lost-transcript.png)
+![The Anatomy of a Lost Transcript — Reasoning Trails, Dead Ends, Cross-Repo Discoveries, Investigation Methodology. Summaries capture the destination. Transcripts capture the map.](/assets/images/blog/kcp-memory-anatomy-lost-transcript.webp)
 
 Today's session alone produced ten subagent runs across two parent sessions — 3.2 MB of transcripts, spanning Cantara, Quadim, Elprint, eXOReaction, and Mynder repos. In one run, an agent discovered that Elprint's platform service has three LLM backends (Claude primary, OpenAI fallback, local stub for dev) with a daily spend cap and a quality feedback loop where user ratings feed back into the prompting strategy. That's 402 KB of detailed investigation. The parent session got maybe a paragraph.
 
@@ -105,7 +105,7 @@ We fixed it in the same session where Opus identified it. Two parallel tracks:
 
 The scanner is incremental (byte-offset cursor, like the events scanner) and handles the advisory FK correctly — parent sessions may not always be indexed first, so there's no foreign key constraint, just an index on the parent session ID column.
 
-![The Dual-Layer Fix — Track 1: Synthesis V19 migration (4 new columns, isSidechain detection, 4,263 tests zero failures). Track 2: kcp-memory v0.5.0 (agent_sessions table, FTS5 indexing, advisory FKs).](/assets/images/blog/kcp-memory-dual-layer-fix.png)
+![The Dual-Layer Fix — Track 1: Synthesis V19 migration (4 new columns, isSidechain detection, 4,263 tests zero failures). Track 2: kcp-memory v0.5.0 (agent_sessions table, FTS5 indexing, advisory FKs).](/assets/images/blog/kcp-memory-dual-layer-fix.webp)
 
 ## What changes now
 
@@ -120,7 +120,7 @@ Concretely, this means:
 
 The 303 MB was always being written to disk. The fix was just making it findable.
 
-![Beyond Restoration: Session Trees — kcp_memory_subagent_search enables direct FTS5 searches into uncompressed subagent transcripts. kcp_memory_session_tree visually maps parent sessions and all child agents. The fix didn't just restore lost memory; it mapped parent-child relationships for the first time.](/assets/images/blog/kcp-memory-session-trees.png)
+![Beyond Restoration: Session Trees — kcp_memory_subagent_search enables direct FTS5 searches into uncompressed subagent transcripts. kcp_memory_session_tree visually maps parent sessions and all child agents. The fix didn't just restore lost memory; it mapped parent-child relationships for the first time.](/assets/images/blog/kcp-memory-session-trees.webp)
 
 ## The meta-lesson
 
@@ -130,11 +130,11 @@ This is what a self-improving knowledge infrastructure looks like in practice. N
 
 The agents were forgetting everything they discovered. Now they don't.
 
-![The Self-Improving ExoCortex — four-step cycle: Identify Gap → AI Diagnostics → Targeted Engineering → Expanded Capability. Opus possessed the analytical capacity to identify the scanner gap, output a structured gap analysis, and assist in writing the patch on the same day.](/assets/images/blog/kcp-memory-self-improving-exocortex.png)
+![The Self-Improving ExoCortex — four-step cycle: Identify Gap → AI Diagnostics → Targeted Engineering → Expanded Capability. Opus possessed the analytical capacity to identify the scanner gap, output a structured gap analysis, and assist in writing the patch on the same day.](/assets/images/blog/kcp-memory-self-improving-exocortex.webp)
 
 ---
 
-![The agents no longer forget — upgrade to kcp-memory v0.5.0 and run kcp-memory scan to retroactively index your lost subagent history.](/assets/images/blog/kcp-memory-slide-11.png)
+![The agents no longer forget — upgrade to kcp-memory v0.5.0 and run kcp-memory scan to retroactively index your lost subagent history.](/assets/images/blog/kcp-memory-slide-11.webp)
 
 **kcp-memory v0.5.0** is available on [GitHub](https://github.com/Cantara/kcp-memory). Run `kcp-memory scan` after upgrading to retroactively index existing subagent files.
 

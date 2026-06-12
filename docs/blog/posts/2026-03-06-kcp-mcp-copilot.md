@@ -29,7 +29,7 @@ and then shipped a fourth: a complete zero-MCP path for enterprises that cannot 
 > `--split-by`, and `--generate-agent` — a three-tier static integration for MCP-locked teams.
 > See [What v0.10.0 adds](#what-v0100-adds) below.
 
-![Deploying KCP to the Enterprise Copilot Ecosystem — KCP Node to GitHub Copilot Node integration diagram](/assets/images/blog/kcp-copilot-slide-01-title.png)
+![Deploying KCP to the Enterprise Copilot Ecosystem — KCP Node to GitHub Copilot Node integration diagram](/assets/images/blog/kcp-copilot-slide-01-title.webp)
 
 ---
 
@@ -37,7 +37,7 @@ and then shipped a fourth: a complete zero-MCP path for enterprises that cannot 
 
 GitHub Copilot commands 20 million users and 90% adoption in the Fortune 100.
 
-![The 20-Million User Enterprise Lockout — 90% Fortune 100 adoption, enterprise developers systemically locked out of Claude Code](/assets/images/blog/kcp-copilot-slide-02-lockout.png)
+![The 20-Million User Enterprise Lockout — 90% Fortune 100 adoption, enterprise developers systemically locked out of Claude Code](/assets/images/blog/kcp-copilot-slide-02-lockout.webp)
 
 Enterprise developers in those organisations are not choosing Claude Code over Copilot.
 They are locked out by IT policy, volume licensing agreements, and GitHub Enterprise bundles.
@@ -55,7 +55,7 @@ The v0.5.0 kcp-mcp bridge already worked with Copilot — but passively. Agents 
 `resources/list` to enumerate all knowledge units, then `resources/read` to load one by URI.
 That requires knowing what to look for in advance.
 
-![Bridging the gap from passive browsing to active querying — kcp-mcp TypeScript bridge: Resources only (v0.5) vs MCP Tools (v0.6)](/assets/images/blog/kcp-copilot-slide-04-passive-to-active.png)
+![Bridging the gap from passive browsing to active querying — kcp-mcp TypeScript bridge: Resources only (v0.5) vs MCP Tools (v0.6)](/assets/images/blog/kcp-copilot-slide-04-passive-to-active.webp)
 
 v0.6.0 adds active lookup. The agent says *"find me what's documented about authentication"* and
 gets a scored result list back. It does not need to know the unit ids ahead of time.
@@ -66,7 +66,7 @@ gets a scored result list back. It does not need to know the unit ids ahead of t
 
 The NotebookLM planning deck estimated three phases across roughly ten days:
 
-![A 10-Day Execution Roadmap: Phase 1 Active Lookup (v0.6.0, 2-3 days), Phase 2 MCP Prompts (1 day), Phase 3 Copilot Artifacts (2-3 days)](/assets/images/blog/kcp-copilot-slide-05-roadmap.png)
+![A 10-Day Execution Roadmap: Phase 1 Active Lookup (v0.6.0, 2-3 days), Phase 2 MCP Prompts (1 day), Phase 3 Copilot Artifacts (2-3 days)](/assets/images/blog/kcp-copilot-slide-05-roadmap.webp)
 
 All three phases shipped in `kcp-mcp@0.10.0` today, in both the TypeScript and Java bridges.
 
@@ -78,7 +78,7 @@ All three phases shipped in `kcp-mcp@0.10.0` today, in both the TypeScript and J
 
 ### Three MCP tools
 
-![Phase 1: Equipping agents with active lookup tools — search_knowledge, get_unit, get_command_syntax across TypeScript and Java bridges](/assets/images/blog/kcp-copilot-slide-06-tools.png)
+![Phase 1: Equipping agents with active lookup tools — search_knowledge, get_unit, get_command_syntax across TypeScript and Java bridges](/assets/images/blog/kcp-copilot-slide-06-tools.webp)
 
 **`search_knowledge`** — Find units by keyword. The agent calls this instead of loading the
 entire manifest. Input: `{ query, audience?, scope? }`. Output: a JSON array of the top-5
@@ -96,7 +96,7 @@ compact block that kcp-commands injects for Claude Code users.
 When `search_knowledge` runs, it evaluates every unit in the manifest against a strict
 scoring matrix:
 
-![Search Mechanics: The Knowledge Scoring Algorithm — 10 pts exact id match, 5 pts trigger match, 3 pts intent match, 1 pt path match, returns top-5 JSON array](/assets/images/blog/kcp-copilot-slide-07-scoring.png)
+![Search Mechanics: The Knowledge Scoring Algorithm — 10 pts exact id match, 5 pts trigger match, 3 pts intent match, 1 pt path match, returns top-5 JSON array](/assets/images/blog/kcp-copilot-slide-07-scoring.webp)
 
 Exact match on the unit `id`: 10 points. Term found in `triggers`: 5 points per match.
 Term found in `intent`: 3 points. Term found in `path`: 1 point. Top 5 returned.
@@ -106,7 +106,7 @@ units, not a dump of everything.
 
 ### Two MCP prompts
 
-![Phase 2: Embedding KCP Methodology via Prompts — sdd-review and kcp-explore prompt templates](/assets/images/blog/kcp-copilot-slide-08-prompts.png)
+![Phase 2: Embedding KCP Methodology via Prompts — sdd-review and kcp-explore prompt templates](/assets/images/blog/kcp-copilot-slide-08-prompts.webp)
 
 **`/sdd-review`** — Review code or architecture using SDD (Skill-Driven Development) methodology
 principles. Optional `focus` argument: `architecture`, `quality`, `security`, `performance`.
@@ -119,7 +119,7 @@ Invoke as `/kcp-explore authentication` or `/kcp-explore deployment`.
 
 For locked-down environments where no MCP server can run:
 
-![Phase 3: Bypassing infra limits with zero-footprint artifacts — knowledge.yaml → kcp-instructions-gen → .github/copilot-instructions.md](/assets/images/blog/kcp-copilot-slide-09-zero-infra.png)
+![Phase 3: Bypassing infra limits with zero-footprint artifacts — knowledge.yaml → kcp-instructions-gen → .github/copilot-instructions.md](/assets/images/blog/kcp-copilot-slide-09-zero-infra.webp)
 
 ```bash
 npx kcp-mcp --generate-instructions knowledge.yaml > .github/copilot-instructions.md
@@ -138,7 +138,7 @@ No server, no Node.js runtime, no configuration beyond committing a file.
 Not everything comes across. Phase B output filtering and full SDD skill graphs remain
 Claude Code-exclusive. That is deliberate.
 
-![The 60/100 Rule: Copilot gets native KCP value and basic SDD (60%); Claude Code adds Phase B output filtering and full SDD skill graphs (100%)](/assets/images/blog/kcp-copilot-slide-03-60-100-rule.png)
+![The 60/100 Rule: Copilot gets native KCP value and basic SDD (60%); Claude Code adds Phase B output filtering and full SDD skill graphs (100%)](/assets/images/blog/kcp-copilot-slide-03-60-100-rule.webp)
 
 Copilot users get the knowledge layer: `search_knowledge`, `get_unit`, `get_command_syntax`,
 the two methodology prompts, and `--generate-instructions`. That is meaningful value for

@@ -45,7 +45,7 @@ The root cause is the same in all three patterns. The policy is encoded as prose
 
 A policy is a declaration. A declaration should be structured, versionable, and machine-readable. That is what KCP provides.
 
-![The Three Broken Patterns of AI Compliance](/assets/images/blog/kcp-policy-practice/slide-three-broken-patterns.png)
+![The Three Broken Patterns of AI Compliance](/assets/images/blog/kcp-policy-practice/slide-three-broken-patterns.webp)
 *All three patterns share the same root cause: the policy is encoded as prose. Prose is invisible to evaluators, unversioned across agents, and unauditable under examination.*
 
 ---
@@ -54,7 +54,7 @@ A policy is a declaration. A declaration should be structured, versionable, and 
 
 KCP -- Knowledge Context Protocol -- is a YAML-based manifest format that tells agents what knowledge exists, how to navigate it, and what constraints apply. The `compliance` block is where regulations become structured metadata.
 
-![Declarations as Data: The KCP Bridge](/assets/images/blog/kcp-policy-practice/slide-kcp-bridge.png)
+![Declarations as Data: The KCP Bridge](/assets/images/blog/kcp-policy-practice/slide-kcp-bridge.webp)
 *Complex regulatory law on the left. Agent runtimes on the right. KCP is the bridge — a versionable, machine-readable declaration that auditors can read independently of your source code.*
 
 Here is a real example. A customer onboarding agent needs to access personal data in the EEA under GDPR:
@@ -143,7 +143,7 @@ This is the "pre-negotiated" pattern. Before any agent runs, the CTO and complia
 
 Per-unit delegation overrides tighten the root defaults. A patient records unit can declare `max_depth: 1` and `human_in_the_loop.required: true` even when the root manifest allows `max_depth: 3`. The rule: per-unit delegation must never relax root constraints. It can only tighten them.
 
-![Trust & Delegation: Pre-Negotiated Constraints](/assets/images/blog/kcp-policy-practice/slide-trust-delegation.png)
+![Trust & Delegation: Pre-Negotiated Constraints](/assets/images/blog/kcp-policy-practice/slide-trust-delegation.webp)
 *Each hop in the delegation chain must mathematically narrow permissions. Static limits in the manifest prevent invisible scope creep at runtime.*
 
 ---
@@ -231,7 +231,7 @@ The evaluator can be written in TypeScript, Python, Java -- whatever your runtim
 
 This is the layer most teams skip. They have declarations (maybe). They have logs (usually). They do not have the 20-line function that connects the declaration to the log entry with a binary result. That function is the difference between "we have a policy" and "we can prove the policy was followed for this specific action at this specific time."
 
-![The Missing Layer: Programmatic Evaluators](/assets/images/blog/kcp-policy-practice/slide-programmatic-evaluators.png)
+![The Missing Layer: Programmatic Evaluators](/assets/images/blog/kcp-policy-practice/slide-programmatic-evaluators.webp)
 *Left: prompt-based compliance — fuzzy, invisible, unversioned. Right: the KCP evaluator pattern — deterministic, binary, CI/CD testable.*
 
 ---
@@ -277,7 +277,7 @@ This is not a dashboard. It is a ledger. Each entry links action to rule to resu
 
 One honest limitation: if a regulation changes and you have not updated the evaluator, the log will faithfully record `passed: true` for an action that should have failed. The record is complete. The action is wrong. This is why evaluator versioning matters. This is why the `validated` date on KCP units matters. Logging does not prevent errors. It prevents undetected errors.
 
-![The Audit Ledger](/assets/images/blog/kcp-policy-practice/slide-audit-ledger.png)
+![The Audit Ledger](/assets/images/blog/kcp-policy-practice/slide-audit-ledger.webp)
 *Each log entry carries four independent links: the rule (KCP unit), the code (evaluator version), the data (fields accessed vs declared), and the context (W3C trace ID). Any auditor can independently verify that `passed: true` was mathematically correct.*
 
 ---
@@ -318,12 +318,12 @@ Do not try to model your entire regulatory framework in week one. The adoption g
 
 **What this looks like at production scale:** Mynder runs this pattern across 85+ Norwegian companies, 6 regulatory frameworks, with a batch evaluation strategy that processes entire documents in a single LLM call. The average GDPR trust score across the sample was 29.7/100. 88% of companies were missing required third-country transfer safeguards. The compliance gaps were not theoretical. They were invisible until the infrastructure could see them.
 
-![The Adoption Gradient](/assets/images/blog/kcp-policy-practice/slide-adoption-gradient.png)
+![The Adoption Gradient](/assets/images/blog/kcp-policy-practice/slide-adoption-gradient.webp)
 *Three steps: one high-risk action, one KCP unit + evaluator (~20 lines), wire the binary result to your observability stack. The infrastructure pays for itself the first time an auditor asks a question.*
 
 **The architectural choice matters.** A naive implementation evaluates each clause in a separate LLM call. Twelve GDPR clauses means twelve round-trips, twelve token budgets, twelve latency delays. Mynder's batch approach processes all clauses in a single structured JSON call, returning twelve evaluations at once. The measured result: 2.6x faster (6.1s vs 16.1s average latency), 7.9x token reduction (2,708 vs 21,460 tokens per document), 12x fewer API calls. Quality is within noise — 2.59/3 batch vs 2.63/3 per-clause. No accuracy trade-off. Just architecture.
 
-![Batch vs. Per-Clause LLM Architecture](/assets/images/blog/kcp-policy-practice/batch-vs-per-clause-efficiency.png)
+![Batch vs. Per-Clause LLM Architecture](/assets/images/blog/kcp-policy-practice/batch-vs-per-clause-efficiency.webp)
 *Batch evaluation: one API call per document, all clauses evaluated together. The per-clause loop is simpler to implement but does not scale.*
 
 ---
@@ -342,12 +342,12 @@ Regulations change. When they do, you update the KCP unit and the evaluator. You
 
 This is not a compliance feature. It is infrastructure. The same boring, unglamorous, essential infrastructure that makes everything else trustworthy.
 
-![The KCP Infrastructure Stack](/assets/images/blog/kcp-policy-practice/slide-kcp-infrastructure-stack.png)
+![The KCP Infrastructure Stack](/assets/images/blog/kcp-policy-practice/slide-kcp-infrastructure-stack.webp)
 *Four independent, versioned layers: Declaration (KCP YAML) → Trust (delegation blocks) → Enforcement (programmatic evaluator) → Proof (audit ledger). Each layer can be updated without touching the others.*
 
 Boring passes audit.
 
-![Boring passes audit.](/assets/images/blog/kcp-policy-practice/slide-boring-passes-audit.png)
+![Boring passes audit.](/assets/images/blog/kcp-policy-practice/slide-boring-passes-audit.webp)
 
 ---
 

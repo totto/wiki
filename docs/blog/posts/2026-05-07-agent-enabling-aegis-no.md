@@ -28,7 +28,7 @@ federated, and cryptographically signed. Here's what I did and what I learned.
 
 <!-- more -->
 
-![What humans see vs what agents see](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-02.png)
+![What humans see vs what agents see](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-02.webp)
 
 ## Start with the obvious: `/llms.txt`
 
@@ -42,7 +42,7 @@ have an `llms.txt`. The bar is extremely low and the upside is that any agent
 querying your site gets a clean starting point instead of reverse-engineering
 your navigation structure.
 
-![The low bar: /llms.txt in 10 minutes](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-04.png)
+![The low bar: /llms.txt in 10 minutes](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-04.webp)
 
 That was the easy part.
 
@@ -50,7 +50,7 @@ That was the easy part.
 
 Before going further it's worth naming the progression explicitly.
 
-![The AI-Visibility Maturity Scale](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-03.png)
+![The AI-Visibility Maturity Scale](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-03.webp)
 
 Most people stop at Level 1 and call it done. Level 2 is where the interesting
 properties emerge: structured, federated, verifiable. That's what the rest of
@@ -71,7 +71,7 @@ index that federates to eleven sub-manifests in `/knowledge/`:
   KCP itself, kcp-commands, kcp-memory, kcp-triage, kcp-dashboard,
   skills-library
 
-![KCP Federation blueprint — the exact files we built](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-06.png)
+![KCP Federation blueprint — the exact files we built](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-06.webp)
 
 Each sub-manifest is self-contained. It has its own `discovery` block, its own
 `authority` block, its own `signing` block. The root just knows where to find
@@ -92,7 +92,7 @@ different keys. A partner contributing a sub-manifest could sign it with their
 own key. The root manifest trusts the federation structure; signing anchors the
 provenance of each piece. You can verify who vouches for what.
 
-![Establishing verifiable trust — the provenance pathway](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-08.png)
+![Establishing verifiable trust — the provenance pathway](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-08.webp)
 
 For now, all eleven manifests are signed by the same key — a GitHub Actions
 workflow that triggers on any push touching `knowledge.yaml` or `knowledge/**`.
@@ -111,7 +111,7 @@ The first run of the signing action failed with:
 Error: operation not supported for this keytype
 ```
 
-![The automation loop and the Ed25519 -rawin gotcha](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-09.png)
+![The automation loop and the Ed25519 -rawin gotcha](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-09.webp)
 
 The issue: Ed25519 doesn't use an external digest algorithm. The hash is
 internal to the algorithm — you sign the raw bytes directly. `openssl pkeyutl`
@@ -141,9 +141,9 @@ this not because it's difficult, but because nobody has made it a priority.
 
 In an AI-first world, that's a choice worth revisiting.
 
-![The machine-readable mandate](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-10.png)
+![The machine-readable mandate](../../assets/images/blog/agent-enabling-aegis-no/mrc-slide-10.webp)
 
-![Architecting the machine-readable firm — full overview](../../assets/images/blog/agent-enabling-aegis-no/overview.png)
+![Architecting the machine-readable firm — full overview](../../assets/images/blog/agent-enabling-aegis-no/overview.webp)
 
 ---
 

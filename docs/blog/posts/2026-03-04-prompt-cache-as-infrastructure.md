@@ -37,7 +37,7 @@ Claude Code stores every session as a `.jsonl` file under `~/.claude/projects/`.
 message includes a `usage` block with input tokens, output tokens, and cache statistics.
 Across 3,007 sessions from January 9 to March 3, 2026:
 
-![Twelve billion tokens served from cache across 55 days](/assets/images/blog/prompt-cache-infrastructure/slide-02.png)
+![Twelve billion tokens served from cache across 55 days](/assets/images/blog/prompt-cache-infrastructure/slide-02.webp)
 
 | Metric | Tokens |
 |--------|--------|
@@ -59,7 +59,7 @@ The 55 days did not behave uniformly. Tracking git commits, token usage, and cac
 together reveals three distinct phases -- the lifecycle of AI-augmented development from a
 cold start to a mature infrastructure.
 
-![Infrastructure maturity happens in three distinct phases](/assets/images/blog/prompt-cache-infrastructure/slide-03.png)
+![Infrastructure maturity happens in three distinct phases](/assets/images/blog/prompt-cache-infrastructure/slide-03.webp)
 
 ---
 
@@ -75,7 +75,7 @@ but low relative to what came later. The knowledge layer didn't exist yet -- no 
 no settled skills library, no memory files with accumulated context. Every session started
 closer to cold.
 
-![Phase 1: peak generation, lowest cache rates](/assets/images/blog/prompt-cache-infrastructure/slide-04.png)
+![Phase 1: peak generation, lowest cache rates](/assets/images/blog/prompt-cache-infrastructure/slide-04.webp)
 
 | Week | Sessions | Output (M) | Cache-R (B) | Cache% | Activity |
 |------|----------|------------|-------------|--------|----------|
@@ -93,7 +93,7 @@ had been built, integrating components, searching the codebase.
 The signal: **673 sessions in a single week** (Jan 26 -- Feb 1), but only 0.04M output tokens.
 Maximum engagement, minimal generation. The model was reading, not writing.
 
-![Phase 2: workflow shifts from raw generation to deep comprehension](/assets/images/blog/prompt-cache-infrastructure/slide-05.png)
+![Phase 2: workflow shifts from raw generation to deep comprehension](/assets/images/blog/prompt-cache-infrastructure/slide-05.webp)
 
 Cache rates recovered to 93--95% as the session pattern stabilised. But the knowledge
 infrastructure was still sparse. The high session count reflected workflow intensity,
@@ -115,7 +115,7 @@ building the knowledge layer itself.
 Cache rates hit **95%+ and stayed there**. Cache reads doubled. Fresh input dropped. The
 infrastructure was now paying for itself -- session after session, without additional investment.
 
-![Phase 3: sustained efficiency through persistent knowledge](/assets/images/blog/prompt-cache-infrastructure/slide-06.png)
+![Phase 3: sustained efficiency through persistent knowledge](/assets/images/blog/prompt-cache-infrastructure/slide-06.webp)
 
 | Week | Sessions | Output (M) | Cache-R (B) | Cache% | Activity |
 |------|----------|------------|-------------|--------|----------|
@@ -131,7 +131,7 @@ infrastructure was now paying for itself -- session after session, without addit
 Anthropic's prompt caching works on the stable prefix of the context window. The larger and
 more consistent that prefix, the higher the cache hit rate.
 
-![A stable cache requires a dedicated knowledge layer](/assets/images/blog/prompt-cache-infrastructure/slide-07.png)
+![A stable cache requires a dedicated knowledge layer](/assets/images/blog/prompt-cache-infrastructure/slide-07.webp)
 
 In practice, the cached content is:
 
@@ -152,7 +152,7 @@ by injecting targeted syntax hints before Bash calls instead of letting the mode
 Less guessing means shorter tool-use chains, which means a more stable context prefix,
 which means better cache utilisation.
 
-![Targeted syntax injection actively shrinks the context window](/assets/images/blog/prompt-cache-infrastructure/slide-08.png)
+![Targeted syntax injection actively shrinks the context window](/assets/images/blog/prompt-cache-infrastructure/slide-08.webp)
 
 The 96%+ cache rates in February reflect both the mature knowledge infrastructure and the
 reduced fresh-token noise from kcp-commands. The effect is indirect but measurable.
@@ -163,7 +163,7 @@ reduced fresh-token noise from kcp-commands. The effect is indirect but measurab
 
 The 3,007 sessions span five model generations. Each settled into a distinct role:
 
-![Specialized models handle distinct tasks within the same workflow](/assets/images/blog/prompt-cache-infrastructure/slide-09.png)
+![Specialized models handle distinct tasks within the same workflow](/assets/images/blog/prompt-cache-infrastructure/slide-09.webp)
 
 | Model | Messages | Input (M) | Output (M) | Cache-R (B) |
 |-------|----------|-----------|------------|-------------|
@@ -186,7 +186,7 @@ The most important observation: **cache reads are uniform across all five models
 each). The same stable context prefix benefits every model equally. The knowledge infrastructure
 is model-agnostic.
 
-![A unified context prefix benefits every model equally](/assets/images/blog/prompt-cache-infrastructure/slide-10.png)
+![A unified context prefix benefits every model equally](/assets/images/blog/prompt-cache-infrastructure/slide-10.webp)
 
 ---
 
@@ -194,7 +194,7 @@ is model-agnostic.
 
 Without the caching infrastructure, this workflow breaks the economic model entirely.
 
-![Disposable context fundamentally breaks the economic model](/assets/images/blog/prompt-cache-infrastructure/slide-11.png)
+![Disposable context fundamentally breaks the economic model](/assets/images/blog/prompt-cache-infrastructure/slide-11.webp)
 
 At standard API rates, the 12.2B cache read tokens priced as fresh input would push the
 total past **$40,000**. With prompt caching, the same usage costs approximately **$8,900**.
@@ -202,7 +202,7 @@ The infrastructure provides a 4.5x cost reduction on the API alone.
 
 The Claude Max subscription for 55 days cost approximately **$200--350**.
 
-![Flat-rate subscriptions make high-frequency agentic workflows viable](/assets/images/blog/prompt-cache-infrastructure/slide-12.png)
+![Flat-rate subscriptions make high-frequency agentic workflows viable](/assets/images/blog/prompt-cache-infrastructure/slide-12.webp)
 
 | Scenario | Estimated cost (55 days) |
 |----------|--------------------------|
@@ -217,7 +217,7 @@ under a flat-rate model. This is the economic foundation of agentic labor.
 
 ## What this means
 
-![Treat your prompt context as infrastructure, not scaffolding](/assets/images/blog/prompt-cache-infrastructure/slide-13.png)
+![Treat your prompt context as infrastructure, not scaffolding](/assets/images/blog/prompt-cache-infrastructure/slide-13.webp)
 
 The three phases tell a consistent story. Phase 1 was expensive because the infrastructure
 didn't exist yet. Phase 2 was the transition -- the work of building the knowledge layer.

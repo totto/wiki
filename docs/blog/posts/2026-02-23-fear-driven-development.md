@@ -20,7 +20,7 @@ I need to confess something that most developers won't admit: I'm scared of AI. 
 
 <!-- more -->
 
-![Productive paranoia: fear-driven development as methodology](/assets/images/blog/fear-driven-development-infographic.png)
+![Productive paranoia: fear-driven development as methodology](/assets/images/blog/fear-driven-development-infographic.webp)
 
 Here's the thing: **those fears built the system.**
 

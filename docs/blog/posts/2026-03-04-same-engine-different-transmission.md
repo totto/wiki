@@ -19,7 +19,7 @@ authors:
 
 Most AI productivity discussion asks the wrong question. "How much faster?" assumes the difference is speed. It is not. Two developers using the same model, the same IDE integration, the same subscription tier -- one of them starts every session cold and the other does not. The gap between them is not the engine. It is the transmission. But the transmission alone is not the full story either. There is a third variable: how the driver was trained.
 
-![Same Engine, Different Transmission: The 4-Gear AI Memory Architecture -- standard 1-gear setup vs four gears, honest productivity numbers](/assets/images/blog/same-engine-different-transmission-overview.png)
+![Same Engine, Different Transmission: The 4-Gear AI Memory Architecture -- standard 1-gear setup vs four gears, honest productivity numbers](/assets/images/blog/same-engine-different-transmission-overview.webp)
 
 <!-- more -->
 
@@ -27,13 +27,13 @@ The advantage I have built since January has two dimensions, and neither works w
 
 Let me describe both, starting with why the methodology matters from the first session.
 
-![Measuring speed misses the bottleneck — the cold-start tax compounds across sessions](/assets/images/blog/saa-slide-02.png)
+![Measuring speed misses the bottleneck — the cold-start tax compounds across sessions](/assets/images/blog/saa-slide-02.webp)
 
 ## The methodology: six pillars
 
 Skill-Driven Development came out of building a PCB design library -- 197,831 lines of Java in 11 days, 7,461 tests, 25-66x faster than industry standard. The [six pillars](/blog/2026/02/13/six-pillars-200k-lines-11-days/) are not abstract principles. They are the practices that made that result repeatable.
 
-![The ultimate proof of compounding leverage: 197,831 lines, 7,461 tests, 25-66x faster, zero bugs](/assets/images/blog/saa-slide-04.png)
+![The ultimate proof of compounding leverage: 197,831 lines, 7,461 tests, 25-66x faster, zero bugs](/assets/images/blog/saa-slide-04.webp)
 
 **Intelligent context.** Encode what you know into persistent skill files, not prompts. Every session starts with the AI knowing what your most experienced developer knows. By day 11 of the lib-pcb build, we had 85 skill files. The AI did not need to rediscover the domain. It already understood PCB coordinate systems, layer stackups, the difference between metric and imperial units in Gerber files. That knowledge persisted between sessions because it was written down in a form the AI could load.
 
@@ -49,13 +49,13 @@ Skill-Driven Development came out of building a PCB design library -- 197,831 li
 
 Two of these pillars -- intelligent context and continuous learning -- directly drive the compounding of the infrastructure layers. The infrastructure provides the mechanism: episodic memory, skills corpus, Synthesis index. SDD provides the discipline to systematically feed those mechanisms with accurate, current, high-signal knowledge. Without the methodology, the compounding flattens. Skills go stale. Sessions produce noise instead of retrievable decisions. The episodic memory fills with low-value content. The infrastructure is there but it is not getting fed.
 
-![The six pillars of Skill-Driven Development](/assets/images/blog/saa-slide-05.png)
+![The six pillars of Skill-Driven Development](/assets/images/blog/saa-slide-05.webp)
 
 ## The infrastructure: four gears
 
 A well-equipped Claude Code user -- not a beginner, someone with a solid CLAUDE.md, maybe some MCP servers, uses it daily -- has one memory layer: the current session's context window. Whatever was loaded at session start, plus whatever accumulated during the session. When the session ends, it is gone. The next session starts from the same blank slate. That is a perfectly good car with one gear.
 
-![The limitations of a single-gear setup — cold starts, lost context, no compounding](/assets/images/blog/saa-slide-06.png)
+![The limitations of a single-gear setup — cold starts, lost context, no compounding](/assets/images/blog/saa-slide-06.webp)
 
 The setup I have been building since January has four.
 
@@ -77,13 +77,13 @@ That is where SDD earns its keep. Process discipline (Pillar 5) means every deci
 
 The lib-pcb evidence makes this concrete. The last 5 days of the 11-day build were more productive per session than the first 5. Not because the model changed. Because 85 skill files encoded everything learned in the first 6 days. That is SDD and infrastructure compounding together. The methodology fed the infrastructure. The infrastructure amplified the methodology.
 
-![Compounding requires high-signal inputs — the SDD ↔ Infrastructure cycle](/assets/images/blog/saa-slide-11.png)
+![Compounding requires high-signal inputs — the SDD ↔ Infrastructure cycle](/assets/images/blog/saa-slide-11.webp)
 
 A well-equipped user who installed every tool in this post but applied no methodology would see the compounding flatten. A disciplined developer who applied every SDD principle but had no persistent memory layers would hit a ceiling -- the discipline would produce knowledge, but the knowledge would not accumulate across sessions.
 
 ## The honest numbers
 
-![The compounding return on time horizon — four steps from 30% to capability gap](/assets/images/blog/saa-slide-12.png)
+![The compounding return on time horizon — four steps from 30% to capability gap](/assets/images/blog/saa-slide-12.webp)
 
 | Scenario | Advantage |
 |----------|-----------|
@@ -112,7 +112,7 @@ With all four layers live and a methodology that systematically feeds them, the 
 
 Same engine. Different transmission. Trained driver.
 
-![The true capability gap — not faster, but a different category of achievable](/assets/images/blog/saa-slide-13.png)
+![The true capability gap — not faster, but a different category of achievable](/assets/images/blog/saa-slide-13.webp)
 
 ---
 

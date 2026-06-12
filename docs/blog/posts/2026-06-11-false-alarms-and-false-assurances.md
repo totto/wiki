@@ -31,7 +31,7 @@ Three wrong claims, one afternoon, inside an otherwise excellent piece of agent 
 
 <!-- more -->
 
-![Auditing AI Agents: a practitioner's guide to false alarms and false assurances. A typewritten claim — "The system is fully secure and unauthenticated" — with "unauthenticated" struck through in red ink and the annotation: middleware order says otherwise, needs verification.](/assets/images/blog/false-alarms-slide-01.png)
+![Auditing AI Agents: a practitioner's guide to false alarms and false assurances. A typewritten claim — "The system is fully secure and unauthenticated" — with "unauthenticated" struck through in red ink and the annotation: middleware order says otherwise, needs verification.](/assets/images/blog/false-alarms-slide-01.webp)
 
 ---
 
@@ -43,7 +43,7 @@ But more and more of what agents produce for me isn't code. It's *claims*. "This
 
 There is no test suite for a sentence. You cannot CI a paragraph. The verification instrument for claims is older and less glamorous: **reading the source.**
 
-![Code has test suites. Sentences do not. The era of AI code: functions, scripts, modules — verified by automated tests (round-trip, property-based, CI/CD). The era of AI claims: architecture reports marked up in red pen, outputs like "this is compliant" and "this library is unused" — verified by human reading.](/assets/images/blog/false-alarms-slide-03.png)
+![Code has test suites. Sentences do not. The era of AI code: functions, scripts, modules — verified by automated tests (round-trip, property-based, CI/CD). The era of AI claims: architecture reports marked up in red pen, outputs like "this is compliant" and "this library is unused" — verified by human reading.](/assets/images/blog/false-alarms-slide-03.webp)
 
 And since you cannot read everything the agent read — that would erase the speedup you hired the agent for — the actual skill is deciding *which claims to spend reading on*. That's a judgment problem, and it has structure.
 
@@ -61,11 +61,11 @@ A false alarm costs you an hour. You investigate, find the middleware, strike th
 
 A false assurance is the dangerous one. It tells you a control exists that doesn't, that a standard is met that isn't, that you can stop worrying. False assurances don't cost an hour — they cost an incident, an audit finding, a decision built on sand. And they are *invisible by default*: nobody investigates good news.
 
-![Not all hallucinations are equal. False alarms ("no authentication"): system is safer than reported, costs an hour of investigation, highly visible, mildly embarrassing but cheap. False assurances ("fully RFC compliant"): system is worse than reported, costs a security incident or audit finding, invisible by default — nobody investigates good news — catastrophic failure. The failure modes of AI claims are strictly asymmetric.](/assets/images/blog/false-alarms-slide-04.png)
+![Not all hallucinations are equal. False alarms ("no authentication"): system is safer than reported, costs an hour of investigation, highly visible, mildly embarrassing but cheap. False assurances ("fully RFC compliant"): system is worse than reported, costs a security incident or audit finding, invisible by default — nobody investigates good news — catastrophic failure. The failure modes of AI claims are strictly asymmetric.](/assets/images/blog/false-alarms-slide-04.webp)
 
 So the first practical rule: **sort the agent's claims by which way they would fail.** Verify the assurances first. "X is protected", "X is compliant", "X is unused, safe to delete", "these are equivalent" — those get your reading time. "X looks broken" can often wait, because the act of fixing it will verify it anyway.
 
-![Sort an agent's claims by the direction of failure. A flowchart: raw agent claims feed a decision — which way would this fail? Fails safe ("X looks broken") goes to a delay tray: fixing it will verify it later. Fails dangerous ("X is protected", "X is compliant") goes to a highlighted bin: immediate deep reading. Verify the assurances first.](/assets/images/blog/false-alarms-slide-05.png)
+![Sort an agent's claims by the direction of failure. A flowchart: raw agent claims feed a decision — which way would this fail? Fails safe ("X looks broken") goes to a delay tray: fixing it will verify it later. Fails dangerous ("X is protected", "X is compliant") goes to a highlighted bin: immediate deep reading. Verify the assurances first.](/assets/images/blog/false-alarms-slide-05.webp)
 
 A report that contains a false alarm survives. A report that contains a false assurance is the thing audits exist to catch — and you'd rather be the one who catches it.
 
@@ -73,7 +73,7 @@ A report that contains a false alarm survives. A report that contains a false as
 
 Across months of this, the wrong claims cluster. Tips, in roughly descending order of value:
 
-![Agents are excellent witnesses to what a file says, but unreliable witnesses to what it means. Three claims, each stamped FAILED in red: "No authentication on endpoint" — auth lives in middleware 12 lines up. "Fully RFC compliant parser" — missing required wildcard support. "Security plugin is active" — active only via legacy load-order accident. Three wrong claims in one afternoon of agent research; the agent perfectly read self-contained files but entirely misunderstood the system context.](/assets/images/blog/false-alarms-slide-02.png)
+![Agents are excellent witnesses to what a file says, but unreliable witnesses to what it means. Three claims, each stamped FAILED in red: "No authentication on endpoint" — auth lives in middleware 12 lines up. "Fully RFC compliant parser" — missing required wildcard support. "Security plugin is active" — active only via legacy load-order accident. Three wrong claims in one afternoon of agent research; the agent perfectly read self-contained files but entirely misunderstood the system context.](/assets/images/blog/false-alarms-slide-02.webp)
 
 **1. Distrust claims about context more than claims about content.**
 All three of my failures shared a shape: the agent read a *file* and made a claim about a *system*. Auth lives in middleware ordering. Compliance lives in the spec, not the parser. The plugin's activation lived in another file's import side effect. Agents are excellent witnesses to what a file says and unreliable witnesses to what surrounds it — mounting order, load order, configuration, deploy environment, the spec the code claims to implement. Any claim whose truth depends on *somewhere else* gets verified.
@@ -81,32 +81,32 @@ All three of my failures shared a shape: the agent read a *file* and made a clai
 **2. Adjectives are where the fiction hides.**
 "Fully compliant." "Properly secured." "Comprehensive coverage." Facts come with file paths; adjectives come from the vibe of the code. When a claim contains a standard's name and a completeness adverb, open the standard. In my case, the RFC's wildcard requirement took four minutes to check against a parser that handled none of it.
 
-![The linguistic signatures of a hallucination. A crumpled note reads "The parser is Fully compliant and Properly secured" with the adjectives highlighted and red-penned, and "Auth is complete based on route.js" boxed. Margin notes: adjectives are where fiction hides — facts come with file paths, adjectives come from the vibe of the code. Distrust claims about context: truths live in system boundaries (middleware ordering, load order, specs); agents trust isolated files.](/assets/images/blog/false-alarms-slide-06.png)
+![The linguistic signatures of a hallucination. A crumpled note reads "The parser is Fully compliant and Properly secured" with the adjectives highlighted and red-penned, and "Auth is complete based on route.js" boxed. Margin notes: adjectives are where fiction hides — facts come with file paths, adjectives come from the vibe of the code. Distrust claims about context: truths live in system boundaries (middleware ordering, load order, specs); agents trust isolated files.](/assets/images/blog/false-alarms-slide-06.webp)
 
 **3. Demand citations, then spot-check them.**
 Make agents report `file:line` for every load-bearing claim. Not because citations make claims true — but because uncited claims can't be cheaply audited, and the discipline of citing changes what the agent asserts. A citation that doesn't check out is also your early-warning signal for the rest of the report.
 
-![Demand citations, then spot-check them. Before (uncited): "The unused legacy module is isolated" — stamped UNAUDITABLE. After (cited): "The legacy module is isolated, config.routes.js:42" — stamped VERIFIABLE. Citations don't magically make claims true, but uncited claims cannot be cheaply audited, and a citation that fails to check out is an early-warning system for the rest of the report.](/assets/images/blog/false-alarms-slide-07.png)
+![Demand citations, then spot-check them. Before (uncited): "The unused legacy module is isolated" — stamped UNAUDITABLE. After (cited): "The legacy module is isolated, config.routes.js:42" — stamped VERIFIABLE. Citations don't magically make claims true, but uncited claims cannot be cheaply audited, and a citation that fails to check out is an early-warning system for the rest of the report.](/assets/images/blog/false-alarms-slide-07.webp)
 
 **4. "Are you sure?" is not verification.**
 Asking the agent to double-check, or asking a second agent, feels like diligence. It isn't. Two agents share blind spots the way two readers of the same misleading file do — my "no auth" claim would have been confirmed by any agent reading the same clean route file. Independent verification means a different *instrument*: the source, the spec, the running system. Not the same instrument asked twice.
 
-!["Are you sure?" is not verification. Scenario A, the illusion: two robots staring at the same shared-context blind spot — redundant, not independent. Scenario B, true diligence: one robot's isolated file analysis, a human's verified system facts, and the live system and middleware — an independent instrument with a proven field of view.](/assets/images/blog/false-alarms-slide-08.png)
+!["Are you sure?" is not verification. Scenario A, the illusion: two robots staring at the same shared-context blind spot — redundant, not independent. Scenario B, true diligence: one robot's isolated file analysis, a human's verified system facts, and the live system and middleware — an independent instrument with a proven field of view.](/assets/images/blog/false-alarms-slide-08.webp)
 
 **5. Sample like an auditor, not like a proofreader.**
 You cannot verify everything, and uniform skimming verifies nothing. Auditors solved this long ago: sample by impact. The claims that drive decisions get full verification; the inventory tables get spot checks; the prose gets read for claims you didn't notice were claims.
 
-![Sample like an auditor, not a proofreader. A target diagram: the bullseye is decision-driving claims — action: full source verification. The middle ring is inventory tables and lists — action: random spot checks. The outer ring is general prose and summaries — action: skim to catch hidden claims. Sample strictly by impact.](/assets/images/blog/false-alarms-slide-09.png)
+![Sample like an auditor, not a proofreader. A target diagram: the bullseye is decision-driving claims — action: full source verification. The middle ring is inventory tables and lists — action: random spot checks. The outer ring is general prose and summaries — action: skim to catch hidden claims. Sample strictly by impact.](/assets/images/blog/false-alarms-slide-09.webp)
 
 **6. Wrong claims are signal, not just noise.**
 When I struck "no authentication", I didn't just delete a finding — I downgraded it to the true and still-useful version: *any authenticated user gets an arbitrary-URL fetch service, with no rate limit and no audit log*. The agent's error pointed at something real; it had just mislabeled the severity. Verification isn't only subtraction. Often the corrected claim is more interesting than the original.
 
-![Wrong claims are signal, not just noise. The claim "this endpoint has no authentication" passes through a funnel labeled human judgment and becomes: "any authenticated user gets an arbitrary-URL fetch service, with no rate limit and no audit log." When you strike a false alarm, downgrade it to its true, useful version — verification is refinement, not just subtraction.](/assets/images/blog/false-alarms-slide-10.png)
+![Wrong claims are signal, not just noise. The claim "this endpoint has no authentication" passes through a funnel labeled human judgment and becomes: "any authenticated user gets an arbitrary-URL fetch service, with no rate limit and no audit log." When you strike a false alarm, downgrade it to its true, useful version — verification is refinement, not just subtraction.](/assets/images/blog/false-alarms-slide-10.webp)
 
 **7. Write the verification status into the deliverable.**
 My reports now distinguish "verified directly against source" from "reported by exploration pass, not independently re-verified" — explicitly, per section. It's honest, it tells the reader where to push, and it forces me to know which bucket every claim is in. The unverifiable confidence of a uniform document is exactly the failure mode we're avoiding.
 
-![Write the verification status directly into the deliverable. A clipboard report with two sections: Critical Auth Paths marked "verified directly against source — confirmed via code review and live test", and Unused Module Inventory marked "reported by exploration pass — not re-verified, flag for later audit, do not rely." Honesty tells the reader where to push, and forces you to know exactly which bucket every claim belongs in.](/assets/images/blog/false-alarms-slide-11.png)
+![Write the verification status directly into the deliverable. A clipboard report with two sections: Critical Auth Paths marked "verified directly against source — confirmed via code review and live test", and Unused Module Inventory marked "reported by exploration pass — not re-verified, flag for later audit, do not rely." Honesty tells the reader where to push, and forces you to know exactly which bucket every claim belongs in.](/assets/images/blog/false-alarms-slide-11.webp)
 
 ## The compounding part
 
@@ -116,7 +116,7 @@ The first time, you don't know that middleware-ordering claims are high-risk and
 
 That pattern library — *which claims, from which kinds of analysis, fail in which direction* — is judgment. It doesn't come with the tooling. It accumulates from doing the verification, being wrong about where to spend it, and adjusting. It is, in other words, [compound-developer](/blog/2026/06/02/the-compound-developer/) material: the part of the work that gets more valuable as the agents get faster.
 
-![The compounding developer. A rising curve of the value of human judgment over time and repetitions: first learning that dead-code claims are usually safe, then instantly spotting high-risk middleware fictions, finally building a personal pattern library of AI failures. Not a checklist — a practitioner skill that gets cheaper with use and strictly more valuable as the agents get faster.](/assets/images/blog/false-alarms-slide-12.png)
+![The compounding developer. A rising curve of the value of human judgment over time and repetitions: first learning that dead-code claims are usually safe, then instantly spotting high-risk middleware fictions, finally building a personal pattern library of AI failures. Not a checklist — a practitioner skill that gets cheaper with use and strictly more valuable as the agents get faster.](/assets/images/blog/false-alarms-slide-12.webp)
 
 The agents did the survey. The survey was good. Three sentences in it were false, two of them in the direction that hurts.
 
@@ -126,7 +126,7 @@ Finding those three sentences is the job now.
 
 ## The whole framework on one page
 
-![False Alarms and False Assurances: the practitioner's guide to verifying AI claims. An infographic covering the anatomy of an AI error (false alarm: saying something is broken when it isn't, costs an hour; false assurance: saying something is safe when it isn't, costs an incident or audit failure), the asymmetry of risk, the process step of sorting claims by failure direction, and seven field notes: context over content, distrust adjectives and adverbs, demand and spot-check citations, "are you sure?" is not verification, sample like an auditor, errors are signals, explicitly tag verification status.](/assets/images/blog/false-alarms-infographic.png)
+![False Alarms and False Assurances: the practitioner's guide to verifying AI claims. An infographic covering the anatomy of an AI error (false alarm: saying something is broken when it isn't, costs an hour; false assurance: saying something is safe when it isn't, costs an incident or audit failure), the asymmetry of risk, the process step of sorting claims by failure direction, and seven field notes: context over content, distrust adjectives and adverbs, demand and spot-check citations, "are you sure?" is not verification, sample like an auditor, errors are signals, explicitly tag verification status.](/assets/images/blog/false-alarms-infographic.webp)
 
 There is also a [slide deck version of this post (PDF)](/assets/auditing-ai-agents-slides.pdf) if you want to walk a team through it.
 

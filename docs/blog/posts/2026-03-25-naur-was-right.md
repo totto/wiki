@@ -25,7 +25,7 @@ In 1985, the Danish computer scientist Peter Naur published a short paper called
 
 The theory, Naur argued, lives in the minds of the developers who built the system. It is what lets them answer questions no documentation covers: why this module exists, what happens if you change that interface, which assumptions are load-bearing and which are incidental. When the original team leaves, the theory leaves with them. What remains is code that can be read but not fully understood — because understanding was never in the code.
 
-![A Program Is a Mental Model, Not Just Source Code](../../assets/images/naur-intent-debt/slide-002.png)
+![A Program Is a Mental Model, Not Just Source Code](../../assets/images/naur-intent-debt/slide-002.webp)
 
 For forty years this was a beautiful philosophical observation that practitioners mostly filed away. We had other problems. Code was hard enough to write. Frameworks kept changing. The theory-building happened as a side effect of building the system, and that seemed sufficient. Writing the code *was* building the theory. The two activities were fused.
 
@@ -39,7 +39,7 @@ This is not a hypothetical concern. I have seen it in my own work and in the wor
 
 The uncomfortable part is that this feels productive. Output is up. Velocity metrics look excellent. The gap between what exists in the codebase and what anyone understands about it widens quietly, and nothing in the build pipeline measures that gap.
 
-![The Illusion of Code Velocity](../../assets/images/naur-intent-debt/slide-005.png)
+![The Illusion of Code Velocity](../../assets/images/naur-intent-debt/slide-005.webp)
 
 ---
 
@@ -49,7 +49,7 @@ Storey's contribution is a model that distinguishes three kinds of debt. Technic
 
 The distinction that elevates this beyond taxonomy is between cognitive debt and intent debt — the absence of externalised rationale. These are not the same thing, and conflating them leads to the wrong interventions.
 
-![The Crucial Difference Between Lost Minds and Lost Artifacts](../../assets/images/naur-intent-debt/slide-008.png)
+![The Crucial Difference Between Lost Minds and Lost Artifacts](../../assets/images/naur-intent-debt/slide-008.webp)
 
 Cognitive debt lives in people's heads. It is the erosion of the shared mental model. Intent debt lives in artifacts — or rather, in the absence of them. It is the missing "why" that was never written down. A team can deeply understand their system and still have massive intent debt if none of that understanding has been externalised in a form that persists when they leave. The interventions are different. Cognitive debt responds to social practices: pair programming, code reviews, facilitated retrospectives. Intent debt responds to artifacts: structured documentation, typed manifests, externalised rationale that both humans and machines can query.
 
@@ -57,7 +57,7 @@ Cognitive debt lives in people's heads. It is the erosion of the shared mental m
 
 The most important aspect of this work, to my reading, is the explicit naming of AI agents as *consumers* of intent. Storey defines intent debt as "the absence of externalised rationale that both developers and AI agents need to work safely with code." This reframes the problem entirely.
 
-![AI Agents Are Consumers of Intent](../../assets/images/naur-intent-debt/slide-009.png)
+![AI Agents Are Consumers of Intent](../../assets/images/naur-intent-debt/slide-009.webp)
 
 An AI agent modifying a codebase with high intent debt is operating blind. It can analyse what exists. It can reduce technical debt by refactoring messy code. But it cannot reason about whether its changes align with the system's purpose, because the purpose was never captured. This is not a problem that better models solve. It is a structural problem: the information was never recorded.
 
@@ -73,7 +73,7 @@ The methodology I call Spec-Driven Development builds on this premise. The pract
 
 The stack that supports this has three layers. At the base, KCP — the Knowledge Context Protocol — is an open spec (v0.12) for how AI agents request and receive structured knowledge. A KCP manifest describes what knowledge exists, what it is for, how to navigate it, who may access it, and how much to trust it. Trust levels, validity windows, explicit scope declarations, governance metadata. The CLI tooling at [kcp-commands](https://github.com/Cantara/kcp-commands) provides 284 pre-built manifests. Above KCP, Synthesis indexes codebases and session context against those manifests, maintaining a queryable record of understanding as it is built.
 
-![Knowledge Infrastructure for the Future](../../assets/images/naur-intent-debt/slide-013.png)
+![Knowledge Infrastructure for the Future](../../assets/images/naur-intent-debt/slide-013.webp)
 
 These are not three separate tools. They are layers of one argument: that the gap between human cognition and machine execution can only be bridged by intent artifacts with real structure — and that maintaining those artifacts is not a backup of code, but a backup of the theory of the system.
 
@@ -81,7 +81,7 @@ These are not three separate tools. They are layers of one argument: that the ga
 
 I want to be honest about what this does not yet address.
 
-![What Tooling Cannot Fix](../../assets/images/naur-intent-debt/slide-014.png)
+![What Tooling Cannot Fix](../../assets/images/naur-intent-debt/slide-014.webp)
 
 Cognitive debt measurement: I can reduce cognitive debt by externalising intent, but I cannot quantify it. There is no "cognitive debt score" analogous to what CodeScene provides for technical debt.
 
@@ -99,7 +99,7 @@ Naur was right. The program is the theory, not the code. He was just forty years
 
 The question I am sitting with, and do not have a clean answer to: what does theory-building even look like when the code is not built by the people who need to understand it? The old answer was "you build the theory by building the code." That path is closing. The new practices — whatever they turn out to be — will need to construct understanding deliberately, as a first-class activity, not as a side effect of typing.
 
-![Theory-Building Must Become Deliberate](../../assets/images/naur-intent-debt/slide-015.png)
+![Theory-Building Must Become Deliberate](../../assets/images/naur-intent-debt/slide-015.webp)
 
 ---
 

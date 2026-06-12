@@ -38,15 +38,15 @@ Phase A gives Claude vocabulary. Phase B cleans output. Phase C remembers what r
 
 <!-- more -->
 
-![kcp-commands: recover 33% of your Claude Code context window — Phase A syntax injection, Phase B noise filtering, 244 bundled manifests, Java daemon + Node.js fallback](/assets/images/blog/kcp-commands-context-window-overview.png)
+![kcp-commands: recover 33% of your Claude Code context window — Phase A syntax injection, Phase B noise filtering, 244 bundled manifests, Java daemon + Node.js fallback](/assets/images/blog/kcp-commands-context-window-overview.webp)
 
-![Key numbers: 67,352 tokens saved, 33.7% of context window recovered, 33 additional tool call results](/assets/images/blog/kcp-commands-slide-03-key-numbers.png)
+![Key numbers: 67,352 tokens saved, 33.7% of context window recovered, 33 additional tool call results](/assets/images/blog/kcp-commands-slide-03-key-numbers.webp)
 
 ---
 
 ## The two problems it solves
 
-![AI agents waste massive context on CLI interactions — token drain from --help lookups and noisy command output](/assets/images/blog/kcp-commands-slide-02-token-drain.png)
+![AI agents waste massive context on CLI interactions — token drain from --help lookups and noisy command output](/assets/images/blog/kcp-commands-slide-02-token-drain.webp)
 
 An agent running a shell command faces two inefficiencies that are invisible unless you
 measure them.
@@ -64,7 +64,7 @@ kcp-commands eliminates both. Before the tool runs, it injects a compact context
 with the right flags. After the tool runs, it filters the output before it reaches the
 model.
 
-![Intercepting the tool call lifecycle: Phase A injects additionalContext before execution, Phase B wraps command in a filter pipe](/assets/images/blog/kcp-commands-slide-04-tool-call-lifecycle.png)
+![Intercepting the tool call lifecycle: Phase A injects additionalContext before execution, Phase B wraps command in a filter pipe](/assets/images/blog/kcp-commands-slide-04-tool-call-lifecycle.webp)
 
 ---
 
@@ -96,7 +96,7 @@ measures the additionalContext we inject instead, and takes the difference. For 
 `git log`, `find`, and similar commands, the context block is 90–95% smaller than the
 full help text.
 
-![Phase A eliminates the need for manual syntax lookups — 532 tokens saved per avoided --help call, context block 90-95% smaller than full help text](/assets/images/blog/kcp-commands-slide-05-phase-a.png)
+![Phase A eliminates the need for manual syntax lookups — 532 tokens saved per avoided --help call, context block 90-95% smaller than full help text](/assets/images/blog/kcp-commands-slide-05-phase-a.webp)
 
 ---
 
@@ -121,7 +121,7 @@ The filter reads the output, strips noise patterns defined in the manifest, trun
 The filter adds zero overhead when output is already small. It only activates when there
 is noise to remove.
 
-![Phase B strips boilerplate from noisy command outputs — ps aux: 98% reduction, find: 54%, git status: 28%, git log: 0%](/assets/images/blog/kcp-commands-slide-06-phase-b.png)
+![Phase B strips boilerplate from noisy command outputs — ps aux: 98% reduction, find: 54%, git status: 28%, git log: 0%](/assets/images/blog/kcp-commands-slide-06-phase-b.webp)
 
 ---
 
@@ -161,7 +161,7 @@ Break-even is **2 hook calls** — it pays for itself within the first `git stat
 The Node.js fallback adds ~265ms per call but requires no JVM. Both work; the Java daemon
 is the recommended path for sessions with many tool calls.
 
-![Zero terminal slowdown: Java daemon 14ms warm, Node.js fallback 265ms, baseline 2.3ms — dual-engine architecture](/assets/images/blog/kcp-commands-slide-07-architecture.png)
+![Zero terminal slowdown: Java daemon 14ms warm, Node.js fallback 265ms, baseline 2.3ms — dual-engine architecture](/assets/images/blog/kcp-commands-slide-07-architecture.webp)
 
 ---
 
@@ -240,12 +240,12 @@ Phase A and B are pre-configured for 283 commands across twenty-eight groups:
 
 **Dev workflow** — `pre-commit` · `gh codespace`
 
-![283 primed manifests ready out of the box — 28 groups from Git and Linux to GitOps, version managers, AI/LLM, and deployment platforms](/assets/images/blog/kcp-commands-slide-11-62-manifests.png)
+![283 primed manifests ready out of the box — 28 groups from Git and Linux to GitOps, version managers, AI/LLM, and deployment platforms](/assets/images/blog/kcp-commands-slide-11-62-manifests.webp)
 
 For unknown commands, the hook runs `<cmd> --help`, parses the output, and saves a
 generated manifest to `~/.kcp/commands/` for next time.
 
-![Zero manual authoring for unknown commands — hook runs --help, parses output, saves generated manifest to ~/.kcp/commands/](/assets/images/blog/kcp-commands-slide-09-auto-generation.png)
+![Zero manual authoring for unknown commands — hook runs --help, parses output, saves generated manifest to ~/.kcp/commands/](/assets/images/blog/kcp-commands-slide-09-auto-generation.webp)
 
 ---
 
@@ -347,12 +347,12 @@ output_schema:
 `syntax` drives Phase A. `output_schema` drives Phase B. You can write one, the other,
 or both.
 
-![Manifests define intelligence and filtering rules — YAML format with syntax (Phase A) and output_schema (Phase B) sections](/assets/images/blog/kcp-commands-slide-08-manifest-format.png)
+![Manifests define intelligence and filtering rules — YAML format with syntax (Phase A) and output_schema (Phase B) sections](/assets/images/blog/kcp-commands-slide-08-manifest-format.webp)
 
 To override a bundled manifest, drop your file in `.kcp/commands/` (project-local) or
 `~/.kcp/commands/` (user-global). First match wins.
 
-![Three-tier resolution: project-local .kcp/commands/ → user-level ~/.kcp/commands/ → bundled library — first match wins](/assets/images/blog/kcp-commands-slide-10-three-tier.png)
+![Three-tier resolution: project-local .kcp/commands/ → user-level ~/.kcp/commands/ → bundled library — first match wins](/assets/images/blog/kcp-commands-slide-10-three-tier.webp)
 
 ---
 
@@ -377,7 +377,7 @@ curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/insta
 Requires Node.js 18+. Hook latency is ~265ms per call instead of 14ms, but everything
 else works identically.
 
-![Integrate with the KCP ecosystem in seconds — one-liner install for Java daemon or Node.js fallback](/assets/images/blog/kcp-commands-slide-13-install.png)
+![Integrate with the KCP ecosystem in seconds — one-liner install for Java daemon or Node.js fallback](/assets/images/blog/kcp-commands-slide-13-install.webp)
 
 ---
 
@@ -395,7 +395,7 @@ Good candidates:
 - `aws`, `gcloud`, `az` — cloud CLIs with verbose output
 - Project-specific scripts where `--help` is unhelpful or unavailable
 
-![Drop custom YAMLs to tame your daily build tools and cloud CLIs — project-local or user-global overrides](/assets/images/blog/kcp-commands-slide-12-custom-manifests.png)
+![Drop custom YAMLs to tame your daily build tools and cloud CLIs — project-local or user-global overrides](/assets/images/blog/kcp-commands-slide-12-custom-manifests.webp)
 
 ---
 

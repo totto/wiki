@@ -26,7 +26,7 @@ The short version: every release promotes optional fields from community RFCs in
 normative core. The spec is a strict superset at each step — a manifest written for v0.1
 is still valid under v0.5.
 
-![The Evolution of KCP: From Minimal Draft to AI Knowledge Standard — v0.1 through v0.5 and Synthesis v1.20.0 implementation overview](/assets/images/blog/kcp-version-history-evolution.png)
+![The Evolution of KCP: From Minimal Draft to AI Knowledge Standard — v0.1 through v0.5 and Synthesis v1.20.0 implementation overview](/assets/images/blog/kcp-version-history-evolution.webp)
 
 <!-- more -->
 
@@ -42,7 +42,7 @@ only promoted to the core spec when the pattern is proven stable.
 The result: each version of KCP adds something you have already been using in practice.
 There are no surprise breaking changes, no fields that were never adopted, no spec debt.
 
-![Growth by accumulation vs strict superset model — formalise practice rather than leading it](/assets/images/blog/kcp-history-slide-formalise-practice.png)
+![Growth by accumulation vs strict superset model — formalise practice rather than leading it](/assets/images/blog/kcp-history-slide-formalise-practice.webp)
 
 ---
 
@@ -58,7 +58,7 @@ The original spec defined five required fields per unit:
 | `scope` | What topics it covers |
 | `audience` | Who should read it |
 
-![v0.1 — The Minimal Contract: Which files matter, and why?](/assets/images/blog/kcp-history-slide-v01-minimal-contract.png)
+![v0.1 — The Minimal Contract: Which files matter, and why?](/assets/images/blog/kcp-history-slide-v01-minimal-contract.webp)
 
 That is the entire core. A valid v0.1 manifest is just a list of units with those five
 fields and a `kcp_version: "0.1"` header.
@@ -78,7 +78,7 @@ spec-alignment issues found during real-world adoption:
 - Relationship `additionalProperties` was too strict — unknown fields broke forward compat
 - Date fields needed quoting guidance (YAML silently coerces unquoted dates to integers)
 
-![v0.2 — Schema Correctness over Features: zero new fields, validate the schema against real manifests before locking in the next version](/assets/images/blog/kcp-history-slide-v02-schema-correctness.png)
+![v0.2 — Schema Correctness over Features: zero new fields, validate the schema against real manifests before locking in the next version](/assets/images/blog/kcp-history-slide-v02-schema-correctness.webp)
 
 No new fields. No new capabilities. Just a cleaner contract that held up when people
 started writing manifests against it.
@@ -110,7 +110,7 @@ GitHub issues #7, #8, #10, #13, #14, and #16:
 | `license` | License that governs reuse |
 | `indexing` | Hints for search and indexing tools |
 
-![v0.3 — Descriptive Metadata: "Routing without reading." Unit-level and root-level fields, static YAML philosophy](/assets/images/blog/kcp-history-slide-v03-descriptive-metadata.png)
+![v0.3 — Descriptive Metadata: "Routing without reading." Unit-level and root-level fields, static YAML philosophy](/assets/images/blog/kcp-history-slide-v03-descriptive-metadata.webp)
 
 The promotion criterion for each field was the same: does it fit the static YAML manifest
 philosophy? `kind` does — it is a stable declaration, not a computed property. Something
@@ -124,7 +124,7 @@ Conformance levels were formally defined in v0.3:
 - **Level 3:** Adds `license`, `update_frequency`, `indexing`. Enough for automated
   workflows that act on content based on its freshness and legal status.
 
-![v0.3 Conformance Levels: Level 1 (Base), Level 2 (Routing), Level 3 (Governance)](/assets/images/blog/kcp-history-slide-v03-conformance-levels.png)
+![v0.3 Conformance Levels: Level 1 (Base), Level 2 (Routing), Level 3 (Governance)](/assets/images/blog/kcp-history-slide-v03-conformance-levels.webp)
 
 ---
 
@@ -153,7 +153,7 @@ units:
       summary_unit: architecture-tldr
 ```
 
-![v0.4 — The Hints Block: shifting from WHAT is in a file to HOW an agent should read it](/assets/images/blog/kcp-history-slide-v04-hints-block.png)
+![v0.4 — The Hints Block: shifting from WHAT is in a file to HOW an agent should read it](/assets/images/blog/kcp-history-slide-v04-hints-block.webp)
 
 Root-level hints set defaults that units can override:
 
@@ -168,7 +168,7 @@ map. Hints let you give agents a *reading strategy* on top of the map. The bench
 showed 73–80% reductions with hints in place; we expect the numbers would be lower without
 them.
 
-![73–80% reduction in agent tool calls — proven in real-world benchmarks](/assets/images/blog/kcp-history-slide-v04-73-80-reduction.png)
+![73–80% reduction in agent tool calls — proven in real-world benchmarks](/assets/images/blog/kcp-history-slide-v04-73-80-reduction.webp)
 
 ---
 
@@ -184,7 +184,7 @@ v0.5 promoted five fields from four separate RFCs:
 | `payment` | RFC-0005 | `free`, `metered`, `subscription` | Monetisation tier |
 | `trust.provenance` | RFC-0004 | `publisher`, `publisher_url`, `contact` | Who published this manifest |
 
-![v0.5 — Trust, Access, and Intent: "Advisory declarations, not enforcement mechanisms"](/assets/images/blog/kcp-history-slide-v05-trust-access.png)
+![v0.5 — Trust, Access, and Intent: "Advisory declarations, not enforcement mechanisms"](/assets/images/blog/kcp-history-slide-v05-trust-access.webp)
 
 These fields share a design principle: they are advisory declarations, not enforcement
 mechanisms. KCP does not implement access control — it declares intent. An agent that
@@ -197,7 +197,7 @@ v0.5 also adds `subManifests` — a list of child manifests that extend a root m
 This makes KCP composable across monorepos and federated repositories without requiring a
 single authoritative manifest that needs to know about every file.
 
-![v0.5 — Scale & Composability: subManifests allow KCP to scale across massive monorepos and federated repositories](/assets/images/blog/kcp-history-slide-v05-submanifests.png)
+![v0.5 — Scale & Composability: subManifests allow KCP to scale across massive monorepos and federated repositories](/assets/images/blog/kcp-history-slide-v05-submanifests.webp)
 
 ---
 
@@ -212,14 +212,14 @@ Four phases, four PRs, merged March 1, 2026.
 | **Export** | `synthesis export --format kcp` generates a v0.5-conformant `knowledge.yaml` from the Lucene index. Infers `format`, `kind`, `triggers`, `validated`, `updated` per unit. |
 | **Knowledge graph** | `synthesis kg` surfaces KCP units as first-class nodes. ASCII groups by project. Mermaid adds pill nodes and `kcp-unit` edges. JSON adds `kcpUnits` and `kcpRelationships` arrays. |
 
-![Real-World Proof: Synthesis v1.20.0 — the first tool that treats KCP as both input (index/query) and output (generated from an indexed workspace)](/assets/images/blog/kcp-history-slide-synthesis-proof.png)
+![Real-World Proof: Synthesis v1.20.0 — the first tool that treats KCP as both input (index/query) and output (generated from an indexed workspace)](/assets/images/blog/kcp-history-slide-synthesis-proof.webp)
 
 The implementation is the first tool that treats `knowledge.yaml` as both input (index
 and query it) and output (generate it from an indexed workspace). A workspace without a
 KCP manifest can generate one. A workspace that already has one gets it indexed and
 surfaced in the knowledge graph alongside the directories and source files it describes.
 
-![The Synthesis v1.20.0 Pipeline: Detection → Persistence → Export → Knowledge Graph](/assets/images/blog/kcp-history-slide-synthesis-pipeline.png)
+![The Synthesis v1.20.0 Pipeline: Detection → Persistence → Export → Knowledge Graph](/assets/images/blog/kcp-history-slide-synthesis-pipeline.webp)
 
 Over 40 new KCP-specific tests across four test classes. Zero regressions.
 `synthesis kg --format json` now returns `kcpUnits` and `kcpRelationships` as top-level
@@ -237,7 +237,7 @@ arrays in every workspace that has a manifest.
 any prior knowledge of the repository structure — the same pattern used by OAuth
 (`/.well-known/openid-configuration`) and security policies (`/.well-known/security.txt`).
 
-![What's Next: Standardizing Discovery — /.well-known/kcp.json IANA registration](/assets/images/blog/kcp-history-slide-whats-next-discovery.png)
+![What's Next: Standardizing Discovery — /.well-known/kcp.json IANA registration](/assets/images/blog/kcp-history-slide-whats-next-discovery.webp)
 
 **opencode-kcp-plugin published.** The first KCP plugin for a major AI coding tool is live on
 npm: [`opencode-kcp-plugin`](https://www.npmjs.com/package/opencode-kcp-plugin). It works with
@@ -255,7 +255,7 @@ and want KCP adopted upstream, this is the moment to comment:
 - [huggingface/smolagents #2026](https://github.com/huggingface/smolagents/pull/2026) — 73% reduction
 - [crewAIInc/crewAI #4658](https://github.com/crewAIInc/crewAI/pull/4658) — 76% reduction
 
-![Expanding the Ecosystem — framework PRs under review: AutoGen 80%, CrewAI 76%, smolagents 73%](/assets/images/blog/kcp-history-slide-ecosystem-prs.png)
+![Expanding the Ecosystem — framework PRs under review: AutoGen 80%, CrewAI 76%, smolagents 73%](/assets/images/blog/kcp-history-slide-ecosystem-prs.webp)
 
 **Cross-manifest relationships.** The current spec defines relationships within a single
 manifest. Cross-manifest relationships — a unit in one repo depending on a unit in another
@@ -273,7 +273,7 @@ This is what makes the strict-superset constraint worthwhile. A manifest you wri
 for v0.5 does not break when v0.6 ships. A manifest written in February for v0.1 is still
 valid. The cost of adoption does not compound with each version.
 
-![The Cost of Adoption Does Not Compound — a manifest written in February for v0.1 remains 100% valid today](/assets/images/blog/kcp-history-slide-adoption-cost.png)
+![The Cost of Adoption Does Not Compound — a manifest written in February for v0.1 remains 100% valid today](/assets/images/blog/kcp-history-slide-adoption-cost.webp)
 
 If you have not added a `knowledge.yaml` to your project yet, v0.5 is a good starting
 point. The [five-minute adoption guide](./2026-02-28-kcp-adoption-guide.md) still applies —

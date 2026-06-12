@@ -19,7 +19,7 @@ authors:
 
 # Everyone Is Auditing the Workflow. Nobody Is Fixing the Knowledge.
 
-![Overview: Beyond the Audit Trail — Solving the AI Provenance Problem. The three problem areas, incomplete solutions, and the KCP/composable trust solution.](../../assets/images/kcp-provenance-00-overview.png)
+![Overview: Beyond the Audit Trail — Solving the AI Provenance Problem. The three problem areas, incomplete solutions, and the KCP/composable trust solution.](../../assets/images/kcp-provenance-00-overview.webp)
 
 In February 2024, a Canadian small claims tribunal ruled against Air Canada. Their chatbot had told a passenger he could book a full-fare ticket and claim a bereavement discount retroactively. He couldn't. When he tried, Air Canada's position was: the chatbot said that, not us. The tribunal disagreed. You deployed it, you own what it says.
 
@@ -29,7 +29,7 @@ That's the provenance problem. And every organization running AI agents at enter
 
 <!-- more -->
 
-![The Air Canada Liability Trap: Action → Failure → Ruling. The provenance problem: the audit trail recorded the deployment date but could not record what the system knew, what policy version it consulted, or if a human had ever reviewed it.](../../assets/images/kcp-provenance-02-air-canada.png)
+![The Air Canada Liability Trap: Action → Failure → Ruling. The provenance problem: the audit trail recorded the deployment date but could not record what the system knew, what policy version it consulted, or if a human had ever reviewed it.](../../assets/images/kcp-provenance-02-air-canada.webp)
 
 ---
 
@@ -45,7 +45,7 @@ The same pattern appears in developer tooling. Cursor generates code, a human ap
 
 **Agent security and audit log infrastructure.** Microsoft Purview AI Hub records audit trails for Copilot usage across enterprise. Palo Alto's XSIAM monitors AI agent behaviour at the network level. ServiceNow's AI Control Tower enforces workflow permissions and authority boundaries -- deployed at most of the Fortune 500. These tools record *that* an agent acted, *when*, and *by whose authority*. They do not record the epistemic content of what the agent was given to reason about.
 
-![The Infrastructure Illusion Matrix: three mature tooling families, three partial solutions. Each family has a fatal blindspot — none record what the AI was given to think about.](../../assets/images/kcp-provenance-06-illusion-matrix.png)
+![The Infrastructure Illusion Matrix: three mature tooling families, three partial solutions. Each family has a fatal blindspot — none record what the AI was given to think about.](../../assets/images/kcp-provenance-06-illusion-matrix.webp)
 
 ---
 
@@ -59,11 +59,11 @@ This is where the "gate before trust" pattern becomes a real design problem.
 
 Gates that can be bypassed under time pressure become labels. Stack Overflow tried to gate AI-generated answers. The volume made genuine review impossible. The gate became a checkbox. Then a label. Then they changed policy entirely. The EU AI Act's Article 12 requires human oversight of high-risk AI systems. In practice, most compliance implementations will be a checkbox rather than a genuine gate, because real gates at scale are operationally impossible without a format that makes "what did the human actually review?" a precise, answerable question.
 
-![The Gate Before Trust Paradox: a gate bypassed under time pressure degrades into a checkbox, then a label. Real gates at scale are operationally impossible without a precise format.](../../assets/images/kcp-provenance-05-gate-paradox.png)
+![The Gate Before Trust Paradox: a gate bypassed under time pressure degrades into a checkbox, then a label. Real gates at scale are operationally impossible without a precise format.](../../assets/images/kcp-provenance-05-gate-paradox.webp)
 
 The infrastructure to *enforce* the gate is mature. The format that would make the gate *meaningful* does not yet exist in most systems.
 
-![The Missing Layer Architecture: Audit & Security Layer (who & when) sits above Workflow & Lineage Layer (how it moves), but between those and Raw Data & Prose there is a Format Gap — the missing layer.](../../assets/images/kcp-provenance-07-missing-layer.png)
+![The Missing Layer Architecture: Audit & Security Layer (who & when) sits above Workflow & Lineage Layer (how it moves), but between those and Raw Data & Prose there is a Format Gap — the missing layer.](../../assets/images/kcp-provenance-07-missing-layer.webp)
 
 ---
 
@@ -75,7 +75,7 @@ Questions the audit log cannot answer: Was that 30 seconds per item or 30 minute
 
 The audit infrastructure is not bad. It's recording exactly what it was designed to record: events. But the *thing being audited* has no stable identity. "Reviewed" is a relationship between a human and a thing. If the thing doesn't have a precise shape -- a type, a version, a cryptographic signature -- then the review relationship is imprecise by definition. No amount of workflow rigour around the gate compensates for the formlessness of what passes through it.
 
-![The Incident Timeline & The Tired CISO: reviewed and approved at 16:47 CET, six months later incident triggers investigation. The system log cannot answer whether it was a spot check or a deep dive, or if policies were silently regenerated after approval.](../../assets/images/kcp-provenance-03-tired-ciso.png)
+![The Incident Timeline & The Tired CISO: reviewed and approved at 16:47 CET, six months later incident triggers investigation. The system log cannot answer whether it was a spot check or a deep dive, or if policies were silently regenerated after approval.](../../assets/images/kcp-provenance-03-tired-ciso.webp)
 
 ---
 
@@ -83,7 +83,7 @@ The audit infrastructure is not bad. It's recording exactly what it was designed
 
 I've been building something called KCP -- Knowledge Context Protocol. The design principle is simple: instead of shipping knowledge as prose, you ship it as typed, versioned, signed packages.
 
-![The Solution: giving workflow a shape it can grip. Knowledge as prose — a paragraph pasted into a shared document, subject to drift, untrackable, unauditable. Typed knowledge — shipped as typed, versioned, cryptographically signed packages.](../../assets/images/kcp-provenance-08-prose-vs-typed.png)
+![The Solution: giving workflow a shape it can grip. Knowledge as prose — a paragraph pasted into a shared document, subject to drift, untrackable, unauditable. Typed knowledge — shipped as typed, versioned, cryptographically signed packages.](../../assets/images/kcp-provenance-08-prose-vs-typed.webp)
 
 A privacy policy observation in KCP is not "here's our GDPR Art.13 coverage" as a paragraph someone pastes into a shared document. It's a structured declaration:
 
@@ -101,7 +101,7 @@ valid_until: 2026-09-01
 
 The *thing* has identity before anyone audits it. When the audit happens, the record can say: "A human reviewed a cryptographically signed declaration of type `policy:gdpr-art13`, version 2.3.1, derived from sources X and Y, with review depth: legal-4h." Not "reviewed a document." Not "approved." A precise relationship between a known reviewer and a known thing with a known shape.
 
-![X-Ray Anatomy of a KCP Declaration: a shipping container showing type (identity), version, derived_from (lineage), and review_depth (trust). The audit record no longer says 'reviewed a document' — it says a human reviewed a cryptographically signed declaration.](../../assets/images/kcp-provenance-09-kcp-anatomy.png)
+![X-Ray Anatomy of a KCP Declaration: a shipping container showing type (identity), version, derived_from (lineage), and review_depth (trust). The audit record no longer says 'reviewed a document' — it says a human reviewed a cryptographically signed declaration.](../../assets/images/kcp-provenance-09-kcp-anatomy.webp)
 
 This is the shift. From auditing *workflow events* around knowledge to giving the knowledge itself a stable, machine-readable shape that makes the audit events meaningful.
 
@@ -119,11 +119,11 @@ If the knowledge package carries trust metadata as part of its structure -- not 
 
 This is what I mean by composable trust. Not "was it reviewed?" but "what kind of trust are you standing on, and is that sufficient for this risk level?"
 
-![The Composable Trust Matrix: auto-approved, spot-checked, and deep-legal all produce 'Approved' in a standard audit log. KCP metadata output distinguishes them clearly, giving the audit trail the information it actually needs.](../../assets/images/kcp-provenance-10-composable-trust.png)
+![The Composable Trust Matrix: auto-approved, spot-checked, and deep-legal all produce 'Approved' in a standard audit log. KCP metadata output distinguishes them clearly, giving the audit trail the information it actually needs.](../../assets/images/kcp-provenance-10-composable-trust.webp)
 
 The current state of AI-augmented knowledge work actively undermines this. Notion AI, Confluence AI, GitHub Copilot suggestions in documentation -- all of these blend AI-generated content into the human record without markers. No type. No version. No boundary between what a human wrote and what was generated. The document becomes soup. Six months later you cannot reconstruct which sentence was a human judgment and which was a language model's interpolation.
 
-![The Auditability Crisis: Document Soup. Left: the ideal — structured, typed, auditable blocks of human and AI text. Right: modern AI writing interfaces — no type, no version, no boundary between human judgment and model interpolation.](../../assets/images/kcp-provenance-04-document-soup.png)
+![The Auditability Crisis: Document Soup. Left: the ideal — structured, typed, auditable blocks of human and AI text. Right: modern AI writing interfaces — no type, no version, no boundary between human judgment and model interpolation.](../../assets/images/kcp-provenance-04-document-soup.webp)
 
 Composable trust requires that the ingredients be individually typed before they enter the mixture. Not after. Not as a retroactive annotation. At creation time.
 
@@ -145,7 +145,7 @@ The same applies to dbt and DataHub. They track lineage through pipelines with r
 
 The three families of tooling I described are mature in their lane. The format layer -- the thing that gives knowledge a shape the workflow can actually grip -- is the missing piece.
 
-![The Convergence Architecture: Nolta (Workflow), dbt (Lineage), and Purview (Audit) all connect into typed knowledge packages. Nolta's loop gets a grip. dbt's lineage gets substance. These approaches require each other.](../../assets/images/kcp-provenance-11-convergence.png)
+![The Convergence Architecture: Nolta (Workflow), dbt (Lineage), and Purview (Audit) all connect into typed knowledge packages. Nolta's loop gets a grip. dbt's lineage gets substance. These approaches require each other.](../../assets/images/kcp-provenance-11-convergence.webp)
 
 ---
 

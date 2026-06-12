@@ -46,9 +46,9 @@ The agent has not read a single source file yet. But it already knows what this 
 
 This is a *lit codebase*. Same files underneath. Radically different agent experience.
 
-![Your Codebases are Dark to Agents — the 1994 Web had robots.txt and sitemaps; the 2026 codebase has nothing equivalent for agents](../../assets/images/blog/agentic-web-157-repos/dark-to-agents.png)
+![Your Codebases are Dark to Agents — the 1994 Web had robots.txt and sitemaps; the 2026 codebase has nothing equivalent for agents](../../assets/images/blog/agentic-web-157-repos/dark-to-agents.webp)
 
-![Two Paradigms for Machine Navigation — Opaque Codebase vs Lit Codebase across strategy, context loading, trust and scale](../../assets/images/blog/agentic-web-157-repos/two-paradigms.png)
+![Two Paradigms for Machine Navigation — Opaque Codebase vs Lit Codebase across strategy, context loading, trust and scale](../../assets/images/blog/agentic-web-157-repos/two-paradigms.webp)
 
 ---
 
@@ -58,7 +58,7 @@ The interesting part is not the manifest itself. It is what happens when the age
 
 Let me walk through a concrete traversal that any agent capable of reading YAML and fetching URLs can perform right now against public infrastructure. The starting point is the `kcp-memory` repository on GitHub.
 
-![The Anatomy of a Machine-Readable Manifest — three layers: knowledge units (semantic table of contents), outbound graph links, and a provenance block with Ed25519 signing](../../assets/images/blog/agentic-web-157-repos/manifest-anatomy.png)
+![The Anatomy of a Machine-Readable Manifest — three layers: knowledge units (semantic table of contents), outbound graph links, and a provenance block with Ed25519 signing](../../assets/images/blog/agentic-web-157-repos/manifest-anatomy.webp)
 
 ### Step 1: Read the entry point
 
@@ -87,7 +87,7 @@ The signing block gives the agent two URLs: a public key and a signature file. T
 
 If the signature checks out, the agent knows this manifest was produced by someone holding the Cantara signing key. If it does not, the agent knows to treat the manifest with lower confidence. This matters more than it might seem. When an agent encounters contradictory information -- a README claiming one API and a manifest claiming another -- provenance is the tiebreaker. Signed content wins over unsigned content.
 
-![Mechanized Navigation: Establishing Trust First — the agent reads knowledge.yaml, fetches the Ed25519 public key from wiki.cantara.no, and validates the base64 signature before proceeding](../../assets/images/blog/agentic-web-157-repos/mechanized-navigation.png)
+![Mechanized Navigation: Establishing Trust First — the agent reads knowledge.yaml, fetches the Ed25519 public key from wiki.cantara.no, and validates the base64 signature before proceeding](../../assets/images/blog/agentic-web-157-repos/mechanized-navigation.webp)
 
 ### Step 3: Follow the org-context link
 
@@ -133,7 +133,7 @@ Every sub-manifest has a `parent:` field. Every repository manifest has an `org_
 
 This entire traversal -- from a single repository to the organisation root, to the spec, to sibling tools, and back -- touches six manifests and produces a complete map of the knowledge territory. The agent never searched. It never guessed. It followed links.
 
-![The Federation Graph: No Dead Ends — every tool repo points to the spec and the wiki project manifest; the wiki points back; the graph is fully bidirectional](../../assets/images/blog/agentic-web-157-repos/federation-graph.png)
+![The Federation Graph: No Dead Ends — every tool repo points to the spec and the wiki project manifest; the wiki points back; the graph is fully bidirectional](../../assets/images/blog/agentic-web-157-repos/federation-graph.webp)
 
 ---
 
@@ -181,7 +181,7 @@ Once an agent has a traversable graph, certain operations become deterministic t
 
 I am using the Cantara open source ecosystem as the concrete example throughout this post because it exists and is publicly traversable right now.
 
-![Proof of Scale: An Entire Organisation in One Session — 157 repositories agent-enabled: 120 Level 2 KCP manifests, 37 Level 1 llms.txt, 3 federated websites, 114 signing workflows deployed](../../assets/images/blog/agentic-web-157-repos/proof-of-scale.png)
+![Proof of Scale: An Entire Organisation in One Session — 157 repositories agent-enabled: 120 Level 2 KCP manifests, 37 Level 1 llms.txt, 3 federated websites, 114 signing workflows deployed](../../assets/images/blog/agentic-web-157-repos/proof-of-scale.webp)
 
 The numbers:
 

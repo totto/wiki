@@ -24,7 +24,7 @@ It's not just that Norwegian organisations face the same data challenges as ever
 ---
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/norways-perfect-storm.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/norways-perfect-storm.mp4" type="video/mp4">
 </video>
 
 ---

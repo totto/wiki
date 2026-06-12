@@ -32,7 +32,7 @@ have to rediscover the territory on every session.
 
 <!-- more -->
 
-![Boosting AI Coding Efficiency: The OpenCode KCP Plugin — problem, mechanism, benchmark, and quick start](/assets/images/blog/opencode-kcp-plugin-overview.png)
+![Boosting AI Coding Efficiency: The OpenCode KCP Plugin — problem, mechanism, benchmark, and quick start](/assets/images/blog/opencode-kcp-plugin-overview.webp)
 
 ---
 

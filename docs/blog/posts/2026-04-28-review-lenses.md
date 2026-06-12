@@ -29,7 +29,7 @@ The implementation was straightforward. Proving it worked required two attempts 
 
 <!-- more -->
 
-![Expert Review Lenses — ExoCortex adversarial review prism diagram, 9 specialists, Oslo 2026](../../assets/images/blog/review-lenses/slide-01.png)
+![Expert Review Lenses — ExoCortex adversarial review prism diagram, 9 specialists, Oslo 2026](../../assets/images/blog/review-lenses/slide-01.webp)
 
 ---
 
@@ -37,11 +37,11 @@ The implementation was straightforward. Proving it worked required two attempts 
 
 By injecting a specialized YAML identity before the adversarial system prompt, the model reasons as a specific expert before it reasons as a reviewer. It loads unique priorities, severity mappings, and deliberate blind spots into its context window.
 
-![Generic AI review vs. lens injection — how YAML identity initialization transforms LLM output into targeted architectural critique](../../assets/images/blog/review-lenses/slide-02.png)
+![Generic AI review vs. lens injection — how YAML identity initialization transforms LLM output into targeted architectural critique](../../assets/images/blog/review-lenses/slide-02.webp)
 
 Nine lenses, organized by what they catch:
 
-![The 9 expert lens identities: OWASP Security, Fowler, Kent Beck, Uncle Bob, Eric Evans, Michael Feathers, Rich Hickey, Creswell/Oberg, WWTD](../../assets/images/blog/review-lenses/slide-03.png)
+![The 9 expert lens identities: OWASP Security, Fowler, Kent Beck, Uncle Bob, Eric Evans, Michael Feathers, Rich Hickey, Creswell/Oberg, WWTD](../../assets/images/blog/review-lenses/slide-03.webp)
 
 | Lens | Focus |
 |------|-------|
@@ -63,7 +63,7 @@ Plus a `multi-lens-review.yaml` chain that runs 3 lenses in parallel and merges 
 
 The first instinct was vocabulary counting. Run 5 lenses across 13 real PRs from the Synthesis and kcp-memory repos. Measure: does the security lens cause the model to use more security-specific terminology? Does Fowler produce more refactoring vocabulary?
 
-![The flawed first experiment: vocabulary counting — FAILED HYPOTHESIS stamp on term lift bar chart showing Security at +3.8, all others near zero](../../assets/images/blog/review-lenses/slide-04.png)
+![The flawed first experiment: vocabulary counting — FAILED HYPOTHESIS stamp on term lift bar chart showing Security at +3.8, all others near zero](../../assets/images/blog/review-lenses/slide-04.webp)
 
 Results:
 
@@ -78,7 +78,7 @@ Security worked. OWASP categories are enumerable — there's a finite list of in
 
 Fowler, Beck, and WWTD showed nothing. Not because the lenses didn't work — but because architectural insight and testing discipline don't manifest as vocabulary shifts.
 
-![Architectural insight is a verdict, not a vocabulary shift — god method + Fowler YAML produces verdict shift from REVISE to RETHINK, not higher frequency of "Extract Method"](../../assets/images/blog/review-lenses/slide-05.png)
+![Architectural insight is a verdict, not a vocabulary shift — god method + Fowler YAML produces verdict shift from REVISE to RETHINK, not higher frequency of "Extract Method"](../../assets/images/blog/review-lenses/slide-05.webp)
 
 A Fowler lens doesn't make the model say "Extract Method" more often. It makes the model *notice* a god method and recommend splitting it. That's a verdict change, not a word frequency change.
 
@@ -90,7 +90,7 @@ The irony: that same morning, we'd added "measure what actually runs" to the WWT
 
 New approach. Four synthetic diffs, each containing exactly one known defect, each designed to be caught by one specific lens:
 
-![The planted defect protocol — four synthetic diffs targeting Security (SQL injection), Fowler (god method), Beck (happy-path only tests), and WWTD (volatile in-memory session state)](../../assets/images/blog/review-lenses/slide-06.png)
+![The planted defect protocol — four synthetic diffs targeting Security (SQL injection), Fowler (god method), Beck (happy-path only tests), and WWTD (volatile in-memory session state)](../../assets/images/blog/review-lenses/slide-06.webp)
 
 **Defect 1 — SQL injection + hardcoded API key.** A database query built with string concatenation, plus an API key committed to source. Security target.
 
@@ -106,7 +106,7 @@ Binary scoring. CAUGHT or missed. No partial credit.
 
 ## The Diagonal
 
-![The diagonal: 4/4 perfect target defect detection — every lens caught its designed defect, no-lens baseline caught zero](../../assets/images/blog/review-lenses/slide-07.png)
+![The diagonal: 4/4 perfect target defect detection — every lens caught its designed defect, no-lens baseline caught zero](../../assets/images/blog/review-lenses/slide-07.webp)
 
 ```
                      no-lens  security  fowler  beck  wwtd
@@ -126,7 +126,7 @@ State dies on restart    ·       ✓        ·      ·    ★✓
 
 The off-diagonal tells you how each lens behaves when facing defects outside its domain.
 
-![Off-diagonal behavior reveals personality — Security lens at 67% false positive rate (needle near RETHINK) vs. WWTD lens at 0% (needle near REVISE)](../../assets/images/blog/review-lenses/slide-08.png)
+![Off-diagonal behavior reveals personality — Security lens at 67% false positive rate (needle near RETHINK) vs. WWTD lens at 0% (needle near REVISE)](../../assets/images/blog/review-lenses/slide-08.webp)
 
 **False positive rates** (fires on non-target defects):
 
@@ -155,7 +155,7 @@ The WWTD lens consistently assigned lower severity than the security lens. This 
 
 The most interesting result in the entire benchmark: the WWTD lens catching defect 4.
 
-![Catching the invisible architectural defect — SessionManager private static Map vanishes on process restart; WWTD forced the model to ask "does this survive context loss?"](../../assets/images/blog/review-lenses/slide-09.png)
+![Catching the invisible architectural defect — SessionManager private static Map vanishes on process restart; WWTD forced the model to ask "does this survive context loss?"](../../assets/images/blog/review-lenses/slide-09.webp)
 
 The code wasn't syntactically wrong. There was no injection. No god class. No missing test. The defect was *architectural* — session state stored in a runtime map that would vanish on process restart. Magic numbers that made deployment opaque. A versioning string that no one would understand in three months.
 
@@ -171,7 +171,7 @@ This is the kind of defect that senior architects catch and junior developers mi
 
 The two benchmark rounds produced a taxonomy:
 
-![A taxonomy for measuring AI capability — enumerable lenses (vocab frequency), structural lenses (verdict shift), process lenses (binary catch of non-syntactical flaws)](../../assets/images/blog/review-lenses/slide-10.png)
+![A taxonomy for measuring AI capability — enumerable lenses (vocab frequency), structural lenses (verdict shift), process lenses (binary catch of non-syntactical flaws)](../../assets/images/blog/review-lenses/slide-10.webp)
 
 **Enumerable-category lenses** (OWASP Security): Measure by vocabulary frequency. The categories are finite and well-defined. More security terms = the lens is working. Vocabulary counting is the right metric here.
 
@@ -187,7 +187,7 @@ Using vocabulary metrics on a process lens produces a false negative. The WWTD l
 
 Running all 9 lenses sequentially on every PR is wasteful. The `multi-lens-review.yaml` chain runs 3 lenses in parallel — typically security + one structural + one process lens — and merges their findings.
 
-![The multi-lens chain in production — PR enters condition router, runs security (always on) + structural + process lenses in parallel, merge and deduplicate into unified review](../../assets/images/blog/review-lenses/slide-11.png)
+![The multi-lens chain in production — PR enters condition router, runs security (always on) + structural + process lenses in parallel, merge and deduplicate into unified review](../../assets/images/blog/review-lenses/slide-11.webp)
 
 The parallel execution means 3 API calls at once, wall time equivalent to a single review. The merge step deduplicates overlapping concerns (Beck and Fowler both flagging a god method) and surfaces the highest severity per finding.
 
@@ -199,7 +199,7 @@ The practical configuration: rotate the third lens based on what the PR touches.
 
 ## What Comes Next
 
-![Scaling the diagonal — Phase 1 detection complete, Phase 2 remediation quality, Phase 3 methodology lenses (Site Reliability, Data Governance, Accessibility)](../../assets/images/blog/review-lenses/slide-12.png)
+![Scaling the diagonal — Phase 1 detection complete, Phase 2 remediation quality, Phase 3 methodology lenses (Site Reliability, Data Governance, Accessibility)](../../assets/images/blog/review-lenses/slide-12.webp)
 
 The planted defect set is now the regression test for the lens library. Any new lens gets a planted defect designed for it; the existing diagonal must still hold. That's the maintenance contract: N lenses, N defects, N/N on the diagonal.
 

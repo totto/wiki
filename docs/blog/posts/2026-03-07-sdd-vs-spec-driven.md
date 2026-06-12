@@ -25,7 +25,7 @@ The limitation is not quality. Spec-driven development produces good output. The
 
 <!-- more -->
 
-![Beyond the Spec: The Evolution of Skill-Driven AI Development — three stages from vibe coding to spec-driven to skill-driven, with compounding growth and 197,831 lines of code proof](/assets/images/blog/sdd-vs-spec-driven-evolution.png)
+![Beyond the Spec: The Evolution of Skill-Driven AI Development — three stages from vibe coding to spec-driven to skill-driven, with compounding growth and 197,831 lines of code proof](/assets/images/blog/sdd-vs-spec-driven-evolution.webp)
 
 ---
 
@@ -39,7 +39,7 @@ Spec-driven development solved the obvious failure modes. You write what you wan
 
 The problem is what happens after three months.
 
-![The necessary evolution from chaos to discipline — Stage 1 Vibe Coding (fast but fragile) vs Stage 2 Spec-Driven (responsible but linear)](/assets/images/blog/sdd-vs-spec-driven-slide-02-evolution-chaos-to-discipline.png)
+![The necessary evolution from chaos to discipline — Stage 1 Vibe Coding (fast but fragile) vs Stage 2 Spec-Driven (responsible but linear)](/assets/images/blog/sdd-vs-spec-driven-slide-02-evolution-chaos-to-discipline.webp)
 
 ---
 
@@ -55,13 +55,13 @@ Session fifty: same spec, same correction, same fix. The spec never changed beca
 
 This is the session amnesia problem. Every session starts cold. The agent has no memory of previous corrections, previous architectural decisions, previous domain knowledge accumulated across dozens of interactions. The spec is a snapshot of intent. It is not a growing body of expertise.
 
-![Specs encode what you build, not how you build — the spec grows into a small book the agent reads at the start of every session and promptly forgets by the next one](/assets/images/blog/sdd-vs-spec-driven-slide-03-specs-encode-what-not-how.png)
+![Specs encode what you build, not how you build — the spec grows into a small book the agent reads at the start of every session and promptly forgets by the next one](/assets/images/blog/sdd-vs-spec-driven-slide-03-specs-encode-what-not-how.webp)
 
 Spec-driven teams compensate by making specs more detailed. Add a section on coding conventions. Add a section on testing patterns. Add a section on architectural constraints. The spec grows. Eventually it becomes a small book that the agent reads at the start of every session and promptly forgets by the next one.
 
 The knowledge exists. It just doesn't persist where the agent can use it.
 
-![The recurring tax of Session Amnesia — every session starts from zero, the spec carries the intent, the agent carries nothing](/assets/images/blog/sdd-vs-spec-driven-slide-04-session-amnesia.png)
+![The recurring tax of Session Amnesia — every session starts from zero, the spec carries the intent, the agent carries nothing](/assets/images/blog/sdd-vs-spec-driven-slide-04-session-amnesia.webp)
 
 ---
 
@@ -82,7 +82,7 @@ instructions: |
   - Integration tests use TestContainers, never H2.
 ```
 
-![The anatomy of a codified skill — written once, loads automatically per project, permanently eliminates a category of repeated corrections](/assets/images/blog/sdd-vs-spec-driven-slide-07-anatomy-codified-skill.png)
+![The anatomy of a codified skill — written once, loads automatically per project, permanently eliminates a category of repeated corrections](/assets/images/blog/sdd-vs-spec-driven-slide-07-anatomy-codified-skill.webp)
 
 Written once. Applied to every session, for every developer on the team, automatically. The agent does not need to be corrected. It already knows.
 
@@ -90,7 +90,7 @@ That is one skill. Over time, a project accumulates dozens of them. Each one cap
 
 This is the structural difference. Spec-driven development scales linearly: each new project requires a new spec. Skill-driven development compounds: each lesson learned makes every future session smarter.
 
-![Stage 3: Skill-Driven Development — compounding curve showing skill-driven capability far outpacing spec-driven growth over time](/assets/images/blog/sdd-vs-spec-driven-slide-06-stage3-skill-driven.png)
+![Stage 3: Skill-Driven Development — compounding curve showing skill-driven capability far outpacing spec-driven growth over time](/assets/images/blog/sdd-vs-spec-driven-slide-06-stage3-skill-driven.webp)
 
 ---
 
@@ -104,7 +104,7 @@ In a skill-driven workflow, the agent arrives knowing what it needs to know. Ses
 
 The gap is small in week one. By month three, the skill-driven team is working at a pace the spec-driven team cannot match, because every correction they made in the first month is encoded and active. The spec-driven team is still making the same corrections.
 
-![The 15-minute orientation tax — spec-driven sessions spend most of their time on context setup; skill-driven sessions begin at the frontier of the problem](/assets/images/blog/sdd-vs-spec-driven-slide-05-orientation-tax.png)
+![The 15-minute orientation tax — spec-driven sessions spend most of their time on context setup; skill-driven sessions begin at the frontier of the problem](/assets/images/blog/sdd-vs-spec-driven-slide-05-orientation-tax.webp)
 
 ---
 
@@ -118,13 +118,13 @@ Day five: a coordinate system edge case surfaces. A manufacturer uses a non-stan
 
 Day eight: a bounding box calculation includes a documentation layer with inflated coordinates. The bounding box skill is updated with the layer filtering rule.
 
-![Compounding in practice: the lib-pcb build — 75 skills generated in 11 days, each discovery encoded organically as it was made](/assets/images/blog/sdd-vs-spec-driven-slide-08-compounding-lib-pcb.png)
+![Compounding in practice: the lib-pcb build — 75 skills generated in 11 days, each discovery encoded organically as it was made](/assets/images/blog/sdd-vs-spec-driven-slide-08-compounding-lib-pcb.webp)
 
 By day eleven, the agent working on session fifty-five was measurably more capable than the agent working on session five. Not because the model improved. Because the skill library had grown. Each session inherited everything the previous sessions had learned.
 
 The result was 197,831 lines of Java in eleven days. Industry standard for a library of that scope is ten to eighteen months. I don't claim 75 skills are the only reason for that gap. Architecture, verification infrastructure, and focused delegation all played roles. But the compounding knowledge was the piece that made the late days more productive than the early ones. In most projects, the opposite happens.
 
-![Inverting the standard project friction curve — 197,831 lines of Java in 11 days. Industry standard: 10–18 months. The late days were more productive than the early ones.](/assets/images/blog/sdd-vs-spec-driven-slide-09-inverting-friction-curve.png)
+![Inverting the standard project friction curve — 197,831 lines of Java in 11 days. Industry standard: 10–18 months. The late days were more productive than the early ones.](/assets/images/blog/sdd-vs-spec-driven-slide-09-inverting-friction-curve.webp)
 
 ---
 
@@ -138,7 +138,7 @@ Skills alone are one layer. The full picture includes infrastructure that most t
 
 **Command vocabulary.** The agent needs to know what tools are available. kcp-commands provides structured manifests for CLI tools, saving the agent from guessing at flags and syntax. 284 command manifests, covering everything from build tools to deployment scripts, loaded into context automatically.
 
-![The infrastructure layer beneath the skills — .claude/skills/ supported by three pillars: session memory (kcp-memory), codebase knowledge (Synthesis), and command vocabulary (kcp-commands)](/assets/images/blog/sdd-vs-spec-driven-slide-10-infrastructure-layer.png)
+![The infrastructure layer beneath the skills — .claude/skills/ supported by three pillars: session memory (kcp-memory), codebase knowledge (Synthesis), and command vocabulary (kcp-commands)](/assets/images/blog/sdd-vs-spec-driven-slide-10-infrastructure-layer.webp)
 
 These are not products I am pitching. They are infrastructure layers that solve specific problems. The point is that SDD is not just "write YAML files." It is a methodology supported by infrastructure that makes the compounding possible.
 
@@ -154,7 +154,7 @@ The break-even point is not day one. For a project that lasts two weeks, spec-dr
 
 The question is not "which is easier to start?" Spec-driven wins that. The question is "which produces more value over time?" That depends on your time horizon.
 
-![The honest cost of compounding — short projects: stick to specs. Multi-month or multi-year codebases: the ROI becomes difficult to overstate.](/assets/images/blog/sdd-vs-spec-driven-slide-11-honest-cost.png)
+![The honest cost of compounding — short projects: stick to specs. Multi-month or multi-year codebases: the ROI becomes difficult to overstate.](/assets/images/blog/sdd-vs-spec-driven-slide-11-honest-cost.webp)
 
 ---
 
@@ -178,13 +178,13 @@ The practical move from spec-driven to skill-driven is smaller than it sounds.
 
 Start with the corrections you keep making. Every time you correct the agent on the same thing twice, write a skill. Constructor injection. Test naming conventions. Module dependency rules. Error handling patterns. Each one is ten to thirty lines of YAML. Each one eliminates a category of repeated correction permanently.
 
-![The rule of repeated corrections — correct the agent twice on the same thing? Write a 20-line YAML skill. Let the library grow organically.](/assets/images/blog/sdd-vs-spec-driven-slide-12-rule-repeated-corrections.png)
+![The rule of repeated corrections — correct the agent twice on the same thing? Write a 20-line YAML skill. Let the library grow organically.](/assets/images/blog/sdd-vs-spec-driven-slide-12-rule-repeated-corrections.webp)
 
 After a month, look at your skill library. It will be a map of your team's accumulated knowledge in machine-readable form. New team members get the benefit of it from their first session. The agent gets the benefit of it from every session. The knowledge does not walk out the door when someone leaves.
 
 The spec tells the agent what to build today. The skill library tells the agent everything the team has ever learned about how to build well. Both matter. But only one of them compounds.
 
-![Both matter. Only one compounds. The spec tells the agent what to build today. The skill library tells the agent everything the team has ever learned about how to build well.](/assets/images/blog/sdd-vs-spec-driven-slide-13-both-matter-only-one-compounds.png)
+![Both matter. Only one compounds. The spec tells the agent what to build today. The skill library tells the agent everything the team has ever learned about how to build well.](/assets/images/blog/sdd-vs-spec-driven-slide-13-both-matter-only-one-compounds.webp)
 
 ---
 

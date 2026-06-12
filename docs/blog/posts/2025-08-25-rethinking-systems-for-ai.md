@@ -27,7 +27,7 @@ Those assumptions are worth examining.
 ---
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/rethinking-systems-for-ai.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/rethinking-systems-for-ai.mp4" type="video/mp4">
 </video>
 
 ---

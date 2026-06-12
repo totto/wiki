@@ -16,7 +16,7 @@ authors:
 
 # We Cancelled a 45-Minute Architecture Review. A KCP Query Answered It in 1.2 Seconds.
 
-![When the AI Agent Knows Your Architecture — organisational knowledge becomes queryable rather than assembled in meetings](/assets/images/the-meeting-was-never-the-problem/slide-001.png)
+![When the AI Agent Knows Your Architecture — organisational knowledge becomes queryable rather than assembled in meetings](/assets/images/the-meeting-was-never-the-problem/slide-001.webp)
 
 Last week someone asked the question that usually triggers a meeting: "If we change the payment service API contract, what else breaks?" In any enterprise system older than a few years, nobody has the full picture. The payment service team knows their side. The downstream consumers know theirs. The platform team knows the deployment topology. But the blast radius of a contract change lives in the intersection of what three or four people carry in their heads, and the only way to assemble that intersection has always been to put those people in a room.
 
@@ -36,23 +36,23 @@ The 45-minute architecture review got cancelled. Not because the question was un
 
 ## Why That Meeting Existed in the First Place
 
-![The Hardest Question in Enterprise IT — blast radius, ownership, API contract guarantees, safe deprecation: all deterministic questions with answers scattered across repos and people's heads](/assets/images/the-meeting-was-never-the-problem/slide-002.png)
+![The Hardest Question in Enterprise IT — blast radius, ownership, API contract guarantees, safe deprecation: all deterministic questions with answers scattered across repos and people's heads](/assets/images/the-meeting-was-never-the-problem/slide-002.webp)
 
 Architecture reviews like this one follow a pattern that anyone who has worked in enterprise systems for more than a few years will recognise. A change is proposed. Someone asks "what does this affect?" Nobody knows the full answer. The people who know parts of it are identified, calendars are consulted, a 30- or 45-minute slot is found three days from now, and everyone shows up to reconstruct a picture that the organisation already possesses but has never made queryable.
 
 The meeting is not the problem. The meeting is a reasonable response to a structural deficit: organisational knowledge trapped in people's heads. When the only way to assemble a dependency graph is to ask the people who built the dependencies, then meetings are the correct tool. They are expensive, slow, and synchronisation-dependent, but they work.
 
-![Static Tools Cannot Answer Dynamic Questions — architecture diagrams go stale, wikis drift, Slack threads disappear. The knowledge exists; it just isn't queryable.](/assets/images/the-meeting-was-never-the-problem/slide-003.png)
+![Static Tools Cannot Answer Dynamic Questions — architecture diagrams go stale, wikis drift, Slack threads disappear. The knowledge exists; it just isn't queryable.](/assets/images/the-meeting-was-never-the-problem/slide-003.webp)
 
 The questions that produce these meetings are remarkably consistent. What is the blast radius of this change? Who owns this service? What does the API contract guarantee? Can we safely deprecate this endpoint? What changed in this subsystem and when? Each question has a deterministic answer. The data exists. It is scattered across repositories, wikis, Slack threads, and the memories of engineers who may or may not still be on the team. The meeting exists to gather the shards.
 
 ## What Changed
 
-![Turning Raw Code into Agent-Ready Knowledge — KCP manifests declare dependencies, API contracts, domain boundaries and ownership alongside the code, version-controlled and indexable](/assets/images/the-meeting-was-never-the-problem/slide-005.png)
+![Turning Raw Code into Agent-Ready Knowledge — KCP manifests declare dependencies, API contracts, domain boundaries and ownership alongside the code, version-controlled and indexable](/assets/images/the-meeting-was-never-the-problem/slide-005.webp)
 
 Each of the 58 repositories in the workspace now carries a `knowledge.yaml` file at its root. This is a KCP manifest, a structured YAML declaration of what the repository contains, what it depends on, what it exposes, and what an agent or human should know before making changes. Dependencies are typed. API contracts are versioned. Domain boundaries are explicit. Authority is declared.
 
-![MCP + KCP = Context-Aware AI — MCP gives agents tools; KCP gives agents knowledge about what those tools operate on and under what conditions](/assets/images/the-meeting-was-never-the-problem/slide-004.png)
+![MCP + KCP = Context-Aware AI — MCP gives agents tools; KCP gives agents knowledge about what those tools operate on and under what conditions](/assets/images/the-meeting-was-never-the-problem/slide-004.webp)
 
 Here is what a dependency declaration looks like in practice:
 
@@ -68,7 +68,7 @@ dependencies:
     notes: "Batch job calls status endpoint nightly at 03:00 Oslo time"
 ```
 
-![Natural Language Queries Yield Structural Answers — synthesis search returns ranked results across all repos: dependency graph, contract versions, ownership, risk surface in milliseconds](/assets/images/the-meeting-was-never-the-problem/slide-008.png)
+![Natural Language Queries Yield Structural Answers — synthesis search returns ranked results across all repos: dependency graph, contract versions, ownership, risk surface in milliseconds](/assets/images/the-meeting-was-never-the-problem/slide-008.webp)
 
 Synthesis indexes these manifests alongside the code. When someone queries "payment service API consumers," the FTS5 index returns every repository whose KCP manifest declares a dependency on the payment service, with the contract version, the specific endpoints consumed, and the ownership metadata. The query does not require anyone to remember that the batch job exists. The batch job's repository declares its own dependency. The knowledge is structural, not social.
 
@@ -76,7 +76,7 @@ This is the shift. Not from meetings to queries. From knowledge that requires hu
 
 ## What It Does Not Replace
 
-![Mapping the Migration Blast Radius — the query returns the surface; the decision about what to do with it still requires human judgment, team context, and organisational priorities](/assets/images/the-meeting-was-never-the-problem/slide-009.png)
+![Mapping the Migration Blast Radius — the query returns the surface; the decision about what to do with it still requires human judgment, team context, and organisational priorities](/assets/images/the-meeting-was-never-the-problem/slide-009.webp)
 
 The query tells you the blast radius. It does not tell you what to do about it.
 
@@ -90,7 +90,7 @@ This distinction matters because the temptation is to frame this as "meetings ar
 
 ## The Structural Point
 
-![Preventing Silent Failures at Organisational Scale — the batch job nobody remembered is the most valuable result. Infrastructure recalls what people forget.](/assets/images/the-meeting-was-never-the-problem/slide-012.png)
+![Preventing Silent Failures at Organisational Scale — the batch job nobody remembered is the most valuable result. Infrastructure recalls what people forget.](/assets/images/the-meeting-was-never-the-problem/slide-012.webp)
 
 Every organisation I have worked with in 30 years of enterprise consulting has the same pattern. Knowledge accumulates in people. People leave, change roles, go on holiday, forget. The knowledge degrades. When a question arises that depends on that knowledge, the organisation's only recourse is to reassemble it from whoever is still around and hope the picture is complete.
 
@@ -98,7 +98,7 @@ This is not a process failure. It is an infrastructure failure. The organisation
 
 KCP manifests are one answer. There are others. The specific technology matters less than the principle: organisational knowledge that cannot be queried will be assembled in meetings. Organisational knowledge that can be queried will be queried. The meeting was never the problem. The missing knowledge infrastructure was.
 
-![Your Existing Architecture Data is Not Wasted — repositories already contain the knowledge; KCP manifests make it structurally explicit and queryable rather than implicit and scattered](/assets/images/the-meeting-was-never-the-problem/slide-015.png)
+![Your Existing Architecture Data is Not Wasted — repositories already contain the knowledge; KCP manifests make it structurally explicit and queryable rather than implicit and scattered](/assets/images/the-meeting-was-never-the-problem/slide-015.webp)
 
 When the batch job showed up in the query results, the team lead said something that stuck with me: "I didn't even know that job still ran." In the old model, that would have been discovered in the architecture review, or worse, discovered in production after the contract change broke the nightly run. In the new model, the batch job's own manifest declared its dependency, and the query surfaced it without anyone needing to remember it existed.
 

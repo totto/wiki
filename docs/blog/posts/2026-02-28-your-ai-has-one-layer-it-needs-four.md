@@ -22,7 +22,7 @@ authors:
 
 <!-- more -->
 
-![Beyond RAG: The Four-Layer Framework for AI Knowledge Retrieval — failure modes, layer breakdown, and enterprise ROI](/assets/images/blog/four-layer-retrieval-framework.png)
+![Beyond RAG: The Four-Layer Framework for AI Knowledge Retrieval — failure modes, layer breakdown, and enterprise ROI](/assets/images/blog/four-layer-retrieval-framework.webp)
 
 ## The question every agent faces
 
@@ -40,7 +40,7 @@ The benchmarks are real. They are also misleading, because each approach answers
 
 Here is what each layer actually does, where it works, and where it breaks.
 
-![Single-layer retrieval architectures create massive cognitive blind spots: breadth without depth, depth without speed, scale without precision](/assets/images/blog/four-layer-slides/slide-02.png)
+![Single-layer retrieval architectures create massive cognitive blind spots: breadth without depth, depth without speed, scale without precision](/assets/images/blog/four-layer-slides/slide-02.webp)
 
 ## The honest breakdown
 
@@ -56,21 +56,21 @@ Embed your documents into vectors, embed the query, find the nearest neighbors. 
 
 Where it breaks: relationships, structure, temporal queries, exact recall. RAG finds documents that *sound relevant*. It cannot answer "what depends on this module?" or "what changed since Tuesday?" or "show me every caller of this method." It also suffers from chunking problems — split a document wrong and the retrieved fragment loses its meaning. Research from [Springer](https://link.springer.com/article/10.1007/s10791-025-09638-7) and [arXiv](https://arxiv.org/abs/2504.19754) documents the structural trade-off: small chunks retrieve precisely but fragment context; large chunks preserve context but introduce noise. There is no chunk size that solves both.
 
-![Vector RAG forces an impossible structural trade-off: small chunks are precise but fragmented; large chunks preserve context but flood with noise](/assets/images/blog/four-layer-slides/slide-05.png)
+![Vector RAG forces an impossible structural trade-off: small chunks are precise but fragmented; large chunks preserve context but flood with noise](/assets/images/blog/four-layer-slides/slide-05.webp)
 
 And then there is the [lost-in-the-middle problem](https://arxiv.org/abs/2307.03172). Even when RAG retrieves the right documents, LLMs systematically under-weight information in the middle of the context window. [Chroma Research](https://research.trychroma.com/context-rot) tested 18 models and found that accuracy decays progressively as prompts grow — they call it "context rot." Adding more retrieved documents does not help linearly. Past a threshold, it actively hurts.
 
-![The uniform-context myth is dead: the 50% threshold where reasoning accuracy collapses, validated across 18 models](/assets/images/blog/four-layer-slides/slide-03.png)
+![The uniform-context myth is dead: the 50% threshold where reasoning accuracy collapses, validated across 18 models](/assets/images/blog/four-layer-slides/slide-03.webp)
 
 **Property knowledge graphs** answer: *how do these entities connect?*
 
-![Unstructured scale requires structured reasoning: RAG provides breadth, knowledge graphs provide depth — you cannot substitute one for the other](/assets/images/blog/four-layer-slides/slide-06.png)
+![Unstructured scale requires structured reasoning: RAG provides breadth, knowledge graphs provide depth — you cannot substitute one for the other](/assets/images/blog/four-layer-slides/slide-06.webp)
 
 Explicit nodes, explicit edges, traversable relationships. A knowledge graph can answer multi-hop questions that RAG cannot even represent: "Which team owns the service that depends on the library that had a CVE last month?" The [Diffbot benchmark](https://www.falkordb.com/blog/graphrag-accuracy-diffbot-falkordb/) showed GraphRAG outperforming vector RAG 3.4x on average for queries requiring entity relationships, with traditional vector RAG dropping to 0% accuracy when queries involved more than five entities.
 
 Where it breaks: knowledge engineering cost. Someone has to design the schema, extract entities, map relationships, and maintain all of it as the underlying reality changes. The [enterprise knowledge graph literature](https://enterprise-knowledge.com/how-do-i-update-and-scale-my-knowledge-graph/) is blunt: many organizations build successful pilots but few deploy enterprise-scale graphs that deliver sustained ROI, because maintenance cost scales with the rate of change in the domain. And you still have to choose between [property graphs and RDF](https://neo4j.com/blog/knowledge-graph/rdf-vs-property-graphs-knowledge-graphs/) — speed vs. semantic richness — before you write a single query.
 
-![GraphRAG dominates complex queries but fails at the basics: 3.4x outperformance on multi-hop, 16.6% accuracy drop on time-sensitive updates](/assets/images/blog/four-layer-slides/slide-07.png)
+![GraphRAG dominates complex queries but fails at the basics: 3.4x outperformance on multi-hop, 16.6% accuracy drop on time-sensitive updates](/assets/images/blog/four-layer-slides/slide-07.webp)
 
 **GraphRAG (hybrid)** answers: *semantic similarity plus graph structure.*
 
@@ -82,7 +82,7 @@ Where it breaks: it still needs a schema. It still needs entity extraction pipel
 
 It works at toy scale. At production scale — 1,000+ files, multiple repositories, months of history — it collapses. Research from [ACL 2025](https://aclanthology.org/2025.findings-emnlp.1264.pdf) showed that even with perfect retrieval, LLM performance degrades as input length increases. Performance issues emerge at roughly 50% of the maximum context length. Context stuffing is not a strategy. It is the absence of one.
 
-![Every retrieval layer answers a fundamentally different question — and context stuffing is the anti-pattern that breaks at the 50% scale threshold](/assets/images/blog/four-layer-slides/slide-11.png)
+![Every retrieval layer answers a fundamentally different question — and context stuffing is the anti-pattern that breaks at the 50% scale threshold](/assets/images/blog/four-layer-slides/slide-11.webp)
 
 ## Where Synthesis fits — and where it does not
 
@@ -92,7 +92,7 @@ Synthesis is not a vector database. It does not do semantic similarity search by
 
 What Synthesis does is integrate layers that are usually separate:
 
-![Synthesis binds the four layers into a cohesive AI agent reality: BM25, document graphs, code graphs, and temporal data in one system](/assets/images/blog/four-layer-slides/slide-14.png)
+![Synthesis binds the four layers into a cohesive AI agent reality: BM25, document graphs, code graphs, and temporal data in one system](/assets/images/blog/four-layer-slides/slide-14.webp)
 
 **Full-text search (Lucene).** Sub-second keyword and phrase search across code, docs, PDFs, configs, media metadata. 36,000+ files indexed at 200-300 files per second. This is the BM25 layer — fast, deterministic, zero ML infrastructure required.
 
@@ -117,7 +117,7 @@ What Synthesis does NOT do well, and I want to be specific:
 
 The pattern I see across teams adopting AI tools:
 
-![The 2026 Enterprise Knowledge Retrieval Framework: four integrated layers from BM25 through GraphRAG, wrapped in a unified semantic layer](/assets/images/blog/four-layer-slides/slide-10.png)
+![The 2026 Enterprise Knowledge Retrieval Framework: four integrated layers from BM25 through GraphRAG, wrapped in a unified semantic layer](/assets/images/blog/four-layer-slides/slide-10.webp)
 
 Teams that deploy RAG get semantic search but no structure. They can find documents that sound relevant but cannot answer "what does this connect to?" or "what changed last week?" They hit the chunking wall, the lost-in-the-middle wall, and the relationship wall — all at once — when queries get complex.
 
@@ -133,7 +133,7 @@ Our [MCP benchmark](/blog/2026/02/26/we-gave-the-ai-better-documentation-it-got-
 
 None of this means Synthesis is sufficient on its own. It means the debate about which single retrieval layer to adopt is the wrong debate. The question is: which layer are you missing? And what is your agent getting confidently wrong because of that gap?
 
-![Stop building single-layer retrieval architectures: audit the blind spot, stop context stuffing, deploy the runtime](/assets/images/blog/four-layer-slides/slide-15.png)
+![Stop building single-layer retrieval architectures: audit the blind spot, stop context stuffing, deploy the runtime](/assets/images/blog/four-layer-slides/slide-15.webp)
 
 ---
 

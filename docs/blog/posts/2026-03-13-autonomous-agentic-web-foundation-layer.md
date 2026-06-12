@@ -19,7 +19,7 @@ authors:
 
 # The Autonomous Agentic Web Needs a Foundation Layer
 
-![The Foundation Layer of the Agentic Web — Capable models are not enough](../../assets/images/agentic-web-slide-01.png)
+![The Foundation Layer of the Agentic Web — Capable models are not enough](../../assets/images/agentic-web-slide-01.webp)
 
 Something is being assembled right now, mostly without a name for it.
 
@@ -58,7 +58,7 @@ making individual pieces smarter.
 The agentic web is at exactly the point the internet was before HTTP. We have capable pieces.
 We do not yet have agreed protocols for how they connect.
 
-![Infrastructure Creates Composability — the 1994 web parallel](../../assets/images/agentic-web-slide-02.png)
+![Infrastructure Creates Composability — the 1994 web parallel](../../assets/images/agentic-web-slide-02.webp)
 
 ## What is actually being built
 
@@ -85,7 +85,7 @@ Approval workflows that route decisions to humans when confidence is low.
 
 Each of these layers works. The gap is between them.
 
-![The Gap Between Execution and Orchestration — the missing capability declaration layer](../../assets/images/agentic-web-slide-03.png)
+![The Gap Between Execution and Orchestration — the missing capability declaration layer](../../assets/images/agentic-web-slide-03.webp)
 
 ## The three things a composable agentic web requires
 
@@ -131,7 +131,7 @@ what approvals have already been obtained, or what authority it is operating und
 handoff is a trust reset, which forces either over-permission (give the sub-agent everything)
 or under-permission (give it so little it cannot complete the task).
 
-![The Three Failures of Current Agentic Systems — Discovery, Constraint Declaration, Delegation with Integrity](../../assets/images/agentic-web-slide-04.png)
+![The Three Failures of Current Agentic Systems — Discovery, Constraint Declaration, Delegation with Integrity](../../assets/images/agentic-web-slide-04.webp)
 
 ## Why the obvious solutions do not close the gaps
 
@@ -161,7 +161,7 @@ apply to its invocation, or what happens to delegation context when it fires.
 
 These are different problems. MCP solves one of them very well. The others remain open.
 
-![Why Obvious Workarounds Do Not Scale — Documentation, Vendor SDKs, and MCP each fail the fundamental requirements](../../assets/images/agentic-web-slide-05.png)
+![Why Obvious Workarounds Do Not Scale — Documentation, Vendor SDKs, and MCP each fail the fundamental requirements](../../assets/images/agentic-web-slide-05.webp)
 
 ## What the foundation layer looks like
 
@@ -186,7 +186,7 @@ The properties this layer needs:
   but what it requires for approval, what actions are off-limits, what context it expects,
   and how delegation works when it is invoked from another agent.
 
-![Defining the Missing Layer — Typed, Portable, Discoverable, Constraint-Carrying](../../assets/images/agentic-web-slide-06.png)
+![Defining the Missing Layer — Typed, Portable, Discoverable, Constraint-Carrying](../../assets/images/agentic-web-slide-06.webp)
 
 This is what we built KCP — the Knowledge Context Protocol — to address.
 
@@ -196,7 +196,7 @@ should be handled in delegation chains. An agent can read a manifest and know, w
 calling the capability or reading external documentation, whether it is appropriate to invoke
 and under what conditions.
 
-![The Knowledge Context Protocol — typed portable manifest with machine-readable intent, verifiable boundaries, and handoff rules](../../assets/images/agentic-web-slide-07.png)
+![The Knowledge Context Protocol — typed portable manifest with machine-readable intent, verifiable boundaries, and handoff rules](../../assets/images/agentic-web-slide-07.webp)
 
 The manifests are portable. A manifest written for one agent or tool works across any
 client that understands the spec. They are open — the spec is public, Apache 2.0 for the
@@ -217,7 +217,7 @@ The delegation problem in particular is one that typed manifests address in a wa
 prompts cannot. Without a manifest, constraint context breaks in transit. With one, it
 travels intact.
 
-![Delegation with Integrity — without KCP context is dropped; with KCP it is preserved across handoffs](../../assets/images/agentic-web-slide-08.png)
+![Delegation with Integrity — without KCP context is dropped; with KCP it is preserved across handoffs](../../assets/images/agentic-web-slide-08.webp)
 
 ## Where the standards stack fits together
 
@@ -247,7 +247,7 @@ environment" (discovery, llms.txt + KCP) through "how do I call this capability"
 MCP) within a governance framework that defines what the agent is permitted to do at all
 (governance, Permission Manifests).
 
-![The Agentic Standards Stack — KCP does not compete, it completes](../../assets/images/agentic-web-slide-09.png)
+![The Agentic Standards Stack — KCP does not compete, it completes](../../assets/images/agentic-web-slide-09.webp)
 
 ## Where this stands
 
@@ -269,7 +269,7 @@ agentic web will need as it scales. The question is not whether this layer will 
 it will, because the web without it will remain a collection of capable but isolated pieces.
 The question is what form it takes and who shapes that form.
 
-![Infrastructure Being Built Right Now — v0.8 spec, 289 manifests, kcp-basis-oppsett, NIST NCCoE](../../assets/images/agentic-web-slide-10.png)
+![Infrastructure Being Built Right Now — v0.8 spec, 289 manifests, kcp-basis-oppsett, NIST NCCoE](../../assets/images/agentic-web-slide-10.webp)
 
 ## What needs to happen
 

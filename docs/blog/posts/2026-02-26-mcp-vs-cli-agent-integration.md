@@ -31,7 +31,7 @@ That result was uncomfortable enough that we measured it three more ways to make
 
 This post is about what we learned from a six-condition benchmark on 9 codebase navigation tasks — why CLI documentation backfired, why MCP tools helped, and why a single line of text in the system prompt turned out to be the most effective intervention of all.
 
-![MCP vs CLI: Optimizing AI Agent Codebase Navigation — benchmark results across 6 conditions](/assets/images/blog/mcp-vs-cli-efficiency-leaderboard.png)
+![MCP vs CLI: Optimizing AI Agent Codebase Navigation — benchmark results across 6 conditions](/assets/images/blog/mcp-vs-cli-efficiency-leaderboard.webp)
 
 ## The setup
 

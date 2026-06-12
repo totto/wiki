@@ -29,7 +29,7 @@ Today we are shipping two small releases that close that gap: **kcp-commands v0.
 
 <!-- more -->
 
-![The Manifest Quality Feedback Loop: Closing the Gap Between AI Agents and Command Manifests](/assets/images/blog/kcp-manifest-quality-feedback-loop.png)
+![The Manifest Quality Feedback Loop: Closing the Gap Between AI Agents and Command Manifests](/assets/images/blog/kcp-manifest-quality-feedback-loop.webp)
 
 ![Measuring AI Agent Behavior — action, observation, and improvement](/assets/images/blog/kcp-feedback-slide-01.jpg)
 

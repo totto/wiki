@@ -21,7 +21,7 @@ Good blog-post on an old-trick:
 
 If you take pretty much any existing application, add another machine into the network, and watch what happens, you wouldn't be surprised that nothing much would happen at all.
 
-![middleware.png](../../assets/images/middleware.png)
+![middleware.png](../../assets/images/middleware.webp)
 
 Non-virtualized middleware
 

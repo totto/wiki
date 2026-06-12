@@ -41,7 +41,7 @@ llms.txt does not scale to what those agents actually need. The limitations are 
 implementation — they are consequences of the design. Dead simple means you get the "hello world"
 version of knowledge representation. The production version is harder.
 
-![Dead simple is only the hello world of knowledge — personal sites vs enterprise scale](/assets/images/blog/kcp-hello-world-vs-enterprise-scale.png)
+![Dead simple is only the hello world of knowledge — personal sites vs enterprise scale](/assets/images/blog/kcp-hello-world-vs-enterprise-scale.webp)
 
 ## The six things llms.txt cannot express
 
@@ -73,7 +73,7 @@ infrastructure that would make it powerful.
 fine. For an enterprise with 8,934 files across multiple repositories, it does not. The
 standard's answer to scale is "make a bigger text file." That is not an architecture.
 
-![The six structural failure points of llms.txt](/assets/images/blog/kcp-six-structural-failure-points.png)
+![The six structural failure points of llms.txt](/assets/images/blog/kcp-six-structural-failure-points.webp)
 
 ## The Mirror Test
 
@@ -93,7 +93,7 @@ current state.
 llms.txt has no answer for this. The file cannot tell an agent that its contents were last
 verified six months ago.
 
-![The cost of stale knowledge — agent confidence stays high while answer accuracy collapses](/assets/images/blog/kcp-cost-of-stale-knowledge-hallucination-zone.png)
+![The cost of stale knowledge — agent confidence stays high while answer accuracy collapses](/assets/images/blog/kcp-cost-of-stale-knowledge-hallucination-zone.webp)
 
 ## A proposal: Knowledge Context Protocol
 
@@ -110,7 +110,7 @@ five minutes. The full field set handles enterprise knowledge graphs.
 
 The positioning statement from the spec:
 
-![Introducing KCP — MCP handles tools, KCP handles knowledge](/assets/images/blog/kcp-mcp-plus-kcp-introducing-standard.png)
+![Introducing KCP — MCP handles tools, KCP handles knowledge](/assets/images/blog/kcp-mcp-plus-kcp-introducing-standard.webp)
 
 > KCP is to knowledge what MCP is to tools.
 
@@ -173,11 +173,11 @@ results with intent strings. Two lines to enable — one to install, one in `ope
 If you have a use case that the current format does not cover, open an issue. If you add a
 `knowledge.yaml` to a project and it works — or does not work — I want to know.
 
-![Strategic positioning — from static files to proprietary engines to open standard](/assets/images/blog/kcp-strategic-positioning-past-present-future.png)
+![Strategic positioning — from static files to proprietary engines to open standard](/assets/images/blog/kcp-strategic-positioning-past-present-future.webp)
 
 The agents are only as good as what they know. Give them something well-structured to know.
 
-![Give the agents a map](/assets/images/blog/kcp-give-agents-a-map.png)
+![Give the agents a map](/assets/images/blog/kcp-give-agents-a-map.webp)
 
 Projects already running KCP in production — including wiki.totto.org, wiki.cantara.no,
 and active PRs against crewAI, AutoGen, and smolagents — are listed in

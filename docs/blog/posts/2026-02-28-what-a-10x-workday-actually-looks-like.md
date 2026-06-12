@@ -37,7 +37,7 @@ Before the Tuesday, the aggregate. Here is what the past 30 days of development 
 | Industrial connector service | 24 | 68 | ~2,800 |
 | **Total** | **847** | **2,536** | **~959,000** |
 
-![The Aggregate Signal: 847 commits, 2,536 unique files touched, ~959,000 lines changed across 6 repos in 30 days](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-02-aggregate.png)
+![The Aggregate Signal: 847 commits, 2,536 unique files touched, ~959,000 lines changed across 6 repos in 30 days](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-02-aggregate.webp)
 
 847 commits. 2,536 unique files touched. Roughly 959,000 lines changed across six projects in a single month. 740 of those commits are pure development: new features, bug fixes, tests, integration work. That is the aggregate signal. The question is what a single day inside that aggregate actually looks like.
 
@@ -73,7 +73,7 @@ Then I open a terminal.
 
 ## 10:30 — Development: the core of the day
 
-![Anatomy of a Realistic Tuesday: 08:05 Morning Briefing → 10:30 Deep Code Work → 13:30 Batch Processing → 14:45 Spec Writing — compressing 13 to 26 hours into one day](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-03-timeline.png)
+![Anatomy of a Realistic Tuesday: 08:05 Morning Briefing → 10:30 Deep Code Work → 13:30 Batch Processing → 14:45 Spec Writing — compressing 13 to 26 hours into one day](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-03-timeline.webp)
 
 This is where most of the day actually goes, and where the stack's impact is most concrete.
 
@@ -102,7 +102,7 @@ I am in the right file in under two minutes. The product context skill has the a
 
 One detail worth noting: both PRs were opened and merged within 44–54 seconds of creation. The review/approval overhead that typically accounts for 1–5 days of cycle time in a normal team is structurally absent. The work is in the code, not the process.
 
-![Fixing bugs is about instant navigation, not typing speed: synthesis search + relate → 5–10 min actual work, PRs #255 and #258 merged within 44–54 seconds of creation](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-05-bugs-navigation.png)
+![Fixing bugs is about instant navigation, not typing speed: synthesis search + relate → 5–10 min actual work, PRs #255 and #258 merged within 44–54 seconds of creation](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-05-bugs-navigation.webp)
 
 **~8×.** The subjective experience matters more than the multiplier: I stay in the problem rather than oscillating between the problem and the map.
 
@@ -138,7 +138,7 @@ The architecture is already established — each tool is a registered class impl
 
 The timestamps tell the story directly: #265 merged at 16:10, #266 merged at 16:42 — 32 minutes for 1,819 lines of adapter code covering the full CLI surface. #274 (decision heuristics, 24 lines) came two hours later as a separate tuning pass. The end state: Claude Code can call `synthesis impact`, `synthesis security`, `synthesis changelog` directly without me knowing those tools exist — the model discovers them from the registered descriptions.
 
-![Expanding architecture at the speed of flow state: industry average 1–5 days → 17 to 256 seconds; 1,819 lines merged in exactly 32 minutes across PRs #265 and #266](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-06-mcp-pr-cycle.png)
+![Expanding architecture at the speed of flow state: industry average 1–5 days → 17 to 256 seconds; 1,819 lines merged in exactly 32 minutes across PRs #265 and #266](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-06-mcp-pr-cycle.webp)
 
 ### 13:00 — Cantara dependency maintenance (automated)
 
@@ -156,7 +156,7 @@ Earlier in the morning I queued 38 product videos for Whisper transcription. By 
 
 End state: 78 blog posts, 85,000 lines of metadata, bidirectional cross-references between videos, posts, and the Synthesis index.
 
-![Human time is active, the rest is background compute: Cantara (Renovate + Klaw, 2,031 packages) + Batch Content (38 videos → 78 blog posts, ~30–50×, under 1 hour human time)](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-07-background-compute.png)
+![Human time is active, the rest is background compute: Cantara (Renovate + Klaw, 2,031 packages) + Batch Content (38 videos → 78 blog posts, ~30–50×, under 1 hour human time)](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-07-background-compute.webp)
 
 **Total active time: under an hour** (queuing, spot-checking, tagging). The rest was background processing while the development sessions above ran.
 
@@ -168,7 +168,7 @@ End state: 78 blog posts, 85,000 lines of metadata, bidirectional cross-referenc
 
 The Knowledge Context Protocol needs a new RFC defining industry-specific compliance extension fields for regulated industries. The spec needs to be internally consistent with existing RFCs, cover the edge cases, and be clear enough that an implementer can act on it without questions.
 
-![Consistency scales instantly across specs and reporting: KCP RFC (2–3 days → 20 min, ~15×) and CEO Exec Report (2–4 hours → zero generation time, ∞)](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-08-consistency-reporting.png)
+![Consistency scales instantly across specs and reporting: KCP RFC (2–3 days → 20 min, ~15×) and CEO Exec Report (2–4 hours → zero generation time, ∞)](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-08-consistency-reporting.webp)
 
 **Without the stack:** Research similar standards, review existing spec for consistency, outline, draft, revise, circulate. A standards document takes days.
 
@@ -211,11 +211,11 @@ Weekly update covering business development and technical delivery across four c
 | KCP RFC + NotebookLM visual | 2–3 days | 5 min CC + 5–15 min NLM | ~15× |
 | CEO executive report | 2–4 hours | automated (cron) | ∞ |
 
-![The Time Compression Scorecard: Admin ~4–5×, Standard Code ~8×, Architecture Expansion ~15×, Mechanical Batching ~30–50×, PR Cycle Time ~500–25,000×](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-09-compression-scorecard.png)
+![The Time Compression Scorecard: Admin ~4–5×, Standard Code ~8×, Architecture Expansion ~15×, Mechanical Batching ~30–50×, PR Cycle Time ~500–25,000×](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-09-compression-scorecard.webp)
 
 Compressed to a single Tuesday: what would have consumed 15–25 hours of linear work fits into under 2 hours of active development plus a batch pipeline running in the background. And this was a quiet day — the preceding two weeks averaged 4–10× this output per active day.
 
-![The 10x Workday: How AI-Assisted Development Compresses Time — full summary infographic](/assets/images/blog/ai-dev-stack-part2/10x-reality-infographic-summary.png)
+![The 10x Workday: How AI-Assisted Development Compresses Time — full summary infographic](/assets/images/blog/ai-dev-stack-part2/10x-reality-infographic-summary.webp)
 
 The honest framing: these multipliers are not uniform. The magic is not any single number — it is consistently removing the friction of navigation and context-gathering across every domain.
 
@@ -232,13 +232,13 @@ One number from the infrastructure deserves its own paragraph.
 | Direct input | 11.3 million |
 | Output | 11.0 million |
 
-![The Secret Engine: Cache Math — 1,519:1 ratio, 17.2B cache reads, 844M writes, 11.3M direct inputs](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-10-cache-math.png)
+![The Secret Engine: Cache Math — 1,519:1 ratio, 17.2B cache reads, 844M writes, 11.3M direct inputs](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-10-cache-math.webp)
 
 The ratio of cache reads to direct input is **1,519:1**. That means 99.93% of the context the model sees on any given interaction is served from cache — previously written knowledge being reused. Every skill file is written once and amortised across hundreds of invocations.
 
 The 844 million cache-write tokens represent the total volume of accumulated expertise. The 17.2 billion cache-read tokens represent how many times that expertise was reused. The skill library is a flywheel: every skill written makes every subsequent interaction cheaper and better.
 
-![The skill library is a compound flywheel: Write Skill Once → Accumulated Expertise (844M writes) → Hundreds of Invocations (17.2B reads) → Better First Drafts](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-11-flywheel.png)
+![The skill library is a compound flywheel: Write Skill Once → Accumulated Expertise (844M writes) → Hundreds of Invocations (17.2B reads) → Better First Drafts](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-11-flywheel.webp)
 
 ---
 
@@ -254,7 +254,7 @@ Every system that saves time also costs time to maintain. The table above shows 
 
 **The setup was slow.** The 150 skills did not exist on day one. The memory system was empty. The first month looked nothing like the productivity table above. The compound returns are real, but they are earned through months of accumulated context.
 
-![The Setup Illusion: Day 1 (empty memory, slower than without AI) → Month 3 (150 tuned skills, 46,000+ file index, compounding returns)](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-13-setup-illusion.png)
+![The Setup Illusion: Day 1 (empty memory, slower than without AI) → Month 3 (150 tuned skills, 46,000+ file index, compounding returns)](/assets/images/blog/ai-dev-stack-part2/10x-reality-slide-13-setup-illusion.webp)
 
 ---
 

@@ -22,7 +22,7 @@ These are not bad reasons to meet. But they are expensive reasons. And increasin
 
 <!-- more -->
 
-![Context engineering: how persistent skill files replace process ceremonies](/assets/images/blog/lib-pcb-memoir-infographic-03-context-engineering.png)
+![Context engineering: how persistent skill files replace process ceremonies](/assets/images/blog/lib-pcb-memoir-infographic-03-context-engineering.webp)
 
 ## What ceremonies actually do
 

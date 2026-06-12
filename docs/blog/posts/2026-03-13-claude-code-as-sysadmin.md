@@ -25,7 +25,7 @@ I haven't typed `apt install` in three months. Not because I stopped installing 
 
 <!-- more -->
 
-![apt install crossed out — the person typing the commands is no longer human](/assets/images/blog/sysadmin-slide-02.png)
+![apt install crossed out — the person typing the commands is no longer human](/assets/images/blog/sysadmin-slide-02.webp)
 
 ## The whole machine is the codebase
 
@@ -39,7 +39,7 @@ The boundary between "coding assistant" and "operations partner" dissolves. The 
 
 This week alone: I submitted a PR to a marketplace repo, discovered a bot was failing on a hardcoded path, fixed it, pushed — one conversation. I SSH'd into two remote servers to audit running services and compile a status report. I merged PRs across a spec repository after checking CI on each one. None of this was programming in the traditional sense. All of it was work that needed doing.
 
-![The 10-minute chore vs the 90-second intent — same task, different cognitive layer](/assets/images/blog/sysadmin-slide-03.png)
+![The 10-minute chore vs the 90-second intent — same task, different cognitive layer](/assets/images/blog/sysadmin-slide-03.webp)
 
 ## Installs that document themselves
 
@@ -53,7 +53,7 @@ When the agent does the work, it also writes the docs. Not because it's virtuous
 
 After three months of this, my workstation is better documented than any machine I've administered in thirty years. That's a low bar — I know. But it's a real one.
 
-![Intent executed → State modified → Manifest updated → Context loaded — the self-documenting install cycle](/assets/images/blog/sysadmin-slide-05.png)
+![Intent executed → State modified → Manifest updated → Context loaded — the self-documenting install cycle](/assets/images/blog/sysadmin-slide-05.webp)
 
 ## What you still approve manually
 
@@ -67,7 +67,7 @@ I run with fairly broad permissions on my own workstation. I'd configure it diff
 
 And some things still require human judgment. When Claude Code suggests a firewall rule, I think about it. When it proposes a migration on a production database, I think about it harder. The agent is good at executing sequences of commands. It is not good at knowing which sequences you'll regret.
 
-![The honest permission model — local reversible actions auto-run, destructive and remote actions require the manual gate](/assets/images/blog/sysadmin-slide-06.png)
+![The honest permission model — local reversible actions auto-run, destructive and remote actions require the manual gate](/assets/images/blog/sysadmin-slide-06.webp)
 
 ## What actually changed
 
@@ -81,7 +81,7 @@ The error-handling loop changed too. When something fails, I used to hunt throug
 
 This is the real shift, and it's easy to miss if you focus on speed. The calendar time is shorter, yes. But the more significant change is what the human is doing during that time. Less syntax. Less sequencing. More architecture. More judgment about what should and shouldn't be automated. The cognitive budget didn't shrink. It moved upward.
 
-![Traditional command line vs agentic shell operations — execution trigger, resolution time, error handling, system state record, human cognitive load](/assets/images/blog/sysadmin-slide-07.png)
+![Traditional command line vs agentic shell operations — execution trigger, resolution time, error handling, system state record, human cognitive load](/assets/images/blog/sysadmin-slide-07.webp)
 
 ## From mechanic to conductor
 
@@ -99,7 +99,7 @@ This is not a story about jobs disappearing. The sysadmin work still gets done �
 
 I notice it in small ways. I spend more time thinking about system design and less time thinking about systemd syntax. I spend more time reviewing what the agent proposes and less time composing commands from scratch. My days have more decisions in them and fewer keystrokes. That's a trade I'm comfortable with.
 
-![Rote execution pushed down to the machine layer — the operator elevated from mechanic to conductor](/assets/images/blog/sysadmin-slide-08.png)
+![Rote execution pushed down to the machine layer — the operator elevated from mechanic to conductor](/assets/images/blog/sysadmin-slide-08.webp)
 
 ## Not a prediction
 
@@ -109,4 +109,4 @@ The setup isn't trivial. I run a stack — Claude Code plus a codebase indexer, 
 
 But the underlying observation is simple: when you give a capable agent a real shell, it doesn't stay in the editor. It flows into operations, into infrastructure, into all the unglamorous work that keeps systems running. The boundary was always artificial. We drew it because humans needed specialization. The agent doesn't.
 
-![I still think about what to build. I still make architecture decisions. I still review what matters. I just don't type apt install anymore.](/assets/images/blog/sysadmin-slide-09.png)
+![I still think about what to build. I still make architecture decisions. I still review what matters. I just don't type apt install anymore.](/assets/images/blog/sysadmin-slide-09.webp)

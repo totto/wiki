@@ -19,7 +19,7 @@ authors:
 
 # The Front Door and the Filing Cabinet: A2A Agent Cards Meet KCP
 
-![The Front Door and the Filing Cabinet: Composing A2A and KCP in Multi-Agent Systems](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-01.png)
+![The Front Door and the Filing Cabinet: Composing A2A and KCP in Multi-Agent Systems](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-01.webp)
 
 Multi-agent systems need two kinds of identity. The first answers "who is this agent and how do I call it." The second answers "what knowledge does this agent have and who is allowed to see each piece of it." Google's A2A protocol handles the first. KCP handles the second. They are not competitors. They are different layers of the same stack.
 
@@ -27,7 +27,7 @@ This post started as that explanation. Then, the same day it was published, we b
 
 <!-- more -->
 
-![Multi-Agent Systems Require Two Distinct Identities: Service Identity (A2A) and Knowledge Identity (KCP)](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-02.png)
+![Multi-Agent Systems Require Two Distinct Identities: Service Identity (A2A) and Knowledge Identity (KCP)](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-02.webp)
 
 ## What an A2A Agent Card does
 
@@ -150,7 +150,7 @@ This per-unit granularity is KCP's purpose. An agent reading the manifest knows 
 
 ---
 
-![The Core Metaphor: A2A is the front door, KCP is the filing cabinet inside](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-03.png)
+![The Core Metaphor: A2A is the front door, KCP is the filing cabinet inside](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-03.webp)
 
 ## Different layers, different granularity
 
@@ -173,7 +173,7 @@ KCP answers: *What knowledge does this agent have? Which pieces require which cr
 
 ---
 
-![Granularity in Practice: three drawers — public-guidelines, trial-protocols, patient-cohort — each with different access constraints](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-06.png)
+![Granularity in Practice: three drawers — public-guidelines, trial-protocols, patient-cohort — each with different access constraints](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-06.webp)
 
 ## How they compose in a multi-agent system
 
@@ -201,7 +201,7 @@ Human
             → logs access with W3C Trace Context headers (KCP trust.audit)
 ```
 
-![Production Scenario: The Clinical Trial Handshake — Step 1 A2A, Step 2 KCP, Step 3 MCP](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-10.png)
+![Production Scenario: The Clinical Trial Handshake — Step 1 A2A, Step 2 KCP, Step 3 MCP](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-10.webp)
 
 A2A got the orchestrator through the front door. KCP determined what happened once inside — which drawers opened freely, which required a specific key, and which required a human to unlock them.
 
@@ -211,7 +211,7 @@ Without A2A, the orchestrator does not know how to find or call the research age
 
 ## The auth overlap, honestly
 
-![Demystifying the Auth Overlap: A2A Auth (transport layer) vs KCP Auth (knowledge-access layer)](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-07.png)
+![Demystifying the Auth Overlap: A2A Auth (transport layer) vs KCP Auth (knowledge-access layer)](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-07.webp)
 
 Both protocols touch authentication. This is the area where a superficial reading might suggest redundancy. It is not.
 
@@ -229,7 +229,7 @@ The overlap is that both support OAuth2. The difference is the question being as
 
 ## What this means for production deployments
 
-![The Production Mandate: A2A without KCP vs KCP without A2A — if handling mixed sensitivity levels, you need both](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-11.png)
+![The Production Mandate: A2A without KCP vs KCP without A2A — if handling mixed sensitivity levels, you need both](/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-11.webp)
 
 If you are building a multi-agent system that handles data with mixed sensitivity levels — which is most production systems — you need both layers:
 

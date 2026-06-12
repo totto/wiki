@@ -26,7 +26,7 @@ Each of those deletions also deletes something else: the *why*.
 ---
 
 <video controls style="width:100%;border-radius:8px;margin:1.5rem 0">
-  <source src="/assets/videos/explainer-temporal-analytics.mp4" type="video/mp4">
+  <source src="https://github.com/totto/wiki/releases/download/media/explainer-temporal-analytics.mp4" type="video/mp4">
 </video>
 
 ---

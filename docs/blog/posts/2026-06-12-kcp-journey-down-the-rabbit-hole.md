@@ -22,7 +22,7 @@ authors:
 
 # Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard
 
-![The evolution of KCP: from the 33-tool-call incident and the comprehension gap (January 2026), through Skill-Driven Development and "agents need a map, not just a table of contents" (February), to the KCP stack — knowledge.yaml, kcp-memory, kcp-commands (March) — and the governance and trust layer of v0.10–v0.17 (April–June).](../../assets/images/kcp-journey-00-evolution.png)
+![The evolution of KCP: from the 33-tool-call incident and the comprehension gap (January 2026), through Skill-Driven Development and "agents need a map, not just a table of contents" (February), to the KCP stack — knowledge.yaml, kcp-memory, kcp-commands (March) — and the governance and trust layer of v0.10–v0.17 (April–June).](../../assets/images/kcp-journey-00-evolution.webp)
 
 It started with a question no one expected to be hard.
 
@@ -42,7 +42,7 @@ That was the moment something broke open. Not the code -- the assumption underne
 
 ---
 
-![The 33-tool-call bug that broke the illusion: the same question answered two ways. The Spaghetti — a tangle of grep, read-file, follow-import round trips taking 11 minutes. The Straight Line — a manifest-guided lookup taking seconds. The class was central to parsing, written four days prior; with a fresh session, the context vanished.](../../assets/images/kcp-journey-03.png)
+![The 33-tool-call bug that broke the illusion: the same question answered two ways. The Spaghetti — a tangle of grep, read-file, follow-import round trips taking 11 minutes. The Straight Line — a manifest-guided lookup taking seconds. The class was central to parsing, written four days prior; with a fresh session, the context vanished.](../../assets/images/kcp-journey-03.webp)
 
 ## Part I: The rabbit hole
 
@@ -50,7 +50,7 @@ That was the moment something broke open. Not the code -- the assumption underne
 
 The lib-pcb project ran from January 16 to 27, 2026. The result: 197,831 lines of Java, 7,461 tests, 99.8% pass rate, manufacturing-ready Gerber exports. By any measure, a success. By any traditional timeline, impossible -- the industry standard for equivalent scope is ten to eighteen months.
 
-![Code creation broke the speed limit; comprehension stalled. An exponential curve of code creation speed against a flat line of code comprehension — 197,831 lines of Java, 7,461 tests, 99.8% pass rate, built by a single developer in 11 days against a 10–18 month industry standard. The AI generated features in hours but forgot its own architectural context within days.](../../assets/images/kcp-journey-02.png)
+![Code creation broke the speed limit; comprehension stalled. An exponential curve of code creation speed against a flat line of code comprehension — 197,831 lines of Java, 7,461 tests, 99.8% pass rate, built by a single developer in 11 days against a 10–18 month industry standard. The AI generated features in hours but forgot its own architectural context within days.](../../assets/images/kcp-journey-02.webp)
 
 The method was straightforward in retrospect. Every lesson learned during the build was captured immediately as a skill -- a YAML file that gives Claude Code persistent, project-specific context. Bug fix? Skill. Architectural decision? Skill. Useful pattern? Skill. Eighty-five skills by the end.
 
@@ -76,7 +76,7 @@ The question -- why? -- took a week to answer. llms.txt is a table of contents. 
 
 Dead simple is the right design for a personal website with twenty-seven pages. It is not the right design for a codebase with 8,934 files.
 
-![Agents don't need a table of contents — they need a map. On the left, llms.txt as a flat list. On the right, the cartography of knowledge.yaml: topology (how modules depend on each other), intent (which docs are relevant for specific tasks), freshness (when content was last verified), and selective loading (pulling only what is needed).](../../assets/images/kcp-journey-05.png)
+![Agents don't need a table of contents — they need a map. On the left, llms.txt as a flat list. On the right, the cartography of knowledge.yaml: topology (how modules depend on each other), intent (which docs are relevant for specific tasks), freshness (when content was last verified), and selective loading (pulling only what is needed).](../../assets/images/kcp-journey-05.webp)
 
 ### The Mirror Test
 
@@ -88,7 +88,7 @@ With current documentation: the agent loaded the docs, understood the module qui
 
 With stale documentation: the agent loaded the docs, gave confident, fluent, completely wrong answers, and showed no sign of uncertainty. The documentation said the field count was eight. The code, after a month of development, had fourteen. The agent reported eight. Confidently.
 
-![The Mirror Test: why stale documentation is worse than none at all. Three conditions — no documentation (explores code, acknowledges uncertainty, approximately correct), current documentation (high confidence, highly accurate), stale documentation (fluent, highly confident, completely wrong). Key takeaway: stale knowledge that looks authoritative acts as a hallucinogen.](../../assets/images/kcp-journey-04.png)
+![The Mirror Test: why stale documentation is worse than none at all. Three conditions — no documentation (explores code, acknowledges uncertainty, approximately correct), current documentation (high confidence, highly accurate), stale documentation (fluent, highly confident, completely wrong). Key takeaway: stale knowledge that looks authoritative acts as a hallucinogen.](../../assets/images/kcp-journey-04.webp)
 
 Stale knowledge that looks authoritative is worse than no knowledge at all. llms.txt has no answer for this. There is no freshness field. There is no way to tell an agent that a document was last verified before the refactoring that changed everything it describes.
 
@@ -104,7 +104,7 @@ The AI agent ecosystem had invested heavily in model capability, tool connectivi
 
 **KCP is to knowledge what MCP is to tools.**
 
-![The missing infrastructure layer of the agentic web, drawn as three stacked layers: the Hands (Model Context Protocol — connects to external APIs and tools), the Brain (the LLM/agent — processing logic), and the Map (Knowledge Context Protocol — foundational routing and state). MCP defines how agents connect to tools; there was no equivalent standard for knowledge.](../../assets/images/kcp-journey-06.png)
+![The missing infrastructure layer of the agentic web, drawn as three stacked layers: the Hands (Model Context Protocol — connects to external APIs and tools), the Brain (the LLM/agent — processing logic), and the Map (Knowledge Context Protocol — foundational routing and state). MCP defines how agents connect to tools; there was no equivalent standard for knowledge.](../../assets/images/kcp-journey-06.webp)
 
 The Knowledge Context Protocol was published as a draft specification on February 25, 2026. A `knowledge.yaml` manifest. Readable by humans, navigable by agents. Topology, intent, freshness, audience, selective loading. The same question that took thirty-three tool calls -- "What fields does the DrillHit class have?" -- takes three when the agent has a manifest that points it to the right place.
 
@@ -118,7 +118,7 @@ A mental model had developed during the lib-pcb build, quietly, without being ar
 
 Not operate the agent like a tool. Equip it like a capable colleague who is missing one piece of context.
 
-![The working stance: from operating a tool to equipping a colleague. The flawed instinct — when an agent struggles, retries, or hallucinates, take over or blame the model. The paradigm shift — watch the struggle, identify the missing capability, build that infrastructure, hand it back. The result: equip the agent like a highly capable colleague suffering from localized amnesia.](../../assets/images/kcp-journey-07.png)
+![The working stance: from operating a tool to equipping a colleague. The flawed instinct — when an agent struggles, retries, or hallucinates, take over or blame the model. The paradigm shift — watch the struggle, identify the missing capability, build that infrastructure, hand it back. The result: equip the agent like a highly capable colleague suffering from localized amnesia.](../../assets/images/kcp-journey-07.webp)
 
 Every major piece of the stack came from this same move. The agent could not find the right skill? Build navigation and hand it over. The agent burned tokens on `--help` lookups? Build kcp-commands and hand it compact guidance. The agent started every session from zero? Build kcp-memory and hand it its own history. The agent could not navigate a new codebase? Build `knowledge.yaml` and hand it a map. Each time: observe the struggle, provide the missing thing, watch the agent solve harder problems at higher quality.
 
@@ -142,7 +142,7 @@ Watching Claude Code work through tasks, a pattern emerged. When the agent was u
 
 kcp-commands shipped on March 2, 2026. A hook system that intercepts Bash tool calls at two points. Before execution: inject a compact context block with the right flags and usage. After execution: filter the output to the relevant lines. The measured result across a benchmark session: 67,352 tokens saved -- 33.7% of a 200K context window recovered.
 
-![kcp-commands: eradicating context window noise. A KCP interceptor sits between massive terminal output (ps aux, 30,000 tokens) and the agent, injecting compact context before execution and filtering output to the 12 relevant lines after. Impact: recovers 33.7% of a 200K context window.](../../assets/images/kcp-journey-08.png)
+![kcp-commands: eradicating context window noise. A KCP interceptor sits between massive terminal output (ps aux, 30,000 tokens) and the agent, injecting compact context before execution and filtering output to the 12 relevant lines after. Impact: recovers 33.7% of a 200K context window.](../../assets/images/kcp-journey-08.webp)
 
 ### kcp-memory: the blank-slate problem
 
@@ -150,7 +150,7 @@ The next morning, March 3, another struggle. Every Claude Code session starts fr
 
 kcp-memory was the answer. A Java daemon that indexes session transcripts into a local SQLite database with full-text search. The tool that made it most useful: `kcp_memory_project_context()`. No query, no argument. It reads the current working directory, returns the last five sessions and twenty tool-call events, and delivers them to the agent at the start of the session. The blank-slate problem, structurally solved -- by giving the agent access to its own history.
 
-![kcp-memory: solving the blank-slate problem. Five session blocks feed into a SQLite database thread. The struggle: 3,007 sessions across 55 days, every one starting from zero context. The equipment: a local Java daemon indexing session transcripts with full-text search. The execution: kcp_memory_project_context() instantly delivers the last 5 sessions and 20 tool-calls to the agent at startup.](../../assets/images/kcp-journey-09.png)
+![kcp-memory: solving the blank-slate problem. Five session blocks feed into a SQLite database thread. The struggle: 3,007 sessions across 55 days, every one starting from zero context. The equipment: a local Java daemon indexing session transcripts with full-text search. The execution: kcp_memory_project_context() instantly delivers the last 5 sessions and 20 tool-calls to the agent at startup.](../../assets/images/kcp-journey-09.webp)
 
 Three layers of a missing infrastructure stack were now visible:
 
@@ -158,7 +158,7 @@ Three layers of a missing infrastructure stack were now visible:
 - **kcp-memory** gives agents history -- what happened before in this project
 - **knowledge.yaml** gives agents a map -- what knowledge exists, where to find it, what it means
 
-![The completed infrastructure stack: kcp-commands (vocabulary — what commands exist and exactly how to use them), kcp-memory (history — what happened before in this project, tracking decisions and dead ends), and knowledge.yaml (the map — what knowledge exists, where to find it, what it means). Federation callout: standardized MCP interfaces mean this knowledge structure travels seamlessly across Claude, OpenCode, or any future agent.](../../assets/images/kcp-journey-10.png)
+![The completed infrastructure stack: kcp-commands (vocabulary — what commands exist and exactly how to use them), kcp-memory (history — what happened before in this project, tracking decisions and dead ends), and knowledge.yaml (the map — what knowledge exists, where to find it, what it means). Federation callout: standardized MCP interfaces mean this knowledge structure travels seamlessly across Claude, OpenCode, or any future agent.](../../assets/images/kcp-journey-10.webp)
 
 ### Bridges and federation
 
@@ -176,7 +176,7 @@ Three bridge implementations -- TypeScript, Java, Python -- shipped with the spe
 
 The spec grew through releases that each addressed a problem visible from the previous one.
 
-![Evolution into enterprise governance (v0.10 – v0.14), drawn as an ascending staircase. Stage 1: Discovery (v0.11) — pre-invocation querying, max_age_days policies, cold discovery via /.well-known/kcp.json. Stage 2: Authority (v0.12) — provenance tracking (verified, observed, rumored, deprecated) and fine-grained permissions (read, summarize, modify, execute). Stage 3: Composition (v0.14) — manifest inheritance with includes, overrides, excludes; teams stop forking YAML files and start layering organizational knowledge.](../../assets/images/kcp-journey-11.png)
+![Evolution into enterprise governance (v0.10 – v0.14), drawn as an ascending staircase. Stage 1: Discovery (v0.11) — pre-invocation querying, max_age_days policies, cold discovery via /.well-known/kcp.json. Stage 2: Authority (v0.12) — provenance tracking (verified, observed, rumored, deprecated) and fine-grained permissions (read, summarize, modify, execute). Stage 3: Composition (v0.14) — manifest inheritance with includes, overrides, excludes; teams stop forking YAML files and start layering organizational knowledge.](../../assets/images/kcp-journey-11.webp)
 
 v0.10 introduced the core query vocabulary. Instead of an agent loading every file in a repository, the manifest enables pre-invocation discovery. The agent asks a question. The serving layer scores units by trigger match, intent match, and path match. The agent loads only what it needs.
 
@@ -218,7 +218,7 @@ An auditor's question -- "How do you know this AI decision is correct?" -- was a
 
 Boring passes audit.
 
-![Production: AI compliance as double-entry bookkeeping. Legacy legal prose (ambiguous) on one side, structured YAML rules on the other — compliance.data_residency: [EEA], compliance.regulations: [GDPR] — joined by a "validated and logged" seal. The audit trail below: every AI decision is logged against a specific structured rule independently of the prompt, generating a ledger entry with W3C trace context. Boring, complete, hard to fake.](../../assets/images/kcp-journey-12.png)
+![Production: AI compliance as double-entry bookkeeping. Legacy legal prose (ambiguous) on one side, structured YAML rules on the other — compliance.data_residency: [EEA], compliance.regulations: [GDPR] — joined by a "validated and logged" seal. The audit trail below: every AI decision is logged against a specific structured rule independently of the prompt, generating a ledger entry with W3C trace context. Boring, complete, hard to fake.](../../assets/images/kcp-journey-12.webp)
 
 ### The trust gap and the content gap: v0.16 and v0.17
 
@@ -228,11 +228,11 @@ Two gaps had been visible for months but unaddressed. The trust gap: when your a
 
 v0.16 introduces the Trusted Render Pipeline. Three principles: LLM-free (deterministic transforms only), fail-closed (any failure produces no output, not partial output), and consumer-side tier assignment (a manifest cannot claim to be trusted -- the consumer decides). Four trust tiers: `trusted`, `known`, `unsigned`, `failed`. Cryptographic signing with Ed25519. And the mechanism that closes the signature-stripping attack: scope pinning. When a public key is added to an allowlist with a pinned origin, a manifest arriving from that origin without a signature renders as `failed`, not `unsigned`. The absence of the expected signature is itself the signal.
 
-![Closing the trust gap (v0.16). A padlock at the center of a federated manifest graph, anchored by an Ed25519 signature key with scope pinning. The Trusted Render Pipeline's three principles: LLM-free (deterministic transformations only), fail-closed (any failure produces zero output), and consumer-side tiers (a manifest cannot claim trust; the consumer assigns it). The absence of an expected signature automatically triggers a failure state.](../../assets/images/kcp-journey-13.png)
+![Closing the trust gap (v0.16). A padlock at the center of a federated manifest graph, anchored by an Ed25519 signature key with scope pinning. The Trusted Render Pipeline's three principles: LLM-free (deterministic transformations only), fail-closed (any failure produces zero output), and consumer-side tiers (a manifest cannot claim trust; the consumer assigns it). The absence of an expected signature automatically triggers a failure state.](../../assets/images/kcp-journey-13.webp)
 
 v0.17 introduces content structure metadata -- `primary`, `contains`, `density` -- so a RAG pipeline can decide its extraction strategy before fetching a unit, not after. And the spec's first subtractive matching field: `not_for`. Every previous matching field in KCP is additive -- triggers, intents, scopes all say "this unit is relevant when X." `not_for` says the opposite: "this unit is explicitly not about Y." The negative space that search systems almost never model. Soft demotion by default; hard exclusion with `not_for_strict: true`.
 
-![Closing the content gap: subtractive matching (v0.17). A Venn diagram where the target concept overlaps excluded content, with not_for pointing at the intersection. The blind spot: traditional matching fields (triggers, intents) are strictly additive — they only say "this is relevant when X." The KCP solution: not_for explicitly declares what a unit is NOT about, utilizing negative space. Soft demotion by default; hard exclusion via not_for_strict: true.](../../assets/images/kcp-journey-14.png)
+![Closing the content gap: subtractive matching (v0.17). A Venn diagram where the target concept overlaps excluded content, with not_for pointing at the intersection. The blind spot: traditional matching fields (triggers, intents) are strictly additive — they only say "this is relevant when X." The KCP solution: not_for explicitly declares what a unit is NOT about, utilizing negative space. Soft demotion by default; hard exclusion via not_for_strict: true.](../../assets/images/kcp-journey-14.webp)
 
 The details of both releases are in the [companion post](2026-06-12-kcp-0.16-0.17-trust-and-content.md), published today. What matters for this story is the arc.
 
@@ -256,7 +256,7 @@ It started with a question about a Java class and thirty-three tool calls.
 
 It is not finished.
 
-![The Unfinished Map: it started with a question about a Java class and a 33-tool-call bug. It became a global specification spanning episodic memory, command optimization, compliance infrastructure, and cryptographic trust. From a local workaround to the cartography of the agentic web. The evolution continues.](../../assets/images/kcp-journey-15.png)
+![The Unfinished Map: it started with a question about a Java class and a 33-tool-call bug. It became a global specification spanning episodic memory, command optimization, compliance infrastructure, and cryptographic trust. From a local workaround to the cartography of the agentic web. The evolution continues.](../../assets/images/kcp-journey-15.webp)
 
 ---
 

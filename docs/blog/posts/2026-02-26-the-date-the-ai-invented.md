@@ -32,7 +32,7 @@ No such date appeared anywhere in the context. The agent did not retrieve it fro
 
 That one wrong date is the most important finding from our Phase 5 benchmark. Not because of the date itself, but because of what it reveals about how we load knowledge into AI agents, and what we need to do differently.
 
-![The KCP-MCP Composability Model: solving the AI agent knowledge gap](/assets/images/blog/kcp-mcp-composability-model.png)
+![The KCP-MCP Composability Model: solving the AI agent knowledge gap](/assets/images/blog/kcp-mcp-composability-model.webp)
 
 ## What the benchmark was testing
 

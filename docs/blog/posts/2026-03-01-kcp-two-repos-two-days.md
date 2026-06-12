@@ -18,7 +18,7 @@ authors:
 
 # KCP on Two Repos, Two Days: What the Numbers Actually Show
 
-![KCP benchmarking: 119 → 31 tool calls on application code, 53 → 25 on documentation. Two case studies, same methodology.](/assets/images/kcp-two-repos-benchmark.png)
+![KCP benchmarking: 119 → 31 tool calls on application code, 53 → 25 on documentation. Two case studies, same methodology.](/assets/images/kcp-two-repos-benchmark.webp)
 
 This week we applied KCP to two repositories back to back. Both got a `knowledge.yaml` manifest, pre-built TL;DR files for the highest-traffic sections, and a before/after benchmark using the same model and methodology.
 
@@ -26,7 +26,7 @@ The repos are very different. One is an application codebase — a plugin wizard
 
 The question was whether KCP adds meaningful value in both cases, and whether the nature of the content changes the answer.
 
-![Without a manifest, agents wander. With one, they go straight to the answer.](/assets/images/kcp-slide-spaghetti.png)
+![Without a manifest, agents wander. With one, they go straight to the answer.](/assets/images/kcp-slide-spaghetti.webp)
 
 <!-- more -->
 
@@ -60,11 +60,11 @@ All agents ran in the same session for consistency.
 
 **74% fewer tool calls.** 9 of 10 queries cost ≤3 tool calls with KCP. Zero do without it.
 
-![74% fewer tool calls on an application codebase: 119 baseline calls vs 31 with KCP across 10 queries.](/assets/images/kcp-two-repos-74percent.png)
+![74% fewer tool calls on an application codebase: 119 baseline calls vs 31 with KCP across 10 queries.](/assets/images/kcp-two-repos-74percent.webp)
 
 The expensive queries were the revealing ones. "How to create a new agent" cost 16 baseline tool calls — the agent read the README, found no direct answer, read the architecture doc, found a partial answer, then read four more files including source code to piece it together. The KCP agent read the manifest, matched the query to the `agents-guide` unit, and read one file: 3 tool calls total.
 
-![The "create a new agent" query: 16 baseline reads vs 3 with KCP. The manifest replaced searching with routing.](/assets/images/kcp-two-repos-journey-map.png)
+![The "create a new agent" query: 16 baseline reads vs 3 with KCP. The manifest replaced searching with routing.](/assets/images/kcp-two-repos-journey-map.webp)
 
 Q8 (icon library, 9 KCP calls) is the honest outlier. There is no dedicated icons unit in the manifest. The KCP agent correctly matched the nearest relevant unit and kept digging through source files. That is the right behaviour. It also tells you exactly where the manifest should grow next.
 
@@ -87,7 +87,7 @@ One baseline agent (Q1, architecture) organically found the TL;DR files without 
 | Go-live checklists | 8 | 2 | 6 |
 | **Total** | **53** | **25** | **28** |
 
-![53% fewer tool calls across 7 queries. The best case — go-live checklists — dropped from 8 reads to 2.](/assets/images/kcp-slide-53pct.png)
+![53% fewer tool calls across 7 queries. The best case — go-live checklists — dropped from 8 reads to 2.](/assets/images/kcp-slide-53pct.webp)
 
 **53% fewer tool calls.** The best case — go-live checklists — went from 8 reads to 2.
 
@@ -95,7 +95,7 @@ The pattern without the manifest: agent reads the README, gets chapter titles, r
 
 With the manifest, the agent read `knowledge.yaml` and found the trigger: `policy-guardrails-tldr` has `prompt-injection` as a declared trigger. Two calls. The TL;DR had enough depth for the answer; the full chapter was never loaded.
 
-![The prompt injection query: baseline agent read 3 full chapters (11 calls). KCP agent found the trigger and routed to the TL;DR (5 calls).](/assets/images/kcp-two-repos-trigger-routing.png)
+![The prompt injection query: baseline agent read 3 full chapters (11 calls). KCP agent found the trigger and routed to the TL;DR (5 calls).](/assets/images/kcp-two-repos-trigger-routing.webp)
 
 ---
 
@@ -107,7 +107,7 @@ In a code repository, answers are scattered across source files, schemas, and gu
 
 In a documentation repository, the structure is flatter. Each chapter has a clear topic. A baseline agent can usually narrow to the right chapter in 3-4 reads if the README is well-organised. The savings are real but smaller because the baseline cost was lower to begin with.
 
-![The same KCP mechanism produces 74% reduction in complex codebases and 53% in flat documentation. KCP adds more value where navigation is harder.](/assets/images/kcp-slide-contrast.png)
+![The same KCP mechanism produces 74% reduction in complex codebases and 53% in flat documentation. KCP adds more value where navigation is harder.](/assets/images/kcp-slide-contrast.webp)
 
 What KCP adds in both cases is the same thing: the agent arrives knowing what the repo contains, which file answers which question, and how expensive each answer will be to retrieve. It does not have to discover the structure; it reads the structure.
 
@@ -143,7 +143,7 @@ Repo 1 will be linked when consent is confirmed.
 
 The KCP specification is at [github.com/cantara/knowledge-context-protocol](https://github.com/cantara/knowledge-context-protocol). The two experiments here represent two different repository types — application code and pure documentation — and the results suggest the pattern generalises.
 
-![The worse the baseline experience, the bigger the improvement. That is not a limitation of the approach; it is the point.](/assets/images/kcp-two-repos-closing.png)
+![The worse the baseline experience, the bigger the improvement. That is not a limitation of the approach; it is the point.](/assets/images/kcp-two-repos-closing.webp)
 
 ---
 

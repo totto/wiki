@@ -32,13 +32,13 @@ The Investigator had other plans.
 
 <!-- more -->
 
-![The Squash Merge Murders](../../assets/images/squash-merge-murders/slide-01.png)
+![The Squash Merge Murders](../../assets/images/squash-merge-murders/slide-01.webp)
 
 ---
 
 ## The Tradition of Påskekrim
 
-![The Tradition of Påskekrim](../../assets/images/squash-merge-murders/slide-02.png)
+![The Tradition of Påskekrim](../../assets/images/squash-merge-murders/slide-02.webp)
 
 The first case was supposed to be routine. A race timing platform — call it HoldTid AS — needed menus wired up, race bib management, and a discount CRUD that had been on the backlog since February. The kind of work that smells like Monday morning and tastes like reheated oatmeal.
 
@@ -54,13 +54,13 @@ The second browser tab was already open.
 
 ## The Deceptive Calm of HoldTid AS
 
-![The Deceptive Calm of HoldTid AS](../../assets/images/squash-merge-murders/slide-03.png)
+![The Deceptive Calm of HoldTid AS](../../assets/images/squash-merge-murders/slide-03.webp)
 
 ---
 
 ## Dead on Arrival at TillitNett
 
-![Dead on Arrival at TillitNett](../../assets/images/squash-merge-murders/slide-04.png)
+![Dead on Arrival at TillitNett](../../assets/images/squash-merge-murders/slide-04.webp)
 
 Six pull requests sat in Azure DevOps, stacked like a column of suspects in an interrogation room. All targeting `dev`. All part of a simulator system for a B2B trust-scoring platform — call it TillitNett — built across six branches, each one dependent on the one before it. The architecture was clean. The local tests were green. Vitest had given the all-clear: 326 tests, every one of them passing.
 
@@ -74,13 +74,13 @@ The mug said "It works on my machine." It had never been more accurate or less c
 
 ## The Accomplice Matrix: Runtime vs. Forensics
 
-![The Accomplice Matrix: Runtime vs. Forensics](../../assets/images/squash-merge-murders/slide-05.png)
+![The Accomplice Matrix: Runtime vs. Forensics](../../assets/images/squash-merge-murders/slide-05.webp)
 
 ---
 
 ## Murder Weapon #1: The Subtle Assassin
 
-![Murder Weapon #1: The Subtle Assassin](../../assets/images/squash-merge-murders/slide-06.png)
+![Murder Weapon #1: The Subtle Assassin](../../assets/images/squash-merge-murders/slide-06.webp)
 
 The first murder weapon was subtle — the kind of crime that only a certain type of detective would even recognize as violence.
 
@@ -108,7 +108,7 @@ Six pipelines. Same error. The silent assassin.
 
 ## Murder Weapon #2: Identity Fraud at Velocity
 
-![Murder Weapon #2: Identity Fraud at Velocity](../../assets/images/squash-merge-murders/slide-07.png)
+![Murder Weapon #2: Identity Fraud at Velocity](../../assets/images/squash-merge-murders/slide-07.webp)
 
 The second murder weapon was bolder and, in its own way, more disturbing.
 
@@ -130,13 +130,13 @@ And again — esbuild didn't catch it. Vitest didn't catch it. Locally, the code
 
 ## The Setup for a Massacre
 
-![The Setup for a Massacre](../../assets/images/squash-merge-murders/slide-08.png)
+![The Setup for a Massacre](../../assets/images/squash-merge-murders/slide-08.webp)
 
 ---
 
 ## The Squash Merge Cascade
 
-![The Squash Merge Cascade](../../assets/images/squash-merge-murders/slide-09.png)
+![The Squash Merge Cascade](../../assets/images/squash-merge-murders/slide-09.webp)
 
 Fixing two TypeScript errors should have been the end of it. Two fixes, push, move on, pour more coffee. But the Investigator was not dealing with two errors in isolation. The Investigator was dealing with six stacked pull requests and Azure DevOps's squash merge strategy, and this is where the påskekrim takes its darkest turn.
 
@@ -158,7 +158,7 @@ Then do it again for PR #3. And #4. And #5. And #6. Each rebase peeling back the
 
 ## The Grind
 
-![The Grind](../../assets/images/squash-merge-murders/slide-10.png)
+![The Grind](../../assets/images/squash-merge-murders/slide-10.webp)
 
 By the time all six branches were rebased, force-pushed with lease, re-reviewed, and merged, the sprint counter read thirty-plus PRs. The ExoCortex maintained velocity throughout. But the friction was real.
 
@@ -168,7 +168,7 @@ By the time all six branches were rebased, force-pushed with lease, re-reviewed,
 
 ## The Cold Case: Knowledge Control Protocol
 
-![The Cold Case: Knowledge Control Protocol](../../assets/images/squash-merge-murders/slide-11.png)
+![The Cold Case: Knowledge Control Protocol](../../assets/images/squash-merge-murders/slide-11.webp)
 
 Between the active investigations, a folder sat open on the desk. It was always open. The Knowledge Control Protocol — KCP — an open specification for how AI systems discover, negotiate, and serve structured knowledge. The kind of work that never makes the front page. The kind of work that, years from now, will be the thing everything else was built on.
 
@@ -178,7 +178,7 @@ Every detective has a cold case. The one that doesn't close but won't let you sl
 
 ## Vendepunktet: The Twist
 
-![Vendepunktet: The Twist](../../assets/images/squash-merge-murders/slide-12.png)
+![Vendepunktet: The Twist](../../assets/images/squash-merge-murders/slide-12.webp)
 
 The Investigator runs workshops. Software-Driven Design — the methodology. How to think architecturally, how to decompose problems, how to let AI-augmented tooling handle implementation velocity while the human handles intent. Mid-week, snow still falling, a group of young developers gathered to learn.
 
@@ -192,7 +192,7 @@ The application generates meal plans and automatically produces Norwegian grocer
 
 ## The Greenfield Evidence
 
-![The Greenfield Evidence](../../assets/images/squash-merge-murders/slide-13.png)
+![The Greenfield Evidence](../../assets/images/squash-merge-murders/slide-13.webp)
 
 Fifteen thousand five hundred lines of code. Three hundred and twenty-six tests. Eighty-two percent test coverage. Built in two days.
 
@@ -202,7 +202,7 @@ A second student built a digital audio simulator running in the browser via WebA
 
 ## The Synthesis: Evidence of Scale
 
-![The Synthesis: Evidence of Scale](../../assets/images/squash-merge-murders/slide-14.png)
+![The Synthesis: Evidence of Scale](../../assets/images/squash-merge-murders/slide-14.webp)
 
 Here is the twist — the one the påskekrim saves for the last pages:
 
@@ -222,7 +222,7 @@ The friction isn't a sign that something is broken. The friction is a sign that 
 
 ## Etterskrift: April 1st
 
-![Etterskrift: April 1st](../../assets/images/squash-merge-murders/slide-15.png)
+![Etterskrift: April 1st](../../assets/images/squash-merge-murders/slide-15.webp)
 
 It was April 1st when the last PR merged. Nobody laughed.
 

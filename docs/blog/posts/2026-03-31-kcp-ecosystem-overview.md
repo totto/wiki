@@ -23,7 +23,7 @@ authors:
 
 # The KCP Ecosystem: How Five Tools Turn Claude Code Into a Persistent Intelligence Platform
 
-![The KCP Ecosystem — Turning Claude Code into a Persistent Intelligence Platform](/assets/images/blog/kcp-ecosystem-slide-01-cover.png)
+![The KCP Ecosystem — Turning Claude Code into a Persistent Intelligence Platform](/assets/images/blog/kcp-ecosystem-slide-01-cover.webp)
 
 ---
 
@@ -31,13 +31,13 @@ authors:
 
 Every session with Claude Code starts from zero.
 
-![Every AI session starts from zero — the Start-From-Zero Loop](/assets/images/blog/kcp-ecosystem-slide-02-start-from-zero.png)
+![Every AI session starts from zero — the Start-From-Zero Loop](/assets/images/blog/kcp-ecosystem-slide-02-start-from-zero.webp)
 
 You open a new session, and the model has no idea what you were doing yesterday. Which services are running. What you decided about the database schema last Thursday. Why you chose the library you chose. You re-explain it. Claude asks clarifying questions you answered two sessions ago. You paste the same background context you always paste. Then the work begins.
 
 And when the work does begin, there's a different problem: output flooding the context window. Run `mvn package` and you get 400 lines of Maven lifecycle noise. Run `terraform plan` and the diff buries the actual changes in scaffolding. Run `kubectl get pods` cluster-wide and you've spent 8,000 tokens on status rows you didn't need.
 
-![Context flooding destroys working memory — 33.7% of a 200K context is recovery overhead](/assets/images/blog/kcp-ecosystem-slide-03-context-flooding.png)
+![Context flooding destroys working memory — 33.7% of a 200K context is recovery overhead](/assets/images/blog/kcp-ecosystem-slide-03-context-flooding.webp)
 
 The context window is your working memory. Filling it with boilerplate and re-explaining the same setup repeatedly is waste — not just inconvenient, but structurally limiting. A 200K token context sounds vast until a third of it is recovery overhead.
 
@@ -51,7 +51,7 @@ That infrastructure is KCP.
 
 ## KCP: The Missing Infrastructure Layer
 
-![KCP: The Missing Infrastructure Layer — knowledge.yaml as manifest router](/assets/images/blog/kcp-ecosystem-slide-04-missing-infrastructure.png)
+![KCP: The Missing Infrastructure Layer — knowledge.yaml as manifest router](/assets/images/blog/kcp-ecosystem-slide-04-missing-infrastructure.webp)
 
 KCP stands for Knowledge Context Protocol. It is an open specification — not a product, not a SaaS, not a platform — for structuring how knowledge flows into AI agent tool calls.
 
@@ -73,11 +73,11 @@ kcp-commands is not a CLI. That distinction matters. It is a Claude Code hook �
 
 It ships with 291 YAML manifests covering the tools developers actually use: `git`, `mvn`, `docker`, `kubectl`, `terraform`, `ansible`, `ps`, `find`, `curl`, and hundreds more. Each manifest encodes what `--help` doesn't tell you: when to use this command, which flags are idiomatic for which situations, and what common errors to watch out for.
 
-![Measured impact: 53–80% fewer tool calls, ps aux drops from 30,828 to 652 tokens, 84% suppressed](/assets/images/blog/kcp-ecosystem-slide-05-measured-impact.png)
+![Measured impact: 53–80% fewer tool calls, ps aux drops from 30,828 to 652 tokens, 84% suppressed](/assets/images/blog/kcp-ecosystem-slide-05-measured-impact.webp)
 
 The hook operates in three phases on every command:
 
-![kcp-commands Phase A (inject), Phase B (noise filter), Phase C (log event)](/assets/images/blog/kcp-ecosystem-slide-06-kcp-commands-phases.png)
+![kcp-commands Phase A (inject), Phase B (noise filter), Phase C (log event)](/assets/images/blog/kcp-ecosystem-slide-06-kcp-commands-phases.webp)
 
 **Phase A — Proactive guidance (before execution).** When Claude is about to run a command, kcp-commands injects a compact `additionalContext` block with use-case flags and preferred invocations. Instead of Claude running `ps --help` first and parsing the output, it already has the signal it needs. That is roughly 532 tokens saved per avoided `--help` call.
 
@@ -95,7 +95,7 @@ The daemon runs as a background process with two backend implementations: Java (
 
 If kcp-commands is the real-time layer, kcp-memory is the historical layer. It indexes your session transcripts and tool-call events into a local SQLite database with full-text search, and makes that history queryable — from the CLI, from an HTTP API, and from inside Claude sessions as an MCP server.
 
-![Three memory types: Working (Claude Code), Episodic (kcp-memory), Semantic (Synthesis)](/assets/images/blog/kcp-ecosystem-slide-07-kcp-memory-types.png)
+![Three memory types: Working (Claude Code), Episodic (kcp-memory), Semantic (Synthesis)](/assets/images/blog/kcp-ecosystem-slide-07-kcp-memory-types.webp)
 
 The model distinguishes this cleanly from the other two memory types developers already have:
 
@@ -105,7 +105,7 @@ The model distinguishes this cleanly from the other two memory types developers 
 
 kcp-memory fills the middle layer. Without it, "what was I doing in this project last week?" is unanswerable in the session. With it, you run `kcp-memory search "OAuth implementation"` and get the relevant sessions back in milliseconds.
 
-![Surgical recall: memory.db → CLI / HTTP API / MCP server with 8 inline tools](/assets/images/blog/kcp-ecosystem-slide-08-kcp-memory-recall.png)
+![Surgical recall: memory.db → CLI / HTTP API / MCP server with 8 inline tools](/assets/images/blog/kcp-ecosystem-slide-08-kcp-memory-recall.webp)
 
 kcp-memory reads two sources: the `.jsonl` session transcript files Claude Code writes to `~/.claude/projects/`, and the `~/.kcp/events.jsonl` event log produced by kcp-commands. It indexes both into a local SQLite database. Indexing is incremental — on each scan, only new or changed transcripts are processed, so re-scanning a large project history is fast. The tool also supports Gemini CLI and Codex CLI transcripts.
 
@@ -119,7 +119,7 @@ The HTTP API runs on port 7735 for anything that wants to query memory programma
 
 ### kcp-dashboard: Live Context Health at a Glance
 
-![kcp-dashboard: five-panel terminal UI with manifest coverage, guidance effects, session profile](/assets/images/blog/kcp-ecosystem-slide-09-kcp-dashboard.png)
+![kcp-dashboard: five-panel terminal UI with manifest coverage, guidance effects, session profile](/assets/images/blog/kcp-ecosystem-slide-09-kcp-dashboard.webp)
 
 kcp-dashboard is a terminal UI — built in Go with Bubble Tea and Lip Gloss — that reads from the shared `~/.kcp/` data directory and shows you the state of your KCP setup in real time. It auto-refreshes every two seconds.
 
@@ -148,7 +148,7 @@ kcp-dashboard
 
 ### kcp-triage: Security Triage on Top of KCP Manifests
 
-![kcp-triage: manifest-aware router delivers only relevant security findings](/assets/images/blog/kcp-ecosystem-slide-10-kcp-triage.png)
+![kcp-triage: manifest-aware router delivers only relevant security findings](/assets/images/blog/kcp-ecosystem-slide-10-kcp-triage.webp)
 
 kcp-triage is the newest and most specialised tool in the ecosystem. It uses Claude to analyse repositories and websites for security posture — checking dependency hygiene, configuration exposure, secrets in public paths, and similar concerns — and surfaces results through the KCP manifest model.
 
@@ -160,7 +160,7 @@ The tool is earlier in maturity than kcp-commands or kcp-memory, and the manifes
 
 ### kcp: The Spec Itself
 
-![KCP Spec v0.14: query vocabulary, federation, delegation, context hints — versus llms.txt](/assets/images/blog/kcp-ecosystem-slide-11-kcp-spec.png)
+![KCP Spec v0.14: query vocabulary, federation, delegation, context hints — versus llms.txt](/assets/images/blog/kcp-ecosystem-slide-11-kcp-spec.webp)
 
 The fifth component is not a tool — it is the foundation the other four implement. The `knowledge-context-protocol` repository on GitHub under the Cantara organisation hosts the spec, the validator parsers, and the bridge implementations.
 
@@ -177,7 +177,7 @@ Bridge implementations exist in TypeScript, Python, and Java. The spec is explic
 
 ## How They Wire Together
 
-![How the five tools wire together into a persistent loop through ~/.kcp/](/assets/images/blog/kcp-ecosystem-slide-12-wire-together.png)
+![How the five tools wire together into a persistent loop through ~/.kcp/](/assets/images/blog/kcp-ecosystem-slide-12-wire-together.webp)
 
 The data flow is straightforward once you see it:
 
@@ -253,7 +253,7 @@ kcp-dashboard
 
 ## Common Gotchas
 
-![Common gotchas and immediate fixes: better-sqlite3, JVM cold start, Java 21](/assets/images/blog/kcp-ecosystem-slide-14-gotchas.png)
+![Common gotchas and immediate fixes: better-sqlite3, JVM cold start, Java 21](/assets/images/blog/kcp-ecosystem-slide-14-gotchas.webp)
 
 **`better-sqlite3` requires a build environment.** The `kcp stats` command depends on `better-sqlite3`, which compiles native bindings through `node-gyp`. On a minimal system this fails silently. Fix: `sudo apt install build-essential python3` (Ubuntu/Debian) or `xcode-select --install` (macOS), then re-run the installer. Alternatively, use the Java daemon which has no native compilation dependency.
 
@@ -265,7 +265,7 @@ kcp-dashboard
 
 ## What's Next
 
-![What's next: local → multi-repo federation → multi-agent federation](/assets/images/blog/kcp-ecosystem-slide-15-whats-next.png)
+![What's next: local → multi-repo federation → multi-agent federation](/assets/images/blog/kcp-ecosystem-slide-15-whats-next.webp)
 
 kcp-commands is the most mature component and manifest count continues to grow as the community adds coverage for more specialised tools.
 

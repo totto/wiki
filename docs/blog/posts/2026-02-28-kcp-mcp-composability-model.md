@@ -66,7 +66,7 @@ Apache v2.
 
 ## What the agent sees
 
-![The KCP-MCP Composability Model](/assets/images/blog/kcp-mcp-composability-model.png)
+![The KCP-MCP Composability Model](/assets/images/blog/kcp-mcp-composability-model.webp)
 
 When the bridge is running, the agent has access to structured knowledge units — not a flat
 text dump. Each resource carries the metadata that makes it navigable:
