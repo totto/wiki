@@ -43,8 +43,6 @@ The corrected dashboard does not claim tokens saved. It reports **tokens of cont
 
 This is the Scandinavian approach: say what you can prove, not what sounds impressive.
 
-![Dashboard correction: from fabricated savings to honest delivery metrics](/assets/images/blog/kcp-dashboard-honest-metrics.png)
-
 ---
 
 ## What the dashboard shows
@@ -75,8 +73,6 @@ The data source is `memory.db`'s tool_events table -- over 15,000 events spannin
 
 **Quality alerts** -- the top 5 worst-scoring manifests ranked by retry rate plus help followup rate, with call counts. This is the prioritized improvement list: which manifests should be rewritten first.
 
-![Guidance Effects panel showing manifest coverage, retry rate, help followup rate, and quality alerts](/assets/images/blog/kcp-dashboard-guidance-effects.png)
-
 ### Session Profile
 
 This panel answers: what does a typical agent session look like?
@@ -92,8 +88,6 @@ The data comes from `memory.db`'s sessions table -- 3,742 indexed sessions. The 
 | 100+ | ~374 | 10% |
 
 The average session has 78 turns and 42 tool calls. Nearly half of all sessions are very short -- quick lookups, single-file edits, one-question answers. But 20% of sessions run past 50 turns, and those long sessions are where guidance quality matters most. A bad manifest injected at turn 3 of a 100-turn session can cascade through the remaining 97 turns.
-
-![Session Profile panel showing turn count distribution across 3,742 sessions](/assets/images/blog/kcp-dashboard-session-profile.png)
 
 ### Commands Guided
 

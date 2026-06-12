@@ -754,6 +754,15 @@ units:
     depends_on: [blog-ai-augmented-consultant]
     triggers: [twenty-codebases, sdd, methodology, transferable, multi-repo, patterns, consultant]
 
+  - id: blog-the-beginning
+    path: blog/posts/2026-05-12-the-beginning.md
+    intent: "How did Ægis come to be — the origin story from lib-pcb through SDD and Synthesis to the brand."
+    scope: global
+    audience: [human, developer, architect]
+    validated: 2026-05-12
+    depends_on: [blog-twenty-codebases]
+    triggers: [aegis, origin-story, lib-pcb, sdd, synthesis, brand, exoreaction, naming, methodology]
+
   # ── Blog posts — AI agent architecture ───────────────────────────────────
 
   - id: blog-four-layers
