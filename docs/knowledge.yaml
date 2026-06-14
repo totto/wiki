@@ -1,6 +1,6 @@
 # wiki.totto.org — KCP root manifest (federated)
-# KCP v0.14 — see https://github.com/Cantara/kcp
-version: "0.14"
+# KCP v0.21 — see https://github.com/Cantara/kcp
+version: "0.21"
 
 entity:
   name: Thor Henning Hetland (Totto)
