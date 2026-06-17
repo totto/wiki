@@ -1,0 +1,67 @@
+# wiki.totto.org — Projects sub-manifest
+# Parent: https://wiki.totto.org/knowledge.yaml
+version: "0.14"
+
+id: projects
+parent: https://wiki.totto.org/knowledge.yaml
+
+discovery:
+  provenance: canonical
+  confidence: high
+  staleness_days: 30
+
+signing:
+  scheme: ed25519
+  scope: this-manifest
+  public_key: https://wiki.totto.org/.well-known/kcp-signing-key.pub
+  signature: https://wiki.totto.org/knowledge/projects.yaml.sig
+
+projects:
+  kcp:
+    title: KCP — Knowledge Context Protocol
+    description: >
+      Open standard for machine-readable organisational knowledge manifests.
+      knowledge.yaml files declare what agents need to understand your org
+      without prompt-stuffing. Federation, signing, and governance built in.
+    repo: https://github.com/Cantara/kcp
+    manifest: https://cantara.github.io/knowledge-context-protocol/knowledge.yaml
+    current_version: "0.14"
+    license: Apache 2.0
+    toolchain:
+      - kcp-commands (Claude Code hook, context injection + output filtering)
+      - kcp-memory (episodic memory hub for agent networks)
+      - kcp-triage (deterministic nightly memory maintenance, zero LLM calls)
+      - kcp-dashboard (terminal TUI for KCP toolchain observability)
+    reference_implementation: https://xn--gis-xla.no/knowledge.yaml
+
+  synthesis:
+    title: Synthesis
+    description: >
+      Knowledge index across entire codebases. Lucene-based, sub-second retrieval.
+      21 security signal types. Auto-generates skills from session patterns.
+      Episodic memory, workspace graph, topic health maintenance.
+    status: private (not yet public)
+    current_version: "1.27.0+"
+    stats:
+      tested_scale_repos: 289
+      tested_scale_files: 66350
+      answer_latency: 1.2s
+      tool_call_reduction: 40%
+
+  exocortex:
+    title: ExoCortex
+    description: >
+      Human-led agentic workflow system. Declare → execute → verify.
+      Human in the loop at decisions that matter; out of it everywhere else.
+      Orchestrates Synthesis, KCP, Skills Library, and agent fleet.
+    status: private
+
+  skills_library:
+    title: Skills Library
+    description: >
+      529 skills for Claude Code, mined from real production sessions.
+      Covers Java, Spring, Kotlin, TypeScript, Python, React, architecture,
+      security, testing, and DX patterns. Auto-curated, behaviourally scored.
+    size: 529
+    licensing: [personal, business]
+    contact: selina@exoreaction.com

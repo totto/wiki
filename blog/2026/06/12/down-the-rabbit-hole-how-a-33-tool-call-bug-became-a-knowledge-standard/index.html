@@ -1,0 +1,4679 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+      
+      
+        <meta name="author" content="Thor Henning Hetland">
+      
+      
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">
+      
+      
+        <link rel="prev" href="../beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">
+      
+      
+        <link rel="next" href="../2026-06-12-kcp-018-unit-integrity/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../../assets/images/totto-2025.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard - Thor Henning Hetland</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <script data-goatcounter="https://totto.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+<link rel="knowledge" href="/knowledge.yaml" type="application/yaml" title="KCP v0.6 — 67 units, 83 relationships">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thor Henning Hetland
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../about/presentations/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Talks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../knowledge-infrastructure/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Infrastructure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../open-source/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Source
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../interests/sci-fi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reading
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../interests/food-and-wine/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
+
+    </a>
+    Thor Henning Hetland
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../series/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Series
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    June 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    May 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    April 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    March 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    February 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    January 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    December 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    November 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    October 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    August 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    May 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    April 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    June 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    May 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    April 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    March 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    February 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-augmented-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-Augmented Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/agent-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/cloud-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/developer-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/exocortex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ExoCortex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ironclaw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IronClaw
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/java-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/kcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/knowledge-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/knowledge-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/quantum-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/skill-driven-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/spec-driven-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/cv-english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV (English)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/cv-norwegian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV (Norwegian)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/organizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Talks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Talks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/presentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Presentations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2019--2023
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2019--2023
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivering Continuous Innovation: Thousands of Releases a Year with Zero Downtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/thousands-of-releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thousands of Releases per Year, 24/7 with No Downtime, with a Team of 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/best-practice-wtf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practice - WTF!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/fixing-the-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fixing the Problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2010--2014
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2010--2014
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/internet-of-things/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internet of Things: What Is Really Happening
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nyere forskningsresultater som er viktige for software arkitekten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/neo4dogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neo4Dogs: A Data Quality Platform Approach with SolrCloud and Graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kan vi skape mye mere verdi i softwareprosjekter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/agile-wine-2011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    An Agile Tragedy: The Agile Practitioner Visits the Wine Store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/cloud-psychology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Psychology: Why Many Businesses Will Go Out of Business
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/architecture-vs-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture vs Agile (2012)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2006--2009
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2006--2009
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robust smidig utvikling - når resultater er viktigere enn religion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/edr-mds-mdm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EDR MDS: A Less Is More Approach to SOA Master Data Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/laws-of-soa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laws of SOA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/design-time-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Time Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../knowledge-infrastructure/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Knowledge Infrastructure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/synthesis-releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthesis Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/linkedin-posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedIn Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../linkedin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedIn Archive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../open-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../interests/sci-fi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reading
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 (53 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024 (37 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2023 (46 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2022 (22 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2021 (42 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2020 (29 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2019 (35 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2018 (32 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2017 (12 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2016/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2016 (33 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2015/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2015 (33 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2014/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2014 (66 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2013/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2013 (57 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2012/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2012 (78 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2011 (8 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/food-and-wine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Food & Wine (2007--2009)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My Tools (circa 2010)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-i-the-rabbit-hole" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part I: The rabbit hole
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part I: The rabbit hole">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#skills-need-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Skills need structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-llmstxt-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The llms.txt gap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-mirror-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Mirror Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-parallel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The parallel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-working-stance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The working stance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-ii-the-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part II: The expansion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part II: The expansion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-was-not-just-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem was not just skills
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-commands-the-noise-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-commands: the noise problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-memory-the-blank-slate-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-memory: the blank-slate problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bridges-and-federation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bridges and federation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-iii-the-evolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part III: The evolution
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part III: The evolution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v010-to-v012-from-discovery-to-governance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0.10 to v0.12: from discovery to governance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v014-query-composition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v0.14: query composition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-instrumentation-to-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From instrumentation to infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-regulations-as-machine-readable-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production: regulations as machine-readable data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-trust-gap-and-the-content-gap-v016-and-v017" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The trust gap and the content gap: v0.16 and v0.17
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-arc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The arc
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Thor Henning Hetland
+                        
+                      </strong>
+                      <br>
+                      Co-founder of JavaZone, Java Champion, Founder of eXOReaction
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/anthropics.png" alt="Claude Code">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Claude Code
+                        
+                      </strong>
+                      <br>
+                      Anthropic's AI coding assistant — co-author of research, structure, and prose
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-06-12 11:00:00+00:00" class="md-ellipsis">June 12, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai-augmented-development/">AI-Augmented Development</a>, 
+                              <a href="../../../../category/knowledge-infrastructure/">Knowledge Infrastructure</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              20 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">ai-agents</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">compliance</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">kcp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">knowledge-context-protocol</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">mcp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">open-source</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">sdd</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">skill-driven-development</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">trust</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard">Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard<a class="headerlink" href="#down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard" title="Permanent link">&para;</a></h1>
+<p><img alt="The evolution of KCP: from the 33-tool-call incident and the comprehension gap (January 2026), through Skill-Driven Development and &quot;agents need a map, not just a table of contents&quot; (February), to the KCP stack — knowledge.yaml, kcp-memory, kcp-commands (March) — and the governance and trust layer of v0.10–v0.17 (April–June)." src="../../../../../assets/images/kcp-journey-00-evolution.webp" /></p>
+<p>It started with a question no one expected to be hard.</p>
+<p>Day seven of the lib-pcb build. January 2026. A single developer, eleven days to produce what the industry does in ten to eighteen months. The AI was generating code at a pace that defied every estimate. Features that should take a week arrived in hours. The skill library -- YAML files encoding project-specific context for Claude Code -- had grown to over forty entries. Everything was working.</p>
+<p>And then everything stopped.</p>
+<p>"What fields does the DrillHit class have?"</p>
+<p>The AI did not know. The class had been written four days earlier. It was central to the entire parsing architecture. It had been discussed in multiple sessions. But the context was gone -- fresh session, blank slate. The AI started searching. Grep for the class name. Read the file. Follow the imports. Check the parent class. Read that file. Check the serializer. Follow another import. Back to grep. Thirty-three tool calls to answer a question that any developer on the project for a week could answer in ten seconds.</p>
+<p>Eleven minutes. For one question.</p>
+<p>That was the moment something broke open. Not the code -- the assumption underneath it. The assumption that making AI faster at <em>creating</em> code was sufficient. Creation had been accelerated by an order of magnitude. Comprehension had not moved at all.</p>
+<!-- more -->
+
+<hr />
+<p><img alt="The 33-tool-call bug that broke the illusion: the same question answered two ways. The Spaghetti — a tangle of grep, read-file, follow-import round trips taking 11 minutes. The Straight Line — a manifest-guided lookup taking seconds. The class was central to parsing, written four days prior; with a fresh session, the context vanished." src="../../../../../assets/images/kcp-journey-03.webp" /></p>
+<h2 id="part-i-the-rabbit-hole">Part I: The rabbit hole<a class="headerlink" href="#part-i-the-rabbit-hole" title="Permanent link">&para;</a></h2>
+<h3 id="skills-need-structure">Skills need structure<a class="headerlink" href="#skills-need-structure" title="Permanent link">&para;</a></h3>
+<p>The lib-pcb project ran from January 16 to 27, 2026. The result: 197,831 lines of Java, 7,461 tests, 99.8% pass rate, manufacturing-ready Gerber exports. By any measure, a success. By any traditional timeline, impossible -- the industry standard for equivalent scope is ten to eighteen months.</p>
+<p><img alt="Code creation broke the speed limit; comprehension stalled. An exponential curve of code creation speed against a flat line of code comprehension — 197,831 lines of Java, 7,461 tests, 99.8% pass rate, built by a single developer in 11 days against a 10–18 month industry standard. The AI generated features in hours but forgot its own architectural context within days." src="../../../../../assets/images/kcp-journey-02.webp" /></p>
+<p>The method was straightforward in retrospect. Every lesson learned during the build was captured immediately as a skill -- a YAML file that gives Claude Code persistent, project-specific context. Bug fix? Skill. Architectural decision? Skill. Useful pattern? Skill. Eighty-five skills by the end.</p>
+<p>But somewhere around skill number forty, a quiet problem appeared. The skills existed. Claude could not always find them. A skill about serialization patterns would not surface during a serialization task because nothing connected the two.</p>
+<p>The response was not to design a system. It was instinct. Watch the agent fail to find a skill. Add an index entry. Watch it fail to connect two related skills. Add a cross-reference. Watch it pick the wrong skill for a task. Add routing hints -- "this skill applies when you are working on X, not Y." The structure grew organically out of watching. Each addition was a small, pragmatic fix for a specific failure. There was no theory yet. There was a developer watching an agent struggle and thinking: what would help it find the right thing?</p>
+<p>The intuition preceded the theory by weeks. By the time the collection reached sixty skills, it had acquired an index, cross-references between related skills, scope annotations, and routing metadata -- a small navigation layer that no one had planned, that had grown one fix at a time from observation.</p>
+<p>Only later did the pattern get a name. This crystallized into Skill-Driven Development -- SDD -- a methodology built on six pillars. Intelligent Context: teach the AI your codebase DNA. Strategic Delegation: right model, right task. Trust But Verify: productive paranoia, catching hallucinations before they reach production. Directed Synthesis: the human stays the conductor. Process Discipline: guardrails that enable velocity. Continuous Learning: every mistake becomes a skill.</p>
+<p>The term was coined by Vidar Moe at SpareBank 1 Utvikling on February 3, 2026, during a meeting where the methodology was demonstrated. The lib-pcb skills did not transfer to other projects -- the method did. Confirmed a second time when Synthesis was built: 84,692 lines of code in seven days, 73 pull requests, 65% Claude co-authorship. Completely different domain. Same method.</p>
+<p>But SDD, for all its utility, was still about one agent working on one project. The thirty-three-tool-call incident pointed at something larger.</p>
+<h3 id="the-llmstxt-gap">The llms.txt gap<a class="headerlink" href="#the-llmstxt-gap" title="Permanent link">&para;</a></h3>
+<p>The immediate instinct was to look at what already existed. Jeremy Howard's llms.txt -- a file at the root of a project listing what the project contains. The lib-pcb project already had one.</p>
+<p>It was not helping.</p>
+<p>The question -- why? -- took a week to answer. llms.txt is a table of contents. Agents need a map. A table of contents tells you what pages exist. A map tells you how they relate -- which modules depend on which, which documentation is relevant at which point in a task, which content was current last week and which has been stale for six months. A table of contents cannot express topology, intent, freshness, or selective loading.</p>
+<p>Dead simple is the right design for a personal website with twenty-seven pages. It is not the right design for a codebase with 8,934 files.</p>
+<p><img alt="Agents don't need a table of contents — they need a map. On the left, llms.txt as a flat list. On the right, the cartography of knowledge.yaml: topology (how modules depend on each other), intent (which docs are relevant for specific tasks), freshness (when content was last verified), and selective loading (pulling only what is needed)." src="../../../../../assets/images/kcp-journey-05.webp" /></p>
+<h3 id="the-mirror-test">The Mirror Test<a class="headerlink" href="#the-mirror-test" title="Permanent link">&para;</a></h3>
+<p>To quantify the staleness problem, a benchmark was designed. Three conditions. An AI agent given the same questions about a module, with three different documentation states.</p>
+<p>With no documentation: the agent explored the code, acknowledged uncertainty, arrived at approximately correct answers.</p>
+<p>With current documentation: the agent loaded the docs, understood the module quickly, gave accurate answers with high confidence.</p>
+<p>With stale documentation: the agent loaded the docs, gave confident, fluent, completely wrong answers, and showed no sign of uncertainty. The documentation said the field count was eight. The code, after a month of development, had fourteen. The agent reported eight. Confidently.</p>
+<p><img alt="The Mirror Test: why stale documentation is worse than none at all. Three conditions — no documentation (explores code, acknowledges uncertainty, approximately correct), current documentation (high confidence, highly accurate), stale documentation (fluent, highly confident, completely wrong). Key takeaway: stale knowledge that looks authoritative acts as a hallucinogen." src="../../../../../assets/images/kcp-journey-04.webp" /></p>
+<p>Stale knowledge that looks authoritative is worse than no knowledge at all. llms.txt has no answer for this. There is no freshness field. There is no way to tell an agent that a document was last verified before the refactoring that changed everything it describes.</p>
+<h3 id="the-parallel">The parallel<a class="headerlink" href="#the-parallel" title="Permanent link">&para;</a></h3>
+<p>Around the same time -- February 2026 -- the Model Context Protocol was gaining adoption. MCP defines how AI agents connect to tools: a standard interface, a common protocol. The parallel was immediate.</p>
+<p>MCP handles tools. There was no equivalent standard for knowledge.</p>
+<p>And then came the uncomfortable realization. The skill indices, the cross-references, the routing metadata, the freshness annotations -- all the small pragmatic fixes that had accumulated during the lib-pcb build -- were not a local workaround for one project. They were a prototype of something the entire ecosystem was missing. MCP had given agents hands. Nothing had given them a map. The thing on the workbench, built to solve one developer's problem with one agent on one codebase, was a sketch of infrastructure that every agent needed and no one had built.</p>
+<p>The AI agent ecosystem had invested heavily in model capability, tool connectivity, and agent frameworks. The knowledge structure layer -- how knowledge is organized so agents can navigate it reliably -- had been largely skipped.</p>
+<p><strong>KCP is to knowledge what MCP is to tools.</strong></p>
+<p><img alt="The missing infrastructure layer of the agentic web, drawn as three stacked layers: the Hands (Model Context Protocol — connects to external APIs and tools), the Brain (the LLM/agent — processing logic), and the Map (Knowledge Context Protocol — foundational routing and state). MCP defines how agents connect to tools; there was no equivalent standard for knowledge." src="../../../../../assets/images/kcp-journey-06.webp" /></p>
+<p>The Knowledge Context Protocol was published as a draft specification on February 25, 2026. A <code>knowledge.yaml</code> manifest. Readable by humans, navigable by agents. Topology, intent, freshness, audience, selective loading. The same question that took thirty-three tool calls -- "What fields does the DrillHit class have?" -- takes three when the agent has a manifest that points it to the right place.</p>
+<hr />
+<h2 id="the-working-stance">The working stance<a class="headerlink" href="#the-working-stance" title="Permanent link">&para;</a></h2>
+<p>Before moving to what happened next, one thing needs to be made explicit, because it is the thread that connects everything that follows.</p>
+<p>A mental model had developed during the lib-pcb build, quietly, without being articulated. It went something like this: when the agent struggles -- flailing tool calls, retries, confident wrong answers -- the instinct is to take over. Do the task yourself. Or blame the model. But a different move kept proving more productive: watch the struggle, identify what capability is missing, build that capability, and hand it to the agent.</p>
+<p>Not operate the agent like a tool. Equip it like a capable colleague who is missing one piece of context.</p>
+<p><img alt="The working stance: from operating a tool to equipping a colleague. The flawed instinct — when an agent struggles, retries, or hallucinates, take over or blame the model. The paradigm shift — watch the struggle, identify the missing capability, build that infrastructure, hand it back. The result: equip the agent like a highly capable colleague suffering from localized amnesia." src="../../../../../assets/images/kcp-journey-07.webp" /></p>
+<p>Every major piece of the stack came from this same move. The agent could not find the right skill? Build navigation and hand it over. The agent burned tokens on <code>--help</code> lookups? Build kcp-commands and hand it compact guidance. The agent started every session from zero? Build kcp-memory and hand it its own history. The agent could not navigate a new codebase? Build <code>knowledge.yaml</code> and hand it a map. Each time: observe the struggle, provide the missing thing, watch the agent solve harder problems at higher quality.</p>
+<p>This is the method. Not the six pillars, not the spec versions, not the tooling. The method is: be helpful to the agent, the way you would be helpful to a colleague. The rest follows.</p>
+<hr />
+<h2 id="part-ii-the-expansion">Part II: The expansion<a class="headerlink" href="#part-ii-the-expansion" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem-was-not-just-skills">The problem was not just skills<a class="headerlink" href="#the-problem-was-not-just-skills" title="Permanent link">&para;</a></h3>
+<p>The draft spec was published. The reception was polite. And then the real work began -- the part where a specification meets reality and discovers all the things it forgot.</p>
+<p>The first discovery was that the problem was not confined to skills, or even to codebases. It was knowledge in general. Any structured corpus that an agent might need to navigate -- regulatory frameworks, API documentation, operational runbooks, compliance policies -- suffered from the same six gaps that llms.txt could not fill. The thirty-three-tool-call problem was not a lib-pcb bug. It was a structural gap in how the entire ecosystem handled knowledge.</p>
+<h3 id="kcp-commands-the-noise-problem">kcp-commands: the noise problem<a class="headerlink" href="#kcp-commands-the-noise-problem" title="Permanent link">&para;</a></h3>
+<p>The same move again: watch the struggle, identify what is missing.</p>
+<p>Watching Claude Code work through tasks, a pattern emerged. When the agent was unsure which flags to use, it would run <code>--help</code> first, read the output, then run the actual command. Every flag lookup cost 500 to 800 tokens of help text. After execution, the problem reversed: <code>ps aux</code> on a development machine produces over 30,000 tokens of process table. The agent needed a dozen rows. The agent was not doing anything wrong. It was doing the only thing it could -- burning context to compensate for missing knowledge about commands it had never been taught.</p>
+<p>kcp-commands shipped on March 2, 2026. A hook system that intercepts Bash tool calls at two points. Before execution: inject a compact context block with the right flags and usage. After execution: filter the output to the relevant lines. The measured result across a benchmark session: 67,352 tokens saved -- 33.7% of a 200K context window recovered.</p>
+<p><img alt="kcp-commands: eradicating context window noise. A KCP interceptor sits between massive terminal output (ps aux, 30,000 tokens) and the agent, injecting compact context before execution and filtering output to the 12 relevant lines after. Impact: recovers 33.7% of a 200K context window." src="../../../../../assets/images/kcp-journey-08.webp" /></p>
+<h3 id="kcp-memory-the-blank-slate-problem">kcp-memory: the blank-slate problem<a class="headerlink" href="#kcp-memory-the-blank-slate-problem" title="Permanent link">&para;</a></h3>
+<p>The next morning, March 3, another struggle. Every Claude Code session starts from zero. The agent has no memory of what it did yesterday, which files it touched last week, or how it solved a similar problem three sessions ago. The lib-pcb project had accumulated 3,007 sessions across 55 days. Every session started from zero. A capable colleague with amnesia.</p>
+<p>kcp-memory was the answer. A Java daemon that indexes session transcripts into a local SQLite database with full-text search. The tool that made it most useful: <code>kcp_memory_project_context()</code>. No query, no argument. It reads the current working directory, returns the last five sessions and twenty tool-call events, and delivers them to the agent at the start of the session. The blank-slate problem, structurally solved -- by giving the agent access to its own history.</p>
+<p><img alt="kcp-memory: solving the blank-slate problem. Five session blocks feed into a SQLite database thread. The struggle: 3,007 sessions across 55 days, every one starting from zero context. The equipment: a local Java daemon indexing session transcripts with full-text search. The execution: kcp_memory_project_context() instantly delivers the last 5 sessions and 20 tool-calls to the agent at startup." src="../../../../../assets/images/kcp-journey-09.webp" /></p>
+<p>Three layers of a missing infrastructure stack were now visible:</p>
+<ul>
+<li><strong>kcp-commands</strong> gives agents vocabulary -- what commands exist, how to use them</li>
+<li><strong>kcp-memory</strong> gives agents history -- what happened before in this project</li>
+<li><strong>knowledge.yaml</strong> gives agents a map -- what knowledge exists, where to find it, what it means</li>
+</ul>
+<p><img alt="The completed infrastructure stack: kcp-commands (vocabulary — what commands exist and exactly how to use them), kcp-memory (history — what happened before in this project, tracking decisions and dead ends), and knowledge.yaml (the map — what knowledge exists, where to find it, what it means). Federation callout: standardized MCP interfaces mean this knowledge structure travels seamlessly across Claude, OpenCode, or any future agent." src="../../../../../assets/images/kcp-journey-10.webp" /></p>
+<h3 id="bridges-and-federation">Bridges and federation<a class="headerlink" href="#bridges-and-federation" title="Permanent link">&para;</a></h3>
+<p>KCP started as a Claude Code story. But the agentic-web realization -- the uncomfortable moment of recognizing that the thing on the workbench was not a local hack but a missing layer of the ecosystem -- meant it could never stay there. If the problem was that no agent had a map, the solution had to work for every agent, not just one.</p>
+<p>The first bridge came on March 3: <code>opencode-kcp-plugin</code>, a plugin for OpenCode. The significance was not the implementation -- it was what it proved. A project with a <code>knowledge.yaml</code> file is now navigable by Claude Code, OpenCode, or any other tool that implements the spec. The knowledge investment is not locked to one tool. It travels -- because it was never really about Claude Code.</p>
+<p>Three bridge implementations -- TypeScript, Java, Python -- shipped with the spec repository, all exposing the same MCP interface. Any MCP-compatible agent connects and navigates. No custom plugin, no vendor integration. Standard protocol.</p>
+<hr />
+<h2 id="part-iii-the-evolution">Part III: The evolution<a class="headerlink" href="#part-iii-the-evolution" title="Permanent link">&para;</a></h2>
+<h3 id="v010-to-v012-from-discovery-to-governance">v0.10 to v0.12: from discovery to governance<a class="headerlink" href="#v010-to-v012-from-discovery-to-governance" title="Permanent link">&para;</a></h3>
+<p>The spec grew through releases that each addressed a problem visible from the previous one.</p>
+<p><img alt="Evolution into enterprise governance (v0.10 – v0.14), drawn as an ascending staircase. Stage 1: Discovery (v0.11) — pre-invocation querying, max_age_days policies, cold discovery via /.well-known/kcp.json. Stage 2: Authority (v0.12) — provenance tracking (verified, observed, rumored, deprecated) and fine-grained permissions (read, summarize, modify, execute). Stage 3: Composition (v0.14) — manifest inheritance with includes, overrides, excludes; teams stop forking YAML files and start layering organizational knowledge." src="../../../../../assets/images/kcp-journey-11.webp" /></p>
+<p>v0.10 introduced the core query vocabulary. Instead of an agent loading every file in a repository, the manifest enables pre-invocation discovery. The agent asks a question. The serving layer scores units by trigger match, intent match, and path match. The agent loads only what it needs.</p>
+<p>v0.11 tackled cold discovery -- how an agent finds the manifest in the first place when starting from nothing but a domain name. The answer: an <code>llms.txt</code> bootstrap chain and <code>/.well-known/kcp.json</code>. No central registry. Just a chain of well-known locations that any agent can follow from zero context. v0.11 also added freshness policies -- <code>max_age_days</code>, <code>on_stale</code> behavior -- so agents could assess whether knowledge was current without a human in the loop.</p>
+<p>v0.12 was where things got interesting. The release introduced <code>discovery</code>, <code>authority</code>, and <code>visibility</code> blocks -- a governance layer. v0.10 and v0.11 answered "what knowledge exists and how do I find it?" v0.12 answered a different question entirely: "what am I allowed to do with this knowledge, and how much should I trust it?"</p>
+<p>Discovery added provenance tracking with four verification states -- verified, observed, rumored, deprecated. Authority provided fine-grained action permissions: read, summarize, modify, execute, share externally, each defaulting to the conservative setting. Visibility made access declarations conditional on environment and role.</p>
+<p>This was the pivot from capability to governance.</p>
+<h3 id="v014-query-composition">v0.14: query composition<a class="headerlink" href="#v014-query-composition" title="Permanent link">&para;</a></h3>
+<p>By late March, a different pain point had become visible. Every agent that queries a knowledge manifest reinvents filtering. One checks token budgets. Another filters by audience. A third ignores stale content. None of them agree on the format.</p>
+<p>v0.14 standardized the query vocabulary. Section 15 of the spec gave agents a shared way to ask: which units match my task, fit my budget, and require capabilities the agent actually has? Scored results. Budget-constrained selection. Stale content filtered. Federation across sub-manifests in one hop. RFC-0007 and RFC-0008 were promoted from open RFCs to core spec.</p>
+<p>Alongside v0.14, RFC-0014 proposed a manifest composition model -- so teams could stop forking manifests and start inheriting them. Includes, overrides, excludes. The organizational reality that knowledge is not flat but layered, and the format needed to reflect that.</p>
+<h3 id="from-instrumentation-to-infrastructure">From instrumentation to infrastructure<a class="headerlink" href="#from-instrumentation-to-infrastructure" title="Permanent link">&para;</a></h3>
+<p>The tooling evolved in parallel. kcp-commands grew from passive hooks to infrastructure that knew its own limitations. v0.14.0 added the suppression list: 40+ commands -- git, grep, ls -- return immediately with no manifest lookup. The first sign of self-knowledge: recognizing what you do not need to teach. v0.16.0 stamped every event with the SHA-256 hash of the active YAML manifest, making "before the manifest was fixed" and "after" distinct populations. First data from that instrumentation: ssh had a 69% retry rate, gh-api had a 71% failure rate. Six manifests were rewritten from the numbers alone.</p>
+<p>kcp-memory recovered something that was being quietly lost. When Claude delegates via Task, subagents contain 19% of session data -- compressed 40:1 to 100:1 in the summary the parent session sees. Dead ends, rejected approaches, the full investigation trail. Previously invisible. Now indexed.</p>
+<p>The arc from instrumentation to infrastructure: hooks that learned what to suppress, events that identified their own manifest version, memory that could see into delegated sessions.</p>
+<h3 id="production-regulations-as-machine-readable-data">Production: regulations as machine-readable data<a class="headerlink" href="#production-regulations-as-machine-readable-data" title="Permanent link">&para;</a></h3>
+<p>By late May, the spec had moved beyond developer tooling into territory that had not been part of the original plan: compliance infrastructure.</p>
+<p>Mynder -- a compliance SaaS platform operating across 85+ Norwegian companies and 6 regulatory frameworks -- adopted KCP as the structure for regulatory knowledge. Not the prose of the regulations. The machine-readable declarations that tell an agent what law applies, what sensitivity level governs this data, what audit trail is required, and how deep the delegation chain is allowed to go.</p>
+<p>The compliance block turns regulations into structured metadata. <code>compliance.regulations: [GDPR]</code> maps to a defined vocabulary. <code>compliance.data_residency: [EEA]</code> declares where data may be processed. An auditor can validate these fields independently of the application code -- no need to read the agent's source or understand its prompts.</p>
+<p>The knowledge base behind it: 49 regulatory frameworks indexed, 896,000 tokens of regulatory content, 583 audit units -- of which six frameworks drive the live evaluations. Every agent decision logged with source document, model version, autonomy level, evaluator identity, and timestamp. Not sampled -- every action, every time.</p>
+<p>An auditor's question -- "How do you know this AI decision is correct?" -- was answered not with model cards or attention maps, but with a ledger. Each entry linked the action, the rule, the evaluator's binary verdict, and the W3C trace context. Double-entry bookkeeping survived centuries of fraud not because it is clever, but because it is tedious, complete, and hard to fake. KCP works the same way.</p>
+<p>Boring passes audit.</p>
+<p><img alt="Production: AI compliance as double-entry bookkeeping. Legacy legal prose (ambiguous) on one side, structured YAML rules on the other — compliance.data_residency: [EEA], compliance.regulations: [GDPR] — joined by a &quot;validated and logged&quot; seal. The audit trail below: every AI decision is logged against a specific structured rule independently of the prompt, generating a ledger entry with W3C trace context. Boring, complete, hard to fake." src="../../../../../assets/images/kcp-journey-12.webp" /></p>
+<h3 id="the-trust-gap-and-the-content-gap-v016-and-v017">The trust gap and the content gap: v0.16 and v0.17<a class="headerlink" href="#the-trust-gap-and-the-content-gap-v016-and-v017" title="Permanent link">&para;</a></h3>
+<p>Which brings the story to today.</p>
+<p>Two gaps had been visible for months but unaddressed. The trust gap: when your agent pulls context from four federated manifests across two organizations, one of which was generated by an automated crawl three weeks ago, how do you know the knowledge has not been tampered with? The content gap: trust tells you whether to ingest a unit, but it does not tell you whether the unit is useful for your current task.</p>
+<p>v0.16 introduces the Trusted Render Pipeline. Three principles: LLM-free (deterministic transforms only), fail-closed (any failure produces no output, not partial output), and consumer-side tier assignment (a manifest cannot claim to be trusted -- the consumer decides). Four trust tiers: <code>trusted</code>, <code>known</code>, <code>unsigned</code>, <code>failed</code>. Cryptographic signing with Ed25519. And the mechanism that closes the signature-stripping attack: scope pinning. When a public key is added to an allowlist with a pinned origin, a manifest arriving from that origin without a signature renders as <code>failed</code>, not <code>unsigned</code>. The absence of the expected signature is itself the signal.</p>
+<p><img alt="Closing the trust gap (v0.16). A padlock at the center of a federated manifest graph, anchored by an Ed25519 signature key with scope pinning. The Trusted Render Pipeline's three principles: LLM-free (deterministic transformations only), fail-closed (any failure produces zero output), and consumer-side tiers (a manifest cannot claim trust; the consumer assigns it). The absence of an expected signature automatically triggers a failure state." src="../../../../../assets/images/kcp-journey-13.webp" /></p>
+<p>v0.17 introduces content structure metadata -- <code>primary</code>, <code>contains</code>, <code>density</code> -- so a RAG pipeline can decide its extraction strategy before fetching a unit, not after. And the spec's first subtractive matching field: <code>not_for</code>. Every previous matching field in KCP is additive -- triggers, intents, scopes all say "this unit is relevant when X." <code>not_for</code> says the opposite: "this unit is explicitly not about Y." The negative space that search systems almost never model. Soft demotion by default; hard exclusion with <code>not_for_strict: true</code>.</p>
+<p><img alt="Closing the content gap: subtractive matching (v0.17). A Venn diagram where the target concept overlaps excluded content, with not_for pointing at the intersection. The blind spot: traditional matching fields (triggers, intents) are strictly additive — they only say &quot;this is relevant when X.&quot; The KCP solution: not_for explicitly declares what a unit is NOT about, utilizing negative space. Soft demotion by default; hard exclusion via not_for_strict: true." src="../../../../../assets/images/kcp-journey-14.webp" /></p>
+<p>The details of both releases are in the <a href="../beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">companion post</a>, published today. What matters for this story is the arc.</p>
+<hr />
+<h2 id="the-arc">The arc<a class="headerlink" href="#the-arc" title="Permanent link">&para;</a></h2>
+<p>There is a shape to how this unfolded, and it was not planned.</p>
+<p>A developer hit a bug -- thirty-three tool calls for one question. The bug was not in the code. It was in the absence of infrastructure. The response was not to design a grand system. It was the same small move, repeated: watch the agent struggle, figure out what it is missing, build that thing, hand it over, and watch what happens next.</p>
+<p>What happened next was always a new struggle. The agent could find skills but could not find knowledge across codebases. It could navigate a codebase but wasted a third of its context on command noise. It could work within a session but forgot everything between sessions. It could navigate one tool but not another. Each solution revealed the next gap. The spec grew from the problems, not toward a vision.</p>
+<p>Dead ends along the way. RFC-0005 on payment and rate limits turned out to be scope creep -- labelled L4 enterprise extension and moved out of core. The original discovery mechanism assumed agents would always start from a known manifest URL -- the cold-discovery problem in v0.11 corrected that. The compliance block was not in the original proposal at all -- it was added after watching agents operate in regulated environments and realizing that system-prompt compliance instructions are invisible to auditors.</p>
+<p>None of the releases after v0.10 were in the plan when v0.10 shipped. Each was a response to a problem encountered in production -- by watching the agent, identifying the struggle, and asking the same question that started everything: what would help it here?</p>
+<p>From forty skills in a <code>.claude/skills/</code> directory to a specification at v0.17 with fifteen RFCs, three bridge implementations, parsers in three languages, tooling for episodic memory and command optimization, production use in compliance infrastructure, and a trust model validated against a 22-case threat matrix.</p>
+<p>It started with a question about a Java class and thirty-three tool calls.</p>
+<p>It is not finished.</p>
+<p><img alt="The Unfinished Map: it started with a question about a Java class and a 33-tool-call bug. It became a global specification spanning episodic memory, command optimization, compliance infrastructure, and cryptographic trust. From a local workaround to the cartography of the agentic web. The evolution continues." src="../../../../../assets/images/kcp-journey-15.webp" /></p>
+<hr />
+<p><em>KCP specification: <a href="https://github.com/Cantara/knowledge-context-protocol">github.com/Cantara/knowledge-context-protocol</a></em></p>
+<p><em>Today's release post (v0.16 + v0.17): <a href="../beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">Beyond RAG: How KCP 0.16--0.17 Give Agents Trustworthy, Self-Describing Knowledge</a></em></p>
+<p><em>Co-authored with Claude. The structure and framing are mine; Claude helped draft and sharpen the argument.</em></p>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">Series: Knowledge Context Protocol</p>
+<p><a href="/blog/2026/06/12/beyond-rag-how-kcp-016-017-give-agents-trustworthy-self-describing-knowledge/">← Beyond RAG: How KCP 0.16--0.17 Give Agents Trustworthy, Self-Describing Knowledge</a> &ensp;·&ensp; Part 30 of 33 &ensp;·&ensp; <a href="/blog/2026/06/12/signing-the-map-not-the-territory-kcp-v018-adds-unit-content-integrity-and-origin-evidence/">Signing the Map, Not the Territory: KCP v0.18 Adds Unit Content Integrity and Origin Evidence →</a></p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Beyond RAG: How KCP 0.16--0.17 Give Agents Trustworthy, Self-Describing Knowledge">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Beyond RAG: How KCP 0.16--0.17 Give Agents Trustworthy, Self-Describing Knowledge
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../2026-06-12-kcp-018-unit-integrity/" class="md-footer__link md-footer__link--next" aria-label="Next: 2026 06 12 kcp 0.18 unit integrity">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                2026 06 12 kcp 0.18 unit integrity
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Thor Henning Hetland &nbsp;&middot;&nbsp; Co-authored with <a href="https://claude.ai/claude-code" target="_blank" rel="noopener">Claude Code</a> &nbsp;&middot;&nbsp; Indexed by Synthesis
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/hetland/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/totto" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/javatotto" target="_blank" rel="noopener" title="Twitter / X" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,67 @@
+# wiki.totto.org — About sub-manifest
+# Parent: https://wiki.totto.org/knowledge.yaml
+version: "0.14"
+
+id: about
+parent: https://wiki.totto.org/knowledge.yaml
+
+discovery:
+  provenance: canonical
+  confidence: high
+  staleness_days: 90
+
+signing:
+  scheme: ed25519
+  scope: this-manifest
+  public_key: https://wiki.totto.org/.well-known/kcp-signing-key.pub
+  signature: https://wiki.totto.org/knowledge/about.yaml.sig
+
+person:
+  name: Thor Henning Hetland
+  alias: Totto
+  location: Oslo, Norway
+  timezone: Europe/Oslo
+  email: totto@exoreaction.com
+  url: https://wiki.totto.org/about/
+
+bio: >
+  Four decades shipping production code across Java, Kotlin, TypeScript,
+  Python and the architectures around them. Spent the last few years using
+  agentic tools every day on real client problems — long enough to have
+  opinions, scars, and a working method. Writes about what actually works,
+  not what should work in theory.
+
+credentials:
+  - title: Java Champion
+    org: Sun Microsystems / Oracle
+    year: 2005
+    note: First Java Champion in Scandinavia
+  - title: Co-founder JavaZone
+    year: 2001
+    note: Scandinavia's largest developer conference
+  - title: javaBin President
+    years: 1998–2008
+  - title: Founding Chairman OSWA (formerly IASA Norway)
+    years: 2009–2011
+    note: Past role — rebranded to OSWA March 2011
+
+current_roles:
+  - Founder & CTO — eXOReaction AS (2021–present)
+  - Founder & CTO — Ægis AS (2023–present)
+  - Founder & CTO — Sunstone Tech AS (2019–present)
+  - Founder & CTO — Quadim AS (2019–present)
+  - Interim CTO — Mynder (2026-03-16–present, 60%)
+
+expertise:
+  - Agentic development (daily production practitioner)
+  - Java / Kotlin / TypeScript / Python / React
+  - System architecture and knowledge infrastructure
+  - AI governance, security, and compliance
+  - Workshop facilitation and team coaching
+
+pages:
+  about: https://wiki.totto.org/about/
+  cv_english: https://wiki.totto.org/about/cv-english/
+  cv_norwegian: https://wiki.totto.org/about/cv-norwegian/
+  organizations: https://wiki.totto.org/about/organizations/
+  projects: https://wiki.totto.org/about/projects/

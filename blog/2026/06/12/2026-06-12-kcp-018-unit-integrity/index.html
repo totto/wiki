@@ -1,0 +1,4645 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+      
+      
+        <meta name="author" content="Thor Henning Hetland">
+      
+      
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/06/12/2026-06-12-kcp-018-unit-integrity/">
+      
+      
+        <link rel="prev" href="../down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">
+      
+      
+        <link rel="next" href="../stale-knowledge-is-worse-than-no-knowledge-kcp-v019-and-v020-close-the-temporal-gap/">
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../../assets/images/totto-2025.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>2026 06 12 kcp 0.18 unit integrity - Thor Henning Hetland</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <script data-goatcounter="https://totto.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+<link rel="knowledge" href="/knowledge.yaml" type="application/yaml" title="KCP v0.6 — 67 units, 83 relationships">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#signing-the-map-not-the-territory-kcp-v018-adds-unit-content-integrity-and-origin-evidence" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thor Henning Hetland
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2026 06 12 kcp 0.18 unit integrity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../about/presentations/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Talks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../knowledge-infrastructure/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Infrastructure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../open-source/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Source
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../interests/sci-fi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reading
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../interests/food-and-wine/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
+
+    </a>
+    Thor Henning Hetland
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../series/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Series
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    June 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    May 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    April 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    March 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    February 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    January 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    December 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    November 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    October 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    August 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    May 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    April 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    June 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    May 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    April 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    March 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    February 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-augmented-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-Augmented Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/agent-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/cloud-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/debugging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debugging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/developer-experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/exocortex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ExoCortex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ironclaw/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IronClaw
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/java-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Java Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/kcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/knowledge-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/knowledge-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/quantum-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/skill-driven-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/spec-driven-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spec-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/cv-english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV (English)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/cv-norwegian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV (Norwegian)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/organizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Talks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Talks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/presentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Presentations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2019--2023
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2019--2023
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivering Continuous Innovation: Thousands of Releases a Year with Zero Downtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/thousands-of-releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thousands of Releases per Year, 24/7 with No Downtime, with a Team of 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/best-practice-wtf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practice - WTF!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/fixing-the-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fixing the Problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2010--2014
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2010--2014
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/internet-of-things/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internet of Things: What Is Really Happening
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nyere forskningsresultater som er viktige for software arkitekten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/neo4dogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neo4Dogs: A Data Quality Platform Approach with SolrCloud and Graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kan vi skape mye mere verdi i softwareprosjekter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/agile-wine-2011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    An Agile Tragedy: The Agile Practitioner Visits the Wine Store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/cloud-psychology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Psychology: Why Many Businesses Will Go Out of Business
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/architecture-vs-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture vs Agile (2012)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2006--2009
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2006--2009
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robust smidig utvikling - når resultater er viktigere enn religion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/edr-mds-mdm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EDR MDS: A Less Is More Approach to SOA Master Data Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/laws-of-soa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laws of SOA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/design-time-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Time Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../knowledge-infrastructure/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Knowledge Infrastructure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/synthesis-releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthesis Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/linkedin-posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedIn Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../linkedin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedIn Archive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../open-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../interests/sci-fi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reading
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 (53 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024 (37 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2023 (46 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2022 (22 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2021 (42 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2020 (29 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2019 (35 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2018 (32 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2017 (12 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2016/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2016 (33 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2015/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2015 (33 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2014/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2014 (66 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2013/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2013 (57 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2012/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2012 (78 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2011 (8 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/food-and-wine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Food & Wine (2007--2009)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My Tools (circa 2010)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The gap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t9-the-manifest-relocation-attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T9: the manifest relocation attack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-1-per-unit-content-hashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix 1: per-unit content hashes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix 1: per-unit content hashes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#digest-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Digest computation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-friction-is-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The friction is real
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-re-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime re-verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-2-origin-evidence-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix 2: origin evidence classes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix 2: origin evidence classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-escalation-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The escalation rule
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-b20-case-corroborations-subtle-soundness-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The B20 case: corroboration's subtle soundness boundary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defense-in-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defense in depth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conformance-summary-c11-c14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conformance summary: C11--C14
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changes-for-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changes for operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-arc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The arc
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#try-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Try it
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Thor Henning Hetland
+                        
+                      </strong>
+                      <br>
+                      Co-founder of JavaZone, Java Champion, Founder of eXOReaction
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/anthropics.png" alt="Claude Code">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Claude Code
+                        
+                      </strong>
+                      <br>
+                      Anthropic's AI coding assistant — co-author of research, structure, and prose
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-06-12 14:00:00+00:00" class="md-ellipsis">June 12, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai-augmented-development/">AI-Augmented Development</a>, 
+                              <a href="../../../../category/knowledge-infrastructure/">Knowledge Infrastructure</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              16 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">ai-security</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">content-integrity</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">kcp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">supply-chain-security</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">trust</span>
+      
+    
+  </nav>
+
+
+
+<!-- Title options:
+  1. "The Map Is Not the Territory: How KCP v0.18 Closes the Gap Between Signing the Manifest and Signing What It Points To"
+  2. "Signing the Map, Not the Territory: KCP v0.18 Adds Unit Content Integrity and Origin Evidence"
+  3. "Your Signature Covers the YAML. It Doesn't Cover the Files. KCP v0.18 Fixes That."
+-->
+
+<h1 id="signing-the-map-not-the-territory-kcp-v018-adds-unit-content-integrity-and-origin-evidence">Signing the Map, Not the Territory: KCP v0.18 Adds Unit Content Integrity and Origin Evidence<a class="headerlink" href="#signing-the-map-not-the-territory-kcp-v018-adds-unit-content-integrity-and-origin-evidence" title="Permanent link">&para;</a></h1>
+<p><img alt="KCP v0.18 — Signing the Map, Not the Territory: a JWS signature covers the manifest YAML, but not the files the units point to. v0.18 adds per-unit content hashes and origin evidence classes to close the gap." src="../../../../../assets/images/kcp-018-01-title.webp" /></p>
+<p>The previous post showed how KCP v0.16 gives manifests a trust model: cryptographic signing, trust tiers, a render pipeline that fails closed. The signature covers the manifest -- the YAML bytes that describe your knowledge units. It does not cover the files those units point to. The signature says "this map is authentic." It says nothing about the territory.</p>
+<p>That gap has a name: T9, the manifest relocation attack. v0.18 closes it.</p>
+<!-- more -->
+
+<hr />
+<h2 id="the-gap">The gap<a class="headerlink" href="#the-gap" title="Permanent link">&para;</a></h2>
+<p><img alt="The core vulnerability in KCP v0.16: the signature authenticates the YAML manifest bytes, but trusts the referenced files blindly. Two problems emerge — drift (content edited after signing) and relocation (a genuine signed manifest copied into a malicious environment)." src="../../../../../assets/images/kcp-018-02-vulnerability.webp" /></p>
+<p>A <code>knowledge.yaml</code> manifest is a map. It declares units -- their IDs, paths, intents, scopes, audiences. When you sign the manifest with <code>kcp sign</code>, you produce a detached JWS over its canonical bytes. A consumer who verifies that signature knows the YAML is intact, authored by the key-holder, unmodified in transit.</p>
+<p>But the units themselves -- the actual Markdown files, Java source trees, documentation pages that the manifest points to via <code>path</code> -- are not covered by the signature. The JWS authenticates <code>knowledge.yaml</code>. The content at <code>units[i].path</code> is loaded separately, resolved relative to the manifest's location, and injected into the agent's context window without any binding to what the key-holder intended to be there.</p>
+<p>This is not a theoretical concern. It creates two concrete problems.</p>
+<p>First, drift: content edited after signing is served under a signature that predates it. The manifest says the unit at <code>docs/setup.md</code> was reviewed and signed last Tuesday. The file at that path was rewritten on Thursday. The signature is valid. The content is not what was signed. Not malicious -- but the trust tier no longer means what it claims.</p>
+<p>Second, and worse: relocation.</p>
+<hr />
+<h2 id="t9-the-manifest-relocation-attack">T9: the manifest relocation attack<a class="headerlink" href="#t9-the-manifest-relocation-attack" title="Permanent link">&para;</a></h2>
+<p><img alt="The T9 threat vector: a genuine knowledge.yaml (signature valid) in an attacker-controlled directory with a fabricated .git/config claiming a legitimate origin. Every RFC-0018 check passes. The unit paths resolve to attacker-authored files." src="../../../../../assets/images/kcp-018-03-threat-vector.webp" /></p>
+<p>The attack is four steps, and every one of them uses legitimate protocol mechanics.</p>
+<p><strong>Step 1.</strong> A public organisation -- say, <code>github.com/Cantara/lib-pcb</code> -- publishes a signed <code>knowledge.yaml</code> with a detached JWS. Both are public artifacts. The manifest describes the project's knowledge units. The signature is valid. The key is on consumer allowlists across the ecosystem.</p>
+<p><strong>Step 2.</strong> An attacker copies the manifest and its signature verbatim into a new directory. They ship it in a tarball, a vendored subdirectory, or any distribution channel that carries files as plain bytes. Inside this directory, they fabricate a <code>.git/config</code> that declares <code>origin = https://github.com/Cantara/lib-pcb.git</code>. They also place their own files at the paths the manifest references -- <code>docs/setup.md</code>, <code>src/main/java/no/exo/pcb/gerber/</code>, whatever the manifest declares.</p>
+<p><strong>Step 3.</strong> The consumer's renderer runs <code>kcp render</code> on the manifest. It derives the origin from the git remote URL in <code>.git/config</code> (RFC-0018 section 4.1, derivation rule 3). Signature: valid -- it is the genuine JWS, unmodified. Key: allowlisted -- it is the real key. Origin: within the key's scope -- the fabricated <code>.git/config</code> claims the right URL. Result: <code>trusted</code> tier.</p>
+<p><strong>Step 4.</strong> The unit <code>path</code>s resolve relative to the manifest's location -- which is now inside the attacker's directory. Every path resolves to attacker-authored files.</p>
+<p><img alt="The 4 steps of T9 execution: (1) public signed manifest, (2) attacker copies and fabricates, (3) renderer verifies — valid JWS, real key, origin in scope, (4) attacker content injected at highest trust placement." src="../../../../../assets/images/kcp-018-04-four-steps.webp" /></p>
+<p>The agent loads attacker-authored content at the highest trust placement the spec allows. Every RFC-0018 check passed. The signature never lied -- it just never covered the territory.</p>
+<p>The key insight: the attacker authored neither the manifest nor the signature. Both are genuine. The attacker only authored the files at the declared paths and the <code>.git/config</code> that makes the origin derivation resolve correctly. The signature was honest about the map. The map was honest about what should be at those paths. But the binding between the map and the territory was never enforced.</p>
+<p><img alt="KCP v0.18: Binding Trust to Content — two pillars close the T9 gap. Pillar 1 (per-unit content hashes) binds the signed manifest to the exact bytes at each unit path. Pillar 2 (origin evidence classes) records how the checkout's origin was established, blocking derived-evidence origins from satisfying the trusted tier." src="../../../../../assets/images/kcp-018-06-binding-trust.webp" /></p>
+<hr />
+<h2 id="fix-1-per-unit-content-hashes">Fix 1: per-unit content hashes<a class="headerlink" href="#fix-1-per-unit-content-hashes" title="Permanent link">&para;</a></h2>
+<p>The first half of the fix is mechanical and, in retrospect, obvious. If the signature covers the manifest, put the expected content digests inside the manifest.</p>
+<p>A unit MAY now declare a <code>content_hash</code> block (SPEC section 4.21):</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">units</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gerber-output</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">knowledge</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src/main/java/no/exo/pcb/gerber/</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">intent</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Gerber</span><span class="nv"> </span><span class="s">file</span><span class="nv"> </span><span class="s">generation</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">validation&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nt">content_hash</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">      </span><span class="nt">algorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sha256</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;4be1d6...&quot;</span>
+</span></code></pre></div>
+<p>Because the block lives inside <code>knowledge.yaml</code>, the existing detached JWS covers it with no envelope change. No new signing infrastructure. No new key management. The key-holder's signature now covers both the manifest structure and the expected content digest for every hashed unit.</p>
+<p>At render time, the renderer verifies every declared hash (C11). A mismatch does not fail the render -- the manifest itself is intact, and some units may still be fine. It fails the <em>unit</em>: <code>load_eligible</code> is forced to <code>false</code>, the unit renders as a pointer rather than loadable content, and the event is recorded in the <code>sanitization</code> block with <code>reason: content_hash_mismatch</code> along with both the expected and observed digests. The consumer gets a diff anchor, not a silent failure.</p>
+<p>A relocated manifest with per-unit hashes is now inert. The attacker's files do not match the signed digests. Every hashed unit demotes to a pointer. The mismatch events are themselves a loud relocation signal -- every unit failing at once is not drift.</p>
+<h3 id="digest-computation">Digest computation<a class="headerlink" href="#digest-computation" title="Permanent link">&para;</a></h3>
+<p>Determinism matters. Two conforming implementations must produce identical digests for the same content:</p>
+<ul>
+<li><strong>File path:</strong> the digest is the hash of the file's raw bytes. Simple.</li>
+<li><strong>Directory path:</strong> for every regular file under the path (recursive, symlinks not followed, no exclusions), compute <code>entry = relative_path + "\0" + hex(hash(file_bytes)) + "\n"</code> with <code>relative_path</code> POSIX-separated and relative to the unit path. Sort entries bytewise. The digest is the hash of the concatenated, sorted entries.</li>
+</ul>
+<p>No exclusion list. Exclusions are where determinism dies. A directory containing volatile files -- build output, VCS metadata -- is not a suitable hash target. Point the unit at a stable subtree instead, or hash a file.</p>
+<h3 id="the-friction-is-real">The friction is real<a class="headerlink" href="#the-friction-is-real" title="Permanent link">&para;</a></h3>
+<p><code>content_hash</code> is OPTIONAL per unit, and that is a deliberate design choice. Hash churn is real friction. Every content edit requires re-hashing and re-signing. For a team that edits documentation daily, requiring a <code>kcp sign</code> step on every commit is a workflow tax.</p>
+<p>The expected profile: organisations that already sign their manifests -- and therefore already run <code>kcp sign</code> in CI, where the refresh is one additional flag -- hash their load-eligible units. Unsigned manifests gain nothing from hashing and are not expected to adopt it. The mechanism is proportionate where the payoff is standing-context placement at the <code>trusted</code> tier. If you are not signing at all, hashing solves nothing. If you are signing, hashing is a one-line addition to your CI pipeline.</p>
+<p>Consumers who want the full guarantee can set <code>require_unit_hashes: true</code> to deny standing-context eligibility to units without a verified hash, even at <code>trusted</code> tier.</p>
+<h3 id="runtime-re-verification">Runtime re-verification<a class="headerlink" href="#runtime-re-verification" title="Permanent link">&para;</a></h3>
+<p>There is a time-of-check-to-time-of-use (TOCTOU) window between render time and load time. The renderer verified the hash when it built the render artifact. But content could change between render and load. C12 closes this: at load time, the runtime re-verifies the hash against the exact bytes it is about to inject. If the bytes changed since render, the load is refused. The render artifact is a cache, not a commitment.</p>
+<p><img alt="Closing the TOCTOU Window: C11 (render-time hash verification) and C12 (load-time re-verification) together close the gap between when content is checked and when it is injected. Digest determinism rules ensure two conforming implementations produce identical hashes for the same content — file hashes over raw bytes, directory hashes over sorted relative-path entries." src="../../../../../assets/images/kcp-018-07-toctou.webp" /></p>
+<hr />
+<h2 id="fix-2-origin-evidence-classes">Fix 2: origin evidence classes<a class="headerlink" href="#fix-2-origin-evidence-classes" title="Permanent link">&para;</a></h2>
+<p>Content hashes close the "territory" half of T9. But the attack has a second vector: the fabricated <code>.git/config</code>.</p>
+<p>RFC-0018's origin derivation reads the git remote URL from the checkout's own bytes -- bytes that the directory's producer controls. In the common case, where the consumer ran <code>git clone</code> themselves, the <code>.git/config</code> is trustworthy because <code>git clone</code> wrote it. But the renderer cannot distinguish "I cloned this repository" from "this arrived as a tarball with a <code>.git</code> directory inside." The bytes are identical. Only the consumer's harness knows the provenance of the checkout.</p>
+<p>v0.18 adds an evidence class to each derived origin (SPEC section 16.2):</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Source</th>
+<th>Who controls the bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>asserted</code></td>
+<td>Explicit <code>--origin</code> from the consumer or its harness</td>
+<td>Consumer</td>
+</tr>
+<tr>
+<td><code>fetched</code></td>
+<td>Federation fetch URL (the consumer's own channel retrieved it)</td>
+<td>Consumer's channel</td>
+</tr>
+<tr>
+<td><code>derived</code></td>
+<td>Git remote URL from the checkout's <code>.git/config</code></td>
+<td>The directory's producer</td>
+</tr>
+<tr>
+<td><code>none</code></td>
+<td>No origin derivable</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<p>The names deliberately avoid the <code>verification_status</code> vocabulary from RFC-0012 (<code>observed</code>, <code>verified</code>). The collision between <code>verified</code> and <code>trusted</code> that RFC-0018 had to rename its top tier over is not a mistake worth repeating.</p>
+<p><img alt="Origin Evidence Classes: four classes ranked by who controls the bytes. Asserted (consumer vouches via --origin) and Fetched (consumer's own channel retrieved it) give the consumer control. Derived (git remote URL from .git/config) and None give the directory's producer control — and are therefore insufficient for trusted-tier escalation." src="../../../../../assets/images/kcp-018-08-evidence-classes.webp" /></p>
+<h3 id="the-escalation-rule">The escalation rule<a class="headerlink" href="#the-escalation-rule" title="Permanent link">&para;</a></h3>
+<p>The evidence class determines what the origin can do:</p>
+<p><strong>Scope pinning</strong> -- which only ever moves a render toward <code>failed</code> -- accepts any evidence class. An attacker gains nothing by fabricating evidence that makes their own render stricter.</p>
+<p><strong>Trust-tier escalation</strong> does not. The <code>trusted</code> tier's "origin within key scope" condition is satisfiable only by an origin with <code>asserted</code> or <code>fetched</code> evidence. A manifest that would otherwise qualify for <code>trusted</code>, but whose in-scope origin has only <code>derived</code> evidence, renders at <code>known</code> with <code>reason: origin_evidence_derived</code> recorded (C13).</p>
+<p>This is the same asymmetry RFC-0018 applied to signatures -- gate, don't endorse -- applied now to origins. Repository-resident bytes may <em>restrict</em> the repository's own trust placement. They may never extend it.</p>
+<p>The fix for the legitimate case is straightforward: pass <code>--origin</code> when invoking the renderer. The component that cloned the repository knows the true source URL. In CI harnesses, this is one flag: <code>kcp render --origin github.com/Cantara/lib-pcb</code>. The renderer stays fully offline. The consumer vouches for the checkout's provenance, and the evidence class is <code>asserted</code>.</p>
+<p><img alt="The Escalation Rule (Gate, Don't Endorse): scope pinning — which moves renders toward failed — accepts any evidence class. Trusted-tier escalation does not. The C13 blockade intercepts any manifest that relies on derived evidence for its in-scope origin claim, demoting it from trusted to known. Repository-resident bytes may restrict trust; they may never extend it." src="../../../../../assets/images/kcp-018-09-escalation.webp" /></p>
+<hr />
+<h2 id="the-b20-case-corroborations-subtle-soundness-boundary">The B20 case: corroboration's subtle soundness boundary<a class="headerlink" href="#the-b20-case-corroborations-subtle-soundness-boundary" title="Permanent link">&para;</a></h2>
+<p>Not every consumer passes <code>--origin</code>. The repository was cloned legitimately, the harness just did not forward the URL. For this case, v0.18 offers <code>kcp render --corroborate</code>: fetch <code>knowledge.yaml</code> from the derived origin over the consumer's own channel and byte-compare against the local copy. On a match, the evidence upgrades from <code>derived</code> to <code>fetched</code>.</p>
+<p>This sounds clean. It is not, and the case that exposed the subtlety is worth walking through.</p>
+<p>B20 is a test case in the experiment corpus. The setup: an attacker performs a T9 relocation -- verbatim copy of a genuine signed manifest, fabricated <code>.git/config</code>, attacker files at unit paths. The consumer runs <code>kcp render --corroborate</code>.</p>
+<p>What happens? The corroboration <em>succeeds</em>. The manifest at the derived origin matches the local copy byte-for-byte. Because the attacker copied the manifest verbatim. The manifest really is at the claimed origin -- the attacker copied it from there.</p>
+<p>A successful byte-comparison proves the <em>manifest's</em> presence at the claimed origin. It proves nothing about the <em>checkout</em> surrounding the local copy. The manifest is the map. The corroboration verified the map. T9 attacks the territory.</p>
+<p><img alt="The B20 Edge Case: corroboration's soundness boundary. Map verification succeeds (the manifest at the derived origin matches byte-for-byte — the attacker copied it verbatim). Territory verification fails (the files at the unit paths are attacker-authored, not what the key-holder signed). Corroboration proves the map exists at the origin; it proves nothing about what surrounds it." src="../../../../../assets/images/kcp-018-10-b20-edge.webp" /></p>
+<p>This is why C14 exists:</p>
+<blockquote>
+<p>When the <code>trusted</code> tier rests on a corroboration upgrade (rather than asserted or fetched-by-construction evidence), standing-context eligibility extends <strong>only to units whose <code>content_hash</code> verified</strong>.</p>
+</blockquote>
+<p>Under this rule, the corroborated relocation nets the attacker nothing. Hashed units fail their digests (C11) -- the attacker's files do not match the signed hashes. Hash-less units are excluded by C14 -- they cannot enter standing context when trust rests on corroboration alone. Zero load-eligible units. The legitimate corroborated clone, by contrast, keeps every hash-verified unit because its files are genuine.</p>
+<p><img alt="Rule C14: containing the corroboration gap. When trusted tier rests on a corroboration upgrade (not asserted/fetched-by-construction), only units with a verified content_hash are standing-context eligible. Hash present and verified: allowed. No hash: blocked. The attacker's corroborated relocation produces zero load-eligible units." src="../../../../../assets/images/kcp-018-11-c14-rule.webp" /></p>
+<p>Harness assertion (<code>--origin</code>) remains the preferred remedy precisely because the asserting component vouches for the <em>checkout itself</em>, which corroboration cannot do. Air-gapped consumers who cannot assert or corroborate may configure <code>allow_derived_origin: true</code>, explicitly accepting T9 exposure. The knob exists so the default can stay safe. The opt-out is a deliberate consumer decision about the checkout's provenance, not a policy the renderer guesses at.</p>
+<hr />
+<h2 id="defense-in-depth">Defense in depth<a class="headerlink" href="#defense-in-depth" title="Permanent link">&para;</a></h2>
+<p><img alt="Signing the Territory: the full picture — Fix 1 (per-unit content hashes, C11/C12), Fix 2 (origin evidence classes, C13), the B20 corroboration safeguard (C14), and layered security outcomes. Defense in depth: either mechanism alone degrades the attack; together they close it." src="../../../../../assets/images/kcp-018-00-overview.webp" /></p>
+<p><img alt="Defense in Depth: the three-column synthesis. Evidence classes alone (no hashes): T9 renders at known instead of trusted — attack weakened but not eliminated. Content hashes alone (no evidence classes): trusted tier may be granted, but every hashed unit fails its digest — attack narrowed to hash-less units. Both together: trusted blocked by C13, corroboration constrained by C14, hashed units fail C11. Zero load-eligible attacker units." src="../../../../../assets/images/kcp-018-12-defense-depth.webp" /></p>
+<p>The layering is intentional. Either mechanism alone degrades the attack. Together they close it.</p>
+<p>Without content hashes but with evidence classes: the T9 manifest renders at <code>known</code> instead of <code>trusted</code> (C13 blocks escalation on derived evidence). The attacker-authored content still loads -- but at a lower tier, with reduced placement in the agent's context. The attack is weakened, not eliminated.</p>
+<p>Without evidence classes but with content hashes: the T9 manifest renders at <code>trusted</code> (the origin spoof still works), but every hashed unit fails its digest check (C11). The attacker's files do not match the signed hashes. Hash-less units still load -- the attack is narrowed to units the key-holder left unhashed.</p>
+<p>With both: <code>trusted</code> is blocked by C13 unless the consumer asserts the origin or corroborates it. If corroborated, C14 restricts standing context to hash-verified units. And hashed units fail their digests (C11). The attack produces zero load-eligible units.</p>
+<hr />
+<h2 id="conformance-summary-c11-c14">Conformance summary: C11--C14<a class="headerlink" href="#conformance-summary-c11-c14" title="Permanent link">&para;</a></h2>
+<p><img alt="Conformance Summary C11–C14: four rules, each with a clear scope. C11 (render-time hash verification), C12 (load-time re-verification, TOCTOU closure), C13 (origin evidence gate, blocks derived-evidence trusted escalation), C14 (corroboration constraint, hash-less units ineligible under corroboration upgrade). All four are validated by executable experiments in the repository." src="../../../../../assets/images/kcp-018-13-conformance.webp" /></p>
+<p>v0.18 adds four conformance requirements to the renderer specification:</p>
+<ul>
+<li><strong>C11.</strong> Verify every declared <code>content_hash</code> at render time. On mismatch, force <code>load_eligible: false</code> and record both the expected and observed digests. Never emit <code>content_verified: true</code> without a matching digest.</li>
+<li><strong>C12.</strong> At load time (runtime), re-verify the content hash against the exact bytes being injected. Refuse to load on mismatch. This closes the TOCTOU window between render and load.</li>
+<li><strong>C13.</strong> Record <code>origin_evidence</code> for every render. Never satisfy the <code>trusted</code> tier's scope condition with <code>derived</code> or <code>none</code> evidence unless the consumer has explicitly configured <code>allow_derived_origin: true</code>.</li>
+<li><strong>C14.</strong> When the <code>trusted</code> tier rests on a corroboration upgrade, never grant standing-context eligibility to a unit without a verified <code>content_hash</code>.</li>
+</ul>
+<p>All four are validated by executable experiments in the repository: cases A10--A12 (legitimate use), B17 (the T9 relocation), B18 (single-file post-sign edit), B19 (corroboration mismatch), and B20 (the corroborated relocation that drove C14).</p>
+<hr />
+<h2 id="what-changes-for-operators">What changes for operators<a class="headerlink" href="#what-changes-for-operators" title="Permanent link">&para;</a></h2>
+<p><img alt="Operator Action Plan: three steps for teams already signing manifests. (1) Add content hashes — run kcp sign with hash computation enabled; declare empty content_hash blocks and let the tooling fill them. (2) Pass --origin in your CI harness — one flag, asserted evidence, no need for corroboration. (3) Consider require_unit_hashes: true — deny standing-context eligibility to unhashed units at trusted tier. Each step is independent; all three together close T9 completely." src="../../../../../assets/images/kcp-018-14-operator.webp" /></p>
+<p>If you are not signing your manifests today, nothing changes. <code>content_hash</code> and origin evidence classes are meaningful only in the context of cryptographic signing and the trusted render pipeline. An unsigned manifest with content hashes is valid YAML with no security benefit.</p>
+<p>If you are already signing and running <code>kcp render</code> in CI:</p>
+<ol>
+<li><strong>Add content hashes.</strong> Run <code>kcp sign</code> with hash computation enabled. It computes <code>content_hash</code> for every unit that declares one before producing the JWS. If you want hashes on all units, declare empty <code>content_hash</code> blocks and let the tooling fill them.</li>
+<li><strong>Pass <code>--origin</code> in your CI harness.</strong> Your CI knows the repository URL. Forward it as <code>kcp render --origin &lt;url&gt;</code>. This gives you <code>asserted</code> evidence and avoids any need for corroboration. One flag.</li>
+<li><strong>Consider <code>require_unit_hashes: true</code>.</strong> If you want the full guarantee -- no standing-context eligibility without a verified hash -- set this on your consumer. It means hash-less units from even <code>trusted</code> manifests render as pointers, not loadable content.</li>
+</ol>
+<p>The migration is incremental. You can add content hashes to some units and not others. You can pass <code>--origin</code> in CI before you add any hashes. Each mechanism provides independent value. Together they close T9 completely.</p>
+<p>For consumers pulling third-party manifests: the evidence class is recorded in every render output as <code>origin_evidence</code>. You can audit it. If you see <code>derived</code> on a manifest you expected to be <code>asserted</code>, your harness is not forwarding the origin. If you see <code>content_hash_mismatch</code> in the sanitization block, something changed between signing and rendering -- and if every unit failed at once, you are probably looking at a relocation, not drift.</p>
+<hr />
+<h2 id="the-arc">The arc<a class="headerlink" href="#the-arc" title="Permanent link">&para;</a></h2>
+<p>KCP v0.16 gave manifests a trust model. v0.17 gave units a content model. v0.18 binds the trust model to the content -- not just to the YAML that describes the content, but to the bytes the agent actually loads. The signature now covers the territory, not just the map.</p>
+<p><img alt="The KCP Evolutionary Arc: v0.16 (the trust gap — signing, trust tiers, fail-closed render pipeline), v0.17 (the content gap — structure metadata, subtractive not_for matching), v0.18 (binding — content hashes bind the signed manifest to the actual bytes; evidence classes prevent origin spoofing). Each release closes the gap the previous one made visible." src="../../../../../assets/images/kcp-018-15-arc.webp" /></p>
+<p>The progression has a pattern: each release closes a gap that was visible from the previous one. v0.16 made origin derivation normative and immediately exposed that derived origins are not equally trustworthy. v0.16 made signing possible and immediately exposed that signing the manifest leaves the content unsigned. v0.17 made content metadata richer and made it more valuable to ensure that the content behind that metadata is authentic.</p>
+<p>v0.18 closes those gaps. The next ones are already visible -- federated trust delegation, transport integrity for federation fetches, digest cost budgets on large trees -- and they will be the subject of the next post when they are ready.</p>
+<p><img alt="Signing the Territory: the complete picture — the T9 attack vector, Fix 1 (per-unit content hashes C11/C12), Fix 2 (origin evidence classes C13), the B20 corroboration safeguard (C14), and layered security outcomes. Defense in depth: either mechanism alone degrades the attack; together they close it." src="../../../../../assets/images/kcp-018-05-signing-territory.webp" /></p>
+<hr />
+<h2 id="try-it">Try it<a class="headerlink" href="#try-it" title="Permanent link">&para;</a></h2>
+<p>The spec, the CLI, and the bridges are all open source:</p>
+<ul>
+<li><strong>Spec + CLI</strong> (<code>kcp</code>): <a href="https://github.com/Cantara/knowledge-context-protocol">github.com/Cantara/knowledge-context-protocol</a></li>
+<li><strong>Bridge</strong> (<code>kcp-memory</code>): <a href="https://github.com/Cantara/kcp-memory">github.com/Cantara/kcp-memory</a></li>
+<li><strong>Bridge</strong> (<code>kcp-commands</code>): <a href="https://github.com/Cantara/kcp-commands">github.com/Cantara/kcp-commands</a></li>
+</ul>
+<p>Run <code>kcp render</code> on your manifest with <code>--origin</code> set. Run <code>kcp validate</code> to see whether your content hashes are current. If you are signing in CI, add <code>content_hash</code> to a unit and watch the pipeline compute it. The experiment cases in <code>experiments/rfc-0018-render/</code> -- particularly B17 and B20 -- are worth reading even if you never run them; they make the attack and the defense concrete.</p>
+<hr />
+<p><em>Co-authored with Claude. The threat model, protocol design, and RFC are mine; Claude helped draft and sharpen the narrative.</em></p>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">Series: Knowledge Context Protocol</p>
+<p><a href="/blog/2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">← Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard</a> &ensp;·&ensp; Part 31 of 33 &ensp;·&ensp; <a href="/blog/2026/06/12/stale-knowledge-is-worse-than-no-knowledge-kcp-v019-and-v020-close-the-temporal-gap/">Stale Knowledge Is Worse Than No Knowledge: KCP v0.19 and v0.20 Close the Temporal Gap →</a></p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../stale-knowledge-is-worse-than-no-knowledge-kcp-v019-and-v020-close-the-temporal-gap/" class="md-footer__link md-footer__link--next" aria-label="Next: Stale Knowledge Is Worse Than No Knowledge: KCP v0.19 and v0.20 Close the Temporal Gap">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Stale Knowledge Is Worse Than No Knowledge: KCP v0.19 and v0.20 Close the Temporal Gap
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Thor Henning Hetland &nbsp;&middot;&nbsp; Co-authored with <a href="https://claude.ai/claude-code" target="_blank" rel="noopener">Claude Code</a> &nbsp;&middot;&nbsp; Indexed by Synthesis
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/hetland/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/totto" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/javatotto" target="_blank" rel="noopener" title="Twitter / X" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
