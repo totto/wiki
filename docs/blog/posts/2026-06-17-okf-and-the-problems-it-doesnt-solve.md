@@ -175,6 +175,41 @@ The knowledge infrastructure problem has layers. OKF is a solid implementation o
 
 ---
 
+## The bridge is now a command
+
+The progression I described above — start with OKF, hit the complexity ceiling, implement KCP infrastructure — is now mechanical.
+
+Today I shipped `kcp import-okf` as part of KCP v0.21.2:
+
+```bash
+npx kcp import-okf ./my-okf-bundle
+```
+
+Point it at an OKF directory. It reads the frontmatter, skips the reserved files (`index.md`, `log.md`), maps OKF types to KCP kinds, turns `description` into a question-form intent, extracts Markdown links as `depends_on` references, computes sha256 content hashes for each document, and writes a `knowledge.yaml` manifest.
+
+The output looks like what I showed at the start of this post — except now the scaffolding is generated, not hand-written. The `# TODO` markers flag every intent that needs human review, every unit that should have a `valid_from` date added. The review checklist is printed to the console and embedded at the top of the file.
+
+```
+✔  Imported 2 units from /tmp/my-okf-bundle → knowledge.yaml
+⚠  2 units have auto-generated intents — search "# TODO" and refine
+ℹ  0 units have a temporal block — add valid_from if content has an enforcement date
+
+Review checklist:
+  1. Search for "# TODO" and address each annotation
+  2. Add temporal.valid_from where content has an enforcement or effective date
+  3. Refine auto-generated intents into precise task-oriented questions
+  4. Run: kcp validate
+  5. Run: kcp sign --key <ed25519.pem> --key-id <id>
+```
+
+What it deliberately doesn't do: it doesn't backfill the three hard problems for you. It can't infer `valid_from` from an OKF `timestamp` — those are different things, as I described above. It can't synthesize a trust model from a directory of Markdown files. It can't resolve which of two conflicting OKF documents is authoritative.
+
+What it does is eliminate the mechanical work so you can focus on the judgment work. The structure is there. The hashes are there. The `depends_on` graph is inferred. The temporal and signing fields are stubbed with `# TODO` comments so nothing gets silently skipped.
+
+The migration path now has a first step that takes thirty seconds instead of half a day.
+
+---
+
 *KCP specification and reference implementation: [github.com/Cantara/knowledge-context-protocol](https://github.com/Cantara/knowledge-context-protocol)*
 
 *OKF specification: [github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf](https://github.com/GoogleCloudPlatform/knowledge-catalog/tree/main/okf)*
