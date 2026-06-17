@@ -62,6 +62,8 @@ Google shipped three things alongside the spec: a Python agent that generates OK
 
 The explicitly named open problems in OKF v0.1: handling contradictions and staleness, verification and trust, and access control. These are flagged as "future work."
 
+![OKF directory structure: index.md for progressive navigation, log.md for change history, concept.md with YAML frontmatter requiring only one field: type](/assets/images/blog/okf-kcp/okf-kcp-slide-04.webp)
+
 ---
 
 ## The convergence moment
@@ -76,6 +78,8 @@ OKF is not happening in isolation. Several independent efforts have arrived at t
 All four are saying the same thing: AI agents need structured, navigable knowledge, and the absence of that structure is a significant bottleneck. None of them are primarily saying "use RAG" or "use vector search." They're all saying: shape the knowledge *before* the agent encounters it.
 
 That's a real convergence. When multiple independent teams arrive at the same insight without coordinating, the insight is probably correct.
+
+![The Great Convergence: llms.txt, CLAUDE.md, OKF, and KCP all converging independently on "shape the knowledge before the agent encounters it"](/assets/images/blog/okf-kcp/okf-kcp-slide-02.webp)
 
 ---
 
@@ -94,6 +98,8 @@ OKF is optimized for the "agents maintain a wiki" use case. An agent explores a 
 KCP is optimized for cases where the knowledge has legal weight, comes from external authorities, changes on enforced schedules, needs to be verifiable by parties outside the originating organization, and where an agent acting on wrong knowledge creates measurable liability. Regulatory corpora. Cross-organizational trust. Compliance chains.
 
 You could build an OKF bundle and describe it with a KCP manifest. The two can coexist at different layers of the same system.
+
+![OKF vs. KCP: Content Packaging Layer vs. Knowledge Infrastructure Protocol Layer — a comparison of primary format, use case, trust model, time handling, and conflict resolution](/assets/images/blog/okf-kcp/okf-kcp-infographic.webp)
 
 ---
 
@@ -115,6 +121,8 @@ The broader version of this problem: API endpoints that respond until they don't
 
 OKF's `timestamp` records the metadata modification date. It says nothing about when the content becomes true or when it expires.
 
+![Hard Problem 1: Temporal Validity — OKF's last-modified timestamp vs KCP's valid_from enforcement dates, illustrated with the EU AI Act's three staggered deadlines across 18 months](/assets/images/blog/okf-kcp/okf-kcp-slide-07.webp)
+
 ### Trust and verification
 
 OKF has no trust model. A document is present or absent. There's no mechanism to verify who created it, whether it has been tampered with, or whether it was produced by an authorized source.
@@ -127,6 +135,8 @@ KCP uses Ed25519 signatures over content hashes at the unit level. Every fragmen
 
 This isn't paranoia. It's a practical requirement for cross-organizational knowledge flows. The moment knowledge crosses an organizational boundary, "it was in the directory" is no longer a sufficient trust model.
 
+![Hard Problem 2: Trust & Verification — implicit trust fails at the organizational boundary; KCP uses content hashes and Ed25519 signatures for independent verification](/assets/images/blog/okf-kcp/okf-kcp-slide-08.webp)
+
 ### Contradiction handling
 
 OKF v0.1 explicitly notes that handling contradictions between knowledge documents is an open problem. Two documents disagree about the same fact. Which one is authoritative? Which one is current?
@@ -134,6 +144,8 @@ OKF v0.1 explicitly notes that handling contradictions between knowledge documen
 In KCP, this is addressed by the supersession model. A knowledge unit can declare that it supersedes a prior unit. The manifest contains a `supersedes` field. Agents querying the manifest can determine the current authoritative version of a piece of knowledge without reading every document in the corpus.
 
 This matters most when knowledge evolves. A regulatory update supersedes a prior provision. An API version deprecates an endpoint. A policy revision overrides the previous policy. Without a supersession model, the corpus accumulates contradictions that agents have no principled way to resolve.
+
+![Hard Problem 3: Contradiction Handling — without a supersession model, corpora accumulate conflicting realities; KCP's supersession chain explicitly deprecates overridden units](/assets/images/blog/okf-kcp/okf-kcp-slide-09.webp)
 
 ---
 
@@ -158,6 +170,8 @@ I don't see OKF as a competitor. It operates at a different layer. If anything, 
 An organization could start with OKF — it's easy to adopt, has Google's backing, and works well for the wiki use case. When they hit the temporal validity problem (an agent applying a regulation that hasn't taken effect yet), or the trust problem (how do we verify this knowledge bundle came from our compliance team and wasn't tampered with), or the contradiction problem (two policy documents say different things — which one governs?) — those are the problems KCP was built to solve.
 
 The knowledge infrastructure problem has layers. OKF is a solid implementation of one of them. The layers above it are where things get hard and interesting.
+
+![The Natural Progression Path: Step 1 — adopt OKF for internal wikis; Step 2 — hit the complexity ceiling (time, trust, contradictions); Step 3 — implement KCP infrastructure](/assets/images/blog/okf-kcp/okf-kcp-slide-13.webp)
 
 ---
 
