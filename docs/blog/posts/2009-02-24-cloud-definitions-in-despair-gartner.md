@@ -8,6 +8,7 @@ tags:
   - definitions
 authors:
   - totto
+noindex: true
 ---
 
 # Cloud definitions in despair.. (Gartner)

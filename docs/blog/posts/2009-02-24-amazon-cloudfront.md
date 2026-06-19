@@ -10,6 +10,7 @@ tags:
   - cloudfront
 authors:
   - totto
+noindex: true
 ---
 
 # Amazon CloudFront

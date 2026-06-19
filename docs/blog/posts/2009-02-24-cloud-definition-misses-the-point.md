@@ -7,6 +7,7 @@ tags:
   - definitions
 authors:
   - totto
+noindex: true
 ---
 
 # Cloud definition misses the point....

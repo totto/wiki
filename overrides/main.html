@@ -10,7 +10,8 @@
   page.url.startswith("blog/page/") or
   page.url == "tags/" or
   page.url.startswith("tags/") or
-  page.url.startswith("linkedin/")
+  page.url.startswith("linkedin/") or
+  (page.meta and page.meta.noindex)
 ) %}
 <meta name="robots" content="noindex, follow">
 {% endif %}
@@ -43,6 +44,23 @@
   ],
   "jobTitle": "Software Architect",
   "description": "Software architect and AI development pioneer. 30 years building software and communities. Founder of eXOReaction, co-founder of JavaZone."
+}
+</script>
+{% endif %}
+{% if page and page.url.startswith("blog/20") and "/page/" not in page.url and page.url.count("/") >= 5 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | tojson }},
+  "url": "{{ config.site_url }}{{ page.url }}",
+  "author": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org"
+  }{% if page.meta and page.meta.date %},
+  "datePublished": "{{ page.meta.date }}"{% endif %}{% if page.meta and page.meta.description %},
+  "description": {{ page.meta.description | tojson }}{% endif %}
 }
 </script>
 {% endif %}

@@ -10,6 +10,7 @@ tags:
   - database
 authors:
   - totto
+noindex: true
 ---
 
 # Free SimpleDB Beta Cloud from Amazon

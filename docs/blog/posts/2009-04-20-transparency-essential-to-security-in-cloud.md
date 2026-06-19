@@ -8,6 +8,7 @@ tags:
   - transparency
 authors:
   - totto
+noindex: true
 ---
 
 # Transparency is essential to security in the cloud

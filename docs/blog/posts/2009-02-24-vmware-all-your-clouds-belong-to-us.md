@@ -8,6 +8,7 @@ tags:
   - virtualization
 authors:
   - totto
+noindex: true
 ---
 
 # VMware - All your clouds are belong to us

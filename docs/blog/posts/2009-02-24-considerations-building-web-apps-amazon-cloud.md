@@ -9,6 +9,7 @@ tags:
   - web-applications
 authors:
   - totto
+noindex: true
 ---
 
 # Considerations in Building Web Applications for the Amazon Cloud

@@ -8,6 +8,7 @@ tags:
   - strategy
 authors:
   - totto
+noindex: true
 ---
 
 # Clouds only for tactical projects until 2012 - Gartner misses the point... (again)

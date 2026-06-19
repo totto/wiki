@@ -4,6 +4,8 @@ MkDocs hook: remove noindex pages from sitemap.xml
 Pages that receive <meta name="robots" content="noindex"> are excluded
 from the generated sitemap to avoid wasting crawl budget on thin pages.
 Keep the NOINDEX_PREFIXES list in sync with overrides/main.html.
+
+Also respects `noindex: true` in page frontmatter (collected during build).
 """
 
 import os
@@ -19,10 +21,24 @@ NOINDEX_PREFIXES = [
     "linkedin/",
 ]
 
+# URLs collected from pages with noindex: true in frontmatter
+_noindex_urls: set[str] = set()
+
+
+def on_page_context(context, page, config, **kwargs):
+    """Collect pages that have noindex: true in frontmatter."""
+    if page.meta.get("noindex"):
+        _noindex_urls.add(page.url)
+    return context
+
 
 def _is_noindex(loc: str, site_url: str) -> bool:
     path = loc.replace(site_url, "").lstrip("/")
-    return any(path.startswith(p) for p in NOINDEX_PREFIXES)
+    if any(path.startswith(p) for p in NOINDEX_PREFIXES):
+        return True
+    if path in _noindex_urls:
+        return True
+    return False
 
 
 def on_post_build(config, **kwargs):
