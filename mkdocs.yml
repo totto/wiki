@@ -58,6 +58,9 @@ hooks:
 plugins:
   - search:
       lang: [en, "no"]
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
   - blog:
       blog_dir: blog
       post_date_format: long

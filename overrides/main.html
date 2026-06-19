@@ -2,6 +2,17 @@
 
 {% block extrahead %}
 <link rel="knowledge" href="/knowledge.yaml" type="application/yaml" title="KCP v0.6 — 67 units, 83 relationships">
+{% if page and (
+  page.url.startswith("blog/archive/") or
+  page.url.startswith("blog/category/") or
+  page.url.startswith("blog/2026/page/") or
+  page.url.startswith("blog/2025/page/") or
+  page.url.startswith("blog/page/") or
+  page.url == "tags/" or
+  page.url.startswith("tags/")
+) %}
+<meta name="robots" content="noindex, follow">
+{% endif %}
 {% endblock %}
 
 {% block announce %}
