@@ -9,9 +9,42 @@
   page.url.startswith("blog/2025/page/") or
   page.url.startswith("blog/page/") or
   page.url == "tags/" or
-  page.url.startswith("tags/")
+  page.url.startswith("tags/") or
+  page.url.startswith("linkedin/")
 ) %}
 <meta name="robots" content="noindex, follow">
+{% endif %}
+<!-- Open Graph -->
+<meta property="og:site_name" content="{{ config.site_name }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ config.site_url }}{{ page.url if page else '' }}">
+<meta property="og:title" content="{{ page.title if page else config.site_name }}">
+<meta property="og:description" content="{{ page.meta.description if page and page.meta.description else config.site_description }}">
+<meta property="og:image" content="{{ config.site_url }}assets/images/totto-2025.jpg">
+<meta property="og:image:alt" content="Thor Henning Hetland">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@javatotto">
+<meta name="twitter:creator" content="@javatotto">
+<meta name="twitter:title" content="{{ page.title if page else config.site_name }}">
+<meta name="twitter:description" content="{{ page.meta.description if page and page.meta.description else config.site_description }}">
+<meta name="twitter:image" content="{{ config.site_url }}assets/images/totto-2025.jpg">
+{% if page and page.url in ("", "./") %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Thor Henning Hetland",
+  "url": "https://wiki.totto.org",
+  "sameAs": [
+    "https://www.linkedin.com/in/hetland/",
+    "https://github.com/totto",
+    "https://twitter.com/javatotto"
+  ],
+  "jobTitle": "Software Architect",
+  "description": "Software architect and AI development pioneer. 30 years building software and communities. Founder of eXOReaction, co-founder of JavaZone."
+}
+</script>
 {% endif %}
 {% endblock %}
 

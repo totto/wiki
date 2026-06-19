@@ -1,4 +1,5 @@
 ---
+description: "About Thor Henning Hetland — software architect, AI development pioneer, Java Champion since 2005, co-founder of JavaZone, founder of eXOReaction. 30 years shipping software."
 tags:
   - Bio
   - Career

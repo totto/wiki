@@ -1,4 +1,5 @@
 ---
+description: "Software architect and AI development pioneer. 30 years building software and communities. Founder of eXOReaction, co-founder of JavaZone. Writes about Skill-Driven Development and working with AI at scale."
 hide:
   - navigation
   - toc
