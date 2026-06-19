@@ -1,4 +1,5 @@
 ---
+description: "Spec-driven development produces good output but starts from zero each session. Skill-driven development accumulates knowledge, making each session smarter."
 date: 2026-03-07
 slug: skill-driven-vs-spec-driven-development
 series: "Skill-Driven Development"

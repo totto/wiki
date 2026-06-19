@@ -1,4 +1,5 @@
 ---
+description: "Cloud computing is greener than in-house servers today, but componentisation drives consumption. If computation gets too cheap to measure, waste will follow."
 date: 2009-09-15
 categories:
   - Cloud Computing

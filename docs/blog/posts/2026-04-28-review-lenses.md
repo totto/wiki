@@ -1,4 +1,5 @@
 ---
+description: "Nine specialist review perspectives through one model -- security, performance, accessibility, compliance, and more -- producing structured multi-lens analysis."
 date: 2026-04-28
 categories:
   - AI-Augmented Development

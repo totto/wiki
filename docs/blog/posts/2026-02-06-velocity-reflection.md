@@ -1,4 +1,5 @@
 ---
+description: "A three-paragraph LinkedIn post about adjusting to AI velocity became the highest-engagement personal post published -- vulnerability resonates more than proof."
 date: 2026-02-06
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "Most systems overwrite history, making root cause analysis painfully manual. Temporal graphs make those questions answerable in seconds across six domains."
 date: 2025-10-10
 series: "Aurora & Temporal Analytics"
 categories:

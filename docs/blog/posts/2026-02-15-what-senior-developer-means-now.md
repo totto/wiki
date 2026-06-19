@@ -1,4 +1,5 @@
 ---
+description: "When AI handles production, senior means encoding domain knowledge, evaluating output against reality, and making architectural decisions -- not typing faster."
 date: 2026-02-15
 categories:
   - AI-Augmented Development

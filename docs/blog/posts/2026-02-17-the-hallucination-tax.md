@@ -1,4 +1,5 @@
 ---
+description: "Three fears beyond hallucinations -- runaway costs, loss of control, silent failures -- and the verification systems each forced into existence during lib-pcb."
 date: 2026-02-17
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "The cloud lift-and-shift mistake of 2009 is repeating with AI. Old processes applied to new capabilities produce incremental results, not transformative ones."
 date: 2026-02-19
 categories:
   - AI-Augmented Development

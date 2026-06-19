@@ -1,4 +1,5 @@
 ---
+description: "No meetings, no timesheets, documentation as default. Async-first organisation where trust replaces observation and clarity replaces coordination overhead."
 date: 2025-11-17
 categories:
   - Methodology

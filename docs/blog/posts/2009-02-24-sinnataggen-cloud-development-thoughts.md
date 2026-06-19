@@ -1,4 +1,5 @@
 ---
+description: "Gartner's six criteria for evaluating cloud development platforms, from interoperability and mobile support to vendor longevity and ecosystem quality."
 date: 2009-02-24
 categories:
   - Cloud Computing

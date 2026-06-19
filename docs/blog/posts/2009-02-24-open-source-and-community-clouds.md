@@ -1,4 +1,5 @@
 ---
+description: "Early open-source cloud platforms StratusLab and Eucalyptus offered EC2-compatible infrastructure on your own hardware, with real management challenges."
 date: 2009-02-24
 categories:
   - Cloud Computing

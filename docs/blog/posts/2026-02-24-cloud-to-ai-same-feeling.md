@@ -1,4 +1,5 @@
 ---
+description: "The same structural misunderstanding from cloud computing in 2009 is happening with AI -- adopting new technology while missing the paradigm shift it requires."
 date: 2026-02-24T08:00:00
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "Synthesis benchmarked itself and found stale skill files produced confident, fluent, wrong answers. Can your AI tool verify its own knowledge integrity?"
 date: 2026-02-11
 categories:
   - AI-Augmented Development

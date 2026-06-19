@@ -1,4 +1,5 @@
 ---
+description: "Every agent reinvents knowledge filtering. KCP v0.14 standardises the query language and composition, making manifest filtering interoperable across tools."
 date: 2026-03-25
 categories:
   - Knowledge Infrastructure

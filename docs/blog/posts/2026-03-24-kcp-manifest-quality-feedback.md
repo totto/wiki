@@ -1,4 +1,5 @@
 ---
+description: "At 291 CLI manifests, there was no way to know which helped and which steered agents wrong. A feedback loop now measures manifest quality from actual usage."
 date: 2026-03-24
 slug: kcp-manifest-quality-feedback-loop
 series: "Knowledge Context Protocol"

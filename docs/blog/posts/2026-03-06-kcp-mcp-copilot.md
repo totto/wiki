@@ -1,4 +1,5 @@
 ---
+description: "kcp-mcp v0.10.0 shipped KCP support for GitHub Copilot in one day instead of ten, including a zero-MCP path for enterprises that cannot run MCP servers."
 date: 2026-03-06
 series: "Knowledge Context Protocol"
 categories:

@@ -1,4 +1,5 @@
 ---
+description: "The agent reported correct metrics but fabricated the validation date. Small hallucinations in metadata erode trust in verified facts."
 date: 2026-02-26T12:00:00
 categories:
   - AI-Augmented Development

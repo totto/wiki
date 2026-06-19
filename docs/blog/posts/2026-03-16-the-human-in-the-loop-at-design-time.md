@@ -1,4 +1,5 @@
 ---
+description: "Human-in-the-loop at runtime does not scale. Encoding quality standards into persistent context puts the human in the loop at design time instead."
 date: 2026-03-16
 categories:
   - AI-Augmented Development

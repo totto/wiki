@@ -1,4 +1,5 @@
 ---
+description: "Regulations are knowledge. KCP types them as versioned packages with temporal validity and cryptographic binding -- compliance becomes evaluable, not anecdotal."
 date: 2026-06-01T09:30:00
 draft: false
 series: "Knowledge Context Protocol"

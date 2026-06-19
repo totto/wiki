@@ -1,4 +1,5 @@
 ---
+description: "Discoverable is not navigable. Extracting 38 Dutch obligation units from inline YAML to standalone text made content agent-traversable, not just findable."
 date: 2026-06-14T12:00:00
 draft: false
 categories:

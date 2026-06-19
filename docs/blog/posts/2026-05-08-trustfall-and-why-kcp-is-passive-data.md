@@ -1,4 +1,5 @@
 ---
+description: "TrustFall showed why executable config in repos is dangerous. KCP is passive data by design -- manifests declare knowledge structure but never execute anything."
 date: 2026-05-08
 categories:
   - Security

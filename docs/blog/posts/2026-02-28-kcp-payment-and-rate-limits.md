@@ -1,4 +1,5 @@
 ---
+description: "HTTP 402 waited 30 years for a use case. Autonomous agents making machine-to-machine knowledge requests are that use case -- metered access and budget signals."
 date: 2026-02-28T12:00:00
 series: "Knowledge Context Protocol"
 categories:

@@ -1,4 +1,5 @@
 ---
+description: "What persists across AI sessions when memory is external -- decisions, patterns, institutional knowledge -- and what that accumulation means for the director."
 date: 2026-04-17
 categories:
   - AI-Augmented Development

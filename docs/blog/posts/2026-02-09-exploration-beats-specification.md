@@ -1,4 +1,5 @@
 ---
+description: "When iteration costs minutes, exploration beats specification. Two days of building taught more about PCB formats than months of studying specs."
 date: 2026-02-09
 categories:
   - AI-Augmented Development

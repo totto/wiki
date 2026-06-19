@@ -1,4 +1,5 @@
 ---
+description: "AI creates code 10-66x faster, but comprehension speed has not changed. The real bottleneck is now understanding what exists, not producing more of it."
 date: 2026-02-05
 categories:
   - AI-Augmented Development

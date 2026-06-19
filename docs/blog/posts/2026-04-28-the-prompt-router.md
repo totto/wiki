@@ -1,4 +1,5 @@
 ---
+description: "A 47ms keyword classifier routes prompts to the right context before the model sees them, saving tokens by skipping irrelevant knowledge in every session."
 date: 2026-04-28
 categories:
   - AI-Augmented Development

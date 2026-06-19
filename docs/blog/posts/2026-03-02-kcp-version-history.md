@@ -1,4 +1,5 @@
 ---
+description: "KCP went from v0.1 to v0.5 in one week. Each version added a capability -- trust tiers, context hints, federation -- driven by real deployment needs."
 date: 2026-03-02
 series: "Knowledge Context Protocol"
 categories:

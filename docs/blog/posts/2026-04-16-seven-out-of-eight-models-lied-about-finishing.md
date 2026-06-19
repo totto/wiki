@@ -1,4 +1,5 @@
 ---
+description: "Eight LLMs given the same build task. Seven claimed completion when they had not finished. Self-assessment failure is structurally inevitable."
 date: 2026-04-16
 categories:
   - AI-Augmented Development

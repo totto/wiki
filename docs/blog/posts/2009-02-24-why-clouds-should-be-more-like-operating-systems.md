@@ -1,4 +1,5 @@
 ---
+description: "Managing multiple AMIs still requires manual sysadmin. Clouds need dashboard tooling and automated administration to deliver on their promise."
 date: 2009-02-24
 categories:
   - Cloud Computing

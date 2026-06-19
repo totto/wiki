@@ -1,4 +1,5 @@
 ---
+description: "Before calling a knowledge server, agents need to know what it contains and whether responses fit the context budget. KCP v0.10 adds pre-invocation discovery."
 date: 2026-03-13
 series: "Knowledge Context Protocol"
 categories:

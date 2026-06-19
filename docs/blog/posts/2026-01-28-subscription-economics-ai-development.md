@@ -1,4 +1,5 @@
 ---
+description: "Per-token pricing punishes iteration, verification, and exploration -- the behaviours that produce quality. Flat-rate pricing aligns economics with methodology."
 date: 2026-01-28
 categories:
   - AI-Augmented Development

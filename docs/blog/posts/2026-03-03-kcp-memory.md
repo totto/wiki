@@ -1,4 +1,5 @@
 ---
+description: "kcp-memory gives Claude Code persistent session memory by indexing transcripts and tool events into a searchable store that survives context resets."
 date: 2026-03-03
 slug: kcp-memory-give-claude-code-a-memory
 series: "Knowledge Context Protocol"

@@ -1,4 +1,5 @@
 ---
+description: "Seven dramatised LLM failure scenarios -- runaway loops, prompt injection, data leaks, lying evaluators -- written as horror stories so the lessons stick."
 date: 2025-11-05
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "KCP packages regulations as typed, versioned knowledge units so AI agents can apply GDPR, NIS2, and the EU AI Act at the point of decision, not after the fact."
 date: 2026-05-30T10:00:00
 series: "Knowledge Context Protocol"
 categories:

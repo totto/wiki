@@ -1,4 +1,5 @@
 ---
+description: "Separating time, state, and relationships into different systems destroys the ability to ask questions spanning all three. A temporal graph models them as one."
 date: 2026-02-01T08:00:00
 categories:
   - Architecture

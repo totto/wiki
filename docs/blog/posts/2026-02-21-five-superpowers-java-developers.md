@@ -1,4 +1,5 @@
 ---
+description: "Five capabilities Claude Code gains with Synthesis on large Java projects: structural search, dependency mapping, cross-module reasoning, and aware refactoring."
 date: 2026-02-21
 categories:
   - Java Development

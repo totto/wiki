@@ -1,4 +1,5 @@
 ---
+description: "A 42,000-token spec loaded into an 8,000-token budget crashes the session. Context window hints let agents decide what to load before they load it."
 date: 2026-02-28T13:00:00
 series: "Knowledge Context Protocol"
 categories:

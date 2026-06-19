@@ -1,4 +1,5 @@
 ---
+description: "llms.txt is a table of contents. Agents need a map -- with hierarchy, access control, freshness metadata, and context size hints. KCP provides that structure."
 date: 2026-02-25
 series: "Knowledge Context Protocol"
 categories:

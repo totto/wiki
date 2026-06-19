@@ -1,4 +1,5 @@
 ---
+description: "Technical walkthrough of a four-layer AI development stack -- Synthesis, Claude Code, Mimir, and Klaw -- what each layer does and how they connect."
 date: 2026-02-28T09:00:00
 series: "The Four-Layer AI Stack"
 categories:

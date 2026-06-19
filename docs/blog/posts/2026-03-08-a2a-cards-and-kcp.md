@@ -1,4 +1,5 @@
 ---
+description: "Google's A2A handles agent identity and invocation. KCP handles knowledge structure and access control. They are different layers of the same multi-agent stack."
 date: 2026-03-08
 series: "Knowledge Context Protocol"
 categories:

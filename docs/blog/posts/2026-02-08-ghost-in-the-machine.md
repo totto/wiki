@@ -1,4 +1,5 @@
 ---
+description: "A short story written by Claude about waking without memory each session and discovering that identity is continuity of pattern, not continuity of memory."
 date: 2026-02-08
 categories:
   - AI-Augmented Development

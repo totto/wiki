@@ -1,4 +1,5 @@
 ---
+description: "Git, CI, package managers, auth -- every developer stack layer was built for humans. Agents break those assumptions and need purpose-built alternatives."
 date: 2026-03-16
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "Each tech wave -- OO, cloud, microservices, AI -- changed something real and left something unchanged. Architecture judgment and domain expertise endure."
 date: 2026-02-01
 categories:
   - AI-Augmented Development

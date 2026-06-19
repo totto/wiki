@@ -1,4 +1,5 @@
 ---
+description: "The full lib-pcb story from weekend experiment to manufacturing-ready library -- how human domain expertise and AI execution combined across 474 PRs in 11 days."
 date: 2026-02-22
 series: "Building lib-pcb"
 categories:

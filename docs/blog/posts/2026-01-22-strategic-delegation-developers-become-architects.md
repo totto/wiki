@@ -1,4 +1,5 @@
 ---
+description: "Vague AI delegation produces 47-file diffs nobody understands. Strategic delegation -- small, explicit, scoped -- keeps architectural control with the human."
 date: 2026-01-22
 categories:
   - AI-Augmented Development

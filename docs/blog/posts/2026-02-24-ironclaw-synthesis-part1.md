@@ -1,4 +1,5 @@
 ---
+description: "Connecting an internal AI agent to Synthesis via MCP so it can search 155 indexed files and answer company-specific questions instead of hallucinating."
 date: 2026-02-24T08:00:00
 series: "Giving an AI Agent a Brain"
 categories:

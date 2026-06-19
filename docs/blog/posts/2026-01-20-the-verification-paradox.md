@@ -1,4 +1,5 @@
 ---
+description: "Fast AI generation without fast verification is a treadmill. Comprehensive test infrastructure is the throughput multiplier that makes AI-speed shipping safe."
 date: 2026-01-20
 categories:
   - AI-Augmented Development

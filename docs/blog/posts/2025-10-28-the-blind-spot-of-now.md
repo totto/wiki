@@ -1,4 +1,5 @@
 ---
+description: "Current-state databases delete causation. Two case studies show how temporal analytics shifts operations from reactive to predictive."
 date: 2025-10-28
 categories:
   - AI-Augmented Development

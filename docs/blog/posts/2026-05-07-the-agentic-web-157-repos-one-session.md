@@ -1,4 +1,5 @@
 ---
+description: "How agents navigate repos depends on what is there to find. 157 repositories reveal the gap between discoverable, navigable, and actually useful knowledge."
 date: 2026-05-07
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "Individual developers have AI fluency; organisations do not. The gap between personal workflows and shared methodology is where productivity gains disappear."
 date: 2026-02-20
 categories:
   - AI-Augmented Development

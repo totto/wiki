@@ -1,4 +1,5 @@
 ---
+description: "Applications cannot use new compute resources dynamically without middleware virtualisation. Auto-scaling requires architecture, not just infrastructure."
 date: 2009-03-05
 categories:
   - Cloud Computing

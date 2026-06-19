@@ -1,4 +1,5 @@
 ---
+description: "Semiconductor part numbers encode a dozen specs in one string with suffix collisions across manufacturers. Parsing them requires disambiguation, not matching."
 date: 2026-01-15
 series: "Building lib-pcb"
 categories:

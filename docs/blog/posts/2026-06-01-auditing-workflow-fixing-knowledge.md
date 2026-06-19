@@ -1,4 +1,5 @@
 ---
+description: "Everyone audits the AI workflow. Nobody fixes the knowledge feeding it. Without typed, signed units, audit trails record that review happened but not what."
 date: 2026-06-01T10:00:00
 series: "Knowledge Context Protocol"
 categories:

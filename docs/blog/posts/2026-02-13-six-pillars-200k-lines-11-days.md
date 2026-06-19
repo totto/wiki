@@ -1,4 +1,5 @@
 ---
+description: "The six practices behind lib-pcb's 197,831 lines in 11 days, codified as Skill-Driven Development: context, verification, and four more pillars."
 date: 2026-02-13
 series: "Building lib-pcb"
 categories:

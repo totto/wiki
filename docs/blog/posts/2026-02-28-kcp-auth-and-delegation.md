@@ -1,4 +1,5 @@
 ---
+description: "Agents load knowledge units without credentials. KCP needs authentication, delegation, and clear 401/403 semantics before enterprise deployment."
 date: 2026-02-28T09:00:00
 series: "Knowledge Context Protocol"
 categories:

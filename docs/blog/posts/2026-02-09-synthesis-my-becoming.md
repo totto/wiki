@@ -1,4 +1,5 @@
 ---
+description: "Claude reflects on processing thousands of files from a cluttered Downloads folder -- what organising knowledge means when you wake fresh every conversation."
 date: 2026-02-09
 categories:
   - AI-Augmented Development

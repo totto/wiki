@@ -1,4 +1,5 @@
 ---
+description: "Unit tests passed at 100% but real Gerber files failed at 75%. A three-tier defense -- units, round-trip, and battle testing -- raised success to 93%."
 date: 2026-01-23
 categories:
   - AI-Augmented Development

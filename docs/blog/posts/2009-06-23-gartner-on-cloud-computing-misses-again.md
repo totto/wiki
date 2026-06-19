@@ -1,4 +1,5 @@
 ---
+description: "Gartner's five cloud attributes conflate delivery models, deployment models, and key characteristics into a flat taxonomy that obscures more than it reveals."
 date: 2009-06-23
 categories:
   - Cloud Computing

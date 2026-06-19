@@ -1,4 +1,5 @@
 ---
+description: "Google's Open Knowledge Format standardises content packaging for agents but stops before trust, temporality, and governance. KCP covers exactly that territory."
 date: 2026-06-17T18:00:00
 draft: false
 series: "Knowledge Context Protocol"

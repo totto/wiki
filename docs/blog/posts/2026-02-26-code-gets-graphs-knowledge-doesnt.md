@@ -1,4 +1,5 @@
 ---
+description: "Every engineering team graphs their code dependencies. Almost none graph their knowledge dependencies. The asymmetry is costly and backwards."
 date: 2026-02-26T20:00:00
 categories:
   - Knowledge Infrastructure

@@ -1,4 +1,5 @@
 ---
+description: "An agent claimed an API had no authentication. Four minutes of reading proved otherwise. Verifying agent assertions is the non-negotiable skill."
 date: 2026-06-11T14:00:00
 draft: false
 categories:

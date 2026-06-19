@@ -1,4 +1,5 @@
 ---
+description: "A weekend experiment validated that a full PCB design library was buildable at AI velocity using round-trip validation against real Gerber RS-274X files."
 date: 2026-01-19
 series: "Building lib-pcb"
 categories:

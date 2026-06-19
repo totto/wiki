@@ -1,4 +1,5 @@
 ---
+description: "A realistic Tuesday with eight tasks and real output numbers -- context switching costs, verification overhead, and the rhythm of directed AI work."
 date: 2026-02-28T10:00:00
 series: "The Four-Layer AI Stack"
 categories:

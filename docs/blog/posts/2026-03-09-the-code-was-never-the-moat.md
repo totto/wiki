@@ -1,4 +1,5 @@
 ---
+description: "A Python library was rewritten from LGPL to MIT in five days using AI. Code-as-artifact is dying as a moat; knowing what to build and why is stronger than ever."
 date: 2026-03-09
 categories:
   - AI-Augmented Development

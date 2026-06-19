@@ -1,4 +1,5 @@
 ---
+description: "Agents have working memory but lack episodic and semantic layers. A three-layer architecture -- context window, sessions, knowledge graph -- is the fix."
 date: 2026-03-03
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "Two infrastructure gaps closed on the same day: kcp-memory for episodic persistence and kcp-commands for tool knowledge. Both were blocking production."
 date: 2026-03-03T17:00:00
 categories:
   - AI-Augmented Development

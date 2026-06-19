@@ -1,4 +1,5 @@
 ---
+description: "KCP started when a 33-tool-call bug revealed agents waste their budget on discovery. Six months later: a knowledge standard with trust and governance."
 date: 2026-06-12T11:00:00
 draft: false
 series: "Knowledge Context Protocol"

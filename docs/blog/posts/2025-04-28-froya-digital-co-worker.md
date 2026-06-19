@@ -1,4 +1,5 @@
 ---
+description: "Quadim's AI agent Froya maintains a public skill library at scale -- not replacing a human editor, but making continuous QA possible where none existed before."
 date: 2025-04-28
 series: "Frøya: Digital Co-Workers"
 categories:

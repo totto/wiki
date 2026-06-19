@@ -1,4 +1,5 @@
 ---
+description: "Running a quantum experiment on real IBM hardware showed how physical constraints -- decoherence, noise, drift -- leak through every software abstraction."
 date: 2026-04-06
 categories:
   - Quantum Computing

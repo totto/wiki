@@ -1,4 +1,5 @@
 ---
+description: "Capable AI models are not enough. The agentic web needs a foundation layer for knowledge discovery, trust, and navigation that no single framework provides."
 date: 2026-03-13
 series: "Knowledge Context Protocol"
 categories:

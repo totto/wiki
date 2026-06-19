@@ -1,4 +1,5 @@
 ---
+description: "Building memory layers for AI agents was easy. Keeping them from decaying required a system that detects staleness, repairs drift, and prunes dead entries."
 date: 2026-04-06
 categories:
   - AI-Augmented Development

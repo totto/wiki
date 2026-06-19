@@ -1,4 +1,5 @@
 ---
+description: "METR found AI made experienced developers 19% slower. The compound developer -- with persistent context infrastructure -- proves architecture matters more."
 date: 2026-06-02T12:00:00
 draft: false
 categories:

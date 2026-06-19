@@ -1,4 +1,5 @@
 ---
+description: "A speculative architecture where every operation is content-addressed, every state transition provable, and history is structural -- built on merkle-bits."
 date: 2026-04-07
 categories:
   - Quantum Computing

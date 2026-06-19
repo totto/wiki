@@ -1,4 +1,5 @@
 ---
+description: "An AI agent with knowledge base access and no data classification is a compliance risk. KCP trust tiers declare what cannot leave the building."
 date: 2026-02-28T11:00:00
 series: "Knowledge Context Protocol"
 categories:

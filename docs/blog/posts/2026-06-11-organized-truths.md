@@ -1,4 +1,5 @@
 ---
+description: "Catch an agent making a false compliance claim once, encode the verification as a skill, and every future session inherits the check. Organised truths scale."
 date: 2026-06-11T16:00:00
 draft: false
 categories:

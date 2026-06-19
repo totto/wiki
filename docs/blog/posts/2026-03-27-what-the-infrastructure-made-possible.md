@@ -1,4 +1,5 @@
 ---
+description: "AI does not remove the hard part of any job. It moves it and makes it harder to ignore. The faster pencil reveals that drawing was never about the pencil."
 date: 2026-03-27
 categories:
   - AI-Augmented Development

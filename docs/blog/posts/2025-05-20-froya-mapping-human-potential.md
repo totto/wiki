@@ -1,4 +1,5 @@
 ---
+description: "Static skill taxonomies fail because skills are contextual. Quadim uses RAG, MCP, and dynamic taxonomies to build maps that adapt to their users."
 date: 2025-05-20
 series: "Frøya: Digital Co-Workers"
 categories:

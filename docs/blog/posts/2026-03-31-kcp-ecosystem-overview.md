@@ -1,4 +1,5 @@
 ---
+description: "Five tools -- kcp-commands, kcp-memory, kcp-mcp, kcp-dashboard, knowledge.yaml -- compose Claude Code into a persistent intelligence platform."
 date: 2026-03-31
 slug: kcp-ecosystem-five-tools-persistent-intelligence
 series: "Knowledge Context Protocol"

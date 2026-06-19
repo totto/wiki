@@ -1,4 +1,5 @@
 ---
+description: "KCP benchmarked on two repos: tool calls dropped from 119 to 31 on application code and 53 to 25 on documentation. Same methodology, consistent results."
 date: 2026-03-01
 series: "Knowledge Context Protocol"
 categories:

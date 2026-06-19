@@ -1,4 +1,5 @@
 ---
+description: "An AI-era consulting company that is not machine-readable is invisible to half the evaluation pipeline. One session to add KCP manifests and structured data."
 date: 2026-05-07
 authors:
   - totto

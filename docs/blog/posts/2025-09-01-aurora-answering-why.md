@@ -1,4 +1,5 @@
 ---
+description: "Aurora combines a temporal graph database with an AI query layer to answer why questions -- pattern detection, forensic investigation, and ripple effects."
 date: 2025-09-01
 series: "Aurora & Temporal Analytics"
 categories:

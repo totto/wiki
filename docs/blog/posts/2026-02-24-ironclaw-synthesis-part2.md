@@ -1,4 +1,5 @@
 ---
+description: "kimi-k2.5 claimed to call MCP tools but fabricated the results. The model was generating plausible tool outputs without executing any actual tool calls."
 date: 2026-02-24T09:00:00
 series: "Giving an AI Agent a Brain"
 categories:

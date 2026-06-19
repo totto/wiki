@@ -1,4 +1,5 @@
 ---
+description: "lib-pcb: 197,831 lines of Java, 7,461 tests, 8 format parsers in 11 days. The velocity came from Skill-Driven Development methodology, not just the AI model."
 date: 2026-01-21
 series: "Building lib-pcb"
 categories:

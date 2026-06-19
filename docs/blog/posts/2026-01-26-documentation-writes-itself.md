@@ -1,4 +1,5 @@
 ---
+description: "Skill files succeed where Javadoc and wikis failed because you write for a concrete consumer -- the AI in your next session -- not a hypothetical reader."
 date: 2026-01-26
 categories:
   - AI-Augmented Development

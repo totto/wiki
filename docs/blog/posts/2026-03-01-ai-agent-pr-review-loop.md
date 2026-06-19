@@ -1,4 +1,5 @@
 ---
+description: "An AI submitted a KCP manifest PR to CrewAI and another AI reviewed it. The recursive refinement loop showed how agent-to-agent code review works in practice."
 date: 2026-03-01
 series: "Knowledge Context Protocol"
 categories:

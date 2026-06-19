@@ -1,4 +1,5 @@
 ---
+description: "A wiki rewrite exposed how online identity drifts when unattended. Without curation, AI agents will describe you using years-old stale information."
 date: 2026-02-24T10:00:00
 series: "Knowledge Context Protocol"
 categories:

@@ -1,4 +1,5 @@
 ---
+description: "Directed AI delegation with comprehensive verification produces more codebase control than writing everything by hand. More delegation, more comprehension."
 date: 2026-01-30
 categories:
   - AI-Augmented Development

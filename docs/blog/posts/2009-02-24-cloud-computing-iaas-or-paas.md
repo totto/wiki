@@ -1,4 +1,5 @@
 ---
+description: "Comparing IaaS and PaaS cloud models from Amazon, Google, and Microsoft -- and why the choice between platform and infrastructure shapes everything."
 date: 2009-02-24
 categories:
   - Cloud Computing

@@ -1,4 +1,5 @@
 ---
+description: "Most teams pick one retrieval approach and stop. A four-layer framework closes the blind spots each approach has when used alone."
 date: 2026-02-28T08:00:00
 series: "The Four-Layer AI Stack"
 categories:

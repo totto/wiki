@@ -1,4 +1,5 @@
 ---
+description: "KCP provides the knowledge map; MCP provides the retrieval channel. Connecting them changes how agents discover and consume structured context."
 date: 2026-02-28
 series: "Knowledge Context Protocol"
 categories:

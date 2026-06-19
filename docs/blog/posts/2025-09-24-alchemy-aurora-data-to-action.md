@@ -1,4 +1,5 @@
 ---
+description: "Alchemy handles reactive data ingestion via YAML config; Aurora stores temporal graph events. Two layers, independently scalable, cleanly separated."
 date: 2025-09-24
 series: "Aurora & Temporal Analytics"
 categories:

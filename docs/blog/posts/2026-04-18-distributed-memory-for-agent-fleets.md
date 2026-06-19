@@ -1,4 +1,5 @@
 ---
+description: "Enterprise agent fleets need shared memory across instances and sessions. Amnesia is a choice, not a constraint -- distributed stores fix it architecturally."
 date: 2026-04-18
 series: "Knowledge Context Protocol"
 categories:

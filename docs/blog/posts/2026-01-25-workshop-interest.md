@@ -1,4 +1,5 @@
 ---
+description: "A workshop invitation outperformed weeks of technical content -- 43% of commenters converted to pipeline. Credibility first, then invitation, is what works."
 date: 2026-01-25
 categories:
   - AI-Augmented Development

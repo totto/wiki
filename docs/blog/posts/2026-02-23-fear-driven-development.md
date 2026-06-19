@@ -1,4 +1,5 @@
 ---
+description: "Productive paranoia as methodology: fear of hallucinations built round-trip testing, fear of bugs built battle testing, fear of losing edge built skill files."
 date: 2026-02-23
 categories:
   - AI-Augmented Development

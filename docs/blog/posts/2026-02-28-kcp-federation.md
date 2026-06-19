@@ -1,4 +1,5 @@
 ---
+description: "Cross-team knowledge queries break when each team owns a separate manifest. KCP federation lets agents traverse manifests across organisational boundaries."
 date: 2026-02-28T10:00:00
 series: "Knowledge Context Protocol"
 categories:

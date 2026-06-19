@@ -1,4 +1,5 @@
 ---
+description: "12.2 billion cache read tokens across 3,007 sessions. The prompt cache is the invisible infrastructure that makes persistent context economically viable."
 date: 2026-03-04
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "Cloud savings come from zero-admin architecture, not cheaper servers. Most apps carry enterprise DNA that makes migration painful without rethinking the design."
 date: 2009-02-24
 categories:
   - Cloud Computing

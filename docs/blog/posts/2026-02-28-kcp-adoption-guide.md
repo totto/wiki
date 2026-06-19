@@ -1,4 +1,5 @@
 ---
+description: "Step-by-step guide to adding knowledge.yaml to a project, from minimum viable manifest to full knowledge graph. No theory -- just the adoption gradient."
 date: 2026-02-28T08:00:00
 series: "Knowledge Context Protocol"
 categories:

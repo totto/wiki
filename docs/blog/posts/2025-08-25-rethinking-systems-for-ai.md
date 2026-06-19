@@ -1,4 +1,5 @@
 ---
+description: "AI asks why, not what. Systems designed for current-state queries need three shifts -- events over state, graphs over tables, conversations over queries."
 date: 2025-08-25
 series: "Aurora & Temporal Analytics"
 categories:

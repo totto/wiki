@@ -1,4 +1,5 @@
 ---
+description: "Anthropic's Managed Agents ship orchestration, supervision, and lifecycle management. The same structural pattern emerged independently in the ExoCortex stack."
 date: 2026-05-10
 categories:
   - AI-Augmented Development

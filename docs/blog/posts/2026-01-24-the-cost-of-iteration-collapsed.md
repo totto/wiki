@@ -1,4 +1,5 @@
 ---
+description: "When refactoring takes 30 minutes instead of two weeks, most engineering practices reveal themselves as cost mitigation for expensive iteration, not quality."
 date: 2026-01-24
 categories:
   - AI-Augmented Development

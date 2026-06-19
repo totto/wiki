@@ -1,4 +1,5 @@
 ---
+description: "Gmail's February 2009 outage exposed cloud reliability gaps and Google's slow communication -- three hours before acknowledging a widespread service failure."
 date: 2009-02-24
 categories:
   - Cloud Computing

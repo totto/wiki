@@ -1,4 +1,5 @@
 ---
+description: "Three months without typing apt install. Claude Code handles systemd units, nginx config, and infrastructure maintenance -- with human approval at each step."
 date: 2026-03-13
 categories:
   - AI-Augmented Development

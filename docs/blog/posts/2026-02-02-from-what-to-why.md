@@ -1,4 +1,5 @@
 ---
+description: "AI-augmented analysis shifts from query-driven to discovery-driven -- surfacing patterns you did not ask about, then requiring human judgment to evaluate."
 date: 2026-02-02
 categories:
   - Architecture

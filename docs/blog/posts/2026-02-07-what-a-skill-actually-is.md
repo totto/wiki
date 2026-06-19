@@ -1,4 +1,5 @@
 ---
+description: "A skill is not a prompt. It is persistent, version-controlled institutional knowledge -- conventions, constraints, domain expertise -- loaded every session."
 date: 2026-02-07
 categories:
   - AI-Augmented Development

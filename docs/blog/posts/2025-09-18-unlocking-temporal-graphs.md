@@ -1,4 +1,5 @@
 ---
+description: "A bitemporal model with four time dimensions -- transaction, valid, decision, and query -- enables perfect past recall and repeatable historical reporting."
 date: 2025-09-18
 series: "Aurora & Temporal Analytics"
 categories:

@@ -1,4 +1,5 @@
 ---
+description: "Leading with a 330x productivity claim killed engagement. Conservative specific facts close deals; large round numbers trigger skepticism and debate posture."
 date: 2026-01-27
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "Thirteen developers brought thirteen codebases to an SDD workshop. The method transferred to all of them -- skill files and verification are language-agnostic."
 date: 2026-03-05
 categories:
   - AI-Augmented Development

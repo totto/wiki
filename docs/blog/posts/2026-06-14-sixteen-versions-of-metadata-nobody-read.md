@@ -1,4 +1,5 @@
 ---
+description: "63 regulatory manifests with full KCP v0.21 metadata -- hashes, signatures, temporal validity. Then a benchmark showed agents were not reading any of it."
 date: 2026-06-14T14:00:00
 draft: false
 categories:

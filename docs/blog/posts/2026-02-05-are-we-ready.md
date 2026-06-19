@@ -1,4 +1,5 @@
 ---
+description: "A presentation asked whether developers are ready for AI velocity. The gap is not capability -- it is methodology and identity."
 date: 2026-02-05
 categories:
   - AI-Augmented Development

@@ -1,4 +1,5 @@
 ---
+description: "Trust is not observability. kcp-dashboard provides real-time visibility into manifest injection, memory indexing, and usage patterns across the KCP ecosystem."
 date: 2026-03-28
 slug: kcp-dashboard-observability-for-the-kcp-ecosystem
 series: "Knowledge Context Protocol"

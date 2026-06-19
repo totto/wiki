@@ -1,4 +1,5 @@
 ---
+description: "KCP's first third-party integration: a plugin for OpenCode bringing manifest-driven knowledge injection to the 114K-star TypeScript alternative to Claude Code."
 date: 2026-03-03
 series: "Knowledge Context Protocol"
 categories:

@@ -1,4 +1,5 @@
 ---
+description: "Without structured CLI knowledge, agents guess flags and retry. kcp-commands injects the right manifest before each Bash call, turning guesses into guidance."
 date: 2026-03-24
 slug: kcp-tools-from-instrumentation-to-infrastructure
 series: "Knowledge Context Protocol"

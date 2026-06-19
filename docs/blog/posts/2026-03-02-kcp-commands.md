@@ -1,4 +1,5 @@
 ---
+description: "kcp-commands injects CLI knowledge before each Bash call, saving 33% of Claude Code's context window by eliminating redundant help lookups and retry cycles."
 date: 2026-03-03
 slug: kcp-commands-save-33-of-claude-codes-context-window
 series: "Knowledge Context Protocol"

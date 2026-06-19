@@ -1,4 +1,5 @@
 ---
+description: "Before writing production code, run a fictional organisation through two years of using the feature. Front-load discovery before the first commit."
 date: 2026-06-11T18:00:00
 draft: false
 categories:

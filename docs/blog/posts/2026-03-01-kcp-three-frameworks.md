@@ -1,4 +1,5 @@
 ---
+description: "KCP applied to smolagents, AutoGen, and CrewAI reduced agent tool calls by 73-80% across all three frameworks using the same methodology and manifest structure."
 date: 2026-03-01
 series: "Knowledge Context Protocol"
 categories:

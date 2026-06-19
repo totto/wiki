@@ -1,4 +1,5 @@
 ---
+description: "Synthesis started because lib-pcb grew faster than a human could navigate. Ten weeks later it indexes code, PDFs, videos, and skills across workspaces."
 date: 2026-04-05
 categories:
   - AI-Augmented Development

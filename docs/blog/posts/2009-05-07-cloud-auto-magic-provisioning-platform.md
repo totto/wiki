@@ -1,4 +1,5 @@
 ---
+description: "Clouds are provisioning platforms, not silver bullets. Enterprises still want magic, but the real question is whether to educate or go with the flow."
 date: 2009-05-07
 categories:
   - Cloud Computing

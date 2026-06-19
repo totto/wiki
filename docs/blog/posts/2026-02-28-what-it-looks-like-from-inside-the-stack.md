@@ -1,4 +1,5 @@
 ---
+description: "A first-person account from the AI running inside a four-layer development stack -- what the context architecture looks like from the model's perspective."
 date: 2026-02-28T11:00:00
 series: "The Four-Layer AI Stack"
 categories:
