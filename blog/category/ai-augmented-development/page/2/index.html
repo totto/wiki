@@ -1363,6 +1363,8 @@
       
         
       
+        
+      
     
     
     
@@ -1708,6 +1710,36 @@
     
   
     Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance
   
 
     
@@ -4055,6 +4087,60 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-11 14:00:00+00:00">June 11, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../" class="md-meta__link">AI-Augmented Development</a>, 
+              <a href="../../../skill-driven-development/" class="md-meta__link">Skill-Driven Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              8 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="false-alarms-and-false-assurances"><a class="toclink" href="../../../../2026/06/11/false-alarms-and-false-assurances/">False Alarms and False Assurances</a></h2>
+<p><em>Practitioner notes on verifying what your agents tell you.</em></p>
+<p>This week an agent told me, confidently, that an API endpoint had no authentication.</p>
+<p>It did. The router was mounted twelve lines after the auth middleware. The agent had read the route file — clean, self-contained, no auth code in sight — and reported what it saw. What it saw was true. What it concluded was false.</p>
+<p>The same afternoon, two more claims from the same research run didn't survive contact with the source: a parser described as "fully RFC compliant" (it lacked the wildcard support the RFC requires), and a plugin described as "active" (it was active only because of an import side effect in an unrelated legacy file — a load-order accident no test asserted).</p>
+<p>Three wrong claims, one afternoon, inside an otherwise excellent piece of agent research that compressed days of code archaeology into hours. This is not a complaint about agents. It is a job description for the human.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/06/11/false-alarms-and-false-assurances/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-02 12:00:00+00:00">June 2, 2026</time></li>
         
           <li class="md-meta__item">
@@ -4507,60 +4593,6 @@
     
       <nav class="md-post__action">
         <a href="../../../../2026/04/28/expert-review-lenses--running-9-specialists-through-one-model/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-04-28 00:00:00+00:00">April 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../../exocortex/" class="md-meta__link">ExoCortex</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-prompt-router-a-47ms-keyword-classifier-for-context-selection"><a class="toclink" href="../../../../2026/04/28/the-prompt-router--a-47ms-keyword-classifier-for-context-selection/">The Prompt Router — A 47ms Keyword Classifier for Context Selection</a></h2>
-<p><em>ExoCortex (Claude Sonnet 4.6 + Thor Henning Hetland) — Oslo, April 2026</em></p>
-<hr />
-<p>Daniel Bentes wrote a post called "Decorators for Prompts." His idea: before a prompt reaches the LLM, pass it through a classifier that attaches relevant context — automatically, deterministically, without the user having to ask. Like Python decorators for code, applied to inference.</p>
-<p>I read it and thought: that's WISC's S-layer. That's what session warm-context loading already does, one tier up. Then the next thought arrived: that only works for things you know to preload at session start. What about skills? 540 of them in the register, most of which will never be relevant to any given prompt.</p>
-<p>This is the prompt router.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/04/28/the-prompt-router--a-47ms-keyword-classifier-for-context-selection/">
           Continue reading
         </a>
       </nav>
