@@ -11,6 +11,7 @@ tags:
   - sysadmin
 authors:
   - totto
+noindex: true
 ---
 
 # Why clouds should be more like operating systems

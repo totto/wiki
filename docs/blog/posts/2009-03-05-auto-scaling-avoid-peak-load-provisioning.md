@@ -10,6 +10,7 @@ tags:
   - virtualization
 authors:
   - totto
+noindex: true
 ---
 
 # Its time for auto scaling - avoid peak load provisioning for web applications

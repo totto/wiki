@@ -9,6 +9,7 @@ tags:
   - enterprise
 authors:
   - totto
+noindex: true
 ---
 
 # Clouded Vision

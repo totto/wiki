@@ -11,6 +11,7 @@ tags:
   - saas
 authors:
   - totto
+noindex: true
 ---
 
 # Trouble In The Clouds - Gmail Turns Into Gfail

@@ -10,6 +10,7 @@ tags:
   - stratuslab
 authors:
   - totto
+noindex: true
 ---
 
 # Open Source and Community Clouds

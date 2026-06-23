@@ -10,6 +10,7 @@ tags:
   - platforms
 authors:
   - totto
+noindex: true
 ---
 
 # Sinnataggen and some Cloud development thoughts...

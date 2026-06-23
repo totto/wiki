@@ -10,6 +10,7 @@ tags:
   - virtualization
 authors:
   - totto
+noindex: true
 ---
 
 # On the greenness of Clouds

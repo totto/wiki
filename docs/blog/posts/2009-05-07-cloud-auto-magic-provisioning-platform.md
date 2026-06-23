@@ -10,6 +10,7 @@ tags:
   - enterprise
 authors:
   - totto
+noindex: true
 ---
 
 # Cloud - auto-magic or just provisioning platform for your distributed system

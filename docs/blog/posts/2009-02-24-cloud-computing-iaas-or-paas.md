@@ -12,6 +12,7 @@ tags:
   - microsoft
 authors:
   - totto
+noindex: true
 ---
 
 # Cloud Computing: Are You Looking for IaaS or PaaS Provider?

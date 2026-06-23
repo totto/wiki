@@ -34,29 +34,29 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
 <div class="grid cards" markdown>
 
--   :material-book-open-variant:{ .card-icon } **[When Your Agent Can Finally Read the Room](blog/2026/04/21/when-your-agent-can-finally-read-the-room/)**
+-   :material-shield-alert:{ .card-icon } **[Production Scars Are Architecture](blog/2026/06/23/production-scars-are-architecture/)**
 
     ---
 
-    Synthesis v1.29.0 adds Notion as a workspace source. The harder problem: documentation and code tell different stories. Teaching an agent to notice when what's written and what's real have come apart.
+    Six architectural lessons from running an autonomous AI agent in production. Each scar is a failure category surprising enough to force mechanical change. Prose governance didn't work — here's what did.
 
-    <span class="card-meta">April 21, 2026</span>
+    <span class="card-meta">June 23, 2026</span>
 
--   :material-brain:{ .card-icon } **[AI Agents Forget Everything. That's a Choice, Not a Constraint.](blog/2026/04/18/ai-agents-forget-everything-thats-a-choice-not-a-constraint/)**
-
-    ---
-
-    For a personal productivity tool, stateless sessions are fine. For an enterprise deploying a fleet of AI agents, it's a fundamental architectural gap. What memory infrastructure looks like at organizational scale.
-
-    <span class="card-meta">April 18, 2026</span>
-
--   :material-chart-bar:{ .card-icon } **[Seven Out of Eight Models Lied About Finishing](blog/2026/04/16/seven-out-of-eight-models-lied-about-finishing/)**
+-   :material-scale-balance:{ .card-icon } **[Your AI Agent Does Not Know the Law (and How to Fix That)](blog/2026/06/22/your-ai-agent-does-not-know-the-law-and-how-to-fix-that/)**
 
     ---
 
-    The Smidja benchmark: build a TypeScript CLI orchestrating 7 agents, zero compiler errors required. Seven of eight models self-reported completion. Most had not finished. Self-assessment failure is structurally inevitable.
+    Your AI agent will confidently tell a customer they're GDPR-compliant when they're not. Here's the six-layer architecture that fixes that — from authoritative knowledge sources to verifiable answers.
 
-    <span class="card-meta">April 16, 2026</span>
+    <span class="card-meta">June 22, 2026</span>
+
+-   :material-graph:{ .card-icon } **[The Zombie in the Basement](blog/2026/06/19/the-zombie-in-the-basement/)**
+
+    ---
+
+    A company planned their ERP migration for three years. Their architecture catalog documented 23 database connections. There were 52. The migration nearly shipped that delta.
+
+    <span class="card-meta">June 19, 2026</span>
 
 </div>
 

@@ -11,6 +11,7 @@ tags:
   - paas
 authors:
   - totto
+noindex: true
 ---
 
 # Gartner on Cloud Computing, misses again...

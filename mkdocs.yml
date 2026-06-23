@@ -55,6 +55,7 @@ hooks:
   - hooks/series_nav.py
   - hooks/copy_well_known.py
   - hooks/filter_sitemap.py
+  - hooks/recent_posts.py
 
 plugins:
   - search:
