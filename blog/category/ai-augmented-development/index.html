@@ -4089,6 +4089,57 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-23 00:00:00+00:00">June 23, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">AI-Augmented Development</a>, 
+              <a href="../exocortex/" class="md-meta__link">ExoCortex</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="production-scars-are-architecture"><a class="toclink" href="../../2026/06/23/production-scars-are-architecture/">Production Scars Are Architecture</a></h2>
+<p>A production scar is not a bug you fixed. It is a <em>category of failure</em> that was surprising enough to cause architectural change — something you now defend against mechanically because trusting the model to avoid it didn't work.</p>
+<p>Santander AI Lab called their open-source release "battle-tested solutions from production scars." ExoCortex has its own. Six of them. Each one left a hook file on disk that implements the lesson. This post documents what failed, why prose instructions couldn't fix it, and what the mechanical fix looks like.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/23/production-scars-are-architecture/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-22 00:00:00+00:00">June 22, 2026</time></li>
         
           <li class="md-meta__item">
@@ -4553,61 +4604,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/06/11/explorative-development/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-11 16:00:00+00:00">June 11, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="./" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../skill-driven-development/" class="md-meta__link">Skill-Driven Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="organized-truths"><a class="toclink" href="../../2026/06/11/organized-truths/">Organized Truths</a></h2>
-<p><em>Practitioner notes on the verification you only do once.</em></p>
-<p>In the <a href="/blog/2026/06/11/false-alarms-and-false-assurances/">previous post</a> I described catching an agent claiming a parser was "fully RFC compliant." I caught it by opening the RFC — four minutes of reading against a parser that handled none of the wildcard support the spec requires.</p>
-<p>The tips in that post were about catching such claims. This post is about a better question that took me longer to ask:</p>
-<p><strong>Why did the agent never open the RFC?</strong></p>
-<p>Not because it couldn't read it. Because the RFC wasn't <em>there</em>. The agent had the parser in its context and the spec in its vibes — a compressed, lossy impression from training data. Asked to compare code against a standard, it compared code against its <em>memory of the genre</em> of that standard. Of course it produced an adjective.</p>
-<p>You can audit that failure forever. Or you can change what the agent reasons from.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/11/organized-truths/">
           Continue reading
         </a>
       </nav>
