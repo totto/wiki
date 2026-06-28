@@ -6,40 +6,38 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+        <meta name="description" content="Three passive hooks that give Claude Code memory, routing, and hygiene — without changing how you work. The session amnesia problem, and how to fix it at the prompt boundary.">
       
       
         <meta name="author" content="Thor Henning Hetland">
       
       
-        <link rel="canonical" href="https://wiki.totto.org/blog/page/7/">
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/06/28/three-hooks-that-give-claude-code-memory/">
       
       
-        <link rel="prev" href="../../..">
+        <link rel="prev" href="../../23/production-scars-are-architecture/">
       
-      
-        <link rel="next" href="../../series/">
       
       
         
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/totto-2025.jpg">
+      <link rel="icon" href="../../../../../assets/images/totto-2025.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Writing - Thor Henning Hetland</title>
+        <title>Three Hooks That Give Claude Code Memory - Thor Henning Hetland</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -58,9 +56,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -76,24 +74,38 @@
     
 <link rel="knowledge" href="/knowledge.yaml" type="application/yaml" title="KCP v0.20 — 101 units">
 
-<meta name="robots" content="noindex, follow">
-
 <!-- Open Graph -->
 <meta property="og:site_name" content="Thor Henning Hetland">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://wiki.totto.org/blog/page/7/">
-<meta property="og:title" content="Writing">
-<meta property="og:description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+<meta property="og:url" content="https://wiki.totto.org/blog/2026/06/28/three-hooks-that-give-claude-code-memory/">
+<meta property="og:title" content="Three Hooks That Give Claude Code Memory">
+<meta property="og:description" content="Three passive hooks that give Claude Code memory, routing, and hygiene — without changing how you work. The session amnesia problem, and how to fix it at the prompt boundary.">
 <meta property="og:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
 <meta property="og:image:alt" content="Thor Henning Hetland">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@javatotto">
 <meta name="twitter:creator" content="@javatotto">
-<meta name="twitter:title" content="Writing">
-<meta name="twitter:description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+<meta name="twitter:title" content="Three Hooks That Give Claude Code Memory">
+<meta name="twitter:description" content="Three passive hooks that give Claude Code memory, routing, and hygiene — without changing how you work. The session amnesia problem, and how to fix it at the prompt boundary.">
 <meta name="twitter:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Three Hooks That Give Claude Code Memory",
+  "url": "https://wiki.totto.org/blog/2026/06/28/three-hooks-that-give-claude-code-memory/",
+  "author": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org"
+  },
+  "datePublished": "2026-06-28",
+  "description": "Three passive hooks that give Claude Code memory, routing, and hygiene \u2014 without changing how you work. The session amnesia problem, and how to fix it at the prompt boundary."
+}
+</script>
 
 
   </head>
@@ -115,7 +127,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#writing" class="md-skip">
+        <a href="#three-hooks-that-give-claude-code-memory" class="md-skip">
           Skip to content
         </a>
       
@@ -152,9 +164,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
       
-  <img src="../../../assets/images/totto-2025.jpg" alt="logo">
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -171,7 +183,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Writing
+              Three Hooks That Give Claude Code Memory
             
           </span>
         </div>
@@ -271,7 +283,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../../.." class="md-tabs__link">
         
   
   
@@ -294,7 +306,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../../" class="md-tabs__link">
           
   
   
@@ -316,7 +328,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/" class="md-tabs__link">
+        <a href="../../../../../about/" class="md-tabs__link">
           
   
   
@@ -338,7 +350,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/presentations/" class="md-tabs__link">
+        <a href="../../../../../about/presentations/" class="md-tabs__link">
           
   
   
@@ -360,7 +372,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../knowledge-infrastructure/" class="md-tabs__link">
+        <a href="../../../../../knowledge-infrastructure/" class="md-tabs__link">
           
   
   
@@ -380,7 +392,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../open-source/" class="md-tabs__link">
+      <a href="../../../../../open-source/" class="md-tabs__link">
         
   
   
@@ -401,7 +413,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../interests/sci-fi/" class="md-tabs__link">
+        <a href="../../../../../interests/sci-fi/" class="md-tabs__link">
           
   
   
@@ -423,7 +435,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../interests/food-and-wine/" class="md-tabs__link">
+        <a href="../../../../../interests/food-and-wine/" class="md-tabs__link">
           
   
   
@@ -443,7 +455,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../../tags/" class="md-tabs__link">
         
   
   
@@ -473,7 +485,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -484,9 +498,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
       
-  <img src="../../../assets/images/totto-2025.jpg" alt="logo">
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
 
     </a>
     Thor Henning Hetland
@@ -501,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
@@ -562,7 +576,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../../" class="md-nav__link ">
               
   
   
@@ -606,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../series/" class="md-nav__link">
+      <a href="../../../../series/" class="md-nav__link">
         
   
   
@@ -731,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/06/" class="md-nav__link">
+      <a href="../../../../archive/2026/06/" class="md-nav__link">
         
   
   
@@ -761,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/05/" class="md-nav__link">
+      <a href="../../../../archive/2026/05/" class="md-nav__link">
         
   
   
@@ -791,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/04/" class="md-nav__link">
+      <a href="../../../../archive/2026/04/" class="md-nav__link">
         
   
   
@@ -821,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/03/" class="md-nav__link">
+      <a href="../../../../archive/2026/03/" class="md-nav__link">
         
   
   
@@ -851,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/02/" class="md-nav__link">
+      <a href="../../../../archive/2026/02/" class="md-nav__link">
         
   
   
@@ -881,7 +895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/01/" class="md-nav__link">
+      <a href="../../../../archive/2026/01/" class="md-nav__link">
         
   
   
@@ -911,7 +925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/12/" class="md-nav__link">
+      <a href="../../../../archive/2025/12/" class="md-nav__link">
         
   
   
@@ -941,7 +955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/11/" class="md-nav__link">
+      <a href="../../../../archive/2025/11/" class="md-nav__link">
         
   
   
@@ -971,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/10/" class="md-nav__link">
+      <a href="../../../../archive/2025/10/" class="md-nav__link">
         
   
   
@@ -1001,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/09/" class="md-nav__link">
+      <a href="../../../../archive/2025/09/" class="md-nav__link">
         
   
   
@@ -1031,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/08/" class="md-nav__link">
+      <a href="../../../../archive/2025/08/" class="md-nav__link">
         
   
   
@@ -1061,7 +1075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/05/" class="md-nav__link">
+      <a href="../../../../archive/2025/05/" class="md-nav__link">
         
   
   
@@ -1091,7 +1105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/04/" class="md-nav__link">
+      <a href="../../../../archive/2025/04/" class="md-nav__link">
         
   
   
@@ -1121,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/09/" class="md-nav__link">
+      <a href="../../../../archive/2009/09/" class="md-nav__link">
         
   
   
@@ -1151,7 +1165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/06/" class="md-nav__link">
+      <a href="../../../../archive/2009/06/" class="md-nav__link">
         
   
   
@@ -1181,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/05/" class="md-nav__link">
+      <a href="../../../../archive/2009/05/" class="md-nav__link">
         
   
   
@@ -1211,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/04/" class="md-nav__link">
+      <a href="../../../../archive/2009/04/" class="md-nav__link">
         
   
   
@@ -1241,7 +1255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/03/" class="md-nav__link">
+      <a href="../../../../archive/2009/03/" class="md-nav__link">
         
   
   
@@ -1271,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/02/" class="md-nav__link">
+      <a href="../../../../archive/2009/02/" class="md-nav__link">
         
   
   
@@ -1420,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-agents/" class="md-nav__link">
+      <a href="../../../../category/ai-agents/" class="md-nav__link">
         
   
   
@@ -1450,7 +1464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-development/" class="md-nav__link">
+      <a href="../../../../category/ai-development/" class="md-nav__link">
         
   
   
@@ -1480,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-engineering/" class="md-nav__link">
+      <a href="../../../../category/ai-engineering/" class="md-nav__link">
         
   
   
@@ -1510,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-infrastructure/" class="md-nav__link">
+      <a href="../../../../category/ai-infrastructure/" class="md-nav__link">
         
   
   
@@ -1540,7 +1554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-augmented-development/" class="md-nav__link">
+      <a href="../../../../category/ai-augmented-development/" class="md-nav__link">
         
   
   
@@ -1570,7 +1584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/agent-infrastructure/" class="md-nav__link">
+      <a href="../../../../category/agent-infrastructure/" class="md-nav__link">
         
   
   
@@ -1600,7 +1614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/architecture/" class="md-nav__link">
+      <a href="../../../../category/architecture/" class="md-nav__link">
         
   
   
@@ -1630,7 +1644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/benchmarks/" class="md-nav__link">
+      <a href="../../../../category/benchmarks/" class="md-nav__link">
         
   
   
@@ -1660,7 +1674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/cloud-computing/" class="md-nav__link">
+      <a href="../../../../category/cloud-computing/" class="md-nav__link">
         
   
   
@@ -1690,7 +1704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/community/" class="md-nav__link">
+      <a href="../../../../category/community/" class="md-nav__link">
         
   
   
@@ -1720,7 +1734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/compliance/" class="md-nav__link">
+      <a href="../../../../category/compliance/" class="md-nav__link">
         
   
   
@@ -1750,7 +1764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/debugging/" class="md-nav__link">
+      <a href="../../../../category/debugging/" class="md-nav__link">
         
   
   
@@ -1780,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/developer-experience/" class="md-nav__link">
+      <a href="../../../../category/developer-experience/" class="md-nav__link">
         
   
   
@@ -1810,7 +1824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/exocortex/" class="md-nav__link">
+      <a href="../../../../category/exocortex/" class="md-nav__link">
         
   
   
@@ -1840,7 +1854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/history/" class="md-nav__link">
+      <a href="../../../../category/history/" class="md-nav__link">
         
   
   
@@ -1870,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ironclaw/" class="md-nav__link">
+      <a href="../../../../category/ironclaw/" class="md-nav__link">
         
   
   
@@ -1900,7 +1914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/java-development/" class="md-nav__link">
+      <a href="../../../../category/java-development/" class="md-nav__link">
         
   
   
@@ -1930,7 +1944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/kcp/" class="md-nav__link">
+      <a href="../../../../category/kcp/" class="md-nav__link">
         
   
   
@@ -1960,7 +1974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/knowledge-infrastructure/" class="md-nav__link">
+      <a href="../../../../category/knowledge-infrastructure/" class="md-nav__link">
         
   
   
@@ -1990,7 +2004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/knowledge-management/" class="md-nav__link">
+      <a href="../../../../category/knowledge-management/" class="md-nav__link">
         
   
   
@@ -2020,7 +2034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/methodology/" class="md-nav__link">
+      <a href="../../../../category/methodology/" class="md-nav__link">
         
   
   
@@ -2050,7 +2064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/quantum-computing/" class="md-nav__link">
+      <a href="../../../../category/quantum-computing/" class="md-nav__link">
         
   
   
@@ -2080,7 +2094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/research/" class="md-nav__link">
+      <a href="../../../../category/research/" class="md-nav__link">
         
   
   
@@ -2110,7 +2124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/security/" class="md-nav__link">
+      <a href="../../../../category/security/" class="md-nav__link">
         
   
   
@@ -2140,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/skill-driven-development/" class="md-nav__link">
+      <a href="../../../../category/skill-driven-development/" class="md-nav__link">
         
   
   
@@ -2170,7 +2184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/spec-driven-development/" class="md-nav__link">
+      <a href="../../../../category/spec-driven-development/" class="md-nav__link">
         
   
   
@@ -2200,7 +2214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/synthesis/" class="md-nav__link">
+      <a href="../../../../category/synthesis/" class="md-nav__link">
         
   
   
@@ -2274,7 +2288,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../about/" class="md-nav__link ">
+            <a href="../../../../../about/" class="md-nav__link ">
               
   
   
@@ -2318,7 +2332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/cv-english/" class="md-nav__link">
+      <a href="../../../../../about/cv-english/" class="md-nav__link">
         
   
   
@@ -2346,7 +2360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/cv-norwegian/" class="md-nav__link">
+      <a href="../../../../../about/cv-norwegian/" class="md-nav__link">
         
   
   
@@ -2374,7 +2388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/projects/" class="md-nav__link">
+      <a href="../../../../../about/projects/" class="md-nav__link">
         
   
   
@@ -2402,7 +2416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/organizations/" class="md-nav__link">
+      <a href="../../../../../about/organizations/" class="md-nav__link">
         
   
   
@@ -2499,7 +2513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/presentations/" class="md-nav__link">
+      <a href="../../../../../about/presentations/" class="md-nav__link">
         
   
   
@@ -2589,7 +2603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
+      <a href="../../../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
         
   
   
@@ -2617,7 +2631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/thousands-of-releases/" class="md-nav__link">
+      <a href="../../../../../presentations/thousands-of-releases/" class="md-nav__link">
         
   
   
@@ -2645,7 +2659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/best-practice-wtf/" class="md-nav__link">
+      <a href="../../../../../presentations/best-practice-wtf/" class="md-nav__link">
         
   
   
@@ -2673,7 +2687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/fixing-the-problem/" class="md-nav__link">
+      <a href="../../../../../presentations/fixing-the-problem/" class="md-nav__link">
         
   
   
@@ -2777,7 +2791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/internet-of-things/" class="md-nav__link">
+      <a href="../../../../../presentations/internet-of-things/" class="md-nav__link">
         
   
   
@@ -2805,7 +2819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
+      <a href="../../../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
         
   
   
@@ -2833,7 +2847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/neo4dogs/" class="md-nav__link">
+      <a href="../../../../../presentations/neo4dogs/" class="md-nav__link">
         
   
   
@@ -2861,7 +2875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
+      <a href="../../../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
         
   
   
@@ -2889,7 +2903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/agile-wine-2011/" class="md-nav__link">
+      <a href="../../../../../presentations/agile-wine-2011/" class="md-nav__link">
         
   
   
@@ -2917,7 +2931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/cloud-psychology/" class="md-nav__link">
+      <a href="../../../../../presentations/cloud-psychology/" class="md-nav__link">
         
   
   
@@ -2945,7 +2959,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/architecture-vs-agile/" class="md-nav__link">
+      <a href="../../../../../notes/architecture-vs-agile/" class="md-nav__link">
         
   
   
@@ -3043,7 +3057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
+      <a href="../../../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
         
   
   
@@ -3071,7 +3085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/edr-mds-mdm/" class="md-nav__link">
+      <a href="../../../../../presentations/edr-mds-mdm/" class="md-nav__link">
         
   
   
@@ -3099,7 +3113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/laws-of-soa/" class="md-nav__link">
+      <a href="../../../../../presentations/laws-of-soa/" class="md-nav__link">
         
   
   
@@ -3127,7 +3141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/design-time-governance/" class="md-nav__link">
+      <a href="../../../../../presentations/design-time-governance/" class="md-nav__link">
         
   
   
@@ -3199,7 +3213,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../knowledge-infrastructure/" class="md-nav__link ">
+            <a href="../../../../../knowledge-infrastructure/" class="md-nav__link ">
               
   
   
@@ -3243,7 +3257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/synthesis-releases/" class="md-nav__link">
+      <a href="../../../../../notes/synthesis-releases/" class="md-nav__link">
         
   
   
@@ -3271,7 +3285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/linkedin-posts/" class="md-nav__link">
+      <a href="../../../../../notes/linkedin-posts/" class="md-nav__link">
         
   
   
@@ -3299,7 +3313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linkedin/" class="md-nav__link">
+      <a href="../../../../../linkedin/" class="md-nav__link">
         
   
   
@@ -3334,7 +3348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../open-source/" class="md-nav__link">
+      <a href="../../../../../open-source/" class="md-nav__link">
         
   
   
@@ -3414,7 +3428,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../interests/sci-fi/" class="md-nav__link ">
+            <a href="../../../../../interests/sci-fi/" class="md-nav__link ">
               
   
   
@@ -3458,7 +3472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2025/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2025/" class="md-nav__link">
         
   
   
@@ -3486,7 +3500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2024/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2024/" class="md-nav__link">
         
   
   
@@ -3514,7 +3528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2023/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2023/" class="md-nav__link">
         
   
   
@@ -3542,7 +3556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2022/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2022/" class="md-nav__link">
         
   
   
@@ -3570,7 +3584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2021/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2021/" class="md-nav__link">
         
   
   
@@ -3598,7 +3612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2020/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2020/" class="md-nav__link">
         
   
   
@@ -3626,7 +3640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2019/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2019/" class="md-nav__link">
         
   
   
@@ -3654,7 +3668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2018/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2018/" class="md-nav__link">
         
   
   
@@ -3682,7 +3696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2017/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2017/" class="md-nav__link">
         
   
   
@@ -3710,7 +3724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2016/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2016/" class="md-nav__link">
         
   
   
@@ -3738,7 +3752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2015/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2015/" class="md-nav__link">
         
   
   
@@ -3766,7 +3780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2014/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2014/" class="md-nav__link">
         
   
   
@@ -3794,7 +3808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2013/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2013/" class="md-nav__link">
         
   
   
@@ -3822,7 +3836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2012/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2012/" class="md-nav__link">
         
   
   
@@ -3850,7 +3864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2011/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2011/" class="md-nav__link">
         
   
   
@@ -3943,7 +3957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/food-and-wine/" class="md-nav__link">
+      <a href="../../../../../interests/food-and-wine/" class="md-nav__link">
         
   
   
@@ -3971,7 +3985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/tools/" class="md-nav__link">
+      <a href="../../../../../interests/tools/" class="md-nav__link">
         
   
   
@@ -4006,7 +4020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tags/" class="md-nav__link">
+      <a href="../../../../../tags/" class="md-nav__link">
         
   
   
@@ -4034,6 +4048,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -4048,6 +4064,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-re-explaining-tax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The re-explaining tax
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-hooks-zero-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three hooks, zero configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-design-constraint-that-mattered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The design constraint that mattered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-layer-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The three-layer model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-not-in-the-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's not in the package
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4055,582 +4145,327 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="writing">Writing<a class="headerlink" href="#writing" title="Permanent link">&para;</a></h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-03 00:00:00+00:00">March 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Thor Henning Hetland
+                        
+                      </strong>
+                      <br>
+                      Co-founder of JavaZone, Java Champion, Founder of eXOReaction
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/anthropics.png" alt="Claude Code">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Claude Code
+                        
+                      </strong>
+                      <br>
+                      Anthropic's AI coding assistant — co-author of research, structure, and prose
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-06-28 00:00:00+00:00" class="md-ellipsis">June 28, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai-augmented-development/">AI-Augmented Development</a>, 
+                              <a href="../../../../category/exocortex/">ExoCortex</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              6 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              15 min read
-            
-          </li>
-        
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-commands-save-33-of-claude-codes-context-window"><a class="toclink" href="../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">kcp-commands: Save 33% of Claude Code's Context Window</a></h2>
-<p>Every token Claude Code's context window can hold is an opportunity — a tool call result
-that stays in scope, a file that does not need to be re-read, a decision that does not
-need to be recapped. Wasting those tokens on noise is a quiet tax on every session.</p>
-<p>Today we are releasing <strong>kcp-commands</strong>: a Claude Code hook that recovers 33.7% of a
-200K context window in a typical agentic coding session by intercepting Bash tool calls
-at two critical points.</p>
-<p>The full number across our benchmark session: <strong>67,352 tokens saved</strong>.</p>
-<p><strong>Update (March 3, 2026 — v0.9.0):</strong> kcp-commands now writes a JSON event to
-<code>~/.kcp/events.jsonl</code> on every Phase A Bash hook call. <a href="../../2026/03/03/kcp-memory-give-claude-code-a-memory/">kcp-memory v0.4.0</a>
-ingests that stream to provide tool-level episodic memory — <code>kcp-memory events search
-"kubectl apply"</code> returns every time Claude ran that command across all your projects.
-Phase A gives Claude vocabulary. Phase B cleans output. Phase C remembers what ran.</p>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
 
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-03 00:00:00+00:00">March 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              12 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-memory-give-claude-code-a-memory"><a class="toclink" href="../../2026/03/03/kcp-memory-give-claude-code-a-memory/">kcp-memory: Give Claude Code a Memory</a></h2>
-<p>Every Claude Code session starts the same way. The context window is empty. The agent
-has no recollection of what it did yesterday, which files it touched last week, or how
-it solved a similar problem three sessions ago. Each session is day one.</p>
-<p>That is not a limitation of the model. It is a missing infrastructure layer.</p>
-<p>Today we are releasing <strong>kcp-memory v0.1.0</strong>: a standalone Java daemon that indexes
-<code>~/.claude/projects/**/*.jsonl</code> session transcripts into a local SQLite database with
-FTS5 full-text search. Ask it "what was I working on last week?" and it answers in
-milliseconds.</p>
-<p><strong>Update (same day — v0.2.0):</strong> kcp-memory now ships with tool-level granularity.
-<a href="../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">kcp-commands v0.9.0</a> writes every Bash tool call to
-<code>~/.kcp/events.jsonl</code>; kcp-memory ingests that stream and makes individual commands
-searchable via <code>kcp-memory events search</code>. Session-level and tool-level memory in one
-daemon, one database, zero additional dependencies.</p>
-<p><strong>Update (same day — v0.3.0):</strong> kcp-memory now ships as an MCP server. Run
-<code>java -jar ~/.kcp/kcp-memory-daemon.jar mcp</code> — registered in <code>mcpServers</code> in
-<code>~/.claude/settings.json</code> — and Claude Code can call <code>kcp_memory_search</code>,
-<code>kcp_memory_events_search</code>, <code>kcp_memory_list</code>, and <code>kcp_memory_stats</code> inline during a
-session, without leaving the context window.</p>
-<p><strong>Update (same day — v0.4.0):</strong> Two new MCP tools close the remaining gaps.
-<code>kcp_memory_session_detail(session_id)</code> returns full session content — user messages,
-files touched, tools used — completing the search → read flow. <code>kcp_memory_project_context()</code>
-reads <code>PWD</code> from the process environment and returns the last 5 sessions and 20 tool events
-for the current project, with no query needed. Call it at the start of every session and
-Claude immediately knows what it was doing here last time.</p>
 
+  <nav class="md-tags" >
     
-      <nav class="md-post__action">
-        <a href="../../2026/03/03/kcp-memory-give-claude-code-a-memory/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-03 00:00:00+00:00">March 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              6 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-comes-to-opencode-the-first-ai-coding-tool-plugin"><a class="toclink" href="../../2026/03/03/kcp-comes-to-opencode-the-first-ai-coding-tool-plugin/">KCP Comes to OpenCode: The First AI Coding Tool Plugin</a></h2>
-<p><a href="../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">kcp-commands</a> recovers 33% of Claude Code's context window
-by intercepting Bash tool calls. Today we are extending that same principle to
-<a href="https://github.com/anomalyco/opencode">OpenCode</a> — the 114K-star TypeScript alternative to
-Claude Code.</p>
-<p>The result is <a href="https://www.npmjs.com/package/opencode-kcp-plugin"><code>opencode-kcp-plugin</code></a>: a plugin
-that injects a <code>knowledge.yaml</code> knowledge map into every OpenCode session and annotates file
-search results with intent descriptions. The mechanism is different from kcp-commands, and the
-target is different, but the underlying idea is identical: give the agent a map so it does not
-have to rediscover the territory on every session.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/03/kcp-comes-to-opencode-the-first-ai-coding-tool-plugin/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-03 00:00:00+00:00">March 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              16 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="working-memory-episodic-memory-semantic-memory-your-agent-has-one"><a class="toclink" href="../../2026/03/03/working-memory-episodic-memory-semantic-memory-your-agent-has-one/">Working Memory, Episodic Memory, Semantic Memory. Your Agent Has One.</a></h2>
-<p><em>Every session starts from zero. The agent cannot remember the decision it helped you make last Tuesday, the bug it spent three hours debugging last week, or the architectural pattern you established last month. This is not a model capability problem. It is a memory architecture problem — and it has a tractable solution.</em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/03/working-memory-episodic-memory-semantic-memory-your-agent-has-one/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-02 00:00:00+00:00">March 2, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/methodology/" class="md-meta__link">Methodology</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              9 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-ai-augmented-consultant-knowledge-infrastructure-before-deliverables"><a class="toclink" href="../../2026/03/02/the-ai-augmented-consultant-knowledge-infrastructure-before-deliverables/">The AI-Augmented Consultant: Knowledge Infrastructure Before Deliverables</a></h2>
-<p>A brief arrives on Friday afternoon. A compliance startup is building an AI-powered scoring engine. They have a working architecture. What they do not have are settled positions on five hard architectural questions. The deadline is Monday.</p>
-<p>The question I asked myself was not "how do I answer these five questions?" It was "what knowledge infrastructure do I need to answer them well?"</p>
-<p>That reframing is the entire methodology in one sentence.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/02/the-ai-augmented-consultant-knowledge-infrastructure-before-deliverables/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-02 00:00:00+00:00">March 2, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              10 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-v01-to-v05-how-a-knowledge-standard-grows"><a class="toclink" href="../../2026/03/02/kcp-v01-to-v05-how-a-knowledge-standard-grows/">KCP v0.1 to v0.5: How a Knowledge Standard Grows</a></h2>
-<p>KCP (Knowledge Context Protocol) has gone from a draft proposal to a v0.5 spec in one
-week. This post walks through what each version added, why those decisions were
-made, and where the spec is heading next.</p>
-<p>The short version: every release promotes optional fields from community RFCs into the
-normative core. The spec is a strict superset at each step — a manifest written for v0.1
-is still valid under v0.5.</p>
-<p><img alt="The Evolution of KCP: From Minimal Draft to AI Knowledge Standard — v0.1 through v0.5 and Synthesis v1.20.0 implementation overview" src="/assets/images/blog/kcp-version-history-evolution.webp" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/02/kcp-v01-to-v05-how-a-knowledge-standard-grows/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-01 00:00:00+00:00">March 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="what-happens-when-an-ai-submits-a-pr-and-another-ai-reviews-it"><a class="toclink" href="../../2026/03/01/what-happens-when-an-ai-submits-a-pr-and-another-ai-reviews-it/">What Happens When an AI Submits a PR and Another AI Reviews It</a></h2>
-<p><img alt="Recursive Refinement" src="../../../assets/images/blog/ai-agent-pr-review-loop/slide-01.webp" /></p>
-<p>We submitted a pull request to CrewAI adding a KCP manifest and TL;DR summary files. The goal was straightforward: contribute the same efficiency improvement that cut agent tool calls by 76% in our benchmark. Open it up, share the result, see if the maintainers want it.</p>
-<p>What happened next was not what I expected.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/01/what-happens-when-an-ai-submits-a-pr-and-another-ai-reviews-it/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-01 00:00:00+00:00">March 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-on-three-agent-frameworks-same-pattern-bigger-numbers"><a class="toclink" href="../../2026/03/01/kcp-on-three-agent-frameworks-same-pattern-bigger-numbers/">KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers</a></h2>
-<p><img alt="Five repos benchmarked, 73–80% reduction across three major AI agent frameworks. AutoGen leads at 80%, CrewAI at 76%, smolagents at 73%." src="/assets/images/kcp-three-frameworks-overview.webp" /></p>
-<p>Today we applied KCP to three of the most widely-used AI agent frameworks — smolagents (HuggingFace, 25K stars), AutoGen (Microsoft, 55K stars), and CrewAI (44K stars). All three got the same treatment: a <code>knowledge.yaml</code> manifest, pre-built TL;DR summary files for the highest-traffic sections, and a before/after benchmark using the same model and methodology.</p>
-<p>The results: 73%, 80%, and 76% reductions in agent tool calls. Open PRs are live on all three repositories.</p>
-<p><img alt="73% smolagents (HuggingFace), 80% AutoGen (Microsoft), 76% CrewAI — KCP applied to these three widely-used AI frameworks yielded identical patterns of massive tool-call reduction." src="/assets/images/kcp-three-frameworks-hero-numbers.webp" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/01/kcp-on-three-agent-frameworks-same-pattern-bigger-numbers/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-01 00:00:00+00:00">March 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-on-two-repos-two-days-what-the-numbers-actually-show"><a class="toclink" href="../../2026/03/01/kcp-on-two-repos-two-days-what-the-numbers-actually-show/">KCP on Two Repos, Two Days: What the Numbers Actually Show</a></h2>
-<p><img alt="KCP benchmarking: 119 → 31 tool calls on application code, 53 → 25 on documentation. Two case studies, same methodology." src="/assets/images/kcp-two-repos-benchmark.webp" /></p>
-<p>This week we applied KCP to two repositories back to back. Both got a <code>knowledge.yaml</code> manifest, pre-built TL;DR files for the highest-traffic sections, and a before/after benchmark using the same model and methodology.</p>
-<p>The repos are very different. One is an application codebase — a plugin wizard for an AI-native design platform, 15 documentation units covering architecture, agent types, tools, shape schemas, and plugin protocols. The other is a pure documentation repository — a 13-chapter production guide for building safe infrastructure agents, 226 KB of structured decision frameworks and deployment checklists.</p>
-<p>The question was whether KCP adds meaningful value in both cases, and whether the nature of the content changes the answer.</p>
-<p><img alt="Without a manifest, agents wander. With one, they go straight to the answer." src="/assets/images/kcp-slide-spaghetti.webp" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/01/kcp-on-two-repos-two-days-what-the-numbers-actually-show/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 13:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-agent-read-the-whole-spec-it-didnt-need-to"><a class="toclink" href="../../2026/02/28/the-agent-read-the-whole-spec-it-didnt-need-to/">The Agent Read the Whole Spec. It Didn't Need To.</a></h2>
-<p><em>Part 6 of the KCP series. Previous: <a href="/blog/2026/02/28/what-happens-when-your-agent-needs-knowledge-from-five-teams/">What Happens When Your Agent Needs Knowledge From Five Teams?</a></em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/02/28/the-agent-read-the-whole-spec-it-didnt-need-to/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
       
       
-        
-          
+      
+      
+        <span class="md-tag">claude-code</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">episodic-memory</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">exocortex</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">hooks</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">kcp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">open-source</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">prompt-hygiene</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">skills</span>
+      
+    
+  </nav>
 
 
 
-<nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../5/">5</a> <a class="md-pagination__link" href="../6/">6</a> <span class="md-pagination__current">7</span> <a class="md-pagination__link" href="../8/">8</a> <a class="md-pagination__link" href="../9/">9</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../16/">16</a>
-</nav>
-        
+<h1 id="three-hooks-that-give-claude-code-memory">Three Hooks That Give Claude Code Memory<a class="headerlink" href="#three-hooks-that-give-claude-code-memory" title="Permanent link">&para;</a></h1>
+<p>Every Claude Code session starts from zero. You know your codebase, your conventions, your past decisions. Claude doesn't — until you explain them. Again. Every time.</p>
+<p>This is not a Claude problem. It's an architecture problem. The context window is the right unit of work, but it has no built-in mechanism for accumulating knowledge across sessions.</p>
+<p>I've been running three passive hooks to fix this for months. Today I packaged them up: <strong><a href="https://github.com/Cantara/kcp-hooks">kcp-hooks</a></strong>.</p>
+<!-- more -->
+
+<hr />
+<h2 id="the-re-explaining-tax">The re-explaining tax<a class="headerlink" href="#the-re-explaining-tax" title="Permanent link">&para;</a></h2>
+<p>Here's what the first few prompts of an un-augmented Claude Code session look like in practice:</p>
+<blockquote>
+<p>"This is a Java 21 project, we use PostgreSQL, deployments go through GitHub Actions, don't touch the legacy auth module, and we're migrating away from Hibernate to jooq..."</p>
+</blockquote>
+<p>You've paid the re-explaining tax. You do it every session. For every project you context-switch into.</p>
+<p>The usual solution is <code>CLAUDE.md</code>. Put your conventions there, commit it, Claude reads it at session start. That works for stable, always-relevant context. It breaks down for dynamic context: which runbook applies to <em>this</em> prompt? What did you actually do last Tuesday in the auth service? Which skill file is relevant when you're asking about database migrations vs. when you're asking about CI pipelines?</p>
+<p><code>CLAUDE.md</code> is a static file. It's good at being a static file. The problem is dynamic.</p>
+<hr />
+<h2 id="three-hooks-zero-configuration">Three hooks, zero configuration<a class="headerlink" href="#three-hooks-zero-configuration" title="Permanent link">&para;</a></h2>
+<p>The hooks fire on every <code>UserPromptSubmit</code> event — before Claude sees your prompt. You don't invoke them. They complete in under 200ms. They fail silently if anything goes wrong.</p>
+<p><strong><code>prompt-router.py</code></strong> — Skills routing. Scores every <code>*.yaml</code> file in <code>~/.claude/skills/</code> against the current prompt using keyword matching (name ×3, tags ×2, trigger phrases ×2, domain ×2, description ×1). If something scores above the threshold, it injects a short preamble listing the top matches.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>## Prompt Router -- Relevant Context
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- `my-deploy-runbook` (devops) — Step-by-step deploy checklist: staging gate, DB migration order, rollback
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- `postgres-schema` (backend) — Current schema, migration conventions, index strategy for user_events
+</span></code></pre></div>
+<p>Claude now knows which skill files exist for this topic and can load them if the work requires it. No <code>/skill</code> invocations. No remembering what's in your library.</p>
+<p><strong><code>prompt-recall.py</code></strong> — Episodic memory. Detects temporal signals ("yesterday", "last week", "what did I fix...", "do you remember...") and queries <a href="https://github.com/Cantara/kcp-memory">kcp-memory</a> for relevant past sessions. kcp-memory indexes your Claude Code session transcripts into SQLite+FTS5 — everything you've ever built, discussed, or fixed.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>## Episodic Memory — relevant past sessions (query: &quot;auth service token refresh&quot;)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- 2026-06-19 [payments-api] Implemented JWT refresh token rotation — fixed race condition in concurrent refresh attempts
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>- 2026-06-12 [auth-service] Debugged token expiry issue — root cause was clock skew, fixed with NTP sync
+</span></code></pre></div>
+<p><strong><code>prompt-hygiene.py</code></strong> — Influence detection. Pure regex scan for emotional pressure, false urgency, repetition tactics, false dilemmas, authority overload. Silent on clean prompts. Single line when it fires:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[hygiene] Influence tactics detected: emotional-triggers, urgent-action-demands
+</span></code></pre></div>
+<p>This last one is the most underrated. At scale, prompt injection and social-engineering-style prompts (usually accidental, sometimes not) are real. A deterministic filter that costs 2ms and never touches an API is worth having permanently.</p>
+<hr />
+<h2 id="the-design-constraint-that-mattered">The design constraint that mattered<a class="headerlink" href="#the-design-constraint-that-mattered" title="Permanent link">&para;</a></h2>
+<p>The private versions of these hooks accumulated domain knowledge specific to my projects — Mynder, Cantara, Elprint, LetsReg all had explicit routing signals. The skill library had 540+ entries with a private registry format.</p>
+<p>Packaging for distribution meant making a different design decision: <strong>auto-discovery over registration</strong>.</p>
+<p>The public <code>prompt-router.py</code> discovers all <code>*.yaml</code> files in <code>~/.claude/skills/</code> at startup. No registry file. No registration step. Drop a file in the directory, it routes. Delete it, it stops.</p>
+<p>The skill format is a clean YAML spec with documented fields:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-deploy-runbook</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy checklist for the payments service.</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">devops</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">tags</span><span class="p">:</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">migrations</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rollback</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nt">trigger_phrases</span><span class="p">:</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;deploy</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">production&quot;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;run</span><span class="nv"> </span><span class="s">migrations&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nt">instructions</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="no"># Payments Service — Deploy Runbook</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="no">...</span>
+</span></code></pre></div>
+<p>The <code>DOMAIN_SIGNALS</code> dict in the router ships with a minimal example and a comment to add your own project vocabulary. Domain signals give in-domain skills a 1.2× score boost and penalize cross-domain noise at 0.4×. Adding <code>"payments": ["stripe", "webhook", "idempotency"]</code> is five seconds of work.</p>
+<hr />
+<h2 id="the-three-layer-model">The three-layer model<a class="headerlink" href="#the-three-layer-model" title="Permanent link">&para;</a></h2>
+<p>kcp-hooks occupies two of the three layers of what I've been calling ExoCortex memory:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>What it holds</th>
+<th>Provided by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Procedural</strong></td>
+<td>How to do things — runbooks, conventions, patterns</td>
+<td><code>prompt-router</code> + your skill files</td>
+</tr>
+<tr>
+<td><strong>Episodic</strong></td>
+<td>What happened — past sessions, decisions, bugs fixed</td>
+<td><code>prompt-recall</code> + kcp-memory</td>
+</tr>
+<tr>
+<td><strong>Semantic</strong></td>
+<td>What the codebase means — structure, relationships</td>
+<td><a href="https://github.com/Cantara/synthesis">Synthesis</a></td>
+</tr>
+</tbody>
+</table>
+<p>Working memory (the current context window) sits on top of all three.</p>
+<p>The insight is that these layers need different retrieval mechanisms. Procedural is best served by keyword routing against a structured library — the content is human-authored, stable, and well-indexed by topic. Episodic is best served by full-text search against session transcripts — unstructured, temporal, best queried from natural language. Semantic is best served by graph traversal — relationships between files, dependencies, architecture.</p>
+<p>Running all three passive hooks means Claude enters each prompt with relevant procedural context, relevant episodic context, and hygiene filtering — without the user doing anything.</p>
+<hr />
+<h2 id="whats-not-in-the-package">What's not in the package<a class="headerlink" href="#whats-not-in-the-package" title="Permanent link">&para;</a></h2>
+<p>The hooks here are the retrieval layer. They don't build the episodic memory — that's <a href="https://github.com/Cantara/kcp-memory">kcp-memory</a>, which runs as a daemon and indexes transcripts in the background. <code>prompt-recall.py</code> is optional: if kcp-memory isn't running, it fails silently. Your prompts are unaffected.</p>
+<p>The semantic layer (Synthesis) is a separate project entirely. The hooks don't touch it.</p>
+<p>And <code>prompt-hygiene.py</code> is standalone — pure Python stdlib, no dependencies, no external calls. It's the one hook that's genuinely zero-setup and always active.</p>
+<hr />
+<h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Cantara/kcp-hooks
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">cd</span><span class="w"> </span>kcp-hooks
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>bash<span class="w"> </span>install.sh
+</span></code></pre></div>
+<p>Copies hooks to <code>~/.kcp/hooks/</code>, wires them into <code>~/.claude/settings.json</code> (merges, never overwrites), creates <code>~/.claude/skills/</code> if it doesn't exist.</p>
+<p>Restart Claude Code. Done.</p>
+<hr />
+<p>The session amnesia problem isn't going away. The context window is the right unit of work. But three passive hooks running at the prompt boundary, surfacing what's relevant <em>now</em> rather than front-loading everything on every session — that's the fixable version of the problem.</p>
+<p><em>→ <a href="https://github.com/Cantara/kcp-hooks">github.com/Cantara/kcp-hooks</a></em></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
       
-    </div>
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 28, 2026 16:15:37 UTC">June 28, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 28, 2026 16:15:37 UTC">June 28, 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
   </div>
 
           
@@ -4649,10 +4484,12 @@ is still valid under v0.5.</p>
   
     
       
+        
+      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../../23/production-scars-are-architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Production Scars Are Architecture">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4662,27 +4499,11 @@ is still valid under v0.5.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                Production Scars Are Architecture
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../series/" class="md-footer__link md-footer__link--next" aria-label="Next: Series">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Series
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
@@ -4742,10 +4563,10 @@ is still valid under v0.5.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
