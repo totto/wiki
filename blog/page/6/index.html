@@ -4107,6 +4107,59 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-03-14 00:00:00+00:00">March 14, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              9 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-agents-were-forgetting-everything-they-discovered"><a class="toclink" href="../../2026/03/14/the-agents-were-forgetting-everything-they-discovered/">The agents were forgetting everything they discovered</a></h2>
+<p>Something felt off.</p>
+<p>I'd been using the Task tool heavily — delegating research tasks to Claude subagents, letting them explore codebases, map dependencies, surface patterns. The results coming back were good. But when I'd start a new session and ask about the same topic, there was no trace of that prior investigation. The context window had reset, and the episodic memory layer — kcp-memory — wasn't helping.</p>
+<p>Here's what that looked like in practice: I'd asked a subagent to map the co-events repository ecosystem earlier this week. It came back with a clear picture — co-events is the CatalystOne HRIS event-sourcing platform, seven repos, with a dependency chain running from co-event-typelib through co-event-sdk into co-analytics-vanilla (which, by the way, uses Neo4j with APOC, not SQL — a non-obvious choice). Two days later, I started a new session, asked about co-events architecture, and got a blank stare. The agent had no idea any of this had been mapped. It treated the question as entirely novel.</p>
+<p>My first hypothesis was handover loss. Maybe something was being compressed or summarized too aggressively when agents returned their findings. Maybe the model transition (often Opus for the delegated tasks, Sonnet for the orchestrating session) was dropping context. That felt plausible, and a little unsettling.</p>
+<p>The real cause was more concrete — and more fixable.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/03/14/the-agents-were-forgetting-everything-they-discovered/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-03-13 00:00:00+00:00">March 13, 2026</time></li>
         
           <li class="md-meta__item">
@@ -4565,59 +4618,6 @@ and then shipped a fourth: a complete zero-MCP path for enterprises that cannot 
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-04 00:00:00+00:00">March 4, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-prompt-cache-as-infrastructure-lessons-from-3007-claude-code-sessions"><a class="toclink" href="../../2026/03/04/the-prompt-cache-as-infrastructure-lessons-from-3007-claude-code-sessions/">The Prompt Cache as Infrastructure: Lessons from 3,007 Claude Code Sessions</a></h2>
-<p>I extracted the token usage from 55 days of Claude Code sessions. The number that stopped me:</p>
-<p><strong>12,198,713,224 cache read tokens.</strong></p>
-<p>Twelve billion. Against 9,965,286 input tokens. For every fresh token sent to the model,
-1,224 were served from cache.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/04/the-prompt-cache-as-infrastructure-lessons-from-3007-claude-code-sessions/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
       
         
           
@@ -4625,7 +4625,7 @@ and then shipped a fourth: a complete zero-MCP path for enterprises that cannot 
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__current">6</span> <a class="md-pagination__link" href="../7/">7</a> <a class="md-pagination__link" href="../8/">8</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../16/">16</a>
+  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__current">6</span> <a class="md-pagination__link" href="../7/">7</a> <a class="md-pagination__link" href="../8/">8</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../17/">17</a>
 </nav>
         
       
