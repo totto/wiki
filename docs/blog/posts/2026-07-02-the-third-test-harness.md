@@ -17,9 +17,13 @@ authors:
 
 # The Third Test Harness
 
+![[ The Third Test Harness ] — Preventing specification drift in autonomous, AI-augmented development workflows. Terminal prompt: system_verify --target live --mode external_truth → STATUS: DRIFT DETECTED](/assets/images/blog/third-test-harness/th-hero.png)
+
 A supplier scored 72. The frontend showed a green ring and the label "Strong." The backend API returned "Moderate." Both systems were passing all their tests. Both were correct — according to their own definitions.
 
 <!-- more -->
+
+![A supplier scored 72. The system told two different truths. — Frontend UI shows score ring with 72 and label "STRONG" in green; Backend API telemetry returns status: "Moderate". Both systems were passing 100% of their test suites. Both were internally correct. And yet, real users were seeing a critical misclassification.](/assets/images/blog/third-test-harness/th-72-score-paradox.png)
 
 This was on a compliance SaaS platform where organizations track supplier risk through a three-tier scoring system. The tiers are simple:
 
@@ -33,6 +37,8 @@ The bug was found by a third layer: a verification harness that runs against the
 
 ## Two Layers That Passed
 
+![The blindspots of internal consistency — Unit Tests: Loop A (Backend 72 → "Moderate" PASS), Loop B (Frontend 72 → "Strong" PASS). Integration E2E seeds a score of 80 where both systems agree. THE GAP: test data was chosen with the same flawed assumptions as the code it tested.](/assets/images/blog/third-test-harness/th-blindspots-internal-consistency.png)
+
 The platform has three testing layers. The first two are conventional.
 
 **Unit tests** test each layer in isolation. The backend's scoring function returns "Moderate" for an input of 72. Pass. The frontend's equivalent function returns "Strong" for the same input. Also pass. Both functions are internally correct. The inconsistency lives in the gap between them, and unit tests do not test gaps. They test implementations.
@@ -42,6 +48,10 @@ The platform has three testing layers. The first two are conventional.
 This is the mechanism of the blindness: the test itself was written with the same assumption as the code it was testing. The test and the code agree with each other. They just do not agree with the specification.
 
 ## The Third Layer
+
+![Shifting from Internal Consistency to External Truth — Standard Testing Flow (Code → Tests → Seeded Data, "agrees with itself, blind to the spec") vs. Canonical Specification as an independent source of truth that the AI agent cannot influence through pattern propagation.](/assets/images/blog/third-test-harness/th-external-truth.png)
+
+![The Architecture of the Verification Layer — Layer 1 (Specs 00-04): Structural Healthchecks, role-based views; Layer 2 (Specs 05-10): Lifecycle & Invariants, cross-organization data isolation; Layer 3 (Spec 11): Math Verification, independently re-implements scoring formulas from first principles.](/assets/images/blog/third-test-harness/th-verification-architecture.png)
 
 The third layer is different in kind. It is not an extension of the first two. It is architecturally distinct.
 
@@ -90,6 +100,8 @@ The investigation took less than an hour. Four frontend components had all been 
 
 ## Why This Category of Bug Is Invisible
 
+![The Zone of Blindness: Diverging Thresholds — score bar showing Backend Authoritative Definition (≥75: Strong) vs. Frontend Implementation (≥70: Strong). The 70-74 range is the Zone of Blindness. E2E tests seed data at 80 where both agree safely. Real suppliers landing in the zone fail silently.](/assets/images/blog/third-test-harness/th-zone-of-blindness.png)
+
 This is not a subtle bug. It is a five-point threshold difference that causes real misclassification of real suppliers. And yet it is structurally invisible to the first two testing layers.
 
 **Unit tests cannot see it** because the inconsistency exists between modules, not within them. Each module's tests validate against the module's own definition. The backend says "Moderate" for 72, and the backend's tests agree. The frontend says "Strong" for 72, and the frontend's tests agree. There is no unit test that says "the frontend and the backend should agree on what 72 means." That assertion does not belong to either module. It belongs to the system.
@@ -99,6 +111,8 @@ This is not a subtle bug. It is a five-point threshold difference that causes re
 **The verification harness sees it** because it has no pre-chosen test data. It reads whatever the live system contains. If a supplier happens to score in the 70-74 range, the mismatch surfaces. But more importantly, the harness does not use the frontend's definition or the backend's definition. It uses its own, derived from the specification document. It is an independent observer. It catches the gap because it does not share the gap's assumptions.
 
 ## The Three-Layer Model
+
+![The Third Test Harness: Stopping Specification Drift in AI-Augmented Teams — full infographic showing the 72 Score Paradox, three-layer testing model (unit/integration/verification), why traditional testing failed, the AI factor as error multiplier and agent blind spot, and the immune system for AI](/assets/images/blog/third-test-harness/th-infographic.png)
 
 Each layer tests something the others cannot.
 
@@ -113,6 +127,8 @@ The third layer is expensive. It requires a live deployed environment, pre-confi
 It is not a replacement for the first two layers. It is the thing the first two layers cannot be.
 
 ## Why This Matters More in an Agent-Augmented Workflow
+
+![AI amplifies consistency. Consistency is a liability. — The AI Replication Fractal: origin Summary Card (Threshold ≥70) → AI Agent pattern-matches → propagates to Detail View, Trust Center Panel, Profile View, Export Module, all with Threshold ≥70. The agent propagates the error with the exact same fidelity it propagates everything else.](/assets/images/blog/third-test-harness/th-ai-replication-fractal.png)
 
 Here is the angle that no existing testing post seems to cover.
 
@@ -129,6 +145,8 @@ The verification harness is that mechanism. It derives from the specification, n
 This is not a theoretical concern. The threshold bug was real. Four components were wrong. The verification harness found it. The fix was five files. Without the harness, the bug would have persisted indefinitely — undetectable by every other testing layer, propagating into every new component, growing wider with every sprint.
 
 ## The Cost of Not Having It
+
+![Human institutional memory vs. Agent velocity — Pre-Agent World: drift accumulates slowly, developer memory as failsafe ("Wait, shouldn't the threshold be 75?"). Agent-Augmented World: drift propagates at agent speed (60 PRs/week), no institutional failsafe — AI relies purely on codebase patterns and passing tests. A threshold mismatch spreads to a dozen new components in a week, silently passing every unit and E2E test.](/assets/images/blog/third-test-harness/th-human-vs-agent-velocity.png)
 
 Most teams have two testing layers. Some have one. Very few have three. The third layer is the most expensive to build and maintain, and it is the one that catches the category of bugs the other two cannot.
 
