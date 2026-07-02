@@ -24,7 +24,9 @@ I know this because I've spent seven weeks shipping the alternative. ExoCortex �
 
 The swarm is a search algorithm. ExoCortex is a judgment engine. These are fundamentally different tools for fundamentally different problems, and the industry is reaching for the wrong one.
 
-![Swarm vs. Cortex: Why Persistent Memory Wins in AI Engineering — full infographic summary](/assets/images/blog/against-the-swarm/swarm-vs-cortex-infographic.png)
+![Against the Swarm — fragmented swarm chaos on the left, coherent cortex flow on the right](/assets/images/blog/against-the-swarm/v2-title.png)
+
+![Persistent Context Beats Parallel Search in AI Engineering — full infographic summary with comparison matrix, evidence, and synthesis](/assets/images/blog/against-the-swarm/persistent-context-infographic.png)
 
 ## What Swarms Actually Are
 
@@ -32,7 +34,7 @@ Let's be precise about what a swarm architecture does. You spawn multiple agents
 
 This is search. It is a very good search. And for the right class of problem, it is unbeatable.
 
-![The Industry's False Prophet: The Swarm — parallel agents feeding into an evaluation function](/assets/images/blog/against-the-swarm/slide-02.png)
+![The Swarm Illusion: industrializing the search algorithm — spawn agents, generate candidates, run evaluation function, select winner, discard everything else](/assets/images/blog/against-the-swarm/v2-swarm-illusion.png)
 
 AlphaZero beat Magnus Carlsen because chess has a perfect evaluation function. You always know who is winning. You always know if a move was good. The search space is vast but bounded, and every position can be scored. Swarms excel in exactly these conditions:
 
@@ -40,7 +42,7 @@ AlphaZero beat Magnus Carlsen because chess has a perfect evaluation function. Y
 - **Verifiable outputs** where you can mechanically check if the answer is right.
 - **Stateless evaluation** where the quality of a solution doesn't depend on what you tried yesterday.
 
-![Swarms are a Search Algorithm — unbeatable if the problem has walls: bounded problems, verifiable outputs, stateless evaluation](/assets/images/blog/against-the-swarm/slide-03.png)
+![Where brute-force parallelism actually wins — bounded problems like chess fit inside the box; production engineering does not](/assets/images/blog/against-the-swarm/v2-bounded-problems.png)
 
 Code generation benchmarks, mathematical proofs, strategy games, constrained optimization — swarms are extraordinary here. If you can write an eval function, a swarm will find solutions you would never have considered.
 
@@ -48,11 +50,15 @@ But here is the question nobody in the swarm-architecture keynotes is asking: wh
 
 ## What Swarms Cannot Do
 
+Look at what a real production system actually contains.
+
+![The reality of production engineering is unbounded and stateful — Norwegian compliance rules, Angular race conditions, multi-tenant DB migration patterns. What percentage has a perfect evaluation function? Zero.](/assets/images/blog/against-the-swarm/v2-production-reality.png)
+
 Last Tuesday, ExoCortex fixed a flaky Playwright test in Mynder's regulatory compliance module. The fix took four minutes. Not because the code was simple — because the agent already knew that this specific selector breaks when the Angular component re-renders during navigation, that the wait-for-stable pattern we adopted in week three handles this class of issue, and that the regulatory model has a particular data loading sequence that creates the race condition in the first place.
 
 A swarm of ten agents, each with 10,000 tokens of context, has 100,000 tokens of total compute. ExoCortex, working from accumulated memory, had maybe 3,000 tokens of relevant context loaded. The swarm has 33x the raw capacity. It loses. Every time. Because the ten agents have **zero shared understanding**.
 
-![Zero Shared Understanding — the Generate→Debate→Select pipeline systematically discards architectural history, rejected approaches, and edge cases into the DISCARD ZONE](/assets/images/blog/against-the-swarm/slide-04.png)
+![The Fatal Flaw of the Swarm: Architectural Amnesia — each task empties the bucket. The cortex accumulates. "When you fire the swarm after each task, you restart from scratch. Every single time."](/assets/images/blog/against-the-swarm/v2-architectural-amnesia.png)
 
 This is the central failure of the swarm architecture for production engineering work. When you fire the swarm after each task, you restart from scratch. Every time. The things that make an engineer fast after six months on a codebase — knowing the architectural decisions, knowing what was tried and rejected, knowing which patterns work and which ones look right but break under load — are exactly the things a swarm discards.
 
@@ -66,7 +72,7 @@ When ExoCortex encounters a new feature request in Mynder, it doesn't start from
 
 A swarm of ten agents, each loaded with a different slice of documentation, can collectively "know" the same facts. But knowing facts and having judgment are different things. Judgment is what tells you that this particular feature request, which looks like a simple CRUD addition, will actually require changes to the authorization model because of an edge case in the Norwegian regulatory framework that surfaced during the Datatilsynet compliance review in week four. No amount of parallel search finds that. It requires the kind of longitudinal context that only persistence builds.
 
-![Information is not Judgment — 10 agents × 10,000 tokens = 100,000 tokens of compute, zero connections. 1 agent, 3,000 tokens of relevant context = compound judgment](/assets/images/blog/against-the-swarm/slide-05.png)
+![The Inference Chain Problem: Volume vs. Judgment — 100,000 tokens, zero inference chains vs. 3,000 tokens, rich inference chains. A swarm knows facts through retrieval. A persistent layer exercises judgment.](/assets/images/blog/against-the-swarm/v2-inference-chains.png)
 
 This is what I call the inference chain problem. Ten agents with ten thousand tokens each have one hundred thousand tokens of information and zero inference chains connecting them. The value isn't in the tokens. It's in the chains.
 
@@ -74,7 +80,7 @@ This is what I call the inference chain problem. Ten agents with ten thousand to
 
 Here are the numbers, because claims without evidence are just opinions.
 
-![The Alternative: A Persistent Cognitive Layer — 7 weeks in production, 1 agent that stopped forgetting: 414 PRs merged, 548 accumulated skills, ~35,000 lines of code/week, 3,847 tests maintained](/assets/images/blog/against-the-swarm/slide-07.png)
+![Enter the ExoCortex: A Persistent Cognitive Layer — blueprint showing Skill #89 (event sourcing rejection), Skill #147 (PCB footprint validation), Skill #312 (Mynder DB migration patterns). Competence emerges from continuity, not competition.](/assets/images/blog/against-the-swarm/v2-exocortex-blueprint.png)
 
 **414 pull requests merged in 7 weeks.** That is roughly 60 per week, or about 12 per working day. The pace didn't come from spawning more agents. It came from each subsequent PR being faster than the last, because the agent accumulated context about what worked.
 
@@ -89,7 +95,7 @@ Here are the numbers, because claims without evidence are just opinions.
 
 The throughput improvement isn't linear. It's compound. Each skill makes every subsequent task faster. Each memory of a rejected approach saves the time of re-exploring it. This is the compound interest of persistent context, and swarms cannot accumulate it.
 
-![The Compound Interest of Context — Week 1: slower initial throughput as patterns are learned. Week 7: exponential improvement as re-exploration of dead ends is entirely eliminated](/assets/images/blog/against-the-swarm/slide-08.png)
+![The Production Evidence: 7 Weeks of Persistent Context — 414 pull requests merged, 548 skills accumulated, 35,000 lines/week, 3,847 tests actively maintained (not just generated and forgotten)](/assets/images/blog/against-the-swarm/v2-production-evidence.png)
 
 ## The Comparison
 
@@ -119,8 +125,6 @@ Swarm architectures optimize for the measurable. Persistent architectures accumu
 
 This is the story points mistake all over again. We optimized for velocity and got feature factories. We are about to optimize for agent parallelism and get code factories — high throughput, zero judgment, impressive metrics, mediocre systems.
 
-![The Agile-Industrial Complex, Redux — swarms maximize measurable metrics (ablation studies, parallel benchmarks, velocity) while persistent architectures accumulate valuable judgment (taste, context, institutional memory)](/assets/images/blog/against-the-swarm/slide-11.png)
-
 ## The Right Synthesis
 
 I am not arguing that swarms are useless. I am arguing they are misapplied.
@@ -130,8 +134,6 @@ The right architecture uses both, but in different roles. The persistent cortex 
 The swarm verifies. Multiple agents review the same output from different angles. One checks for security issues. One checks for performance regressions. One checks for consistency with existing patterns. One tries to break it. This is adversarial review, and it is where parallel, independent, stateless agents genuinely shine — because verification is a bounded problem with clear evaluation criteria.
 
 Produce with judgment. Verify with search. This is the architecture that works. Not because it's theoretically elegant, but because it matches the actual structure of engineering work: most of the value is in making the right decision, not in exploring every possible decision.
-
-![The Right Architecture: Produce + Verify — the persistent Cortex produces the pull request; the stateless Swarm verifies it against security, performance, and consistency criteria](/assets/images/blog/against-the-swarm/slide-12.png)
 
 ExoCortex produces the PR. A verification layer can check it. But the verification layer cannot produce it, because production requires knowing why the last three approaches were rejected, what the regulatory model demands, which database patterns survive under load, and what the team decided in the architecture review that isn't written down anywhere.
 
@@ -145,4 +147,4 @@ If you are building AI-augmented development infrastructure, stop optimizing for
 
 The future of AI in engineering is not a swarm. It is a cortex — one agent that knows your work deeply enough to exercise judgment, not just search. Build that, and the compound returns will make the swarm's parallelism look like what it is: an expensive way to rediscover what you already knew.
 
-![The Future is a Cortex — The swarm will win every benchmark. The cortex will ship every product. Stop asking how many agents can we run. Start asking how much does our agent know.](/assets/images/blog/against-the-swarm/slide-13.png)
+![The Future is a Cortex — The swarm will win every benchmark. The cortex will ship every product.](/assets/images/blog/against-the-swarm/slide-13.png)
