@@ -4283,7 +4283,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              10 min read
+                              11 min read
                             
                           </span>
                         </div>
@@ -4352,29 +4352,35 @@
 
 <p>I know this because I've spent seven weeks shipping the alternative. ExoCortex — a persistent AI cognitive layer running across multiple codebases — has merged 414 pull requests, accumulated 548 skills, produces roughly 35,000 lines of code per week, and maintains 3,847 tests. Not through a swarm of competing agents. Through one agent that stopped forgetting.</p>
 <p>The swarm is a search algorithm. ExoCortex is a judgment engine. These are fundamentally different tools for fundamentally different problems, and the industry is reaching for the wrong one.</p>
+<p><img alt="Swarm vs. Cortex: Why Persistent Memory Wins in AI Engineering — full infographic summary" src="/assets/images/blog/against-the-swarm/swarm-vs-cortex-infographic.png" /></p>
 <h2 id="what-swarms-actually-are">What Swarms Actually Are<a class="headerlink" href="#what-swarms-actually-are" title="Permanent link">&para;</a></h2>
 <p>Let's be precise about what a swarm architecture does. You spawn multiple agents. Each one takes a different approach to a problem. You evaluate the outputs against some criterion and select the best one. Sometimes they debate. Sometimes they vote. Sometimes you run tournament brackets. The specifics vary, but the structure is the same: generate many candidates, select the fittest.</p>
 <p>This is search. It is a very good search. And for the right class of problem, it is unbeatable.</p>
+<p><img alt="The Industry's False Prophet: The Swarm — parallel agents feeding into an evaluation function" src="/assets/images/blog/against-the-swarm/slide-02.png" /></p>
 <p>AlphaZero beat Magnus Carlsen because chess has a perfect evaluation function. You always know who is winning. You always know if a move was good. The search space is vast but bounded, and every position can be scored. Swarms excel in exactly these conditions:</p>
 <ul>
 <li><strong>Bounded problems</strong> with clear edges. The solution space has walls.</li>
 <li><strong>Verifiable outputs</strong> where you can mechanically check if the answer is right.</li>
 <li><strong>Stateless evaluation</strong> where the quality of a solution doesn't depend on what you tried yesterday.</li>
 </ul>
+<p><img alt="Swarms are a Search Algorithm — unbeatable if the problem has walls: bounded problems, verifiable outputs, stateless evaluation" src="/assets/images/blog/against-the-swarm/slide-03.png" /></p>
 <p>Code generation benchmarks, mathematical proofs, strategy games, constrained optimization — swarms are extraordinary here. If you can write an eval function, a swarm will find solutions you would never have considered.</p>
 <p>But here is the question nobody in the swarm-architecture keynotes is asking: what percentage of real engineering work has a perfect evaluation function?</p>
 <h2 id="what-swarms-cannot-do">What Swarms Cannot Do<a class="headerlink" href="#what-swarms-cannot-do" title="Permanent link">&para;</a></h2>
 <p>Last Tuesday, ExoCortex fixed a flaky Playwright test in Mynder's regulatory compliance module. The fix took four minutes. Not because the code was simple — because the agent already knew that this specific selector breaks when the Angular component re-renders during navigation, that the wait-for-stable pattern we adopted in week three handles this class of issue, and that the regulatory model has a particular data loading sequence that creates the race condition in the first place.</p>
 <p>A swarm of ten agents, each with 10,000 tokens of context, has 100,000 tokens of total compute. ExoCortex, working from accumulated memory, had maybe 3,000 tokens of relevant context loaded. The swarm has 33x the raw capacity. It loses. Every time. Because the ten agents have <strong>zero shared understanding</strong>.</p>
+<p><img alt="Zero Shared Understanding — the Generate→Debate→Select pipeline systematically discards architectural history, rejected approaches, and edge cases into the DISCARD ZONE" src="/assets/images/blog/against-the-swarm/slide-04.png" /></p>
 <p>This is the central failure of the swarm architecture for production engineering work. When you fire the swarm after each task, you restart from scratch. Every time. The things that make an engineer fast after six months on a codebase — knowing the architectural decisions, knowing what was tried and rejected, knowing which patterns work and which ones look right but break under load — are exactly the things a swarm discards.</p>
 <p>The 548 skills ExoCortex has accumulated didn't emerge from competition. They emerged from continuity. Skill #312 knows which database migration patterns work with Mynder's multi-tenant architecture. Skill #147 knows the exact PCB footprint validation sequence for lib-pcb. Skill #89 knows why we rejected event sourcing for the notification subsystem in week two and what we replaced it with. None of this survives a swarm's lifecycle.</p>
 <h2 id="the-inference-chain-problem">The Inference Chain Problem<a class="headerlink" href="#the-inference-chain-problem" title="Permanent link">&para;</a></h2>
 <p>There is a deeper issue. A swarm doesn't just lack memory — it lacks the ability to build the inference chains that make memory useful.</p>
 <p>When ExoCortex encounters a new feature request in Mynder, it doesn't start from the API spec. It starts from everything it knows: the regulatory model's structure, the tenant isolation patterns, the frontend component hierarchy, the test fixtures that already exist, the deployment pipeline's constraints, the last three times a similar feature was attempted and what went wrong. This isn't retrieval. It's judgment — the compound product of accumulated context applied to a new situation.</p>
 <p>A swarm of ten agents, each loaded with a different slice of documentation, can collectively "know" the same facts. But knowing facts and having judgment are different things. Judgment is what tells you that this particular feature request, which looks like a simple CRUD addition, will actually require changes to the authorization model because of an edge case in the Norwegian regulatory framework that surfaced during the Datatilsynet compliance review in week four. No amount of parallel search finds that. It requires the kind of longitudinal context that only persistence builds.</p>
+<p><img alt="Information is not Judgment — 10 agents × 10,000 tokens = 100,000 tokens of compute, zero connections. 1 agent, 3,000 tokens of relevant context = compound judgment" src="/assets/images/blog/against-the-swarm/slide-05.png" /></p>
 <p>This is what I call the inference chain problem. Ten agents with ten thousand tokens each have one hundred thousand tokens of information and zero inference chains connecting them. The value isn't in the tokens. It's in the chains.</p>
 <h2 id="the-evidence">The Evidence<a class="headerlink" href="#the-evidence" title="Permanent link">&para;</a></h2>
 <p>Here are the numbers, because claims without evidence are just opinions.</p>
+<p><img alt="The Alternative: A Persistent Cognitive Layer — 7 weeks in production, 1 agent that stopped forgetting: 414 PRs merged, 548 accumulated skills, ~35,000 lines of code/week, 3,847 tests maintained" src="/assets/images/blog/against-the-swarm/slide-07.png" /></p>
 <p><strong>414 pull requests merged in 7 weeks.</strong> That is roughly 60 per week, or about 12 per working day. The pace didn't come from spawning more agents. It came from each subsequent PR being faster than the last, because the agent accumulated context about what worked.</p>
 <p><strong>Week 1 versus Week 7:</strong></p>
 <ul>
@@ -4384,6 +4390,7 @@
 <p><strong>35,000 lines of code per week</strong> across Mynder SaaS, lib-pcb, Synthesis knowledge graph, and Cantara open source projects. Simultaneously. Not by running a swarm across them — by maintaining persistent context for each.</p>
 <p><strong>3,847 tests maintained.</strong> Not generated and forgotten — maintained. When the regulatory model changed, ExoCortex updated the tests that depended on the old model. It knew which tests to update because it wrote them. A swarm would need to rediscover that dependency graph from scratch.</p>
 <p>The throughput improvement isn't linear. It's compound. Each skill makes every subsequent task faster. Each memory of a rejected approach saves the time of re-exploring it. This is the compound interest of persistent context, and swarms cannot accumulate it.</p>
+<p><img alt="The Compound Interest of Context — Week 1: slower initial throughput as patterns are learned. Week 7: exponential improvement as re-exploration of dead ends is entirely eliminated" src="/assets/images/blog/against-the-swarm/slide-08.png" /></p>
 <h2 id="the-comparison">The Comparison<a class="headerlink" href="#the-comparison" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -4448,18 +4455,20 @@
 <p>But the most valuable things in engineering — the reason your senior architect is worth five juniors — cannot be benchmarked. Taste. Judgment. The instinct that says "this approach is technically correct and strategically wrong." The memory of what was tried eighteen months ago and why it failed. The understanding that this simple-looking change touches a load-bearing assumption in the authorization model.</p>
 <p>Swarm architectures optimize for the measurable. Persistent architectures accumulate the valuable. The industry is pouring billions into the former because it's easier to fundraise around benchmark improvements than around "our agent remembers what happened last month."</p>
 <p>This is the story points mistake all over again. We optimized for velocity and got feature factories. We are about to optimize for agent parallelism and get code factories — high throughput, zero judgment, impressive metrics, mediocre systems.</p>
+<p><img alt="The Agile-Industrial Complex, Redux — swarms maximize measurable metrics (ablation studies, parallel benchmarks, velocity) while persistent architectures accumulate valuable judgment (taste, context, institutional memory)" src="/assets/images/blog/against-the-swarm/slide-11.png" /></p>
 <h2 id="the-right-synthesis">The Right Synthesis<a class="headerlink" href="#the-right-synthesis" title="Permanent link">&para;</a></h2>
 <p>I am not arguing that swarms are useless. I am arguing they are misapplied.</p>
 <p>The right architecture uses both, but in different roles. The persistent cortex produces. It holds the context, makes the judgment calls, writes the code that reflects accumulated understanding of the system. It is the senior engineer.</p>
 <p>The swarm verifies. Multiple agents review the same output from different angles. One checks for security issues. One checks for performance regressions. One checks for consistency with existing patterns. One tries to break it. This is adversarial review, and it is where parallel, independent, stateless agents genuinely shine — because verification is a bounded problem with clear evaluation criteria.</p>
 <p>Produce with judgment. Verify with search. This is the architecture that works. Not because it's theoretically elegant, but because it matches the actual structure of engineering work: most of the value is in making the right decision, not in exploring every possible decision.</p>
+<p><img alt="The Right Architecture: Produce + Verify — the persistent Cortex produces the pull request; the stateless Swarm verifies it against security, performance, and consistency criteria" src="/assets/images/blog/against-the-swarm/slide-12.png" /></p>
 <p>ExoCortex produces the PR. A verification layer can check it. But the verification layer cannot produce it, because production requires knowing why the last three approaches were rejected, what the regulatory model demands, which database patterns survive under load, and what the team decided in the architecture review that isn't written down anywhere.</p>
 <h2 id="the-stake-in-the-ground">The Stake in the Ground<a class="headerlink" href="#the-stake-in-the-ground" title="Permanent link">&para;</a></h2>
 <p>Here is what I believe, grounded in 414 merged pull requests and seven weeks of production evidence:</p>
 <p><strong>Persistent context with accumulated judgment will outperform swarm architectures at every task that matters in production engineering.</strong> Not at benchmarks. Not at constrained puzzles. At the work that actually ships products — the work that requires knowing your codebase, your team's decisions, your users' constraints, and your system's history.</p>
-<p>The swarm will win every benchmark. ExoCortex will ship every product.</p>
 <p>If you are building AI-augmented development infrastructure, stop optimizing for agent count and start optimizing for agent memory. Stop measuring parallel throughput and start measuring accumulated context. Stop asking "how many agents can we run?" and start asking "how much does our agent know?"</p>
 <p>The future of AI in engineering is not a swarm. It is a cortex — one agent that knows your work deeply enough to exercise judgment, not just search. Build that, and the compound returns will make the swarm's parallelism look like what it is: an expensive way to rediscover what you already knew.</p>
+<p><img alt="The Future is a Cortex — The swarm will win every benchmark. The cortex will ship every product. Stop asking how many agents can we run. Start asking how much does our agent know." src="/assets/images/blog/against-the-swarm/slide-13.png" /></p>
 
 
 
@@ -4482,7 +4491,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 1, 2026 19:50:27 UTC">July 1, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 2, 2026 05:37:39 UTC">July 2, 2026</span>
   </span>
 
     
