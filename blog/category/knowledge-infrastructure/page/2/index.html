@@ -4119,6 +4119,60 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-01 09:30:00+00:00">June 1, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
+              <a href="../../" class="md-meta__link">Knowledge Infrastructure</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              16 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-law-is-also-knowledge-package-it"><a class="toclink" href="../../../../2026/06/01/the-law-is-also-knowledge-package-it/">The Law Is Also Knowledge. Package It.</a></h2>
+<p><img alt="Overview: The Law as Code — Solving the AI Compliance Identity Crisis. The problem (shapeless regulations as prose), the KCP solution (typed regulatory packages), and real-world applications across NIS2 and EU AI Act." src="../../../../../assets/images/kcp-laws-00-overview.webp" /></p>
+<p>In the <a href="../../../../2026/06/01/everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/">previous post</a>, I argued that the AI provenance problem is a format problem. The knowledge going into and out of AI systems -- policies, observations, interpretations -- has no stable shape. No type, no version, no cryptographic binding. The audit trail records that something was reviewed. It cannot record what was reviewed, because the thing itself is prose that could have drifted between the moment of review and the moment of use.</p>
+<p>KCP solves this by giving knowledge a shape: typed, versioned, signed packages. A compliance observation becomes a structured declaration with <code>type</code>, <code>version</code>, <code>signed_by</code>, <code>derived_from</code>, <code>review_depth</code>, <code>valid_until</code>. The audit trail becomes precise: "reviewed a cryptographically signed declaration of type <code>evaluation:nis2-art21-supply-chain</code> v1.2.0" -- not "reviewed a document."</p>
+<p>But there is a gap I did not address. I gave shape to the <strong>outputs</strong> -- the policies, the observations, the interpretations. I left the <strong>inputs</strong> shapeless. The regulations and laws that AI agents evaluate against are still prose in the system prompt.</p>
+<p>This post closes that gap.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/06/01/the-law-is-also-knowledge-package-it/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-05-30 10:00:00+00:00">May 30, 2026</time></li>
         
           <li class="md-meta__item">
@@ -4560,66 +4614,6 @@
     
       <nav class="md-post__action">
         <a href="../../../../2026/04/05/the-tool-i-didnt-plan-to-build-synthesis-ten-weeks-later/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-31 00:00:00+00:00">March 31, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              14 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-kcp-ecosystem-how-five-tools-turn-claude-code-into-a-persistent-intelligence-platform"><a class="toclink" href="../../../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/">The KCP Ecosystem: How Five Tools Turn Claude Code Into a Persistent Intelligence Platform</a></h2>
-<p><img alt="The KCP Ecosystem — Turning Claude Code into a Persistent Intelligence Platform" src="/assets/images/blog/kcp-ecosystem-slide-01-cover.webp" /></p>
-<hr />
-<h3 id="the-problem"><a class="toclink" href="../../../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/#the-problem">The Problem</a></h3>
-<p>Every session with Claude Code starts from zero.</p>
-<p><img alt="Every AI session starts from zero — the Start-From-Zero Loop" src="/assets/images/blog/kcp-ecosystem-slide-02-start-from-zero.webp" /></p>
-<p>You open a new session, and the model has no idea what you were doing yesterday. Which services are running. What you decided about the database schema last Thursday. Why you chose the library you chose. You re-explain it. Claude asks clarifying questions you answered two sessions ago. You paste the same background context you always paste. Then the work begins.</p>
-<p>And when the work does begin, there's a different problem: output flooding the context window. Run <code>mvn package</code> and you get 400 lines of Maven lifecycle noise. Run <code>terraform plan</code> and the diff buries the actual changes in scaffolding. Run <code>kubectl get pods</code> cluster-wide and you've spent 8,000 tokens on status rows you didn't need.</p>
-<p><img alt="Context flooding destroys working memory — 33.7% of a 200K context is recovery overhead" src="/assets/images/blog/kcp-ecosystem-slide-03-context-flooding.webp" /></p>
-<p>The context window is your working memory. Filling it with boilerplate and re-explaining the same setup repeatedly is waste — not just inconvenient, but structurally limiting. A 200K token context sounds vast until a third of it is recovery overhead.</p>
-<p>What's missing is infrastructure. Not smarter prompting. Not longer context. Infrastructure — a persistent layer that handles memory, filters noise, and gives the model the right knowledge at the right moment without you having to manage it manually.</p>
-<p>That infrastructure is KCP.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/">
           Continue reading
         </a>
       </nav>
