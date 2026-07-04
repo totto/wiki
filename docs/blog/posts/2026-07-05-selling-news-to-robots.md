@@ -64,7 +64,9 @@ units:
     path: stories/chipfab-exclusive.md
     intent: "Full exclusive: the EU sovereign-compute award, the term sheet, and who lost"
     audience: [agent]
-    access: restricted         # this one costs money — see step 3
+    # no access gate — payment, not auth, guards this one (see step 3).
+    # An anonymous-paid unit stays access: public; `access` declares the
+    # authentication axis only (spec §4.11, clarified in v0.25.1).
 
 relationships:
   - from: chipfab-exclusive-teaser
