@@ -4107,6 +4107,59 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-14 12:00:00+00:00">June 14, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
+              <a href="../../category/exocortex/" class="md-meta__link">ExoCortex</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              4 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="discoverable-is-not-navigable"><a class="toclink" href="../../2026/06/14/discoverable-is-not-navigable/">Discoverable Is Not Navigable</a></h2>
+<p>This morning I spent three hours on regulatory knowledge infrastructure. 63 fragment manifests across Arbeidsmiljøloven, GDPR, NIS2, DORA, AI Act, NSM Grunnprinsipper, Dutch financial supervision law. Fixed a scope validation bug across 30+ files. Extracted 38 Dutch obligation units from inline YAML to standalone navigable text. Everything passing <code>kcp validate</code> by lunch.</p>
+<p>None of it would normally get published. Too narrow. Too technical. No audience in the traditional sense — a compliance engineer isn't subscribing to this blog, and a developer evaluating KCP isn't refreshing the RSS feed waiting for fragment extraction patterns.</p>
+<p>That instinct is correct. If you're writing for humans, ruthless editing is the right move. Cut the scope validation bug. Keep the summary. Optimize for skimmability, because human reading bandwidth is fixed and attention is scarce.</p>
+<p>The instinct is right. The assumption about who's reading has become incomplete.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/14/discoverable-is-not-navigable/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-12 17:00:00+00:00">June 12, 2026</time></li>
         
           <li class="md-meta__item">
@@ -4578,60 +4631,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/06/01/everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-01 09:30:00+00:00">June 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              16 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-law-is-also-knowledge-package-it"><a class="toclink" href="../../2026/06/01/the-law-is-also-knowledge-package-it/">The Law Is Also Knowledge. Package It.</a></h2>
-<p><img alt="Overview: The Law as Code — Solving the AI Compliance Identity Crisis. The problem (shapeless regulations as prose), the KCP solution (typed regulatory packages), and real-world applications across NIS2 and EU AI Act." src="../../../assets/images/kcp-laws-00-overview.webp" /></p>
-<p>In the <a href="../../2026/06/01/everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/">previous post</a>, I argued that the AI provenance problem is a format problem. The knowledge going into and out of AI systems -- policies, observations, interpretations -- has no stable shape. No type, no version, no cryptographic binding. The audit trail records that something was reviewed. It cannot record what was reviewed, because the thing itself is prose that could have drifted between the moment of review and the moment of use.</p>
-<p>KCP solves this by giving knowledge a shape: typed, versioned, signed packages. A compliance observation becomes a structured declaration with <code>type</code>, <code>version</code>, <code>signed_by</code>, <code>derived_from</code>, <code>review_depth</code>, <code>valid_until</code>. The audit trail becomes precise: "reviewed a cryptographically signed declaration of type <code>evaluation:nis2-art21-supply-chain</code> v1.2.0" -- not "reviewed a document."</p>
-<p>But there is a gap I did not address. I gave shape to the <strong>outputs</strong> -- the policies, the observations, the interpretations. I left the <strong>inputs</strong> shapeless. The regulations and laws that AI agents evaluate against are still prose in the system prompt.</p>
-<p>This post closes that gap.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/01/the-law-is-also-knowledge-package-it/">
           Continue reading
         </a>
       </nav>
