@@ -4107,6 +4107,63 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-12 11:00:00+00:00">June 12, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
+              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              20 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard"><a class="toclink" href="../../2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard</a></h2>
+<p><img alt="The evolution of KCP: from the 33-tool-call incident and the comprehension gap (January 2026), through Skill-Driven Development and &quot;agents need a map, not just a table of contents&quot; (February), to the KCP stack — knowledge.yaml, kcp-memory, kcp-commands (March) — and the governance and trust layer of v0.10–v0.17 (April–June)." src="../../../assets/images/kcp-journey-00-evolution.webp" /></p>
+<p>It started with a question no one expected to be hard.</p>
+<p>Day seven of the lib-pcb build. January 2026. A single developer, eleven days to produce what the industry does in ten to eighteen months. The AI was generating code at a pace that defied every estimate. Features that should take a week arrived in hours. The skill library -- YAML files encoding project-specific context for Claude Code -- had grown to over forty entries. Everything was working.</p>
+<p>And then everything stopped.</p>
+<p>"What fields does the DrillHit class have?"</p>
+<p>The AI did not know. The class had been written four days earlier. It was central to the entire parsing architecture. It had been discussed in multiple sessions. But the context was gone -- fresh session, blank slate. The AI started searching. Grep for the class name. Read the file. Follow the imports. Check the parent class. Read that file. Check the serializer. Follow another import. Back to grep. Thirty-three tool calls to answer a question that any developer on the project for a week could answer in ten seconds.</p>
+<p>Eleven minutes. For one question.</p>
+<p>That was the moment something broke open. Not the code -- the assumption underneath it. The assumption that making AI faster at <em>creating</em> code was sufficient. Creation had been accelerated by an order of magnitude. Comprehension had not moved at all.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-12 10:00:00+00:00">June 12, 2026</time></li>
         
           <li class="md-meta__item">
@@ -4567,57 +4624,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/05/12/the-beginning/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-05-10 00:00:00+00:00">May 10, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/agent-infrastructure/" class="md-meta__link">Agent Infrastructure</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              16 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-harness-before-the-service"><a class="toclink" href="../../2026/05/10/the-harness-before-the-service/">The Harness Before the Service</a></h2>
-<p>In May 2026, Anthropic shipped Managed Agents. I read through the docs, the API spec, the beta header (<code>managed-agents-2026-04-01</code>), and felt something I can only describe as architectural recognition.</p>
-<p>Not surprise. Recognition. The way you recognize your own design decisions in someone else's implementation — because the problem space, if you take it seriously, produces the same structural answers.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/05/10/the-harness-before-the-service/">
           Continue reading
         </a>
       </nav>
