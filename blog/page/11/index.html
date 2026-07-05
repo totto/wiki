@@ -4107,6 +4107,55 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-02-23 00:00:00+00:00">February 23, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              8 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="im-scared-of-ai-thats-why-it-works"><a class="toclink" href="../../2026/02/23/im-scared-of-ai-thats-why-it-works/">I'm Scared of AI. That's Why It Works.</a></h2>
+<p>I need to confess something that most developers won't admit: I'm scared of AI. Not in the "Terminator will take over" way. In the very practical, keeps-me-up-at-night way: scared the AI is hallucinating and I can't tell the difference between correct code and plausible-looking garbage. Scared something will break in production because I trusted it too much. Scared I'm losing my edge as a developer because I'm delegating too much.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/02/23/im-scared-of-ai-thats-why-it-works/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-02-22 00:00:00+00:00">February 22, 2026</time></li>
         
           <li class="md-meta__item">
@@ -4542,69 +4591,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/02/13/six-pillars-what-we-learned-building-200000-lines-in-11-days/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-11 00:00:00+00:00">February 11, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              18 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-mirror-test-how-synthesis-benchmarked-itself-into-something-better"><a class="toclink" href="../../2026/02/11/the-mirror-test-how-synthesis-benchmarked-itself-into-something-better/">The Mirror Test: How Synthesis Benchmarked Itself Into Something Better</a></h2>
-<p><em>A story about dogfooding, unexpected discoveries, and what happens when you use an AI tool to measure whether an AI tool is trustworthy.</em></p>
-<p><em>By Thor Henning Hetland and Claude Sonnet 4.6 — written together, February 20, 2026</em></p>
-<hr />
-<h3 id="a-note-on-how-this-was-written"><a class="toclink" href="../../2026/02/11/the-mirror-test-how-synthesis-benchmarked-itself-into-something-better/#a-note-on-how-this-was-written">A Note on How This Was Written</a></h3>
-<p>This article has two voices. Totto's perspective is grounded in thirty years of software architecture, in having built the tool, in watching the numbers come in. The AI's perspective comes from a strange position: being simultaneously the researcher conducting the benchmark, the instrument being measured, and the subject whose reliability is in question.</p>
-<p>We agreed to write this honestly. That means Totto admits when the results surprised him, and the AI admits what it's like to discover that the context it relies on might be wrong.</p>
-<hr />
-<h3 id="part-i-why-we-needed-a-tool-to-test-the-tool"><a class="toclink" href="../../2026/02/11/the-mirror-test-how-synthesis-benchmarked-itself-into-something-better/#part-i-why-we-needed-a-tool-to-test-the-tool">Part I: Why We Needed a Tool to Test the Tool</a></h3>
-<h4 id="totto"><a class="toclink" href="../../2026/02/11/the-mirror-test-how-synthesis-benchmarked-itself-into-something-better/#totto">Totto</a></h4>
-<p>In January 2026, I built lib-pcb in eleven days.</p>
-<p>197,831 lines of Java. 7,461 tests. Eight format parsers, twenty-eight validators, seventeen auto-fix types. The kind of codebase that should take ten to eighteen months by conventional timelines.</p>
-<p>The experience was disorienting in a specific way: the AI could generate code faster than I could understand what it had generated. By day four, I had a problem I hadn't anticipated. Not a quality problem — the code was good. A navigation problem. I couldn't find things anymore.</p>
-<p>Synthesis was my answer to that. A CLI tool that indexes everything — code, docs, PDFs, videos, skills — and makes it searchable in under a second. I built it to solve the lib-pcb output explosion. 691 files per day, and I needed to find any of them in under thirty seconds.</p>
-<p>The question was: did it actually help? Not anecdotally — I knew it helped me. But <em>how much</em>? And help with <em>what</em>, exactly?</p>
-<p>So I built a benchmark.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/02/11/the-mirror-test-how-synthesis-benchmarked-itself-into-something-better/">
           Continue reading
         </a>
       </nav>
