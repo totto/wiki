@@ -43,6 +43,15 @@ units:
   - compliant-agents
   - ai-governance
   - deterministic-agents
+  - audit-trail
+  - reproducible
+  - compliance
+  - governance
+  - soc2
+  - iso27001
+  - gdpr
+  - evidence
+  - defensible
   - field-guide
 - id: da-orientation-glossary
   path: topics/defendable-agents/orientation/glossary.md

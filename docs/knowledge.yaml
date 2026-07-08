@@ -1,5 +1,7 @@
 # wiki.totto.org — KCP root manifest (federated)
 # KCP v0.21 — see https://github.com/Cantara/kcp
+kcp_version: "0.21"
+project: wiki-totto-org
 version: "0.21"
 
 entity:
@@ -782,6 +784,88 @@ units:
     validated: 2026-03-01
     depends_on: [blog-four-layers]
     triggers: [ai-agent, pr-review, pull-request, loop, automation, ironclaw, github, klaw]
+
+  # ── Defendable Agents field guide (curated entry points; full set in knowledge/defendable-agents.yaml) ──
+
+  - id: defendable-agents-overview
+    path: topics/defendable-agents/index.md
+    intent: "What is a defendable agent, and how is this field guide organized?"
+    scope: global
+    audience: [human, agent, architect, ciso]
+    validated: 2026-07-08
+    triggers: [defendable-agents, auditable-agents, compliant-agents, ai-governance, deterministic-agents, audit-trail, reproducible, temporal, drift, compliance, governance, soc2, iso27001, gdpr, evidence, defensible, field-guide]
+
+  - id: da-argument-what-defendable-means
+    path: topics/defendable-agents/argument/what-defendable-means.md
+    intent: "A defendable decision is declared in advance, reproducible, and evidenced. Here is what each property means, why it differs from explainable AI, and how legal and engineering defensibility meet."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+
+  - id: da-argument-the-governance-gap
+    path: topics/defendable-agents/argument/the-governance-gap.md
+    intent: "Why you cannot govern an improvising agent. Non-reproducibility, unauditability and injection-by-default are structural properties of vibes-based architecture, not bugs to patch."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+
+  - id: da-architecture-overview
+    path: topics/defendable-agents/architecture/overview.md
+    intent: "Determinism at the core, the model at the edge. The three components of a defendable agent — planner, harness, model — and how a task becomes evidence you can defend to an auditor."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+
+  - id: da-primitives-overview
+    path: topics/defendable-agents/primitives/overview.md
+    intent: "The four mechanical primitives every governed operation routes through — fail-closed policy, audit-all, budget ceilings and temporal pinning — at a glance."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+
+  - id: da-primitives-audit-trail
+    path: topics/defendable-agents/primitives/audit-trail.md
+    intent: "The append-only JSONL audit log and its event schema — the evidence a defendable agent produces as a byproduct of how it works, not as an afterthought."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+
+  - id: da-decisions-anatomy-of-a-score
+    path: topics/defendable-agents/decisions/anatomy-of-a-score.md
+    intent: "How a 0-100 buyer score is computed deterministically in Lodestar: 1-5 variables averaged and scaled per layer, combined by fixed weights, then bucketed into a priority band."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+
+  - id: da-compliance-control-mapping
+    path: topics/defendable-agents/compliance/control-mapping.md
+    intent: "Each defendable-agent primitive mapped to the audit control it satisfies, with the concrete mechanism and the record you export as evidence — satisfied by mechanism, not by claim."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+
+  - id: da-examples-regulatory-qa-provenance
+    path: topics/defendable-agents/examples/regulatory-qa-provenance.md
+    intent: "A worked example of a regulatory Q&A agent that answers every question with a provenance chain: each claim traces to a declared, temporally-pinned source unit, and stale rules are flagged."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+
+  - id: da-reference-case-study-lodestar
+    path: topics/defendable-agents/reference/case-study-lodestar.md
+    intent: "A full anonymized walkthrough of Lodestar, a governed competitive-intelligence scoring system in a regulated professional-services market, from pipeline to compliance."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+    triggers: [lodestar, case-study, scoring-engine, buyer-scoring, worked-example, temporal, drift]
+
+  - id: da-kcp-manifest-basics
+    triggers: [kcp, manifest, knowledge-yaml, governed-units, declaring-knowledge, federation]
+    path: topics/defendable-agents/kcp/manifest-basics.md
+    intent: "The knowledge.yaml manifest that makes a decision system navigable and governable — kind, metadata, a temporal window, and explicitly declared governed units instead of a flat pile of files."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
 
 relationships:
   # Navigation and orientation
