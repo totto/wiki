@@ -171,10 +171,71 @@ nav:
     - "Skill-Driven Development": topics/skill-driven-development.md
     - "Defendable Agents":
       - topics/defendable-agents/index.md
-      - "Reference Architecture": topics/defendable-agents/reference-architecture.md
-      - "Governance Patterns": topics/defendable-agents/governance-patterns.md
-      - "Case Study: Lodestar": topics/defendable-agents/case-study-lodestar.md
-      - "Starter Kit": topics/defendable-agents/starter-kit.md
+      - "Orientation":
+        - topics/defendable-agents/orientation/how-to-read.md
+        - topics/defendable-agents/orientation/glossary.md
+      - "The Argument":
+        - topics/defendable-agents/argument/the-governance-gap.md
+        - topics/defendable-agents/argument/what-defendable-means.md
+        - topics/defendable-agents/argument/threat-model.md
+        - topics/defendable-agents/argument/determinism-vs-probabilism.md
+        - topics/defendable-agents/argument/why-guardrails-fail.md
+      - "Reference Architecture":
+        - topics/defendable-agents/architecture/overview.md
+        - topics/defendable-agents/architecture/deterministic-planner.md
+        - topics/defendable-agents/architecture/governance-harness.md
+        - topics/defendable-agents/architecture/model-at-the-edge.md
+        - topics/defendable-agents/architecture/data-flow.md
+        - topics/defendable-agents/architecture/fail-closed-behavior.md
+      - "Governance Primitives":
+        - topics/defendable-agents/primitives/overview.md
+        - topics/defendable-agents/primitives/fail-closed-policy.md
+        - topics/defendable-agents/primitives/audit-trail.md
+        - topics/defendable-agents/primitives/decision-traces.md
+        - topics/defendable-agents/primitives/budget-and-bounding.md
+        - topics/defendable-agents/primitives/temporal-pinning.md
+        - topics/defendable-agents/primitives/drift-detection.md
+        - topics/defendable-agents/primitives/trust-and-attestation.md
+        - topics/defendable-agents/primitives/multi-tenancy.md
+      - "Deterministic Decisions":
+        - topics/defendable-agents/decisions/anatomy-of-a-score.md
+        - topics/defendable-agents/decisions/scoring-model-manifest.md
+        - topics/defendable-agents/decisions/layers-weights-bands.md
+        - topics/defendable-agents/decisions/variable-design.md
+        - topics/defendable-agents/decisions/reproducibility.md
+        - topics/defendable-agents/decisions/versioning-models.md
+      - "KCP Integration":
+        - topics/defendable-agents/kcp/manifest-basics.md
+        - topics/defendable-agents/kcp/declaring-governed-units.md
+        - topics/defendable-agents/kcp/wiring-kcp-agent-mcp.md
+        - topics/defendable-agents/kcp/federation-and-dogfood.md
+      - "Tutorials":
+        - topics/defendable-agents/tutorials/00-project-layout.md
+        - topics/defendable-agents/tutorials/01-first-harness.md
+        - topics/defendable-agents/tutorials/02-scoring-model.md
+        - topics/defendable-agents/tutorials/03-governed-session.md
+        - topics/defendable-agents/tutorials/04-audit-log.md
+        - topics/defendable-agents/tutorials/05-budget-ceiling.md
+        - topics/defendable-agents/tutorials/06-temporal-drift.md
+        - topics/defendable-agents/tutorials/07-multi-tenant.md
+        - topics/defendable-agents/tutorials/08-evidence-export.md
+      - "Worked Examples":
+        - topics/defendable-agents/examples/buyer-scoring-pipeline.md
+        - topics/defendable-agents/examples/spend-approval-agent.md
+        - topics/defendable-agents/examples/regulatory-qa-provenance.md
+        - topics/defendable-agents/examples/reproduce-a-decision.md
+        - topics/defendable-agents/examples/catch-an-injection.md
+        - topics/defendable-agents/examples/compliant-screening-agent.md
+      - "Compliance & Assurance":
+        - topics/defendable-agents/compliance/control-mapping.md
+        - topics/defendable-agents/compliance/evidence-packages.md
+        - topics/defendable-agents/compliance/verifying-defendability.md
+        - topics/defendable-agents/compliance/operating-and-maintenance.md
+      - "Case Study & Reference":
+        - topics/defendable-agents/reference/case-study-lodestar.md
+        - topics/defendable-agents/reference/starter-kit.md
+        - topics/defendable-agents/reference/anti-patterns.md
+        - topics/defendable-agents/reference/faq.md
     - "Synthesis Releases": notes/synthesis-releases.md
     - "LinkedIn Posts": notes/linkedin-posts.md
     - "LinkedIn Archive": linkedin/index.md

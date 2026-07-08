@@ -1,5 +1,6 @@
 # wiki.totto.org — Defendable Agents sub-manifest
 # Parent: https://wiki.totto.org/knowledge.yaml
+# The Defendable Agents field guide, published as KCP-navigable knowledge.
 version: "0.14"
 
 id: defendable-agents
@@ -20,51 +21,716 @@ topic:
   name: Defendable Agents
   url: https://wiki.totto.org/topics/defendable-agents/
   summary: >
-    Reference material on defendable agents — AI agents whose every decision is
-    declared in advance, reproducible, and evidenced. Determinism at the core,
-    the model at the edge; governance patterns; and an anonymized case study.
+    A field guide to defendable agents — AI agents whose every decision is
+    declared in advance, reproducible, and evidenced. Argument, architecture,
+    governance primitives, deterministic decisions, KCP integration, tutorials,
+    worked examples, and compliance mapping.
 
 units:
-  - id: defendable-agents-overview
-    path: topics/defendable-agents/index.md
-    intent: "What is a defendable agent and why does deterministic architecture make agents auditable?"
-    scope: global
-    audience: [human, agent, architect, ciso]
-    validated: 2026-07-08
-    triggers: [defendable-agents, auditable-agents, compliant-agents, ai-governance, deterministic-agents, agent-accountability]
-
-  - id: defendable-agents-reference-architecture
-    path: topics/defendable-agents/reference-architecture.md
-    intent: "How is a defendable agent built — deterministic planner at the core, governance harness, model at the edge?"
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-    depends_on: [defendable-agents-overview]
-    triggers: [kcp-agent, kcp-harness, deterministic-planner, model-at-the-edge, prompt-injection, reference-architecture]
-
-  - id: defendable-agents-governance-patterns
-    path: topics/defendable-agents/governance-patterns.md
-    intent: "What are the governance primitives (fail-closed, audit-all, budget, temporal pinning) and how do they map to SOC 2 / ISO 27001 / GDPR?"
-    scope: global
-    audience: [human, agent, ciso, compliance]
-    validated: 2026-07-08
-    depends_on: [defendable-agents-overview]
-    triggers: [governance, fail-closed, audit-log, budget-ceiling, temporal-pinning, soc2, iso27001, gdpr, compliance-controls]
-
-  - id: defendable-agents-case-study-lodestar
-    path: topics/defendable-agents/case-study-lodestar.md
-    intent: "What does a governed, defendable scoring system look like in a real regulated professional-services domain? (anonymized)"
-    scope: global
-    audience: [human, agent, architect, ciso]
-    validated: 2026-07-08
-    depends_on: [defendable-agents-reference-architecture, defendable-agents-governance-patterns]
-    triggers: [case-study, lodestar, scoring, competitive-intelligence, deterministic-scoring, audit-trail, multi-tenant]
-
-  - id: defendable-agents-starter-kit
-    path: topics/defendable-agents/starter-kit.md
-    intent: "What copyable artifacts (harness.yaml, audit-log schema, controls table) do I need to build a defendable agent?"
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-    depends_on: [defendable-agents-reference-architecture]
-    triggers: [starter-kit, harness-yaml, audit-schema, controls-mapping, template, how-to]
+- id: defendable-agents-overview
+  path: topics/defendable-agents/index.md
+  intent: What is a defendable agent, and how is this field guide organized?
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  - ciso
+  validated: '2026-07-08'
+  triggers:
+  - defendable-agents
+  - auditable-agents
+  - compliant-agents
+  - ai-governance
+  - deterministic-agents
+  - field-guide
+- id: da-orientation-glossary
+  path: topics/defendable-agents/orientation/glossary.md
+  intent: 'Definitions of the core defendable-agent vocabulary: deterministic planner, governance harness, decision trace, temporal pin, drift, fail-closed, budget ceiling, and more.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id001
+  - orientation
+  - glossary
+- id: da-orientation-how-to-read
+  path: topics/defendable-agents/orientation/how-to-read.md
+  intent: Who the Defendable Agents field guide is for and four routes through it — paths for CISOs and compliance, for architects, for builders, and for reference.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id001
+- id: da-argument-determinism-vs-probabilism
+  path: topics/defendable-agents/argument/determinism-vs-probabilism.md
+  intent: 'Where determinism belongs in a defendable agent and where the model belongs: navigation, trust, time and budget are algorithms; synthesis and vocabulary are language tasks.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id002
+  - argument
+  - governance
+  - defendable-agents
+- id: da-argument-the-governance-gap
+  path: topics/defendable-agents/argument/the-governance-gap.md
+  intent: Why you cannot govern an improvising agent. Non-reproducibility, unauditability and injection-by-default are structural properties of vibes-based architecture, not bugs to patch.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id002
+- id: da-argument-threat-model
+  path: topics/defendable-agents/argument/threat-model.md
+  intent: 'The concrete threats a defendable agent is built against: non-reproducible decisions, unauditable actions, prompt injection, and silent omission — and how the architecture neutralises each.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id002
+- id: da-argument-what-defendable-means
+  path: topics/defendable-agents/argument/what-defendable-means.md
+  intent: A defendable decision is declared in advance, reproducible, and evidenced. Here is what each property means, why it differs from explainable AI, and how legal and engineering defensibility meet.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id002
+- id: da-argument-why-guardrails-fail
+  path: topics/defendable-agents/argument/why-guardrails-fail.md
+  intent: Classifier guardrails and safety-by-prompting lose slowly because you cannot police a probabilistic system with another probabilistic one. Determinism removes the attack surface instead.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id002
+- id: da-architecture-data-flow
+  path: topics/defendable-agents/architecture/data-flow.md
+  intent: 'The end-to-end data flow of a defendable agent: task to plan, budget check, governed load, deterministic synthesis, and the audit trail and temporal pins produced as a byproduct.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id003
+  - architecture
+  - kcp-agent
+  - kcp-harness
+- id: da-architecture-deterministic-planner
+  path: topics/defendable-agents/architecture/deterministic-planner.md
+  intent: 'Anatomy of the deterministic planner: a pure function over declared metadata that produces an inspectable, reproducible plan before any content loads or any model runs.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id003
+- id: da-architecture-fail-closed-behavior
+  path: topics/defendable-agents/architecture/fail-closed-behavior.md
+  intent: 'What a defendable agent does when it cannot verify something: it stops and records the block as evidence, rather than proceeding on an unverified guess.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id003
+- id: da-architecture-governance-harness
+  path: topics/defendable-agents/architecture/governance-harness.md
+  intent: 'Anatomy of the harness: the scaffold that turns a deterministic planner into a governed system through declared domains, fail-closed policy, a budget ceiling and an append-only audit trail.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id003
+- id: da-architecture-model-at-the-edge
+  path: topics/defendable-agents/architecture/model-at-the-edge.md
+  intent: The two jobs only a model can do — synthesis after the plan and vocabulary bridging between plans — and the deterministic gate that keeps injected instructions away from navigation.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id003
+- id: da-architecture-overview
+  path: topics/defendable-agents/architecture/overview.md
+  intent: Determinism at the core, the model at the edge. The three components of a defendable agent — planner, harness, model — and how a task becomes evidence you can defend to an auditor.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id003
+- id: da-primitives-audit-trail
+  path: topics/defendable-agents/primitives/audit-trail.md
+  intent: The append-only JSONL audit log and its event schema — the evidence a defendable agent produces as a byproduct of how it works, not as an afterthought.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id004
+  - governance
+  - audit
+  - budget
+  - temporal
+  - trust
+- id: da-primitives-budget-and-bounding
+  path: topics/defendable-agents/primitives/budget-and-bounding.md
+  intent: Operation cost ceilings that make an agent run provably bounded — the fixed cost table, an append-only ledger, check-before-record enforcement, and fail-closed budget events.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id004
+- id: da-primitives-decision-traces
+  path: topics/defendable-agents/primitives/decision-traces.md
+  intent: How a defendable agent records why a decision came out the way it did — action, inputs, outputs, written justification, plus the full variable-by-variable scoring trace behind every number.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id004
+- id: da-primitives-drift-detection
+  path: topics/defendable-agents/primitives/drift-detection.md
+  intent: 'Treating staleness as a first-class signal in Lodestar: data drift, model drift and temporal drift, each yielding a recommendation of reanalyze, monitor or ok.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id004
+- id: da-primitives-fail-closed-policy
+  path: topics/defendable-agents/primitives/fail-closed-policy.md
+  intent: The defendable-agent primitive that blocks whenever governance cannot verify a precondition, turning the absence of a block in the audit log into positive evidence that every gate held.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id004
+- id: da-primitives-multi-tenancy
+  path: topics/defendable-agents/primitives/multi-tenancy.md
+  intent: How Lodestar separates shared public data from per-tenant confidential decisions using per-tenant state directories the governance harness owns, not a policy note.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id004
+- id: da-primitives-overview
+  path: topics/defendable-agents/primitives/overview.md
+  intent: The four mechanical primitives every governed operation routes through — fail-closed policy, audit-all, budget ceilings and temporal pinning — at a glance.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id004
+- id: da-primitives-temporal-pinning
+  path: topics/defendable-agents/primitives/temporal-pinning.md
+  intent: Recording the validity window of every decision — dataAsOf, scoredAt, signalDates, model version and hash — so provenance is queryable and staleness is detectable and reproducible.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id004
+- id: da-primitives-trust-and-attestation
+  path: topics/defendable-agents/primitives/trust-and-attestation.md
+  intent: 'Signing and provenance for governed knowledge units: ed25519 signatures over exact bytes, the four honest verification statuses, and require-signature gating in the harness.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id004
+- id: da-decisions-anatomy-of-a-score
+  path: topics/defendable-agents/decisions/anatomy-of-a-score.md
+  intent: 'How a 0-100 buyer score is computed deterministically in Lodestar: 1-5 variables averaged and scaled per layer, combined by fixed weights, then bucketed into a priority band.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id005
+  - scoring
+  - determinism
+  - reproducibility
+- id: da-decisions-layers-weights-bands
+  path: topics/defendable-agents/decisions/layers-weights-bands.md
+  intent: How the layer/weight/band system turns eighteen small 1-5 judgments into one defensible number — why layers exist, how to choose and document weights honestly, and how to resist tuning to a preferred answer.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id005
+- id: da-decisions-reproducibility
+  path: topics/defendable-agents/decisions/reproducibility.md
+  intent: Why the Lodestar scoring engine is built as pure functions, what reproducibility does and does not guarantee, and how model hashing and golden-master tests detect change.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id005
+- id: da-decisions-scoring-model-manifest
+  path: topics/defendable-agents/decisions/scoring-model-manifest.md
+  intent: How to design a deterministic scoring model as a governed YAML manifest — layers, weights, variables, 1-5 scales, scoring guides, and decay — versioned as a KCP unit.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id005
+- id: da-decisions-variable-design
+  path: topics/defendable-agents/decisions/variable-design.md
+  intent: How to design scoring variables on a 1-5 scale with explicit scoring guides, so two analysts or an agent score the same input the same way, reproducibly.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id005
+- id: da-decisions-versioning-models
+  path: topics/defendable-agents/decisions/versioning-models.md
+  intent: 'How Lodestar versions its scoring models: semantic versions, a content hash, model drift that forces reanalysis, safe migrations, and keeping old scores explainable.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id005
+- id: da-kcp-declaring-governed-units
+  path: topics/defendable-agents/kcp/declaring-governed-units.md
+  intent: Turn scoring models and data into declared KCP units with intent, tags, dependencies and audience, so a governed agent selects them deterministically and never silently swaps them.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id006
+  - kcp
+  - knowledge-context-protocol
+  - mcp
+- id: da-kcp-federation-and-dogfood
+  path: topics/defendable-agents/kcp/federation-and-dogfood.md
+  intent: Federating governed manifests across teams with parent includes and signed sub-manifests, then publishing this very field guide as navigable KCP units an agent can discover.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id006
+- id: da-kcp-manifest-basics
+  path: topics/defendable-agents/kcp/manifest-basics.md
+  intent: The knowledge.yaml manifest that makes a decision system navigable and governable — kind, metadata, a temporal window, and explicitly declared governed units instead of a flat pile of files.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id006
+- id: da-kcp-wiring-kcp-agent-mcp
+  path: topics/defendable-agents/kcp/wiring-kcp-agent-mcp.md
+  intent: Expose the deterministic planner to any MCP-speaking agent through kcp_plan, kcp_load and kcp_validate — selection stays governed, and navigation costs zero model tokens.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id006
+- id: da-tutorials-00-project-layout
+  path: topics/defendable-agents/tutorials/00-project-layout.md
+  intent: 'Set up a defendable-agent project from scratch: the models, data, and state directories, the harness and knowledge manifests, and the CLI-first, file-based, no-SaaS philosophy behind it.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id007
+  - tutorial
+  - how-to
+- id: da-tutorials-01-first-harness
+  path: topics/defendable-agents/tutorials/01-first-harness.md
+  intent: Build a minimal governance harness from scratch — declare a governed domain, turn on fail-closed policy, set a budget ceiling with a cost table, wire an audit path, and verify it loads.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id007
+- id: da-tutorials-02-scoring-model
+  path: topics/defendable-agents/tutorials/02-scoring-model.md
+  intent: Author a compact deterministic scoring model in YAML — two layers, a handful of 1-5 variables with scoring guides and weights, computed by hand and wired as a KCP unit.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id007
+- id: da-tutorials-03-governed-session
+  path: topics/defendable-agents/tutorials/03-governed-session.md
+  intent: Wrap scoring in a governed session that shares one audit log, one budget ledger, and one map of temporal pins across every operation, then end and flush.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id007
+- id: da-tutorials-04-audit-log
+  path: topics/defendable-agents/tutorials/04-audit-log.md
+  intent: Emit and read append-only JSONL audit events in a governed session, then reconstruct exactly why a decision came out the way it did from its variable trace.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id007
+- id: da-tutorials-05-budget-ceiling
+  path: topics/defendable-agents/tutorials/05-budget-ceiling.md
+  intent: Add operation costs and a session ceiling so a governed run is provably bounded, then watch a budget_exceeded block get recorded and thrown before any spend happens.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id007
+- id: da-tutorials-06-temporal-drift
+  path: topics/defendable-agents/tutorials/06-temporal-drift.md
+  intent: Pin every score to the data it was computed from, advance the clock, run checkDrift, and read a recommendation of reanalyze, monitor, or ok — with copyable code and a sample drift report.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id007
+- id: da-tutorials-07-multi-tenant
+  path: topics/defendable-agents/tutorials/07-multi-tenant.md
+  intent: Separate shared public data from per-tenant confidential scores and plans using per-tenant state directories the governance harness enforces, then prove the boundary with a test.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id007
+- id: da-tutorials-08-evidence-export
+  path: topics/defendable-agents/tutorials/08-evidence-export.md
+  intent: 'Assemble a self-contained evidence package from the audit log: the decision trace, the temporal pin, the budget ledger and the model version, then map each field to a control.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id007
+- id: da-examples-buyer-scoring-pipeline
+  path: topics/defendable-agents/examples/buyer-scoring-pipeline.md
+  intent: The Lodestar pipeline end to end — signal detection, buyer scoring, match scoring, tiering and CRM export — every stage governed, budgeted and audited.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id008
+  - example
+  - worked-example
+- id: da-examples-catch-an-injection
+  path: topics/defendable-agents/examples/catch-an-injection.md
+  intent: A poisoned source proposes a shell command as an instruction. Lodestar's vocabulary gate passes only governed terms, so the injection bounces off by construction — nothing loaded or paid until the plan converges.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id008
+- id: da-examples-compliant-screening-agent
+  path: topics/defendable-agents/examples/compliant-screening-agent.md
+  intent: A screening agent that stays inside declared rules and audience scoping, producing a reproducible, defensible decision for a regulated professional-services process.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id008
+- id: da-examples-regulatory-qa-provenance
+  path: topics/defendable-agents/examples/regulatory-qa-provenance.md
+  intent: 'A worked example of a regulatory Q&A agent that answers every question with a provenance chain: each claim traces to a declared, temporally-pinned source unit, and stale rules are flagged.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id008
+- id: da-examples-reproduce-a-decision
+  path: topics/defendable-agents/examples/reproduce-a-decision.md
+  intent: Take an old buyer score from the append-only audit log and reproduce it exactly from its pinned inputs, model version and temporal pin — the proof an audit needs.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id008
+- id: da-examples-spend-approval-agent
+  path: topics/defendable-agents/examples/spend-approval-agent.md
+  intent: A governed agent that approves spend within a hard budget ceiling, refusing and recording every request that crosses the line, with the audit log as the approval record.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id008
+- id: da-compliance-control-mapping
+  path: topics/defendable-agents/compliance/control-mapping.md
+  intent: Each defendable-agent primitive mapped to the audit control it satisfies, with the concrete mechanism and the record you export as evidence — satisfied by mechanism, not by claim.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id009
+  - compliance
+  - soc2
+  - iso27001
+  - gdpr
+- id: da-compliance-evidence-packages
+  path: topics/defendable-agents/compliance/evidence-packages.md
+  intent: How to assemble a self-contained evidence package an auditor can verify offline — decision traces, temporal pins, budget ledger, model versions, signatures, and a manifest.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id009
+- id: da-compliance-operating-and-maintenance
+  path: topics/defendable-agents/compliance/operating-and-maintenance.md
+  intent: 'Governance is maintenance, not a one-time build: nightly drift scans, model review cadence, signing-key rotation, audit-log retention and integrity, and clear ownership.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id009
+- id: da-compliance-verifying-defendability
+  path: topics/defendable-agents/compliance/verifying-defendability.md
+  intent: 'How to test a defendable agent: golden-master determinism, audit-completeness, budget-ceiling enforcement, drift detection, and tenant isolation, wired into a conformance matrix.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id009
+- id: da-reference-anti-patterns
+  path: topics/defendable-agents/reference/anti-patterns.md
+  intent: The common ways teams build agents that only look defendable — reconstructed logs, a model in the scoring loop, mutable logs, classifier guardrails, missing pins, and weight-tuning to the answer.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: &id010
+  - reference
+  - case-study
+  - starter-kit
+- id: da-reference-case-study-lodestar
+  path: topics/defendable-agents/reference/case-study-lodestar.md
+  intent: A full anonymized walkthrough of Lodestar, a governed competitive-intelligence scoring system in a regulated professional-services market, from pipeline to compliance.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id010
+- id: da-reference-faq
+  path: topics/defendable-agents/reference/faq.md
+  intent: Straight answers on determinism, correctness, performance, where the LLM lives, cost, when a defendable agent is overkill, and how it maps to the EU AI Act.
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id010
+- id: da-reference-starter-kit
+  path: topics/defendable-agents/reference/starter-kit.md
+  intent: 'Copyable reference artifacts for a defendable agent: a full harness.yaml, a KCP knowledge.yaml, the append-only audit-event schema, and a controls-mapping template.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-07-08'
+  depends_on:
+  - defendable-agents-overview
+  tags: *id010
