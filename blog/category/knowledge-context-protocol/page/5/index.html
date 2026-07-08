@@ -6025,6 +6025,67 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-03-31 00:00:00+00:00">March 31, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../../ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../../ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              14 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-kcp-ecosystem-how-five-tools-turn-claude-code-into-a-persistent-intelligence-platform"><a class="toclink" href="../../../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/">The KCP Ecosystem: How Five Tools Turn Claude Code Into a Persistent Intelligence Platform</a></h2>
+<p><img alt="The KCP Ecosystem — Turning Claude Code into a Persistent Intelligence Platform" src="/assets/images/blog/kcp-ecosystem-slide-01-cover.webp" /></p>
+<hr />
+<h3 id="the-problem"><a class="toclink" href="../../../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/#the-problem">The Problem</a></h3>
+<p>Every session with Claude Code starts from zero.</p>
+<p><img alt="Every AI session starts from zero — the Start-From-Zero Loop" src="/assets/images/blog/kcp-ecosystem-slide-02-start-from-zero.webp" /></p>
+<p>You open a new session, and the model has no idea what you were doing yesterday. Which services are running. What you decided about the database schema last Thursday. Why you chose the library you chose. You re-explain it. Claude asks clarifying questions you answered two sessions ago. You paste the same background context you always paste. Then the work begins.</p>
+<p>And when the work does begin, there's a different problem: output flooding the context window. Run <code>mvn package</code> and you get 400 lines of Maven lifecycle noise. Run <code>terraform plan</code> and the diff buries the actual changes in scaffolding. Run <code>kubectl get pods</code> cluster-wide and you've spent 8,000 tokens on status rows you didn't need.</p>
+<p><img alt="Context flooding destroys working memory — 33.7% of a 200K context is recovery overhead" src="/assets/images/blog/kcp-ecosystem-slide-03-context-flooding.webp" /></p>
+<p>The context window is your working memory. Filling it with boilerplate and re-explaining the same setup repeatedly is waste — not just inconvenient, but structurally limiting. A 200K token context sounds vast until a third of it is recovery overhead.</p>
+<p>What's missing is infrastructure. Not smarter prompting. Not longer context. Infrastructure — a persistent layer that handles memory, filters noise, and gives the model the right knowledge at the right moment without you having to manage it manually.</p>
+<p>That infrastructure is KCP.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-03-28 00:00:00+00:00">March 28, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6478,65 +6539,6 @@
     
       <nav class="md-post__action">
         <a href="../../../../2026/03/14/the-agents-were-forgetting-everything-they-discovered/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-13 00:00:00+00:00">March 13, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              14 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-autonomous-agentic-web-needs-a-foundation-layer"><a class="toclink" href="../../../../2026/03/13/the-autonomous-agentic-web-needs-a-foundation-layer/">The Autonomous Agentic Web Needs a Foundation Layer</a></h2>
-<p><img alt="The Foundation Layer of the Agentic Web — Capable models are not enough" src="../../../../../assets/images/agentic-web-slide-01.webp" /></p>
-<p>Something is being assembled right now, mostly without a name for it.</p>
-<p>Production pipelines where agents write code, run tests, and open pull requests.
-Compliance workflows where agents check controls, gather evidence, and escalate to humans
-when something needs a decision. Developer rigs where an agent calls a tool, the tool
-delegates to a sub-agent, the sub-agent calls an API, and the result flows back up the chain.</p>
-<p>The models are capable. The tooling is solid. The use cases are real.</p>
-<p>What we are building — collectively, across hundreds of teams and projects — is an autonomous
-agentic web. And like the original web, it will only become useful when the pieces can talk
-to each other reliably. We are not there yet. The reason is interesting.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/13/the-autonomous-agentic-web-needs-a-foundation-layer/">
           Continue reading
         </a>
       </nav>

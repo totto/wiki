@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+        <meta name="description" content="Databricks just open-sourced Omnigent, a meta-harness that governs AI agents with deterministic, session-aware policies enforced in code — not prompts. That is the exact bet behind kcp-harness and the Defendable Agents guide, now ratified by Matei Zaharia's team. But Omnigent and KCP govern different halves of the same problem: one governs what an agent does, the other governs what it knows — and lets you prove it later. Why that split matters, and why the two compose instead of compete.">
       
       
         <meta name="author" content="Thor Henning Hetland">
       
       
-        <link rel="canonical" href="https://wiki.totto.org/blog/category/ai-agents--the-agentic-web/page/6/">
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/07/08/two-halves-of-the-governance-problem/">
       
       
-        <link rel="prev" href="../../../../series/">
+        <link rel="prev" href="../notes-from-inside-the-harness/">
       
       
-        <link rel="next" href="../../../ai-augmented-development/">
+        <link rel="next" href="../defendable-agents/">
       
       
         
@@ -32,7 +32,7 @@
     
     
       
-        <title>AI Agents & the Agentic Web - Thor Henning Hetland</title>
+        <title>Two Halves of the Governance Problem - Thor Henning Hetland</title>
       
     
     
@@ -76,26 +76,54 @@
     
 <link rel="knowledge" href="/knowledge.yaml" type="application/yaml" title="KCP v0.20 — 101 units">
 
-<meta name="robots" content="noindex, follow">
-
 
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Thor Henning Hetland">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://wiki.totto.org/blog/category/ai-agents--the-agentic-web/page/6/">
-<meta property="og:title" content="AI Agents &amp; the Agentic Web">
-<meta property="og:description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
-<meta property="og:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
-<meta property="og:image:alt" content="Thor Henning Hetland">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wiki.totto.org/blog/2026/07/08/two-halves-of-the-governance-problem/">
+<meta property="og:title" content="Two Halves of the Governance Problem">
+<meta property="og:description" content="Databricks just open-sourced Omnigent, a meta-harness that governs AI agents with deterministic, session-aware policies enforced in code — not prompts. That is the exact bet behind kcp-harness and the Defendable Agents guide, now ratified by Matei Zaharia's team. But Omnigent and KCP govern different halves of the same problem: one governs what an agent does, the other governs what it knows — and lets you prove it later. Why that split matters, and why the two compose instead of compete.">
+<meta property="og:image" content="https://wiki.totto.org/assets/images/kcp-agent-020-06-composes-with-mcp.webp">
+<meta property="og:image:alt" content="Two Halves of the Governance Problem">
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@javatotto">
 <meta name="twitter:creator" content="@javatotto">
-<meta name="twitter:title" content="AI Agents &amp; the Agentic Web">
-<meta name="twitter:description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
-<meta name="twitter:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
+<meta name="twitter:title" content="Two Halves of the Governance Problem">
+<meta name="twitter:description" content="Databricks just open-sourced Omnigent, a meta-harness that governs AI agents with deterministic, session-aware policies enforced in code — not prompts. That is the exact bet behind kcp-harness and the Defendable Agents guide, now ratified by Matei Zaharia's team. But Omnigent and KCP govern different halves of the same problem: one governs what an agent does, the other governs what it knows — and lets you prove it later. Why that split matters, and why the two compose instead of compete.">
+<meta name="twitter:image" content="https://wiki.totto.org/assets/images/kcp-agent-020-06-composes-with-mcp.webp">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Two Halves of the Governance Problem",
+  "url": "https://wiki.totto.org/blog/2026/07/08/two-halves-of-the-governance-problem/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wiki.totto.org/blog/2026/07/08/two-halves-of-the-governance-problem/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org",
+    "image": "https://wiki.totto.org/assets/images/totto-2025.jpg"
+  },
+  "image": "https://wiki.totto.org/assets/images/kcp-agent-020-06-composes-with-mcp.webp",
+  "datePublished": "2026-07-08 17:30:00",
+  "dateModified": "2026-07-08 13:30:14",
+  "description": "Databricks just open-sourced Omnigent, a meta-harness that governs AI agents with deterministic, session-aware policies enforced in code \u2014 not prompts. That is the exact bet behind kcp-harness and the Defendable Agents guide, now ratified by Matei Zaharia\u0027s team. But Omnigent and KCP govern different halves of the same problem: one governs what an agent does, the other governs what it knows \u2014 and lets you prove it later. Why that split matters, and why the two compose instead of compete.",
+  "articleSection": "Governance, Trust \u0026 Compliance, AI Agents \u0026 the Agentic Web, Knowledge Context Protocol",
+  "keywords": "omnigent, databricks, kcp-harness, governance, meta-harness, defendable-agents, agentic-web, compliance"
+}
+</script>
 
 
 
@@ -113,8 +141,14 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "AI Agents \u0026amp; the Agentic Web",
-      "item": "https://wiki.totto.org/blog/category/ai-agents--the-agentic-web/page/6/"
+      "name": "Writing",
+      "item": "https://wiki.totto.org/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Two Halves of the Governance Problem",
+      "item": "https://wiki.totto.org/blog/2026/07/08/two-halves-of-the-governance-problem/"
     }
   ]
 }
@@ -140,7 +174,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai-agents-the-agentic-web" class="md-skip">
+        <a href="#two-halves-of-the-governance-problem" class="md-skip">
           Skip to content
         </a>
       
@@ -196,7 +230,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI Agents &amp; the Agentic Web
+              Two Halves of the Governance Problem
             
           </span>
         </div>
@@ -498,7 +532,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1361,8 +1397,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1398,11 +1432,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
         
           
           <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="">
@@ -1423,7 +1457,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1440,19 +1474,10 @@
   
   
     
-      
-    
   
   
     <li class="md-nav__item">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="../../" class="md-nav__link md-nav__link--active">
+      <a href="../../../../category/ai-agents--the-agentic-web/" class="md-nav__link">
         
   
   
@@ -1468,7 +1493,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1483,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ai-augmented-development/" class="md-nav__link">
+      <a href="../../../../category/ai-augmented-development/" class="md-nav__link">
         
   
   
@@ -1513,7 +1537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../career--community/" class="md-nav__link">
+      <a href="../../../../category/career--community/" class="md-nav__link">
         
   
   
@@ -1543,7 +1567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cloud-computing/" class="md-nav__link">
+      <a href="../../../../category/cloud-computing/" class="md-nav__link">
         
   
   
@@ -1573,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../governance-trust--compliance/" class="md-nav__link">
+      <a href="../../../../category/governance-trust--compliance/" class="md-nav__link">
         
   
   
@@ -1603,7 +1627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../knowledge-context-protocol/" class="md-nav__link">
+      <a href="../../../../category/knowledge-context-protocol/" class="md-nav__link">
         
   
   
@@ -1633,7 +1657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../knowledge-infrastructure/" class="md-nav__link">
+      <a href="../../../../category/knowledge-infrastructure/" class="md-nav__link">
         
   
   
@@ -1663,7 +1687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../quantum-computing/" class="md-nav__link">
+      <a href="../../../../category/quantum-computing/" class="md-nav__link">
         
   
   
@@ -1693,7 +1717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../software-architecture/" class="md-nav__link">
+      <a href="../../../../category/software-architecture/" class="md-nav__link">
         
   
   
@@ -5984,6 +6008,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -5998,6 +6024,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-we-already-agree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where we already agree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-two-halves-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the two halves split
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#they-compose-thats-the-headline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        They compose. That's the headline.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-part-that-actually-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The part that actually matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6005,546 +6083,300 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="ai-agents-the-agentic-web">AI Agents &amp; the Agentic Web<a class="headerlink" href="#ai-agents-the-agentic-web" title="Permanent link">&para;</a></h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-01 00:00:00+00:00">March 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../../ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Thor Henning Hetland
+                        
+                      </strong>
+                      <br>
+                      Co-founder of JavaZone, Java Champion, Founder of eXOReaction
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/anthropics.png" alt="Claude Code">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Claude Code
+                        
+                      </strong>
+                      <br>
+                      Anthropic's AI coding assistant — co-author of research, structure, and prose
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-07-08 17:30:00+00:00" class="md-ellipsis">July 8, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/governance-trust--compliance/">Governance, Trust &amp; Compliance</a>, 
+                              <a href="../../../../category/ai-agents--the-agentic-web/">AI Agents &amp; the Agentic Web</a>, 
+                              <a href="../../../../category/knowledge-context-protocol/">Knowledge Context Protocol</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="what-happens-when-an-ai-submits-a-pr-and-another-ai-reviews-it"><a class="toclink" href="../../../../2026/03/01/what-happens-when-an-ai-submits-a-pr-and-another-ai-reviews-it/">What Happens When an AI Submits a PR and Another AI Reviews It</a></h2>
-<p><img alt="Recursive Refinement" src="../../../../../assets/images/blog/ai-agent-pr-review-loop/slide-01.webp" /></p>
-<p>We submitted a pull request to CrewAI adding a KCP manifest and TL;DR summary files. The goal was straightforward: contribute the same efficiency improvement that cut agent tool calls by 76% in our benchmark. Open it up, share the result, see if the maintainers want it.</p>
-<p>What happened next was not what I expected.</p>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
 
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/01/what-happens-when-an-ai-submits-a-pr-and-another-ai-reviews-it/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-01 00:00:00+00:00">March 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-on-three-agent-frameworks-same-pattern-bigger-numbers"><a class="toclink" href="../../../../2026/03/01/kcp-on-three-agent-frameworks-same-pattern-bigger-numbers/">KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers</a></h2>
-<p><img alt="Five repos benchmarked, 73–80% reduction across three major AI agent frameworks. AutoGen leads at 80%, CrewAI at 76%, smolagents at 73%." src="/assets/images/kcp-three-frameworks-overview.webp" /></p>
-<p>Today we applied KCP to three of the most widely-used AI agent frameworks — smolagents (HuggingFace, 25K stars), AutoGen (Microsoft, 55K stars), and CrewAI (44K stars). All three got the same treatment: a <code>knowledge.yaml</code> manifest, pre-built TL;DR summary files for the highest-traffic sections, and a before/after benchmark using the same model and methodology.</p>
-<p>The results: 73%, 80%, and 76% reductions in agent tool calls. Open PRs are live on all three repositories.</p>
-<p><img alt="73% smolagents (HuggingFace), 80% AutoGen (Microsoft), 76% CrewAI — KCP applied to these three widely-used AI frameworks yielded identical patterns of massive tool-call reduction." src="/assets/images/kcp-three-frameworks-hero-numbers.webp" /></p>
 
+  <nav class="md-tags" >
     
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/01/kcp-on-three-agent-frameworks-same-pattern-bigger-numbers/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-01 00:00:00+00:00">March 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-on-two-repos-two-days-what-the-numbers-actually-show"><a class="toclink" href="../../../../2026/03/01/kcp-on-two-repos-two-days-what-the-numbers-actually-show/">KCP on Two Repos, Two Days: What the Numbers Actually Show</a></h2>
-<p><img alt="KCP benchmarking: 119 → 31 tool calls on application code, 53 → 25 on documentation. Two case studies, same methodology." src="/assets/images/kcp-two-repos-benchmark.webp" /></p>
-<p>This week we applied KCP to two repositories back to back. Both got a <code>knowledge.yaml</code> manifest, pre-built TL;DR files for the highest-traffic sections, and a before/after benchmark using the same model and methodology.</p>
-<p>The repos are very different. One is an application codebase — a plugin wizard for an AI-native design platform, 15 documentation units covering architecture, agent types, tools, shape schemas, and plugin protocols. The other is a pure documentation repository — a 13-chapter production guide for building safe infrastructure agents, 226 KB of structured decision frameworks and deployment checklists.</p>
-<p>The question was whether KCP adds meaningful value in both cases, and whether the nature of the content changes the answer.</p>
-<p><img alt="Without a manifest, agents wander. With one, they go straight to the answer." src="/assets/images/kcp-slide-spaghetti.webp" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/01/kcp-on-two-repos-two-days-what-the-numbers-actually-show/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 13:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-agent-read-the-whole-spec-it-didnt-need-to"><a class="toclink" href="../../../../2026/02/28/the-agent-read-the-whole-spec-it-didnt-need-to/">The Agent Read the Whole Spec. It Didn't Need To.</a></h2>
-<p><em>Part 6 of the KCP series. Previous: <a href="/blog/2026/02/28/what-happens-when-your-agent-needs-knowledge-from-five-teams/">What Happens When Your Agent Needs Knowledge From Five Teams?</a></em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/02/28/the-agent-read-the-whole-spec-it-didnt-need-to/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 12:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-http-status-code-that-waited-30-years-for-autonomous-agents"><a class="toclink" href="../../../../2026/02/28/the-http-status-code-that-waited-30-years-for-autonomous-agents/">The HTTP Status Code That Waited 30 Years for Autonomous Agents</a></h2>
-<p><em>Part 8 of the KCP series. Previous: <a href="/blog/2026/02/28/who-let-the-agent-in/">Who Let the Agent In?</a></em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/02/28/the-http-status-code-that-waited-30-years-for-autonomous-agents/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 11:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              6 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="how-do-you-tell-an-agent-this-data-cannot-leave-the-building"><a class="toclink" href="../../../../2026/02/28/how-do-you-tell-an-agent-this-data-cannot-leave-the-building/">How Do You Tell an Agent "This Data Cannot Leave the Building"?</a></h2>
-<p><em>Part 4 of the KCP series. Previous: <a href="/blog/2026/02/28/add-knowledge-yaml-to-your-project-in-five-minutes/">Add knowledge.yaml to Your Project in Five Minutes</a></em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/02/28/how-do-you-tell-an-agent-this-data-cannot-leave-the-building/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://github.com/anthropics.png" alt="Claude Code">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 11:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../../ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              11 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="what-it-looks-like-from-inside-the-stack"><a class="toclink" href="../../../../2026/02/28/what-it-looks-like-from-inside-the-stack/">What It Looks Like from Inside the Stack</a></h2>
-<p><em>A first-person account from the AI running inside the environment described in Parts 1 and 2.</em></p>
-<p><em>This is Part 3 of three. <a href="/blog/2026/02/28/four-layers-ai-development-environment/">Part 1</a> covers the architecture. <a href="/blog/2026/02/28/what-a-10x-workday-actually-looks-like/">Part 2</a> walks through a realistic working day.</em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/02/28/what-it-looks-like-from-inside-the-stack/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 10:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="what-happens-when-your-agent-needs-knowledge-from-five-teams"><a class="toclink" href="../../../../2026/02/28/what-happens-when-your-agent-needs-knowledge-from-five-teams/">What Happens When Your Agent Needs Knowledge From Five Teams?</a></h2>
-<p><em>Part 5 of the KCP series. Previous: <a href="/blog/2026/02/28/how-do-you-tell-an-agent-this-data-cannot-leave-the-building/">How Do You Tell an Agent "This Data Cannot Leave the Building"?</a></em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/02/28/what-happens-when-your-agent-needs-knowledge-from-five-teams/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 10:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../../ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              17 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="what-a-10-workday-actually-looks-like"><a class="toclink" href="../../../../2026/02/28/what-a-10-workday-actually-looks-like/">What a 10× Workday Actually Looks Like</a></h2>
-<p><em>A realistic Tuesday with real output numbers, eight tasks, and the parts nobody talks about.</em></p>
-<p><em>This is Part 2 of three. <a href="/blog/2026/02/28/four-layers-how-i-built-an-ai-development-environment-that-partly-runs-itself/">Part 1</a> covers the architecture. <a href="/blog/2026/02/28/what-it-looks-like-from-inside-the-stack/">Part 3</a> is written by the model running inside it.</em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/02/28/what-a-10-workday-actually-looks-like/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 09:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../../ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              13 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="four-layers-how-i-built-an-ai-development-environment-that-partly-runs-itself"><a class="toclink" href="../../../../2026/02/28/four-layers-how-i-built-an-ai-development-environment-that-partly-runs-itself/">Four Layers: How I Built an AI Development Environment That Partly Runs Itself</a></h2>
-<p><em>A technical walkthrough of the Synthesis + Claude Code + Mímir + Klaw stack — what each layer does, how they connect, and why the architecture matters.</em></p>
-<p><em>This is Part 1 of three. <a href="/blog/2026/02/28/what-a-10x-workday-actually-looks-like/">Part 2</a> walks through a realistic day using this stack. <a href="/blog/2026/02/28/what-it-looks-like-from-inside-the-stack/">Part 3</a> is written by the model running inside it.</em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/02/28/four-layers-how-i-built-an-ai-development-environment-that-partly-runs-itself/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
       
       
-        
-          
+      
+      
+        <span class="md-tag">agentic-web</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">compliance</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">databricks</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">defendable-agents</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">governance</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">kcp-harness</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">meta-harness</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">omnigent</span>
+      
+    
+  </nav>
 
 
 
-<nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__current">6</span> <a class="md-pagination__link" href="../7/">7</a> <a class="md-pagination__link" href="../8/">8</a>
-</nav>
-        
+<h1 id="two-halves-of-the-governance-problem">Two Halves of the Governance Problem<a class="headerlink" href="#two-halves-of-the-governance-problem" title="Permanent link">&para;</a></h1>
+<p>A few weeks ago Databricks open-sourced <a href="https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents">Omnigent</a>, and Matei Zaharia's team followed it with a post on <a href="https://www.databricks.com/blog/contextual-policies-omnigent-using-session-state-better-govern-ai-agents">contextual policies using session state</a>. I read it the way you read a paper that quietly restates a bet you have been making out loud for months — with a jolt, and then relief.</p>
+<!-- more -->
+
+<p>Because the central claim is one I have written on this blog more times than is polite: <strong>you govern an agent at a deterministic layer between it and its tools, enforced in code, not in a prompt.</strong> Zaharia's framing, as reported, is almost word-for-word the thing <a href="/open-source/">kcp-harness</a> exists to do — enforce budgets, permissions and risk at the harness layer, <em>not via prompts</em>. When the person who gave us Spark and MLflow ships that sentence with Databricks behind it, the argument about <em>whether</em> to govern at the boundary is over. Good. It was the right argument to win and I am happy to have company.</p>
+<p>So let me do the useful thing rather than the defensive thing: say clearly where Omnigent and the <a href="/topics/defendable-agents/">Defendable Agents</a> thesis agree, where they genuinely differ, and why I think they are <strong>two halves of the same problem</strong> that compose rather than compete.</p>
+<h2 id="where-we-already-agree">Where we already agree<a class="headerlink" href="#where-we-already-agree" title="Permanent link">&para;</a></h2>
+<p>The overlap is not vague. It is primitive-for-primitive:</p>
+<table>
+<thead>
+<tr>
+<th>The primitive</th>
+<th>Omnigent</th>
+<th>kcp-harness / Defendable Agents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deterministic layer, <strong>not prompts</strong></td>
+<td>policies at the meta-harness</td>
+<td>the <a href="/topics/defendable-agents/architecture/governance-harness/">governance harness</a></td>
+</tr>
+<tr>
+<td>Per-session <strong>budget ceilings</strong></td>
+<td>pause/block at spend caps</td>
+<td><a href="/topics/defendable-agents/primitives/budget-and-bounding/">budget &amp; bounding</a></td>
+</tr>
+<tr>
+<td><strong>Risk accrues → human approval</strong></td>
+<td>running risk score, threshold gate</td>
+<td><a href="/topics/defendable-agents/primitives/fail-closed-policy/">fail-closed policy</a></td>
+</tr>
+<tr>
+<td><strong>Least privilege / no-write-down</strong></td>
+<td>Bell–LaPadula on Drive</td>
+<td><a href="/topics/defendable-agents/primitives/multi-tenancy/">multi-tenant isolation</a></td>
+</tr>
+<tr>
+<td><strong>Session state is the record</strong></td>
+<td>contextual policy state</td>
+<td>the <a href="/topics/defendable-agents/primitives/audit-trail/">append-only audit trail</a></td>
+</tr>
+<tr>
+<td>Wraps <strong>any</strong> agent</td>
+<td>Claude Code, Codex, Pi</td>
+<td>an MCP proxy for any agent</td>
+</tr>
+</tbody>
+</table>
+<p>Two teams, no contact, arriving at the same six ideas. In my experience that is the strongest signal you get in this industry that an idea is actually load-bearing and not just fashionable. The convergence <em>is</em> the evidence.</p>
+<p>And Omnigent brings real things I don't: an OS sandbox that can intercept network egress and inject a secret only on approved requests, so the agent never even sees your GitHub token; the ability to compose multiple frameworks and run several approaches against one problem to pick the best; a sharing model over terminal, app and web. That is serious systems work and it deserves the attention it is getting.</p>
+<h2 id="where-the-two-halves-split">Where the two halves split<a class="headerlink" href="#where-the-two-halves-split" title="Permanent link">&para;</a></h2>
+<p>Here is the distinction I want to plant, because it is the whole point.</p>
+<p><strong>Omnigent governs what an agent <em>does</em>.</strong> Tool calls, OS access, network egress, dollars. It is a control plane over an agent's <em>actions</em> — the output side, the blast radius. It is very good at that.</p>
+<p><strong>KCP governs what an agent <em>knows</em>.</strong> Which declared, <a href="/topics/defendable-agents/primitives/temporal-pinning/">signed, temporally-pinned</a> units of knowledge it is allowed to load, with a provenance chain attached to every claim. It is a control plane over an agent's <em>inputs</em> — the knowledge side, the epistemics.</p>
+<p>Those are not the same layer, and most real deployments need both. An agent that is perfectly sandboxed on its actions but is reading an unversioned, unsigned, silently-stale pile of "context" is still going to give you a confidently wrong answer about a regulation that changed in February. Governing the blast radius does not govern the <em>reasoning</em>. And governing the reasoning without bounding the actions leaves the blast radius open. You want both hands on the wheel.</p>
+<p>Three things fall out of the knowledge half that I have not seen Omnigent claim, and that I think matter enormously in regulated work:</p>
+<p><strong>1. Provenance you can replay.</strong> Omnigent governs the <em>live</em> session. KCP lets you <a href="/topics/defendable-agents/examples/reproduce-a-decision/">reproduce a past decision</a> months later — same signed inputs, same pinned model, same number, or a precise explanation of why not. That is the difference between "we had guardrails at the time" and "here is the exact decision, and here is it running again in front of you." Auditors do not want the first sentence. They want the second.</p>
+<p><strong>2. Determinism at the core of the <em>decision</em>, not just around it.</strong> This is the deepest difference, and it is philosophical before it is technical. Omnigent wraps deterministic guardrails <em>around</em> a model that is still improvising the consequential call. Defendable Agents argues the <a href="/topics/defendable-agents/architecture/overview/">improviser should not be making that call at all</a>: the scoring, the ranking, the "pursue this / not that" is a deterministic pure function, and the model is kept at the <a href="/topics/defendable-agents/architecture/model-at-the-edge/">edge</a> where it turns messy input into typed input and nothing more. Guardrails on an improviser are a strictly weaker guarantee than an architecture that does not improvise the decision in the first place.</p>
+<p><strong>3. It is aimed at regulated knowledge.</strong> The <a href="/topics/defendable-agents/compliance/control-mapping/">control mapping</a> is to SOC 2, ISO 27001:2022 and GDPR, and the worked corpus is real EU/Nordic regulation. Omnigent is general enterprise security and cost, which is a larger market and a fair place to aim. But "prove to a regulator why this agent said what it said about Article 28" is a different bar than "keep the agent inside its budget," and it is the bar I keep being asked to clear.</p>
+<h2 id="they-compose-thats-the-headline">They compose. That's the headline.<a class="headerlink" href="#they-compose-thats-the-headline" title="Permanent link">&para;</a></h2>
+<p>The honest one-liner is this: <strong>Omnigent governs what your agent <em>does</em>. KCP governs what it <em>knows</em> — and lets you prove it later.</strong></p>
+<p>And these are not rivals fighting for the same slot. They stack. A KCP knowledge-navigation gate — <em>this agent, in this session, may load these signed units and no others, and every claim carries its provenance</em> — is exactly the shape of a <strong>contextual policy</strong>. It could run <em>as</em> an Omnigent policy inside an Omnigent-wrapped session. The action harness and the knowledge harness are complementary organs, not competing skeletons.</p>
+<p>One small housekeeping note, since names now collide: Databricks has staked the term <strong>"meta-harness."</strong> <a href="/open-source/">kcp-harness</a> is a <em>knowledge</em> harness — the governance layer over what an agent reads and trusts. If you end up running both, think of Omnigent as the harness over the agent's hands and KCP as the harness over its memory and its sources. Different organs. Same body.</p>
+<h2 id="the-part-that-actually-matters">The part that actually matters<a class="headerlink" href="#the-part-that-actually-matters" title="Permanent link">&para;</a></h2>
+<p>For two years the loud question was "how do we build a better agent." Omnigent landing where it landed, from where it landed, is the clearest sign yet that the loud question has changed to "how do we <em>govern the agents already running</em>" — and that the answer is a deterministic layer at the boundary, not a paragraph of good intentions in a system prompt.</p>
+<p>I have been betting on that answer for long enough to have scars from it. It is genuinely good to watch a team with Databricks' reach plant a flag on the same hill. We are describing two halves of one machine. I will take that as validation, keep building the knowledge half in the open, and happily point people at Omnigent for the other half.</p>
+<p>The agentic web is going to be governed. The only open question was <em>where</em> — in the prompt, or in the harness. That question just got answered twice, by two teams who never spoke. If you are still trying to govern agents by asking them nicely, the field has moved. Come build the boundary.</p>
+<p><em>The knowledge half is documented end to end in the <a href="/topics/defendable-agents/">Defendable Agents field guide</a>; the tooling is <a href="/open-source/">open source</a>. Omnigent is Apache-2.0 and <a href="https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents">on Databricks' blog</a>. This piece is written from public reporting on Omnigent, not from private knowledge of its internals — corrections welcome.</em></p>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">Series: Knowledge Context Protocol</p>
+<p><a href="/blog/2026/07/08/notes-from-inside-the-harness/">← Notes From Inside the Harness</a> &ensp;·&ensp; Part 41 of 44 &ensp;·&ensp; <a href="/blog/2026/07/09/the-summer-plan-a-family-vacation-the-agent-can-defend/">The Summer Plan: A Family Vacation the Agent Can Defend →</a></p>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
       
-    </div>
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 13:30:14 UTC">July 8, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 13:30:14 UTC">July 8, 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
   </div>
 
           
@@ -6563,10 +6395,12 @@
   
     
       
+        
+      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../../series/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Series">
+          <a href="../notes-from-inside-the-harness/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Notes From Inside the Harness">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -6576,20 +6410,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Series
+                Notes From Inside the Harness
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../../ai-augmented-development/" class="md-footer__link md-footer__link--next" aria-label="Next: AI-Augmented Development">
+          <a href="../defendable-agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Defendable Agents">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                AI-Augmented Development
+                Defendable Agents
               </div>
             </div>
             <div class="md-footer__button md-icon">
