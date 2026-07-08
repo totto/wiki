@@ -25,7 +25,7 @@ Throughout I use the codename **Lodestar**: an agent that scores buyers and firm
 | T7 | **Tenant bleed** | Attacker | One tenant's confidential scores leak into another's context |
 | T8 | **Unbounded run** | Attacker | An operation loops or fans out until cost or context is exhausted |
 
-The rest of this page walks the two most misunderstood — injection and omission — and then shows how the architecture neutralises the set.
+The rest of this page walks the two most misunderstood — injection and omission — and then shows how the architecture answers the whole set.
 
 ## The attacker's seat: an injection walkthrough
 

@@ -52,7 +52,7 @@ The event carries the full decision trace — not a summary, the actual variable
       { "id": "relevant-experience", "score": 5 }
     ],
     "layerScores": { "need": 68.33, "attractiveness": 76.67, "winnability": 76.67 },
-    "total": 73.5,
+    "total": 73.33,
     "band": "High"
   },
   "temporal": {
@@ -94,10 +94,10 @@ The engine is a pure function: a layer score is the mean of its 1-5 variables ti
 | Need | 3.4167 | 68.33 | 0.40 | 27.33 |
 | Attractiveness | 3.8333 | 76.67 | 0.25 | 19.17 |
 | Winnability | 3.8333 | 76.67 | 0.35 | 26.83 |
-| **Total** | | | | **73.33 → 73.5** |
+| **Total** | | | | **73.33** |
 
 ```typescript
-console.log(result.total);          // 73.5
+console.log(result.total);          // 73.33
 console.log(result.band);           // "High"
 console.log(result.layerScores);    // { need: 68.33, attractiveness: 76.67, winnability: 76.67 }
 
@@ -109,12 +109,12 @@ The reproduced score equals the recorded score to the decimal. The band comes st
 
 ## What this proves for an audit
 
-An auditor is not asking "is 73.5 the *right* number?" They are asking "can you show that this decision was made the way you say it was, and would it come out the same if we checked?" Reproducibility answers exactly that:
+An auditor is not asking "is 73.33 the *right* number?" They are asking "can you show that this decision was made the way you say it was, and would it come out the same if we checked?" Reproducibility answers exactly that:
 
 - **The inputs are the record.** The 18 variables that produced the score are in the log, not inferred afterwards. That is the decision-trace control (SOC 2 CC7.2).
 - **The model is pinned.** `buyer-score@2.3.0` is resolved by version, so a later model change cannot rewrite April's decision. Version and hash both live in the temporal pin.
 - **The data window is fixed.** `dataAsOf` and `signalDates` show precisely which signals were in scope, which is the data-provenance control (ISO 27001 A.8.1).
-- **The re-run is mechanical.** Anyone with the log and the model can repeat it and get 73.5. That is the reproducibility control (ISO 27001 A.14.2), and it is what turns a claim into evidence you can package (see [Evidence Packages](/topics/defendable-agents/compliance/evidence-packages/)).
+- **The re-run is mechanical.** Anyone with the log and the model can repeat it and get 73.33. That is the reproducibility control (ISO 27001 A.14.2), and it is what turns a claim into evidence you can package (see [Evidence Packages](/topics/defendable-agents/compliance/evidence-packages/)).
 
 ## Honest limits
 

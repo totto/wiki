@@ -8,19 +8,19 @@ image: assets/images/kcp-agent-020-02-navigation-is-an-algorithm.webp
 
 Guardrails fail because they are advice. A primitive is not advice — it is a piece of mechanism that an operation cannot get around, because the operation is routed *through* it by construction. In the defendable-agent stack there are four such primitives, and every governed operation in the example system, Lodestar, passes through all four before it returns a result. This page is the map: one paragraph on each, then how they compose inside a single governed session, then where to go for depth.
 
-Lodestar scores buyers and firms in a regulated professional-services market. The scoring itself is a set of [pure deterministic functions](/topics/defendable-agents/architecture/deterministic-planner/) — same inputs, same outputs. The four primitives are what wrap that engine so a decision is not just computed but *defendable*: gated, recorded, bounded and pinned to a moment in time.
+Lodestar scores buyers and firms in a regulated professional-services market. The scoring itself is a set of [pure deterministic functions](/topics/defendable-agents/architecture/deterministic-planner/) — same inputs, same outputs. The four primitives are what wrap that planner so a decision is not just computed but *defendable*: gated, recorded, bounded and pinned to a moment in time.
 
 ## Fail-closed policy
 
 The default answer is no. Before any governed operation runs, the harness checks whether the domain it touches is declared, whether the tools it wants are permitted, and whether policy allows the call at all. If any check is missing or ambiguous, the operation does not proceed — it is denied and the denial is recorded. This is the inverse of the guardrail posture, where anything not explicitly forbidden is allowed. Here, anything not explicitly *permitted* is refused. It is the mechanical form of "access boundaries", and it is the one primitive most easily over-tuned: crank it too tight and you block legitimate work, so fail-closed is a dial you calibrate, not a switch you flip once. Depth: [Fail-closed policy](/topics/defendable-agents/primitives/fail-closed-policy/) and the architecture view, [Fail-closed behaviour](/topics/defendable-agents/architecture/fail-closed-behavior/).
 
-## Audit-all
+## Append-only audit trail
 
-Every governed operation emits one append-only event. Not a log line summarising what happened — the full decision, including the inputs, the outputs, the justification and, for a score, the complete variable trace: all 18 or 21 variables, their 1-5 scores, the per-layer roll-ups, the composite total and the resulting band. Events are written as JSONL, one per line, fsync on flush, never mutated. If it wasn't recorded, it didn't happen — and if it was recorded, you can reconstruct exactly what the agent saw and decided. Depth: [Audit trail](/topics/defendable-agents/primitives/audit-trail/) and [Decision traces](/topics/defendable-agents/primitives/decision-traces/).
+Every governed operation emits one append-only event. Not a log line summarising what happened — the full decision trace, including the inputs, the outputs, the justification and, for a score, the complete variable trace: all 18 or 21 variables, their 1-5 scores, the per-layer roll-ups, the composite total and the resulting band. Events are written as JSONL, one per line, fsync on flush, never mutated. If it wasn't recorded, it didn't happen — and if it was recorded, you can reconstruct exactly what the agent saw and decided. Depth: [Audit trail](/topics/defendable-agents/primitives/audit-trail/) and [Decision traces](/topics/defendable-agents/primitives/decision-traces/).
 
-## Budget and bounding
+## Budget ceilings
 
-An agent that can spend without limit is an agent you cannot bound. Every operation has a fixed unit cost, and the session carries a ledger with a ceiling. The ledger checks the cost *before* recording it: if the running total plus the new cost would exceed the ceiling, the spend is refused, the operation throws, and a `budget_exceeded` event is emitted. This bounds cost, blast radius and runaway loops in one mechanism. Depth: [Budget and bounding](/topics/defendable-agents/primitives/budget-and-bounding/).
+An agent that can spend without limit is an agent you cannot bound. Every operation has a fixed unit cost, and the session carries a ledger with a ceiling. The ledger checks the cost *before* recording it: if the running total plus the new cost would exceed the ceiling, the spend is refused, the operation throws, and a `budget_exceeded` event is emitted. This bounds cost, blast radius and runaway loops in one mechanism. Depth: [Budget ceilings](/topics/defendable-agents/primitives/budget-and-bounding/).
 
 ## Temporal pinning
 
@@ -83,7 +83,7 @@ audit:
   path: ./state/audit.jsonl
 ```
 
-Read the sequence back and the composition is the point. Fail-closed decides *whether* the operation runs. The budget ledger decides whether it can *afford* to. The deterministic engine computes the answer. The pin records *when* that answer is valid. The audit event records *that it happened and why*. Skip any one and the decision stops being defendable: no gate and you can't bound access, no budget and you can't bound cost, no pin and you can't tell staleness from truth, no audit and you can't reconstruct anything. Ending the session emits a summary event and flushes the log to disk.
+Read the sequence back and the composition is the point. Fail-closed decides *whether* the operation runs. The budget ledger decides whether it can *afford* to. The deterministic planner computes the answer. The pin records *when* that answer is valid. The audit event records *that it happened and why*. Skip any one and the decision stops being defendable: no gate and you can't bound access, no budget and you can't bound cost, no pin and you can't tell staleness from truth, no audit and you can't reconstruct anything. Ending the session emits a summary event and flushes the log to disk.
 
 ## Honest limits
 

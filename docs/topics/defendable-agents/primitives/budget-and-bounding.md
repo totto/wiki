@@ -8,7 +8,7 @@ image: assets/images/kcp-agent-020-06-composes-with-mcp.webp
 
 Ask a probabilistic agent "how much work will you do?" and the honest answer is "I don't know until I've done it." That is fine for a chat window. It is unacceptable for a governed system that spends money, touches confidential data, and has to answer to an auditor. A [defendable agent](/topics/defendable-agents/argument/what-defendable-means/) needs a property that no amount of prompt engineering gives you: a run that is **provably bounded**. You should be able to say, before the model does anything, "this session could only ever have done this much" — and prove it afterwards from the record.
 
-Bounding is the primitive that delivers that. It is deliberately dumb: a fixed price list, a running total, and a ceiling that is checked before every operation. No cleverness, no estimation. Dumb is the point — it is what makes the guarantee hold.
+Bounding is the primitive that delivers that, and its mechanism is a **budget ceiling**. It is deliberately dumb: a fixed price list, a running total, and a ceiling that is checked before every operation. No cleverness, no estimation. Dumb is the point — it is what makes the guarantee hold.
 
 ## The cost table
 

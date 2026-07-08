@@ -10,7 +10,7 @@ There is a question that kills most agent demos. I have asked it in rooms full o
 
 > "Show me exactly why the agent decided this, prove you would get the same answer again, and prove nobody talked it into that answer."
 
-An improvising agent — a large language model wired to some tools, prompted to "figure it out" — cannot answer any of the three parts. Not because it was built badly, but because of what it *is*. The gap between what these systems can do and what you can defend is not a maturity problem that another sprint will close. It is structural. This page names the three structural failures, explains why the obvious local fixes do not touch them, and sets up the reframe that the rest of this guide is built on.
+An improvising agent — a large language model wired to some tools, prompted to "figure it out" — cannot answer any of the three parts. Not because it was built badly, but because of what it *is*. The gap between what these systems can do and what you can defend is not a maturity problem that another sprint will close. It is structural. This page names the three failures, explains why the obvious local fixes do not touch them, and sets up the reframe that the rest of this guide is built on.
 
 I will use a running example throughout the guide, a system I will call **Lodestar**: an agent that scores buyers and firms in a regulated professional-services market, and produces go-to-market plans from that scoring. It is a good stress test because the outputs feed commercial and compliance decisions, so "the agent felt like it" is not an acceptable justification.
 

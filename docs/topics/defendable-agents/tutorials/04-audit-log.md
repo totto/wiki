@@ -25,8 +25,8 @@ An event is a flat-ish JSON record. The load-bearing fields are the `decision` (
   "decision": {
     "action": "score_buyer",
     "inputs": { "signalWindowDays": 30, "layers": ["need","attractiveness","winnability"] },
-    "outputs": { "total": 72.4, "band": "High" },
-    "justification": "Strong Need (fresh signals), moderate Winnability"
+    "outputs": { "total": 71.0, "band": "High" },
+    "justification": "Fresh Need signals and strong Winnability; Attractiveness the weakest layer"
   },
   "scoring": {
     "model": "buyer-score@1.3.0",
@@ -38,8 +38,8 @@ An event is a flat-ish JSON record. The load-bearing fields are the `decision` (
       { "id": "buying-journey-stage", "score": 3 },
       { "id": "internal-mobilization", "score": 3 }
     ],
-    "layerScores": { "need": 70, "attractiveness": 66.7, "winnability": 73.3 },
-    "total": 72.4,
+    "layerScores": { "need": 71.7, "attractiveness": 66.7, "winnability": 73.3 },
+    "total": 71.0,
     "band": "High"
   },
   "temporal": {
@@ -103,9 +103,9 @@ For anything heavier — cross-session queries, evidence bundles — see [Tutori
 
 ## Reconstructing a decision from its trace
 
-This is the payoff. Someone asks: *why did buyer_8801 come out at 72.4 and land in "High"?* You do not guess and you do not re-run the agent. You pull the event and replay the arithmetic, because the engine is a pure function ([Reproducibility](/topics/defendable-agents/decisions/reproducibility/)).
+This is the payoff. Someone asks: *why did buyer_8801 come out at 71.0 and land in "High"?* You do not guess and you do not re-run the agent. You pull the event and replay the arithmetic, because the engine is a pure function ([Reproducibility](/topics/defendable-agents/decisions/reproducibility/)).
 
-From the `scoring` block: the Need layer's six variables average `(4 + 4.5 + 4 + 3 + 3 + 3) / 6 = 3.583`, times 20 = **71.7** — the small difference from the stored `70` would itself be a signal worth chasing (in a real event all six variables and the exact rounding are present). The three layers combine by weight: `Need 0.40 + Attractiveness 0.25 + Winnability 0.35`, giving `70×0.40 + 66.7×0.25 + 73.3×0.35 = 72.4`. That clears the `>= 70` threshold, so the band is **High**. Every number in that sentence is in the event. Nothing is hidden in the model's head.
+From the `scoring` block: the Need layer's six variables average `(4 + 4.5 + 4 + 3 + 3 + 3) / 6 = 3.583`, times 20 = **71.7** — exactly the stored `layerScores.need`. The three layers combine by weight: `Need 0.40 + Attractiveness 0.25 + Winnability 0.35`, giving `71.7×0.40 + 66.7×0.25 + 73.3×0.35 = 71.0`. That clears the `>= 70` threshold, so the band is **High**. Every number in that sentence is in the event. Nothing is hidden in the model's head.
 
 The `temporal` block tells you *when* — `dataAsOf`, `scoredAt`, and the `signalDates` that fed freshness. That is what a drift check ([Temporal Pinning](/topics/defendable-agents/primitives/temporal-pinning/)) reads later to decide whether this score is still trustworthy.
 

@@ -83,7 +83,7 @@ The **context budget** (`context_budget: 200000` tokens) bounds what the [model 
 The harness does not sit beside the work; it encloses it. When you open a [governed session](/topics/defendable-agents/tutorials/03-governed-session/), that session holds exactly one audit log, one budget ledger, and one map of [temporal pins](/topics/defendable-agents/primitives/temporal-pinning/), all constructed from the harness config. Every governed operation then runs the same four steps, in order:
 
 1. **Record budget.** Check the ceiling; throw and emit `budget_exceeded` if the operation would exceed it.
-2. **Run the pure score.** The deterministic engine computes the result — same inputs, same outputs, every time.
+2. **Run the pure score.** The deterministic scoring engine computes the result — same inputs, same outputs, every time.
 3. **Pin the data.** Create a temporal pin capturing `scoredAt`, `dataAsOf`, the signal dates, and the model version and hash.
 4. **Emit the audit event.** Write one JSONL line carrying the full variable trace — every input, every layer score, the total and the band.
 

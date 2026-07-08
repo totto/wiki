@@ -71,9 +71,9 @@ The fields divide into layers of accountability:
 | `budget` | the cost and where it left the ledger |
 | `durationMs` | how long it took |
 
-The `scoring` block is the load-bearing one. Because Lodestar's engine is a set of [pure deterministic functions](/topics/defendable-agents/decisions/reproducibility/), carrying the exact variable inputs on the event means anyone can re-run the model against them and get the identical `total` — the SOC 2 CC7.2 decision-trace control. This is also where determinism earns its keep: it guarantees *process*, not *correctness*. If `signal-freshness` was scored 4.5 against a stale signal, the wrong value is applied consistently and it is sitting right there on the line, reproducible, ready to be caught. See [decision traces](/topics/defendable-agents/primitives/decision-traces/) for how that trace is designed, and [temporal pinning](/topics/defendable-agents/primitives/temporal-pinning/) for the provenance stamp.
+The `scoring` block is the load-bearing one. Because Lodestar's engine is a set of [pure deterministic functions](/topics/defendable-agents/decisions/reproducibility/), carrying the exact variable inputs on the event means anyone can re-run the model against them and get the identical `total` — the decision-trace evidence a SOC 2 CC7.2 review is looking for. This is also where determinism earns its keep: it guarantees *process*, not *correctness*. If `signal-freshness` was scored 4.5 against a stale signal, the wrong value is applied consistently and it is sitting right there on the line, reproducible, ready to be caught. See [decision traces](/topics/defendable-agents/primitives/decision-traces/) for how that trace is designed, and [temporal pinning](/topics/defendable-agents/primitives/temporal-pinning/) for the provenance stamp.
 
-Event types across a session include `session_start`, `signal_detected`, `buyer_scored`, `match_scored`, `account_tiered`, `gtm_plan_generated`, `monitoring_check`, `reanalysis_triggered`, `score_delta`, `budget_spend`, `budget_exceeded`, and `session_end`. The `budget_exceeded` event is the one that fires when the [ledger ceiling](/topics/defendable-agents/primitives/budget-and-bounding/) is hit and the operation refuses to run — a fail-closed refusal is itself an audited event, not a silent gap.
+Event types across a session include `session_start`, `signal_detected`, `buyer_scored`, `match_scored`, `account_tiered`, `gtm_plan_generated`, `monitoring_check`, `reanalysis_triggered`, `score_delta`, `budget_spend`, `budget_exceeded`, and `session_end`. The `budget_exceeded` event is the one that fires when the [budget ceiling](/topics/defendable-agents/primitives/budget-and-bounding/) is hit and the operation refuses to run — a fail-closed refusal is itself an audited event, not a silent gap.
 
 ## Two writers: file and in-memory
 
@@ -94,7 +94,7 @@ grep '"id": "buyer_7731"' audit.jsonl \
   | jq -c 'select(.type == "buyer_scored")
            | {seq: .sequence, total: .scoring.total, band: .scoring.band}'
 
-# total units spent in a session
+# running unit total as of the last buyer scored
 jq -s 'map(select(.type == "buyer_scored")) | last | .budget.runningTotal' audit.jsonl
 ```
 

@@ -85,7 +85,7 @@ A single `buyer_scored` line already contains the whole story. This is what one 
       { "id": "competitive-position", "score": 3 },
       { "id": "relationship-proximity", "score": 5 }
     ],
-    "layerScores": { "Need": 82, "Attractiveness": 70, "Winnability": 79 },
+    "layerScores": { "Need": 81, "Attractiveness": 72, "Winnability": 80 },
     "total": 78.4,
     "band": "High"
   },

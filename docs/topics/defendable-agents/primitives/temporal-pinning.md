@@ -40,7 +40,7 @@ A pin has five fields. Each answers a different question about the decision.
 
 The distinction that trips people up is `scoredAt` versus `dataAsOf`, and it matters more than it looks.
 
-`scoredAt` is wall-clock time: the instant the deterministic engine ran. `dataAsOf` is the cut-off of the *input world* — the timestamp beyond which no data was available to the computation. They are almost never equal. You might re-score a buyer at 09:14 today from data that was last refreshed at midnight last night. `scoredAt` is now; `dataAsOf` is last night.
+`scoredAt` is wall-clock time: the instant the deterministic planner ran. `dataAsOf` is the cut-off of the *input world* — the timestamp beyond which no data was available to the computation. They are almost never equal. You might re-score a buyer at 09:14 today from data that was last refreshed at midnight last night. `scoredAt` is now; `dataAsOf` is last night.
 
 Keeping them separate is what lets you reason about staleness honestly. A score computed a minute ago is "fresh" by `scoredAt` but could be built on a `dataAsOf` from three weeks back — genuinely stale, and only the pin reveals it. Collapse the two into one "timestamp" and you lose the ability to tell a recent computation from recent data.
 
@@ -80,7 +80,7 @@ The pin is also the input to drift detection. A drift check compares a pin again
 
 The recommendation logic is deliberately blunt: two or more drift reasons means *reanalyze*; model drift alone means *reanalyze*; a single non-model reason means *monitor*; otherwise *ok*. That mechanism is covered in full on [drift detection](/topics/defendable-agents/primitives/drift-detection/). Pinning is the half that makes drift *detectable*; without a pin there is no baseline to compare against.
 
-Pins also underwrite [reproducibility](/topics/defendable-agents/decisions/reproducibility/) as a compliance control: data provenance maps to temporal pinning (ISO 27001 A.8.1), and it is the pin — `dataAsOf` plus `signalDates` plus `modelHash` — that lets you re-run a decision and get the same number, or explain precisely why you cannot.
+Pins also underwrite [reproducibility](/topics/defendable-agents/decisions/reproducibility/) as a compliance control: data provenance maps to temporal pinning (ISO 27001 A.12.4, Logging and monitoring), and it is the pin — `dataAsOf` plus `signalDates` plus `modelHash` — that lets you re-run a decision and get the same number, or explain precisely why you cannot.
 
 ## Honest limits
 

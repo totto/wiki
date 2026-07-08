@@ -12,9 +12,9 @@ This page shows what that manifest looks like, why it is declared as a governed 
 
 ## What the manifest declares
 
-The [deterministic engine](/topics/defendable-agents/architecture/deterministic-planner/) needs only four things to turn evidence into a number: which **layers** exist, what each layer **weighs**, which **variables** feed each layer, and how a human is meant to pick a 1-5 score for each variable. The manifest is exactly those four things and nothing else — no I/O, no model calls, no branching on the current date.
+The [deterministic planner](/topics/defendable-agents/architecture/deterministic-planner/) needs only four things to turn evidence into a number: which **layers** exist, what each layer **weighs**, which **variables** feed each layer, and how a human is meant to pick a 1-5 score for each variable. The manifest is exactly those four things and nothing else — no I/O, no model calls, no branching on the current date.
 
-Here is an anonymized cut of the buyer model. It is deliberately boring, and that is the point.
+Here is an anonymised cut of the buyer model. It is deliberately boring, and that is the point.
 
 ```yaml
 model: buyer-score
@@ -69,7 +69,7 @@ layers:
       - { id: relevant-experience }
 ```
 
-Three layers, weights that sum to 1.0, eighteen variables, one explicit decay rule, five bands. A layer score is the mean of its variable scores times twenty, giving 0-100; the buyer total is the weighted composite `0.40*need + 0.25*attractiveness + 0.35*winnability`. The sibling MATCH model has the same shape with four layers and twenty-one variables. I unpack the arithmetic in [Anatomy of a Score](/topics/defendable-agents/decisions/anatomy-of-a-score/) and the layer/weight/band design in [Layers, Weights, Bands](/topics/defendable-agents/decisions/layers-weights-bands/).
+Three layers, weights that sum to 1.0, eighteen variables, one explicit decay rule, five bands. A layer score is the mean of its variable scores times twenty, giving 0-100; the buyer total is the weighted composite `0.40*need + 0.25*attractiveness + 0.35*winnability`. The sibling Match model has the same shape with four layers and twenty-one variables. I unpack the arithmetic in [Anatomy of a Score](/topics/defendable-agents/decisions/anatomy-of-a-score/) and the layer/weight/band design in [Layers, Weights, Bands](/topics/defendable-agents/decisions/layers-weights-bands/).
 
 ## The scoring guide is the model
 
@@ -79,7 +79,7 @@ The `decay` block on `signal-freshness` deserves a note. It is the one place the
 
 ## Why it is a governed KCP unit
 
-A YAML file the code reads with `open()` is a config file. A YAML file declared in a [KCP manifest](/topics/defendable-agents/kcp/manifest-basics/) is a *governed unit*: `kcp-agent` selects it deterministically through `kcp_plan` and `kcp_load`, records which unit answered, and refuses to run if the requested model is absent. There is no code path where the engine quietly falls back to a different model because a file moved.
+A YAML file the code reads with `open()` is a config file. A YAML file declared in a [KCP manifest](/topics/defendable-agents/kcp/manifest-basics/) is a *governed unit*: `kcp-agent` selects it deterministically through `kcp_plan` and `kcp_load`, records which unit answered, and refuses to run if the requested model is absent. There is no code path where the planner quietly falls back to a different model because a file moved.
 
 ```yaml
 kind: manifest
@@ -106,4 +106,4 @@ Every score a governed session emits carries a `modelVersion` and a `modelHash` 
 
 ## Honest limits
 
-The manifest makes the model *inspectable and reproducible*; it does not make it *correct*. If `signal-relevance` is weighted too hard, or a scoring guide rewards the wrong evidence, the engine will apply that mistake to every buyer, forever, identically. That is a feature of the defence, not a defect: a consistent, visible, versioned error is one you can find in a review and fix with a version bump — unlike a prompt that is wrong differently on every run. The manifest guarantees the process. Getting the model right is still your job, and it is never finished.
+The manifest makes the model *inspectable and reproducible*; it does not make it *correct*. If `signal-relevance` is weighted too hard, or a scoring guide rewards the wrong evidence, the planner will apply that mistake to every buyer, forever, identically. That is a feature of the defence, not a defect: a consistent, visible, versioned error is one you can find in a review and fix with a version bump — unlike a prompt that is wrong differently on every run. The manifest guarantees the process. Getting the model right is still your job, and it is never finished.

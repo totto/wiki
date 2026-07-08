@@ -12,13 +12,13 @@ The planner is a **pure function over declared metadata**. It reads a manifest �
 
 ## Plan before load
 
-The sequence matters, so I will be pedantic about it. The planner runs `kcp_plan` first. Only after a plan exists — and, in a governed session, only after the [governance harness](/topics/defendable-agents/architecture/governance-harness/) has admitted it against the fail-closed policy and the budget ceiling — does anything call `kcp_load` to pull the actual bytes into context. Planning is a metadata operation. Loading is a content operation. Keeping them separate is what makes the agent defendable rather than merely clever.
+The sequence matters, so I will be pedantic about it. The planner runs `kcp_plan` first. Only after a plan exists — and, in a governed session, only after the [governance harness](/topics/defendable-agents/architecture/governance-harness/) has admitted it against the fail-closed policy and the budget ceiling — does anything call `kcp_load` to pull the actual bytes into context. Planning is a metadata operation. Loading is a content operation. Keeping them separate is what makes the agent [defendable](/topics/defendable-agents/argument/what-defendable-means/) rather than merely clever.
 
 This is the practical payoff of the [plan-before-load discipline](/topics/defendable-agents/architecture/overview/): the expensive, irreversible act (spending context on content, then calling the model at the edge) is gated behind a cheap, inspectable act (producing a plan). You get to read the plan, diff it against last week's, and reject it — all before a single token of source material is loaded.
 
 ## Zero-token navigation
 
-Because the planner reads metadata rather than content, navigation costs zero model tokens. A manifest describing forty knowledge units might be a few kilobytes of declared `id`, `path`, `tags`, and `description` fields. The planner selects across all forty deterministically; only the handful that survive selection are ever loaded. On a governed session with a `context_budget` of 200000 tokens, that difference is the difference between fitting the work and blowing the ceiling.
+Because the planner reads metadata rather than content, navigation costs zero model tokens. A manifest describing forty knowledge units might be a few kilobytes of declared `id`, `path`, `tags`, and `description` fields. The planner selects across all forty deterministically; only the handful that survive selection are ever loaded. In a governed session with a `context_budget` of 200000 tokens, that difference is the difference between fitting the work and blowing the ceiling.
 
 Here is the manifest the planner reads. This is [KCP](/topics/knowledge-context-protocol/) — the same `knowledge.yaml` shape covered in [manifest basics](/topics/defendable-agents/kcp/manifest-basics/):
 

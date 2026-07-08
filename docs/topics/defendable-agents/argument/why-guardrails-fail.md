@@ -26,7 +26,7 @@ Concretely, the classifier-on-top architecture breaks in four predictable ways.
 1. **It inspects text, not intent.** A payload that reads as benign but instructs the model to exfiltrate a tenant's confidential score passes the input filter and only reveals itself in behaviour the filter never sees.
 2. **It has no memory of state.** The guardrail cannot know that this session has already spent its budget, already crossed a tenant boundary, or is scoring against a stale model, because those are facts about the *system*, not about the *string* it was handed.
 3. **Its decisions are unauditable.** "The classifier returned 0.83, below threshold" is not a justification you can defend to an auditor twelve months later. There is no variable trace, no reproducible reason. Compare that to a real [decision trace](/topics/defendable-agents/primitives/decision-traces/).
-4. **It drifts.** The base model updates, the attack distribution shifts, and the guardrail silently degrades. Nobody re-certifies it because it was sold as one-time setup, not [ongoing maintenance](/topics/defendable-agents/compliance/operating-and-maintenance/).
+4. **It drifts.** The base model updates, the attack distribution shifts, and the guardrail silently degrades. Nobody re-certifies it because it was sold as one-time setup, not ongoing maintenance.
 
 ## Constitutional versus bolted-on
 
@@ -36,7 +36,7 @@ But it is still probabilistic. A trained disposition is a strong prior, not a pr
 
 ## Determinism removes the surface
 
-The move that actually works is not a better guard. It is refusing to route the ungovernable decision through the model at all. The consequential act — the score, the tier, the spend approval — is computed by a pure function, and the model is pushed to [the edge](/topics/defendable-agents/architecture/model-at-the-edge/) where it drafts and summarises but never decides. See [determinism versus probabilism](/topics/defendable-agents/argument/determinism-vs-probabilism/) for the full argument.
+The move that actually works is not a better guard. It is refusing to route the ungovernable decision through the model at all. The consequential act — the score, the tier, the spend approval — is computed by a pure function, and the model is pushed to [the edge](/topics/defendable-agents/architecture/model-at-the-edge/) where it drafts and summarises but never decides.
 
 When the decision is deterministic, there is no input space to search. A buyer score is a fixed weighted composite of eighteen variables across three layers, and the same inputs produce the same output every time:
 

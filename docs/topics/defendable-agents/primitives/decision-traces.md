@@ -39,7 +39,7 @@ Because the [scoring engine is deterministic](/topics/defendable-agents/decision
 
 Here is the question a decision trace exists to answer. Someone points at a buyer priority of 69 — "Interesting but with gaps", just under the "High" band at 70 — and asks why.
 
-Without a trace you are guessing, or worse, re-scoring and hoping the number lands the same. With a trace you read it straight off the record. The BUYER score is a weighted composite of three layers — Need (weight 0.40), Attractiveness (0.25) and Winnability (0.35) — where each layer score is the mean of its six 1–5 variables times 20. So a 69 decomposes exactly:
+Without a trace you are guessing, or worse, re-scoring and hoping the number lands the same. With a trace you read it straight off the record. The Buyer score is a weighted composite of three layers — Need (weight 0.40), Attractiveness (0.25) and Winnability (0.35) — where each layer score is the mean of its six 1–5 variables times 20. So a 69 decomposes exactly:
 
 ```json
 {
@@ -84,7 +84,7 @@ Without a trace you are guessing, or worse, re-scoring and hoping the number lan
   "temporal": {
     "dataAsOf": "2026-07-08",
     "scoredAt": "2026-07-08T09:14:22.481Z",
-    "signalDates": ["2026-07-05", "2026-07-01", "2026-06-28", "2026-06-20"]
+    "signalDates": ["2026-07-02", "2026-07-01", "2026-06-28", "2026-06-20"]
   },
   "durationMs": 12
 }

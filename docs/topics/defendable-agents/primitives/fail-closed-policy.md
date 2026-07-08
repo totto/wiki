@@ -28,7 +28,7 @@ The third row is the whole point. A fail-open system treats "cannot verify" as a
 
 ## Worked examples
 
-**Missing attestation.** A tenant asks the agent to score a buyer using a model that must be a declared, governed unit. The [trust-and-attestation](/topics/defendable-agents/primitives/trust-and-attestation/) layer resolves the model through the KCP manifest and checks its hash. If the manifest cannot be loaded, or the resolved model has no attestation, the operation never reaches the scoring engine. No score is produced, so no unverified number can leak into a downstream plan.
+**Missing attestation.** A tenant asks the agent to score a buyer using a model that must be a declared, governed unit. The [trust and attestation](/topics/defendable-agents/primitives/trust-and-attestation/) layer resolves the model through the KCP manifest and checks its hash. If the manifest cannot be loaded, or the resolved model has no attestation, the operation never reaches the scoring engine. No score is produced, so no unverified number can leak into a downstream plan.
 
 **Unverifiable provenance.** Every score carries a [temporal pin](/topics/defendable-agents/primitives/temporal-pinning/): `scoredAt`, `dataAsOf`, the signal dates it rests on, and the model version and hash. If the input data arrives without a `dataAsOf`, provenance is unverifiable — you cannot later prove what the agent knew and when. Fail-closed refuses to score rather than mint a pin it cannot stand behind.
 
@@ -82,9 +82,9 @@ Set `fail_closed: false` and you have a different, weaker system — one where t
 
 Here is the subtle, valuable part. Because governance blocks on any unverifiable precondition, **the absence of a block becomes evidence.**
 
-In a fail-open system, a clean log tells you nothing — operations could have proceeded despite failed or skipped checks, and the log would look identical. In a fail-closed system with `audit_all: true`, every operation that ran is an operation whose preconditions were positively verified, and every operation that could not verify left a `budget_exceeded`, an attestation failure, or a provenance refusal on its own line in the [append-only audit log](/topics/defendable-agents/primitives/audit-trail/).
+In a fail-open system, a clean log tells you nothing — operations could have proceeded despite failed or skipped checks, and the log would look identical. In a fail-closed system with `audit_all: true`, every operation that ran is an operation whose preconditions were positively verified, and every operation that could not verify left a `budget_exceeded`, an attestation failure, or a provenance refusal on its own line in the [append-only audit trail](/topics/defendable-agents/primitives/audit-trail/).
 
-So when an auditor reads a session that scored forty buyers with no block events, that is not merely "nothing went wrong". It is a proof: forty times, the model was attested, provenance was pinned, and the budget held. The clean log is the artifact. This is what lets a session feed straight into an [evidence package](/topics/defendable-agents/compliance/evidence-packages/) and satisfy the access-boundary controls in the [control mapping](/topics/defendable-agents/compliance/control-mapping/) (SOC 2 CC6.1).
+So when an auditor reads a session that scored forty buyers with no block events, that is not merely "nothing went wrong". It is a proof: forty times, the model was attested, provenance was pinned, and the budget held. The clean log is the artefact. This is what lets a session feed straight into an [evidence package](/topics/defendable-agents/compliance/evidence-packages/) and satisfy the access-boundary controls in the [control mapping](/topics/defendable-agents/compliance/control-mapping/) (SOC 2 CC6.1).
 
 ## Honest limits
 

@@ -60,7 +60,16 @@ function checkDrift(
     entityId: pin.entityId,
     reasons,
     recommendation: recommend(reasons),
-    detail: { ageInDays: Math.round(ageInDays), maxAgeDays },
+    detail: {
+      ageInDays: Math.round(ageInDays),
+      maxAgeDays,
+      pin: {
+        scoredAt: pin.scoredAt,
+        dataAsOf: pin.dataAsOf,
+        modelVersion: pin.modelVersion,
+      },
+      current,
+    },
   };
 }
 ```

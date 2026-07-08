@@ -35,7 +35,7 @@ Marginally, and in the places that do not matter. The pure scoring functions are
   "scoring": {
     "model": "buyer@2.3.0",
     "layerScores": { "need": 78, "attractiveness": 64, "winnability": 71 },
-    "total": 72.6,
+    "total": 72.05,
     "band": "High"
   },
   "budget": { "cost": 5, "currency": "units", "runningTotal": 210, "ceiling": 1000 },

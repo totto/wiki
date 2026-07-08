@@ -20,7 +20,7 @@ Layers are the intermediate abstraction that makes the score *readable*. Each va
 | Attractiveness | 0.25 | mandate-value, strategic-value, growth-potential, sector-fit, reference-value, cross-sell-potential |
 | Winnability | 0.35 | competitive-position, relationship-proximity, known-criteria, decision-access, internal-capacity, relevant-experience |
 
-Now a reviewer reads the score at two altitudes: three layer scores tell the *story* (strong need, weak winnability), and eighteen variable scores tell the *evidence*. Layers are how the [decision trace](/topics/defendable-agents/primitives/decision-traces/) stays human-sized. See [Variable Design](/topics/defendable-agents/decisions/variable-design/) for how the leaf variables themselves are kept independent and observable.
+Now a reviewer reads the score at two altitudes: three layer scores tell the *story* (strong need, weak winnability), and eighteen variable scores tell the *evidence*. Layers are how the decision trace stays human-sized. See [Variable Design](/topics/defendable-agents/decisions/variable-design/) for how the leaf variables themselves are kept independent and observable.
 
 ## Choosing weights — and documenting them
 
@@ -49,7 +49,7 @@ layers:
 constraint: sum(weights) == 1.0
 ```
 
-Two rules make this defensible. First, weights sum to exactly 1.0 so a composite is always on the same 0-100 scale as its layers — a validator should reject a manifest that violates this. Second, every weight ships with a rationale a non-technical reviewer can read and disagree with. A weight without a written reason is not a decision, it is an accident. Because the model is a declared governed unit (see [Versioning Models](/topics/defendable-agents/decisions/versioning-models/) and [Declaring Governed Units](/topics/defendable-agents/kcp/declaring-governed-units/)), changing 0.40 to 0.45 bumps the version, changes the hash, and appears in the [audit trail](/topics/defendable-agents/primitives/audit-trail/) as a distinct model. You cannot alter strategy silently.
+Two rules make this defensible. First, weights sum to exactly 1.0 so a composite is always on the same 0-100 scale as its layers — a validator should reject a manifest that violates this. Second, every weight ships with a rationale a non-technical reviewer can read and disagree with. A weight without a written reason is not a decision, it is an accident. Because the model is a declared governed unit (see [Versioning Models](/topics/defendable-agents/decisions/versioning-models/)), changing 0.40 to 0.45 bumps the version, changes the hash, and appears in the [audit trail](/topics/defendable-agents/primitives/audit-trail/) as a distinct model. You cannot alter strategy silently.
 
 ## Band thresholds
 
@@ -67,11 +67,11 @@ A 0-100 score is precise but not actionable — nobody works a queue of floating
 }
 ```
 
-Bands are a second, separate policy layer, and putting them in the manifest matters. A score of 69.8 lands in "Interesting but with gaps"; 70.1 lands in "High". That cliff is a real business boundary, so the thresholds deserve the same written rationale and the same versioning as the weights. When a buyer moves band between two runs, the session emits a `score_delta` event — the band change is auditable, not folklore.
+Bands are a second, separate policy layer, and putting them in the manifest matters. A score of 69.8 lands in "Interesting but with gaps"; 70.1 lands in "High". That cliff is a real business boundary, so the thresholds deserve the same written rationale and the same versioning as the weights. When a buyer moves band between two runs, the change surfaces in the `band` field of the audit event's scoring block — auditable, not folklore.
 
 ## Sensitivity — knowing where the cliffs are
 
-Before you trust a weighting, probe it. Sensitivity analysis asks: how much does the composite move when one variable moves by one point? Because the engine is a set of [pure, reproducible functions](/topics/defendable-agents/decisions/reproducibility/), you can compute this exactly rather than guess.
+Before you trust a weighting, probe it. Sensitivity analysis asks: how much does the composite move when one variable moves by one point? Because the engine is a set of pure, reproducible functions, you can compute this exactly rather than guess.
 
 A one-point rise in a Need variable (six variables, weight 0.40) shifts the layer by `(1/6)*20 = 3.33` points and the composite by `3.33 * 0.40 = 1.33`. The same one-point rise in Attractiveness moves the composite only `3.33 * 0.25 = 0.83`. So a buyer near the 70 boundary flips to "High" on a single Need point but needs more than one Attractiveness point. Knowing exactly which variables sit near which cliffs tells you where scoring effort and data quality matter most — and where a noisy variable can bounce a buyer across a band for no real reason.
 

@@ -79,8 +79,8 @@ lodestar-score \
   --model model/buyer-3.2.0.yaml \
   --inputs traces/buyer_20481.json \
   --expect 78
-# -> layer scores: Need 74.0  Attractiveness 68.3  Winnability 88.0
-# -> composite: 0.40*74.0 + 0.25*68.3 + 0.35*88.0 = 78  ✓  band "High"
+# -> layer scores: Need 74.0  Attractiveness 68.3  Winnability 89.5
+# -> composite: 0.40*74.0 + 0.25*68.3 + 0.35*89.5 = 78  ✓  band "High"
 ```
 
 If the recomputed total does not match the trace, the package is invalid and that itself is a finding. Bundle the verifier binary (or its hash and a build recipe) in the package — an auditor should never have to trust a tool they downloaded separately.

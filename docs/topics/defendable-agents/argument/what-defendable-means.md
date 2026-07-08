@@ -14,7 +14,7 @@ A defendable decision has three properties. It is **declared in advance**, it is
 
 The procedure that produces a decision exists, in writing, before the decision is made — not reconstructed afterwards to fit the answer. In [Lodestar](/topics/defendable-agents/reference/case-study-lodestar/), the example system I use throughout this guide, a buyer score is a weighted composite of three layers: Need at weight 0.40, Attractiveness at 0.25, Winnability at 0.35. Each layer is the mean of six variables scored 1–5, times twenty. Those weights, those variables, and the priority bands (`>=85` "Very high", `>=70` "High", and so on) are written down and version-pinned as a [scoring model manifest](/topics/defendable-agents/decisions/scoring-model-manifest/) before any buyer is touched.
 
-Declaration is what separates a rule from a rationalisation. If I can change the weights after seeing the output, the weights explain nothing. The [deterministic planner](/topics/defendable-agents/architecture/deterministic-planner/) selects the model version as a governed unit, so the model in force at scoring time is a fact, not a preference.
+Declaration is what separates a rule from a rationalisation. If I can change the weights after seeing the output, the weights explain nothing. The [deterministic planner](/topics/defendable-agents/architecture/deterministic-planner/) selects the model version as a governed step, so the model in force at scoring time is a fact, not a preference.
 
 ## Reproducible
 
@@ -57,7 +57,7 @@ That single line is the evidence. It names the model version, every input, every
 
 ## Skip-reasons, not silence
 
-Here is the property that most systems get wrong, and the one I care about most. When a governed operation does **not** run, the record must say why. Silence is not evidence. If the [budget ledger](/topics/defendable-agents/primitives/budget-and-bounding/) ceiling is exceeded, the operation does not quietly fall through — it throws and emits a `budget_exceeded` event. If [fail-closed policy](/topics/defendable-agents/primitives/fail-closed-policy/) blocks a tool call, the block is logged as a decision with a justification, exactly like a positive score.
+Here is the property that most systems get wrong, and the one I care about most. When a governed operation does **not** run, the record must say why. Silence is not evidence. If a [budget ceiling](/topics/defendable-agents/primitives/budget-and-bounding/) is exceeded, the operation does not quietly fall through — it throws and emits a `budget_exceeded` event. If [fail-closed policy](/topics/defendable-agents/primitives/fail-closed-policy/) blocks a tool call, the block is logged as a decision with a justification, exactly like a positive score.
 
 A defendable log is one where every gap is accounted for. "We did not score this buyer" is a claim you must be able to defend as thoroughly as "we scored it 69.7". The absence of an event is itself something a reviewer will ask about, and the honest answer is a recorded skip-reason — not a shrug. This is the difference between a system that can survive an audit and one that merely hopes not to be audited.
 

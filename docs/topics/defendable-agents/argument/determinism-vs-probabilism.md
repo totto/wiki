@@ -46,7 +46,7 @@ When it returns `accepted: false` the governed operation throws and emits a `bud
 
 None of this means the model has no job. It has the *hard* job. Turning a firm's public signals into a 1–5 `signal-relevance` score is genuinely a language task — it requires reading unstructured text and mapping it onto a vocabulary. Writing the justification that accompanies a decision, drafting a playbook, summarising why a buyer moved bands: all synthesis, all language, all work no lookup table can do. That is the [model at the edge](/topics/defendable-agents/architecture/model-at-the-edge/): the model produces the *variables*, and the deterministic engine composes them into the *decision*. The composition is the part you have to defend, so the composition is the part that must be reproducible.
 
-This split is why I distinguish navigation from synthesis so firmly. If you want the deeper treatment of synthesis as its own discipline, [synthesis](/topics/synthesis/) and the [knowledge context protocol](/topics/knowledge-context-protocol/) cover how the model's language work is fed by declared, governed context rather than a free-for-all retrieval.
+This split is why I distinguish navigation from synthesis so firmly. If you want the deeper treatment of synthesis as its own discipline, [synthesis](/topics/synthesis/) and the [Knowledge Context Protocol](/topics/knowledge-context-protocol/) cover how the model's language work is fed by declared, governed context rather than a free-for-all retrieval.
 
 ## Why handing navigation to an LLM subtracts accountability
 

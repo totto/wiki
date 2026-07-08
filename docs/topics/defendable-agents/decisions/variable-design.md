@@ -12,7 +12,7 @@ So the real design work is not in the arithmetic. It is in defining each variabl
 
 ## Anatomy of a variable
 
-A variable is not a label with a number stapled to it. In Lodestar every scoring variable carries five things:
+A variable is not a label with a number stapled to it. In Lodestar every scoring variable carries five design fields beyond its `layer` and `scale`:
 
 ```yaml
 - id: signal-freshness

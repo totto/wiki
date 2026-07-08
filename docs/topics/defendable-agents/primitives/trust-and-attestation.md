@@ -8,7 +8,7 @@ image: assets/images/summer-plan-00-defendable-agent-workflow.webp
 
 A governed agent spends most of its effort worrying about what it *does* — the budget it burns, the scores it emits, the audit line it leaves behind. But before any of that, it reads. It loads scoring models, layer weights, band thresholds, and reference data as declared knowledge units. Those units are passive files on disk. Nothing about being passive makes them trustworthy.
 
-This is the quiet gap. I have watched teams build a beautiful [deterministic engine](/topics/defendable-agents/architecture/deterministic-planner/), pin every score temporally, and log every variable — and then load the model definition from a file that anyone with commit access could have edited last Tuesday. Determinism only guarantees that the same inputs give the same outputs. It says nothing about whether the inputs were the ones you meant to ship. Reproducibility without provenance reproduces the tampering just as faithfully as the intent.
+This is the quiet gap. I have watched teams build a beautiful [deterministic planner](/topics/defendable-agents/architecture/deterministic-planner/), pin every score temporally, and log every variable — and then load the model definition from a file that anyone with commit access could have edited last Tuesday. Determinism only guarantees that the same inputs give the same outputs. It says nothing about whether the inputs were the ones you meant to ship. Reproducibility without provenance reproduces the tampering just as faithfully as the intent.
 
 So the Lodestar stack treats every governed knowledge unit as something that must be *attested*, not merely *present*.
 
@@ -49,7 +49,7 @@ The distinction between `unsigned` and `invalid` matters more than any other. `u
 
 ## Wiring it into the harness
 
-Attestation is enforced at load time, inside the [governance harness](/topics/defendable-agents/architecture/governance-harness/), before a unit ever reaches the engine. The policy is a single flag:
+Attestation is enforced at load time, inside the [governance harness](/topics/defendable-agents/architecture/governance-harness/), before a unit ever reaches the planner. The policy is a single flag:
 
 ```yaml
 # harness.yaml (excerpt)

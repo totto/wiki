@@ -54,20 +54,20 @@ Cantara builds open-source infrastructure for Java applications: authentication 
 
 **Repository:** [github.com/Cantara/knowledge-context-protocol](https://github.com/Cantara/knowledge-context-protocol)
 **Spec:** [cantara.github.io/knowledge-context-protocol](https://cantara.github.io/knowledge-context-protocol)
-**License:** Apache 2.0 | **Status:** v0.5 draft — submitted to the Linux Foundation Agentic AI Foundation
+**License:** Apache 2.0 | **Status:** v0.25.1 — submitted to the Linux Foundation Agentic AI Foundation
 
-A YAML file format specification that makes knowledge navigable by AI agents. KCP is to knowledge what MCP is to tools: it adds topology (`depends_on`, `supersedes`), intent (what question each unit answers), freshness (`validated` dates), audience targeting, and context window hints.
+A YAML file format specification that makes knowledge navigable — and trustworthy — for AI agents. KCP is to knowledge what MCP is to tools: it adds topology (`depends_on`, `supersedes`), intent (what question each unit answers), freshness (`validated` dates), audience targeting, and context window hints. Twenty-five releases in six months have grown it from a table of contents into a full protocol, with layers for discovery, meaning, trust, time, identity, federation, and economics.
 
-**RFCs:** Auth & Delegation · Federation · Trust & Compliance · Payment & Rate Limits · Context Window Hints (accepted into v0.4 core)
+**RFCs:** Auth & Delegation · Federation (Org-Hub) · Trust & Compliance · Unit Content Integrity · Temporal Validity · Payment & Rate Limits (economic metadata) · Context Window Hints
 
-**Reference implementations:** parsers in Python and Java · MCP bridge servers in TypeScript, Python, and Java
+**Reference implementations:** parsers in Python and Java · MCP bridge servers in TypeScript, Python, and Java · the `kcp-agent` reference agent (below)
 
 ---
 
 ### kcp-commands
 
 **Repository:** [github.com/Cantara/kcp-commands](https://github.com/Cantara/kcp-commands)
-**Language:** Java (daemon) + shell | **License:** Apache 2.0 | **Current version:** v0.9.0+
+**Language:** Java (daemon) + shell | **License:** Apache 2.0 | **Current version:** v0.12.0
 
 A Claude Code hook that applies KCP at the Bash tool boundary. Intercepts every Bash tool call: injects concise flag/syntax guidance before execution (no `--help` round-trips), strips noise after. Also writes every tool call to `~/.kcp/events.jsonl` for kcp-memory ingestion.
 
@@ -84,9 +84,9 @@ curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/insta
 ### kcp-memory
 
 **Repository:** [github.com/Cantara/kcp-memory](https://github.com/Cantara/kcp-memory)
-**Language:** Java | **License:** Apache 2.0 | **Current version:** v0.4.0
+**Language:** Java | **License:** Apache 2.0 | **Current version:** v0.32.0
 
-A Java daemon that indexes Claude Code session transcripts and kcp-commands tool events into a local SQLite database with FTS5 full-text search. The episodic memory layer for Claude Code. Ships as both a CLI tool and an MCP server.
+A Java daemon that indexes Claude Code session transcripts and kcp-commands tool events into a local SQLite database with FTS5 full-text search. The episodic memory layer for Claude Code — session history searchable in milliseconds. Ships as both a CLI tool and an MCP server.
 
 **MCP tools:** `kcp_memory_search` · `kcp_memory_events_search` · `kcp_memory_list` · `kcp_memory_stats` · `kcp_memory_session_detail` · `kcp_memory_project_context`
 
@@ -94,6 +94,40 @@ A Java daemon that indexes Claude Code session transcripts and kcp-commands tool
 # Register as MCP server in ~/.claude/settings.json
 java -jar ~/.kcp/kcp-memory-daemon.jar mcp
 ```
+
+---
+
+### kcp-agent
+
+**Repository:** [github.com/Cantara/kcp-agent](https://github.com/Cantara/kcp-agent)
+**Language:** TypeScript (npm) + native binaries | **License:** Apache 2.0 | **Current version:** v0.11.0
+
+The reference agent for KCP — a **deterministic, fail-closed navigation planner** plus optional LLM synthesis. It reads a `knowledge.yaml`, scores and gates units against declared trust, freshness, audience, and budget, and produces an inspectable plan *before* any content is loaded or any model is called. Determinism at the core, the model at the edge. Ships as an MCP server (`kcp_plan`, `kcp_load`, `kcp_validate`) and as self-contained native binaries.
+
+```bash
+npx kcp-agent plan "your task" --manifest https://example.com/knowledge.yaml
+claude mcp add kcp -- npx -y kcp-agent mcp
+```
+
+See the [Defendable Agents](topics/defendable-agents/index.md) field guide for the full architecture.
+
+---
+
+### kcp-harness
+
+**Repository:** [github.com/Cantara/kcp-harness](https://github.com/Cantara/kcp-harness)
+**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.4.0
+
+Deterministic knowledge governance for any AI agent. An MCP compliance proxy that sits between an agent and its tools, routing every knowledge request through a deterministic multi-gate governance cascade — fail-closed policy, append-only audit trail, budget ceilings, and temporal pinning — and emitting the decision traces, audit logs, and budget records that map onto SOC 2 / ISO 27001 / GDPR controls. No model involvement in the governed decision.
+
+---
+
+### kcp-dashboard
+
+**Repository:** [github.com/Cantara/kcp-dashboard](https://github.com/Cantara/kcp-dashboard)
+**Language:** Go | **License:** Apache 2.0 | **Current version:** v0.27.0
+
+A live terminal dashboard (Bubble Tea + Lip Gloss) for the KCP ecosystem — guidance effects, session profiles, token savings, and memory-search activity, auto-refreshing every two seconds.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Example: Catching an Injection at the Gate"
-description: "A poisoned source proposes a shell command as an instruction. Lodestar's vocabulary gate passes only governed terms, so the injection bounces off by construction — nothing loaded or paid until the plan converges."
+description: "A poisoned source proposes a shell command as an instruction. Lodestar's vocabulary gate accepts only governed terms, so the injection is unrepresentable and nothing loads until the plan converges."
 image: assets/images/kcp-agent-020-04-defeating-prompt-injection.webp
 ---
 

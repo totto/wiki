@@ -6,7 +6,7 @@ image: assets/images/kcp-agent-020-00-end-of-vibes-overview.webp
 
 # From Task to Evidence
 
-Most agent walkthroughs stop at the answer. The whole point of a defendable agent is that the answer is the least interesting thing it produces. What you actually keep — the thing that survives an audit, a dispute, or your own future doubt — is the trail of evidence the run leaves behind. This page follows a single task through the [Lodestar](/topics/defendable-agents/reference/case-study-lodestar/) stack, step by step, and names the evidence each step emits.
+Most agent walkthroughs stop at the answer. The whole point of a [defendable agent](/topics/defendable-agents/argument/what-defendable-means/) is that the answer is the least interesting thing it produces. What you actually keep — the thing that survives an audit, a dispute, or your own future doubt — is the trail of evidence the run leaves behind. This page follows a single task through the [Lodestar](/topics/defendable-agents/reference/case-study-lodestar/) stack, step by step, and names the evidence each step emits.
 
 The example domain is a regulated professional-services market: Lodestar scores *buyers* (organisations that might retain a *firm*) and computes *match* scores between buyers and firms. The mechanics are deterministic and public-data-only, but the data flow below is the same whatever your domain.
 
@@ -127,7 +127,8 @@ Two artefacts close the operation. First, a **temporal pin** `{scoredAt, dataAsO
     "total": 72, "band": "High"
   },
   "temporal": { "dataAsOf": "2026-07-06", "scoredAt": "2026-07-08T09:14:22Z" },
-  "budget": { "cost": 5, "runningTotal": 42, "ceiling": 1000, "remaining": 958 }
+  "budget": { "cost": 5, "currency": "units", "runningTotal": 42, "ceiling": 1000, "remaining": 958 },
+  "durationMs": 34
 }
 ```
 

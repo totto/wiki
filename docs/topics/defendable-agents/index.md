@@ -10,7 +10,7 @@ image: assets/images/summer-plan-00-defendable-agent-workflow.webp
 
 Most agents being built today cannot do this, and it is not a policy gap — it is an architecture gap. When the model decides everything mid-flight — what to read, what to trust, what to spend — the result is unreproducible, unauditable, and injectable *by construction*. You cannot bolt governance onto improvisation after the fact.
 
-This is a **field guide** to the alternative: determinism at the core, the model at the edge. It runs from the argument through the architecture, the governance primitives, hands-on tutorials, worked examples, and the compliance mapping — anchored throughout by an anonymized real-world system, *Lodestar*.
+This is a **field guide** to the alternative: determinism at the core, the model at the edge. It runs from the argument through the architecture, the governance primitives, hands-on tutorials, worked examples, and the compliance mapping — anchored throughout by an anonymised real-world system, *Lodestar*.
 
 > The agentic web everyone is racing to build has a governance-shaped hole in it. Agents are about to read our regulations, spend our money, and brief our boards — and the dominant architecture cannot answer *"why did you do that?"* with anything better than a transcript. Improvisation doesn't testify well.
 
@@ -36,7 +36,7 @@ New here? Start with **[How to Read This Guide](/topics/defendable-agents/orient
 - :material-shield-check-outline: **[The Governance Harness](/topics/defendable-agents/architecture/governance-harness/)**
 - :material-robot-outline: **[Where the Model Lives](/topics/defendable-agents/architecture/model-at-the-edge/)**
 - :material-transit-connection-variant: **[From Task to Evidence](/topics/defendable-agents/architecture/data-flow/)**
-- :material-lock-outline: **[Fail-Closed Behavior](/topics/defendable-agents/architecture/fail-closed-behavior/)**
+- :material-lock-outline: **[Fail-Closed Behaviour](/topics/defendable-agents/architecture/fail-closed-behavior/)**
 </div>
 
 ## Part III · Governance Primitives
@@ -120,7 +120,7 @@ New here? Start with **[How to Read This Guide](/topics/defendable-agents/orient
 
 ## Where this sits
 
-Defendable agents are what you get when you point the [Knowledge Context Protocol](/topics/knowledge-context-protocol/) at a governance problem instead of a discovery problem. The same substrate that makes knowledge *navigable* is what makes an agent's decisions *defensible* — and the same encoded expertise that makes an organization resilient ([Skill-Driven Development](/topics/skill-driven-development/)) is also its audit trail. **Compound and defendable are the same infrastructure seen from two angles.**
+Defendable agents are what you get when you point the [Knowledge Context Protocol](/topics/knowledge-context-protocol/) at a governance problem instead of a discovery problem. The same substrate that makes knowledge *navigable* is what makes an agent's decisions *defensible* — and the same encoded expertise that makes an organisation resilient ([Skill-Driven Development](/topics/skill-driven-development/)) is also its audit trail. **Compound and defendable are the same infrastructure seen from two angles.**
 
 This guide is itself published as KCP-navigable knowledge — an agent can discover every page through [the site's root manifest](/knowledge.yaml). We build what we describe.
 

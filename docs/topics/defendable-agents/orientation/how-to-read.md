@@ -8,7 +8,7 @@ image: assets/images/summer-plan-00-defendable-agent-workflow.webp
 
 This is a field guide, not a manifesto. It exists because I built an agent that makes commercial decisions inside a regulated professional-services market — scoring buyers, ranking firms, drafting go-to-market plans — and the people who had to sign off on it kept asking the same question: *when this thing tells us to chase a buyer, can you show me why, and can you show me it again next month and get the same answer?*
 
-That question is the whole book. Everything here is an answer to it, worked out in code that runs. I refer throughout to a single example system I call **Lodestar**. It is anonymised — the real one is proprietary — but the mechanics are exact: a deterministic scoring engine, a governance harness, an append-only audit log, temporal pinning, a budget ledger, per-tenant isolation. Where I show a number, a weight or an event shape, it is the real shape, just with generic names.
+That question is the whole book. Everything here is an answer to it, worked out in code that runs. I refer throughout to a single example system I call **Lodestar**. It is anonymised — the real one is proprietary — but the mechanics are exact: a deterministic planner, a governance harness, an append-only audit trail, temporal pinning, budget ceilings, per-tenant isolation. Where I show a number, a weight or an event shape, it is the real shape, just with generic names.
 
 I am Thor Henning Hetland. I have shipped software for four decades. I am not selling you an agent framework. I am showing you a pattern for making a probabilistic model *defendable* to an auditor, and being honest about where the pattern stops.
 
@@ -32,11 +32,11 @@ Conceptual, prose-heavy, almost no code. This is the case that guardrails bolted
 
 ### 2. The architecture — how the pieces fit
 
-Still mostly conceptual, but concrete about structure: the deterministic planner, the harness that gates every operation, the model pushed to the edge, and what happens when a check trips — [fail-closed behaviour](/topics/defendable-agents/architecture/fail-closed-behavior/). Read this when you need to explain the system to someone else, or decide whether the pattern fits your own stack.
+Still mostly conceptual, but concrete about structure: the deterministic planner, the harness that gates every operation, the model at the edge, and what happens when a check trips — [fail-closed behaviour](/topics/defendable-agents/architecture/fail-closed-behavior/). Read this when you need to explain the system to someone else, or decide whether the pattern fits your own stack.
 
 ### 3. The tutorials — build it yourself
 
-Step-by-step, every page ends with something that runs. You start with [the project layout](/topics/defendable-agents/tutorials/00-project-layout/) and finish able to export an evidence package. This is the hands-on path. The primitives and decisions sections sit behind the tutorials as reference: when a tutorial uses the [audit trail](/topics/defendable-agents/primitives/audit-trail/) or the [budget ledger](/topics/defendable-agents/primitives/budget-and-bounding/), the primitive page is the deep dive.
+Step-by-step, every page ends with something that runs. You start with [the project layout](/topics/defendable-agents/tutorials/00-project-layout/) and finish able to export an evidence package. This is the hands-on path. The primitives and decisions sections sit behind the tutorials as reference: when a tutorial uses the [audit trail](/topics/defendable-agents/primitives/audit-trail/) or [budget ceilings](/topics/defendable-agents/primitives/budget-and-bounding/), the primitive page is the deep dive.
 
 ### 4. The reference — look one thing up
 
@@ -66,7 +66,7 @@ Every section uses the same example so you never have to re-learn a domain. Lode
   "scoring": {
     "model": "buyer-score@2.1.0",
     "layerScores": { "need": 78, "attractiveness": 62, "winnability": 71 },
-    "total": 72.3,
+    "total": 71.6,
     "band": "High"
   }
 }

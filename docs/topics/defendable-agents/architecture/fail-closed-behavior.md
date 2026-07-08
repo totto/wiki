@@ -6,7 +6,7 @@ image: assets/images/kcp-agent-020-01-plan-is-the-product.webp
 
 # Fail-Closed Behavior
 
-A defendable agent has one reflex that separates it from a helpful chatbot: when it cannot verify that an action is permitted, it stops. It does not proceed on a plausible guess. It does not degrade gracefully into "best effort". It blocks, writes down why it blocked, and returns control. That reflex is what "fail-closed" means, and in [Lodestar](/topics/defendable-agents/reference/case-study-lodestar/) it is a directory boundary and a budget check and a manifest lookup — not a sentence in a policy document.
+A [defendable agent](/topics/defendable-agents/argument/what-defendable-means/) has one reflex that separates it from a helpful chatbot: when it cannot verify that an action is permitted, it stops. It does not proceed on a plausible guess. It does not degrade gracefully into "best effort". It blocks, writes down why it blocked, and returns control. That reflex is what "fail-closed" means, and in [Lodestar](/topics/defendable-agents/reference/case-study-lodestar/) it is a directory boundary and a budget check and a manifest lookup — not a sentence in a policy document.
 
 ## Fail-closed versus fail-open
 
@@ -74,7 +74,7 @@ Notice what is *absent*: there is no `scoring` block, because no score was compu
 
 This is the point most people miss when they think of blocking as merely defensive. In a fail-open system, the *absence* of an action tells you nothing — maybe it never came up, maybe it was suppressed, maybe it silently failed. In a fail-closed system, a refusal is an affirmative record: *the agent reached this precondition, could not satisfy it, and stopped here.* That record is what you hand an assessor.
 
-The [compliance control mapping](/topics/defendable-agents/compliance/control-mapping/) leans on this directly. "The system enforces a spend ceiling" is a claim. A `budget_exceeded` event with the arithmetic in it is proof the enforcement *fired* — the difference between asserting a control and evidencing it (SOC 2 CC6.1). The same holds for a refused cross-tenant read: the block is the record that the isolation boundary is real and not aspirational. Blocks belong in your [evidence package](/topics/defendable-agents/compliance/evidence-packages/) alongside the successes.
+The [compliance control mapping](/topics/defendable-agents/compliance/control-mapping/) leans on this directly. "The system enforces a spend ceiling" is a claim. A `budget_exceeded` event with the arithmetic in it is proof the enforcement *fired* — the difference between asserting a control and evidencing it. The same holds for a refused cross-tenant read: the block is the record that the isolation boundary is real and not aspirational — the logical-access control (SOC 2 CC6.1) evidenced, not merely claimed. Blocks belong in your [evidence package](/topics/defendable-agents/compliance/evidence-packages/) alongside the successes.
 
 ## Tuning risk: over-blocking is a real failure
 
