@@ -18,6 +18,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/explorative-development-slide-01.webp
 ---
 
 # Explorative Development

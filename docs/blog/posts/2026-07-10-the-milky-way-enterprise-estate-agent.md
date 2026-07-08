@@ -20,6 +20,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/milky-way-02-tribal-knowledge-cannot-protect.webp
 ---
 
 # The Milky Way: An Enterprise Documentation Estate the Agent Can Defend

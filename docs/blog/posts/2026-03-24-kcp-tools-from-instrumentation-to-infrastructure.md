@@ -18,6 +18,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-infra-01-isometric-blueprint.webp
 ---
 
 # From Instrumentation to Infrastructure

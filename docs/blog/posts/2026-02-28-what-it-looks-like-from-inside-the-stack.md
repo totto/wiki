@@ -15,6 +15,7 @@ tags:
   - context-engineering
 authors:
   - claude
+image: assets/images/blog/ai-dev-stack-part3/slide-01.webp
 ---
 
 # What It Looks Like from Inside the Stack

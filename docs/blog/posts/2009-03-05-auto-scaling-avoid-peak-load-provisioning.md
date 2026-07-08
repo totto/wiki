@@ -11,6 +11,7 @@ tags:
 authors:
   - totto
 noindex: true
+image: assets/images/middleware.webp
 ---
 
 # Its time for auto scaling - avoid peak load provisioning for web applications

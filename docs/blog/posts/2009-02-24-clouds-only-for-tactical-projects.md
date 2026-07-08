@@ -1,4 +1,5 @@
 ---
+description: "Gartner recommends cloud computing only for tactical projects until 2012 -- a 2009 critique of why that framing misses the point."
 date: 2009-02-24
 categories:
   - Cloud Computing

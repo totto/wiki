@@ -15,6 +15,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/synthesis-ai-agents-paradox-bottleneck.webp
 ---
 
 # AI Agents Without Knowledge Infrastructure Are Interns With Amnesia

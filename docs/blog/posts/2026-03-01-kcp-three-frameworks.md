@@ -15,6 +15,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-three-frameworks-overview.webp
 ---
 
 # KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers

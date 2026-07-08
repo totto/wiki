@@ -16,6 +16,7 @@ tags:
   - orchestration
 authors:
   - totto
+image: assets/images/exocortex-vs-claude-code-best-practice/slide-001.webp
 ---
 
 # Two Architectures for Claude Code: What 19,700 Stars Got Right and What They Missed

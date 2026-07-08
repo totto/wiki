@@ -14,6 +14,7 @@ tags:
   - ironclaw
 authors:
   - totto
+image: assets/images/blog/ai-dev-stack-part2/10x-reality-slide-02-aggregate.webp
 ---
 
 # What a 10× Workday Actually Looks Like

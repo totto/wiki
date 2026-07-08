@@ -18,6 +18,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/compound-developer/hero.jpg
 ---
 
 # The Compound Developer

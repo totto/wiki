@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-provenance-00-overview.webp
 ---
 
 # Everyone Is Auditing the Workflow. Nobody Is Fixing the Knowledge.

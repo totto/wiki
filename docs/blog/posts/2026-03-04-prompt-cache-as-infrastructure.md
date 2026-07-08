@@ -14,6 +14,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/prompt-cache-infrastructure/slide-02.webp
 ---
 
 # The Prompt Cache as Infrastructure: Lessons from 3,007 Claude Code Sessions

@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/slide-06-velocity-through-trust.webp
 ---
 
 # The Verification Paradox: Why Fast AI Needs Slow Tests

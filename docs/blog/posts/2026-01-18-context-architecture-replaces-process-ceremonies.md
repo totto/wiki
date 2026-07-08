@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/lib-pcb-memoir-infographic-03-context-engineering.webp
 ---
 
 # Context Architecture Replaces Process Ceremonies

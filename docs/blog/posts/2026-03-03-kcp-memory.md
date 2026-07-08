@@ -18,6 +18,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-memory-three-layer-model.webp
 ---
 
 # kcp-memory: Give Claude Code a Memory

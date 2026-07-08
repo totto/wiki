@@ -14,6 +14,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-memory-amnesia-bug-title.webp
 ---
 
 # The agents were forgetting everything they discovered

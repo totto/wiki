@@ -16,6 +16,7 @@ tags:
   - triple-debt-model
 authors:
   - totto
+image: assets/images/naur-intent-debt/slide-002.webp
 ---
 
 # Peter Naur Was Right in 1985, and AI Just Proved It

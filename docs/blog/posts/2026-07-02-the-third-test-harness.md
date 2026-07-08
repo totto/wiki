@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/third-test-harness/th-72-score-paradox.png
 ---
 
 # The Third Test Harness

@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/lib-pcb-productivity-infographic-320x.webp
 ---
 
 # Strategic Delegation: When Developers Become Architects

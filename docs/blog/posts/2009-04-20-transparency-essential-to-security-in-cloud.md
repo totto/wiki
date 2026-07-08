@@ -1,4 +1,5 @@
 ---
+description: "No infrastructure is secure in the absolute -- only for specific requirements. Why transparency, not vendor assurances, is the key to cloud security."
 date: 2009-04-20
 categories:
   - Cloud Computing

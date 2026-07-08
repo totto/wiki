@@ -17,6 +17,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-commands-context-window-overview.webp
 ---
 
 # kcp-commands: Save 33% of Claude Code's Context Window

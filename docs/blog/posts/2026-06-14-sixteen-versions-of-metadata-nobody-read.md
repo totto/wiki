@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/sixteen-versions-metadata/slide-01.png
 ---
 
 # Sixteen Versions of Metadata Nobody Read

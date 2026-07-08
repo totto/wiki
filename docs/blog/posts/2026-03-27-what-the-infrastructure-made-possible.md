@@ -15,6 +15,7 @@ tags:
 authors:
   - leif
   - totto
+image: assets/images/blog/the-faster-pencil/slide-01.webp
 ---
 
 # The Faster Pencil

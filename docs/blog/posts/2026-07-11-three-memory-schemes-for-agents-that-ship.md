@@ -21,6 +21,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/three-memory-00-memory-is-a-coordinate.webp
 ---
 
 # Three Memory Schemes for Agents That Ship

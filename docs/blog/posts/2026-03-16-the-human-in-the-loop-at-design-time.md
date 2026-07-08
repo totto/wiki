@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/hitl-slide-01.webp
 ---
 
 # The Human in the Loop — at Design Time

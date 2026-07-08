@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/slide-04-metadata-as-memory.webp
 ---
 
 # What a "Skill" Actually Is (And Why It's Not a Prompt)

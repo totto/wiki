@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/false-alarms-slide-01.webp
 ---
 
 # False Alarms and False Assurances

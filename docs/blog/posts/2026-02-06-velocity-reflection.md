@@ -11,6 +11,7 @@ tags:
   - bottleneck
 authors:
   - totto
+image: assets/images/blog/lib-pcb-metrics-card-11-days.webp
 ---
 
 # Three Weeks at This Velocity

@@ -1,4 +1,5 @@
 ---
+description: "Amazon CloudFront routes requests to the nearest edge location for fast static content delivery -- early notes on real-world CDN latency versus S3."
 date: 2009-02-24
 categories:
   - Cloud Computing

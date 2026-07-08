@@ -14,6 +14,7 @@ tags:
   - session-history
 authors:
   - totto
+image: assets/images/blog/three-layer-ai-memory-architecture.webp
 ---
 
 # Working Memory, Episodic Memory, Semantic Memory. Your Agent Has One.

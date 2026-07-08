@@ -11,6 +11,7 @@ tags:
 authors:
   - totto
 noindex: true
+image: assets/images/sinnataggen.jpg
 ---
 
 # Sinnataggen and some Cloud development thoughts...

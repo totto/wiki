@@ -13,6 +13,7 @@ tags:
   - signing
   - ed25519
   - aegis
+image: assets/images/blog/agent-enabling-aegis-no/mrc-slide-02.webp
 ---
 
 # Making Ægis Machine-Readable in One Session

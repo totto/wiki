@@ -15,21 +15,23 @@
 ) %}
 <meta name="robots" content="noindex, follow">
 {% endif %}
+{% set _social_image = config.site_url ~ (page.meta.image if page and page.meta and page.meta.image else "assets/images/totto-2025.jpg") %}
+{% set _is_custom_image = page and page.meta and page.meta.image %}
 <!-- Open Graph -->
 <meta property="og:site_name" content="{{ config.site_name }}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{{ 'article' if page and page.url.startswith('blog/20') and '/page/' not in page.url and page.url.count('/') >= 5 else 'website' }}">
 <meta property="og:url" content="{{ config.site_url }}{{ page.url if page else '' }}">
 <meta property="og:title" content="{{ page.title if page else config.site_name }}">
 <meta property="og:description" content="{{ page.meta.description if page and page.meta.description else config.site_description }}">
-<meta property="og:image" content="{{ config.site_url }}assets/images/totto-2025.jpg">
-<meta property="og:image:alt" content="Thor Henning Hetland">
+<meta property="og:image" content="{{ _social_image }}">
+<meta property="og:image:alt" content="{{ page.title if _is_custom_image and page.title else 'Thor Henning Hetland' }}">
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="{{ 'summary_large_image' if _is_custom_image else 'summary' }}">
 <meta name="twitter:site" content="@javatotto">
 <meta name="twitter:creator" content="@javatotto">
 <meta name="twitter:title" content="{{ page.title if page else config.site_name }}">
 <meta name="twitter:description" content="{{ page.meta.description if page and page.meta.description else config.site_description }}">
-<meta name="twitter:image" content="{{ config.site_url }}assets/images/totto-2025.jpg">
+<meta name="twitter:image" content="{{ _social_image }}">
 {% if page and page.url in ("", "./") %}
 <script type="application/ld+json">
 {
@@ -37,12 +39,27 @@
   "@type": "Person",
   "name": "Thor Henning Hetland",
   "url": "https://wiki.totto.org",
+  "image": "https://wiki.totto.org/assets/images/totto-2025.jpg",
   "sameAs": [
     "https://www.linkedin.com/in/hetland/",
     "https://github.com/totto",
     "https://twitter.com/javatotto"
   ],
   "jobTitle": "Software Architect",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "eXOReaction",
+    "url": "https://exoreaction.com"
+  },
+  "knowsAbout": [
+    "Software Architecture",
+    "Artificial Intelligence",
+    "AI-Augmented Development",
+    "Skill-Driven Development",
+    "Knowledge Context Protocol",
+    "Java",
+    "Cloud Computing"
+  ],
   "description": "Software architect and AI development pioneer. 30 years building software and communities. Founder of eXOReaction, co-founder of JavaZone."
 }
 </script>
@@ -54,13 +71,57 @@
   "@type": "BlogPosting",
   "headline": {{ page.title | tojson }},
   "url": "{{ config.site_url }}{{ page.url }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ config.site_url }}{{ page.url }}"
+  },
   "author": {
     "@type": "Person",
     "name": "Thor Henning Hetland",
     "url": "https://wiki.totto.org"
-  }{% if page.meta and page.meta.date %},
-  "datePublished": "{{ page.meta.date }}"{% endif %}{% if page.meta and page.meta.description %},
-  "description": {{ page.meta.description | tojson }}{% endif %}
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org",
+    "image": "{{ config.site_url }}assets/images/totto-2025.jpg"
+  },
+  "image": "{{ _social_image }}"{% if page.meta and page.meta.date %},
+  "datePublished": "{{ page.meta.date }}"{% endif %}{% if page.meta and page.meta.git_revision_date_localized_raw_iso_datetime %},
+  "dateModified": "{{ page.meta.git_revision_date_localized_raw_iso_datetime }}"{% elif page.meta and page.meta.date %},
+  "dateModified": "{{ page.meta.date }}"{% endif %}{% if page.meta and page.meta.description %},
+  "description": {{ page.meta.description | tojson }}{% endif %}{% if page.meta and page.meta.categories %},
+  "articleSection": {{ page.meta.categories | join(", ") | tojson }}{% endif %}{% if page.meta and page.meta.tags %},
+  "keywords": {{ page.meta.tags | join(", ") | tojson }}{% endif %}
+}
+</script>
+{% endif %}
+{% if page and page.ancestors %}
+{% set crumbs = page.ancestors | selectattr('url') | list | reverse | list %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ config.site_url }}"
+    }{% for ancestor in crumbs %},
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index + 1 }},
+      "name": {{ ancestor.title | tojson }},
+      "item": "{{ config.site_url }}{{ ancestor.url }}"
+    }{% endfor %},
+    {
+      "@type": "ListItem",
+      "position": {{ crumbs | length + 2 }},
+      "name": {{ page.title | tojson }},
+      "item": "{{ config.site_url }}{{ page.url }}"
+    }
+  ]
 }
 </script>
 {% endif %}

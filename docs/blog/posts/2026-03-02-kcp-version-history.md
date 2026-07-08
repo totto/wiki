@@ -15,6 +15,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-version-history-evolution.webp
 ---
 
 # KCP v0.1 to v0.5: How a Knowledge Standard Grows

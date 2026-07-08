@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-copilot-slide-01-title.webp
 ---
 
 # kcp-mcp v0.10.0: GitHub Copilot Gets KCP — Including MCP-Locked Enterprises

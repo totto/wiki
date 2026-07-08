@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/ci-pipeline-nervous-system/ns-hero.png
 ---
 
 # The CI Pipeline Is the Agent's Nervous System

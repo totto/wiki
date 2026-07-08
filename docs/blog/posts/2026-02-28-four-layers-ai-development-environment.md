@@ -16,6 +16,7 @@ tags:
   - klaw
 authors:
   - totto
+image: assets/images/blog/ai-dev-stack-part1/slide-02.webp
 ---
 
 # Four Layers: How I Built an AI Development Environment That Partly Runs Itself

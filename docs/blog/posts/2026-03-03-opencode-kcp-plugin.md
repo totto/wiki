@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/opencode-kcp-plugin-overview.webp
 ---
 
 # KCP Comes to OpenCode: The First AI Coding Tool Plugin

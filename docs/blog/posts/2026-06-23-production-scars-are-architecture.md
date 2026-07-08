@@ -14,6 +14,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/production-scars/infographic.webp
 ---
 
 # Production Scars Are Architecture

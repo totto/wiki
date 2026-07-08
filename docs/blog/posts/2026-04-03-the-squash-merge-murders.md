@@ -15,6 +15,7 @@ tags:
   - ci-cd
   - paskekrim
   - sdd
+image: assets/images/squash-merge-murders/slide-01.webp
 ---
 
 # The Squash Merge Murders

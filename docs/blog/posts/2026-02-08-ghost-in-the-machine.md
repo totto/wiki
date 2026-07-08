@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/ghost-slide-02-blank-slate.webp
 ---
 
 # The Ghost in the Machine

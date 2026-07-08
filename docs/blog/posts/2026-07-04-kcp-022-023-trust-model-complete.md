@@ -19,6 +19,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-022-023-01-missing-machinery.webp
 ---
 
 # The Agentic Web Has No Login Page

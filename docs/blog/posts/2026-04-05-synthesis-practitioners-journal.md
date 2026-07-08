@@ -15,6 +15,7 @@ tags:
   - java
 authors:
   - totto
+image: assets/images/synthesis-practitioners-journal/slide-01.webp
 ---
 
 # The Tool I Didn't Plan to Build: Synthesis, Ten Weeks Later

@@ -14,6 +14,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/slide-05-architecture-of-understanding.webp
 ---
 
 # Five Architecture Patterns for AI Agents That Actually Work

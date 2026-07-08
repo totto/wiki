@@ -16,6 +16,7 @@ tags:
   - claude-md
 authors:
   - totto
+image: assets/images/blog/trustfall-passive-data/architecture-of-safe-context.jpg
 ---
 
 # Why KCP Is Passive Data, Not Executable Config — And Why That Matters Now

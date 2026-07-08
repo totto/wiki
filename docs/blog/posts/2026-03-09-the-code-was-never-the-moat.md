@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/the-new-economics-of-code-infographic.webp
 ---
 
 # The Code Was Never the Moat
@@ -79,15 +80,15 @@ I do not have an answer. I am not sure anyone does yet.
 
 *Generated with NotebookLM from the source material above.*
 
-![](../../assets/images/blog/beyond-code-scarcity-slide-01.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-02.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-03.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-04.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-05.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-06.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-07.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-08.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-09.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-10.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-11.webp)
-![](../../assets/images/blog/beyond-code-scarcity-slide-12.webp)
+![Beyond Code Scarcity presentation, slide 1](../../assets/images/blog/beyond-code-scarcity-slide-01.webp)
+![Beyond Code Scarcity presentation, slide 2](../../assets/images/blog/beyond-code-scarcity-slide-02.webp)
+![Beyond Code Scarcity presentation, slide 3](../../assets/images/blog/beyond-code-scarcity-slide-03.webp)
+![Beyond Code Scarcity presentation, slide 4](../../assets/images/blog/beyond-code-scarcity-slide-04.webp)
+![Beyond Code Scarcity presentation, slide 5](../../assets/images/blog/beyond-code-scarcity-slide-05.webp)
+![Beyond Code Scarcity presentation, slide 6](../../assets/images/blog/beyond-code-scarcity-slide-06.webp)
+![Beyond Code Scarcity presentation, slide 7](../../assets/images/blog/beyond-code-scarcity-slide-07.webp)
+![Beyond Code Scarcity presentation, slide 8](../../assets/images/blog/beyond-code-scarcity-slide-08.webp)
+![Beyond Code Scarcity presentation, slide 9](../../assets/images/blog/beyond-code-scarcity-slide-09.webp)
+![Beyond Code Scarcity presentation, slide 10](../../assets/images/blog/beyond-code-scarcity-slide-10.webp)
+![Beyond Code Scarcity presentation, slide 11](../../assets/images/blog/beyond-code-scarcity-slide-11.webp)
+![Beyond Code Scarcity presentation, slide 12](../../assets/images/blog/beyond-code-scarcity-slide-12.webp)

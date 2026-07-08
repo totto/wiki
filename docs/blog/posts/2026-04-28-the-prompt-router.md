@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/prompt-router/prompt-router-infographic.webp
 ---
 
 # The Prompt Router — A 47ms Keyword Classifier for Context Selection

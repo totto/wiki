@@ -18,6 +18,7 @@ tags:
   - github-actions
 authors:
   - totto
+image: assets/images/blog/agentic-web-157-repos/dark-to-agents.webp
 ---
 
 # How Agents Navigate the Agentic Web

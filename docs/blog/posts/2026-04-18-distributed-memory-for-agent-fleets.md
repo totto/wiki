@@ -16,6 +16,7 @@ tags:
   - kcp
 authors:
   - totto
+image: assets/images/agent-memory-infrastructure/slide-02.webp
 ---
 
 # AI agents forget everything. That's a choice, not a constraint.

@@ -14,6 +14,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/architectural-x-ray/slide-01.webp
 ---
 
 # The Zombie in the Basement

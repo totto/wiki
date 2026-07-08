@@ -14,6 +14,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/sysadmin-slide-02.webp
 ---
 
 # I haven't typed apt install in three months

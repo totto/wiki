@@ -15,6 +15,7 @@ tags:
   - oroboro
 authors:
   - totto
+image: assets/images/merkabit/infographic.webp
 ---
 
 # The Merkabit Computer

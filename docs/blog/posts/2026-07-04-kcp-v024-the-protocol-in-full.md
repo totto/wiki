@@ -20,6 +20,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-024-00-from-domain-to-receipt.webp
 ---
 
 # One Agent's Journey Through the Whole Protocol

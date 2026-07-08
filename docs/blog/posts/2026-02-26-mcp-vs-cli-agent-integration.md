@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/mcp-vs-cli-efficiency-leaderboard.webp
 ---
 
 # We Gave the AI Better Documentation. It Got Slower.

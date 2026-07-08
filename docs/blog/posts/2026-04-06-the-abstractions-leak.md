@@ -12,6 +12,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/2026-04-06-quantum-hardware.webp
 ---
 
 # The abstractions leak: a day with IBM quantum hardware

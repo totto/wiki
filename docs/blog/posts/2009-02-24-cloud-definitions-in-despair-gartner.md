@@ -1,4 +1,5 @@
 ---
+description: "Vague cloud definitions make IT strategy impossible. A 2009 argument for a commonly accepted definition, even an imperfect one."
 date: 2009-02-24
 categories:
   - Cloud Computing

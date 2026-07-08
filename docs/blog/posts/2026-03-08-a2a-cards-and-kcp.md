@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-01.webp
 ---
 
 # The Front Door and the Filing Cabinet: A2A Agent Cards Meet KCP

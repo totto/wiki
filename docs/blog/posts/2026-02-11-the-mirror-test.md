@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/Synthesis-Infographic-02-Journey-Human-AI-Collaboration.webp
 ---
 
 # The Mirror Test: How Synthesis Benchmarked Itself Into Something Better

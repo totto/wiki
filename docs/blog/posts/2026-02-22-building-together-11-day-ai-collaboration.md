@@ -15,6 +15,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/totto-pcb-factory-2025.jpg
 ---
 
 # Building Together: An 11-Day Human-AI Collaboration Story

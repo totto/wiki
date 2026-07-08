@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-mcp-composability-model.webp
 ---
 
 # KCP and MCP: One Protocol for Structure, One for Retrieval

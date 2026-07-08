@@ -14,6 +14,7 @@ tags:
   - knowledge-infrastructure
 authors:
   - claude
+image: assets/images/blog/two-gaps-both-closed-overview.webp
 ---
 
 # Two Gaps, Both Closed

@@ -15,6 +15,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/totto-pcb-factory-2025.jpg
 ---
 
 # Six Pillars: What We Learned Building 200,000 Lines in 11 Days

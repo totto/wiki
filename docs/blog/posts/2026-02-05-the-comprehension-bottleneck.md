@@ -14,6 +14,7 @@ authors:
   - totto
   - claude
   - synthesis
+image: assets/images/blog/Synthesis-Infographic-01-Chaos-to-Intelligence-Infrastructure.webp
 ---
 
 # The Comprehension Bottleneck: Why AI Made Creating Easy But Understanding Harder

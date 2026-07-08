@@ -17,6 +17,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-mcp-composability-model.webp
 ---
 
 # The Date the AI Invented

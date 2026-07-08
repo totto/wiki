@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/six-months-01-title.webp
 ---
 
 # Six Months Down the Rabbit Hole

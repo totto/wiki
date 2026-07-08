@@ -17,6 +17,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/organized-truths-slide-01.webp
 ---
 
 # Organized Truths

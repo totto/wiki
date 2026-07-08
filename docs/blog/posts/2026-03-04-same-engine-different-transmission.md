@@ -14,6 +14,7 @@ tags:
   - ironclaw
 authors:
   - totto
+image: assets/images/blog/same-engine-different-transmission-overview.webp
 ---
 
 # Same Engine, Different Transmission

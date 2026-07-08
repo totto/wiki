@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/fear-driven-development-infographic.webp
 ---
 
 # I'm Scared of AI. That's Why It Works.

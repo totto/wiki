@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/sdd-vs-spec-driven-evolution.webp
 ---
 
 # Skill-Driven Development vs Spec-Driven Development

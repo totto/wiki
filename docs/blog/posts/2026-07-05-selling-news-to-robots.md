@@ -19,6 +19,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-025-00-selling-news-to-ai-guide.webp
 ---
 
 # Selling News to Robots

@@ -20,6 +20,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-ecosystem-slide-01-cover.webp
 ---
 
 # The KCP Ecosystem: How Five Tools Turn Claude Code Into a Persistent Intelligence Platform

@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/traditional-vs-ai-assisted-timeline-comparison.webp
 ---
 
 # The Cost of Iteration Collapsed. Now What?

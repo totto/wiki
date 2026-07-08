@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-policy-practice/slide-three-broken-patterns.webp
 ---
 
 # From Policy to Practice: How KCP Makes Regulations Machine-Readable for AI Agents

@@ -13,6 +13,7 @@ tags:
   - sdd
 authors:
   - totto
+image: assets/images/the-meeting-was-never-the-problem/slide-001.webp
 ---
 
 # We Cancelled a 45-Minute Architecture Review. A KCP Query Answered It in 1.2 Seconds.

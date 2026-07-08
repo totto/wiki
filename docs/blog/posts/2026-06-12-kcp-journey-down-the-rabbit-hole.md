@@ -19,6 +19,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-journey-00-evolution.webp
 ---
 
 # Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard

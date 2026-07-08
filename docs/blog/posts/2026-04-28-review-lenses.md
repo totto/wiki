@@ -14,6 +14,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/review-lenses/slide-01.webp
 ---
 
 # Expert Review Lenses — Running 9 Specialists Through One Model

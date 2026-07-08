@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/agentic-web-slide-01.webp
 ---
 
 # The Autonomous Agentic Web Needs a Foundation Layer

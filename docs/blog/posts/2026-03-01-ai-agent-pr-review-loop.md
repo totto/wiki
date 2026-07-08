@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/ai-agent-pr-review-loop/slide-01.webp
 ---
 
 # What Happens When an AI Submits a PR and Another AI Reviews It

@@ -18,6 +18,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-dashboard-v0.22.0-screenshot.webp
 ---
 
 # kcp-dashboard: Observability for the KCP Ecosystem

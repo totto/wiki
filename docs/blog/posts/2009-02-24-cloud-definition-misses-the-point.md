@@ -1,4 +1,5 @@
 ---
+description: "Three practical criteria for deciding whether something is really a cloud service: open access, zero capital expenditure, and pay-as-you-go pricing."
 date: 2009-02-24
 categories:
   - Cloud Computing

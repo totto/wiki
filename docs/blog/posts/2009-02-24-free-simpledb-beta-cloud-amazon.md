@@ -1,4 +1,5 @@
 ---
+description: "Amazon offers a free monthly SimpleDB allowance during the beta: 25 machine hours, 1GB transfer, and 1GB storage, with sharply cut storage pricing."
 date: 2009-02-24
 categories:
   - Cloud Computing

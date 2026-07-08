@@ -18,6 +18,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-laws-00-overview.webp
 ---
 
 # The Law Is Also Knowledge. Package It.

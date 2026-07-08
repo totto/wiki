@@ -12,6 +12,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/slide-03-naming-is-understanding.webp
 ---
 
 # Documentation That Writes Itself (No, Really)

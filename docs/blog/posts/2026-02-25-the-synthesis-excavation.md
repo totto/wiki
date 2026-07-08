@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/synthesis-excavation/slide-01.webp
 ---
 
 # The Synthesis Excavation: Recovering 3.5 Years of Lost History

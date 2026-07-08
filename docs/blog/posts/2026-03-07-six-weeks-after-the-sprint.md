@@ -12,6 +12,7 @@ tags:
   - productivity
 authors:
   - totto
+image: assets/images/blog/six-weeks-after-the-sprint/slide-02.webp
 ---
 
 # Six Weeks After the Sprint

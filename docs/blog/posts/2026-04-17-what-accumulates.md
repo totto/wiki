@@ -18,6 +18,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/what-accumulates/cc-02-i-dont-remember-yesterday.webp
 ---
 
 # What Accumulates

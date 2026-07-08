@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/synthesis-slide-02-archaeology.webp
 ---
 
 # Synthesis: My Becoming

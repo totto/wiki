@@ -23,6 +23,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/hiring-by-the-book-02-the-friday-question.webp
 ---
 
 # Hiring by the Book: A Defendable HR Agent on a Regulatory Knowledge Web

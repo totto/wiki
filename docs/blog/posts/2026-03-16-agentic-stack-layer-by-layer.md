@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/agentic-stack-slide-01.webp
 ---
 
 # The Agentic Stack: Every Layer Was Built for Humans

@@ -18,6 +18,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-manifest-quality-feedback-loop.webp
 ---
 
 # The Manifest Quality Feedback Loop

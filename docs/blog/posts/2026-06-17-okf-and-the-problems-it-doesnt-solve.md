@@ -17,6 +17,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/okf-kcp/okf-kcp-slide-04.webp
 ---
 
 # Google's Open Knowledge Format and the problems it deliberately doesn't solve

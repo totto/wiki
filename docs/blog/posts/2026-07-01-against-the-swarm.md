@@ -12,6 +12,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/against-the-swarm/v2-title.png
 ---
 
 # Against the Swarm

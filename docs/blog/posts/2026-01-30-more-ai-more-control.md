@@ -13,6 +13,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/software-entropy-defying-graph.webp
 ---
 
 # The More AI, The More Control

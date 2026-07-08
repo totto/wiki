@@ -21,6 +21,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-agent-030-00-borrowed-leash-overview.webp
 ---
 
 # The Borrowed Leash: Determinism as a Service for the Agentic Web

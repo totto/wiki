@@ -1,4 +1,5 @@
 ---
+description: "Four practical considerations for building web applications on the Amazon cloud: licensing, persistence, scalability, and disaster recovery."
 date: 2009-02-24
 categories:
   - Cloud Computing

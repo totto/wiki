@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/kcp-hello-world-vs-enterprise-scale.webp
 ---
 
 # Beyond llms.txt: AI Agents Need Maps, Not Tables of Contents

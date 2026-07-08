@@ -15,6 +15,7 @@ tags:
   - sdd
 authors:
   - totto
+image: assets/images/agent-memory-rots/slide-01.webp
 ---
 
 # Agent Memory Rots. Here's How We Stopped It.

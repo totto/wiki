@@ -14,6 +14,7 @@ tags:
   - java21
 authors:
   - totto
+image: assets/images/blog/notion-workspace-source/slide-01.webp
 ---
 
 # When your agent can finally read the room

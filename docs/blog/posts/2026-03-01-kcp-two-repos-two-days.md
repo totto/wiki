@@ -15,6 +15,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-two-repos-benchmark.webp
 ---
 
 # KCP on Two Repos, Two Days: What the Numbers Actually Show

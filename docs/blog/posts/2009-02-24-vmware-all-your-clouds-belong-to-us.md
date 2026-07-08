@@ -1,4 +1,5 @@
 ---
+description: "VMware's vSphere architecture aims to manage the data centre as an internal or external cloud, with vCompute and vStorage interfaces for provisioning."
 date: 2009-02-24
 categories:
   - Cloud Computing

@@ -15,6 +15,7 @@ tags:
   - graphrag
 authors:
   - totto
+image: assets/images/blog/four-layer-retrieval-framework.webp
 ---
 
 # Your AI Has One Layer. It Needs Four.

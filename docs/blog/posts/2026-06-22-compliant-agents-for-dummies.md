@@ -16,6 +16,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/blog/compliant-agents/infographic.webp
 ---
 
 # Your AI Agent Does Not Know the Law (and How to Fix That)

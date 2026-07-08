@@ -20,6 +20,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/kcp-agent-020-00-end-of-vibes-overview.webp
 ---
 
 # The Vibes-Based Agent Era Deserves to End

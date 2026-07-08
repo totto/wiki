@@ -20,6 +20,7 @@ tags:
 authors:
   - totto
   - claude
+image: assets/images/summer-plan-02-canonical-demo-vs-high-stakes.webp
 ---
 
 # The Summer Plan: A Family Vacation the Agent Can Defend
