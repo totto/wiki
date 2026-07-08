@@ -59,7 +59,7 @@ The manifest is the first file an auditor opens. It names every artefact, pins t
   "signature": {
     "alg": "ed25519",
     "keyId": "lodestar-release-2026",
-    "value": "base64:MEUCIQ…"
+    "value": "base64:kR8vN2p1…"
   }
 }
 ```
