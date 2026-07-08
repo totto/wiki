@@ -52,7 +52,7 @@ This page enumerates the anti-patterns I keep seeing, using the [Lodestar](/topi
 
 **The anti-pattern.** The audit log is a database row that can be updated, or a file the process rewrites. "We'll fix bad entries later." Once a record can be edited, none of the records can be trusted, because you can no longer prove any of them are original.
 
-**The fix.** Append-only JSONL, one event per line, fsync on flush, monotonic sequence numbers per session. Never an update, never a delete. Corrections are *new* events (a `reanalysis_triggered` or `score_delta`) that reference the original. This is what satisfies ISO 27001 A.12.4 in the [control mapping](/topics/defendable-agents/compliance/control-mapping/) — and it is a directory-and-file discipline, not a policy note.
+**The fix.** Append-only JSONL, one event per line, fsync on flush, monotonic sequence numbers per session. Never an update, never a delete. Corrections are *new* events (a `reanalysis_triggered` or `score_delta`) that reference the original. This is what satisfies ISO 27001 A.8.15 in the [control mapping](/topics/defendable-agents/compliance/control-mapping/) — and it is a directory-and-file discipline, not a policy note.
 
 ## 4. Classifier guardrails as the safety story
 

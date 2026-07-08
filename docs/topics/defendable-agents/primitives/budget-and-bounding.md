@@ -122,7 +122,7 @@ An operator reading the log sees exactly where the session hit its wall and what
 
 ## It could only ever have done this much
 
-The payoff is a single defensible sentence. Because operations are priced from a fixed table, tracked in an append-only ledger, and gated by a check-before-record ceiling, the maximum work any session performed is `ceiling ÷ cheapest_operation` operations — hard-capped, with the actual figure sitting in `runningTotal`. Combined with [temporal pinning](/topics/defendable-agents/primitives/temporal-pinning/) and full decision traces, you can reconstruct not just *what* an agent decided but *how much* it was ever able to do. That maps directly onto the budget-enforcement control (SOC 2 CC6.1) in the [control mapping](/topics/defendable-agents/compliance/control-mapping/).
+The payoff is a single defensible sentence. Because operations are priced from a fixed table, tracked in an append-only ledger, and gated by a check-before-record ceiling, the maximum work any session performed is `ceiling ÷ cheapest_operation` operations — hard-capped, with the actual figure sitting in `runningTotal`. Combined with [temporal pinning](/topics/defendable-agents/primitives/temporal-pinning/) and full decision traces, you can reconstruct not just *what* an agent decided but *how much* it was ever able to do. That maps directly onto the budget-enforcement control (SOC 2 A1.1) in the [control mapping](/topics/defendable-agents/compliance/control-mapping/).
 
 ## Honest limits
 

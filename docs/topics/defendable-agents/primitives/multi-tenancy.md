@@ -70,7 +70,7 @@ This is the difference between a boundary and a note. A `WHERE tenant_id = ?` cl
 
 ## Control mapping
 
-This satisfies **ISO 27001 A.9.4** (access control to information and systems): tenant confidential state is segregated by construction, and the segregation is auditable — you can list the directories and see that tenant B's session never opened tenant A's root. It is recorded, not asserted. See the full [control mapping](/topics/defendable-agents/compliance/control-mapping/) for how this sits alongside audit logging and access gating.
+This satisfies **ISO 27001 A.8.3** (Information access restriction): tenant confidential state is segregated by construction, and the segregation is auditable — you can list the directories and see that tenant B's session never opened tenant A's root. It is recorded, not asserted. See the full [control mapping](/topics/defendable-agents/compliance/control-mapping/) for how this sits alongside audit logging and access gating.
 
 ## Cross-tenant leakage risks — and where they actually live
 

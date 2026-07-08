@@ -178,12 +178,12 @@ last time that test passed. I generate one from the suite:
 
 | Control | Mechanism | Test id | Status |
 |---|---|---|---|
-| Audit logging (ISO 27001 A.12.4) | Append-only JSONL | `audit.completeness` | pass |
-| Decision trace (SOC 2 CC7.2) | Full variable trace | `audit.fidelity` | pass |
-| Reproducibility (ISO 27001 A.14.2) | Deterministic engine | `scoring.golden` | pass |
-| Data provenance (ISO 27001 A.8.1) | Temporal pinning | `drift.recommend` | pass |
-| Budget enforcement (SOC 2 CC6.1) | Cost ceiling | `budget.failclosed` | pass |
-| Tenant isolation (ISO 27001 A.9.4) | Per-tenant state | `tenant.boundary` | pass |
+| Audit logging (ISO 27001 A.8.15) | Append-only JSONL | `audit.completeness` | pass |
+| Decision trace (SOC 2 PI1.5) | Full variable trace | `audit.fidelity` | pass |
+| Reproducibility (ISO 27001 A.8.32) | Deterministic engine | `scoring.golden` | pass |
+| Data provenance (ISO 27001 A.5.12) | Temporal pinning | `drift.recommend` | pass |
+| Budget enforcement (SOC 2 A1.1) | Cost ceiling | `budget.failclosed` | pass |
+| Tenant isolation (ISO 27001 A.8.3) | Per-tenant state | `tenant.boundary` | pass |
 
 This matrix is the seam between engineering and
 [evidence packages](/topics/defendable-agents/compliance/evidence-packages/) —

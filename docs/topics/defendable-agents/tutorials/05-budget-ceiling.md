@@ -148,7 +148,7 @@ jq 'select(.type=="budget_exceeded")
     | {seq:.sequence, tried:.decision.action, held_at:.budget.runningTotal}' audit.jsonl
 ```
 
-Because the ledger is monotonic and the audit log is append-only with `fsync` on flush, these two checks are sufficient evidence for a control reviewer. That evidence is what flows into an [evidence package](/topics/defendable-agents/compliance/evidence-packages/); budget enforcement maps to SOC 2 CC6.1 in the [control mapping](/topics/defendable-agents/compliance/control-mapping/).
+Because the ledger is monotonic and the audit log is append-only with `fsync` on flush, these two checks are sufficient evidence for a control reviewer. That evidence is what flows into an [evidence package](/topics/defendable-agents/compliance/evidence-packages/); budget enforcement maps to SOC 2 A1.1 in the [control mapping](/topics/defendable-agents/compliance/control-mapping/).
 
 ## Honest limits
 

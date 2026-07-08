@@ -100,12 +100,12 @@ Each control is satisfied by a mechanism *and* a record, never by a claim:
 
 | Control | Mechanism | Record |
 |---|---|---|
-| Audit logging (ISO 27001 A.12.4) | append-only JSONL | the log |
-| Decision trace (SOC 2 CC7.2) | full variable inputs/outputs | scoring block |
-| Data provenance (ISO 27001 A.8.1) | temporal pinning | pins |
-| Reproducibility (ISO 27001 A.14.2) | deterministic engine | re-run |
+| Audit logging (ISO 27001 A.8.15) | append-only JSONL | the log |
+| Decision trace (SOC 2 PI1.5) | full variable inputs/outputs | scoring block |
+| Data provenance (ISO 27001 A.5.12) | temporal pinning | pins |
+| Reproducibility (ISO 27001 A.8.32) | deterministic engine | re-run |
 | Access boundaries (SOC 2 CC6.1) | fail-closed gating | denied events |
-| Tenant isolation (ISO 27001 A.9.4) | per-tenant state | directories |
+| Tenant isolation (ISO 27001 A.8.3) | per-tenant state | directories |
 
 The full table lives in [control-mapping](/topics/defendable-agents/compliance/control-mapping/).
 

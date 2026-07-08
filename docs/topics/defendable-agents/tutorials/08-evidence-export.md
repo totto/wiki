@@ -120,13 +120,13 @@ cat > "$OUT/manifest.json" <<JSON
   "generatedAt": "$(date -u +%FT%TZ)",
   "generatedBy": "audit-export@example.org",
   "contents": {
-    "decision.jsonl": "Decision trace (SOC 2 CC7.2)",
-    "budget.jsonl":   "Budget enforcement record (SOC 2 CC6.1)",
-    "session.jsonl":  "Processing record (GDPR Art. 30)",
-    "model.yaml":     "Model version, declared KCP unit (ISO 27001 A.14.2)",
-    "model.sha256":   "Reproducibility hash (ISO 27001 A.14.2)"
+    "decision.jsonl": "Decision trace (SOC 2 PI1.5)",
+    "budget.jsonl":   "Budget enforcement record (SOC 2 A1.1)",
+    "session.jsonl":  "Processing record (GDPR Art. 5(2))",
+    "model.yaml":     "Model version, declared KCP unit (ISO 27001 A.8.32)",
+    "model.sha256":   "Reproducibility hash (ISO 27001 A.8.32)"
   },
-  "provenance": "temporal pin embedded in decision.jsonl (ISO 27001 A.8.1)"
+  "provenance": "temporal pin embedded in decision.jsonl (ISO 27001 A.5.12)"
 }
 JSON
 
@@ -140,10 +140,10 @@ The final `sha256sum` gives the package its own tamper-evident fingerprint. Reco
 
 The auditor rarely reads JSON for pleasure. They want a crosswalk from artefact to control, and the manifest above is that crosswalk. In prose:
 
-- **Decision trace** (`scoring.variables`, `layerScores`, `total`, `band`) satisfies the decision-trace control — full inputs and outputs, SOC 2 CC7.2.
-- **Temporal pin** (`temporal`) satisfies data provenance — you can show exactly how old the underlying signals were, ISO 27001 A.8.1.
-- **Budget ledger** (`budget_spend`) satisfies budget enforcement — the operation cost against a hard ceiling, SOC 2 CC6.1.
-- **Model hash** (`modelHash` + `model.sha256`) satisfies reproducibility — the deterministic planner plus the exact model bytes, ISO 27001 A.14.2.
+- **Decision trace** (`scoring.variables`, `layerScores`, `total`, `band`) satisfies the decision-trace control — full inputs and outputs, SOC 2 PI1.5.
+- **Temporal pin** (`temporal`) satisfies data provenance — you can show exactly how old the underlying signals were, ISO 27001 A.5.12.
+- **Budget ledger** (`budget_spend`) satisfies budget enforcement — the operation cost against a hard ceiling, SOC 2 A1.1.
+- **Model hash** (`modelHash` + `model.sha256`) satisfies reproducibility — the deterministic planner plus the exact model bytes, ISO 27001 A.8.32.
 
 For the fuller narrative an assessor reads alongside the package, point them at [verifying defendability](/topics/defendable-agents/compliance/verifying-defendability/).
 

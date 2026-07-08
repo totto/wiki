@@ -105,7 +105,7 @@ signing:
 ```
 
 Set retention to match the obligation you are defending — the compliance mapping
-ties the log to ISO 27001 A.12.4 and the per-session records to GDPR Art. 30, and
+ties the log to ISO 27001 A.8.15 and the per-session records to GDPR Art. 5(2), and
 those regimes carry their own minimums. The
 [evidence packages](/topics/defendable-agents/compliance/evidence-packages/)
 page shows what you export from these segments when someone asks you to prove a

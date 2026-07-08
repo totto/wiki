@@ -115,7 +115,7 @@ The second test is the one that matters. `persistPlan` resolves the requested pa
 
 ## Why the boundary is a directory, not a filter
 
-You could imagine tagging every score with a `tenantId` and filtering reads by it. That works right up until a query forgets the filter, and then you have a silent cross-tenant leak with no trace. A directory boundary fails loudly instead: a mis-rooted path either does not exist or is refused. The tenant isolation control in the [compliance mapping](/topics/defendable-agents/compliance/control-mapping/) (ISO 27001 A.9.4) is satisfied by per-tenant state, not by a `WHERE` clause you have to remember to write.
+You could imagine tagging every score with a `tenantId` and filtering reads by it. That works right up until a query forgets the filter, and then you have a silent cross-tenant leak with no trace. A directory boundary fails loudly instead: a mis-rooted path either does not exist or is refused. The tenant isolation control in the [compliance mapping](/topics/defendable-agents/compliance/control-mapping/) (ISO 27001 A.8.3) is satisfied by per-tenant state, not by a `WHERE` clause you have to remember to write.
 
 ## Honest limits
 

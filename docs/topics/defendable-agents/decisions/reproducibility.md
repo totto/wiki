@@ -92,7 +92,7 @@ npm run score:goldens -- --update
 git diff --stat test/goldens/   # this diff is the changelog for the model
 ```
 
-Golden-master tests are the mechanism behind the ISO 27001 A.14.2 reproducibility control in the [compliance mapping](/topics/defendable-agents/compliance/control-mapping/): the deterministic engine plus a committed golden set *is* the evidence that scoring is reproducible. Use the same fixtures in an in-memory audit log to prove the emitted trace matches the computed trace end to end — the pattern is walked through in [reproduce a decision](/topics/defendable-agents/examples/reproduce-a-decision/).
+Golden-master tests are the mechanism behind the reproducibility row of the [compliance mapping](/topics/defendable-agents/compliance/control-mapping/) — the ISO 27001 A.8.32 change-management control: the deterministic engine plus a committed golden set *is* the evidence that a scoring change is controlled and that scoring stays reproducible across versions. Use the same fixtures in an in-memory audit log to prove the emitted trace matches the computed trace end to end — the pattern is walked through in [reproduce a decision](/topics/defendable-agents/examples/reproduce-a-decision/).
 
 ## What you actually get
 

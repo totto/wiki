@@ -18,15 +18,17 @@ Read the table below with one question in mind for each row: *if I deleted the p
 
 | Control | Mechanism (what enforces it) | Record (what you pull) | Clause |
 |---|---|---|---|
-| Audit logging | Append-only JSONL log, one event per line, `fsync` on flush | The session audit file, every event with sequence + timestamp | ISO 27001 A.12.4 |
-| Decision trace | Full variable inputs and outputs captured per score | The `scoring.variables[]` and `decision` block on each event | SOC 2 CC7.2 |
-| Data provenance | Temporal pinning on every score | The `temporal` pin: `dataAsOf`, `scoredAt`, `signalDates[]` | ISO 27001 A.8.1 |
-| Reproducibility | Deterministic planner (pure functions) | Re-run of the pinned model + inputs, byte-identical result | ISO 27001 A.14.2 |
+| Audit logging | Append-only JSONL log, one event per line, `fsync` on flush | The session audit file, every event with sequence + timestamp | ISO 27001 A.8.15 |
+| Decision trace | Full variable inputs and outputs captured per score | The `scoring.variables[]` and `decision` block on each event | SOC 2 PI1.5 |
+| Data provenance | Temporal pinning on every score | The `temporal` pin: `dataAsOf`, `scoredAt`, `signalDates[]` | ISO 27001 A.5.12 |
+| Reproducibility | Deterministic planner (pure functions) | Re-run of the pinned model + inputs, byte-identical result | ISO 27001 A.8.32 |
 | Access boundaries | Fail-closed policy on every governed operation | `session_start` config + any denied/`budget_exceeded` events | SOC 2 CC6.1 |
-| Processing records | Per-session governed logs | The session log as an Article 30 processing record | GDPR Art. 30 |
+| Processing records | Per-session governed logs | The session log as an accountability record under Article 5(2) | GDPR Art. 5(2) |
 | Data minimisation | Public-data-only inputs + declared audience | The KCP manifest audience + input provenance | GDPR Art. 5(1)(c) |
-| Tenant isolation | Per-tenant state directories | The directory boundary + per-tenant log paths | ISO 27001 A.9.4 |
-| Budget enforcement | Operation cost ceiling checked before recording | The [budget ledger](/topics/defendable-agents/primitives/budget-and-bounding/) entries + `budget_spend` events | SOC 2 CC6.1 |
+| Tenant isolation | Per-tenant state directories | The directory boundary + per-tenant log paths | ISO 27001 A.8.3 |
+| Budget enforcement | Operation cost ceiling checked before recording | The [budget ledger](/topics/defendable-agents/primitives/budget-and-bounding/) entries + `budget_spend` events | SOC 2 A1.1 |
+
+Clause numbers follow **ISO 27001:2022** Annex A, the **SOC 2 (2017) Trust Services Criteria** (Security common criteria plus the Availability category for capacity), and the **GDPR**. Where a control sits outside the SOC 2 Security common criteria — budget/capacity under Availability `A1.1`, decision-record completeness under Processing Integrity `PI1.5` — the assessor has to have that category in scope for the citation to bind.
 
 Each row is a full page elsewhere in this guide. The [audit trail](/topics/defendable-agents/primitives/audit-trail/), the [decision traces](/topics/defendable-agents/primitives/decision-traces/), and [temporal pinning](/topics/defendable-agents/primitives/temporal-pinning/) are the three primitives an auditor will spend most of their time in.
 
@@ -66,7 +68,7 @@ The record is the part people underestimate. A control is only defendable if the
 }
 ```
 
-One line satisfies four rows of the table. The `scoring.variables[]` block is the SOC 2 CC7.2 decision trace. The `temporal` block is the ISO 27001 A.8.1 provenance record. The `model` field pinned to `buyer-scoring@2.3.0` is what makes the ISO 27001 A.14.2 reproducibility re-run possible — feed the same model version and the same variable scores back through the [deterministic planner](/topics/defendable-agents/decisions/anatomy-of-a-score/) and you get `73 / "High"` again, every time. The `budget` block is the SOC 2 CC6.1 ceiling record. When an auditor asks "show me how this buyer was prioritised", you hand them this line and the [reproduce-a-decision walkthrough](/topics/defendable-agents/examples/reproduce-a-decision/).
+One line satisfies four rows of the table. The `scoring.variables[]` block is the SOC 2 PI1.5 decision trace. The `temporal` block is the ISO 27001 A.5.12 provenance record. The `model` field pinned to `buyer-scoring@2.3.0` is what makes the ISO 27001 A.8.32 reproducibility re-run possible — feed the same model version and the same variable scores back through the [deterministic planner](/topics/defendable-agents/decisions/anatomy-of-a-score/) and you get `73 / "High"` again, every time. The `budget` block is the SOC 2 A1.1 ceiling record. When an auditor asks "show me how this buyer was prioritised", you hand them this line and the [reproduce-a-decision walkthrough](/topics/defendable-agents/examples/reproduce-a-decision/).
 
 ## Adapt the clause numbers
 

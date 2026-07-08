@@ -111,10 +111,10 @@ The reproduced score equals the recorded score to the decimal. The band comes st
 
 An auditor is not asking "is 73.33 the *right* number?" They are asking "can you show that this decision was made the way you say it was, and would it come out the same if we checked?" Reproducibility answers exactly that:
 
-- **The inputs are the record.** The 18 variables that produced the score are in the log, not inferred afterwards. That is the decision-trace control (SOC 2 CC7.2).
+- **The inputs are the record.** The 18 variables that produced the score are in the log, not inferred afterwards. That is the decision-trace control (SOC 2 PI1.5).
 - **The model is pinned.** `buyer-score@2.3.0` is resolved by version, so a later model change cannot rewrite April's decision. Version and hash both live in the temporal pin.
-- **The data window is fixed.** `dataAsOf` and `signalDates` show precisely which signals were in scope, which is the data-provenance control (ISO 27001 A.8.1).
-- **The re-run is mechanical.** Anyone with the log and the model can repeat it and get 73.33. That is the reproducibility control (ISO 27001 A.14.2), and it is what turns a claim into evidence you can package (see [Evidence Packages](/topics/defendable-agents/compliance/evidence-packages/)).
+- **The data window is fixed.** `dataAsOf` and `signalDates` show precisely which signals were in scope, which is the data-provenance control (ISO 27001 A.5.12).
+- **The re-run is mechanical.** Anyone with the log and the model can repeat it and get 73.33. That is the reproducibility evidence behind the ISO 27001 A.8.32 change-management control, and it is what turns a claim into evidence you can package (see [Evidence Packages](/topics/defendable-agents/compliance/evidence-packages/)).
 
 ## Honest limits
 

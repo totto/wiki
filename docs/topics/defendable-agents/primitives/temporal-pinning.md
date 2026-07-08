@@ -80,7 +80,7 @@ The pin is also the input to drift detection. A drift check compares a pin again
 
 The recommendation logic is deliberately blunt: two or more drift reasons means *reanalyze*; model drift alone means *reanalyze*; a single non-model reason means *monitor*; otherwise *ok*. That mechanism is covered in full on [drift detection](/topics/defendable-agents/primitives/drift-detection/). Pinning is the half that makes drift *detectable*; without a pin there is no baseline to compare against.
 
-Pins also underwrite [reproducibility](/topics/defendable-agents/decisions/reproducibility/) as a compliance control: data provenance maps to temporal pinning (ISO 27001 A.12.4, Logging and monitoring), and it is the pin — `dataAsOf` plus `signalDates` plus `modelHash` — that lets you re-run a decision and get the same number, or explain precisely why you cannot.
+Pins also underwrite [reproducibility](/topics/defendable-agents/decisions/reproducibility/) as a compliance control: data provenance maps to temporal pinning (ISO 27001 A.5.12, Classification of information), and it is the pin — `dataAsOf` plus `signalDates` plus `modelHash` — that lets you re-run a decision and get the same number, or explain precisely why you cannot.
 
 ## Honest limits
 

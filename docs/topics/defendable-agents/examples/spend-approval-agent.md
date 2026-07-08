@@ -116,7 +116,7 @@ jq 'select(.type=="budget_spend" or .type=="budget_exceeded")
   ./state/audit/session.jsonl
 ```
 
-Every approved operation is a `budget_spend` line with its running total; every refusal is a `budget_exceeded` line with the arithmetic that justified it. Because the log is append-only JSONL with one event per line, you cannot rewrite history to make a blocked spend look approved, or vice versa. That property is what makes it evidence rather than telemetry — see [audit-trail](/topics/defendable-agents/primitives/audit-trail/) and [decision-traces](/topics/defendable-agents/primitives/decision-traces/). For the compliance framing, budget enforcement maps to an operation-cost ceiling under SOC 2 CC6.1 in the [control mapping](/topics/defendable-agents/compliance/control-mapping/).
+Every approved operation is a `budget_spend` line with its running total; every refusal is a `budget_exceeded` line with the arithmetic that justified it. Because the log is append-only JSONL with one event per line, you cannot rewrite history to make a blocked spend look approved, or vice versa. That property is what makes it evidence rather than telemetry — see [audit-trail](/topics/defendable-agents/primitives/audit-trail/) and [decision-traces](/topics/defendable-agents/primitives/decision-traces/). For the compliance framing, budget enforcement maps to an operation-cost ceiling under SOC 2 A1.1 in the [control mapping](/topics/defendable-agents/compliance/control-mapping/).
 
 ## Honest limits
 

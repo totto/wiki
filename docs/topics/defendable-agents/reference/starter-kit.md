@@ -134,15 +134,15 @@ Each control is satisfied by a *mechanism* and evidenced by a *record*. That pai
 
 | Control | Mechanism | Record | Framework |
 |---|---|---|---|
-| Audit logging | Append-only JSONL | `session.jsonl` | ISO 27001 A.12.4 |
-| Decision trace | Full variable inputs/outputs | `scoring` block | SOC 2 CC7.2 |
-| Data provenance | Temporal pinning | `temporal` block | ISO 27001 A.8.1 |
-| Reproducibility | Deterministic planner | Re-run == same total | ISO 27001 A.14.2 |
+| Audit logging | Append-only JSONL | `session.jsonl` | ISO 27001 A.8.15 |
+| Decision trace | Full variable inputs/outputs | `scoring` block | SOC 2 PI1.5 |
+| Data provenance | Temporal pinning | `temporal` block | ISO 27001 A.5.12 |
+| Reproducibility | Deterministic planner | Re-run == same total | ISO 27001 A.8.32 |
 | Access boundaries | Fail-closed gating | Refused-session events | SOC 2 CC6.1 |
-| Processing records | Per-session governed logs | Session summary | GDPR Art. 30 |
+| Processing records | Per-session governed logs | Session summary | GDPR Art. 5(2) |
 | Data minimisation | Public-data-only + declared audience | Manifest `metadata` | GDPR Art. 5(1)(c) |
-| Tenant isolation | Per-tenant state directory | Path boundary | ISO 27001 A.9.4 |
-| Budget enforcement | Operation cost ceiling | `budget` block | SOC 2 CC6.1 |
+| Tenant isolation | Per-tenant state directory | Path boundary | ISO 27001 A.8.3 |
+| Budget enforcement | Operation cost ceiling | `budget` block | SOC 2 A1.1 |
 
 ## Honest limits
 

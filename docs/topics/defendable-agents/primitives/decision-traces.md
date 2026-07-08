@@ -100,4 +100,4 @@ A decision trace defends *process*, not *correctness*. If a variable is wrong â€
 
 The other limit is discipline. A `justification` that says "scored by model" is worse than useless; it looks like accountability while providing none. The trace is only as defendable as the honesty of the sentence a human writes into it. That is maintenance work, not a one-time setup â€” see [what defendable means](/topics/defendable-agents/argument/what-defendable-means/).
 
-Decision traces are the mechanism behind the SOC 2 CC7.2 control in our [control mapping](/topics/defendable-agents/compliance/control-mapping/): full variable inputs and outputs, on every operation, on the record. When you want to walk one end-to-end, work through [reproduce a decision](/topics/defendable-agents/examples/reproduce-a-decision/).
+Decision traces are the mechanism behind the SOC 2 PI1.5 control in our [control mapping](/topics/defendable-agents/compliance/control-mapping/): full variable inputs and outputs, on every operation, on the record. When you want to walk one end-to-end, work through [reproduce a decision](/topics/defendable-agents/examples/reproduce-a-decision/).
