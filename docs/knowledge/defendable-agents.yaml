@@ -1,0 +1,70 @@
+# wiki.totto.org — Defendable Agents sub-manifest
+# Parent: https://wiki.totto.org/knowledge.yaml
+version: "0.14"
+
+id: defendable-agents
+parent: https://wiki.totto.org/knowledge.yaml
+
+discovery:
+  provenance: canonical
+  confidence: high
+  staleness_days: 90
+
+signing:
+  scheme: ed25519
+  scope: this-manifest
+  public_key: https://wiki.totto.org/.well-known/kcp-signing-key.pub
+  signature: https://wiki.totto.org/knowledge/defendable-agents.yaml.sig
+
+topic:
+  name: Defendable Agents
+  url: https://wiki.totto.org/topics/defendable-agents/
+  summary: >
+    Reference material on defendable agents — AI agents whose every decision is
+    declared in advance, reproducible, and evidenced. Determinism at the core,
+    the model at the edge; governance patterns; and an anonymized case study.
+
+units:
+  - id: defendable-agents-overview
+    path: topics/defendable-agents/index.md
+    intent: "What is a defendable agent and why does deterministic architecture make agents auditable?"
+    scope: global
+    audience: [human, agent, architect, ciso]
+    validated: 2026-07-08
+    triggers: [defendable-agents, auditable-agents, compliant-agents, ai-governance, deterministic-agents, agent-accountability]
+
+  - id: defendable-agents-reference-architecture
+    path: topics/defendable-agents/reference-architecture.md
+    intent: "How is a defendable agent built — deterministic planner at the core, governance harness, model at the edge?"
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+    depends_on: [defendable-agents-overview]
+    triggers: [kcp-agent, kcp-harness, deterministic-planner, model-at-the-edge, prompt-injection, reference-architecture]
+
+  - id: defendable-agents-governance-patterns
+    path: topics/defendable-agents/governance-patterns.md
+    intent: "What are the governance primitives (fail-closed, audit-all, budget, temporal pinning) and how do they map to SOC 2 / ISO 27001 / GDPR?"
+    scope: global
+    audience: [human, agent, ciso, compliance]
+    validated: 2026-07-08
+    depends_on: [defendable-agents-overview]
+    triggers: [governance, fail-closed, audit-log, budget-ceiling, temporal-pinning, soc2, iso27001, gdpr, compliance-controls]
+
+  - id: defendable-agents-case-study-lodestar
+    path: topics/defendable-agents/case-study-lodestar.md
+    intent: "What does a governed, defendable scoring system look like in a real regulated professional-services domain? (anonymized)"
+    scope: global
+    audience: [human, agent, architect, ciso]
+    validated: 2026-07-08
+    depends_on: [defendable-agents-reference-architecture, defendable-agents-governance-patterns]
+    triggers: [case-study, lodestar, scoring, competitive-intelligence, deterministic-scoring, audit-trail, multi-tenant]
+
+  - id: defendable-agents-starter-kit
+    path: topics/defendable-agents/starter-kit.md
+    intent: "What copyable artifacts (harness.yaml, audit-log schema, controls table) do I need to build a defendable agent?"
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-08
+    depends_on: [defendable-agents-reference-architecture]
+    triggers: [starter-kit, harness-yaml, audit-schema, controls-mapping, template, how-to]

@@ -169,6 +169,12 @@ nav:
     - "Knowledge Context Protocol": topics/knowledge-context-protocol.md
     - "Synthesis": topics/synthesis.md
     - "Skill-Driven Development": topics/skill-driven-development.md
+    - "Defendable Agents":
+      - topics/defendable-agents/index.md
+      - "Reference Architecture": topics/defendable-agents/reference-architecture.md
+      - "Governance Patterns": topics/defendable-agents/governance-patterns.md
+      - "Case Study: Lodestar": topics/defendable-agents/case-study-lodestar.md
+      - "Starter Kit": topics/defendable-agents/starter-kit.md
     - "Synthesis Releases": notes/synthesis-releases.md
     - "LinkedIn Posts": notes/linkedin-posts.md
     - "LinkedIn Archive": linkedin/index.md
