@@ -6393,13 +6393,13 @@
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="s">  &quot;generatedAt&quot;: &quot;$(date -u +%FT%TZ)&quot;,</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="s">  &quot;generatedBy&quot;: &quot;audit-export@example.org&quot;,</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="s">  &quot;contents&quot;: {</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s">    &quot;decision.jsonl&quot;: &quot;Decision trace (SOC 2 CC7.2)&quot;,</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="s">    &quot;budget.jsonl&quot;:   &quot;Budget enforcement record (SOC 2 CC6.1)&quot;,</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s">    &quot;session.jsonl&quot;:  &quot;Processing record (GDPR Art. 30)&quot;,</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="s">    &quot;model.yaml&quot;:     &quot;Model version, declared KCP unit (ISO 27001 A.14.2)&quot;,</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="s">    &quot;model.sha256&quot;:   &quot;Reproducibility hash (ISO 27001 A.14.2)&quot;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s">    &quot;decision.jsonl&quot;: &quot;Decision trace (SOC 2 PI1.5)&quot;,</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="s">    &quot;budget.jsonl&quot;:   &quot;Budget enforcement record (SOC 2 A1.1)&quot;,</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s">    &quot;session.jsonl&quot;:  &quot;Processing record (GDPR Art. 5(2))&quot;,</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="s">    &quot;model.yaml&quot;:     &quot;Model version, declared KCP unit (ISO 27001 A.8.32)&quot;,</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="s">    &quot;model.sha256&quot;:   &quot;Reproducibility hash (ISO 27001 A.8.32)&quot;</span>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="s">  },</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="s">  &quot;provenance&quot;: &quot;temporal pin embedded in decision.jsonl (ISO 27001 A.8.1)&quot;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="s">  &quot;provenance&quot;: &quot;temporal pin embedded in decision.jsonl (ISO 27001 A.5.12)&quot;</span>
 </span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="s">}</span>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="s">JSON</span>
 </span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
@@ -6410,10 +6410,10 @@
 <h2 id="step-4-map-fields-to-controls">Step 4 — map fields to controls<a class="headerlink" href="#step-4-map-fields-to-controls" title="Permanent link">&para;</a></h2>
 <p>The auditor rarely reads JSON for pleasure. They want a crosswalk from artefact to control, and the manifest above is that crosswalk. In prose:</p>
 <ul>
-<li><strong>Decision trace</strong> (<code>scoring.variables</code>, <code>layerScores</code>, <code>total</code>, <code>band</code>) satisfies the decision-trace control — full inputs and outputs, SOC 2 CC7.2.</li>
-<li><strong>Temporal pin</strong> (<code>temporal</code>) satisfies data provenance — you can show exactly how old the underlying signals were, ISO 27001 A.8.1.</li>
-<li><strong>Budget ledger</strong> (<code>budget_spend</code>) satisfies budget enforcement — the operation cost against a hard ceiling, SOC 2 CC6.1.</li>
-<li><strong>Model hash</strong> (<code>modelHash</code> + <code>model.sha256</code>) satisfies reproducibility — the deterministic planner plus the exact model bytes, ISO 27001 A.14.2.</li>
+<li><strong>Decision trace</strong> (<code>scoring.variables</code>, <code>layerScores</code>, <code>total</code>, <code>band</code>) satisfies the decision-trace control — full inputs and outputs, SOC 2 PI1.5.</li>
+<li><strong>Temporal pin</strong> (<code>temporal</code>) satisfies data provenance — you can show exactly how old the underlying signals were, ISO 27001 A.5.12.</li>
+<li><strong>Budget ledger</strong> (<code>budget_spend</code>) satisfies budget enforcement — the operation cost against a hard ceiling, SOC 2 A1.1.</li>
+<li><strong>Model hash</strong> (<code>modelHash</code> + <code>model.sha256</code>) satisfies reproducibility — the deterministic planner plus the exact model bytes, ISO 27001 A.8.32.</li>
 </ul>
 <p>For the fuller narrative an assessor reads alongside the package, point them at <a href="/topics/defendable-agents/compliance/verifying-defendability/">verifying defendability</a>.</p>
 <h2 id="honest-limits">Honest limits<a class="headerlink" href="#honest-limits" title="Permanent link">&para;</a></h2>
@@ -6440,7 +6440,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:59:14 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 12:49:04 UTC">July 8, 2026</span>
   </span>
 
     

@@ -6390,7 +6390,7 @@
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nx">buyer</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">&quot;Lower priority&quot;</span><span class="w"> </span><span class="o">:</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                </span><span class="s2">&quot;Not prioritized now&quot;</span><span class="p">;</span>
 </span></code></pre></div>
-<p>Eighteen variables across three layers for buyers; twenty-one across four layers for the match score. <code>signal-freshness</code> is itself a pinned function of time — a linear decay with a roughly 30-day half-life, so a three-day-old signal scores 5 and a ninety-day-old one scores 1.5. Same inputs, same outputs, every time. The <a href="/topics/defendable-agents/decisions/anatomy-of-a-score/">anatomy of a score</a> page walks the full arithmetic; <a href="/topics/defendable-agents/decisions/variable-design/">variable design</a> covers why each variable exists.</p>
+<p>Eighteen variables across three layers for buyers; twenty-one across four layers for the match score. <code>signal-freshness</code> is itself a pinned function of time — a stepped decay with a roughly 30-day half-life, so a three-day-old signal scores 5 and a ninety-day-old one scores 1.5. Same inputs, same outputs, every time. The <a href="/topics/defendable-agents/decisions/anatomy-of-a-score/">anatomy of a score</a> page walks the full arithmetic; <a href="/topics/defendable-agents/decisions/variable-design/">variable design</a> covers why each variable exists.</p>
 <h2 id="the-governance-layer-in-practice">The governance layer in practice<a class="headerlink" href="#the-governance-layer-in-practice" title="Permanent link">&para;</a></h2>
 <p>Every operation runs inside a governed session that shares one audit log, one budget ledger, and one map of temporal pins. The order is fixed and non-negotiable:</p>
 <ol>
@@ -6435,22 +6435,22 @@
 </thead>
 <tbody>
 <tr>
-<td>Audit logging (ISO 27001 A.12.4)</td>
+<td>Audit logging (ISO 27001 A.8.15)</td>
 <td>append-only JSONL</td>
 <td>the log</td>
 </tr>
 <tr>
-<td>Decision trace (SOC 2 CC7.2)</td>
+<td>Decision trace (SOC 2 PI1.5)</td>
 <td>full variable inputs/outputs</td>
 <td>scoring block</td>
 </tr>
 <tr>
-<td>Data provenance (ISO 27001 A.8.1)</td>
+<td>Data provenance (ISO 27001 A.5.12)</td>
 <td>temporal pinning</td>
 <td>pins</td>
 </tr>
 <tr>
-<td>Reproducibility (ISO 27001 A.14.2)</td>
+<td>Reproducibility (ISO 27001 A.8.32)</td>
 <td>deterministic engine</td>
 <td>re-run</td>
 </tr>
@@ -6460,7 +6460,7 @@
 <td>denied events</td>
 </tr>
 <tr>
-<td>Tenant isolation (ISO 27001 A.9.4)</td>
+<td>Tenant isolation (ISO 27001 A.8.3)</td>
 <td>per-tenant state</td>
 <td>directories</td>
 </tr>
@@ -6493,7 +6493,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:59:14 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 12:49:04 UTC">July 8, 2026</span>
   </span>
 
     

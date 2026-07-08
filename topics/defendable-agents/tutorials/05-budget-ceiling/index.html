@@ -6387,7 +6387,7 @@
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>jq<span class="w"> </span><span class="s1">&#39;select(.type==&quot;budget_exceeded&quot;)</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="s1">    | {seq:.sequence, tried:.decision.action, held_at:.budget.runningTotal}&#39;</span><span class="w"> </span>audit.jsonl
 </span></code></pre></div>
-<p>Because the ledger is monotonic and the audit log is append-only with <code>fsync</code> on flush, these two checks are sufficient evidence for a control reviewer. That evidence is what flows into an <a href="/topics/defendable-agents/compliance/evidence-packages/">evidence package</a>; budget enforcement maps to SOC 2 CC6.1 in the <a href="/topics/defendable-agents/compliance/control-mapping/">control mapping</a>.</p>
+<p>Because the ledger is monotonic and the audit log is append-only with <code>fsync</code> on flush, these two checks are sufficient evidence for a control reviewer. That evidence is what flows into an <a href="/topics/defendable-agents/compliance/evidence-packages/">evidence package</a>; budget enforcement maps to SOC 2 A1.1 in the <a href="/topics/defendable-agents/compliance/control-mapping/">control mapping</a>.</p>
 <h2 id="honest-limits">Honest limits<a class="headerlink" href="#honest-limits" title="Permanent link">&para;</a></h2>
 <p>A ceiling bounds <em>effort</em>, not <em>correctness</em>. A run that stops at 38 units is not thereby a good run — it is merely a run that did no more than 40 units of work. If the cost table is wrong, or an operation is under-priced, you will bound the wrong thing, consistently and provably. Review the table when you add operations.</p>
 <p>The other trap is over-tuning. A ceiling set too low turns fail-closed into a nuisance: legitimate multi-entity runs die halfway, and operators learn to raise the limit reflexively until it means nothing. Pick a ceiling from real percentiles of past sessions, not from fear, and treat it as <a href="/topics/defendable-agents/compliance/operating-and-maintenance/">maintenance</a>, not a one-time setting.</p>
@@ -6414,7 +6414,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:59:14 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 12:49:04 UTC">July 8, 2026</span>
   </span>
 
     
