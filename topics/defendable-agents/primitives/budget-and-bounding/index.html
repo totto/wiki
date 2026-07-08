@@ -6275,7 +6275,7 @@
 
 <h1 id="budget-bounding">Budget &amp; Bounding<a class="headerlink" href="#budget-bounding" title="Permanent link">&para;</a></h1>
 <p>Ask a probabilistic agent "how much work will you do?" and the honest answer is "I don't know until I've done it." That is fine for a chat window. It is unacceptable for a governed system that spends money, touches confidential data, and has to answer to an auditor. A <a href="/topics/defendable-agents/argument/what-defendable-means/">defendable agent</a> needs a property that no amount of prompt engineering gives you: a run that is <strong>provably bounded</strong>. You should be able to say, before the model does anything, "this session could only ever have done this much" — and prove it afterwards from the record.</p>
-<p>Bounding is the primitive that delivers that. It is deliberately dumb: a fixed price list, a running total, and a ceiling that is checked before every operation. No cleverness, no estimation. Dumb is the point — it is what makes the guarantee hold.</p>
+<p>Bounding is the primitive that delivers that, and its mechanism is a <strong>budget ceiling</strong>. It is deliberately dumb: a fixed price list, a running total, and a ceiling that is checked before every operation. No cleverness, no estimation. Dumb is the point — it is what makes the guarantee hold.</p>
 <h2 id="the-cost-table">The cost table<a class="headerlink" href="#the-cost-table" title="Permanent link">&para;</a></h2>
 <p>Every governed operation has a fixed price in abstract <strong>units</strong>. Units are not tokens and not currency; they are a domain-defined measure of "how much of a session's allowance this operation consumes". Pricing operations rather than tokens means the ceiling is legible to the people who set it — a buyer scoring is worth five of a signal detection, and everyone can see why.</p>
 <table>
@@ -6426,7 +6426,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 10:41:47 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:13:50 UTC">July 8, 2026</span>
   </span>
 
     

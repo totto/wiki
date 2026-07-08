@@ -6304,7 +6304,7 @@
 <p>When it returns <code>accepted: false</code> the governed operation throws and emits a <code>budget_exceeded</code> audit event. There is nothing to argue with. See <a href="/topics/defendable-agents/primitives/budget-and-bounding/">budget and bounding</a> for the full ledger, and <a href="/topics/defendable-agents/primitives/temporal-pinning/">temporal pinning</a> for how the same discipline applies to time.</p>
 <h2 id="what-the-model-is-actually-good-at">What the model is actually good at<a class="headerlink" href="#what-the-model-is-actually-good-at" title="Permanent link">&para;</a></h2>
 <p>None of this means the model has no job. It has the <em>hard</em> job. Turning a firm's public signals into a 1–5 <code>signal-relevance</code> score is genuinely a language task — it requires reading unstructured text and mapping it onto a vocabulary. Writing the justification that accompanies a decision, drafting a playbook, summarising why a buyer moved bands: all synthesis, all language, all work no lookup table can do. That is the <a href="/topics/defendable-agents/architecture/model-at-the-edge/">model at the edge</a>: the model produces the <em>variables</em>, and the deterministic engine composes them into the <em>decision</em>. The composition is the part you have to defend, so the composition is the part that must be reproducible.</p>
-<p>This split is why I distinguish navigation from synthesis so firmly. If you want the deeper treatment of synthesis as its own discipline, <a href="/topics/synthesis/">synthesis</a> and the <a href="/topics/knowledge-context-protocol/">knowledge context protocol</a> cover how the model's language work is fed by declared, governed context rather than a free-for-all retrieval.</p>
+<p>This split is why I distinguish navigation from synthesis so firmly. If you want the deeper treatment of synthesis as its own discipline, <a href="/topics/synthesis/">synthesis</a> and the <a href="/topics/knowledge-context-protocol/">Knowledge Context Protocol</a> cover how the model's language work is fed by declared, governed context rather than a free-for-all retrieval.</p>
 <h2 id="why-handing-navigation-to-an-llm-subtracts-accountability">Why handing navigation to an LLM subtracts accountability<a class="headerlink" href="#why-handing-navigation-to-an-llm-subtracts-accountability" title="Permanent link">&para;</a></h2>
 <p>Here is the failure I see most often. A team lets the agent decide, in natural language, which scoring model to apply, which tenant's data it is looking at, or whether a stale score is "probably fine". Each of those is a navigation, trust or time decision dressed up as a reasoning step. The moment the model owns it, three things you were counting on evaporate:</p>
 <ul>
@@ -6338,7 +6338,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 10:41:47 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:13:50 UTC">July 8, 2026</span>
   </span>
 
     

@@ -6231,7 +6231,7 @@
 
 <h1 id="trust-attestation">Trust &amp; Attestation<a class="headerlink" href="#trust-attestation" title="Permanent link">&para;</a></h1>
 <p>A governed agent spends most of its effort worrying about what it <em>does</em> — the budget it burns, the scores it emits, the audit line it leaves behind. But before any of that, it reads. It loads scoring models, layer weights, band thresholds, and reference data as declared knowledge units. Those units are passive files on disk. Nothing about being passive makes them trustworthy.</p>
-<p>This is the quiet gap. I have watched teams build a beautiful <a href="/topics/defendable-agents/architecture/deterministic-planner/">deterministic engine</a>, pin every score temporally, and log every variable — and then load the model definition from a file that anyone with commit access could have edited last Tuesday. Determinism only guarantees that the same inputs give the same outputs. It says nothing about whether the inputs were the ones you meant to ship. Reproducibility without provenance reproduces the tampering just as faithfully as the intent.</p>
+<p>This is the quiet gap. I have watched teams build a beautiful <a href="/topics/defendable-agents/architecture/deterministic-planner/">deterministic planner</a>, pin every score temporally, and log every variable — and then load the model definition from a file that anyone with commit access could have edited last Tuesday. Determinism only guarantees that the same inputs give the same outputs. It says nothing about whether the inputs were the ones you meant to ship. Reproducibility without provenance reproduces the tampering just as faithfully as the intent.</p>
 <p>So the Lodestar stack treats every governed knowledge unit as something that must be <em>attested</em>, not merely <em>present</em>.</p>
 <h2 id="signing-the-exact-bytes">Signing the exact bytes<a class="headerlink" href="#signing-the-exact-bytes" title="Permanent link">&para;</a></h2>
 <p>The mechanism is deliberately boring: an ed25519 signature computed over the exact bytes of the unit file. Not over a normalised form, not over a parsed AST, not over "the meaningful fields". The bytes. If a single character of whitespace changes, the signature is invalid, and that is the correct outcome — you asked for byte-exact reproducibility, so byte-exact is what gets attested.</p>
@@ -6284,7 +6284,7 @@
 <p>The distinction between <code>unsigned</code> and <code>invalid</code> matters more than any other. <code>unsigned</code> is an <em>absence</em> — a unit nobody ever attested, which may simply be old. <code>invalid</code> is a <em>contradiction</em> — someone attested these bytes and the bytes on disk are not those bytes. That is either corruption or tampering, and it should never be silently downgraded to "well, load it anyway". Collapsing these two into one "not verified" bucket is how you end up loading a modified model and never knowing.</p>
 <p><code>unverifiable</code> is the honest admission that you <em>cannot decide</em>. A signature is present but you have no trusted key to check it against. This is not the same as trusting it, and the <a href="/topics/defendable-agents/primitives/fail-closed-policy/">fail-closed policy</a> treats it exactly as it treats a hard failure: absence of a positive answer is a negative answer.</p>
 <h2 id="wiring-it-into-the-harness">Wiring it into the harness<a class="headerlink" href="#wiring-it-into-the-harness" title="Permanent link">&para;</a></h2>
-<p>Attestation is enforced at load time, inside the <a href="/topics/defendable-agents/architecture/governance-harness/">governance harness</a>, before a unit ever reaches the engine. The policy is a single flag:</p>
+<p>Attestation is enforced at load time, inside the <a href="/topics/defendable-agents/architecture/governance-harness/">governance harness</a>, before a unit ever reaches the planner. The policy is a single flag:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># harness.yaml (excerpt)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">policy</span><span class="p">:</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">fail_closed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -6333,7 +6333,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 10:41:47 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:13:50 UTC">July 8, 2026</span>
   </span>
 
     

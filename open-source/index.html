@@ -5383,6 +5383,39 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#kcp-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-harness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#whydah-sso-iam-platform" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6257,6 +6290,39 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#kcp-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-harness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-harness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#whydah-sso-iam-platform" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6411,14 +6477,14 @@
 <h3 id="knowledge-context-protocol-kcp">Knowledge Context Protocol (KCP)<a class="headerlink" href="#knowledge-context-protocol-kcp" title="Permanent link">&para;</a></h3>
 <p><strong>Repository:</strong> <a href="https://github.com/Cantara/knowledge-context-protocol">github.com/Cantara/knowledge-context-protocol</a>
 <strong>Spec:</strong> <a href="https://cantara.github.io/knowledge-context-protocol">cantara.github.io/knowledge-context-protocol</a>
-<strong>License:</strong> Apache 2.0 | <strong>Status:</strong> v0.5 draft — submitted to the Linux Foundation Agentic AI Foundation</p>
-<p>A YAML file format specification that makes knowledge navigable by AI agents. KCP is to knowledge what MCP is to tools: it adds topology (<code>depends_on</code>, <code>supersedes</code>), intent (what question each unit answers), freshness (<code>validated</code> dates), audience targeting, and context window hints.</p>
-<p><strong>RFCs:</strong> Auth &amp; Delegation · Federation · Trust &amp; Compliance · Payment &amp; Rate Limits · Context Window Hints (accepted into v0.4 core)</p>
-<p><strong>Reference implementations:</strong> parsers in Python and Java · MCP bridge servers in TypeScript, Python, and Java</p>
+<strong>License:</strong> Apache 2.0 | <strong>Status:</strong> v0.25.1 — submitted to the Linux Foundation Agentic AI Foundation</p>
+<p>A YAML file format specification that makes knowledge navigable — and trustworthy — for AI agents. KCP is to knowledge what MCP is to tools: it adds topology (<code>depends_on</code>, <code>supersedes</code>), intent (what question each unit answers), freshness (<code>validated</code> dates), audience targeting, and context window hints. Twenty-five releases in six months have grown it from a table of contents into a full protocol, with layers for discovery, meaning, trust, time, identity, federation, and economics.</p>
+<p><strong>RFCs:</strong> Auth &amp; Delegation · Federation (Org-Hub) · Trust &amp; Compliance · Unit Content Integrity · Temporal Validity · Payment &amp; Rate Limits (economic metadata) · Context Window Hints</p>
+<p><strong>Reference implementations:</strong> parsers in Python and Java · MCP bridge servers in TypeScript, Python, and Java · the <code>kcp-agent</code> reference agent (below)</p>
 <hr />
 <h3 id="kcp-commands">kcp-commands<a class="headerlink" href="#kcp-commands" title="Permanent link">&para;</a></h3>
 <p><strong>Repository:</strong> <a href="https://github.com/Cantara/kcp-commands">github.com/Cantara/kcp-commands</a>
-<strong>Language:</strong> Java (daemon) + shell | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.9.0+</p>
+<strong>Language:</strong> Java (daemon) + shell | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.12.0</p>
 <p>A Claude Code hook that applies KCP at the Bash tool boundary. Intercepts every Bash tool call: injects concise flag/syntax guidance before execution (no <code>--help</code> round-trips), strips noise after. Also writes every tool call to <code>~/.kcp/events.jsonl</code> for kcp-memory ingestion.</p>
 <p><strong>Measured saving:</strong> 67,352 tokens per session — 33.7% of a 200K context window recovered</p>
 <p><strong>283+ bundled manifests</strong> covering git, Linux, Docker, Kubernetes, cloud CLIs, build tools, package managers, and more. Unknown commands auto-generate manifests from <code>--help</code>.</p>
@@ -6427,12 +6493,31 @@
 <hr />
 <h3 id="kcp-memory">kcp-memory<a class="headerlink" href="#kcp-memory" title="Permanent link">&para;</a></h3>
 <p><strong>Repository:</strong> <a href="https://github.com/Cantara/kcp-memory">github.com/Cantara/kcp-memory</a>
-<strong>Language:</strong> Java | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.4.0</p>
-<p>A Java daemon that indexes Claude Code session transcripts and kcp-commands tool events into a local SQLite database with FTS5 full-text search. The episodic memory layer for Claude Code. Ships as both a CLI tool and an MCP server.</p>
+<strong>Language:</strong> Java | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.32.0</p>
+<p>A Java daemon that indexes Claude Code session transcripts and kcp-commands tool events into a local SQLite database with FTS5 full-text search. The episodic memory layer for Claude Code — session history searchable in milliseconds. Ships as both a CLI tool and an MCP server.</p>
 <p><strong>MCP tools:</strong> <code>kcp_memory_search</code> · <code>kcp_memory_events_search</code> · <code>kcp_memory_list</code> · <code>kcp_memory_stats</code> · <code>kcp_memory_session_detail</code> · <code>kcp_memory_project_context</code></p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Register as MCP server in ~/.claude/settings.json</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>java<span class="w"> </span>-jar<span class="w"> </span>~/.kcp/kcp-memory-daemon.jar<span class="w"> </span>mcp
 </span></code></pre></div>
+<hr />
+<h3 id="kcp-agent">kcp-agent<a class="headerlink" href="#kcp-agent" title="Permanent link">&para;</a></h3>
+<p><strong>Repository:</strong> <a href="https://github.com/Cantara/kcp-agent">github.com/Cantara/kcp-agent</a>
+<strong>Language:</strong> TypeScript (npm) + native binaries | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.11.0</p>
+<p>The reference agent for KCP — a <strong>deterministic, fail-closed navigation planner</strong> plus optional LLM synthesis. It reads a <code>knowledge.yaml</code>, scores and gates units against declared trust, freshness, audience, and budget, and produces an inspectable plan <em>before</em> any content is loaded or any model is called. Determinism at the core, the model at the edge. Ships as an MCP server (<code>kcp_plan</code>, <code>kcp_load</code>, <code>kcp_validate</code>) and as self-contained native binaries.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx<span class="w"> </span>kcp-agent<span class="w"> </span>plan<span class="w"> </span><span class="s2">&quot;your task&quot;</span><span class="w"> </span>--manifest<span class="w"> </span>https://example.com/knowledge.yaml
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>kcp<span class="w"> </span>--<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>kcp-agent<span class="w"> </span>mcp
+</span></code></pre></div>
+<p>See the <a href="../topics/defendable-agents/">Defendable Agents</a> field guide for the full architecture.</p>
+<hr />
+<h3 id="kcp-harness">kcp-harness<a class="headerlink" href="#kcp-harness" title="Permanent link">&para;</a></h3>
+<p><strong>Repository:</strong> <a href="https://github.com/Cantara/kcp-harness">github.com/Cantara/kcp-harness</a>
+<strong>Language:</strong> TypeScript | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.4.0</p>
+<p>Deterministic knowledge governance for any AI agent. An MCP compliance proxy that sits between an agent and its tools, routing every knowledge request through a deterministic multi-gate governance cascade — fail-closed policy, append-only audit trail, budget ceilings, and temporal pinning — and emitting the decision traces, audit logs, and budget records that map onto SOC 2 / ISO 27001 / GDPR controls. No model involvement in the governed decision.</p>
+<hr />
+<h3 id="kcp-dashboard">kcp-dashboard<a class="headerlink" href="#kcp-dashboard" title="Permanent link">&para;</a></h3>
+<p><strong>Repository:</strong> <a href="https://github.com/Cantara/kcp-dashboard">github.com/Cantara/kcp-dashboard</a>
+<strong>Language:</strong> Go | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.27.0</p>
+<p>A live terminal dashboard (Bubble Tea + Lip Gloss) for the KCP ecosystem — guidance effects, session profiles, token savings, and memory-search activity, auto-refreshing every two seconds.</p>
 <hr />
 <hr />
 <h3 id="whydah-sso-iam-platform">Whydah — SSO / IAM Platform<a class="headerlink" href="#whydah-sso-iam-platform" title="Permanent link">&para;</a></h3>
@@ -6448,9 +6533,9 @@
 - <code>Whydah-UserAdminWebApp</code> — Admin UI
 - <code>Whydah-Java-SDK</code> — Java integration SDK</p>
 <p><strong>Quick start (Docker):</strong>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>whydah/whydah-all-in-one-image
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">9997</span>:9997<span class="w"> </span>whydah/whydah-all-in-one-image
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># http://localhost:9997/sso/welcome  (admin / whydahadmin)</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>whydah/whydah-all-in-one-image
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>-p<span class="w"> </span><span class="m">9997</span>:9997<span class="w"> </span>whydah/whydah-all-in-one-image
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># http://localhost:9997/sso/welcome  (admin / whydahadmin)</span>
 </span></code></pre></div></p>
 <hr />
 <h3 id="xorcery-reactive-java-framework">Xorcery — Reactive Java Framework<a class="headerlink" href="#xorcery-reactive-java-framework" title="Permanent link">&para;</a></h3>
@@ -6523,7 +6608,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 22, 2026 08:16:00 UTC">April 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:13:50 UTC">July 8, 2026</span>
   </span>
 
     

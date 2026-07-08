@@ -3623,10 +3623,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#audit-all" class="md-nav__link">
+  <a href="#append-only-audit-trail" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audit-all
+        Append-only audit trail
       
     </span>
   </a>
@@ -3634,10 +3634,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#budget-and-bounding" class="md-nav__link">
+  <a href="#budget-ceilings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Budget and bounding
+        Budget ceilings
       
     </span>
   </a>
@@ -6129,10 +6129,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#audit-all" class="md-nav__link">
+  <a href="#append-only-audit-trail" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audit-all
+        Append-only audit trail
       
     </span>
   </a>
@@ -6140,10 +6140,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#budget-and-bounding" class="md-nav__link">
+  <a href="#budget-ceilings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Budget and bounding
+        Budget ceilings
       
     </span>
   </a>
@@ -6297,13 +6297,13 @@
 
 <h1 id="the-governance-primitives">The Governance Primitives<a class="headerlink" href="#the-governance-primitives" title="Permanent link">&para;</a></h1>
 <p>Guardrails fail because they are advice. A primitive is not advice — it is a piece of mechanism that an operation cannot get around, because the operation is routed <em>through</em> it by construction. In the defendable-agent stack there are four such primitives, and every governed operation in the example system, Lodestar, passes through all four before it returns a result. This page is the map: one paragraph on each, then how they compose inside a single governed session, then where to go for depth.</p>
-<p>Lodestar scores buyers and firms in a regulated professional-services market. The scoring itself is a set of <a href="/topics/defendable-agents/architecture/deterministic-planner/">pure deterministic functions</a> — same inputs, same outputs. The four primitives are what wrap that engine so a decision is not just computed but <em>defendable</em>: gated, recorded, bounded and pinned to a moment in time.</p>
+<p>Lodestar scores buyers and firms in a regulated professional-services market. The scoring itself is a set of <a href="/topics/defendable-agents/architecture/deterministic-planner/">pure deterministic functions</a> — same inputs, same outputs. The four primitives are what wrap that planner so a decision is not just computed but <em>defendable</em>: gated, recorded, bounded and pinned to a moment in time.</p>
 <h2 id="fail-closed-policy">Fail-closed policy<a class="headerlink" href="#fail-closed-policy" title="Permanent link">&para;</a></h2>
 <p>The default answer is no. Before any governed operation runs, the harness checks whether the domain it touches is declared, whether the tools it wants are permitted, and whether policy allows the call at all. If any check is missing or ambiguous, the operation does not proceed — it is denied and the denial is recorded. This is the inverse of the guardrail posture, where anything not explicitly forbidden is allowed. Here, anything not explicitly <em>permitted</em> is refused. It is the mechanical form of "access boundaries", and it is the one primitive most easily over-tuned: crank it too tight and you block legitimate work, so fail-closed is a dial you calibrate, not a switch you flip once. Depth: <a href="/topics/defendable-agents/primitives/fail-closed-policy/">Fail-closed policy</a> and the architecture view, <a href="/topics/defendable-agents/architecture/fail-closed-behavior/">Fail-closed behaviour</a>.</p>
-<h2 id="audit-all">Audit-all<a class="headerlink" href="#audit-all" title="Permanent link">&para;</a></h2>
-<p>Every governed operation emits one append-only event. Not a log line summarising what happened — the full decision, including the inputs, the outputs, the justification and, for a score, the complete variable trace: all 18 or 21 variables, their 1-5 scores, the per-layer roll-ups, the composite total and the resulting band. Events are written as JSONL, one per line, fsync on flush, never mutated. If it wasn't recorded, it didn't happen — and if it was recorded, you can reconstruct exactly what the agent saw and decided. Depth: <a href="/topics/defendable-agents/primitives/audit-trail/">Audit trail</a> and <a href="/topics/defendable-agents/primitives/decision-traces/">Decision traces</a>.</p>
-<h2 id="budget-and-bounding">Budget and bounding<a class="headerlink" href="#budget-and-bounding" title="Permanent link">&para;</a></h2>
-<p>An agent that can spend without limit is an agent you cannot bound. Every operation has a fixed unit cost, and the session carries a ledger with a ceiling. The ledger checks the cost <em>before</em> recording it: if the running total plus the new cost would exceed the ceiling, the spend is refused, the operation throws, and a <code>budget_exceeded</code> event is emitted. This bounds cost, blast radius and runaway loops in one mechanism. Depth: <a href="/topics/defendable-agents/primitives/budget-and-bounding/">Budget and bounding</a>.</p>
+<h2 id="append-only-audit-trail">Append-only audit trail<a class="headerlink" href="#append-only-audit-trail" title="Permanent link">&para;</a></h2>
+<p>Every governed operation emits one append-only event. Not a log line summarising what happened — the full decision trace, including the inputs, the outputs, the justification and, for a score, the complete variable trace: all 18 or 21 variables, their 1-5 scores, the per-layer roll-ups, the composite total and the resulting band. Events are written as JSONL, one per line, fsync on flush, never mutated. If it wasn't recorded, it didn't happen — and if it was recorded, you can reconstruct exactly what the agent saw and decided. Depth: <a href="/topics/defendable-agents/primitives/audit-trail/">Audit trail</a> and <a href="/topics/defendable-agents/primitives/decision-traces/">Decision traces</a>.</p>
+<h2 id="budget-ceilings">Budget ceilings<a class="headerlink" href="#budget-ceilings" title="Permanent link">&para;</a></h2>
+<p>An agent that can spend without limit is an agent you cannot bound. Every operation has a fixed unit cost, and the session carries a ledger with a ceiling. The ledger checks the cost <em>before</em> recording it: if the running total plus the new cost would exceed the ceiling, the spend is refused, the operation throws, and a <code>budget_exceeded</code> event is emitted. This bounds cost, blast radius and runaway loops in one mechanism. Depth: <a href="/topics/defendable-agents/primitives/budget-and-bounding/">Budget ceilings</a>.</p>
 <h2 id="temporal-pinning">Temporal pinning<a class="headerlink" href="#temporal-pinning" title="Permanent link">&para;</a></h2>
 <p>A score is only true as of the data it was computed from. Every score creates a <em>pin</em> recording when it was scored, the as-of date of its data, the dates of the signals it consumed, and the version and hash of the model used. Later, a drift check compares that pin against current state: newer data than the pin is DATA drift, a changed model version is MODEL drift, and a pin older than the maximum age (default 30 days) is TEMPORAL drift. Pinning tells you a decision has gone stale; it does <em>not</em> refresh the data for you — detection is not remediation. Depth: <a href="/topics/defendable-agents/primitives/temporal-pinning/">Temporal pinning</a> and <a href="/topics/defendable-agents/primitives/drift-detection/">Drift detection</a>.</p>
 <h2 id="how-they-compose-in-a-governed-session">How they compose in a governed session<a class="headerlink" href="#how-they-compose-in-a-governed-session" title="Permanent link">&para;</a></h2>
@@ -6356,7 +6356,7 @@
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">audit</span><span class="p">:</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./state/audit.jsonl</span>
 </span></code></pre></div>
-<p>Read the sequence back and the composition is the point. Fail-closed decides <em>whether</em> the operation runs. The budget ledger decides whether it can <em>afford</em> to. The deterministic engine computes the answer. The pin records <em>when</em> that answer is valid. The audit event records <em>that it happened and why</em>. Skip any one and the decision stops being defendable: no gate and you can't bound access, no budget and you can't bound cost, no pin and you can't tell staleness from truth, no audit and you can't reconstruct anything. Ending the session emits a summary event and flushes the log to disk.</p>
+<p>Read the sequence back and the composition is the point. Fail-closed decides <em>whether</em> the operation runs. The budget ledger decides whether it can <em>afford</em> to. The deterministic planner computes the answer. The pin records <em>when</em> that answer is valid. The audit event records <em>that it happened and why</em>. Skip any one and the decision stops being defendable: no gate and you can't bound access, no budget and you can't bound cost, no pin and you can't tell staleness from truth, no audit and you can't reconstruct anything. Ending the session emits a summary event and flushes the log to disk.</p>
 <h2 id="honest-limits">Honest limits<a class="headerlink" href="#honest-limits" title="Permanent link">&para;</a></h2>
 <p>None of this makes the answer <em>correct</em>. The model at the edge is still a model, and a badly-designed variable produces a wrong score — the primitives just guarantee it produces the <em>same</em> wrong score every time, visibly, with a full trace, which is precisely how you catch and fix it. Determinism buys process, not truth. And the primitives are maintenance, not a one-time install: ceilings drift out of date, models get re-versioned, fail-closed rules need re-tuning as the domain grows. Budget for the upkeep.</p>
 <h2 id="where-next">Where next<a class="headerlink" href="#where-next" title="Permanent link">&para;</a></h2>
@@ -6389,7 +6389,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 10:41:47 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:13:50 UTC">July 8, 2026</span>
   </span>
 
     

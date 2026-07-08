@@ -6290,7 +6290,7 @@
 </span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;relevant-experience&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">    </span><span class="p">],</span>
 </span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">    </span><span class="nt">&quot;layerScores&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;need&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">68.33</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;attractiveness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">76.67</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;winnability&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">76.67</span><span class="w"> </span><span class="p">},</span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">73.5</span><span class="p">,</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="nt">&quot;total&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">73.33</span><span class="p">,</span>
 </span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="w">    </span><span class="nt">&quot;band&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;High&quot;</span>
 </span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">  </span><span class="p">},</span>
 </span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">  </span><span class="nt">&quot;temporal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -6357,11 +6357,11 @@
 <td></td>
 <td></td>
 <td></td>
-<td><strong>73.33 → 73.5</strong></td>
+<td><strong>73.33</strong></td>
 </tr>
 </tbody>
 </table>
-<div class="language-typescript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">total</span><span class="p">);</span><span class="w">          </span><span class="c1">// 73.5</span>
+<div class="language-typescript highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">total</span><span class="p">);</span><span class="w">          </span><span class="c1">// 73.33</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">band</span><span class="p">);</span><span class="w">           </span><span class="c1">// &quot;High&quot;</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">layerScores</span><span class="p">);</span><span class="w">    </span><span class="c1">// { need: 68.33, attractiveness: 76.67, winnability: 76.67 }</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
@@ -6370,12 +6370,12 @@
 </span></code></pre></div>
 <p>The reproduced score equals the recorded score to the decimal. The band comes straight from the fixed thresholds (<code>&gt;=70</code> is "High"), so it reproduces too. If you want the arithmetic itself explained, see <a href="/topics/defendable-agents/decisions/anatomy-of-a-score/">Anatomy of a Score</a>.</p>
 <h2 id="what-this-proves-for-an-audit">What this proves for an audit<a class="headerlink" href="#what-this-proves-for-an-audit" title="Permanent link">&para;</a></h2>
-<p>An auditor is not asking "is 73.5 the <em>right</em> number?" They are asking "can you show that this decision was made the way you say it was, and would it come out the same if we checked?" Reproducibility answers exactly that:</p>
+<p>An auditor is not asking "is 73.33 the <em>right</em> number?" They are asking "can you show that this decision was made the way you say it was, and would it come out the same if we checked?" Reproducibility answers exactly that:</p>
 <ul>
 <li><strong>The inputs are the record.</strong> The 18 variables that produced the score are in the log, not inferred afterwards. That is the decision-trace control (SOC 2 CC7.2).</li>
 <li><strong>The model is pinned.</strong> <code>buyer-score@2.3.0</code> is resolved by version, so a later model change cannot rewrite April's decision. Version and hash both live in the temporal pin.</li>
 <li><strong>The data window is fixed.</strong> <code>dataAsOf</code> and <code>signalDates</code> show precisely which signals were in scope, which is the data-provenance control (ISO 27001 A.8.1).</li>
-<li><strong>The re-run is mechanical.</strong> Anyone with the log and the model can repeat it and get 73.5. That is the reproducibility control (ISO 27001 A.14.2), and it is what turns a claim into evidence you can package (see <a href="/topics/defendable-agents/compliance/evidence-packages/">Evidence Packages</a>).</li>
+<li><strong>The re-run is mechanical.</strong> Anyone with the log and the model can repeat it and get 73.33. That is the reproducibility control (ISO 27001 A.14.2), and it is what turns a claim into evidence you can package (see <a href="/topics/defendable-agents/compliance/evidence-packages/">Evidence Packages</a>).</li>
 </ul>
 <h2 id="honest-limits">Honest limits<a class="headerlink" href="#honest-limits" title="Permanent link">&para;</a></h2>
 <p>Reproducibility guarantees <strong>process, not correctness</strong>. If <code>internal-mobilization</code> was scored 2 when the honest reading of the evidence was 4, the engine will reproduce the wrong 2 forever — consistently and visibly. That is the point: the mistake is pinned in the open where a reviewer can find it and argue with it, instead of dissolving into a lost prompt. Determinism makes errors <em>auditable</em>, not absent.</p>
@@ -6402,7 +6402,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 10:41:47 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:13:50 UTC">July 8, 2026</span>
   </span>
 
     
