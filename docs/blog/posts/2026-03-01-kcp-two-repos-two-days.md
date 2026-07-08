@@ -3,8 +3,9 @@ description: "KCP benchmarked on two repos: tool calls dropped from 119 to 31 on
 date: 2026-03-01
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai
   - agents

@@ -3,8 +3,9 @@ description: "KCP packages regulations as typed, versioned knowledge units so AI
 date: 2026-05-30T10:00:00
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
-  - Knowledge Infrastructure
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
+  - Governance, Trust & Compliance
 tags:
   - kcp
   - compliance

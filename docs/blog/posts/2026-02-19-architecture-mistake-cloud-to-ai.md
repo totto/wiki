@@ -3,6 +3,7 @@ description: "The cloud lift-and-shift mistake of 2009 is repeating with AI. Old
 date: 2026-02-19
 categories:
   - AI-Augmented Development
+  - Software Architecture
 tags:
   - cloud
   - ai

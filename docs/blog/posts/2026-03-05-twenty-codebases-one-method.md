@@ -3,7 +3,7 @@ description: "Thirteen developers brought thirteen codebases to an SDD workshop.
 date: 2026-03-05
 categories:
   - AI-Augmented Development
-  - Skill-Driven Development
+  - Career & Community
 tags:
   - ai
   - claude-code

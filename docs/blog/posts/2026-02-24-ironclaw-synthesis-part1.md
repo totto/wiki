@@ -3,8 +3,8 @@ description: "Connecting an internal AI agent to Synthesis via MCP so it can sea
 date: 2026-02-24T08:00:00
 series: "Giving an AI Agent a Brain"
 categories:
-  - AI Infrastructure
-  - IronClaw
+  - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ironclaw
   - mcp

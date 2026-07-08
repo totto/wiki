@@ -3,8 +3,9 @@ description: "Technical walkthrough of a four-layer AI development stack -- Synt
 date: 2026-02-28T09:00:00
 series: "The Four-Layer AI Stack"
 categories:
-  - AI-Augmented Development
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
+  - AI-Augmented Development
 tags:
   - claude-code
   - synthesis

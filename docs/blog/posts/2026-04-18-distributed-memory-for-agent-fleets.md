@@ -3,8 +3,9 @@ description: "Enterprise agent fleets need shared memory across instances and se
 date: 2026-04-18
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - kcp-memory
   - agent-fleets

@@ -3,8 +3,9 @@ description: "KCP went from v0.1 to v0.5 in one week. Each version added a capab
 date: 2026-03-02
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai
   - agents

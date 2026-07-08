@@ -3,6 +3,8 @@ description: "When AI handles production, senior means encoding domain knowledge
 date: 2026-02-15
 categories:
   - AI-Augmented Development
+  - Software Architecture
+  - Career & Community
 tags:
   - ai
   - architecture

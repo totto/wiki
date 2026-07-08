@@ -3,8 +3,8 @@ description: "Most teams pick one retrieval approach and stop. A four-layer fram
 date: 2026-02-28T08:00:00
 series: "The Four-Layer AI Stack"
 categories:
-  - AI-Augmented Development
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - rag
   - knowledge-graph

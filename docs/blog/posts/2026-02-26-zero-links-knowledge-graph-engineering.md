@@ -2,8 +2,8 @@
 description: "Claude Code diagnosed 4 bugs, wrote 23 tests, and grew a knowledge graph from zero to 11,777 virtual links in one session -- including one mistake and recovery."
 date: 2026-02-26T16:00:00
 categories:
-  - AI-Augmented Development
   - Knowledge Infrastructure
+  - AI-Augmented Development
 tags:
   - synthesis
   - knowledge-graph

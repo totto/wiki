@@ -2,9 +2,8 @@
 description: "Better CLI documentation made the AI agent slower. The CLI condition was the worst-performing integration in the benchmark -- worse than no integration at all."
 date: 2026-02-26
 categories:
-  - AI-Augmented Development
-  - Synthesis
-  - Benchmarks
+  - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - mcp
   - cli

@@ -3,8 +3,9 @@ description: "Agents load knowledge units without credentials. KCP needs authent
 date: 2026-02-28T09:00:00
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai-agents
   - kcp

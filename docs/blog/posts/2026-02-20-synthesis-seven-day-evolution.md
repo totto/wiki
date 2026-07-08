@@ -2,6 +2,7 @@
 description: "Synthesis: 84,692 lines in 7 days. Unlike lib-pcb, the codebase fed itself context, found its own errors, and rewrote its own understanding mid-build."
 date: 2026-02-20
 categories:
+  - Knowledge Infrastructure
   - AI-Augmented Development
 tags:
   - synthesis

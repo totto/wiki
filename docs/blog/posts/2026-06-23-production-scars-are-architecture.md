@@ -2,8 +2,9 @@
 description: "Six architectural lessons from running an autonomous AI agent in production. Each scar is a failure category surprising enough to force mechanical change. Prose governance didn't work — here's what did."
 date: 2026-06-23
 categories:
-  - AI-Augmented Development
-  - ExoCortex
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
+  - Governance, Trust & Compliance
 tags:
   - ai-agents
   - mechanical-governance

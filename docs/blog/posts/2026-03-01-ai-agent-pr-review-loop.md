@@ -3,6 +3,8 @@ description: "An AI submitted a KCP manifest PR to CrewAI and another AI reviewe
 date: 2026-03-01
 series: "Knowledge Context Protocol"
 categories:
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
   - AI-Augmented Development
 tags:
   - ai

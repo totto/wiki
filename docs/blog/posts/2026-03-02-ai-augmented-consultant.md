@@ -2,8 +2,9 @@
 description: "A compliance brief arrived Friday, due Monday. Building knowledge infrastructure first -- not jumping to deliverables -- made five hard questions answerable."
 date: 2026-03-02
 categories:
+  - Knowledge Infrastructure
+  - Governance, Trust & Compliance
   - AI-Augmented Development
-  - Methodology
 tags:
   - consulting
   - skill-driven-development

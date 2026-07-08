@@ -3,8 +3,9 @@ description: "Everyone audits the AI workflow. Nobody fixes the knowledge feedin
 date: 2026-06-01T10:00:00
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
-  - Knowledge Infrastructure
+  - Knowledge Context Protocol
+  - Governance, Trust & Compliance
+  - Software Architecture
 tags:
   - kcp
   - ai-governance

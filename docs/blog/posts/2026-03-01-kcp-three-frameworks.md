@@ -3,8 +3,9 @@ description: "KCP applied to smolagents, AutoGen, and CrewAI reduced agent tool 
 date: 2026-03-01
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai
   - agents

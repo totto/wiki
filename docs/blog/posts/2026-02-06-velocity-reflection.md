@@ -3,6 +3,7 @@ description: "A three-paragraph LinkedIn post about adjusting to AI velocity bec
 date: 2026-02-06
 categories:
   - AI-Augmented Development
+  - Career & Community
 tags:
   - velocity
   - reflection

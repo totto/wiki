@@ -3,8 +3,8 @@ description: "Before calling a knowledge server, agents need to know what it con
 date: 2026-03-13
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
-  - Knowledge Infrastructure
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
 tags:
   - ai
   - agents

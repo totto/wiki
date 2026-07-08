@@ -2,7 +2,9 @@
 description: "Unit tests catch logic bugs. Integration tests catch assembly bugs. The third harness catches specification drift — and it's the one AI-augmented teams need most."
 date: 2026-07-02
 categories:
+  - Knowledge Infrastructure
   - AI-Augmented Development
+  - Software Architecture
 tags:
   - ai
   - testing

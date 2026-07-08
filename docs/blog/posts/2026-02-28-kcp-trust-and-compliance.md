@@ -3,8 +3,9 @@ description: "An AI agent with knowledge base access and no data classification 
 date: 2026-02-28T11:00:00
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai-agents
   - kcp

@@ -3,7 +3,8 @@ description: "Alchemy handles reactive data ingestion via YAML config; Aurora st
 date: 2025-09-24
 series: "Aurora & Temporal Analytics"
 categories:
-  - AI-Augmented Development
+  - Knowledge Infrastructure
+  - Software Architecture
 tags:
   - aurora
   - alchemy

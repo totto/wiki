@@ -2,7 +2,9 @@
 description: "The industry is building swarms of competing agents. The value is in one agent that knows your work."
 date: 2026-07-01
 categories:
-  - AI-Augmented Development
+  - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
+  - Software Architecture
 tags:
   - ai
   - agents

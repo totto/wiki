@@ -4,8 +4,9 @@ date: 2026-03-07
 slug: skill-driven-vs-spec-driven-development
 series: "Skill-Driven Development"
 categories:
+  - Knowledge Context Protocol
+  - Knowledge Infrastructure
   - AI-Augmented Development
-  - Methodology
 tags:
   - sdd
   - ai

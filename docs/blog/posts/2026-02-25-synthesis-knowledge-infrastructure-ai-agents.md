@@ -2,8 +2,9 @@
 description: "AI agents without knowledge infrastructure are interns with amnesia. The reasoning is capable; the knowledge feeding it is ad-hoc, stale, and absent."
 date: 2026-02-25
 categories:
-  - AI-Augmented Development
-  - Synthesis
+  - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
+  - Software Architecture
 tags:
   - ai
   - agents

@@ -2,9 +2,8 @@
 description: "Synthesis reported 99.6% knowledge coverage. The real number was 15.2%. Binary file recovery exposed how vanity metrics hide actual asset gaps."
 date: 2026-02-25
 categories:
-  - Knowledge Management
-  - AI Development
-  - Synthesis
+  - Knowledge Infrastructure
+  - AI-Augmented Development
 tags:
   - synthesis
   - knowledge-infrastructure

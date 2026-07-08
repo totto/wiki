@@ -2,8 +2,9 @@
 description: "A 45-minute architecture review replaced by a 1.2-second KCP query. When organisational knowledge is machine-readable, blast radius analysis needs no meeting."
 date: 2026-04-15
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI-Augmented Development
 tags:
   - kcp
   - synthesis

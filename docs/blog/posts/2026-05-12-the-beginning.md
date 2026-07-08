@@ -2,7 +2,9 @@
 description: "How a PCB library, a knowledge system, and a naming conversation became a brand -- eXOReaction's practice growing distinct enough to need its own identity."
 date: 2026-05-12
 categories:
+  - Knowledge Infrastructure
   - AI-Augmented Development
+  - Career & Community
 tags:
   - aegis
   - sdd

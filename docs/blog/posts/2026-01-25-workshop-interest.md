@@ -3,6 +3,7 @@ description: "A workshop invitation outperformed weeks of technical content -- 4
 date: 2026-01-25
 categories:
   - AI-Augmented Development
+  - Career & Community
 tags:
   - workshop
   - claude-code

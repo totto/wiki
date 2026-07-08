@@ -3,6 +3,7 @@ description: "When refactoring takes 30 minutes instead of two weeks, most engin
 date: 2026-01-24
 categories:
   - AI-Augmented Development
+  - Software Architecture
 tags:
   - ai
   - methodology

@@ -3,8 +3,8 @@ description: "Capable AI models are not enough. The agentic web needs a foundati
 date: 2026-03-13
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
-  - Knowledge Infrastructure
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
 tags:
   - ai
   - agents

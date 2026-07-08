@@ -3,7 +3,6 @@ description: "A speculative architecture where every operation is content-addres
 date: 2026-04-07
 categories:
   - Quantum Computing
-  - Research
 tags:
   - merkabit
   - quantum

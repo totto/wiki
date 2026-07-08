@@ -3,6 +3,7 @@ description: "When iteration costs minutes, exploration beats specification. Two
 date: 2026-02-09
 categories:
   - AI-Augmented Development
+  - Software Architecture
 tags:
   - ai
   - java

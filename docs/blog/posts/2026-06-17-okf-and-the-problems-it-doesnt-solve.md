@@ -4,8 +4,9 @@ date: 2026-06-17T18:00:00
 draft: false
 series: "Knowledge Context Protocol"
 categories:
-  - Knowledge Infrastructure
-  - AI Agents
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
+  - Governance, Trust & Compliance
 tags:
   - kcp
   - okf

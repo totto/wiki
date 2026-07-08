@@ -3,8 +3,9 @@ description: "172 days, 6,163 commits, 137 blog posts, 36 new repos, one protoco
 date: 2026-07-15T09:00:00
 draft: false
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - explorative-development
   - skill-driven-development

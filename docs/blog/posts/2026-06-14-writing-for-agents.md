@@ -3,8 +3,9 @@ description: "Discoverable is not navigable. Extracting 38 Dutch obligation unit
 date: 2026-06-14T12:00:00
 draft: false
 categories:
+  - Knowledge Context Protocol
+  - Knowledge Infrastructure
   - AI-Augmented Development
-  - ExoCortex
 tags:
   - agentic-writing
   - kcp

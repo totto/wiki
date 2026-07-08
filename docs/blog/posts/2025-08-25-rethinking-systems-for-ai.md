@@ -3,7 +3,8 @@ description: "AI asks why, not what. Systems designed for current-state queries 
 date: 2025-08-25
 series: "Aurora & Temporal Analytics"
 categories:
-  - AI-Augmented Development
+  - Knowledge Infrastructure
+  - Software Architecture
 tags:
   - xorcery-aaa
   - aurora

@@ -2,8 +2,9 @@
 description: "KCP evolved from a discovery protocol to a governance framework. Capable agents also need to know what they should not do and which knowledge has restrictions."
 date: 2026-03-20
 categories:
-  - Knowledge Infrastructure
-  - AI-Augmented Development
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
+  - Governance, Trust & Compliance
 tags:
   - kcp
   - knowledge-context-protocol

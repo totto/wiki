@@ -3,7 +3,9 @@ description: "Most systems overwrite history, making root cause analysis painful
 date: 2025-10-10
 series: "Aurora & Temporal Analytics"
 categories:
-  - AI-Augmented Development
+  - Knowledge Infrastructure
+  - Governance, Trust & Compliance
+  - Software Architecture
 tags:
   - aurora
   - temporal-analytics

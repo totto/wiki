@@ -4,8 +4,9 @@ date: 2026-03-31
 slug: kcp-ecosystem-five-tools-persistent-intelligence
 series: "Knowledge Context Protocol"
 categories:
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
   - AI-Augmented Development
-  - Knowledge Infrastructure
 tags:
   - ai
   - agents

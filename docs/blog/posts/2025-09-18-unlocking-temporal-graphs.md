@@ -3,7 +3,7 @@ description: "A bitemporal model with four time dimensions -- transaction, valid
 date: 2025-09-18
 series: "Aurora & Temporal Analytics"
 categories:
-  - AI-Augmented Development
+  - Knowledge Infrastructure
 tags:
   - aurora
   - temporal-analytics

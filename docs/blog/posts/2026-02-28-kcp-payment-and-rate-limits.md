@@ -3,8 +3,9 @@ description: "HTTP 402 waited 30 years for a use case. Autonomous agents making 
 date: 2026-02-28T12:00:00
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai-agents
   - kcp

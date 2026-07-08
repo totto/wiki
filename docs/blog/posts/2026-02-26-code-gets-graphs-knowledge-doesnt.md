@@ -3,7 +3,6 @@ description: "Every engineering team graphs their code dependencies. Almost none
 date: 2026-02-26T20:00:00
 categories:
   - Knowledge Infrastructure
-  - AI-Augmented Development
 tags:
   - knowledge-graph
   - synthesis

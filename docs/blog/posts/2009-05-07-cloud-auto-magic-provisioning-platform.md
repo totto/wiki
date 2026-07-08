@@ -3,6 +3,7 @@ description: "Clouds are provisioning platforms, not silver bullets. Enterprises
 date: 2009-05-07
 categories:
   - Cloud Computing
+  - Software Architecture
 tags:
   - cloud
   - provisioning

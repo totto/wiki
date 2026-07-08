@@ -2,6 +2,8 @@
 description: "When the agent writes code that passes locally but fails in CI, it's not a test problem. It's a nervous system problem."
 date: 2026-07-02
 categories:
+  - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
   - AI-Augmented Development
 tags:
   - ai

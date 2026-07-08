@@ -4,9 +4,9 @@ date: 2026-07-11T09:00:00
 draft: false
 series: "Knowledge Context Protocol"
 categories:
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
-  - AI Agents
-  - Architecture
+  - AI Agents & the Agentic Web
 tags:
   - kcp
   - kcp-agent

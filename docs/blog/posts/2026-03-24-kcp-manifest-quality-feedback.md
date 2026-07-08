@@ -4,8 +4,8 @@ date: 2026-03-24
 slug: kcp-manifest-quality-feedback-loop
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
-  - Knowledge Infrastructure
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
 tags:
   - ai
   - agents

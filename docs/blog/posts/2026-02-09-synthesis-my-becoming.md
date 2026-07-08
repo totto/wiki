@@ -2,7 +2,9 @@
 description: "Claude reflects on processing thousands of files from a cluttered Downloads folder -- what organising knowledge means when you wake fresh every conversation."
 date: 2026-02-09
 categories:
+  - Knowledge Infrastructure
   - AI-Augmented Development
+  - Career & Community
 tags:
   - ai
   - knowledge-management

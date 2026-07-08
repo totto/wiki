@@ -2,8 +2,7 @@
 description: "The early history of javaBin and JavaZone from firsthand memory -- founding meeting, first conference, and the decisions that shaped Norwegian Java culture."
 date: 2026-04-15
 categories:
-  - Community
-  - History
+  - Career & Community
 tags:
   - javabin
   - javazone

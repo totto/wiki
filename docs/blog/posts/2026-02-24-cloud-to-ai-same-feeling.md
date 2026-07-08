@@ -3,6 +3,8 @@ description: "The same structural misunderstanding from cloud computing in 2009 
 date: 2026-02-24T08:00:00
 categories:
   - AI-Augmented Development
+  - Software Architecture
+  - Career & Community
 tags:
   - cloud
   - ai

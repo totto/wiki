@@ -2,7 +2,9 @@
 description: "Subagent findings die with the context window. A kcp-memory fix ensures delegated research persists across sessions and agent boundaries."
 date: 2026-03-14
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
+  - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - claude-code
   - agents

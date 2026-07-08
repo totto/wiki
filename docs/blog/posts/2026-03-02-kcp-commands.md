@@ -4,8 +4,9 @@ date: 2026-03-03
 slug: kcp-commands-save-33-of-claude-codes-context-window
 series: "Knowledge Context Protocol"
 categories:
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
   - AI-Augmented Development
-  - Knowledge Infrastructure
 tags:
   - ai
   - agents

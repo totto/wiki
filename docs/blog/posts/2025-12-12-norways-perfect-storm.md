@@ -2,7 +2,7 @@
 description: "Industrial complexity, strict EU regulation, high digital maturity, and government AI investment make Norway a strong market for temporal analytics."
 date: 2025-12-12
 categories:
-  - AI-Augmented Development
+  - Knowledge Infrastructure
 tags:
   - norway
   - aurora

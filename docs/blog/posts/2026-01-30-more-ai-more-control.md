@@ -3,6 +3,7 @@ description: "Directed AI delegation with comprehensive verification produces mo
 date: 2026-01-30
 categories:
   - AI-Augmented Development
+  - Software Architecture
 tags:
   - ai
   - control

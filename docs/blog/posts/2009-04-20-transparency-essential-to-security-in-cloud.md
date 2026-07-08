@@ -3,6 +3,7 @@ description: "No infrastructure is secure in the absolute -- only for specific r
 date: 2009-04-20
 categories:
   - Cloud Computing
+  - Governance, Trust & Compliance
 tags:
   - cloud
   - security

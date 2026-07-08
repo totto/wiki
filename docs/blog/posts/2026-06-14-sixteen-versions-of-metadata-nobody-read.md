@@ -3,8 +3,9 @@ description: "63 regulatory manifests with full KCP v0.21 metadata -- hashes, si
 date: 2026-06-14T14:00:00
 draft: false
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - Governance, Trust & Compliance
 tags:
   - synthesis
   - kcp

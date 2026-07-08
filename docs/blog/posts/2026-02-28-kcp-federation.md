@@ -3,8 +3,9 @@ description: "Cross-team knowledge queries break when each team owns a separate 
 date: 2026-02-28T10:00:00
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai-agents
   - kcp

@@ -2,8 +2,8 @@
 description: "Synthesis v1.29.0 adds Notion indexing. Health signals -- page staleness, orphan detection, link integrity -- proved more valuable than the content itself."
 date: 2026-04-21
 categories:
-  - AI-Augmented Development
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - synthesis
   - notion

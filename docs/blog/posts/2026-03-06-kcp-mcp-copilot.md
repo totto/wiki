@@ -3,8 +3,9 @@ description: "kcp-mcp v0.10.0 shipped KCP support for GitHub Copilot in one day 
 date: 2026-03-06
 series: "Knowledge Context Protocol"
 categories:
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
   - AI-Augmented Development
-  - Knowledge Infrastructure
 tags:
   - ai
   - agents

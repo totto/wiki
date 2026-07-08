@@ -3,6 +3,7 @@ description: "A Python library was rewritten from LGPL to MIT in five days using
 date: 2026-03-09
 categories:
   - AI-Augmented Development
+  - Career & Community
 tags:
   - ai
   - licensing

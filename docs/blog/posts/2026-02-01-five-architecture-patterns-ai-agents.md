@@ -2,8 +2,8 @@
 description: "Five production-tested agent patterns: grep over RAG, isolated sub-agents, bash as universal tool, prompt-enforced task tracking, and context compression."
 date: 2026-02-01T16:00:00
 categories:
-  - AI Infrastructure
-  - AI-Augmented Development
+  - AI Agents & the Agentic Web
+  - Software Architecture
 tags:
   - ai
   - agents

@@ -2,8 +2,9 @@
 description: "Two developers, same AI model, wildly different results. The gap is the memory architecture and the operator's experience with directed delegation."
 date: 2026-03-04
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai
   - claude-code

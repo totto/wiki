@@ -3,7 +3,8 @@ description: "A wiki rewrite exposed how online identity drifts when unattended.
 date: 2026-02-24T10:00:00
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
+  - Career & Community
 tags:
   - ai
   - personal-site

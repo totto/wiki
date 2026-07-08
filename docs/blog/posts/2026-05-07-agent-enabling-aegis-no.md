@@ -4,8 +4,8 @@ date: 2026-05-07
 authors:
   - totto
 categories:
-  - AI Engineering
-  - KCP
+  - Knowledge Context Protocol
+  - Governance, Trust & Compliance
 tags:
   - kcp
   - llms-txt

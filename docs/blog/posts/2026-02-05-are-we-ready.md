@@ -3,6 +3,7 @@ description: "A presentation asked whether developers are ready for AI velocity.
 date: 2026-02-05
 categories:
   - AI-Augmented Development
+  - Career & Community
 tags:
   - velocity
   - methodology

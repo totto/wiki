@@ -2,6 +2,8 @@
 description: "AI-speed development generates disorder at the same velocity as features. Every line written is a line not yet reviewed, a boundary not yet enforced."
 date: 2026-02-22
 categories:
+  - Knowledge Infrastructure
+  - Governance, Trust & Compliance
   - AI-Augmented Development
 tags:
   - security

@@ -3,7 +3,7 @@ description: "Aurora combines a temporal graph database with an AI query layer t
 date: 2025-09-01
 series: "Aurora & Temporal Analytics"
 categories:
-  - AI-Augmented Development
+  - Knowledge Infrastructure
 tags:
   - aurora
   - temporal-analytics

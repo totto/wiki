@@ -3,8 +3,9 @@ description: "Catch an agent making a false compliance claim once, encode the ve
 date: 2026-06-11T16:00:00
 draft: false
 categories:
-  - AI-Augmented Development
-  - Skill-Driven Development
+  - Knowledge Context Protocol
+  - Knowledge Infrastructure
+  - Governance, Trust & Compliance
 tags:
   - agentic-engineering
   - knowledge-infrastructure

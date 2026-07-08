@@ -2,8 +2,9 @@
 description: "Your AI agent will confidently tell a customer they're GDPR-compliant when they're not. Here's the architecture that fixes that."
 date: 2026-06-22
 categories:
-  - AI-Augmented Development
-  - Compliance
+  - Knowledge Context Protocol
+  - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai-agents
   - compliance

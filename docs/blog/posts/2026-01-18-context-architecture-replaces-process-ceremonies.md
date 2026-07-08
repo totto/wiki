@@ -3,6 +3,7 @@ description: "Persistent, machine-readable context files replace the repetitive 
 date: 2026-01-18
 categories:
   - AI-Augmented Development
+  - Software Architecture
 tags:
   - ai
   - methodology

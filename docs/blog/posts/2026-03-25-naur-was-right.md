@@ -2,9 +2,9 @@
 description: "Naur argued in 1985 that programs are theories, not code. AI proves it -- generated code exists without the theory, and that is dangerously incomplete."
 date: 2026-03-25
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
-  - Spec-Driven Development
+  - AI-Augmented Development
 tags:
   - sdd
   - kcp

@@ -2,7 +2,7 @@
 description: "Parkinson's Law wastes early time; Student Syndrome wastes the rest. The 80/50 Rule hacks both by manufacturing urgency early and guarding the buffer."
 date: 2025-11-10
 categories:
-  - Methodology
+  - AI-Augmented Development
 tags:
   - time-management
   - project-management

@@ -3,8 +3,9 @@ description: "METR found AI made experienced developers 19% slower. The compound
 date: 2026-06-02T12:00:00
 draft: false
 categories:
-  - AI-Augmented Development
-  - Skill-Driven Development
+  - Knowledge Context Protocol
+  - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - sdd
   - kcp

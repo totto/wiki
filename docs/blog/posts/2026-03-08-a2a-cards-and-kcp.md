@@ -3,8 +3,9 @@ description: "Google's A2A handles agent identity and invocation. KCP handles kn
 date: 2026-03-08
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai-agents
   - kcp

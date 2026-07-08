@@ -3,6 +3,7 @@ description: "Cloud savings come from zero-admin architecture, not cheaper serve
 date: 2009-02-24
 categories:
   - Cloud Computing
+  - Software Architecture
 tags:
   - cloud
   - architecture

@@ -3,9 +3,8 @@ description: "KCP v0.25 promotes RFC-0005 — the economic metadata layer. A ste
 date: 2026-07-05
 series: "Knowledge Context Protocol"
 categories:
-  - Knowledge Infrastructure
-  - AI Agents
-  - Architecture
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
 tags:
   - kcp
   - payments

@@ -3,8 +3,9 @@ description: "A 42,000-token spec loaded into an 8,000-token budget crashes the 
 date: 2026-02-28T13:00:00
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai-agents
   - kcp

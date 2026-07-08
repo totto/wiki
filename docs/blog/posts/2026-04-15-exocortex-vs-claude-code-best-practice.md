@@ -2,8 +2,9 @@
 description: "Comparing ExoCortex's eight-layer stack with Anthropic's 84-tip best practice guide reveals two architectures for the same tool with complementary blind spots."
 date: 2026-04-15
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI-Augmented Development
 tags:
   - exocortex
   - claude-code

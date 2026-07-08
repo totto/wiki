@@ -2,8 +2,8 @@
 description: "Six PRs, two TypeScript felonies, and a rebase cascade that broke git. A forensic investigation into how squash merges destroy context agents need."
 date: 2026-04-03
 categories:
+  - Knowledge Infrastructure
   - AI-Augmented Development
-  - Developer Experience
 authors:
   - totto
 tags:

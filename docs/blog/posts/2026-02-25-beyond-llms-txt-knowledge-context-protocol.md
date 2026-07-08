@@ -3,8 +3,9 @@ description: "llms.txt is a table of contents. Agents need a map -- with hierarc
 date: 2026-02-25
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai
   - agents

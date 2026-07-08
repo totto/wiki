@@ -3,6 +3,8 @@ description: "Each tech wave -- OO, cloud, microservices, AI -- changed somethin
 date: 2026-02-01
 categories:
   - AI-Augmented Development
+  - Software Architecture
+  - Career & Community
 tags:
   - ai
   - architecture

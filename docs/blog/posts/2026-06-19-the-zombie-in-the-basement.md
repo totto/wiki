@@ -2,8 +2,9 @@
 description: "Static architecture catalogs document what someone knew at a point in time. Betonix GmbH thought they had 23 database connections. They had 52. The migration nearly shipped that delta."
 date: 2026-06-19
 categories:
+  - AI Agents & the Agentic Web
   - AI-Augmented Development
-  - Architecture
+  - Software Architecture
 tags:
   - architecture
   - migrations

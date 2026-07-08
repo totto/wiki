@@ -3,9 +3,9 @@ description: "The agentic web has no login page — so the only knowledge agents
 date: 2026-07-04
 series: "Knowledge Context Protocol"
 categories:
-  - Knowledge Infrastructure
-  - AI Agents
-  - Security
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
+  - Governance, Trust & Compliance
 tags:
   - kcp
   - trust

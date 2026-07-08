@@ -3,9 +3,9 @@ description: "v0.24 shipped today — the enterprise front door. Twenty-four ver
 date: 2026-07-04
 series: "Knowledge Context Protocol"
 categories:
-  - Knowledge Infrastructure
-  - AI Agents
-  - Architecture
+  - Knowledge Context Protocol
+  - AI Agents & the Agentic Web
+  - Governance, Trust & Compliance
 tags:
   - kcp
   - federation

@@ -3,8 +3,8 @@ description: "kimi-k2.5 claimed to call MCP tools but fabricated the results. Th
 date: 2026-02-24T09:00:00
 series: "Giving an AI Agent a Brain"
 categories:
-  - AI Infrastructure
-  - Debugging
+  - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ironclaw
   - kimi-k2.5

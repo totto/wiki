@@ -3,8 +3,9 @@ description: "A realistic Tuesday with eight tasks and real output numbers -- co
 date: 2026-02-28T10:00:00
 series: "The Four-Layer AI Stack"
 categories:
-  - AI-Augmented Development
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
+  - AI-Augmented Development
 tags:
   - claude-code
   - synthesis

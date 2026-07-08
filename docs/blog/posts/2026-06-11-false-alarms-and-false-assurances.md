@@ -4,7 +4,6 @@ date: 2026-06-11T14:00:00
 draft: false
 categories:
   - AI-Augmented Development
-  - Skill-Driven Development
 tags:
   - agentic-engineering
   - verification

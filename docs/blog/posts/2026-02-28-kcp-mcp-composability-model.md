@@ -3,8 +3,9 @@ description: "KCP provides the knowledge map; MCP provides the retrieval channel
 date: 2026-02-28
 series: "Knowledge Context Protocol"
 categories:
-  - AI-Augmented Development
+  - Knowledge Context Protocol
   - Knowledge Infrastructure
+  - AI Agents & the Agentic Web
 tags:
   - ai-agents
   - kcp
