@@ -43,7 +43,7 @@ Take a single buyer. Here are the eighteen variable scores an analyst (or the [m
 | | internal-capacity | 3 |
 | | relevant-experience | 4 |
 
-The `signal-freshness` value of 4.5 is itself deterministic: it is a linear decay with a ~30-day half-life, and this buyer's freshest signal landed within seven days (`<=7d = 4.5`). Nothing here is a judgement call the machine makes twice differently. See [temporal pinning](/topics/defendable-agents/primitives/temporal-pinning/) for how that date is captured and later checked for drift.
+The `signal-freshness` value of 4.5 is itself deterministic: it is a stepped decay with a ~30-day half-life, and this buyer's freshest signal landed within seven days (`<=7d = 4.5`). Nothing here is a judgement call the machine makes twice differently. See [temporal pinning](/topics/defendable-agents/primitives/temporal-pinning/) for how that date is captured and later checked for drift.
 
 ### Step 1 — layer means
 

@@ -53,7 +53,7 @@ const band =
                 "Not prioritized now";
 ```
 
-Eighteen variables across three layers for buyers; twenty-one across four layers for the match score. `signal-freshness` is itself a pinned function of time — a linear decay with a roughly 30-day half-life, so a three-day-old signal scores 5 and a ninety-day-old one scores 1.5. Same inputs, same outputs, every time. The [anatomy of a score](/topics/defendable-agents/decisions/anatomy-of-a-score/) page walks the full arithmetic; [variable design](/topics/defendable-agents/decisions/variable-design/) covers why each variable exists.
+Eighteen variables across three layers for buyers; twenty-one across four layers for the match score. `signal-freshness` is itself a pinned function of time — a stepped decay with a roughly 30-day half-life, so a three-day-old signal scores 5 and a ninety-day-old one scores 1.5. Same inputs, same outputs, every time. The [anatomy of a score](/topics/defendable-agents/decisions/anatomy-of-a-score/) page walks the full arithmetic; [variable design](/topics/defendable-agents/decisions/variable-design/) covers why each variable exists.
 
 ## The governance layer in practice
 

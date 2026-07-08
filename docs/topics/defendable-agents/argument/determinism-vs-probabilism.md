@@ -22,7 +22,7 @@ That reproducibility is the whole point. It is what lets you [reproduce a decisi
 |---|---|---|
 | **Navigation** — which knowledge unit, which model version, which document | Selection over declared metadata is a lookup, not a judgement. A model that "decides" which scoring model to use can silently swap it. | KCP `kcp_plan`/`kcp_load` over a declared manifest |
 | **Trust** — is this input allowed, is this tenant isolated | Access boundaries are policy. A probabilistic gate is an open door on the runs where it feels generous. | Fail-closed gating; per-tenant state directories |
-| **Time** — is this score stale | Staleness is arithmetic over dates, not intuition. | Temporal pinning with a 30-day-half-life decay |
+| **Time** — is this score stale | Staleness is arithmetic over dates, not intuition. | Temporal pinning with a 30-day staleness threshold |
 | **Budget** — can I afford this operation | Cost ceilings are counting. You do not want a model estimating whether it is over budget. | The budget ledger, checked before every operation |
 
 Take budget as the sharpest case. The ledger records a fixed cost per operation — `buyer_scoring` costs 5 units, `firm_analysis` 10, `signal_detection` 1 — and checks the ceiling *before* it records:

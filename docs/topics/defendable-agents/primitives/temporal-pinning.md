@@ -46,7 +46,7 @@ Keeping them separate is what lets you reason about staleness honestly. A score 
 
 ## signalDates
 
-`signalDates` is the list of timestamps of the individual events that fed the score. In Lodestar the freshness of each signal is not cosmetic — it drives a variable directly. The `signal-freshness` variable is a linear decay with roughly a 30-day half-life:
+`signalDates` is the list of timestamps of the individual events that fed the score. In Lodestar the freshness of each signal is not cosmetic — it drives a variable directly. The `signal-freshness` variable is a stepped decay with roughly a 30-day half-life:
 
 ```typescript
 function signalFreshness(ageDays: number): number {

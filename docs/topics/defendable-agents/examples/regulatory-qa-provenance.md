@@ -89,13 +89,13 @@ So a marketing-restrictions source tagged `review-due` that has aged past its re
 > **Q.** "Can we send a follow-up email to a buyer who has not yet responded?"
 >
 > **A.** "Permitted, subject to a documented opt-out in the first communication." — source `reg.marketing.restrictions`, valid from 2023, `dataAsOf` 2026-03-01.
-> **Notice:** TEMPORAL drift — this source is 128 days past its 30-day refresh window. Recommendation: monitor; confirm against the current circular before relying on it.
+> **Notice:** TEMPORAL drift — this source is roughly 128 days old, well past its 30-day refresh window. Recommendation: monitor; confirm against the current circular before relying on it.
 
 The agent answered, cited, and warned — in one pass. Every part of that exchange lands in the [append-only audit trail](/topics/defendable-agents/primitives/audit-trail/) as a governed event carrying the question, the selected units, the provenance chain, and the drift verdict, which is what makes the exchange reproducible months later. See [reproduce a decision](/topics/defendable-agents/examples/reproduce-a-decision/) for how that replay works.
 
 ## A real trace, not a mock
 
-The illustration above uses simplified unit names. Here is an *actual* run of the reference agent — the `kcp-agent` CLI — pointed at a real EU/Nordic regulatory corpus published as signed KCP units (GDPR, NIS2, the EU AI Act, EDPB guidelines, and national transpositions; publisher and key elided). Same mechanics, real law:
+The illustration above uses simplified unit names. Here is an *actual* run of the reference agent — the `kcp-agent` CLI — pointed at a real EU regulatory corpus published as signed KCP units (GDPR, NIS2, the EU AI Act, EDPB guidelines, and national transpositions; publisher and key elided). Same mechanics, real law:
 
 ```text
 $ kcp-agent plan "What are the GDPR processor obligations and Data Processing
