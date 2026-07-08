@@ -32,6 +32,7 @@ includes:
   - knowledge/projects.yaml
   - knowledge/talks.yaml
   - knowledge/blog.yaml
+  - knowledge/defendable-agents.yaml
 
 # Legacy v0.6 units preserved below for backwards compatibility
 # Agents capable of KCP v0.14 should follow the includes above.
