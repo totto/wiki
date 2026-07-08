@@ -48,7 +48,7 @@ Every decision leaves a record sufficient to reconstruct it without the running 
   "temporal": {
     "dataAsOf": "2026-07-07",
     "scoredAt": "2026-07-08T09:14:02.113Z",
-    "signalDates": ["2026-07-05", "2026-06-30"]
+    "signalDates": ["2026-07-02", "2026-06-30"]
   }
 }
 ```

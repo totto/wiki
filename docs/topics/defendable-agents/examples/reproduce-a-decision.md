@@ -58,7 +58,7 @@ The event carries the full decision trace — not a summary, the actual variable
   "temporal": {
     "dataAsOf": "2026-04-10T23:59:59.000Z",
     "scoredAt": "2026-04-11T09:22:14.006Z",
-    "signalDates": ["2026-04-08", "2026-04-05", "2026-03-29"]
+    "signalDates": ["2026-04-05", "2026-04-03", "2026-03-29"]
   }
 }
 ```

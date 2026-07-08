@@ -116,7 +116,7 @@ Every governed operation writes one JSON object per line. The schema below is th
   "temporal": {
     "dataAsOf": "2026-07-07",
     "scoredAt": "2026-07-08T09:14:22.041Z",
-    "signalDates": ["2026-07-01", "2026-07-05", "2026-07-07"]
+    "signalDates": ["2026-07-01", "2026-07-02", "2026-07-03"]
   },
   "budget": {
     "cost": 5, "currency": "units",

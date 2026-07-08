@@ -92,14 +92,14 @@ When the governed operation runs, it does four things in order: records the `buy
   "temporal": {
     "dataAsOf": "2026-07-07",
     "scoredAt": "2026-07-08T09:14:22.318Z",
-    "signalDates": ["2026-07-04", "2026-06-28"]
+    "signalDates": ["2026-07-02", "2026-06-28"]
   },
   "budget": { "cost": 5, "currency": "units", "runningTotal": 235, "ceiling": 1000, "remaining": 765 },
   "durationMs": 12
 }
 ```
 
-Read top to bottom, this line answers the four questions a regulator actually asks. What was decided (`pursue`, band `High`). On what rule version (`buyer-score@4.2.0`, a pinned governed unit). On what data, and how fresh (public signals dated 4 July and 28 June, `dataAsOf` 7 July). And whether the process stayed inside its budget (235 of 1000 units). Because the engine is a pure function, anyone can [reproduce this decision](/topics/defendable-agents/examples/reproduce-a-decision/) from the recorded variables and get 72 again. The trace is not a summary of the reasoning — it *is* the reasoning.
+Read top to bottom, this line answers the four questions a regulator actually asks. What was decided (`pursue`, band `High`). On what rule version (`buyer-score@4.2.0`, a pinned governed unit). On what data, and how fresh (public signals dated 2 July and 28 June, `dataAsOf` 7 July). And whether the process stayed inside its budget (235 of 1000 units). Because the engine is a pure function, anyone can [reproduce this decision](/topics/defendable-agents/examples/reproduce-a-decision/) from the recorded variables and get 72 again. The trace is not a summary of the reasoning — it *is* the reasoning.
 
 ## Honest limits
 

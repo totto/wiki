@@ -56,7 +56,7 @@ The `buyer_scored` audit event carries the full variable trace — not just the 
   "temporal": {
     "dataAsOf": "2026-07-08",
     "scoredAt": "2026-07-08T09:14:22.031Z",
-    "signalDates": ["2026-07-05", "2026-06-28"]
+    "signalDates": ["2026-07-02", "2026-06-28"]
   },
   "budget": { "cost": 5, "currency": "units", "runningTotal": 11, "ceiling": 1000, "remaining": 989 },
   "durationMs": 42

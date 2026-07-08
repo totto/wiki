@@ -92,7 +92,7 @@ A single `buyer_scored` line already contains the whole story. This is what one 
   "temporal": {
     "dataAsOf": "2026-07-06T00:00:00Z",
     "scoredAt": "2026-07-08T09:14:22.301Z",
-    "signalDates": ["2026-07-05", "2026-07-01"],
+    "signalDates": ["2026-07-02", "2026-06-28"],
     "modelVersion": "2.3.0",
     "modelHash": "sha256:9c1f...e4a2"
   },

@@ -114,7 +114,7 @@ OKF's three explicitly open problems are precisely where KCP has been working fo
 
 OKF has a `timestamp` field. It records when a document was last modified. That's a different thing from when the knowledge becomes true.
 
-I [wrote about this last week](../kcp-0.19-0.20-temporal.md) — the problem emerged concretely while building the KCP regulatory corpus. The EU AI Act was fully indexed and present in the corpus. Whether a given chapter applied *right now* was a different question. Prohibited practices took effect in February 2025. Transparency obligations hit in August 2025. The full high-risk framework doesn't apply until August 2026. One document, three timelines, eighteen months of staggered enforcement.
+I [wrote about this last week](2026-06-12-kcp-0.19-0.20-temporal.md) — the problem emerged concretely while building the KCP regulatory corpus. The EU AI Act was fully indexed and present in the corpus. Whether a given chapter applied *right now* was a different question. Prohibited practices took effect in February 2025. Transparency obligations hit in August 2025. The full high-risk framework doesn't apply until August 2026. One document, three timelines, eighteen months of staggered enforcement.
 
 `timestamp: last-modified` cannot represent this. You need `valid_from` at the unit level, derived from enforcement dates, with the ability to ask: "given a specific date, which of these units are currently in effect?"
 
