@@ -4794,6 +4794,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a-real-trace-not-a-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A real trace, not a mock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#honest-limits" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6140,6 +6151,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#a-real-trace-not-a-mock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A real trace, not a mock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#honest-limits" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6279,7 +6301,7 @@
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">marketing</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">restrictions</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">review-due</span><span class="p p-Indicator">]</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Permitted communications to prospective buyers</span>
 </span></code></pre></div>
-<p>Declaring sources this way is described in <a href="/topics/defendable-agents/kcp/declaring-governed-units/">declaring governed units</a>. <code>kcp-agent</code> exposes <code>kcp_plan</code>, <code>kcp_load</code>, and <code>kcp_validate</code> as MCP tools; the harness only grants the Q&amp;A domain those two read tools, <code>kcp_plan</code> and <code>kcp_load</code>. It cannot write, and it cannot reach any unit outside its declared paths — a <a href="/topics/defendable-agents/primitives/fail-closed-policy/">fail-closed boundary</a>, not a polite instruction.</p>
+<p>Declaring sources this way is described in <a href="/topics/defendable-agents/kcp/declaring-governed-units/">declaring governed units</a>. <code>kcp-agent</code> exposes <code>kcp_plan</code>, <code>kcp_load</code>, and <code>kcp_validate</code> as MCP tools; the governance harness only grants the Q&amp;A domain the two read tools, <code>kcp_plan</code> and <code>kcp_load</code>. It cannot write, and it cannot reach any unit outside its declared paths — a <a href="/topics/defendable-agents/primitives/fail-closed-policy/">fail-closed boundary</a>, not a polite instruction.</p>
 <h2 id="deterministic-selection-then-answer">Deterministic selection, then answer<a class="headerlink" href="#deterministic-selection-then-answer" title="Permanent link">&para;</a></h2>
 <p>Selection is a pure function of the question tags and the manifest — not a similarity guess re-rolled per call. Given the same question and the same corpus version, <code>kcp_plan</code> returns the same units in the same order every time. The <a href="/topics/defendable-agents/architecture/model-at-the-edge/">model at the edge</a> then phrases the answer, but it may only phrase from the loaded units. The provenance chain is built by the harness, not asserted by the model.</p>
 <p>Here is what one answer looks like on the wire — the prose the user reads is backed by a structured chain:</p>
@@ -6298,14 +6320,14 @@
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">],</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nt">&quot;temporal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">&quot;scoredAt&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-07-08T09:12:04Z&quot;</span><span class="p">,</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">&quot;sourceDates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;2025-11-02&quot;</span><span class="p">],</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">&quot;signalDates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;2025-11-02&quot;</span><span class="p">],</span>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">&quot;drift&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>No provenance entry, no claim. If the model tries to state something the loaded units do not support, there is no unit to attach, and the harness drops the claim rather than emitting an unbacked assertion. That is the whole point: the <a href="/topics/defendable-agents/primitives/decision-traces/">decision trace</a> is the answer's backbone, not an afterthought bolted on for auditors.</p>
 <h2 id="temporal-drift-flags-stale-rules">Temporal drift flags stale rules<a class="headerlink" href="#temporal-drift-flags-stale-rules" title="Permanent link">&para;</a></h2>
-<p>Every answer creates a temporal pin — <code>{scoredAt, dataAsOf, sourceDates[], modelVersion, modelHash}</code> — exactly as scoring operations do. On the next question touching the same unit, the <a href="/topics/defendable-agents/primitives/temporal-pinning/">drift check</a> compares the live corpus against the pin:</p>
+<p>Every answer creates a temporal pin — <code>{scoredAt, dataAsOf, signalDates[], modelVersion, modelHash}</code> — exactly as scoring operations do. On the next question touching the same unit, the <a href="/topics/defendable-agents/primitives/temporal-pinning/">drift check</a> compares the live corpus against the pin:</p>
 <table>
 <thead>
 <tr>
@@ -6344,7 +6366,43 @@
 <p><strong>A.</strong> "Permitted, subject to a documented opt-out in the first communication." — source <code>reg.marketing.restrictions</code>, valid from 2023, <code>dataAsOf</code> 2026-03-01.
 <strong>Notice:</strong> TEMPORAL drift — this source is 128 days past its 30-day refresh window. Recommendation: monitor; confirm against the current circular before relying on it.</p>
 </blockquote>
-<p>The agent answered, cited, and warned — in one pass. Every part of that exchange lands in the <a href="/topics/defendable-agents/primitives/audit-trail/">append-only audit log</a> as a governed event carrying the question, the selected units, the provenance chain, and the drift verdict, which is what makes the exchange reproducible months later. See <a href="/topics/defendable-agents/examples/reproduce-a-decision/">reproduce a decision</a> for how that replay works.</p>
+<p>The agent answered, cited, and warned — in one pass. Every part of that exchange lands in the <a href="/topics/defendable-agents/primitives/audit-trail/">append-only audit trail</a> as a governed event carrying the question, the selected units, the provenance chain, and the drift verdict, which is what makes the exchange reproducible months later. See <a href="/topics/defendable-agents/examples/reproduce-a-decision/">reproduce a decision</a> for how that replay works.</p>
+<h2 id="a-real-trace-not-a-mock">A real trace, not a mock<a class="headerlink" href="#a-real-trace-not-a-mock" title="Permanent link">&para;</a></h2>
+<p>The illustration above uses simplified unit names. Here is an <em>actual</em> run of the reference agent — the <code>kcp-agent</code> CLI — pointed at a real EU/Nordic regulatory corpus published as signed KCP units (GDPR, NIS2, the EU AI Act, EDPB guidelines, and national transpositions; publisher and key elided). Same mechanics, real law:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ kcp-agent plan &quot;What are the GDPR processor obligations and Data Processing
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    Agreement requirements under Article 28?&quot; --manifest ./regulatory-corpus
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Plan for: &quot;…GDPR processor obligations … Article 28?&quot;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>  regulatory-corpus · kcp 0.20 · as-of 2026-07-08
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Trust:      · no manifest attestation requirement
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Signature:  ✓ ed25519 signature verified (declared key)
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Load plan (5 units):
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  ● 1. edpb-09-2022-breach-notification   (score 23)   free
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>       GDPR Art. 33/34 breach notification; 72-hour timeline; processor→controller duties.
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>       why: intent matches 5 terms; triggers match 2
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>  ● 2. edpb-04-2019-data-protection-by-design (score 19)   free
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>       GDPR Art. 25 by-design / by-default obligations.
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>       why: intent matches 3; triggers match 2; id/path matches 1
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  ● 3. edpb-07-2020                        (score 19)   free
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>       Controller/processor distinction; sub-processor rules; Art. 28(3) DPA requirements.
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>       why: intent matches 3; triggers match 2; id/path matches 1
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  ● 4. eu-data-act-2023-2854               (score 18)   free
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>       Switching / portability; moderate relevance.  why: intent matches 4; triggers 1
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>  ● 5. edpb-07-2020-text                   (score 16)   free
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>       Plain-text companion of EDPB 07/2020 (~44K tokens).  why: intent 2; triggers 2
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>Budget: tier default — all selected units free to load.
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>Skipped (52):
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>  · gdpr-full             not_for: &#39;B2C consumer rights outside data protection&#39;
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>  · nis2-directive        not_for: &#39;questions about personal data processing&#39;
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>  · national-dp-act       not_for: &#39;EU GDPR without national transposition context&#39;
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>  · nist-csf-2            no task-relevance match
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>  · … 48 more, each with a written skip-reason
+</span></code></pre></div>
+<p>Everything the earlier sections claim is visible here on real regulations: the manifest <strong>signature is verified</strong> before anything loads; five units are selected with a <strong>written, scored reason</strong>; <strong>52 are skipped, each with a reason</strong> — jurisdiction gating, <code>not_for</code> audience rules, or simply no term match; and a <strong>budget</strong> is applied. Point it at the same corpus tomorrow and you get the same plan.</p>
+<p>One honest detail worth keeping in view: the scorer is <strong>deterministic term-matching, not semantics.</strong> That is why the breach-notification unit scored highest here even though the controller/processor guidance (<code>edpb-07-2020</code>) is the more central answer to an Article 28 question — the terms happened to overlap more. This is a feature, not a bug: you can see <em>exactly</em> why each unit ranked where it did, and fix a ranking you don't like by editing the manifest's <code>intent</code> and <code>triggers</code> — never by hoping a model guesses better next time. Transparency you can tune beats a similarity score you can't inspect. (In practice, phrase each unit's <code>not_for</code> as the <em>excluded</em> topic in its own words — "consumer marketing", "cybersecurity controls" — never as a negation of the unit's own subject, or the term gate will fence the unit off from its most natural questions.)</p>
 <h2 id="honest-limits">Honest limits<a class="headerlink" href="#honest-limits" title="Permanent link">&para;</a></h2>
 <p>This design guarantees <strong>traceability, not correctness</strong>. If a declared source itself contains a wrong or outdated rule, the agent will cite it faithfully and consistently — the error is applied visibly, with a date attached, which is how a reviewer catches it, but the agent will not catch it for you. Temporal pinning <em>detects</em> staleness; it does not <em>refresh</em> the corpus — someone still has to update the source unit and bump the manifest. And the model at the edge remains a model: it can still phrase a supported claim awkwardly or over-generalise within the bounds of a loaded unit. Governance here is maintenance — keeping sources declared, dated, and refreshed — not a one-time setup. For the broader argument on why traceable process beats confident fluency, see <a href="/topics/defendable-agents/argument/what-defendable-means/">what defendable means</a>.</p>
 
@@ -6369,7 +6427,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 10:41:47 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:59:14 UTC">July 8, 2026</span>
   </span>
 
     

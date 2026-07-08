@@ -6296,11 +6296,11 @@
 
 
 <h1 id="example-a-buyer-scoring-pipeline">Example: A Buyer-Scoring Pipeline<a class="headerlink" href="#example-a-buyer-scoring-pipeline" title="Permanent link">&para;</a></h1>
-<p>This page walks a single request through Lodestar, the reference system I use throughout this guide. Lodestar serves a regulated professional-services market: it watches public signals about <strong>buyers</strong> (organisations that might need work done), scores them, matches them against <strong>firms</strong> that could win the work, assigns an account tier, and writes the result to the client CRM. Every stage is a governed operation — it costs budget, it produces a decision trace, and it leaves a line in an append-only audit log.</p>
+<p>This page walks a single request through Lodestar, the reference system I use throughout this guide. Lodestar serves a regulated professional-services market: it watches public signals about <strong>buyers</strong> (organisations that might need work done), scores them, matches them against <strong>firms</strong> that could win the work, assigns an account tier, and writes the result to the client CRM. Every stage is a governed operation — it costs budget, it produces a decision trace, and it leaves a line in an append-only audit trail.</p>
 <p>The pipeline is five stages:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>signals → buyer score (18 var) → match score (21 var) → tier → CRM export
 </span></code></pre></div>
-<p>Nothing here is magic. The scoring is <a href="/topics/defendable-agents/architecture/deterministic-planner/">pure deterministic arithmetic</a>; the model only sits at the edges, extracting variables from messy text. What makes it defendable is that the arithmetic runs inside a <a href="/topics/defendable-agents/architecture/governance-harness/">governed session</a> that shares one budget ledger, one audit log and one set of temporal pins.</p>
+<p>Nothing here is magic. The scoring is <a href="/topics/defendable-agents/architecture/deterministic-planner/">pure deterministic arithmetic</a>; the model only sits at the edges, extracting variables from messy text. What makes it <a href="/topics/defendable-agents/argument/what-defendable-means/">defendable</a> is that the arithmetic runs inside a <a href="/topics/defendable-agents/architecture/governance-harness/">governed session</a> that shares one budget ledger, one audit trail and one set of temporal pins.</p>
 <h2 id="stage-1-signal-detection">Stage 1 — Signal detection<a class="headerlink" href="#stage-1-signal-detection" title="Permanent link">&para;</a></h2>
 <p>A signal is a dated public event: a mandate posted, a leadership change, a regulatory filing. Detection costs <strong>1 unit</strong> and emits a <code>signal_detected</code> event. Each signal carries a date, and that date matters later — freshness decays with a roughly 30-day half-life, so a signal three days old scores 5 while one ninety days old scores 1.5.</p>
 <h2 id="stage-2-buyer-score-18-variables-3-layers">Stage 2 — Buyer score (18 variables, 3 layers)<a class="headerlink" href="#stage-2-buyer-score-18-variables-3-layers" title="Permanent link">&para;</a></h2>
@@ -6360,7 +6360,7 @@
 </span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">  </span><span class="nt">&quot;durationMs&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>Because the total, the layer scores and every variable are recorded, anyone can <a href="/topics/defendable-agents/examples/reproduce-a-decision/">reproduce the decision</a> from the log alone. That is the whole point of a <a href="/topics/defendable-agents/primitives/decision-traces/">decision trace</a>.</p>
+<p>Because the total, the layer scores and every variable are recorded, anyone can <a href="/topics/defendable-agents/examples/reproduce-a-decision/">reproduce the decision</a> from the audit trail alone. That is the whole point of a <a href="/topics/defendable-agents/primitives/decision-traces/">decision trace</a>.</p>
 <h2 id="stage-3-match-score-21-variables-4-layers">Stage 3 — Match score (21 variables, 4 layers)<a class="headerlink" href="#stage-3-match-score-21-variables-4-layers" title="Permanent link">&para;</a></h2>
 <p>A buyer worth pursuing still needs the right firm. The match score composites four layers — Need-match (0.25), Market-match (0.20), Commercial-match (0.25) and Winnability-priority (0.30) — across 21 variables. It costs <strong>5 units</strong> and emits <code>match_scored</code>. Same arithmetic shape, same trace discipline.</p>
 <h2 id="stage-4-account-tiering">Stage 4 — Account tiering<a class="headerlink" href="#stage-4-account-tiering" title="Permanent link">&para;</a></h2>
@@ -6375,7 +6375,7 @@
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>12   match_scoring     match_2201   5     18
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>14   account_tiering   buyer_8830   2     20
 </span></code></pre></div>
-<p>Every score also creates a <a href="/topics/defendable-agents/primitives/temporal-pinning/">temporal pin</a> <code>{scoredAt, dataAsOf, signalDates, modelVersion, modelHash}</code>, so a later <a href="/topics/defendable-agents/primitives/drift-detection/">drift check</a> can tell you the score is 40 days stale and recommend reanalysis before anyone acts on it.</p>
+<p>Every score also creates a <a href="/topics/defendable-agents/primitives/temporal-pinning/">temporal pin</a> <code>{scoredAt, dataAsOf, signalDates, modelVersion, modelHash}</code>, so a later <a href="/topics/defendable-agents/primitives/drift-detection/">drift check</a> can tell you the score is 40 days old — past its 30-day maximum age — and flag it for review before anyone acts on it.</p>
 <h2 id="honest-limits">Honest limits<a class="headerlink" href="#honest-limits" title="Permanent link">&para;</a></h2>
 <p>Determinism here buys you <strong>process, not correctness</strong>. If <code>signal-relevance</code> was scored 4 when a human would say 2, the pipeline applies that mistake consistently — but visibly, in the trace, which is exactly how you catch and correct it. Temporal pinning tells you data is stale; it does not refresh the data. And the model at the edge, extracting those 1-5 variable scores from public text, is still a model — the arithmetic downstream is only as good as the reading upstream. The governance is what makes those failures legible rather than silent; see <a href="/topics/defendable-agents/argument/why-guardrails-fail/">why guardrails fail</a> for the alternative.</p>
 <p>For the full production write-up of this system, see the <a href="/topics/defendable-agents/reference/case-study-lodestar/">Lodestar case study</a>.</p>
@@ -6401,7 +6401,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 10:41:47 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:59:14 UTC">July 8, 2026</span>
   </span>
 
     

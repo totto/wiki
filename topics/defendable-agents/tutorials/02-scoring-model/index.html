@@ -6274,7 +6274,7 @@
 
 
 <h1 id="tutorial-2-a-deterministic-scoring-model">Tutorial 2: A Deterministic Scoring Model<a class="headerlink" href="#tutorial-2-a-deterministic-scoring-model" title="Permanent link">&para;</a></h1>
-<p>In <a href="/topics/defendable-agents/tutorials/01-first-harness/">Tutorial 1</a> you stood up a harness that gates and logs. That harness is worthless without something worth logging: a scoring decision you can reproduce and defend. This tutorial builds the smallest such thing — a two-layer model, authored as plain YAML, computed by hand, then declared as a governed unit so it can never be silently swapped.</p>
+<p>In <a href="/topics/defendable-agents/tutorials/01-first-harness/">Tutorial 1</a> you stood up a governance harness that gates and logs. That harness is worthless without something worth logging: a scoring decision you can reproduce and defend. This tutorial builds the smallest such thing — a two-layer model, authored as plain YAML, computed by hand, then declared as a governed unit so it can never be silently swapped.</p>
 <p>The full Lodestar buyer model has three layers and 18 variables. That is too much to hold in your head on a first pass, so we build a compact stand-in with two layers and four variables. The arithmetic is identical; only the count changes. When you understand this, the real thing in <a href="/topics/defendable-agents/decisions/anatomy-of-a-score/">Anatomy of a Score</a> reads as more of the same.</p>
 <h2 id="the-scoring-rule-stated-plainly">The scoring rule, stated plainly<a class="headerlink" href="#the-scoring-rule-stated-plainly" title="Permanent link">&para;</a></h2>
 <p>Every layer works the same way. Score each variable 1-5 against a written guide. Take the mean of the variable scores. Multiply by 20. You now have a 0-100 layer score. The overall score is a weighted composite of the layers, and the weights sum to 1.0.</p>
@@ -6363,7 +6363,7 @@
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">professional-services-market</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="nt">temporal</span><span class="p">:</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">valid_from</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2026-07-01&quot;</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">refresh_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">90d</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">refresh_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">P90D</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nt">units</span><span class="p">:</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">model.buyer-lite</span>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">models/buyer-lite.yaml</span>
@@ -6396,7 +6396,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 10:41:47 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:59:14 UTC">July 8, 2026</span>
   </span>
 
     

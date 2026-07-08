@@ -6318,7 +6318,7 @@
 
 
 <h1 id="tutorial-1-your-first-harnessyaml">Tutorial 1: Your First harness.yaml<a class="headerlink" href="#tutorial-1-your-first-harnessyaml" title="Permanent link">&para;</a></h1>
-<p>The harness is the file that turns a pile of clever code into a <em>defendable</em> agent. It is the boundary. Everything the agent is allowed to touch, spend, or record passes through it. In this tutorial we write one from scratch, key by key, and then confirm it loads.</p>
+<p>The harness is the file that turns a pile of clever code into a <a href="/topics/defendable-agents/argument/what-defendable-means/">defendable agent</a>. It is the boundary. Everything the agent is allowed to touch, spend, or record passes through it. In this tutorial we write one from scratch, key by key, and then confirm it loads.</p>
 <p>I will use the running example from this guide — <strong>Lodestar</strong>, an agent that scores buyers and firms in a regulated professional-services market. You do not need Lodestar's code to follow along; the harness shape is the same whatever your domain. If you have not yet set up a project directory, do <a href="/topics/defendable-agents/tutorials/00-project-layout/">Tutorial 0: Project Layout</a> first. For the wider picture of what this file is doing in the architecture, see the <a href="/topics/defendable-agents/architecture/governance-harness/">governance harness</a> page.</p>
 <h2 id="what-the-harness-is-for">What the harness is for<a class="headerlink" href="#what-the-harness-is-for" title="Permanent link">&para;</a></h2>
 <p>A harness is not configuration in the decorative sense. It is an enforced contract. When the session starts, the runtime reads <code>harness.yaml</code> and refuses to run anything the file does not permit. That is the whole point of <a href="/topics/defendable-agents/architecture/fail-closed-behavior/">fail-closed behaviour</a>: the default is <em>no</em>, and every <em>yes</em> is written down.</p>
@@ -6422,10 +6422,10 @@
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>./state
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Validate the manifest the harness depends on</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>kcp-agent<span class="w"> </span>kcp_validate<span class="w"> </span>./knowledge/knowledge.yaml
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>kcp-agent<span class="w"> </span>kcp_validate<span class="w"> </span>--manifest<span class="w"> </span>./knowledge/knowledge.yaml
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Load the harness and print the resolved policy</span>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>defendable-agent<span class="w"> </span>harness<span class="w"> </span>verify<span class="w"> </span>./harness.yaml
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>kcp-harness<span class="w"> </span>verify<span class="w"> </span>./harness.yaml
 </span></code></pre></div>
 <p>A clean run echoes back the resolved domains, the effective policy with <code>fail_closed: true</code>, the ceiling, and the audit path — and exits <code>0</code>. Because <code>strict: true</code> is set, a typo'd key or an undeclared tool fails the verify step here, at your desk, rather than mid-session in front of a customer.</p>
 <h2 id="honest-limits">Honest limits<a class="headerlink" href="#honest-limits" title="Permanent link">&para;</a></h2>
@@ -6453,7 +6453,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 10:41:47 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 11:59:14 UTC">July 8, 2026</span>
   </span>
 
     
