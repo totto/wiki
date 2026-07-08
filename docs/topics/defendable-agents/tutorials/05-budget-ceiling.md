@@ -8,7 +8,7 @@ image: assets/images/kcp-agent-020-06-composes-with-mcp.webp
 
 An agent left to its own devices will do as much work as its prompt implies — and sometimes far more, because a model that is uncertain will happily re-score, re-plan, and re-check "to be safe". That is fine when the work is free. It is not fine when each operation costs money, burns a rate limit, or touches a downstream system. In this tutorial we give the Lodestar session a hard spending ceiling and make it *provable* that a run never exceeded it.
 
-This builds directly on the [governed session](/topics/defendable-agents/tutorials/03-governed-session/) and its [audit log](/topics/defendable-agents/tutorials/04-audit-log/). If you have not wired those, start there. The primitive behind this page is [budget and bounding](/topics/defendable-agents/primitives/budget-and-bounding/).
+This builds directly on the [governed session](/topics/defendable-agents/tutorials/03-governed-session/) and its [audit log](/topics/defendable-agents/tutorials/04-audit-log/). If you have not wired those, start there. The primitive behind this page is [budget ceilings](/topics/defendable-agents/primitives/budget-and-bounding/).
 
 ## The cost table
 
@@ -36,14 +36,13 @@ The ceiling lives in `harness.yaml`, not in code, so an operator can tighten it 
 policy:
   fail_closed: true
   audit_all: true
-  max_units: 40
   budget:
-    amount: 1000
+    amount: 40          # 1000 in production; kept low here so the demo can hit it
     currency: units
   context_budget: 200000
 ```
 
-Here `budget.amount` is the session ceiling — 1000 units in production, but we set it low for the demo so we can actually hit it.
+Here `budget.amount` is the session ceiling. In production this is 1000 units; I keep it at 40 for the demo so we can actually reach it.
 
 ## record() — check before you spend
 
@@ -64,7 +63,7 @@ class BudgetLedger {
   private entries: LedgerEntry[] = [];
   private runningTotal = 0;
 
-  constructor(private ceiling: number, private currency = "units") {}
+  constructor(readonly ceiling: number, private currency = "units") {}
 
   record(operation: Operation, entityId: string, cost = OPERATION_COSTS[operation]) {
     if (this.runningTotal + cost > this.ceiling) {

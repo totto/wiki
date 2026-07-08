@@ -39,7 +39,7 @@ units:
     description: Permitted communications to prospective buyers
 ```
 
-Declaring sources this way is described in [declaring governed units](/topics/defendable-agents/kcp/declaring-governed-units/). `kcp-agent` exposes `kcp_plan`, `kcp_load`, and `kcp_validate` as MCP tools; the harness only grants the Q&A domain those two read tools, `kcp_plan` and `kcp_load`. It cannot write, and it cannot reach any unit outside its declared paths — a [fail-closed boundary](/topics/defendable-agents/primitives/fail-closed-policy/), not a polite instruction.
+Declaring sources this way is described in [declaring governed units](/topics/defendable-agents/kcp/declaring-governed-units/). `kcp-agent` exposes `kcp_plan`, `kcp_load`, and `kcp_validate` as MCP tools; the governance harness only grants the Q&A domain the two read tools, `kcp_plan` and `kcp_load`. It cannot write, and it cannot reach any unit outside its declared paths — a [fail-closed boundary](/topics/defendable-agents/primitives/fail-closed-policy/), not a polite instruction.
 
 ## Deterministic selection, then answer
 
@@ -63,7 +63,7 @@ Here is what one answer looks like on the wire — the prose the user reads is b
   ],
   "temporal": {
     "scoredAt": "2026-07-08T09:12:04Z",
-    "sourceDates": ["2025-11-02"],
+    "signalDates": ["2025-11-02"],
     "drift": []
   }
 }
@@ -73,7 +73,7 @@ No provenance entry, no claim. If the model tries to state something the loaded 
 
 ## Temporal drift flags stale rules
 
-Every answer creates a temporal pin — `{scoredAt, dataAsOf, sourceDates[], modelVersion, modelHash}` — exactly as scoring operations do. On the next question touching the same unit, the [drift check](/topics/defendable-agents/primitives/temporal-pinning/) compares the live corpus against the pin:
+Every answer creates a temporal pin — `{scoredAt, dataAsOf, signalDates[], modelVersion, modelHash}` — exactly as scoring operations do. On the next question touching the same unit, the [drift check](/topics/defendable-agents/primitives/temporal-pinning/) compares the live corpus against the pin:
 
 | Drift reason | Trigger | Recommendation |
 |---|---|---|
@@ -91,7 +91,49 @@ So a marketing-restrictions source tagged `review-due` that has aged past its re
 > **A.** "Permitted, subject to a documented opt-out in the first communication." — source `reg.marketing.restrictions`, valid from 2023, `dataAsOf` 2026-03-01.
 > **Notice:** TEMPORAL drift — this source is 128 days past its 30-day refresh window. Recommendation: monitor; confirm against the current circular before relying on it.
 
-The agent answered, cited, and warned — in one pass. Every part of that exchange lands in the [append-only audit log](/topics/defendable-agents/primitives/audit-trail/) as a governed event carrying the question, the selected units, the provenance chain, and the drift verdict, which is what makes the exchange reproducible months later. See [reproduce a decision](/topics/defendable-agents/examples/reproduce-a-decision/) for how that replay works.
+The agent answered, cited, and warned — in one pass. Every part of that exchange lands in the [append-only audit trail](/topics/defendable-agents/primitives/audit-trail/) as a governed event carrying the question, the selected units, the provenance chain, and the drift verdict, which is what makes the exchange reproducible months later. See [reproduce a decision](/topics/defendable-agents/examples/reproduce-a-decision/) for how that replay works.
+
+## A real trace, not a mock
+
+The illustration above uses simplified unit names. Here is an *actual* run of the reference agent — the `kcp-agent` CLI — pointed at a real EU/Nordic regulatory corpus published as signed KCP units (GDPR, NIS2, the EU AI Act, EDPB guidelines, and national transpositions; publisher and key elided). Same mechanics, real law:
+
+```text
+$ kcp-agent plan "What are the GDPR processor obligations and Data Processing
+    Agreement requirements under Article 28?" --manifest ./regulatory-corpus
+
+Plan for: "…GDPR processor obligations … Article 28?"
+  regulatory-corpus · kcp 0.20 · as-of 2026-07-08
+Trust:      · no manifest attestation requirement
+Signature:  ✓ ed25519 signature verified (declared key)
+
+Load plan (5 units):
+  ● 1. edpb-09-2022-breach-notification   (score 23)   free
+       GDPR Art. 33/34 breach notification; 72-hour timeline; processor→controller duties.
+       why: intent matches 5 terms; triggers match 2
+  ● 2. edpb-04-2019-data-protection-by-design (score 19)   free
+       GDPR Art. 25 by-design / by-default obligations.
+       why: intent matches 3; triggers match 2; id/path matches 1
+  ● 3. edpb-07-2020                        (score 19)   free
+       Controller/processor distinction; sub-processor rules; Art. 28(3) DPA requirements.
+       why: intent matches 3; triggers match 2; id/path matches 1
+  ● 4. eu-data-act-2023-2854               (score 18)   free
+       Switching / portability; moderate relevance.  why: intent matches 4; triggers 1
+  ● 5. edpb-07-2020-text                   (score 16)   free
+       Plain-text companion of EDPB 07/2020 (~44K tokens).  why: intent 2; triggers 2
+
+Budget: tier default — all selected units free to load.
+
+Skipped (52):
+  · gdpr-full             not_for: 'B2C consumer rights outside data protection'
+  · nis2-directive        not_for: 'questions about personal data processing'
+  · national-dp-act       not_for: 'EU GDPR without national transposition context'
+  · nist-csf-2            no task-relevance match
+  · … 48 more, each with a written skip-reason
+```
+
+Everything the earlier sections claim is visible here on real regulations: the manifest **signature is verified** before anything loads; five units are selected with a **written, scored reason**; **52 are skipped, each with a reason** — jurisdiction gating, `not_for` audience rules, or simply no term match; and a **budget** is applied. Point it at the same corpus tomorrow and you get the same plan.
+
+One honest detail worth keeping in view: the scorer is **deterministic term-matching, not semantics.** That is why the breach-notification unit scored highest here even though the controller/processor guidance (`edpb-07-2020`) is the more central answer to an Article 28 question — the terms happened to overlap more. This is a feature, not a bug: you can see *exactly* why each unit ranked where it did, and fix a ranking you don't like by editing the manifest's `intent` and `triggers` — never by hoping a model guesses better next time. Transparency you can tune beats a similarity score you can't inspect. (In practice, phrase each unit's `not_for` as the *excluded* topic in its own words — "consumer marketing", "cybersecurity controls" — never as a negation of the unit's own subject, or the term gate will fence the unit off from its most natural questions.)
 
 ## Honest limits
 

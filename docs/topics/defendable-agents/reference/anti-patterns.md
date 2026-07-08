@@ -8,7 +8,7 @@ image: assets/images/kcp-agent-020-02-navigation-is-an-algorithm.webp
 
 Most agents that fail an audit do not fail because someone was careless. They fail because a shortcut that felt reasonable at build time quietly removed the property that made the system defendable. The shortcut still runs. The demo still works. The gap only shows up when someone asks *why did it decide that, and can you prove it decided that way at the time?*
 
-This page enumerates the anti-patterns I keep seeing, using the [Lodestar](/topics/defendable-agents/reference/case-study-lodestar/) buyer-scoring stack — a deterministic engine scoring buyers in a regulated professional-services market — as the reference point. Each one comes with the fix.
+This page enumerates the anti-patterns I keep seeing, using the [Lodestar](/topics/defendable-agents/reference/case-study-lodestar/) buyer-scoring stack — a deterministic planner scoring buyers in a regulated professional-services market — as the reference point. Each one comes with the fix.
 
 ## 1. Reconstructed logs
 
@@ -44,7 +44,7 @@ This page enumerates the anti-patterns I keep seeing, using the [Lodestar](/topi
 
 **Why it is fatal.** You lose the one property that makes a decision defensible — that the same inputs yield the same output, every time, for anyone who re-runs it. See [Determinism vs Probabilism](/topics/defendable-agents/argument/determinism-vs-probabilism/).
 
-**The fix.** Keep the model at the edge, never in the arithmetic. In Lodestar a layer score is the mean of its 1–5 variable scores times 20, and the BUYER score is a fixed weighted composite of three layers — Need 0.40, Attractiveness 0.25, Winnability 0.35 — computed by a pure function. The model may *propose* a variable score from unstructured signal; the composition is [Reproducible](/topics/defendable-agents/decisions/reproducibility/) code. See [Model at the Edge](/topics/defendable-agents/architecture/model-at-the-edge/).
+**The fix.** Keep the model at the edge, never in the arithmetic. In Lodestar a layer score is the mean of its 1–5 variable scores times 20, and the buyer score is a fixed weighted composite of three layers — Need 0.40, Attractiveness 0.25, Winnability 0.35 — computed by a pure function. The model may *propose* a variable score from unstructured signal; the composition is [Reproducible](/topics/defendable-agents/decisions/reproducibility/) code. See [Model at the Edge](/topics/defendable-agents/architecture/model-at-the-edge/).
 
 > **Honest limit.** Determinism guarantees *process*, not *correctness*. If a variable is defined wrongly, the engine applies the mistake consistently — but visibly and reproducibly, which is exactly how you catch it. A model in the loop hides the mistake behind noise.
 
@@ -78,13 +78,13 @@ policy:
 
 **The anti-pattern.** A score is stored as a bare number with a timestamp of *when it was written*, not *what data it saw*. Months later nobody can tell whether it reflects current reality or a signal that decayed long ago — and in Lodestar signal freshness has a ~30-day half-life, so a stale score is not a rounding error, it is a different score.
 
-**The fix.** Every score creates a pin — `{ scoredAt, dataAsOf, signalDates[], modelVersion, modelHash }` — and a [drift check](/topics/defendable-agents/primitives/drift-detection/) compares it against current state (DATA, MODEL, or TEMPORAL drift). See [Temporal Pinning](/topics/defendable-agents/primitives/temporal-pinning/).
+**The fix.** Every score creates a pin — `{ scoredAt, dataAsOf, signalDates[], modelVersion, modelHash }` — and a [drift check](/topics/defendable-agents/primitives/drift-detection/) compares it against current state (data, model, or temporal drift). See [Temporal Pinning](/topics/defendable-agents/primitives/temporal-pinning/).
 
-> **Honest limit.** A pin detects staleness; it does not refresh the data. It tells you a decision is old, then you decide whether to reanalyze.
+> **Honest limit.** A pin detects staleness; it does not refresh the data. It tells you a decision is old, then you decide whether to reanalyse.
 
 ## 6. Weight-tuning to the answer
 
-**The anti-pattern.** The stakeholder wanted a particular buyer to land in "Very high", so someone nudged the layer weights until it did. The engine is now a machine for producing the conclusion you already had.
+**The anti-pattern.** The stakeholder wanted a particular buyer to land in "Very high", so someone nudged the layer weights until it did. The planner is now a machine for producing the conclusion you already had.
 
 **Why it is fatal.** Reproducibility is intact and worthless — you have made the model consistently confirm a bias, and the audit trail dutifully records it.
 

@@ -52,7 +52,7 @@ The `costs` block is the price list the [budget ledger](/topics/defendable-agent
 
 ## 2. The knowledge manifest — `knowledge.yaml`
 
-KCP declares the governed units of the session. The scoring models themselves are declared units, so the deterministic engine selects them by identity, never by silent fallback. If a model is missing or its hash changes, that is visible in the plan, not discovered later in a wrong score. The mechanics of this live in [declaring governed units](/topics/defendable-agents/kcp/declaring-governed-units/).
+KCP declares the governed units of the session. The scoring models themselves are declared units, so the deterministic planner selects them by identity, never by silent fallback. If a model is missing or its hash changes, that is visible in the plan, not discovered later in a wrong score. The mechanics of this live in [declaring governed units](/topics/defendable-agents/kcp/declaring-governed-units/).
 
 ```yaml
 # knowledge/knowledge.yaml — KCP manifest for the Lodestar scoring domain
@@ -79,7 +79,7 @@ units:
   - id: model.signal-decay
     path: models/signal-decay.json
     tags: [temporal, signal]
-    description: Linear freshness decay, ~30-day half-life.
+    description: Stepped freshness decay, ~30-day half-life.
 ```
 
 `kcp-agent` exposes `kcp_plan`, `kcp_load`, and `kcp_validate` as MCP tools; the harness above only grants `kcp_plan` and `kcp_load` to the domain, keeping validation a separate, deliberate step. Wiring this to the agent runtime is covered in [wiring KCP, the agent, and MCP](/topics/defendable-agents/kcp/wiring-kcp-agent-mcp/).
@@ -137,16 +137,16 @@ Each control is satisfied by a *mechanism* and evidenced by a *record*. That pai
 | Audit logging | Append-only JSONL | `session.jsonl` | ISO 27001 A.12.4 |
 | Decision trace | Full variable inputs/outputs | `scoring` block | SOC 2 CC7.2 |
 | Data provenance | Temporal pinning | `temporal` block | ISO 27001 A.8.1 |
-| Reproducibility | Deterministic engine | Re-run == same total | ISO 27001 A.14.2 |
+| Reproducibility | Deterministic planner | Re-run == same total | ISO 27001 A.14.2 |
 | Access boundaries | Fail-closed gating | Refused-session events | SOC 2 CC6.1 |
 | Processing records | Per-session governed logs | Session summary | GDPR Art. 30 |
-| Data minimization | Public-data-only + declared audience | Manifest `metadata` | GDPR Art. 5(1)(c) |
+| Data minimisation | Public-data-only + declared audience | Manifest `metadata` | GDPR Art. 5(1)(c) |
 | Tenant isolation | Per-tenant state directory | Path boundary | ISO 27001 A.9.4 |
 | Budget enforcement | Operation cost ceiling | `budget` block | SOC 2 CC6.1 |
 
 ## Honest limits
 
-These artifacts make a system *defendable*, not *correct*. The deterministic engine guarantees that the same inputs yield the same score — so a badly designed variable is applied consistently and visibly, which is how you catch it, but the engine will not tell you the weight is wrong. Temporal pinning detects staleness; it does not refresh data. And `fail_closed: true` can be over-tuned until it blocks legitimate work — tune the ceiling and the refresh interval to your real cadence, then revisit them. Governance is maintenance, not one-time setup.
+These artifacts make a system *defendable*, not *correct*. The deterministic planner guarantees that the same inputs yield the same score — so a badly designed variable is applied consistently and visibly, which is how you catch it, but the engine will not tell you the weight is wrong. Temporal pinning detects staleness; it does not refresh data. And `fail_closed: true` can be over-tuned until it blocks legitimate work — tune the ceiling and the refresh interval to your real cadence, then revisit them. Governance is maintenance, not one-time setup.
 
 ## Where to go next
 

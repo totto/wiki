@@ -38,7 +38,8 @@ Marginally, and in the places that do not matter. The pure scoring functions are
     "total": 72.05,
     "band": "High"
   },
-  "budget": { "cost": 5, "currency": "units", "runningTotal": 210, "ceiling": 1000 },
+  "temporal": { "scoredAt": "2026-07-08T09:14:22.881Z", "dataAsOf": "2026-07-06", "signalDates": ["2026-07-04"] },
+  "budget": { "cost": 5, "currency": "units", "runningTotal": 210, "ceiling": 1000, "remaining": 790 },
   "durationMs": 3
 }
 ```
@@ -61,8 +62,8 @@ The cost you actually manage is the internal **budget ledger**, denominated in u
 |---|---|
 | signal_detection | 1 |
 | buyer_scoring | 5 |
-| match_scoring | 5 |
 | firm_analysis | 10 |
+| match_scoring | 5 |
 | account_tiering | 2 |
 | gtm_plan | 10 |
 | reanalysis | 5 |

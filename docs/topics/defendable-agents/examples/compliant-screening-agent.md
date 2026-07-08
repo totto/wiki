@@ -60,9 +60,9 @@ The screening decision itself is a thin band check over the deterministic BUYER 
 | Lower priority | >= 40 | Hold |
 | Not prioritized now | < 40 | No pursue |
 
-## The decision trace as the defense
+## The decision trace as the defence
 
-When the governed operation runs, it does four things in order: records the `buyer_scoring` cost of 5 units against the session ceiling, runs the pure score, creates a [temporal pin](/topics/defendable-agents/primitives/temporal-pinning/), and emits an [audit event](/topics/defendable-agents/primitives/audit-trail/) carrying the full variable trace. That event is the defense.
+When the governed operation runs, it does four things in order: records the `buyer_scoring` cost of 5 units against the session ceiling, runs the pure score, creates a [temporal pin](/topics/defendable-agents/primitives/temporal-pinning/), and emits an [audit event](/topics/defendable-agents/primitives/audit-trail/) carrying the full variable trace. That event is the defence.
 
 ```json
 {
@@ -99,7 +99,7 @@ When the governed operation runs, it does four things in order: records the `buy
 }
 ```
 
-Read top to bottom, this line answers the four questions a regulator actually asks. What was decided (`pursue`, band `High`). On what rule version (`buyer-score@4.2.0`, a pinned governed unit). On what data, and how fresh (public signals dated 4 and 28 June, `dataAsOf` 7 July). And whether the process stayed inside its budget (235 of 1000 units). Because the engine is a pure function, anyone can [reproduce this decision](/topics/defendable-agents/examples/reproduce-a-decision/) from the recorded variables and get 72 again. The trace is not a summary of the reasoning — it *is* the reasoning.
+Read top to bottom, this line answers the four questions a regulator actually asks. What was decided (`pursue`, band `High`). On what rule version (`buyer-score@4.2.0`, a pinned governed unit). On what data, and how fresh (public signals dated 4 July and 28 June, `dataAsOf` 7 July). And whether the process stayed inside its budget (235 of 1000 units). Because the engine is a pure function, anyone can [reproduce this decision](/topics/defendable-agents/examples/reproduce-a-decision/) from the recorded variables and get 72 again. The trace is not a summary of the reasoning — it *is* the reasoning.
 
 ## Honest limits
 

@@ -8,7 +8,7 @@ image: assets/images/kcp-agent-020-07-governance-imperative.webp
 
 A score is only true as of the moment its inputs were true. By tutorial 4 you had an [audit log](/topics/defendable-agents/tutorials/04-audit-log/) recording every decision; by tutorial 5 a [budget ceiling](/topics/defendable-agents/tutorials/05-budget-ceiling/) bounding the work. Neither tells you when a score has gone stale. That is what temporal pinning is for. This tutorial builds a pin, advances the clock, runs a drift check, and schedules a nightly re-scan so staleness surfaces before someone acts on a number that stopped being true weeks ago.
 
-We are still working in Lodestar, the codename for a scoring stack in a regulated professional-services market: it scores buyers, then matches firms to them. Every buyer score depends on signals that decay — see [temporal pinning as a primitive](/topics/defendable-agents/primitives/temporal-pinning/) for the concept, [drift detection](/topics/defendable-agents/primitives/drift-detection/) for the rules, and the [anatomy of a score](/topics/defendable-agents/decisions/anatomy-of-a-score/) for what those 18 variables are.
+We are still working in Lodestar, the codename for a scoring stack in a regulated professional-services market: it scores buyers, then matches firms to them. Every buyer score depends on signals that decay — see [temporal pinning](/topics/defendable-agents/primitives/temporal-pinning/) for the concept, [drift detection](/topics/defendable-agents/primitives/drift-detection/) for the rules, and the [anatomy of a score](/topics/defendable-agents/decisions/anatomy-of-a-score/) for what those 18 variables are.
 
 ## Step 1 — Create a pin
 
@@ -152,7 +152,7 @@ lodestar drift scan \
   --audit ./state/${TENANT}/audit.jsonl
 ```
 
-`--emit reanalysis` re-scores only the pins recommending `reanalyze`; `monitor` pins are logged and left alone. Because each reanalysis costs 5 units against the session ceiling of 1000, a night that flags 300 buyers stops cleanly at 200 and records a `budget_exceeded` event rather than blowing past the ceiling — the [budget and bounding primitive](/topics/defendable-agents/primitives/budget-and-bounding/) at work. In a multi-tenant deployment, run the scan per tenant against its own isolated `state/${TENANT}/` directory so confidential scores never cross the boundary.
+`--emit reanalysis` re-scores only the pins recommending `reanalyze`; `monitor` pins are logged and left alone. Because each reanalysis costs 5 units against the session ceiling of 1000, a night that flags 300 buyers stops cleanly at 200 and records a `budget_exceeded` event rather than blowing past the ceiling — the [budget ceiling primitive](/topics/defendable-agents/primitives/budget-and-bounding/) at work. In a multi-tenant deployment, run the scan per tenant against its own isolated `state/${TENANT}/` directory so confidential scores never cross the boundary.
 
 ## Honest limits
 

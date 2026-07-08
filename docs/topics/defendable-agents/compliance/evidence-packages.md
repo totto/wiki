@@ -68,7 +68,7 @@ The signature is computed over the sorted list of artefact hashes plus the manif
 
 ## Reproducibility instructions
 
-The [deterministic engine](/topics/defendable-agents/decisions/reproducibility/) is what makes an offline package meaningful: the scoring functions are pure, so the same inputs and the same model version yield the same total, byte for byte, on the auditor's machine. Include a short, literal recipe:
+The [deterministic planner](/topics/defendable-agents/decisions/reproducibility/) is what makes an offline package meaningful: the scoring functions are pure, so the same inputs and the same model version yield the same total, byte for byte, on the auditor's machine. Include a short, literal recipe:
 
 ```bash
 # 1. Verify integrity: every artifact hash matches the manifest

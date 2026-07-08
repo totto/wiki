@@ -6,7 +6,7 @@ image: assets/images/kcp-agent-020-02-navigation-is-an-algorithm.webp
 
 # Tutorial 1: Your First harness.yaml
 
-The harness is the file that turns a pile of clever code into a *defendable* agent. It is the boundary. Everything the agent is allowed to touch, spend, or record passes through it. In this tutorial we write one from scratch, key by key, and then confirm it loads.
+The harness is the file that turns a pile of clever code into a [defendable agent](/topics/defendable-agents/argument/what-defendable-means/). It is the boundary. Everything the agent is allowed to touch, spend, or record passes through it. In this tutorial we write one from scratch, key by key, and then confirm it loads.
 
 I will use the running example from this guide — **Lodestar**, an agent that scores buyers and firms in a regulated professional-services market. You do not need Lodestar's code to follow along; the harness shape is the same whatever your domain. If you have not yet set up a project directory, do [Tutorial 0: Project Layout](/topics/defendable-agents/tutorials/00-project-layout/) first. For the wider picture of what this file is doing in the architecture, see the [governance harness](/topics/defendable-agents/architecture/governance-harness/) page.
 
@@ -139,10 +139,10 @@ A harness that does not load cleanly is worse than none — you would be running
 mkdir -p ./state
 
 # Validate the manifest the harness depends on
-kcp-agent kcp_validate ./knowledge/knowledge.yaml
+kcp-agent kcp_validate --manifest ./knowledge/knowledge.yaml
 
 # Load the harness and print the resolved policy
-defendable-agent harness verify ./harness.yaml
+kcp-harness verify ./harness.yaml
 ```
 
 A clean run echoes back the resolved domains, the effective policy with `fail_closed: true`, the ceiling, and the audit path — and exits `0`. Because `strict: true` is set, a typo'd key or an undeclared tool fails the verify step here, at your desk, rather than mid-session in front of a customer.

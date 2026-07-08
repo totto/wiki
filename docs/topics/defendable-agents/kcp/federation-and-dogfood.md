@@ -78,8 +78,8 @@ kcp-agent sign scoring/knowledge.yaml \
 kcp-agent kcp_validate --manifest lodestar-root/knowledge.yaml --verify-signatures
 ```
 
-The harness maps each `governance.domains[].manifest` to a signature it will
-accept. If a sub-manifest's signature does not verify against a trusted key, the
+The harness maps each `governance.domains[].manifest` in `harness.yaml` to a
+signature it will accept. If a sub-manifest's signature does not verify against a trusted key, the
 domain is not mounted and `kcp_plan`/`kcp_load` return nothing for it — the
 governed operation then fails closed rather than scoring against unattested
 knowledge. This is the manifest-level counterpart to

@@ -19,7 +19,6 @@ Every governed operation carries a cost in abstract **units**. The ceiling is se
 policy:
   fail_closed: true
   audit_all: true
-  max_units: 50
   budget:
     amount: 1000       # session ceiling, in units
     currency: units

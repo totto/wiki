@@ -89,7 +89,7 @@ test("tenants share signals but isolate scores", async () => {
   const a = await acme.scoreBuyer("buyer-88", signal);
   const g = await globex.scoreBuyer("buyer-88", signal);
 
-  // Same input, deterministic engine — but confidential outputs land apart.
+  // Same input, deterministic planner — but confidential outputs land apart.
   expect(a.total).not.toBeUndefined();
   await acme.end();
   await globex.end();

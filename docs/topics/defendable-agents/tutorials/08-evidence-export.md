@@ -14,7 +14,7 @@ If you have not done the earlier tutorials, at least skim [Tutorial 4: The Audit
 
 ## What an auditor actually needs
 
-An auditor is not asking you to prove the score is *right*. They are asking you to prove the process is *accountable*: that the decision was made the way you say it was, on the data you say it was, and that you can show it again. For one decision, that reduces to four artefacts:
+An auditor is not asking you to prove the score is *right*. They are asking you to prove the process is *defendable*: that the decision was made the way you say it was, on the data you say it was, and that you can show it again. For one decision, that reduces to four artefacts:
 
 | Artefact | Answers | Source |
 |---|---|---|
@@ -101,7 +101,7 @@ A single `buyer_scored` line already contains the whole story. This is what one 
 }
 ```
 
-The layer maths is checkable by hand — Need is the mean of its six 1-5 variables times 20, and the composite is `0.40·Need + 0.25·Attractiveness + 0.35·Winnability`. An auditor with a calculator can reproduce `78.4` from the numbers on the page. That is the point of a [deterministic engine](/topics/defendable-agents/decisions/reproducibility/): the trace is not a summary of the decision, it *is* the decision.
+The layer maths is checkable by hand — Need is the mean of its six 1-5 variables times 20, and the composite is `0.40·Need + 0.25·Attractiveness + 0.35·Winnability`. An auditor with a calculator can reproduce `78.4` from the numbers on the page. That is the point of a [deterministic planner](/topics/defendable-agents/decisions/reproducibility/): the trace is not a summary of the decision, it *is* the decision.
 
 ## Step 3 — assemble a self-contained package
 
@@ -118,7 +118,7 @@ cat > "$OUT/manifest.json" <<JSON
   "package": "evidence/${ENTITY}",
   "decision": "buyer_5567 scored ${MODEL_VER}",
   "generatedAt": "$(date -u +%FT%TZ)",
-  "generatedBy": "totto@exoreaction.com",
+  "generatedBy": "audit-export@example.org",
   "contents": {
     "decision.jsonl": "Decision trace (SOC 2 CC7.2)",
     "budget.jsonl":   "Budget enforcement record (SOC 2 CC6.1)",
@@ -143,7 +143,7 @@ The auditor rarely reads JSON for pleasure. They want a crosswalk from artefact 
 - **Decision trace** (`scoring.variables`, `layerScores`, `total`, `band`) satisfies the decision-trace control — full inputs and outputs, SOC 2 CC7.2.
 - **Temporal pin** (`temporal`) satisfies data provenance — you can show exactly how old the underlying signals were, ISO 27001 A.8.1.
 - **Budget ledger** (`budget_spend`) satisfies budget enforcement — the operation cost against a hard ceiling, SOC 2 CC6.1.
-- **Model hash** (`modelHash` + `model.sha256`) satisfies reproducibility — the deterministic engine plus the exact model bytes, ISO 27001 A.14.2.
+- **Model hash** (`modelHash` + `model.sha256`) satisfies reproducibility — the deterministic planner plus the exact model bytes, ISO 27001 A.14.2.
 
 For the fuller narrative an assessor reads alongside the package, point them at [verifying defendability](/topics/defendable-agents/compliance/verifying-defendability/).
 

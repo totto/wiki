@@ -6,10 +6,11 @@ image: assets/images/summer-plan-00-defendable-agent-workflow.webp
 
 # Operating & Maintaining One
 
-A defendable agent is not something you build once and hang on the wall. The
-whole point of the machinery — the append-only log, the temporal pins, the
-deterministic scoring engine — is that it keeps telling you the truth about
-itself as the world drifts underneath it. That only works if someone keeps it
+A [defendable agent](/topics/defendable-agents/argument/what-defendable-means/)
+is not something you build once and hang on the wall. The whole point of the
+machinery — the append-only audit trail, the temporal pins, the deterministic
+planner — is that it keeps telling you the truth about itself as the world
+drifts underneath it. That only works if someone keeps it
 running. Governance is maintenance. If nobody owns the upkeep, the controls
 quietly rot and you are left with a system that *looks* governed and isn't.
 

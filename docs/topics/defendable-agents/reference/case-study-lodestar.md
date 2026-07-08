@@ -8,11 +8,11 @@ image: assets/images/kcp-agent-020-00-end-of-vibes-overview.webp
 
 Lodestar is the system this whole field guide is reverse-engineered from. It is a competitive-intelligence and scoring engine operating in a regulated professional-services market: it watches public signals about buyers, scores how worthwhile each buyer is to pursue, and produces go-to-market plans for the firms selling into that market. The real system is proprietary and the domain is sensitive, so everything here is anonymised. What is not anonymised is the mechanics — the numbers, weights, event shapes, and control mappings are exactly what runs.
 
-I built Lodestar the way I have built systems for four decades: assume the interesting failures happen where nobody is looking, and instrument for that. When a model recommends spending real commercial effort on one buyer over another, "the AI said so" is not an answer anyone can defend. That is why Lodestar is a *defendable* agent — the model lives at the edge, and every consequential decision is a deterministic, logged, reproducible function of declared inputs.
+I built Lodestar the way I have built systems for four decades: assume the interesting failures happen where nobody is looking, and instrument for that. When a model recommends spending real commercial effort on one buyer over another, "the AI said so" is not an answer anyone can defend. That is why Lodestar is a *defendable* agent — the model at the edge turns noisy inputs into typed ones, and every consequential decision downstream is a deterministic, logged, reproducible function of those declared inputs. If the term is new, [what defendable means](/topics/defendable-agents/argument/what-defendable-means/) is the one-page definition; this page is the worked example.
 
 ## Why defendable matters here
 
-The buyers are large, the pursuit costs are real, and the market is regulated, so decisions can be audited after the fact by people who were not in the room. A buyer excluded from pursuit is a commercial decision with a paper trail requirement. A confidential score leaking across tenant boundaries is an incident. The threat model (see [/topics/defendable-agents/argument/threat-model/](/topics/defendable-agents/argument/threat-model/)) is not "the model hallucinates a fact" so much as "we cannot show why we did what we did." Defendability is the product requirement, not a nice-to-have.
+The buyers are large, the pursuit costs are real, and the market is regulated, so decisions can be audited after the fact by people who were not in the room. A buyer excluded from pursuit is a commercial decision with a paper trail requirement. A confidential score leaking across tenant boundaries is an incident. The [threat model](/topics/defendable-agents/argument/threat-model/) is not "the model hallucinates a fact" so much as "we cannot show why we did what we did." Defendability is the product requirement, not a nice-to-have.
 
 ## The pipeline
 
@@ -32,7 +32,7 @@ The model reads noisy public events and turns them into structured, typed inputs
 
 ## Deterministic scoring
 
-A BUYER score is a weighted composite of three layers. Each layer score is the mean of its 1-5 variable scores times 20, giving 0-100:
+A buyer score is a weighted composite of three layers. Each layer score is the mean of its 1-5 variable scores times 20, giving 0-100:
 
 ```typescript
 // layer score: mean of 1-5 variable scores, scaled to 0-100
@@ -53,7 +53,7 @@ const band =
                 "Not prioritized now";
 ```
 
-Eighteen variables across three layers for buyers; twenty-one across four layers for the MATCH score. `signal-freshness` is itself a pinned function of time — a linear decay with a roughly 30-day half-life, so a three-day-old signal scores 5 and a ninety-day-old one scores 1.5. Same inputs, same outputs, every time. The [anatomy of a score](/topics/defendable-agents/decisions/anatomy-of-a-score/) page walks the full arithmetic; [variable design](/topics/defendable-agents/decisions/variable-design/) covers why each variable exists.
+Eighteen variables across three layers for buyers; twenty-one across four layers for the match score. `signal-freshness` is itself a pinned function of time — a linear decay with a roughly 30-day half-life, so a three-day-old signal scores 5 and a ninety-day-old one scores 1.5. Same inputs, same outputs, every time. The [anatomy of a score](/topics/defendable-agents/decisions/anatomy-of-a-score/) page walks the full arithmetic; [variable design](/topics/defendable-agents/decisions/variable-design/) covers why each variable exists.
 
 ## The governance layer in practice
 
@@ -92,7 +92,7 @@ The whole harness is configured declaratively — fail-closed, audit-all, ceilin
 
 ## Multi-tenancy
 
-Several firms use Lodestar over the same market. Signal and company data is shared — every tenant sees the same public events, because they are public. Scores and plans are CONFIDENTIAL and live in isolated per-tenant state directories. The isolation is a directory boundary enforced by the harness, not a policy note in a document. That distinction is the whole point of [multi-tenancy](/topics/defendable-agents/primitives/multi-tenancy/): a boundary you can `ls`.
+Several firms use Lodestar over the same market. Signal and company data is shared — every tenant sees the same public events, because they are public. Scores and plans are confidential and live in isolated per-tenant state directories. The isolation is a directory boundary enforced by the harness, not a policy note in a document. That distinction is the whole point of [multi-tenancy](/topics/defendable-agents/primitives/multi-tenancy/): a boundary you can `ls`.
 
 ## Compliance mapping
 

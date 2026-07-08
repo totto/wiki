@@ -6,7 +6,7 @@ image: assets/images/kcp-agent-020-00-end-of-vibes-overview.webp
 
 # Example: A Buyer-Scoring Pipeline
 
-This page walks a single request through Lodestar, the reference system I use throughout this guide. Lodestar serves a regulated professional-services market: it watches public signals about **buyers** (organisations that might need work done), scores them, matches them against **firms** that could win the work, assigns an account tier, and writes the result to the client CRM. Every stage is a governed operation — it costs budget, it produces a decision trace, and it leaves a line in an append-only audit log.
+This page walks a single request through Lodestar, the reference system I use throughout this guide. Lodestar serves a regulated professional-services market: it watches public signals about **buyers** (organisations that might need work done), scores them, matches them against **firms** that could win the work, assigns an account tier, and writes the result to the client CRM. Every stage is a governed operation — it costs budget, it produces a decision trace, and it leaves a line in an append-only audit trail.
 
 The pipeline is five stages:
 
@@ -14,7 +14,7 @@ The pipeline is five stages:
 signals → buyer score (18 var) → match score (21 var) → tier → CRM export
 ```
 
-Nothing here is magic. The scoring is [pure deterministic arithmetic](/topics/defendable-agents/architecture/deterministic-planner/); the model only sits at the edges, extracting variables from messy text. What makes it defendable is that the arithmetic runs inside a [governed session](/topics/defendable-agents/architecture/governance-harness/) that shares one budget ledger, one audit log and one set of temporal pins.
+Nothing here is magic. The scoring is [pure deterministic arithmetic](/topics/defendable-agents/architecture/deterministic-planner/); the model only sits at the edges, extracting variables from messy text. What makes it [defendable](/topics/defendable-agents/argument/what-defendable-means/) is that the arithmetic runs inside a [governed session](/topics/defendable-agents/architecture/governance-harness/) that shares one budget ledger, one audit trail and one set of temporal pins.
 
 ## Stage 1 — Signal detection
 
@@ -63,7 +63,7 @@ The `buyer_scored` audit event carries the full variable trace — not just the 
 }
 ```
 
-Because the total, the layer scores and every variable are recorded, anyone can [reproduce the decision](/topics/defendable-agents/examples/reproduce-a-decision/) from the log alone. That is the whole point of a [decision trace](/topics/defendable-agents/primitives/decision-traces/).
+Because the total, the layer scores and every variable are recorded, anyone can [reproduce the decision](/topics/defendable-agents/examples/reproduce-a-decision/) from the audit trail alone. That is the whole point of a [decision trace](/topics/defendable-agents/primitives/decision-traces/).
 
 ## Stage 3 — Match score (21 variables, 4 layers)
 
@@ -89,7 +89,7 @@ seq  operation         entity       cost  runningTotal
 14   account_tiering   buyer_8830   2     20
 ```
 
-Every score also creates a [temporal pin](/topics/defendable-agents/primitives/temporal-pinning/) `{scoredAt, dataAsOf, signalDates, modelVersion, modelHash}`, so a later [drift check](/topics/defendable-agents/primitives/drift-detection/) can tell you the score is 40 days stale and recommend reanalysis before anyone acts on it.
+Every score also creates a [temporal pin](/topics/defendable-agents/primitives/temporal-pinning/) `{scoredAt, dataAsOf, signalDates, modelVersion, modelHash}`, so a later [drift check](/topics/defendable-agents/primitives/drift-detection/) can tell you the score is 40 days old — past its 30-day maximum age — and flag it for review before anyone acts on it.
 
 ## Honest limits
 

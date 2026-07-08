@@ -32,9 +32,10 @@ metadata:
   description: >
     Governed knowledge units for buyer scoring, match scoring
     and account tiering in a regulated professional-services market.
-  temporal:
-    valid_from: 2026-05-01
-    refresh_interval: P30D
+
+temporal:
+  valid_from: 2026-05-01
+  refresh_interval: P30D
 
 units:
   - id: buyer-scoring-model

@@ -35,7 +35,7 @@ stack, and each has a distinct failure signature.
 The scoring engine is a set of pure functions:
 [reproducibility](/topics/defendable-agents/decisions/reproducibility/) is the
 whole point. A golden-master test freezes a known input, records the expected
-output once, and fails on any divergence. Because a BUYER score is a weighted
+output once, and fails on any divergence. Because a Buyer score is a weighted
 composite of three layers — Need (0.40), Attractiveness (0.25),
 Winnability (0.35) — the fixture must pin every one of the 18 variables.
 

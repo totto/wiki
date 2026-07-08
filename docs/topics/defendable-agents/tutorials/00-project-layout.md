@@ -6,7 +6,7 @@ image: assets/images/kcp-agent-020-01-plan-is-the-product.webp
 
 # Tutorial 0: Project Layout
 
-Before you write a single scoring function, decide where things live on disk. A defendable agent earns its name from the records it leaves behind, and those records are files: an audit log you can `grep`, a budget ledger you can diff, temporal pins you can replay. If the layout is wrong, the evidence is scattered, and scattered evidence is no evidence at all. So we start here — with directories, not code.
+Before you write a single scoring function, decide where things live on disk. A [defendable agent](/topics/defendable-agents/argument/what-defendable-means/) earns its name from the records it leaves behind, and those records are files: an audit log you can `grep`, a budget ledger you can diff, temporal pins you can replay. If the layout is wrong, the evidence is scattered, and scattered evidence is no evidence at all. So we start here — with directories, not code.
 
 This tutorial builds the skeleton for **Lodestar**, the worked example that runs through the rest of this guide. Lodestar scores buyers in a regulated professional-services market: which buyers a firm should pursue, and how well a given firm matches a given buyer. Every number it produces is deterministic and every decision it takes is logged. None of that is possible without a place to put the artefacts.
 
@@ -84,7 +84,6 @@ governance:
 policy:
   fail_closed: true
   audit_all: true
-  max_units: 50
   strict: true
   budget:
     amount: 1000

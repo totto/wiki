@@ -74,8 +74,8 @@ import { scoreBuyer } from "./engine";
 // The exact event, read back from the JSONL line.
 const ev = readEvent("audit/session-2026-04-11.jsonl", 41);
 
-// Pin the model by version — kcp_load resolves 2.3.0, never "latest".
-const model = await loadModel(ev.scoring.model); // "buyer-score@2.3.0"
+// Pin the model by version — loadModel resolves the exact release, never "latest".
+const model = await loadModel(ev.scoring.model); // resolves "buyer-score@2.3.0", never "latest"
 
 // Feed the recorded variables straight back in.
 const inputs = Object.fromEntries(
@@ -120,4 +120,4 @@ An auditor is not asking "is 73.33 the *right* number?" They are asking "can you
 
 Reproducibility guarantees **process, not correctness**. If `internal-mobilization` was scored 2 when the honest reading of the evidence was 4, the engine will reproduce the wrong 2 forever — consistently and visibly. That is the point: the mistake is pinned in the open where a reviewer can find it and argue with it, instead of dissolving into a lost prompt. Determinism makes errors *auditable*, not absent.
 
-Two related caveats. The temporal pin tells you the data was current to 10 April; it does **not** refresh that data, and re-running today with the same pin deliberately ignores anything newer — that separation is what [Drift Detection](/topics/defendable-agents/primitives/drift-detection/) exists to flag. And the variable scores themselves came from a model at the edge; reproducing them faithfully does not upgrade a judgement call into a fact. What you get is the ability to see, exactly, what was decided and on what basis — which is the whole argument in [What Defendable Means](/topics/defendable-agents/argument/what-defendable-means/).
+Two related caveats. The temporal pin tells you the data was current to 10 April; it does **not** refresh that data, and re-running today with the same pin deliberately ignores anything newer — that separation is what [Drift Detection](/topics/defendable-agents/primitives/drift-detection/) exists to flag. And the variable scores themselves came from the model at the edge; reproducing them faithfully does not upgrade a judgement call into a fact. What you get is the ability to see, exactly, what was decided and on what basis — which is the whole argument in [What Defendable Means](/topics/defendable-agents/argument/what-defendable-means/).

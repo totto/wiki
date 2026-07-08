@@ -84,11 +84,11 @@ kcp-agent call kcp_load \
 # => { "id": "scoring/buyer-model", "content": "...model manifest..." }
 ```
 
-Step 2 is where the discipline lives. The plan is the four units the buyer model actually depends on — the [three-layer composite](/topics/defendable-agents/decisions/layers-weights-bands/) and nothing adjacent. The planner did not "decide" to include the match-scoring units or a tenant's confidential plans; they were not on the dependency path, so they never entered the model's context. In a governed session this same `kcp_plan`/`kcp_load` pair runs behind the [harness](/topics/defendable-agents/architecture/governance-harness/), whose `governance.domains[].tools` list is literally `[kcp_plan, kcp_load]` — the only two the agent is permitted to invoke inside a domain.
+Step 2 is where the discipline lives. The plan is the four units the buyer model actually depends on — the [three-layer composite](/topics/defendable-agents/decisions/layers-weights-bands/) and nothing adjacent. The planner did not "decide" to include the match-scoring units or a tenant's confidential plans; they were not on the dependency path, so they never entered the model's context. In a governed session this same `kcp_plan`/`kcp_load` pair runs behind the [governance harness](/topics/defendable-agents/architecture/governance-harness/), whose `governance.domains[].tools` list is literally `[kcp_plan, kcp_load]` — the only two the agent is permitted to invoke inside a domain.
 
 ## Why selection stays governed
 
-Because the scoring models are themselves [declared as KCP units](/topics/defendable-agents/decisions/scoring-model-manifest/), the planner selects the *versioned* model, not whatever a prompt happened to name. There is no path by which the model silently swaps to a different scoring definition mid-session: the unit id resolves through the manifest, the manifest is pinned, and the resulting choice is recorded. Pair that with the [audit trail](/topics/defendable-agents/primitives/audit-trail/) and you can reconstruct, months later, exactly which units were planned and loaded for a given decision.
+Because the scoring models are themselves [declared as KCP units](/topics/defendable-agents/decisions/scoring-model-manifest/), the planner selects the *versioned* model, not whatever a prompt happened to name. There is no path by which the model silently swaps to a different scoring definition mid-session: the unit id resolves through the manifest, the manifest is pinned, and the resulting choice is recorded. Pair that with the [append-only audit trail](/topics/defendable-agents/primitives/audit-trail/) and you can reconstruct, months later, exactly which units were planned and loaded for a given decision.
 
 ## Honest limits
 

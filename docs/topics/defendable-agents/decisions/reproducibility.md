@@ -12,7 +12,7 @@ A score you cannot reproduce is an opinion with a timestamp. The whole point of 
 
 The Lodestar scoring engine is a set of pure functions. Given the same inputs it returns the same outputs, every time, on any machine, forever. No clock reads inside the function. No network calls. No random seeds. No global mutable state. The variable scores go in, the layer means and the weighted composite come out.
 
-A BUYER layer score is the mean of its 1-5 variable scores times 20, giving a 0-100 layer score. The composite is a fixed weighting of three layers — Need at 0.40, Attractiveness at 0.25, Winnability at 0.35 — and the band is a lookup on the total. There is nothing in that description that varies between two runs.
+A buyer layer score is the mean of its 1-5 variable scores times 20, giving a 0-100 layer score. The composite is a fixed weighting of three layers — Need at 0.40, Attractiveness at 0.25, Winnability at 0.35 — and the band is a lookup on the total. There is nothing in that description that varies between two runs.
 
 ```typescript
 // Pure: no I/O, no Date.now(), no Math.random(), no hidden state.
@@ -43,19 +43,19 @@ function band(total: number): string {
 }
 ```
 
-The [governed session](/topics/defendable-agents/architecture/governance-harness/) is where the impure things live: budget recording, temporal pinning, audit emission, reading the current data. The pure engine is called from inside that harness but knows nothing about it. This separation is the reproducibility guarantee. If you want to understand how the raw variables become a defensible total, read [anatomy of a score](/topics/defendable-agents/decisions/anatomy-of-a-score/); this page is about proving the arithmetic never drifts underneath you.
+The [governance harness](/topics/defendable-agents/architecture/governance-harness/) is where the impure things live: budget recording, temporal pinning, audit emission, reading the current data. The pure engine is called from inside the harness but knows nothing about it. This separation is the reproducibility guarantee; this page is about proving the arithmetic never drifts underneath you.
 
 ## Determinism is not correctness
 
 Here is the honest limit, stated plainly: reproducibility guarantees **process**, not **truth**. A pure function will apply a wrong variable weight just as faithfully as a right one. If `signal-freshness` is miscalibrated, every score inherits that error identically. Determinism does not save you from being wrong.
 
-What it does is make wrongness **visible and reproducible**, which is the only condition under which you can catch it. A stochastic pipeline that returns 72 today and 68 tomorrow hides its bugs inside noise — you can never tell whether the variance is the model thinking or the model breaking. A deterministic engine has no noise to hide in. When a number changes, something changed, and the [audit trail](/topics/defendable-agents/primitives/audit-trail/) and [decision traces](/topics/defendable-agents/primitives/decision-traces/) tell you exactly what. Determinism is what turns "the score feels off" into "variable 4 moved from 3 to 5 because the input freshness changed on this date". This is the line the whole [determinism-versus-probabilism](/topics/defendable-agents/argument/determinism-vs-probabilism/) argument turns on.
+What it does is make wrongness **visible and reproducible**, which is the only condition under which you can catch it. A stochastic pipeline that returns 72 today and 68 tomorrow hides its bugs inside noise — you can never tell whether the variance is the model thinking or the model breaking. A deterministic engine has no noise to hide in. When a number changes, something changed, and the [append-only audit trail](/topics/defendable-agents/primitives/audit-trail/) tells you exactly what — down to the decision trace for the score that moved. Determinism is what turns "the score feels off" into "variable 4 moved from 3 to 5 because the input freshness changed on this date". This is the line the whole [determinism-versus-probabilism](/topics/defendable-agents/argument/determinism-vs-probabilism/) argument turns on.
 
 ## modelHash: detecting the swap
 
 Pure functions guarantee that the *same code* gives the same output. They do not, by themselves, tell you whether the code is the same. That is what the model hash is for.
 
-Every score creates a temporal pin, and the pin carries `modelVersion` and `modelHash` alongside the data timestamps. The hash is a content hash of the scoring model definition — its variables, weights, bands, and the layer structure — declared as a governed [KCP unit](/topics/defendable-agents/kcp/declaring-governed-units/) so it is selected deterministically and never silently swapped.
+Every score creates a temporal pin, and the pin carries `modelVersion` and `modelHash` alongside the data timestamps. The hash is a content hash of the scoring model definition — its variables, weights, bands, and the layer structure — declared as a governed [Knowledge Context Protocol (KCP)](/topics/knowledge-context-protocol/) unit so it is selected deterministically and never silently swapped.
 
 ```json
 {

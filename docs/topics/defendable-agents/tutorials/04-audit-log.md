@@ -6,7 +6,7 @@ image: assets/images/kcp-agent-020-05-claims-with-receipts.webp
 
 # Tutorial 4: The Append-Only Audit Log
 
-By now you have a harness ([Tutorial 1](/topics/defendable-agents/tutorials/01-first-harness/)) and a scoring model ([Tutorial 2](/topics/defendable-agents/tutorials/02-scoring-model/)) running inside a governed session ([Tutorial 3](/topics/defendable-agents/tutorials/03-governed-session/)). This tutorial is about the thing that makes all of it defendable rather than merely automated: the audit log. It is where a decision stops being an opinion the agent asserts and becomes a claim with a receipt.
+By now you have a governance harness ([Tutorial 1](/topics/defendable-agents/tutorials/01-first-harness/)) and a scoring model ([Tutorial 2](/topics/defendable-agents/tutorials/02-scoring-model/)) running inside a governed session ([Tutorial 3](/topics/defendable-agents/tutorials/03-governed-session/)). This tutorial is about the thing that makes all of it [defendable](/topics/defendable-agents/argument/what-defendable-means/) rather than merely automated: the audit log. It is where a decision stops being an opinion the agent asserts and becomes a claim with a receipt.
 
 The rule is simple. Every governed operation emits one event. The log is append-only, one JSON object per line (JSONL), and it is fsync'd on flush so a crash cannot silently swallow the last few decisions. Nothing edits it after the fact. If you want the theory, [Primitives: Audit Trail](/topics/defendable-agents/primitives/audit-trail/) and [Decision Traces](/topics/defendable-agents/primitives/decision-traces/) cover the why. Here we write and read the thing.
 
@@ -45,7 +45,7 @@ An event is a flat-ish JSON record. The load-bearing fields are the `decision` (
   "temporal": {
     "dataAsOf": "2026-07-08T00:00:00Z",
     "scoredAt": "2026-07-08T09:14:22.481Z",
-    "signalDates": ["2026-07-05","2026-07-01","2026-06-20"]
+    "signalDates": ["2026-07-04","2026-07-01","2026-06-20"]
   },
   "budget": { "cost": 5, "currency": "units", "runningTotal": 218, "ceiling": 1000, "remaining": 782 },
   "durationMs": 34
@@ -103,7 +103,7 @@ For anything heavier — cross-session queries, evidence bundles — see [Tutori
 
 ## Reconstructing a decision from its trace
 
-This is the payoff. Someone asks: *why did buyer_8801 come out at 71.0 and land in "High"?* You do not guess and you do not re-run the agent. You pull the event and replay the arithmetic, because the engine is a pure function ([Reproducibility](/topics/defendable-agents/decisions/reproducibility/)).
+This is the payoff. Someone asks: *why did buyer_8801 come out at 71.0 and land in "High"?* You do not guess and you do not re-run the agent. You pull the event and replay the arithmetic, because the deterministic planner is a pure function of the trace ([Reproducibility](/topics/defendable-agents/decisions/reproducibility/)).
 
 From the `scoring` block: the Need layer's six variables average `(4 + 4.5 + 4 + 3 + 3 + 3) / 6 = 3.583`, times 20 = **71.7** — exactly the stored `layerScores.need`. The three layers combine by weight: `Need 0.40 + Attractiveness 0.25 + Winnability 0.35`, giving `71.7×0.40 + 66.7×0.25 + 73.3×0.35 = 71.0`. That clears the `>= 70` threshold, so the band is **High**. Every number in that sentence is in the event. Nothing is hidden in the model's head.
 

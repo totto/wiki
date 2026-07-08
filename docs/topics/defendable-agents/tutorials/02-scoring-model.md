@@ -6,7 +6,7 @@ image: assets/images/kcp-agent-020-03-model-at-the-edge.webp
 
 # Tutorial 2: A Deterministic Scoring Model
 
-In [Tutorial 1](/topics/defendable-agents/tutorials/01-first-harness/) you stood up a harness that gates and logs. That harness is worthless without something worth logging: a scoring decision you can reproduce and defend. This tutorial builds the smallest such thing — a two-layer model, authored as plain YAML, computed by hand, then declared as a governed unit so it can never be silently swapped.
+In [Tutorial 1](/topics/defendable-agents/tutorials/01-first-harness/) you stood up a governance harness that gates and logs. That harness is worthless without something worth logging: a scoring decision you can reproduce and defend. This tutorial builds the smallest such thing — a two-layer model, authored as plain YAML, computed by hand, then declared as a governed unit so it can never be silently swapped.
 
 The full Lodestar buyer model has three layers and 18 variables. That is too much to hold in your head on a first pass, so we build a compact stand-in with two layers and four variables. The arithmetic is identical; only the count changes. When you understand this, the real thing in [Anatomy of a Score](/topics/defendable-agents/decisions/anatomy-of-a-score/) reads as more of the same.
 
@@ -118,7 +118,7 @@ metadata:
   domain: professional-services-market
   temporal:
     valid_from: "2026-07-01"
-    refresh_interval: 90d
+    refresh_interval: P90D
 units:
   - id: model.buyer-lite
     path: models/buyer-lite.yaml

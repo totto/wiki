@@ -22,10 +22,10 @@ I follow ordinary semantic-versioning rules, but the "public API" is the meaning
 | Bump | When | Comparability with prior scores |
 |------|------|-------------------------------|
 | **major** | weight change, layer added/removed, band boundary moved, variable redefined | broken — old and new scores are not comparable |
-| **minor** | variable added that is optional, new descriptive metadata, decay curve refined | degraded — treat with care |
+| **minor** | optional variable added that defaults out of existing composites, new descriptive metadata | degraded — treat with care |
 | **patch** | documentation, non-scoring metadata, comment fixes | preserved |
 
-The rule I hold to: **any change that can move a number is at least a major bump.** A BUYER score is a weighted composite of the Need (0.40), Attractiveness (0.25) and Winnability (0.35) layers; nudge any of those weights and every historical comparison silently lies. Better to burn a major version than to pretend nothing moved.
+The rule I hold to: **any change that can move a number is at least a major bump.** A Buyer score is a weighted composite of the Need (0.40), Attractiveness (0.25) and Winnability (0.35) layers; nudge any of those weights and every historical comparison silently lies. Better to burn a major version than to pretend nothing moved.
 
 ## Where the version lives
 
@@ -44,7 +44,7 @@ units:
   - id: buyer-score-model
     path: models/buyer.score.json
     tags: [scoring, buyer, governed]
-    description: "3-layer weighted BUYER model (Need/Attractiveness/Winnability)"
+    description: "3-layer weighted Buyer model (Need/Attractiveness/Winnability)"
   - id: match-score-model
     path: models/match.score.json
     tags: [scoring, match, governed]
@@ -92,7 +92,7 @@ function recommend(reasons: DriftReason[]): "ok" | "monitor" | "reanalyze" {
 }
 ```
 
-Why is model drift alone enough, when a single data or temporal reason only earns "monitor"? Because a version change means the *rules* changed. A stale score under the old rules is still a valid score under the old rules — you can defend it. A score compared against a *new* model's bands is a category error: you are reading a `2.2.0` number against `2.3.0` boundaries. That is not staleness, it is incoherence, and the only honest fix is to recompute. When reanalysis runs it emits a `reanalysis_triggered` and a `score_delta` event into the [audit log](/topics/defendable-agents/primitives/audit-trail/), so the reason the number moved is on the record, not folklore.
+Why is model drift alone enough, when a single data or temporal reason only earns "monitor"? Because a version change means the *rules* changed. A stale score under the old rules is still a valid score under the old rules — you can defend it. A score compared against a *new* model's bands is a category error: you are reading a `2.2.0` number against `2.3.0` boundaries. That is not staleness, it is incoherence, and the only honest fix is to recompute. When reanalysis runs it emits a `reanalysis_triggered` and a `score_delta` event into the [audit trail](/topics/defendable-agents/primitives/audit-trail/), so the reason the number moved is on the record, not folklore. The audit trail is append-only, so that record cannot later be quietly rewritten.
 
 ## Migration strategy
 
