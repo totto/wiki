@@ -118,7 +118,7 @@
   },
   "image": "https://wiki.totto.org/assets/images/blog/okf-kcp/okf-kcp-slide-04.webp",
   "datePublished": "2026-06-17 18:00:00",
-  "dateModified": "2026-07-08 08:34:13",
+  "dateModified": "2026-07-08 12:56:22",
   "description": "Google\u0027s Open Knowledge Format standardises content packaging for agents but stops before trust, temporality, and governance. KCP covers exactly that territory.",
   "articleSection": "Knowledge Context Protocol, AI Agents \u0026 the Agentic Web, Governance, Trust \u0026 Compliance",
   "keywords": "kcp, okf, google, knowledge-format, ai-agents, temporal, trust"
@@ -6376,7 +6376,7 @@
 <p>OKF's three explicitly open problems are precisely where KCP has been working for months. It's worth being specific about why they're hard.</p>
 <h3 id="temporal-validity">Temporal validity<a class="headerlink" href="#temporal-validity" title="Permanent link">&para;</a></h3>
 <p>OKF has a <code>timestamp</code> field. It records when a document was last modified. That's a different thing from when the knowledge becomes true.</p>
-<p>I <a href="../kcp-0.19-0.20-temporal.md">wrote about this last week</a> — the problem emerged concretely while building the KCP regulatory corpus. The EU AI Act was fully indexed and present in the corpus. Whether a given chapter applied <em>right now</em> was a different question. Prohibited practices took effect in February 2025. Transparency obligations hit in August 2025. The full high-risk framework doesn't apply until August 2026. One document, three timelines, eighteen months of staggered enforcement.</p>
+<p>I <a href="../../12/stale-knowledge-is-worse-than-no-knowledge-kcp-v019-and-v020-close-the-temporal-gap/">wrote about this last week</a> — the problem emerged concretely while building the KCP regulatory corpus. The EU AI Act was fully indexed and present in the corpus. Whether a given chapter applied <em>right now</em> was a different question. Prohibited practices took effect in February 2025. Transparency obligations hit in August 2025. The full high-risk framework doesn't apply until August 2026. One document, three timelines, eighteen months of staggered enforcement.</p>
 <p><code>timestamp: last-modified</code> cannot represent this. You need <code>valid_from</code> at the unit level, derived from enforcement dates, with the ability to ask: "given a specific date, which of these units are currently in effect?"</p>
 <p>An agent that cannot make this distinction will confidently apply requirements that haven't taken effect yet, or miss requirements that have. The knowledge is present. The knowledge is structured. But correctness without temporality is a trap.</p>
 <p>The broader version of this problem: API endpoints that respond until they don't. Certifications that expire. Regulations that are repealed. CVEs that are filed before patches exist. In each case, the knowledge exists at a moment in time, but its truth value is time-indexed.</p>
@@ -6459,7 +6459,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 08:34:13 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 12:56:22 UTC">July 8, 2026</span>
   </span>
 
     
