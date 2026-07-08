@@ -1,6 +1,6 @@
 ---
 title: "Layers, Weights & Bands"
-description: "How the layer/weight/band system turns eighteen small 1-5 judgments into one defensible number — why layers exist, how to choose and document weights honestly, and how to resist tuning to a preferred answer."
+description: "How the layer/weight/band system turns eighteen small 1-5 judgments into one defensible number: why layers exist, how to document weights honestly, and how to resist tuning the answer."
 image: assets/images/kcp-agent-020-03-model-at-the-edge.webp
 ---
 
