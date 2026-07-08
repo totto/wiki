@@ -12,6 +12,8 @@ Over the past four months I have been building and writing about a specific prob
 
 This page maps the body of work that emerged from that problem. It spans five codebases, six blog series, and roughly sixty posts -- from the first observation that comprehension was the bottleneck, through building Synthesis and the Knowledge Context Protocol, to the three-layer memory architecture, Skill-Driven Development, and the ExoCortex multi-agent stack running on top of it all.
 
+**Start with a topic:** [Knowledge Context Protocol (KCP)](../topics/knowledge-context-protocol.md) &nbsp;·&nbsp; [Synthesis](../topics/synthesis.md) &nbsp;·&nbsp; [Skill-Driven Development](../topics/skill-driven-development.md)
+
 ---
 
 ## State of the work

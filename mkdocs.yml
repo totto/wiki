@@ -166,6 +166,9 @@ nav:
       - presentations/design-time-governance.md
   - Knowledge Infrastructure:
     - knowledge-infrastructure/index.md
+    - "Knowledge Context Protocol": topics/knowledge-context-protocol.md
+    - "Synthesis": topics/synthesis.md
+    - "Skill-Driven Development": topics/skill-driven-development.md
     - "Synthesis Releases": notes/synthesis-releases.md
     - "LinkedIn Posts": notes/linkedin-posts.md
     - "LinkedIn Archive": linkedin/index.md
