@@ -893,6 +893,30 @@ units:
     validated: 2026-07-09
     triggers: [glossary, definitions, terminology, vocabulary, what-is, kcp, mcp, defendable, deterministic-planner, temporal-pinning]
 
+  - id: kcp-vs-mcp
+    path: topics/kcp-vs-mcp.md
+    intent: "KCP vs MCP: not competitors. MCP is how an agent calls tools (retrieval); KCP is how an agent finds and trusts knowledge (structure). Side-by-side comparison, failure modes each prevents, and when to use one, the other, or both."
+    scope: global
+    audience: [human, agent, architect]
+    validated: 2026-07-09
+    triggers: [kcp-vs-mcp, mcp, model-context-protocol, knowledge-context-protocol, comparison, tools-vs-knowledge, retrieval-vs-structure]
+
+  - id: sdd-vs-spec-driven
+    path: topics/sdd-vs-spec-driven.md
+    intent: "Skill-driven vs spec-driven development: a spec starts every session from zero, a skill compounds. Comparison, the session-amnesia problem, and when to use each."
+    scope: global
+    audience: [human, agent, developer, architect]
+    validated: 2026-07-09
+    triggers: [sdd-vs-spec-driven, spec-driven, skill-driven, session-amnesia, methodology, comparison, ai-augmented-development]
+
+  - id: ventures
+    path: about/ventures.md
+    intent: "The companies Thor Henning Hetland founds and runs — eXOReaction, Mynder, Ægis, Quadim, Sunstone Tech — and how each is one bet on AI-augmented development, knowledge infrastructure, and defendable agents."
+    scope: global
+    audience: [human, agent]
+    validated: 2026-07-09
+    triggers: [ventures, companies, exoreaction, mynder, aegis, quadim, sunstone, founder, cto, roles, portfolio]
+
 relationships:
   # Navigation and orientation
   - from: llms-index
