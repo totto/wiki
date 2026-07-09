@@ -118,7 +118,7 @@
   },
   "image": "https://wiki.totto.org/assets/images/kcp-agent-020-06-composes-with-mcp.webp",
   "datePublished": "2026-07-08 17:30:00",
-  "dateModified": "2026-07-08 13:30:14",
+  "dateModified": "2026-07-09 05:02:49",
   "description": "Databricks just open-sourced Omnigent, a meta-harness that governs AI agents with deterministic, session-aware policies enforced in code \u2014 not prompts. That is the exact bet behind kcp-harness and the Defendable Agents guide, now ratified by Matei Zaharia\u0027s team. But Omnigent and KCP govern different halves of the same problem: one governs what an agent does, the other governs what it knows \u2014 and lets you prove it later. Why that split matters, and why the two compose instead of compete.",
   "articleSection": "Governance, Trust \u0026 Compliance, AI Agents \u0026 the Agentic Web, Knowledge Context Protocol",
   "keywords": "omnigent, databricks, kcp-harness, governance, meta-harness, defendable-agents, agentic-web, compliance"
@@ -6316,7 +6316,7 @@
 <h2 id="they-compose-thats-the-headline">They compose. That's the headline.<a class="headerlink" href="#they-compose-thats-the-headline" title="Permanent link">&para;</a></h2>
 <p>The honest one-liner is this: <strong>Omnigent governs what your agent <em>does</em>. KCP governs what it <em>knows</em> — and lets you prove it later.</strong></p>
 <p>And these are not rivals fighting for the same slot. They stack. A KCP knowledge-navigation gate — <em>this agent, in this session, may load these signed units and no others, and every claim carries its provenance</em> — is exactly the shape of a <strong>contextual policy</strong>. It could run <em>as</em> an Omnigent policy inside an Omnigent-wrapped session. The action harness and the knowledge harness are complementary organs, not competing skeletons.</p>
-<p>One small housekeeping note, since names now collide: Databricks has staked the term <strong>"meta-harness."</strong> <a href="/open-source/">kcp-harness</a> is a <em>knowledge</em> harness — the governance layer over what an agent reads and trusts. If you end up running both, think of Omnigent as the harness over the agent's hands and KCP as the harness over its memory and its sources. Different organs. Same body.</p>
+<p>One naming note, since the category is filling up fast: "harness" is now a crowded word — Databricks has staked <strong>"meta-harness,"</strong> and there are agent-harness framings from MongoDB and others. I'm not going to mint a competing suffix for the sake of it. <a href="/open-source/">kcp-harness</a> is the <em>knowledge-and-provenance</em> governance layer — what an agent may read, trust, and later prove. The word I actually want to own is the property, not the plumbing: <strong>defendable</strong>. Omnigent can be the harness over the agent's hands; the point of KCP is that the agent's <em>sources and reasoning</em> end up defendable — declared, signed, replayable. Metaphor if it helps: hands and memory, different organs, same body. But the claim that matters isn't "which harness" — it's whether you can put the decision in front of an auditor and run it again.</p>
 <h2 id="the-part-that-actually-matters">The part that actually matters<a class="headerlink" href="#the-part-that-actually-matters" title="Permanent link">&para;</a></h2>
 <p>For two years the loud question was "how do we build a better agent." Omnigent landing where it landed, from where it landed, is the clearest sign yet that the loud question has changed to "how do we <em>govern the agents already running</em>" — and that the answer is a deterministic layer at the boundary, not a paragraph of good intentions in a system prompt.</p>
 <p>I have been betting on that answer for long enough to have scars from it. It is genuinely good to watch a team with Databricks' reach plant a flag on the same hill. We are describing two halves of one machine. I will take that as validation, keep building the knowledge half in the open, and happily point people at Omnigent for the other half.</p>
@@ -6349,7 +6349,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 13:30:14 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 9, 2026 05:02:49 UTC">July 9, 2026</span>
   </span>
 
     
