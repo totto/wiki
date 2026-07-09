@@ -867,6 +867,32 @@ units:
     audience: [human, agent, architect]
     validated: 2026-07-08
 
+  # ── Site entry points & reference ─────────────────────────────────────────────
+
+  - id: start-here
+    path: start-here.md
+    intent: "New to the site? Four guided paths — for developers, architects, security/compliance leaders, and the curious — through the writing and the four field guides."
+    scope: global
+    audience: [human, agent]
+    validated: 2026-07-09
+    triggers: [start-here, getting-started, introduction, overview, where-to-begin, guide, new-here]
+
+  - id: agentic-web
+    path: topics/agentic-web.md
+    intent: "What is the agentic web, and what does it require — identity, memory, coordination, determinism, governance, and navigable knowledge — to make agents defendable rather than merely capable?"
+    scope: global
+    audience: [human, agent, architect, ciso]
+    validated: 2026-07-09
+    triggers: [agentic-web, ai-agents, multi-agent, agent-architecture, mcp, a2a, agent-identity, agent-memory, autonomous-agents, agentic-internet]
+
+  - id: glossary
+    path: glossary.md
+    intent: "Plain-language definitions of the site's vocabulary: agentic web, KCP, MCP, A2A, Skill-Driven Development, defendable agents, deterministic planner, temporal pinning, drift, fail-closed, and the kcp-* tools."
+    scope: global
+    audience: [human, agent]
+    validated: 2026-07-09
+    triggers: [glossary, definitions, terminology, vocabulary, what-is, kcp, mcp, defendable, deterministic-planner, temporal-pinning]
+
 relationships:
   # Navigation and orientation
   - from: llms-index

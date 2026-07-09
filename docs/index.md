@@ -17,7 +17,8 @@ hide:
 
 These days I'm focused on what happens when experienced architects work _with_ AI -- not just alongside it.
 
-[Read the blog](blog/index.md){ .md-button .md-button--primary }
+[Start here](start-here.md){ .md-button .md-button--primary }
+[Read the blog](blog/index.md){ .md-button }
 [About me](about/index.md){ .md-button }
 
 </div>

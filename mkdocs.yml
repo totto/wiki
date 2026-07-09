@@ -138,6 +138,7 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Start Here: start-here.md
   - Blog:
     - blog/index.md
     - "Browse by Topic": blog/topics.md
@@ -170,6 +171,7 @@ nav:
       - presentations/design-time-governance.md
   - Knowledge Infrastructure:
     - knowledge-infrastructure/index.md
+    - "The Agentic Web": topics/agentic-web.md
     - "Knowledge Context Protocol": topics/knowledge-context-protocol.md
     - "Synthesis": topics/synthesis.md
     - "Skill-Driven Development": topics/skill-driven-development.md
@@ -264,4 +266,5 @@ nav:
   - Archive:
     - "Food & Wine (2007--2009)": interests/food-and-wine.md
     - "My Tools (circa 2010)": interests/tools.md
+  - Glossary: glossary.md
   - Tags: tags.md
