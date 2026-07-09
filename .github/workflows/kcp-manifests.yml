@@ -58,7 +58,7 @@ jobs:
           git config user.name  "kcp-bot[bot]"
           git config user.email "actions@wiki.totto.org"
 
-          git add docs/knowledge.yaml docs/knowledge/ docs/knowledge.yaml.sig
+          git add docs/knowledge.yaml docs/knowledge/ docs/knowledge.yaml.sig includes/latest-posts.md
           find docs/knowledge/ -name "*.sig" -exec git add {} +
 
           if git diff --staged --quiet; then

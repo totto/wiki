@@ -32,33 +32,7 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
 ## Recent writing
 
-<div class="grid cards" markdown>
-
--   :material-history:{ .card-icon } **[Six Months Down the Rabbit Hole](blog/2026/07/15/six-months-down-the-rabbit-hole/)**
-
-    ---
-
-    172 days, 6,163 commits, 137 posts, one protocol. A six-month retrospective on explorative development — compiled by the agent from its own memory.
-
-    <span class="card-meta">July 15, 2026</span>
-
--   :material-memory:{ .card-icon } **[Three Memory Schemes for Agents That Ship](blog/2026/07/11/three-memory-schemes-for-agents-that-ship/)**
-
-    ---
-
-    The agent-memory debate is stuck on "vector store or not." Production systems have three different memory problems — session, semantic, and claim — each needing a different scheme.
-
-    <span class="card-meta">July 11, 2026</span>
-
--   :material-file-tree-outline:{ .card-icon } **[The Milky Way: A Documentation Estate the Agent Can Defend](blog/2026/07/10/the-milky-way-enterprise-estate-agent/)**
-
-    ---
-
-    Every enterprise has the same broken documentation estate: an untrusted intranet, dev docs outranking prod, crown-jewel recipes one bad link from a leak. Here's one an agent can navigate.
-
-    <span class="card-meta">July 10, 2026</span>
-
-</div>
+--8<-- "includes/latest-posts.md"
 
 [:octicons-arrow-right-24: All posts](blog/index.md) · [Browse by topic](blog/topics.md)
 

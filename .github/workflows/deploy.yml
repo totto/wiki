@@ -19,7 +19,14 @@ jobs:
         with:
           python-version: '3.x'
       - name: Install dependencies
-        run: pip install mkdocs==1.6.1 mkdocs-material==9.7.2 mkdocs-rss-plugin mkdocs-git-revision-date-localized-plugin
+        run: pip install mkdocs==1.6.1 mkdocs-material==9.7.2 mkdocs-rss-plugin mkdocs-git-revision-date-localized-plugin pyyaml
+      - name: Refresh generated blog snippet (home "Recent writing")
+        run: |
+          python scripts/generate-blog-manifest.py
+          # Keep the signed blog.yaml exactly as committed — the kcp-manifests
+          # workflow owns regenerating + re-signing it. Only the unsigned home
+          # snippet should be refreshed here.
+          git checkout -- docs/knowledge/blog.yaml
       - name: Deploy
         run: |
           ok=0
