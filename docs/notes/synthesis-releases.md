@@ -11,9 +11,12 @@ Synthesis is a knowledge infrastructure platform for AI-augmented development. I
 
 **Repository:** [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
 
+!!! info "Current release"
+    Synthesis is at **v1.41.1**. The detailed changelog below runs through v1.29.0 — for releases since, see the [repository releases](https://github.com/exoreaction/Synthesis/releases).
+
 ---
 
-## Current Release: v1.29.0 (April 21, 2026)
+## v1.29.0 (April 21, 2026)
 
 **60+ CLI commands · 11 MCP tools · 4,356 tests**
 

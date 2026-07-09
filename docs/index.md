@@ -51,7 +51,7 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
     [:octicons-arrow-right-24: About eXOReaction](https://exoreaction.com)
 
--   :material-magnify: **Synthesis · v1.29.0**
+-   :material-magnify: **Synthesis · v1.41.1**
 
     ---
 

@@ -17,7 +17,7 @@ I have been involved in open source for most of my career. The work spans three 
 ### Synthesis — Knowledge Infrastructure Platform
 
 **Repository:** [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
-**Language:** Java 21 | **License:** Apache 2.0 | **Current version:** v1.29.0
+**Language:** Java 21 | **License:** Apache 2.0 | **Current version:** v1.41.1
 
 Local-first knowledge infrastructure for AI-augmented development. Indexes workspaces (code, docs, PDFs, media, Notion), builds multi-layer knowledge graphs, and exposes everything through a CLI, MCP server, and LSP server.
 

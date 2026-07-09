@@ -20,7 +20,7 @@ This page maps the body of work that emerged from that problem. It spans five co
 
 <div class="grid cards" markdown>
 
--   :material-magnify: **Synthesis** · v1.29.0
+-   :material-magnify: **Synthesis** · v1.41.1
 
     ---
 
@@ -222,7 +222,7 @@ These standalone posts document specific discoveries -- benchmarks, failure mode
 
 Five open-source projects underpin this work:
 
-**[Synthesis](https://github.com/exoreaction/Synthesis)** -- Knowledge infrastructure for AI-augmented development. Local-first indexing (200--300 files/second), sub-second search, multi-layer knowledge graphs, MCP server (11 tools), session indexing (episodic memory), agent dispatch planner, and Notion workspace integration. Java 21. v1.29.0, 4,300+ tests, 60+ CLI commands.
+**[Synthesis](https://github.com/exoreaction/Synthesis)** -- Knowledge infrastructure for AI-augmented development. Local-first indexing (200--300 files/second), sub-second search, multi-layer knowledge graphs, MCP server (11 tools), session indexing (episodic memory), agent dispatch planner, and Notion workspace integration. Java 21. v1.41.1, 4,300+ tests, 60+ CLI commands.
 
 - [Release history](../notes/synthesis-releases.md)
 
