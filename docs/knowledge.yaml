@@ -909,6 +909,14 @@ units:
     validated: 2026-07-09
     triggers: [sdd-vs-spec-driven, spec-driven, skill-driven, session-amnesia, methodology, comparison, ai-augmented-development]
 
+  - id: ventures
+    path: about/ventures.md
+    intent: "The companies Thor Henning Hetland founds and runs — eXOReaction, Mynder, Ægis, Quadim, Sunstone Tech — and how each is one bet on AI-augmented development, knowledge infrastructure, and defendable agents."
+    scope: global
+    audience: [human, agent]
+    validated: 2026-07-09
+    triggers: [ventures, companies, exoreaction, mynder, aegis, quadim, sunstone, founder, cto, roles, portfolio]
+
 relationships:
   # Navigation and orientation
   - from: llms-index

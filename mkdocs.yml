@@ -145,6 +145,7 @@ nav:
     - "Series": blog/series.md
   - About:
     - about/index.md
+    - "Ventures": about/ventures.md
     - "CV (English)": about/cv-english.md
     - "CV (Norwegian)": about/cv-norwegian.md
     - "Project History": about/projects.md
