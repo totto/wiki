@@ -73,7 +73,7 @@ The honest one-liner is this: **Omnigent governs what your agent *does*. KCP gov
 
 And these are not rivals fighting for the same slot. They stack. A KCP knowledge-navigation gate — *this agent, in this session, may load these signed units and no others, and every claim carries its provenance* — is exactly the shape of a **contextual policy**. It could run *as* an Omnigent policy inside an Omnigent-wrapped session. The action harness and the knowledge harness are complementary organs, not competing skeletons.
 
-One small housekeeping note, since names now collide: Databricks has staked the term **"meta-harness."** [kcp-harness](/open-source/) is a *knowledge* harness — the governance layer over what an agent reads and trusts. If you end up running both, think of Omnigent as the harness over the agent's hands and KCP as the harness over its memory and its sources. Different organs. Same body.
+One naming note, since the category is filling up fast: "harness" is now a crowded word — Databricks has staked **"meta-harness,"** and there are agent-harness framings from MongoDB and others. I'm not going to mint a competing suffix for the sake of it. [kcp-harness](/open-source/) is the *knowledge-and-provenance* governance layer — what an agent may read, trust, and later prove. The word I actually want to own is the property, not the plumbing: **defendable**. Omnigent can be the harness over the agent's hands; the point of KCP is that the agent's *sources and reasoning* end up defendable — declared, signed, replayable. Metaphor if it helps: hands and memory, different organs, same body. But the claim that matters isn't "which harness" — it's whether you can put the decision in front of an auditor and run it again.
 
 ## The part that actually matters
 
