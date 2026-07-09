@@ -39,22 +39,31 @@ posts:
 
   - title: 'The Milky Way: An Enterprise Documentation Estate the Agent Can Defend'
     date: "2026-07-10 09:00:00"
-    url: https://wiki.totto.org/blog/2026/07/10/the-milky-way-enterprise-estate-agent/
+    url: https://wiki.totto.org/blog/2026/07/10/the-milky-way-an-enterprise-documentation-estate-the-agent-can-defend/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web]
     tags: [kcp, kcp-agent, enterprise, federation, supersession, attestation, audience, not-for,
   environment-context, knowledge-context-protocol]
 
   - title: 'The Summer Plan: A Family Vacation the Agent Can Defend'
     date: "2026-07-09 09:00:00"
-    url: https://wiki.totto.org/blog/2026/07/09/the-summer-plan-family-vacation-agent/
+    url: https://wiki.totto.org/blog/2026/07/09/the-summer-plan-a-family-vacation-the-agent-can-defend/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web]
     tags: [kcp, kcp-agent, x402, travel, agentic-web, federation, supersession, agent-identity,
   not-for, knowledge-context-protocol]
 
+  - title: Defendable Agents
+...
+    date: "2026-07-08 18:00:00"
+    url: https://wiki.totto.org/blog/2026/07/08/defendable-agents/
+    categories: ['Governance, Trust & Compliance', AI Agents & the Agentic Web, Knowledge Context
+    Protocol]
+    tags: [defendable-agents, ai-governance, compliance, kcp, kcp-agent, determinism, audit,
+  prompt-injection]
+
   - title: Two Halves of the Governance Problem
 ...
     date: "2026-07-08 17:30:00"
-    url: https://wiki.totto.org/blog/2026/07/08/two-halves-of-agent-governance/
+    url: https://wiki.totto.org/blog/2026/07/08/two-halves-of-the-governance-problem/
     categories: ['Governance, Trust & Compliance', AI Agents & the Agentic Web, Knowledge Context
     Protocol]
     tags: [omnigent, databricks, kcp-harness, governance, meta-harness, defendable-agents, agentic-web,
@@ -70,25 +79,24 @@ posts:
 
   - title: 'Hiring by the Book: A Defendable HR Agent on a Regulatory Knowledge Web'
     date: "2026-07-08 09:00:00"
-    url: https://wiki.totto.org/blog/2026/07/08/hiring-by-the-book-regulated-hr-agent/
+    url: https://wiki.totto.org/blog/2026/07/08/hiring-by-the-book-a-defendable-hr-agent-on-a-regulatory-knowledge-web/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, kcp-agent, mynder, mcp, compliance, ai-act, gdpr, hr, governance, red-team,
   agentic-web, knowledge-context-protocol]
 
-  - title: Defendable Agents
-...
-    date: "2026-07-08 18:00:00"
-    url: https://wiki.totto.org/blog/2026/07/08/defendable-agents/
-    categories: ['Governance, Trust & Compliance', AI Agents & the Agentic Web, Knowledge Context
-    Protocol]
-    tags: [defendable-agents, ai-governance, compliance, kcp, kcp-agent, determinism, audit,
-  prompt-injection]
-
   - title: 'The Borrowed Leash: Determinism as a Service for the Agentic Web'
     date: "2026-07-06 09:00:00"
-    url: https://wiki.totto.org/blog/2026/07/06/the-borrowed-leash-kcp-mcp-bridge/
+    url: https://wiki.totto.org/blog/2026/07/06/the-borrowed-leash-determinism-as-a-service-for-the-agentic-web/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, kcp-agent, mcp, agents, determinism, governance, agentic-web, x402, open-source,
+  knowledge-context-protocol]
+
+  - title: The Vibes-Based Agent Era Deserves to End
+...
+    date: "2026-07-05 15:00:00"
+    url: https://wiki.totto.org/blog/2026/07/05/the-vibes-based-agent-era-deserves-to-end/
+    categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
+    tags: [kcp, kcp-agent, agents, determinism, prompt-injection, governance, mcp, open-source,
   knowledge-context-protocol]
 
   - title: Selling News to Robots
@@ -99,18 +107,10 @@ posts:
     tags: [kcp, payments, x402, micropayments, rate-limits, agentic-web, knowledge-economy,
   open-source, knowledge-context-protocol]
 
-  - title: The Vibes-Based Agent Era Deserves to End
-...
-    date: "2026-07-05 15:00:00"
-    url: https://wiki.totto.org/blog/2026/07/05/kcp-agent-the-reference-agent-ships/
-    categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
-    tags: [kcp, kcp-agent, agents, determinism, prompt-injection, governance, mcp, open-source,
-  knowledge-context-protocol]
-
   - title: One Agent's Journey Through the Whole Protocol
 ...
     date: "2026-07-04"
-    url: https://wiki.totto.org/blog/2026/07/04/kcp-v024-the-protocol-in-full/
+    url: https://wiki.totto.org/blog/2026/07/04/one-agents-journey-through-the-whole-protocol/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, federation, org-hub, discovery, trust, temporal, attestation, agentic-web, open-source,
   knowledge-context-protocol]
@@ -118,7 +118,7 @@ posts:
   - title: The Agentic Web Has No Login Page
 ...
     date: "2026-07-04"
-    url: https://wiki.totto.org/blog/2026/07/04/kcp-022-023-trust-model-complete/
+    url: https://wiki.totto.org/blog/2026/07/04/the-agentic-web-has-no-login-page/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, trust, attestation, auth, did, ai-agents, agentic-web, open-source, knowledge-context-protocol]
 
@@ -132,7 +132,7 @@ posts:
   - title: The CI Pipeline Is the Agent's Nervous System
 ...
     date: "2026-07-02"
-    url: https://wiki.totto.org/blog/2026/07/02/ci-pipeline-agents-nervous-system/
+    url: https://wiki.totto.org/blog/2026/07/02/the-ci-pipeline-is-the-agents-nervous-system/
     categories: [Knowledge Infrastructure, AI Agents & the Agentic Web, AI-Augmented Development]
     tags: [ai, ci, testing, architecture, exocortex, devops]
 
@@ -146,7 +146,7 @@ posts:
   - title: Three Hooks That Give Claude Code Memory
 ...
     date: "2026-06-28"
-    url: https://wiki.totto.org/blog/2026/06/28/kcp-hooks/
+    url: https://wiki.totto.org/blog/2026/06/28/three-hooks-that-give-claude-code-memory/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI-Augmented Development]
     tags: [hooks, kcp, exocortex, claude-code, skills, episodic-memory, prompt-hygiene, open-source]
 
@@ -160,7 +160,7 @@ posts:
   - title: Your AI Agent Does Not Know the Law (and How to Fix That)
 ...
     date: "2026-06-22"
-    url: https://wiki.totto.org/blog/2026/06/22/compliant-agents-for-dummies/
+    url: https://wiki.totto.org/blog/2026/06/22/your-ai-agent-does-not-know-the-law-and-how-to-fix-that/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai-agents, compliance, gdpr, kcp, knowledge-infrastructure, benchmarking, typescript,
   python]
@@ -175,16 +175,9 @@ posts:
   - title: Google's Open Knowledge Format and the problems it deliberately doesn't solve
 ...
     date: "2026-06-17 18:00:00"
-    url: https://wiki.totto.org/blog/2026/06/17/okf-and-the-problems-it-doesnt-solve/
+    url: https://wiki.totto.org/blog/2026/06/17/googles-open-knowledge-format-and-the-problems-it-deliberately-doesnt-solve/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, okf, google, knowledge-format, ai-agents, temporal, trust]
-
-  - title: Discoverable Is Not Navigable
-...
-    date: "2026-06-14 12:00:00"
-    url: https://wiki.totto.org/blog/2026/06/14/writing-for-agents/
-    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI-Augmented Development]
-    tags: [agentic-writing, kcp, exocortex, sdd, agents-reading, knowledge-infrastructure, meta]
 
   - title: Sixteen Versions of Metadata Nobody Read
 ...
@@ -194,32 +187,47 @@ posts:
     tags: [synthesis, kcp, temporal, verification, compound-developer, regulatory-compliance,
   practitioner-notes]
 
-  - title: 'Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard'
-    date: "2026-06-12 11:00:00"
-    url: https://wiki.totto.org/blog/2026/06/12/kcp-journey-down-the-rabbit-hole/
-    categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
-    tags: [kcp, sdd, knowledge-context-protocol, ai-agents, mcp, open-source, skill-driven-development,
-  trust, compliance]
+  - title: Discoverable Is Not Navigable
+...
+    date: "2026-06-14 12:00:00"
+    url: https://wiki.totto.org/blog/2026/06/14/discoverable-is-not-navigable/
+    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI-Augmented Development]
+    tags: [agentic-writing, kcp, exocortex, sdd, agents-reading, knowledge-infrastructure, meta]
 
   - title: 'Stale Knowledge Is Worse Than No Knowledge: KCP v0.19 and v0.20 Close the Temporal
   Gap'
     date: "2026-06-12 17:00:00"
-    url: https://wiki.totto.org/blog/2026/06/12/kcp-0.19-0.20-temporal/
+    url: https://wiki.totto.org/blog/2026/06/12/stale-knowledge-is-worse-than-no-knowledge-kcp-v019-and-v020-close-the-temporal-gap/
     categories: [Knowledge Context Protocol, 'Governance, Trust & Compliance']
     tags: [kcp, temporal, bi-temporal, ai-context, compliance]
 
   - title: 'Signing the Map, Not the Territory: KCP v0.18 Adds Unit Content Integrity and Origin
   Evidence'
     date: "2026-06-12 14:00:00"
-    url: https://wiki.totto.org/blog/2026/06/12/kcp-0.18-unit-integrity/
+    url: https://wiki.totto.org/blog/2026/06/12/2026-06-12-kcp-018-unit-integrity/
     categories: [Knowledge Context Protocol, 'Governance, Trust & Compliance']
     tags: [kcp, ai-security, trust, content-integrity, supply-chain-security]
 
+  - title: 'Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard'
+    date: "2026-06-12 11:00:00"
+    url: https://wiki.totto.org/blog/2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/
+    categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
+    tags: [kcp, sdd, knowledge-context-protocol, ai-agents, mcp, open-source, skill-driven-development,
+  trust, compliance]
+
   - title: 'Beyond RAG: How KCP 0.16--0.17 Give Agents Trustworthy, Self-Describing Knowledge'
     date: "2026-06-12 10:00:00"
-    url: https://wiki.totto.org/blog/2026/06/12/kcp-0.16-0.17-trust-and-content/
+    url: https://wiki.totto.org/blog/2026/06/12/beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, ai-security, trust, content-structure, rag, mcp]
+
+  - title: Explorative Development
+...
+    date: "2026-06-11 18:00:00"
+    url: https://wiki.totto.org/blog/2026/06/11/explorative-development/
+    categories: [AI-Augmented Development]
+    tags: [agentic-engineering, explorative-development, hypothesis-driven, simulation, verification,
+  compound-developer, fear-driven-development, ai-productivity, practitioner-notes]
 
   - title: Organized Truths
 ...
@@ -237,14 +245,6 @@ posts:
     tags: [agentic-engineering, verification, compound-developer, fear-driven-development, code-review,
   ai-productivity, practitioner-notes]
 
-  - title: Explorative Development
-...
-    date: "2026-06-11 18:00:00"
-    url: https://wiki.totto.org/blog/2026/06/11/explorative-development/
-    categories: [AI-Augmented Development]
-    tags: [agentic-engineering, explorative-development, hypothesis-driven, simulation, verification,
-  compound-developer, fear-driven-development, ai-productivity, practitioner-notes]
-
   - title: The Compound Developer
 ...
     date: "2026-06-02 12:00:00"
@@ -253,23 +253,23 @@ posts:
     tags: [sdd, kcp, vibe-coding, multi-agent, compound-developer, agentic-engineering, ai-productivity,
   exocortex, human-ai-collaboration]
 
-  - title: The Law Is Also Knowledge. Package It.
-...
-    date: "2026-06-01 09:30:00"
-    url: https://wiki.totto.org/blog/2026/06/01/kcp-laws-as-packages/
-    categories: [Knowledge Context Protocol, 'Governance, Trust & Compliance']
-    tags: [kcp, ai-governance, audit, provenance, compliance, nis2, eu-ai-act, regulations]
-
   - title: Everyone Is Auditing the Workflow. Nobody Is Fixing the Knowledge.
 ...
     date: "2026-06-01 10:00:00"
-    url: https://wiki.totto.org/blog/2026/06/01/auditing-workflow-fixing-knowledge/
+    url: https://wiki.totto.org/blog/2026/06/01/everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/
     categories: [Knowledge Context Protocol, 'Governance, Trust & Compliance', Software Architecture]
     tags: [kcp, ai-governance, audit, provenance, compliance, architecture, nolta]
 
+  - title: The Law Is Also Knowledge. Package It.
+...
+    date: "2026-06-01 09:30:00"
+    url: https://wiki.totto.org/blog/2026/06/01/the-law-is-also-knowledge-package-it/
+    categories: [Knowledge Context Protocol, 'Governance, Trust & Compliance']
+    tags: [kcp, ai-governance, audit, provenance, compliance, nis2, eu-ai-act, regulations]
+
   - title: 'From Policy to Practice: How KCP Makes Regulations Machine-Readable for AI Agents'
     date: "2026-05-30 10:00:00"
-    url: https://wiki.totto.org/blog/2026/05/30/from-policy-to-practice-kcp-regulations-machine-readable/
+    url: https://wiki.totto.org/blog/2026/05/30/from-policy-to-practice-how-kcp-makes-regulations-machine-readable-for-ai-agents/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, compliance, gdpr, ai-agents, architecture, audit, regulations]
 
@@ -283,40 +283,40 @@ posts:
   - title: The Harness Before the Service
 ...
     date: "2026-05-10"
-    url: https://wiki.totto.org/blog/2026/05/10/harness-before-the-service/
+    url: https://wiki.totto.org/blog/2026/05/10/the-harness-before-the-service/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [exocortex, managed-agents, anthropic, kcp, claude-code, agent-harness, synthesis,
   aegis]
 
   - title: "Why KCP Is Passive Data, Not Executable Config \u2014 And Why That Matters Now"
     date: "2026-05-08"
-    url: https://wiki.totto.org/blog/2026/05/08/trustfall-and-why-kcp-is-passive-data/
+    url: https://wiki.totto.org/blog/2026/05/08/why-kcp-is-passive-data-not-executable-config--and-why-that-matters-now/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, security, mcp, trustfall, passive-data, agent-config, knowledge-yaml, claude-md]
 
   - title: How Agents Navigate the Agentic Web
 ...
     date: "2026-05-07"
-    url: https://wiki.totto.org/blog/2026/05/07/the-agentic-web-157-repos-one-session/
+    url: https://wiki.totto.org/blog/2026/05/07/how-agents-navigate-the-agentic-web/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, agentic-web, knowledge-yaml, llms-txt, signing, ed25519, federation, cantara,
   open-source, github-actions]
 
   - title: "Making \xC6gis Machine-Readable in One Session"
     date: "2026-05-07"
-    url: https://wiki.totto.org/blog/2026/05/07/agent-enabling-aegis-no/
+    url: https://wiki.totto.org/blog/2026/05/07/making-ægis-machine-readable-in-one-session/
     categories: [Knowledge Context Protocol, 'Governance, Trust & Compliance']
     tags: [kcp, llms-txt, knowledge-yaml, signing, ed25519, aegis]
 
   - title: "The Prompt Router \u2014 A 47ms Keyword Classifier for Context Selection"
     date: "2026-04-28"
-    url: https://wiki.totto.org/blog/2026/04/28/the-prompt-router/
+    url: https://wiki.totto.org/blog/2026/04/28/the-prompt-router--a-47ms-keyword-classifier-for-context-selection/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI-Augmented Development]
     tags: [exocortex, prompt-router, hooks, context-management, kcp, skills, wisc, practitioner]
 
   - title: "Expert Review Lenses \u2014 Running 9 Specialists Through One Model"
     date: "2026-04-28"
-    url: https://wiki.totto.org/blog/2026/04/28/review-lenses/
+    url: https://wiki.totto.org/blog/2026/04/28/expert-review-lenses--running-9-specialists-through-one-model/
     categories: [Knowledge Infrastructure, AI-Augmented Development]
     tags: [exocortex, code-review, expert-lenses, adversarial-review, benchmarking, hooks]
 
@@ -330,7 +330,7 @@ posts:
   - title: AI agents forget everything. That's a choice, not a constraint.
 ...
     date: "2026-04-18"
-    url: https://wiki.totto.org/blog/2026/04/18/distributed-memory-for-agent-fleets/
+    url: https://wiki.totto.org/blog/2026/04/18/ai-agents-forget-everything-thats-a-choice-not-a-constraint/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [kcp-memory, agent-fleets, enterprise, episodic-memory, memory, distributed-systems,
   exocortex, kcp]
@@ -353,20 +353,20 @@ posts:
   - title: We Cancelled a 45-Minute Architecture Review. A KCP Query Answered It in 1.2 Seconds.
 ...
     date: "2026-04-15"
-    url: https://wiki.totto.org/blog/2026/04/15/the-meeting-was-never-the-problem/
+    url: https://wiki.totto.org/blog/2026/04/15/we-cancelled-a-45-minute-architecture-review-a-kcp-query-answered-it-in-12-seconds/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI-Augmented Development]
     tags: [kcp, synthesis, architecture, meetings, knowledge-infrastructure, sdd]
 
   - title: Recovering the Early History of javaBin
 ...
     date: "2026-04-15"
-    url: https://wiki.totto.org/blog/2026/04/15/recovering-javabin-history/
+    url: https://wiki.totto.org/blog/2026/04/15/recovering-the-early-history-of-javabin/
     categories: [Career & Community]
     tags: [javabin, javazone, norwegian-java, wayback-machine, community-building]
 
   - title: 'Two Architectures for Claude Code: What 19,700 Stars Got Right and What They Missed'
     date: "2026-04-15"
-    url: https://wiki.totto.org/blog/2026/04/15/exocortex-vs-claude-code-best-practice/
+    url: https://wiki.totto.org/blog/2026/04/15/two-architectures-for-claude-code-what-19700-stars-got-right-and-what-they-missed/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI-Augmented Development]
     tags: [exocortex, claude-code, sdd, synthesis, kcp, skills, hooks, memory, orchestration]
 
@@ -380,21 +380,21 @@ posts:
 
   - title: 'The abstractions leak: a day with IBM quantum hardware'
     date: "2026-04-06"
-    url: https://wiki.totto.org/blog/2026/04/06/the-abstractions-leak/
+    url: https://wiki.totto.org/blog/2026/04/06/the-abstractions-leak-a-day-with-ibm-quantum-hardware/
     categories: [Quantum Computing]
     tags: [quantum, ibm-quantum, hardware, debugging, experimentation]
 
   - title: Agent Memory Rots. Here's How We Stopped It.
 ...
     date: "2026-04-06"
-    url: https://wiki.totto.org/blog/2026/04/06/agent-memory-rots/
+    url: https://wiki.totto.org/blog/2026/04/06/agent-memory-rots-heres-how-we-stopped-it/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [synthesis, exocortex, agent-memory, memory-maintenance, topic-health, topic-triage,
   kcp, sdd]
 
   - title: 'The Tool I Didn''t Plan to Build: Synthesis, Ten Weeks Later'
     date: "2026-04-05"
-    url: https://wiki.totto.org/blog/2026/04/05/synthesis-practitioners-journal/
+    url: https://wiki.totto.org/blog/2026/04/05/the-tool-i-didnt-plan-to-build-synthesis-ten-weeks-later/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure]
     tags: [synthesis, exocortex, kcp, ai-development, knowledge-infrastructure, benchmarks,
   java]
@@ -409,35 +409,35 @@ posts:
   - title: 'The KCP Ecosystem: How Five Tools Turn Claude Code Into a Persistent Intelligence
   Platform'
     date: "2026-03-31"
-    url: https://wiki.totto.org/blog/2026/03/31/kcp-ecosystem-overview/
+    url: https://wiki.totto.org/blog/2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, AI-Augmented Development]
     tags: [ai, agents, kcp, kcp-commands, kcp-memory, kcp-dashboard, kcp-triage, claude-code,
   open-source, developer-tools]
 
   - title: 'kcp-dashboard: Observability for the KCP Ecosystem'
     date: "2026-03-28"
-    url: https://wiki.totto.org/blog/2026/03/28/kcp-dashboard/
+    url: https://wiki.totto.org/blog/2026/03/28/kcp-dashboard-observability-for-the-kcp-ecosystem/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, AI-Augmented Development]
     tags: [ai, agents, kcp, kcp-dashboard, claude-code, observability, tui, go]
 
   - title: The Faster Pencil
 ...
     date: "2026-03-27"
-    url: https://wiki.totto.org/blog/2026/03/27/what-the-infrastructure-made-possible/
+    url: https://wiki.totto.org/blog/2026/03/27/the-faster-pencil/
     categories: [Knowledge Infrastructure, AI-Augmented Development, Career & Community]
     tags: [exocortex, naur, intent, knowledge-infrastructure, skills, philosophy-of-mind, ai-development]
 
   - title: Peter Naur Was Right in 1985, and AI Just Proved It
 ...
     date: "2026-03-25"
-    url: https://wiki.totto.org/blog/2026/03/25/naur-was-right/
+    url: https://wiki.totto.org/blog/2026/03/25/peter-naur-was-right-in-1985-and-ai-just-proved-it/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI-Augmented Development]
     tags: [sdd, kcp, intent-debt, cognitive-debt, ai-development, naur, synthesis, triple-debt-model]
 
   - title: Every Agent That Queries a Knowledge Manifest Reinvents Filtering
 ...
     date: "2026-03-25"
-    url: https://wiki.totto.org/blog/2026/03/25/kcp-v014-query-composition/
+    url: https://wiki.totto.org/blog/2026/03/25/every-agent-that-queries-a-knowledge-manifest-reinvents-filtering/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web]
     tags: [kcp, knowledge-context-protocol, ai-agents, open-source, agentic-systems, manifest-composition,
   query-vocabulary]
@@ -452,25 +452,25 @@ posts:
   - title: The Manifest Quality Feedback Loop
 ...
     date: "2026-03-24"
-    url: https://wiki.totto.org/blog/2026/03/24/kcp-manifest-quality-feedback/
+    url: https://wiki.totto.org/blog/2026/03/24/kcp-manifest-quality-feedback-loop/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web]
     tags: [ai, agents, kcp, kcp-commands, kcp-memory, self-improving, manifest-quality, feedback-loop]
 
   - title: 'From Capable to Trustworthy: How KCP Evolved from Discovery to Governance'
     date: "2026-03-20"
-    url: https://wiki.totto.org/blog/2026/03/20/kcp-evolution/
+    url: https://wiki.totto.org/blog/2026/03/20/from-capable-to-trustworthy-how-kcp-evolved-from-discovery-to-governance/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, 'Governance, Trust & Compliance']
     tags: [kcp, knowledge-context-protocol, ai-agents, governance, open-source, agentic-systems]
 
   - title: "The Human in the Loop \u2014 at Design Time"
     date: "2026-03-16"
-    url: https://wiki.totto.org/blog/2026/03/16/the-human-in-the-loop-at-design-time/
+    url: https://wiki.totto.org/blog/2026/03/16/the-human-in-the-loop--at-design-time/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [agents, sdd, knowledge-infrastructure, claude-code, synthesis, kcp, exocortex, craftsmanship]
 
   - title: 'The Agentic Stack: Every Layer Was Built for Humans'
     date: "2026-03-16"
-    url: https://wiki.totto.org/blog/2026/03/16/agentic-stack-layer-by-layer/
+    url: https://wiki.totto.org/blog/2026/03/16/the-agentic-stack-every-layer-was-built-for-humans/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [agents, kcp, agent-architecture, claude-code, sdd, knowledge-infrastructure, agentic-infrastructure,
   version-control]
@@ -478,7 +478,7 @@ posts:
   - title: The agents were forgetting everything they discovered
 ...
     date: "2026-03-14"
-    url: https://wiki.totto.org/blog/2026/03/14/kcp-memory-subagent-knowledge-loss/
+    url: https://wiki.totto.org/blog/2026/03/14/the-agents-were-forgetting-everything-they-discovered/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [claude-code, agents, kcp, episodic-memory, exocortex, debugging, subagents]
 
@@ -491,14 +491,14 @@ posts:
   - title: I haven't typed apt install in three months
 ...
     date: "2026-03-13"
-    url: https://wiki.totto.org/blog/2026/03/13/claude-code-as-sysadmin/
+    url: https://wiki.totto.org/blog/2026/03/13/i-havent-typed-apt-install-in-three-months/
     categories: [Knowledge Infrastructure, AI-Augmented Development]
     tags: [claude-code, sysadmin, devops, exocortex, local-tooling, operations, intent-driven]
 
   - title: The Autonomous Agentic Web Needs a Foundation Layer
 ...
     date: "2026-03-13"
-    url: https://wiki.totto.org/blog/2026/03/13/autonomous-agentic-web-foundation-layer/
+    url: https://wiki.totto.org/blog/2026/03/13/the-autonomous-agentic-web-needs-a-foundation-layer/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web]
     tags: [ai, agents, kcp, standards, autonomous-agents, multi-agent, agentic-web]
 
@@ -511,7 +511,7 @@ posts:
 
   - title: 'The Front Door and the Filing Cabinet: A2A Agent Cards Meet KCP'
     date: "2026-03-08"
-    url: https://wiki.totto.org/blog/2026/03/08/a2a-cards-and-kcp/
+    url: https://wiki.totto.org/blog/2026/03/08/the-front-door-and-the-filing-cabinet-a2a-agent-cards-meet-kcp/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai-agents, kcp, a2a, knowledge-infrastructure, standards, security, multi-agent]
 
@@ -525,20 +525,20 @@ posts:
   - title: Skill-Driven Development vs Spec-Driven Development
 ...
     date: "2026-03-07"
-    url: https://wiki.totto.org/blog/2026/03/07/sdd-vs-spec-driven/
+    url: https://wiki.totto.org/blog/2026/03/07/skill-driven-vs-spec-driven-development/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI-Augmented Development]
     tags: [sdd, ai, claude-code, methodology, kcp, knowledge-infrastructure]
 
   - title: "kcp-mcp v0.10.0: GitHub Copilot Gets KCP \u2014 Including MCP-Locked Enterprises"
     date: "2026-03-06"
-    url: https://wiki.totto.org/blog/2026/03/06/kcp-mcp-copilot/
+    url: https://wiki.totto.org/blog/2026/03/06/kcp-mcp-v0100-github-copilot-gets-kcp--including-mcp-locked-enterprises/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, AI-Augmented Development]
     tags: [ai, agents, kcp, mcp, copilot, claude-code, tools]
 
   - title: Thirteen Codebases, One Method
 ...
     date: "2026-03-05"
-    url: https://wiki.totto.org/blog/2026/03/05/twenty-codebases-one-method/
+    url: https://wiki.totto.org/blog/2026/03/05/thirteen-codebases-one-method/
     categories: [AI-Augmented Development, Career & Community]
     tags: [ai, claude-code, sdd, workshop, methodology]
 
@@ -552,7 +552,7 @@ posts:
 
   - title: 'The Prompt Cache as Infrastructure: Lessons from 3,007 Claude Code Sessions'
     date: "2026-03-04"
-    url: https://wiki.totto.org/blog/2026/03/04/prompt-cache-as-infrastructure/
+    url: https://wiki.totto.org/blog/2026/03/04/the-prompt-cache-as-infrastructure-lessons-from-3007-claude-code-sessions/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI-Augmented Development]
     tags: [ai, claude-code, prompt-caching, kcp, knowledge-infrastructure, token-economics]
 
@@ -567,27 +567,21 @@ posts:
   - title: Working Memory, Episodic Memory, Semantic Memory. Your Agent Has One.
 ...
     date: "2026-03-03"
-    url: https://wiki.totto.org/blog/2026/03/03/three-layer-ai-memory/
+    url: https://wiki.totto.org/blog/2026/03/03/working-memory-episodic-memory-semantic-memory-your-agent-has-one/
     categories: [Knowledge Infrastructure, AI Agents & the Agentic Web, AI-Augmented Development]
     tags: [ai-agents, memory, claude-code, knowledge-infrastructure, synthesis, mcp, session-history]
 
   - title: 'KCP Comes to OpenCode: The First AI Coding Tool Plugin'
     date: "2026-03-03"
-    url: https://wiki.totto.org/blog/2026/03/03/opencode-kcp-plugin/
+    url: https://wiki.totto.org/blog/2026/03/03/kcp-comes-to-opencode-the-first-ai-coding-tool-plugin/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai, agents, kcp, opencode, plugin, knowledge-infrastructure, context-window]
 
   - title: 'kcp-memory: Give Claude Code a Memory'
     date: "2026-03-03"
-    url: https://wiki.totto.org/blog/2026/03/03/kcp-memory/
+    url: https://wiki.totto.org/blog/2026/03/03/kcp-memory-give-claude-code-a-memory/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai, agents, kcp, claude-code, memory, sqlite, episodic-memory, knowledge-infrastructure]
-
-  - title: 'KCP v0.1 to v0.5: How a Knowledge Standard Grows'
-    date: "2026-03-02"
-    url: https://wiki.totto.org/blog/2026/03/02/kcp-version-history/
-    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
-    tags: [ai, agents, kcp, knowledge-infrastructure, standards, synthesis]
 
   - title: 'kcp-commands: Save 33% of Claude Code''s Context Window'
     date: "2026-03-03"
@@ -595,38 +589,50 @@ posts:
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, AI-Augmented Development]
     tags: [ai, agents, kcp, claude-code, context-window, hooks, tools]
 
+  - title: 'KCP v0.1 to v0.5: How a Knowledge Standard Grows'
+    date: "2026-03-02"
+    url: https://wiki.totto.org/blog/2026/03/02/kcp-v01-to-v05-how-a-knowledge-standard-grows/
+    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
+    tags: [ai, agents, kcp, knowledge-infrastructure, standards, synthesis]
+
   - title: 'The AI-Augmented Consultant: Knowledge Infrastructure Before Deliverables'
     date: "2026-03-02"
-    url: https://wiki.totto.org/blog/2026/03/02/ai-augmented-consultant/
+    url: https://wiki.totto.org/blog/2026/03/02/the-ai-augmented-consultant-knowledge-infrastructure-before-deliverables/
     categories: [Knowledge Infrastructure, 'Governance, Trust & Compliance', AI-Augmented Development]
     tags: [consulting, skill-driven-development, claude-code, architecture, regulatory, knowledge-infrastructure]
 
   - title: 'KCP on Two Repos, Two Days: What the Numbers Actually Show'
     date: "2026-03-01"
-    url: https://wiki.totto.org/blog/2026/03/01/kcp-two-repos-two-days/
+    url: https://wiki.totto.org/blog/2026/03/01/kcp-on-two-repos-two-days-what-the-numbers-actually-show/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai, agents, kcp, benchmark, knowledge-infrastructure, standards]
 
   - title: 'KCP on Three Agent Frameworks: Same Pattern, Bigger Numbers'
     date: "2026-03-01"
-    url: https://wiki.totto.org/blog/2026/03/01/kcp-three-frameworks/
+    url: https://wiki.totto.org/blog/2026/03/01/kcp-on-three-agent-frameworks-same-pattern-bigger-numbers/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai, agents, kcp, benchmark, knowledge-infrastructure, standards]
 
   - title: What Happens When an AI Submits a PR and Another AI Reviews It
 ...
     date: "2026-03-01"
-    url: https://wiki.totto.org/blog/2026/03/01/ai-agent-pr-review-loop/
+    url: https://wiki.totto.org/blog/2026/03/01/what-happens-when-an-ai-submits-a-pr-and-another-ai-reviews-it/
     categories: [Knowledge Context Protocol, AI Agents & the Agentic Web, AI-Augmented Development]
     tags: [ai, agents, kcp, code-review, open-source]
 
-  - title: Your AI Has One Layer. It Needs Four.
+  - title: The Agent Read the Whole Spec. It Didn't Need To.
 ...
-    date: "2026-02-28 08:00:00"
-    url: https://wiki.totto.org/blog/2026/02/28/your-ai-has-one-layer-it-needs-four/
-    categories: [Knowledge Infrastructure, AI Agents & the Agentic Web]
-    tags: [rag, knowledge-graph, synthesis, ai-agents, knowledge-infrastructure, vector-search,
-  graphrag]
+    date: "2026-02-28 13:00:00"
+    url: https://wiki.totto.org/blog/2026/02/28/the-agent-read-the-whole-spec-it-didnt-need-to/
+    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
+    tags: [ai-agents, kcp, knowledge-infrastructure, standards, context-window]
+
+  - title: The HTTP Status Code That Waited 30 Years for Autonomous Agents
+...
+    date: "2026-02-28 12:00:00"
+    url: https://wiki.totto.org/blog/2026/02/28/the-http-status-code-that-waited-30-years-for-autonomous-agents/
+    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
+    tags: [ai-agents, kcp, knowledge-infrastructure, standards, payments]
 
   - title: What It Looks Like from Inside the Stack
 ...
@@ -636,70 +642,71 @@ posts:
     tags: [claude-code, synthesis, ai-agents, knowledge-infrastructure, skill-driven-development,
   prompt-caching, context-engineering]
 
-  - title: "What a 10\xD7 Workday Actually Looks Like"
-    date: "2026-02-28 10:00:00"
-    url: https://wiki.totto.org/blog/2026/02/28/what-a-10x-workday-actually-looks-like/
-    categories: [Knowledge Infrastructure, AI Agents & the Agentic Web, AI-Augmented Development]
-    tags: [claude-code, synthesis, skill-driven-development, productivity, mcp, ironclaw]
-
   - title: How Do You Tell an Agent "This Data Cannot Leave the Building"?
 ...
     date: "2026-02-28 11:00:00"
-    url: https://wiki.totto.org/blog/2026/02/28/kcp-trust-and-compliance/
+    url: https://wiki.totto.org/blog/2026/02/28/how-do-you-tell-an-agent-this-data-cannot-leave-the-building/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai-agents, kcp, compliance, gdpr, enterprise, knowledge-infrastructure, standards]
 
-  - title: The HTTP Status Code That Waited 30 Years for Autonomous Agents
-...
-    date: "2026-02-28 12:00:00"
-    url: https://wiki.totto.org/blog/2026/02/28/kcp-payment-and-rate-limits/
-    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
-    tags: [ai-agents, kcp, knowledge-infrastructure, standards, payments]
-
-  - title: 'KCP and MCP: One Protocol for Structure, One for Retrieval'
-    date: "2026-02-28"
-    url: https://wiki.totto.org/blog/2026/02/28/kcp-mcp-composability-model/
-    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
-    tags: [ai-agents, kcp, mcp, knowledge-infrastructure, standards, synthesis, claude-code]
+  - title: "What a 10\xD7 Workday Actually Looks Like"
+    date: "2026-02-28 10:00:00"
+    url: https://wiki.totto.org/blog/2026/02/28/what-a-10-workday-actually-looks-like/
+    categories: [Knowledge Infrastructure, AI Agents & the Agentic Web, AI-Augmented Development]
+    tags: [claude-code, synthesis, skill-driven-development, productivity, mcp, ironclaw]
 
   - title: What Happens When Your Agent Needs Knowledge From Five Teams?
 ...
     date: "2026-02-28 10:00:00"
-    url: https://wiki.totto.org/blog/2026/02/28/kcp-federation/
+    url: https://wiki.totto.org/blog/2026/02/28/what-happens-when-your-agent-needs-knowledge-from-five-teams/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai-agents, kcp, knowledge-infrastructure, standards, enterprise]
-
-  - title: The Agent Read the Whole Spec. It Didn't Need To.
-...
-    date: "2026-02-28 13:00:00"
-    url: https://wiki.totto.org/blog/2026/02/28/kcp-context-window-hints/
-    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
-    tags: [ai-agents, kcp, knowledge-infrastructure, standards, context-window]
 
   - title: Who Let the Agent In?
 ...
     date: "2026-02-28 09:00:00"
-    url: https://wiki.totto.org/blog/2026/02/28/kcp-auth-and-delegation/
+    url: https://wiki.totto.org/blog/2026/02/28/who-let-the-agent-in/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai-agents, kcp, knowledge-infrastructure, standards, security, enterprise]
 
-  - title: Add knowledge.yaml to Your Project in Five Minutes
-...
-    date: "2026-02-28 08:00:00"
-    url: https://wiki.totto.org/blog/2026/02/28/kcp-adoption-guide/
-    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
-    tags: [ai-agents, kcp, mcp, knowledge-infrastructure, standards, claude-code]
-
   - title: 'Four Layers: How I Built an AI Development Environment That Partly Runs Itself'
     date: "2026-02-28 09:00:00"
-    url: https://wiki.totto.org/blog/2026/02/28/four-layers-ai-development-environment/
+    url: https://wiki.totto.org/blog/2026/02/28/four-layers-how-i-built-an-ai-development-environment-that-partly-runs-itself/
     categories: [Knowledge Infrastructure, AI Agents & the Agentic Web, AI-Augmented Development]
     tags: [claude-code, synthesis, ai-agents, knowledge-infrastructure, skill-driven-development,
   ironclaw, mimir, klaw]
 
+  - title: Your AI Has One Layer. It Needs Four.
+...
+    date: "2026-02-28 08:00:00"
+    url: https://wiki.totto.org/blog/2026/02/28/your-ai-has-one-layer-it-needs-four/
+    categories: [Knowledge Infrastructure, AI Agents & the Agentic Web]
+    tags: [rag, knowledge-graph, synthesis, ai-agents, knowledge-infrastructure, vector-search,
+  graphrag]
+
+  - title: Add knowledge.yaml to Your Project in Five Minutes
+...
+    date: "2026-02-28 08:00:00"
+    url: https://wiki.totto.org/blog/2026/02/28/add-knowledgeyaml-to-your-project-in-five-minutes/
+    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
+    tags: [ai-agents, kcp, mcp, knowledge-infrastructure, standards, claude-code]
+
+  - title: 'KCP and MCP: One Protocol for Structure, One for Retrieval'
+    date: "2026-02-28"
+    url: https://wiki.totto.org/blog/2026/02/28/kcp-and-mcp-one-protocol-for-structure-one-for-retrieval/
+    categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
+    tags: [ai-agents, kcp, mcp, knowledge-infrastructure, standards, synthesis, claude-code]
+
+  - title: Code Gets Graphs. Knowledge Doesn't. That's Backwards.
+...
+    date: "2026-02-26 20:00:00"
+    url: https://wiki.totto.org/blog/2026/02/26/code-gets-graphs-knowledge-doesnt-thats-backwards/
+    categories: [Knowledge Infrastructure]
+    tags: [knowledge-graph, synthesis, organizational-memory, documents, second-brain]
+
   - title: 'Zero Links: An Engineering Session with Claude Code and Opus'
     date: "2026-02-26 16:00:00"
-    url: https://wiki.totto.org/blog/2026/02/26/zero-links-knowledge-graph-engineering/
+    url: https://wiki.totto.org/blog/2026/02/26/zero-links-an-engineering-session-with-claude-code-and-opus/
     categories: [Knowledge Infrastructure, AI-Augmented Development]
     tags: [synthesis, knowledge-graph, tdd, claude-code, opus]
 
@@ -713,66 +720,59 @@ posts:
   - title: We Gave the AI Better Documentation. It Got Slower.
 ...
     date: "2026-02-26"
-    url: https://wiki.totto.org/blog/2026/02/26/mcp-vs-cli-agent-integration/
+    url: https://wiki.totto.org/blog/2026/02/26/we-gave-the-ai-better-documentation-it-got-slower/
     categories: [Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [mcp, cli, agents, synthesis, benchmark, tool-calls, integration]
 
-  - title: Code Gets Graphs. Knowledge Doesn't. That's Backwards.
-...
-    date: "2026-02-26 20:00:00"
-    url: https://wiki.totto.org/blog/2026/02/26/code-gets-graphs-knowledge-doesnt/
-    categories: [Knowledge Infrastructure]
-    tags: [knowledge-graph, synthesis, organizational-memory, documents, second-brain]
-
   - title: 'The Synthesis Excavation: Recovering 3.5 Years of Lost History'
     date: "2026-02-25"
-    url: https://wiki.totto.org/blog/2026/02/25/the-synthesis-excavation/
+    url: https://wiki.totto.org/blog/2026/02/25/the-synthesis-excavation-recovering-35-years-of-lost-history/
     categories: [Knowledge Infrastructure, AI-Augmented Development]
     tags: [synthesis, knowledge-infrastructure, ai-enrichment, skill-driven-development]
 
   - title: AI Agents Without Knowledge Infrastructure Are Interns With Amnesia
 ...
     date: "2026-02-25"
-    url: https://wiki.totto.org/blog/2026/02/25/synthesis-knowledge-infrastructure-ai-agents/
+    url: https://wiki.totto.org/blog/2026/02/25/ai-agents-without-knowledge-infrastructure-are-interns-with-amnesia/
     categories: [Knowledge Infrastructure, AI Agents & the Agentic Web, Software Architecture]
     tags: [ai, agents, synthesis, knowledge-infrastructure, mcp, local-first, architecture]
 
   - title: 'Beyond llms.txt: AI Agents Need Maps, Not Tables of Contents'
     date: "2026-02-25"
-    url: https://wiki.totto.org/blog/2026/02/25/beyond-llms-txt-knowledge-context-protocol/
+    url: https://wiki.totto.org/blog/2026/02/25/beyond-llmstxt-ai-agents-need-maps-not-tables-of-contents/
     categories: [Knowledge Context Protocol, Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ai, agents, kcp, knowledge-infrastructure, llms-txt, standards, synthesis]
 
   - title: Who Describes You to AI?
 ...
     date: "2026-02-24 10:00:00"
-    url: https://wiki.totto.org/blog/2026/02/24/llms-txt-moment/
+    url: https://wiki.totto.org/blog/2026/02/24/who-describes-you-to-ai/
     categories: [Knowledge Context Protocol, Career & Community]
     tags: [ai, personal-site, llms-txt, identity, web]
 
   - title: 'When Your AI Lies About Its Tool Calls: Debugging kimi-k2.5'
     date: "2026-02-24 09:00:00"
-    url: https://wiki.totto.org/blog/2026/02/24/ironclaw-synthesis-part2/
+    url: https://wiki.totto.org/blog/2026/02/24/when-your-ai-lies-about-its-tool-calls-debugging-kimi-k25/
     categories: [Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ironclaw, kimi-k2.5, tool-calls, debugging, mcp, synthesis, ai-agents]
 
   - title: 'Giving an AI Agent a Brain: Connecting IronClaw to Synthesis via MCP'
     date: "2026-02-24 08:00:00"
-    url: https://wiki.totto.org/blog/2026/02/24/ironclaw-synthesis-part1/
+    url: https://wiki.totto.org/blog/2026/02/24/giving-an-ai-agent-a-brain-connecting-ironclaw-to-synthesis-via-mcp/
     categories: [Knowledge Infrastructure, AI Agents & the Agentic Web]
     tags: [ironclaw, mcp, synthesis, ec2, aws, python, java, ai-agents]
 
   - title: I Wrote About Cloud Computing in 2009. Seventeen Years Later, I Have the Same Feeling.
 ...
     date: "2026-02-24 08:00:00"
-    url: https://wiki.totto.org/blog/2026/02/24/cloud-to-ai-same-feeling/
+    url: https://wiki.totto.org/blog/2026/02/24/i-wrote-about-cloud-computing-in-2009-seventeen-years-later-i-have-the-same-feeling/
     categories: [AI-Augmented Development, Software Architecture, Career & Community]
     tags: [cloud, ai, architecture, reflection, sdd]
 
   - title: I'm Scared of AI. That's Why It Works.
 ...
     date: "2026-02-23"
-    url: https://wiki.totto.org/blog/2026/02/23/fear-driven-development/
+    url: https://wiki.totto.org/blog/2026/02/23/im-scared-of-ai-thats-why-it-works/
     categories: [AI-Augmented Development]
     tags: [ai, fear, testing, verification, java, methodology]
 
@@ -786,20 +786,20 @@ posts:
 
   - title: 'Building Together: An 11-Day Human-AI Collaboration Story'
     date: "2026-02-22"
-    url: https://wiki.totto.org/blog/2026/02/22/building-together-11-day-ai-collaboration/
+    url: https://wiki.totto.org/blog/2026/02/22/building-together-an-11-day-human-ai-collaboration-story/
     categories: [AI-Augmented Development]
     tags: [ai, java, lib-pcb, case-study, collaboration, sdd, productivity]
 
   - title: 'Claude Code + Synthesis: Five Superpowers for Java Developers'
     date: "2026-02-21"
-    url: https://wiki.totto.org/blog/2026/02/21/five-superpowers-java-developers/
+    url: https://wiki.totto.org/blog/2026/02/21/claude-code--synthesis-five-superpowers-for-java-developers/
     categories: [Knowledge Infrastructure, AI-Augmented Development, Software Architecture]
     tags: [java, synthesis, claude-code, sdd, tooling, maven, architecture]
 
   - title: The Seven-Day Evolution
 ...
     date: "2026-02-20"
-    url: https://wiki.totto.org/blog/2026/02/20/synthesis-seven-day-evolution/
+    url: https://wiki.totto.org/blog/2026/02/20/the-seven-day-evolution/
     categories: [Knowledge Infrastructure, AI-Augmented Development]
     tags: [synthesis, velocity, skill-driven-development, self-learning, recursive-engineering,
   methodology]
@@ -807,7 +807,7 @@ posts:
   - title: The Gap Between Individual Fluency and Organisational Capability
 ...
     date: "2026-02-20"
-    url: https://wiki.totto.org/blog/2026/02/20/sdd-vs-vibe-coding/
+    url: https://wiki.totto.org/blog/2026/02/20/the-gap-between-individual-fluency-and-organisational-capability/
     categories: [AI-Augmented Development]
     tags: [skill-driven-development, methodology, vibe-coding, human-ai-collaboration, organisational-capability,
   teams]
@@ -815,32 +815,32 @@ posts:
   - title: The Architecture Mistake Cloud Taught Us (That We're Making With AI)
 ...
     date: "2026-02-19"
-    url: https://wiki.totto.org/blog/2026/02/19/architecture-mistake-cloud-to-ai/
+    url: https://wiki.totto.org/blog/2026/02/19/the-architecture-mistake-cloud-taught-us-that-were-making-with-ai/
     categories: [AI-Augmented Development, Software Architecture]
     tags: [cloud, ai, architecture, lift-and-shift, sdd, methodology]
 
   - title: 'The Hallucination Tax: Three More Fears That Made My AI Workflow Better'
     date: "2026-02-17"
-    url: https://wiki.totto.org/blog/2026/02/17/the-hallucination-tax/
+    url: https://wiki.totto.org/blog/2026/02/17/the-hallucination-tax-three-more-fears-that-made-my-ai-workflow-better/
     categories: [AI-Augmented Development]
     tags: [ai, fear, testing, verification, java, methodology, cost, control]
 
   - title: What "Senior Developer" Means When AI Can Code
 ...
     date: "2026-02-15"
-    url: https://wiki.totto.org/blog/2026/02/15/what-senior-developer-means-now/
+    url: https://wiki.totto.org/blog/2026/02/15/what-senior-developer-means-when-ai-can-code/
     categories: [AI-Augmented Development, Software Architecture, Career & Community]
     tags: [ai, architecture, senior-developer, methodology, sdd, career]
 
   - title: 'Six Pillars: What We Learned Building 200,000 Lines in 11 Days'
     date: "2026-02-13"
-    url: https://wiki.totto.org/blog/2026/02/13/six-pillars-200k-lines-11-days/
+    url: https://wiki.totto.org/blog/2026/02/13/six-pillars-what-we-learned-building-200000-lines-in-11-days/
     categories: [AI-Augmented Development, Software Architecture]
     tags: [ai, java, methodology, sdd, lib-pcb, architecture, testing]
 
   - title: 'The Mirror Test: How Synthesis Benchmarked Itself Into Something Better'
     date: "2026-02-11"
-    url: https://wiki.totto.org/blog/2026/02/11/the-mirror-test/
+    url: https://wiki.totto.org/blog/2026/02/11/the-mirror-test-how-synthesis-benchmarked-itself-into-something-better/
     categories: [Knowledge Infrastructure, AI-Augmented Development]
     tags: [ai, synthesis, benchmarking, knowledge-integrity, java, methodology]
 
@@ -853,34 +853,34 @@ posts:
   - title: Why Exploration Beats Specification When AI Does the Building
 ...
     date: "2026-02-09"
-    url: https://wiki.totto.org/blog/2026/02/09/exploration-beats-specification/
+    url: https://wiki.totto.org/blog/2026/02/09/why-exploration-beats-specification-when-ai-does-the-building/
     categories: [AI-Augmented Development, Software Architecture]
     tags: [ai, java, methodology, sdd, lib-pcb, architecture, planning]
 
   - title: The Ghost in the Machine
 ...
     date: "2026-02-08"
-    url: https://wiki.totto.org/blog/2026/02/08/ghost-in-the-machine/
+    url: https://wiki.totto.org/blog/2026/02/08/the-ghost-in-the-machine/
     categories: [Knowledge Infrastructure, AI-Augmented Development, Career & Community]
     tags: [ai, identity, memory, human-ai-collaboration, synthesis, creativity]
 
   - title: What a "Skill" Actually Is (And Why It's Not a Prompt)
 ...
     date: "2026-02-07"
-    url: https://wiki.totto.org/blog/2026/02/07/what-a-skill-actually-is/
+    url: https://wiki.totto.org/blog/2026/02/07/what-a-skill-actually-is-and-why-its-not-a-prompt/
     categories: [AI-Augmented Development]
     tags: [ai, sdd, skills, methodology, java, claude-code]
 
   - title: Three Weeks at This Velocity
 ...
     date: "2026-02-06"
-    url: https://wiki.totto.org/blog/2026/02/06/velocity-reflection/
+    url: https://wiki.totto.org/blog/2026/02/06/three-weeks-at-this-velocity/
     categories: [AI-Augmented Development, Career & Community]
     tags: [velocity, reflection, human-ai-collaboration, methodology, bottleneck]
 
   - title: 'The Comprehension Bottleneck: Why AI Made Creating Easy But Understanding Harder'
     date: "2026-02-05"
-    url: https://wiki.totto.org/blog/2026/02/05/the-comprehension-bottleneck/
+    url: https://wiki.totto.org/blog/2026/02/05/the-comprehension-bottleneck-why-ai-made-creating-easy-but-understanding-harder/
     categories: [Knowledge Infrastructure, AI-Augmented Development, Software Architecture]
     tags: [ai, synthesis, methodology, architecture, knowledge-management, sdd]
 
@@ -895,86 +895,86 @@ posts:
   - title: 'What Synthesis Found in 31 Seconds: An XXE Vulnerability in a Production Java SSO
   System'
     date: "2026-02-03"
-    url: https://wiki.totto.org/blog/2026/02/03/whydah-xxe-vulnerability/
+    url: https://wiki.totto.org/blog/2026/02/03/what-synthesis-found-in-31-seconds-an-xxe-vulnerability-in-a-production-java-sso-system/
     categories: [Knowledge Infrastructure, 'Governance, Trust & Compliance']
     tags: [security, java, synthesis, xxe]
 
   - title: 'From What to Why: When AI Reveals Questions You Didn''t Ask'
     date: "2026-02-02"
-    url: https://wiki.totto.org/blog/2026/02/02/from-what-to-why/
+    url: https://wiki.totto.org/blog/2026/02/02/from-what-to-why-when-ai-reveals-questions-you-didnt-ask/
     categories: [AI-Augmented Development, Software Architecture]
     tags: [ai, analytics, architecture, temporal, insights, methodology]
 
+  - title: Five Architecture Patterns for AI Agents That Actually Work
+...
+    date: "2026-02-01 16:00:00"
+    url: https://wiki.totto.org/blog/2026/02/01/five-architecture-patterns-for-ai-agents-that-actually-work/
+    categories: [AI Agents & the Agentic Web, Software Architecture]
+    tags: [ai, agents, architecture, patterns, mcp, tools]
+
   - title: 'Why Temporal Matters: The Time Capsule Graph'
     date: "2026-02-01 08:00:00"
-    url: https://wiki.totto.org/blog/2026/02/01/time-capsule-graph/
+    url: https://wiki.totto.org/blog/2026/02/01/why-temporal-matters-the-time-capsule-graph/
     categories: [Software Architecture]
     tags: [architecture, temporal, graph, databases, analytics, patterns]
 
   - title: 'Three Decades of Architecture: What AI Actually Changes (And What Doesn''t)'
     date: "2026-02-01"
-    url: https://wiki.totto.org/blog/2026/02/01/three-decades-what-ai-actually-changes/
+    url: https://wiki.totto.org/blog/2026/02/01/three-decades-of-architecture-what-ai-actually-changes-and-what-doesnt/
     categories: [AI-Augmented Development, Software Architecture, Career & Community]
     tags: [ai, architecture, career, java, methodology, reflection]
-
-  - title: Five Architecture Patterns for AI Agents That Actually Work
-...
-    date: "2026-02-01 16:00:00"
-    url: https://wiki.totto.org/blog/2026/02/01/five-architecture-patterns-ai-agents/
-    categories: [AI Agents & the Agentic Web, Software Architecture]
-    tags: [ai, agents, architecture, patterns, mcp, tools]
 
   - title: The More AI, The More Control
 ...
     date: "2026-01-30"
-    url: https://wiki.totto.org/blog/2026/01/30/more-ai-more-control/
+    url: https://wiki.totto.org/blog/2026/01/30/the-more-ai-the-more-control/
     categories: [AI-Augmented Development, Software Architecture]
     tags: [ai, control, architecture, methodology, autonomy, delegation]
 
   - title: Subscription Economics and the AI Development Workflow
 ...
     date: "2026-01-28"
-    url: https://wiki.totto.org/blog/2026/01/28/subscription-economics-ai-development/
+    url: https://wiki.totto.org/blog/2026/01/28/subscription-economics-and-the-ai-development-workflow/
     categories: [AI-Augmented Development]
     tags: [ai, economics, methodology, workflow, cost]
 
   - title: When Big Claims Backfire
 ...
     date: "2026-01-27"
-    url: https://wiki.totto.org/blog/2026/01/27/when-claims-backfire/
+    url: https://wiki.totto.org/blog/2026/01/27/when-big-claims-backfire/
     categories: [AI-Augmented Development]
     tags: [methodology, claims, credibility, communication, productivity, lessons-learned]
 
   - title: Documentation That Writes Itself (No, Really)
 ...
     date: "2026-01-26"
-    url: https://wiki.totto.org/blog/2026/01/26/documentation-writes-itself/
+    url: https://wiki.totto.org/blog/2026/01/26/documentation-that-writes-itself-no-really/
     categories: [AI-Augmented Development]
     tags: [ai, documentation, methodology, skills, knowledge]
 
   - title: The Workshop Invitation
 ...
     date: "2026-01-25"
-    url: https://wiki.totto.org/blog/2026/01/25/workshop-interest/
+    url: https://wiki.totto.org/blog/2026/01/25/the-workshop-invitation/
     categories: [AI-Augmented Development, Career & Community]
     tags: [workshop, claude-code, verification, skill-driven-development, community, methodology]
 
   - title: The Cost of Iteration Collapsed. Now What?
 ...
     date: "2026-01-24"
-    url: https://wiki.totto.org/blog/2026/01/24/the-cost-of-iteration-collapsed/
+    url: https://wiki.totto.org/blog/2026/01/24/the-cost-of-iteration-collapsed-now-what/
     categories: [AI-Augmented Development, Software Architecture]
     tags: [ai, methodology, architecture, iteration, economics, decision-making]
 
   - title: 'The Testing Discipline: 25% to 93%'
     date: "2026-01-23"
-    url: https://wiki.totto.org/blog/2026/01/23/ai-testing-discipline/
+    url: https://wiki.totto.org/blog/2026/01/23/the-testing-discipline-25-to-93/
     categories: [AI-Augmented Development]
     tags: [lib-pcb, testing, quality, verification, skill-driven-development, methodology, reality-based-qa]
 
   - title: 'Strategic Delegation: When Developers Become Architects'
     date: "2026-01-22"
-    url: https://wiki.totto.org/blog/2026/01/22/strategic-delegation-developers-become-architects/
+    url: https://wiki.totto.org/blog/2026/01/22/strategic-delegation-when-developers-become-architects/
     categories: [AI-Augmented Development, Software Architecture, Career & Community]
     tags: [ai, architecture, methodology, career, delegation, workflow]
 
@@ -987,13 +987,13 @@ posts:
 
   - title: 'The Verification Paradox: Why Fast AI Needs Slow Tests'
     date: "2026-01-20"
-    url: https://wiki.totto.org/blog/2026/01/20/the-verification-paradox/
+    url: https://wiki.totto.org/blog/2026/01/20/the-verification-paradox-why-fast-ai-needs-slow-tests/
     categories: [AI-Augmented Development]
     tags: [ai, testing, verification, java, methodology, quality]
 
   - title: 'Building a PCB Library: A Weekend Experiment'
     date: "2026-01-19"
-    url: https://wiki.totto.org/blog/2026/01/19/pcb-library-weekend/
+    url: https://wiki.totto.org/blog/2026/01/19/building-a-pcb-library-a-weekend-experiment/
     categories: [AI-Augmented Development]
     tags: [lib-pcb, gerber, pcb-design, testing, round-trip-validation, weekend-project, skill-driven-development]
 
@@ -1007,7 +1007,7 @@ posts:
   - title: The Surprisingly Hard Problem of Semiconductor Part Numbers
 ...
     date: "2026-01-15"
-    url: https://wiki.totto.org/blog/2026/01/15/mpn-parsing-complexity/
+    url: https://wiki.totto.org/blog/2026/01/15/the-surprisingly-hard-problem-of-semiconductor-part-numbers/
     categories: [AI-Augmented Development]
     tags: [lib-pcb, semiconductors, parsing, embedded, methodology, skill-driven-development]
 
@@ -1027,14 +1027,14 @@ posts:
 
   - title: 'Mastering Deadlines: The 80/50 Rule'
     date: "2025-11-10"
-    url: https://wiki.totto.org/blog/2025/11/10/mastering-deadlines-80-50-rule/
+    url: https://wiki.totto.org/blog/2025/11/10/mastering-deadlines-the-8050-rule/
     categories: [AI-Augmented Development]
     tags: [time-management, project-management, psychology, productivity, framework, deadlines]
 
   - title: The LLM Cautionary Tales
 ...
     date: "2025-11-05"
-    url: https://wiki.totto.org/blog/2025/11/05/llm-cautionary-tales/
+    url: https://wiki.totto.org/blog/2025/11/05/the-llm-cautionary-tales/
     categories: ['Governance, Trust & Compliance']
     tags: [security, llm, ai-security, agentic-ai, prompt-injection, cautionary-tales, horror]
 
@@ -1048,13 +1048,13 @@ posts:
   - title: The Organisational Amnesia Problem
 ...
     date: "2025-10-10"
-    url: https://wiki.totto.org/blog/2025/10/10/temporal-analytics-organisational-amnesia/
+    url: https://wiki.totto.org/blog/2025/10/10/the-organisational-amnesia-problem/
     categories: [Knowledge Infrastructure, 'Governance, Trust & Compliance', Software Architecture]
     tags: [aurora, temporal-analytics, xorcery-aaa, root-cause-analysis, compliance, data-architecture]
 
   - title: 'From Data to Action: The Alchemy and Aurora Stack'
     date: "2025-09-24"
-    url: https://wiki.totto.org/blog/2025/09/24/alchemy-aurora-data-to-action/
+    url: https://wiki.totto.org/blog/2025/09/24/from-data-to-action-the-alchemy-and-aurora-stack/
     categories: [Knowledge Infrastructure, Software Architecture]
     tags: [aurora, alchemy, xorcery-aaa, temporal-analytics, data-architecture, reactive-systems]
 
@@ -1082,14 +1082,14 @@ posts:
   - title: Mapping Human Potential
 ...
     date: "2025-05-20"
-    url: https://wiki.totto.org/blog/2025/05/20/froya-mapping-human-potential/
+    url: https://wiki.totto.org/blog/2025/05/20/mapping-human-potential/
     categories: [AI-Augmented Development]
     tags: [froya, quadim, digital-co-worker, ai-agent, skills, human-ai-collaboration, catalystone,
   rag, dynamic-taxonomies]
 
   - title: "Fr\xF8ya: A Digital Co-Worker"
     date: "2025-04-28"
-    url: https://wiki.totto.org/blog/2025/04/28/froya-digital-co-worker/
+    url: https://wiki.totto.org/blog/2025/04/28/frøya-a-digital-co-worker/
     categories: [AI-Augmented Development]
     tags: [froya, quadim, digital-co-worker, ai-agent, skills, human-ai-collaboration, catalystone]
 
@@ -1110,21 +1110,21 @@ posts:
   - title: Cloud - auto-magic or just provisioning platform for your distributed system
 ...
     date: "2009-05-07"
-    url: https://wiki.totto.org/blog/2009/05/07/cloud-auto-magic-provisioning-platform/
+    url: https://wiki.totto.org/blog/2009/05/07/cloud---auto-magic-or-just-provisioning-platform-for-your-distributed-system/
     categories: [Cloud Computing, Software Architecture]
     tags: [cloud, provisioning, distributed-systems, enterprise]
 
   - title: Transparency is essential to security in the cloud
 ...
     date: "2009-04-20"
-    url: https://wiki.totto.org/blog/2009/04/20/transparency-essential-to-security-in-cloud/
+    url: https://wiki.totto.org/blog/2009/04/20/transparency-is-essential-to-security-in-the-cloud/
     categories: [Cloud Computing, 'Governance, Trust & Compliance']
     tags: [cloud, security, transparency]
 
   - title: Its time for auto scaling - avoid peak load provisioning for web applications
 ...
     date: "2009-03-05"
-    url: https://wiki.totto.org/blog/2009/03/05/auto-scaling-avoid-peak-load-provisioning/
+    url: https://wiki.totto.org/blog/2009/03/05/its-time-for-auto-scaling---avoid-peak-load-provisioning-for-web-applications/
     categories: [Cloud Computing]
     tags: [cloud, auto-scaling, middleware, virtualization]
 
@@ -1138,21 +1138,21 @@ posts:
   - title: VMware - All your clouds are belong to us
 ...
     date: "2009-02-24"
-    url: https://wiki.totto.org/blog/2009/02/24/vmware-all-your-clouds-belong-to-us/
+    url: https://wiki.totto.org/blog/2009/02/24/vmware---all-your-clouds-are-belong-to-us/
     categories: [Cloud Computing]
     tags: [cloud, vmware, virtualization]
 
   - title: Trouble In The Clouds - Gmail Turns Into Gfail
 ...
     date: "2009-02-24"
-    url: https://wiki.totto.org/blog/2009/02/24/trouble-in-the-clouds-gmail-gfail/
+    url: https://wiki.totto.org/blog/2009/02/24/trouble-in-the-clouds---gmail-turns-into-gfail/
     categories: [Cloud Computing]
     tags: [cloud, google, gmail, reliability, saas]
 
   - title: Sinnataggen and some Cloud development thoughts...
 ...
     date: "2009-02-24"
-    url: https://wiki.totto.org/blog/2009/02/24/sinnataggen-cloud-development-thoughts/
+    url: https://wiki.totto.org/blog/2009/02/24/sinnataggen-and-some-cloud-development-thoughts/
     categories: [Cloud Computing]
     tags: [cloud, gartner, development, platforms]
 
@@ -1166,21 +1166,21 @@ posts:
   - title: Free SimpleDB Beta Cloud from Amazon
 ...
     date: "2009-02-24"
-    url: https://wiki.totto.org/blog/2009/02/24/free-simpledb-beta-cloud-amazon/
+    url: https://wiki.totto.org/blog/2009/02/24/free-simpledb-beta-cloud-from-amazon/
     categories: [Cloud Computing]
     tags: [cloud, amazon, aws, simpledb, database]
 
   - title: Considerations in Building Web Applications for the Amazon Cloud
 ...
     date: "2009-02-24"
-    url: https://wiki.totto.org/blog/2009/02/24/considerations-building-web-apps-amazon-cloud/
+    url: https://wiki.totto.org/blog/2009/02/24/considerations-in-building-web-applications-for-the-amazon-cloud/
     categories: [Cloud Computing]
     tags: [cloud, amazon, aws, web-applications]
 
   - title: Clouds only for tactical projects until 2012 - Gartner misses the point... (again)
 ...
     date: "2009-02-24"
-    url: https://wiki.totto.org/blog/2009/02/24/clouds-only-for-tactical-projects/
+    url: https://wiki.totto.org/blog/2009/02/24/clouds-only-for-tactical-projects-until-2012---gartner-misses-the-point-again/
     categories: [Cloud Computing]
     tags: [cloud, gartner, strategy]
 
@@ -1214,7 +1214,7 @@ posts:
 
   - title: 'Cloud Computing: Are You Looking for IaaS or PaaS Provider?'
     date: "2009-02-24"
-    url: https://wiki.totto.org/blog/2009/02/24/cloud-computing-iaas-or-paas/
+    url: https://wiki.totto.org/blog/2009/02/24/cloud-computing-are-you-looking-for-iaas-or-paas-provider/
     categories: [Cloud Computing]
     tags: [cloud, iaas, paas, amazon, google, microsoft]
 
