@@ -34,33 +34,33 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
 <div class="grid cards" markdown>
 
--   :material-shield-alert:{ .card-icon } **[Production Scars Are Architecture](blog/2026/06/23/production-scars-are-architecture/)**
+-   :material-history:{ .card-icon } **[Six Months Down the Rabbit Hole](blog/2026/07/15/six-months-down-the-rabbit-hole/)**
 
     ---
 
-    Six architectural lessons from running an autonomous AI agent in production. Each scar is a failure category surprising enough to force mechanical change. Prose governance didn't work — here's what did.
+    172 days, 6,163 commits, 137 posts, one protocol. A six-month retrospective on explorative development — compiled by the agent from its own memory.
 
-    <span class="card-meta">June 23, 2026</span>
+    <span class="card-meta">July 15, 2026</span>
 
--   :material-scale-balance:{ .card-icon } **[Your AI Agent Does Not Know the Law (and How to Fix That)](blog/2026/06/22/your-ai-agent-does-not-know-the-law-and-how-to-fix-that/)**
-
-    ---
-
-    Your AI agent will confidently tell a customer they're GDPR-compliant when they're not. Here's the six-layer architecture that fixes that — from authoritative knowledge sources to verifiable answers.
-
-    <span class="card-meta">June 22, 2026</span>
-
--   :material-graph:{ .card-icon } **[The Zombie in the Basement](blog/2026/06/19/the-zombie-in-the-basement/)**
+-   :material-memory:{ .card-icon } **[Three Memory Schemes for Agents That Ship](blog/2026/07/11/three-memory-schemes-for-agents-that-ship/)**
 
     ---
 
-    A company planned their ERP migration for three years. Their architecture catalog documented 23 database connections. There were 52. The migration nearly shipped that delta.
+    The agent-memory debate is stuck on "vector store or not." Production systems have three different memory problems — session, semantic, and claim — each needing a different scheme.
 
-    <span class="card-meta">June 19, 2026</span>
+    <span class="card-meta">July 11, 2026</span>
+
+-   :material-file-tree-outline:{ .card-icon } **[The Milky Way: A Documentation Estate the Agent Can Defend](blog/2026/07/10/the-milky-way-enterprise-estate-agent/)**
+
+    ---
+
+    Every enterprise has the same broken documentation estate: an untrusted intranet, dev docs outranking prod, crown-jewel recipes one bad link from a leak. Here's one an agent can navigate.
+
+    <span class="card-meta">July 10, 2026</span>
 
 </div>
 
-[:octicons-arrow-right-24: All posts](blog/index.md)
+[:octicons-arrow-right-24: All posts](blog/index.md) · [Browse by topic](blog/topics.md)
 
 ---
 

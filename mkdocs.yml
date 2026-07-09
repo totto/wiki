@@ -137,6 +137,7 @@ nav:
   - Home: index.md
   - Blog:
     - blog/index.md
+    - "Browse by Topic": blog/topics.md
     - "Series": blog/series.md
   - About:
     - about/index.md
