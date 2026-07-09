@@ -8,7 +8,7 @@ image: assets/images/kcp-024-00-from-domain-to-receipt.webp
 
 **The Knowledge Context Protocol (KCP) is an open standard that makes a body of knowledge navigable and trustworthy for AI agents.** It is a YAML file format — passive data, not executable config — that describes the knowledge units in a project: their topology (`depends_on`, `supersedes`), their intent (what question each unit answers), their freshness (`validated` dates), their audience, and the trust evidence behind them. An agent can traverse a KCP manifest to find exactly what it needs without loading everything into its context window first.
 
-If [Model Context Protocol (MCP)](/blog/2026/02/28/kcp-and-mcp-one-protocol-for-structure-one-for-retrieval/) is how an agent *calls tools*, KCP is how an agent *finds and trusts knowledge*. The two compose: KCP provides structure, MCP provides retrieval.
+If [Model Context Protocol (MCP)](/blog/2026/02/28/kcp-and-mcp-one-protocol-for-structure-one-for-retrieval/) is how an agent *calls tools*, KCP is how an agent *finds and trusts knowledge*. The two compose: KCP provides structure, MCP provides retrieval — full breakdown in [KCP vs MCP](/topics/kcp-vs-mcp/).
 
 I have been designing KCP in the open since January 2026. This page is the map; the [posts below](#reading-guide) are the territory.
 

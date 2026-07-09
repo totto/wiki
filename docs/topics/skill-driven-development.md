@@ -18,7 +18,7 @@ That is the whole idea, and it is best understood against the two approaches mos
 - **Spec-driven development** — write a detailed spec, feed it to the agent, review, iterate. Disciplined and responsible. But it has a structural limitation: **every session starts from zero.** The spec carries the knowledge; the agent carries nothing. Write the same spec context again tomorrow.
 - **Skill-driven development** — encode the knowledge *once*, as a skill the agent loads on demand. The spec describes *this* change; the skill remembers *how you build* — the patterns, the pitfalls, the definition of done. Each session starts smarter than the last.
 
-The full argument: [Skill-Driven Development vs Spec-Driven Development](/blog/2026/03/07/skill-driven-vs-spec-driven-development/).
+The full comparison — when each makes sense, and the session-amnesia problem that separates them: [Skill-Driven vs Spec-Driven Development](/topics/sdd-vs-spec-driven/).
 
 ---
 

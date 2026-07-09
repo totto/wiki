@@ -175,6 +175,9 @@ nav:
     - "Knowledge Context Protocol": topics/knowledge-context-protocol.md
     - "Synthesis": topics/synthesis.md
     - "Skill-Driven Development": topics/skill-driven-development.md
+    - "Comparisons":
+      - "KCP vs MCP": topics/kcp-vs-mcp.md
+      - "Skill-Driven vs Spec-Driven": topics/sdd-vs-spec-driven.md
     - "Defendable Agents":
       - topics/defendable-agents/index.md
       - "Orientation":
