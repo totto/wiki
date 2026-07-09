@@ -18,7 +18,7 @@ I run several companies at once, and they are not a scatter — they are the sam
 
     My flagship and R&D engine. Home of [**Synthesis**](/topics/synthesis/) — AI knowledge infrastructure for large codebases — and the place where [Skill-Driven Development](/topics/skill-driven-development/) was pioneered. This is where the methods and the open-source tooling get built and proven (197,831 lines of production Java in 11 days was one such proof).
 
-    [:octicons-arrow-right-24: Open source](/open-source/) · [github.com/exoreaction](https://github.com/exoreaction)
+    [:octicons-arrow-right-24: exoreaction.com](https://exoreaction.com) · [Open source](/open-source/) · [github.com/exoreaction](https://github.com/exoreaction)
 
 -   :material-shield-check-outline:{ .lg .middle } **Mynder**
 
@@ -68,5 +68,6 @@ Not every hat is a company. Much of the work happens in the open:
 
 - **[Cantara](https://github.com/Cantara)** — the open-source home for [KCP](/topics/knowledge-context-protocol/), Whydah (SSO/IAM), Xorcery, and more. See the full [Open Source](/open-source/) page for what lives there and at eXOReaction.
 - **Communities** — co-founder of JavaZone, former president of javaBin, founding chair of OSWA (formerly IASA Norway). The full record is on [Organizations](/about/organizations/).
+- **Holdings** — ownership and investment sit behind the operating companies through T-Hex Holding, T-Hex Invest, and eXOReaction Employer Holding.
 
 *For the chronological version — every role with dates — see the [CV](/about/cv-english/). For client and consulting work over the years, see [Project History](/about/projects/).*
