@@ -51,11 +51,11 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
     [:octicons-arrow-right-24: About eXOReaction](https://exoreaction.com)
 
--   :material-magnify: **Synthesis · v1.41.1**
+-   :material-magnify: **Synthesis · v1.42.0**
 
     ---
 
-    Local-first knowledge infrastructure platform. 60+ CLI commands, 11 MCP tools, 4,300+ tests. Indexes workspaces, builds multi-layer knowledge graphs, exposes episodic memory and Notion integration to AI agents.
+    Local-first knowledge infrastructure platform. 76 CLI commands, 52 MCP tools, 4,700+ tests. Indexes workspaces, builds multi-layer knowledge graphs, exposes episodic memory and Notion integration to AI agents.
 
     [:octicons-arrow-right-24: Knowledge Infrastructure](knowledge-infrastructure/index.md) · [:octicons-link-external-16: Open Source](open-source.md)
 

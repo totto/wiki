@@ -21,7 +21,7 @@ That is not a lib-pcb problem. It is the [comprehension bottleneck](/blog/2026/0
 Synthesis started as search and became the missing layer. The full story: [The Tool I Didn't Plan to Build: Synthesis, Ten Weeks Later](/blog/2026/04/05/the-tool-i-didnt-plan-to-build-synthesis-ten-weeks-later/).
 
 !!! abstract "At a glance"
-    Local-first · indexes at 200–300 files/second · sub-second search · multi-layer knowledge graphs · **60+** CLI commands · **11** MCP tools · **4,300+** tests · Notion as a first-class workspace source · Java 21 · [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
+    Local-first · indexes at 200–300 files/second · sub-second search · multi-layer knowledge graphs · **76** CLI commands · **52** MCP tools · **4,700+** tests · full-stack KCP v0.25 support · Notion as a first-class workspace source · Java 21 · [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
 
 ---
 
