@@ -55,7 +55,7 @@ These days I'm focused on what happens when experienced architects work _with_ A
 
     ---
 
-    Local-first knowledge infrastructure platform. 60+ CLI commands, 11 MCP tools, 4,300+ tests. Indexes workspaces, builds multi-layer knowledge graphs, exposes episodic memory and Notion integration to AI agents.
+    Local-first knowledge infrastructure platform. 65+ CLI commands, 11 MCP tools, 4,300+ tests. Indexes workspaces, builds multi-layer knowledge graphs, exposes episodic memory and Notion integration to AI agents.
 
     [:octicons-arrow-right-24: Knowledge Infrastructure](knowledge-infrastructure/index.md) · [:octicons-link-external-16: Open Source](open-source.md)
 

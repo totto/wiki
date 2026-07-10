@@ -21,7 +21,7 @@ I have been involved in open source for most of my career. The work spans three 
 
 Local-first knowledge infrastructure for AI-augmented development. Indexes workspaces (code, docs, PDFs, media, Notion), builds multi-layer knowledge graphs, and exposes everything through a CLI, MCP server, and LSP server.
 
-**Key stats:** 60+ CLI commands · 11 MCP tools · 4,300+ tests · 200--300 files/second indexing
+**Key stats:** 65+ CLI commands · 11 MCP tools · 4,300+ tests · 200--300 files/second indexing
 
 **Capabilities:**
 - Sub-second full-text and semantic search across entire workspaces
