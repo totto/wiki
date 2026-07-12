@@ -12,7 +12,20 @@ Synthesis is a knowledge infrastructure platform for AI-augmented development. I
 **Repository:** [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
 
 !!! info "Current release"
-    Synthesis is at **v1.41.1**. The detailed changelog below runs through v1.29.0 — for releases since, see the [repository releases](https://github.com/exoreaction/Synthesis/releases).
+    Synthesis is at **v1.42.0** (July 9, 2026) — **76 CLI commands · 52 MCP tools · 4,738 tests**. The detailed changelog below runs through v1.29.0 — for full notes on later releases, see the [repository releases](https://github.com/exoreaction/Synthesis/releases).
+
+---
+
+## Highlights since v1.29.0
+
+A compact summary of the releases between the detailed changelog below and today:
+
+| Release | Date | Highlights |
+|---|---|---|
+| v1.37.x | Jun 14–19 | KCP temporal filtering fix — inactive results actually excluded (#346) |
+| v1.38.0 | Jul 6 | Full-stack KCP v0.25 (epic #361): `kcp init` / `refresh` / `verify` / `gaps` / `catalog` / `federate` / `plan` / `sign`, v0.25-conformant export and lossless ingestion, Ed25519 trust & signing, G-series governance cross-checks, K-series health signals |
+| v1.40.0 | Jul 8 | Semantic search hardening: persisted embeddings for O(log N) HNSW search (#376), full-content embedding (#375), `plan_context` session dedup |
+| v1.41.0–v1.42.0 | Jul 9 | Episodic memory `remember`/`recall` MCP tools, fail-closed grounding for `ask`, KCP trigger-match boosting and flag-gated routing hints for search/ask, KCP manifest retrieval benchmark (#371) |
 
 ---
 

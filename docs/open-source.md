@@ -17,17 +17,19 @@ I have been involved in open source for most of my career. The work spans three 
 ### Synthesis — Knowledge Infrastructure Platform
 
 **Repository:** [github.com/exoreaction/Synthesis](https://github.com/exoreaction/Synthesis)
-**Language:** Java 21 | **License:** Apache 2.0 | **Current version:** v1.41.1
+**Language:** Java 21 | **License:** Apache 2.0 | **Current version:** v1.42.0
 
 Local-first knowledge infrastructure for AI-augmented development. Indexes workspaces (code, docs, PDFs, media, Notion), builds multi-layer knowledge graphs, and exposes everything through a CLI, MCP server, and LSP server.
 
-**Key stats:** 65+ CLI commands · 11 MCP tools · 4,300+ tests · 200--300 files/second indexing
+**Key stats:** 76 CLI commands · 52 MCP tools · 4,700+ tests · 200--300 files/second indexing
 
 **Capabilities:**
 - Sub-second full-text and semantic search across entire workspaces
 - Code knowledge graph (dependency tracking, cross-repo relationships)
-- Episodic memory via session indexing (Claude Code session transcripts → searchable SQLite)
+- Episodic memory via session indexing (Claude Code session transcripts → searchable SQLite), with `remember`/`recall`/`reflect` MCP tools
 - Agent dispatch planner (`synthesis dispatch`) — pre-populates agent spawn prompts
+- Full-stack KCP v0.25 support: manifest scaffolding (`kcp init`), refresh, verification against evidence (`kcp verify`), cross-repo federation, read planning (`kcp plan`), and Ed25519 signing
+- Security analysis (`code-graph security`) — 21 signals across traditional and agentic attack surfaces
 - Notion workspace integration with health signals (W022/W023/W024)
 - Executive reporting, research engine, maintain/validate/health commands
 

@@ -20,13 +20,13 @@ This page maps the body of work that emerged from that problem. It spans five co
 
 <div class="grid cards" markdown>
 
--   :material-magnify: **Synthesis** · v1.41.1
+-   :material-magnify: **Synthesis** · v1.42.0
 
     ---
 
-    Local-first knowledge infrastructure platform. Indexes workspaces, builds multi-layer knowledge graphs, exposes everything through CLI, MCP, and LSP. Now includes Notion as a first-class workspace source.
+    Local-first knowledge infrastructure platform. Indexes workspaces, builds multi-layer knowledge graphs, exposes everything through CLI, MCP, and LSP. Full-stack KCP v0.25 support, episodic memory, and Notion as a first-class workspace source.
 
-    **65+** CLI commands · **11** MCP tools · **4,300+** tests
+    **76** CLI commands · **52** MCP tools · **4,700+** tests
 
     [:octicons-arrow-right-24: Release history](../notes/synthesis-releases.md) · [:octicons-link-external-16: GitHub](https://github.com/exoreaction/Synthesis)
 
@@ -222,7 +222,7 @@ These standalone posts document specific discoveries -- benchmarks, failure mode
 
 Five open-source projects underpin this work:
 
-**[Synthesis](https://github.com/exoreaction/Synthesis)** -- Knowledge infrastructure for AI-augmented development. Local-first indexing (200--300 files/second), sub-second search, multi-layer knowledge graphs, MCP server (11 tools), session indexing (episodic memory), agent dispatch planner, and Notion workspace integration. Java 21. v1.41.1, 4,300+ tests, 65+ CLI commands.
+**[Synthesis](https://github.com/exoreaction/Synthesis)** -- Knowledge infrastructure for AI-augmented development. Local-first indexing (200--300 files/second), sub-second search, multi-layer knowledge graphs, MCP server (52 tools), session indexing (episodic memory with `remember`/`recall`/`reflect`), agent dispatch planner, full-stack KCP v0.25 support (scaffold, verify, federate, sign), and Notion workspace integration. Java 21. v1.42.0, 4,700+ tests, 76 CLI commands.
 
 - [Release history](../notes/synthesis-releases.md)
 
@@ -320,6 +320,9 @@ Five open-source projects underpin this work:
 | Apr 18 | "AI Agents Forget Everything. That's a Choice." -- distributed memory for enterprise agent fleets |
 | Apr 21 | Synthesis v1.29.0 -- Notion as first-class workspace source; W022/W023/W024 health signals |
 | Apr 21 | "When Your Agent Can Finally Read the Room" -- documentation drift as agent reasoning problem |
+| Jul 6 | Synthesis v1.38.0 -- full-stack KCP v0.25: scaffold, refresh, verify, federate, plan, Ed25519 signing, governance cross-checks |
+| Jul 8 | Synthesis v1.40.0 -- semantic search hardening: persisted embeddings, O(log N) HNSW retrieval |
+| Jul 9 | Synthesis v1.41.0--v1.42.0 -- episodic memory `remember`/`recall` MCP tools, fail-closed grounding for ask; 76 CLI commands, 52 MCP tools |
 
 ---
 
