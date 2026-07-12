@@ -9,6 +9,14 @@
 
     <span class="card-meta">July 15, 2026</span>
 
+-   :material-database-outline:{ .card-icon } **[175 Posts, No Map](/blog/2026/07/12/175-posts-no-map/)**
+
+    ---
+
+    The site about the comprehension bottleneck hit its own comprehension bottleneck: 175 posts in six months and no way in. A week of renovation — entry…
+
+    <span class="card-meta">July 12, 2026</span>
+
 -   :material-map-marker-path:{ .card-icon } **[Three Memory Schemes for Agents That Ship](/blog/2026/07/11/three-memory-schemes-for-agents-that-ship/)**
 
     ---
@@ -16,13 +24,5 @@
     The agent memory conversation is stuck on one axis: vector store vs. not. But production agent systems have three fundamentally different memory problems…
 
     <span class="card-meta">July 11, 2026</span>
-
--   :material-map-marker-path:{ .card-icon } **[The Milky Way: An Enterprise Documentation Estate the Agent Can Defend](/blog/2026/07/10/the-milky-way-an-enterprise-documentation-estate-the-agent-can-defend/)**
-
-    ---
-
-    Every enterprise has the same documentation estate: an intranet nobody trusts, a wiki where the dev docs outrank the prod docs, crown-jewel recipes one…
-
-    <span class="card-meta">July 10, 2026</span>
 
 </div>
