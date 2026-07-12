@@ -6760,14 +6760,16 @@
 <p><a href="https://github.com/exoreaction">github.com/exoreaction</a></p>
 <h3 id="synthesis-knowledge-infrastructure-platform">Synthesis — Knowledge Infrastructure Platform<a class="headerlink" href="#synthesis-knowledge-infrastructure-platform" title="Permanent link">&para;</a></h3>
 <p><strong>Repository:</strong> <a href="https://github.com/exoreaction/Synthesis">github.com/exoreaction/Synthesis</a>
-<strong>Language:</strong> Java 21 | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v1.41.1</p>
+<strong>Language:</strong> Java 21 | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v1.42.0</p>
 <p>Local-first knowledge infrastructure for AI-augmented development. Indexes workspaces (code, docs, PDFs, media, Notion), builds multi-layer knowledge graphs, and exposes everything through a CLI, MCP server, and LSP server.</p>
-<p><strong>Key stats:</strong> 65+ CLI commands · 11 MCP tools · 4,300+ tests · 200--300 files/second indexing</p>
+<p><strong>Key stats:</strong> 76 CLI commands · 52 MCP tools · 4,700+ tests · 200--300 files/second indexing</p>
 <p><strong>Capabilities:</strong>
 - Sub-second full-text and semantic search across entire workspaces
 - Code knowledge graph (dependency tracking, cross-repo relationships)
-- Episodic memory via session indexing (Claude Code session transcripts → searchable SQLite)
+- Episodic memory via session indexing (Claude Code session transcripts → searchable SQLite), with <code>remember</code>/<code>recall</code>/<code>reflect</code> MCP tools
 - Agent dispatch planner (<code>synthesis dispatch</code>) — pre-populates agent spawn prompts
+- Full-stack KCP v0.25 support: manifest scaffolding (<code>kcp init</code>), refresh, verification against evidence (<code>kcp verify</code>), cross-repo federation, read planning (<code>kcp plan</code>), and Ed25519 signing
+- Security analysis (<code>code-graph security</code>) — 21 signals across traditional and agentic attack surfaces
 - Notion workspace integration with health signals (W022/W023/W024)
 - Executive reporting, research engine, maintain/validate/health commands</p>
 <p><a href="../notes/synthesis-releases/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Release history</a> · <a href="../knowledge-infrastructure/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Knowledge Infrastructure</a></p>
@@ -6914,7 +6916,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2026 06:00:06 UTC">July 10, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2026 06:07:25 UTC">July 10, 2026</span>
   </span>
 
     
