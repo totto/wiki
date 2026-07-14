@@ -6331,6 +6331,61 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-03-14 00:00:00+00:00">March 14, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../../../ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              9 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-agents-were-forgetting-everything-they-discovered"><a class="toclink" href="../../../../2026/03/14/the-agents-were-forgetting-everything-they-discovered/">The agents were forgetting everything they discovered</a></h2>
+<p>Something felt off.</p>
+<p>I'd been using the Task tool heavily — delegating research tasks to Claude subagents, letting them explore codebases, map dependencies, surface patterns. The results coming back were good. But when I'd start a new session and ask about the same topic, there was no trace of that prior investigation. The context window had reset, and the episodic memory layer — kcp-memory — wasn't helping.</p>
+<p>Here's what that looked like in practice: I'd asked a subagent to map the co-events repository ecosystem earlier this week. It came back with a clear picture — co-events is the CatalystOne HRIS event-sourcing platform, seven repos, with a dependency chain running from co-event-typelib through co-event-sdk into co-analytics-vanilla (which, by the way, uses Neo4j with APOC, not SQL — a non-obvious choice). Two days later, I started a new session, asked about co-events architecture, and got a blank stare. The agent had no idea any of this had been mapped. It treated the question as entirely novel.</p>
+<p>My first hypothesis was handover loss. Maybe something was being compressed or summarized too aggressively when agents returned their findings. Maybe the model transition (often Opus for the delegated tasks, Sonnet for the orchestrating session) was dropping context. That felt plausible, and a little unsettling.</p>
+<p>The real cause was more concrete — and more fixable.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/03/14/the-agents-were-forgetting-everything-they-discovered/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-03-13 00:00:00+00:00">March 13, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6799,80 +6854,6 @@ Phase A gives Claude vocabulary. Phase B cleans output. Phase C remembers what r
     
       <nav class="md-post__action">
         <a href="../../../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-03 00:00:00+00:00">March 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../../ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              12 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-memory-give-claude-code-a-memory"><a class="toclink" href="../../../../2026/03/03/kcp-memory-give-claude-code-a-memory/">kcp-memory: Give Claude Code a Memory</a></h2>
-<p>Every Claude Code session starts the same way. The context window is empty. The agent
-has no recollection of what it did yesterday, which files it touched last week, or how
-it solved a similar problem three sessions ago. Each session is day one.</p>
-<p>That is not a limitation of the model. It is a missing infrastructure layer.</p>
-<p>Today we are releasing <strong>kcp-memory v0.1.0</strong>: a standalone Java daemon that indexes
-<code>~/.claude/projects/**/*.jsonl</code> session transcripts into a local SQLite database with
-FTS5 full-text search. Ask it "what was I working on last week?" and it answers in
-milliseconds.</p>
-<p><strong>Update (same day — v0.2.0):</strong> kcp-memory now ships with tool-level granularity.
-<a href="../../../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">kcp-commands v0.9.0</a> writes every Bash tool call to
-<code>~/.kcp/events.jsonl</code>; kcp-memory ingests that stream and makes individual commands
-searchable via <code>kcp-memory events search</code>. Session-level and tool-level memory in one
-daemon, one database, zero additional dependencies.</p>
-<p><strong>Update (same day — v0.3.0):</strong> kcp-memory now ships as an MCP server. Run
-<code>java -jar ~/.kcp/kcp-memory-daemon.jar mcp</code> — registered in <code>mcpServers</code> in
-<code>~/.claude/settings.json</code> — and Claude Code can call <code>kcp_memory_search</code>,
-<code>kcp_memory_events_search</code>, <code>kcp_memory_list</code>, and <code>kcp_memory_stats</code> inline during a
-session, without leaving the context window.</p>
-<p><strong>Update (same day — v0.4.0):</strong> Two new MCP tools close the remaining gaps.
-<code>kcp_memory_session_detail(session_id)</code> returns full session content — user messages,
-files touched, tools used — completing the search → read flow. <code>kcp_memory_project_context()</code>
-reads <code>PWD</code> from the process environment and returns the last 5 sessions and 20 tool events
-for the current project, with no query needed. Call it at the start of every session and
-Claude immediately knows what it was doing here last time.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/03/kcp-memory-give-claude-code-a-memory/">
           Continue reading
         </a>
       </nav>
