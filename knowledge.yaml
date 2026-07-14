@@ -1,8 +1,8 @@
 # wiki.totto.org — KCP root manifest (federated)
-# KCP v0.21 — see https://github.com/Cantara/kcp
-kcp_version: "0.21"
+# KCP v0.26 — see https://github.com/Cantara/knowledge-context-protocol
+kcp_version: "0.26"
 project: wiki-totto-org
-version: "0.21"
+version: "0.26"
 
 entity:
   name: Thor Henning Hetland (Totto)
@@ -28,6 +28,14 @@ signing:
   scope: this-manifest
   public_key: https://wiki.totto.org/.well-known/kcp-signing-key.pub
   signature: https://wiki.totto.org/knowledge.yaml.sig
+
+# Serving Endpoint Binding (SPEC §3.12, v0.26): authoritative manifest URLs
+# and authorized MCP representatives. Ignored by pre-0.26 verifiers.
+serving:
+  manifest:
+    - https://wiki.totto.org/knowledge.yaml
+  mcp:
+    - https://mcp.totto.org/mcp
 
 includes:
   - knowledge/about.yaml
