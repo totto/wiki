@@ -9,6 +9,14 @@
 
     <span class="card-meta">July 15, 2026</span>
 
+-   :material-map-marker-path:{ .card-icon } **[Getting Into the Phone Book of the Agentic Internet Took an Afternoon. Here's Why.](/blog/2026/07/14/getting-into-the-phone-book-of-the-agentic-internet-took-an-afternoon-heres-why/)**
+
+    ---
+
+    Both entries went live in the MCP registry in one working day: kcp-agent as tooling, and org.totto/knowledge — a person as a remote MCP server. The…
+
+    <span class="card-meta">July 14, 2026</span>
+
 -   :material-database-outline:{ .card-icon } **[175 Posts, No Map](/blog/2026/07/12/175-posts-no-map/)**
 
     ---
@@ -16,13 +24,5 @@
     The site about the comprehension bottleneck hit its own comprehension bottleneck: 175 posts in six months and no way in. A week of renovation — entry…
 
     <span class="card-meta">July 12, 2026</span>
-
--   :material-map-marker-path:{ .card-icon } **[Three Memory Schemes for Agents That Ship](/blog/2026/07/11/three-memory-schemes-for-agents-that-ship/)**
-
-    ---
-
-    The agent memory conversation is stuck on one axis: vector store vs. not. But production agent systems have three fundamentally different memory problems…
-
-    <span class="card-meta">July 11, 2026</span>
 
 </div>
