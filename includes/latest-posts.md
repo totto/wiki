@@ -9,19 +9,19 @@
 
     <span class="card-meta">July 17, 2026</span>
 
+-   :material-shield-check-outline:{ .card-icon } **[OWASP Just Mapped the Agentic Top 10. Here's the Root Cause Four of Them Share.](/blog/2026/07/16/owasp-just-mapped-the-agentic-top-10-heres-the-root-cause-four-of-them-share/)**
+
+    ---
+
+    OWASP published the Agentic Top 10 in December 2025: ten named categories of agent security failure built by 100+ security experts. Here's a field guide…
+
+    <span class="card-meta">July 16, 2026</span>
+
 -   :material-map-marker-path:{ .card-icon } **[Six Months Down the Rabbit Hole](/blog/2026/07/15/six-months-down-the-rabbit-hole/)**
 
     ---
 
     172 days, 6,163 commits, 137 blog posts, 36 new repos, one protocol. A six-month retrospective on explorative development — compiled by the agent from its…
-
-    <span class="card-meta">July 15, 2026</span>
-
--   :material-shield-check-outline:{ .card-icon } **[Prompt Injection Is SQL Injection for Agents. Here's the Prepared Statement.](/blog/2026/07/15/prompt-injection-is-sql-injection-for-agents-heres-the-prepared-statement/)**
-
-    ---
-
-    One word — 'Additionally' — bypassed GitHub's AI agent guardrails and leaked private repositories. Noma Labs called it: prompt injection is to agentic AI…
 
     <span class="card-meta">July 15, 2026</span>
 
