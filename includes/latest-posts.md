@@ -17,12 +17,12 @@
 
     <span class="card-meta">July 15, 2026</span>
 
--   :material-map-marker-path:{ .card-icon } **[Getting Into the Phone Book of the Agentic Internet Took an Afternoon. Here's Why.](/blog/2026/07/14/getting-into-the-phone-book-of-the-agentic-internet-took-an-afternoon-heres-why/)**
+-   :material-shield-check-outline:{ .card-icon } **[Prompt Injection Is SQL Injection for Agents. Here's the Prepared Statement.](/blog/2026/07/15/prompt-injection-is-sql-injection-for-agents-heres-the-prepared-statement/)**
 
     ---
 
-    Both entries went live in the MCP registry in one working day: kcp-agent as tooling, and org.totto/knowledge — a person as a remote MCP server. The…
+    One word — 'Additionally' — bypassed GitHub's AI agent guardrails and leaked private repositories. Noma Labs called it: prompt injection is to agentic AI…
 
-    <span class="card-meta">July 14, 2026</span>
+    <span class="card-meta">July 15, 2026</span>
 
 </div>
