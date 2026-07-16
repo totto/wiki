@@ -1483,6 +1483,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1540,6 +1544,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../ai-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
       <a href="../ai-agents--the-agentic-web/" class="md-nav__link">
         
   
@@ -1578,6 +1612,36 @@
     
   
     AI-Augmented Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
   
 
     
@@ -6354,6 +6418,54 @@
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
     
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-16 14:00:00+00:00">July 16, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../ai-agents/" class="md-meta__link">AI Agents</a>, 
+              <a href="../architecture/" class="md-meta__link">Architecture</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-knowledge-layer-a-record"><a class="toclink" href="../../2026/07/16/the-knowledge-layer-a-record/">The Knowledge Layer: A Record</a></h2>
+<p><em>February 25 – July 16, 2026</em></p>
+<hr />
+<p><img alt="KCP: The 140-Day Evolution of Knowledge Governance" src="/assets/images/kcp-record-2026/kcp-140-day-evolution-timeline.png" /></p>
+<hr />
+<p><img alt="The Knowledge Layer: A Record — overview" src="/assets/images/kcp-record-2026/kcp-record-01-title.png" /></p>
+<p>The first version of the Knowledge Context Protocol shipped on February 25, 2026. This is a record of what it was, what it became, and why the decisions made in the first week turned out to still be the right ones 140 days later.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/07/16/the-knowledge-layer-a-record/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
       <nav class="md-post__authors md-typeset">
         
           <span class="md-author">
@@ -6820,61 +6932,6 @@ search result, your options were the newest post and archaeology.</p>
     
       <nav class="md-post__action">
         <a href="../../2026/06/22/your-ai-agent-does-not-know-the-law-and-how-to-fix-that/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-14 14:00:00+00:00">June 14, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="./" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="sixteen-versions-of-metadata-nobody-read"><a class="toclink" href="../../2026/06/14/sixteen-versions-of-metadata-nobody-read/">Sixteen Versions of Metadata Nobody Read</a></h2>
-<p><em>Practitioner notes on shipping a feature that was already a no-op, in two different ways.</em></p>
-<p>The Mynder regulatory knowledge base has 63 fragment manifests covering 101 units of EU regulation — GDPR, NIS2, the EU AI Act, DORA, Norwegian and Swedish data protection law. Every unit carries temporal validity (<code>valid_from</code>, <code>valid_until</code>, <code>superseded_by</code>), per-unit content hashes (sha256), <code>not_for</code> audience filtering, content structure declarations, and Ed25519 JWS signatures. All of it declared in KCP v0.21.</p>
-<p>Synthesis — the workspace intelligence tool that indexes and searches this corpus — was reading it at v0.5 feature level.</p>
-<p>Sixteen spec versions of metadata, sitting in the files, being dutifully indexed and completely ignored by the tool whose job was to understand them. The corpus was "searchable" but not "knowledge-aware." You could find GDPR articles by keyword. You could not ask what was in effect in 2022 and get a time-correct answer.</p>
-<p><img alt="Sixteen Versions of Metadata Nobody Read: a circuit board blueprint showing KCP v0.21, Temporal Validity, and Ed25519 JWS Signatures as three input connectors feeding into a central processor — but the connection is broken with an X. Diagnostic: the gap between organized data and intelligent infrastructure." src="/assets/images/blog/sixteen-versions-metadata/slide-01.png" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/14/sixteen-versions-of-metadata-nobody-read/">
           Continue reading
         </a>
       </nav>
