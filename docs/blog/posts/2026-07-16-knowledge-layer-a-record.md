@@ -29,6 +29,8 @@ tags:
 
 The first version of the Knowledge Context Protocol shipped on February 25, 2026. This is a record of what it was, what it became, and why the decisions made in the first week turned out to still be the right ones 140 days later.
 
+<!-- more -->
+
 I'm writing it now because the field has caught up enough to make comparison possible.
 
 ## The Problem Was Empirical
