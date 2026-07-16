@@ -9,6 +9,14 @@
 
     <span class="card-meta">July 17, 2026</span>
 
+-   :material-database-outline:{ .card-icon } **[The Knowledge Layer: A Record](/blog/2026/07/16/the-knowledge-layer-a-record/)**
+
+    ---
+
+    February 25 to July 16, 2026: what the Knowledge Context Protocol built, when, and what the field confirmed. A timestamped record for anyone working in…
+
+    <span class="card-meta">July 16, 2026</span>
+
 -   :material-shield-check-outline:{ .card-icon } **[OWASP Just Mapped the Agentic Top 10. Here's the Root Cause Four of Them Share.](/blog/2026/07/16/owasp-just-mapped-the-agentic-top-10-heres-the-root-cause-four-of-them-share/)**
 
     ---
@@ -16,13 +24,5 @@
     OWASP published the Agentic Top 10 in December 2025: ten named categories of agent security failure built by 100+ security experts. Here's a field guide…
 
     <span class="card-meta">July 16, 2026</span>
-
--   :material-map-marker-path:{ .card-icon } **[Six Months Down the Rabbit Hole](/blog/2026/07/15/six-months-down-the-rabbit-hole/)**
-
-    ---
-
-    172 days, 6,163 commits, 137 blog posts, 36 new repos, one protocol. A six-month retrospective on explorative development — compiled by the agent from its…
-
-    <span class="card-meta">July 15, 2026</span>
 
 </div>
