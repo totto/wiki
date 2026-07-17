@@ -116,7 +116,7 @@
   },
   "image": "https://wiki.totto.org/assets/images/totto-2025.jpg",
   "datePublished": "2026-07-17 12:00:00",
-  "dateModified": "2026-07-17 12:32:00",
+  "dateModified": "2026-07-17 13:02:02",
   "description": "A practical tour of the KCP toolchain \u2014 kcp-commands, kcp-memory, kcp-dashboard, kcp-triage, kcp-agent, kcp-harness, and Synthesis. What each tool does, how they fit together, and exactly where to start.",
   "articleSection": "AI Agents \u0026 the Agentic Web, Knowledge Context Protocol",
   "keywords": "kcp, kcp-commands, kcp-memory, synthesis, tutorial, getting-started"
@@ -6658,7 +6658,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              10 min read
+                              11 min read
                             
                           </span>
                         </div>
@@ -6733,12 +6733,15 @@
 <p>This is that map.</p>
 <!-- more -->
 
+<p><img alt="The Knowledge Infrastructure for Agentic Development" src="/assets/images/kcp-ecosystem-tour/title-knowledge-infrastructure.png" /></p>
 <hr />
 <h2 id="start-here-the-problem-each-tool-solves">Start here: the problem each tool solves<a class="headerlink" href="#start-here-the-problem-each-tool-solves" title="Permanent link">&para;</a></h2>
 <p>You are working with Claude Code (or another agent-based IDE). You have a large codebase. You keep burning context window. Your agent keeps rediscovering the same things every session. It issues Bash commands and gets walls of Maven output back. It has no idea what APIs are available or how to navigate the knowledge that already exists.</p>
 <p>None of these are model problems. They are knowledge infrastructure problems.</p>
+<p><img alt="The Three Problems: Context Burn, Amnesia, Blind Navigation" src="/assets/images/kcp-ecosystem-tour/three-problems-context-burn-amnesia-blind-navigation.png" /></p>
 <p>The KCP ecosystem is the infrastructure.</p>
 <hr />
+<p><img alt="The Missing Half: MCP for Action, KCP for Understanding" src="/assets/images/kcp-ecosystem-tour/missing-half-mcp-vs-kcp.png" /></p>
 <h2 id="the-spec-knowledge-context-protocol">The spec: Knowledge Context Protocol<a class="headerlink" href="#the-spec-knowledge-context-protocol" title="Permanent link">&para;</a></h2>
 <p><strong>Repo</strong>: <a href="https://github.com/Cantara/knowledge-context-protocol">github.com/Cantara/knowledge-context-protocol</a></p>
 <p>The foundation is a YAML file — <code>knowledge.yaml</code> — that every other tool in this ecosystem reads, writes, or enforces. It declares:</p>
@@ -6750,8 +6753,10 @@
 <li><strong>Whether</strong> to trust it (ED25519 signature, content hashes)</li>
 </ul>
 <p>Think of it as the mirror image of MCP. MCP solved "how does an agent connect to tools?" KCP solves "how does an agent navigate knowledge?" The two standards complement each other — MCP for action, KCP for understanding.</p>
+<p><img alt="The Foundation: knowledge.yaml structure" src="/assets/images/kcp-ecosystem-tour/foundation-knowledge-yaml-structure.png" /></p>
 <p>One manifest, per project. Everything else builds on it.</p>
 <hr />
+<p><img alt="Navigating the KCP Ecosystem — Infographic" src="/assets/images/kcp-ecosystem-tour/navigating-kcp-ecosystem-infographic.png" /></p>
 <h2 id="the-ecosystem-at-a-glance">The ecosystem at a glance<a class="headerlink" href="#the-ecosystem-at-a-glance" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>                    Your project (knowledge.yaml)
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                             │
@@ -6782,6 +6787,7 @@
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    compliance view
 </span></code></pre></div>
 <p>Each box is a separate tool you install independently. You don't need all of them to get started.</p>
+<p><img alt="KCP Ecosystem Architecture — Four Quadrants" src="/assets/images/kcp-ecosystem-tour/ecosystem-architecture-overview.png" /></p>
 <hr />
 <h2 id="the-tools-one-by-one">The tools, one by one<a class="headerlink" href="#the-tools-one-by-one" title="Permanent link">&para;</a></h2>
 <h3 id="kcp-commands-the-first-thing-to-install">kcp-commands — the first thing to install<a class="headerlink" href="#kcp-commands-the-first-thing-to-install" title="Permanent link">&para;</a></h3>
@@ -6798,6 +6804,7 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Node.js only (no JVM required):</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--node
 </span></code></pre></div>
+<p><img alt="kcp-commands: Three-Phase Hook Flow" src="/assets/images/kcp-ecosystem-tour/kcp-commands-three-phase-hook.png" /></p>
 <hr />
 <h3 id="kcp-memory-cross-session-episodic-memory">kcp-memory — cross-session episodic memory<a class="headerlink" href="#kcp-memory-cross-session-episodic-memory" title="Permanent link">&para;</a></h3>
 <p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-memory">github.com/Cantara/kcp-memory</a>
@@ -6806,6 +6813,7 @@
 <p>It runs as a background daemon and indexes <code>~/.kcp/events.jsonl</code> (written by kcp-commands) plus session transcripts from Claude Code. When a new session starts, relevant context from previous sessions is injected automatically — which commands you ran last time, what the agent concluded, what files were modified.</p>
 <p>It also indexes subagent transcripts, which means memory is shared across parallel agent sessions in the same project. The storage is SQLite, entirely local, no cloud.</p>
 <p>Think of it as the difference between a colleague who was there last week and one who has never heard of your project.</p>
+<p><img alt="kcp-memory: Cross-Session Episodic Memory Flow" src="/assets/images/kcp-ecosystem-tour/kcp-memory-cross-session-flow.png" /></p>
 <hr />
 <h3 id="kcp-dashboard-see-whats-happening">kcp-dashboard — see what's happening<a class="headerlink" href="#kcp-dashboard-see-whats-happening" title="Permanent link">&para;</a></h3>
 <p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-dashboard">github.com/Cantara/kcp-dashboard</a>
@@ -6819,6 +6827,7 @@
 <li>Governance compliance metrics if kcp-harness is running</li>
 </ul>
 <p>Run it in a split pane while Claude Code is running and you get a live view of what the knowledge layer is doing. Optional — you don't need it for the tools to work — but useful when you're tuning your setup or demonstrating to someone what's happening.</p>
+<p><img alt="kcp-dashboard: Real-Time Visibility" src="/assets/images/kcp-ecosystem-tour/kcp-dashboard-realtime-visibility.png" /></p>
 <hr />
 <h3 id="synthesis-workspace-intelligence">Synthesis — workspace intelligence<a class="headerlink" href="#synthesis-workspace-intelligence" title="Permanent link">&para;</a></h3>
 <p><strong>Repo</strong>: <a href="https://github.com/exoreaction/Synthesis">github.com/exoreaction/Synthesis</a>
@@ -6838,6 +6847,7 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>synthesis<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;what calls this function?&quot;</span>
 </span></code></pre></div>
 <p>The MCP server integrates with Claude Code automatically once configured in <code>.claude/mcp.json</code>.</p>
+<p><img alt="Synthesis: Workspace Intelligence Layers" src="/assets/images/kcp-ecosystem-tour/synthesis-workspace-intelligence-layers.png" /></p>
 <hr />
 <h3 id="kcp-triage-knowledge-for-external-apis">kcp-triage — knowledge for external APIs<a class="headerlink" href="#kcp-triage-knowledge-for-external-apis" title="Permanent link">&para;</a></h3>
 <p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-triage">github.com/Cantara/kcp-triage</a>
@@ -6850,6 +6860,7 @@
 - <code>knowledge.yaml</code> — a KCP manifest so any KCP-aware agent can navigate the site</p>
 <p>It uses a three-tier LLM strategy internally: Opus for orchestration, Sonnet for analysis, Haiku for grunt work. The output is designed to be loaded by kcp-agent, not read by humans.</p>
 <p>Use kcp-triage when you're working with a third-party API and want the agent to be properly oriented from session one rather than discovering the API structure through trial and error.</p>
+<p><img alt="kcp-triage: External API Pipeline" src="/assets/images/kcp-ecosystem-tour/kcp-triage-external-api-pipeline.png" /></p>
 <hr />
 <h3 id="kcp-agent-deterministic-load-planning">kcp-agent — deterministic load planning<a class="headerlink" href="#kcp-agent-deterministic-load-planning" title="Permanent link">&para;</a></h3>
 <p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-agent">github.com/Cantara/kcp-agent</a>
@@ -6882,6 +6893,7 @@
 <p>The key property: the harness emits <strong>content-free audit traces</strong> — logs that prove what governance decisions were made without recording the knowledge content itself. This matters in regulated environments where you need to demonstrate compliance without creating a second copy of sensitive data.</p>
 <p>kcp-harness does not require you to modify your agent. It wraps the knowledge layer as an MCP proxy — the agent calls the same MCP tools it always did, the harness intercepts and governs.</p>
 <p>Use kcp-harness when auditability and governance matter more than setup simplicity. In practice: production deployments, regulated industries, multi-tenant systems.</p>
+<p><img alt="Enterprise Trust: kcp-agent + kcp-harness + Content-Free Audit Trace" src="/assets/images/kcp-ecosystem-tour/kcp-agent-harness-governance-trust.png" /></p>
 <hr />
 <h2 id="where-to-start">Where to start<a class="headerlink" href="#where-to-start" title="Permanent link">&para;</a></h2>
 <p>Not all at once. The ecosystem is layered — each tool adds value independently.</p>
@@ -6905,12 +6917,14 @@
 <p>Add kcp-agent for inspectable load planning, kcp-harness for enforcement. These are for when you're building agents that will run in production or in environments where "the agent read file X because..." needs to be provable.</p>
 <p><strong>When you're working with external APIs:</strong></p>
 <p>Run kcp-triage against the API's documentation site. Get a signed manifest and workbench in minutes rather than spending the first hour of every session re-orienting the agent to the API surface.</p>
+<p><img alt="The Adoption Blueprint: Stack Value Progressively" src="/assets/images/kcp-ecosystem-tour/adoption-blueprint-four-steps.png" /></p>
 <hr />
 <h2 id="the-bigger-picture">The bigger picture<a class="headerlink" href="#the-bigger-picture" title="Permanent link">&para;</a></h2>
 <p>The KCP ecosystem is the knowledge layer for agentic development — the infrastructure that sits between the model and the knowledge it reasons over. It does for knowledge what MCP did for tools: makes it structured, navigable, auditable, and trustworthy.</p>
 <p>Every tool is open source (Apache 2.0), maintained by the <a href="https://github.com/Cantara">Cantara Norwegian Software Development Foundation</a> and <a href="https://github.com/exoreaction">eXOReaction</a>.</p>
 <p>The 140-day timeline of how this was built — and why the decisions were made in the order they were — is documented in <a href="https://wiki.totto.org/blog/2026/07/16/the-knowledge-layer-a-record/">The Knowledge Layer: A Record</a>. If you want to understand the reasoning rather than just the tools, that's the place to start.</p>
 <hr />
+<p><img alt="The Knowledge Layer for Agentic Development — All Tools, Open Source" src="/assets/images/kcp-ecosystem-tour/closing-oss-links.png" /></p>
 <p><strong>Links:</strong></p>
 <ul>
 <li><a href="https://github.com/Cantara/knowledge-context-protocol">Knowledge Context Protocol spec</a></li>
@@ -6949,7 +6963,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 17, 2026 12:32:00 UTC">July 17, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 17, 2026 13:02:02 UTC">July 17, 2026</span>
   </span>
 
     
