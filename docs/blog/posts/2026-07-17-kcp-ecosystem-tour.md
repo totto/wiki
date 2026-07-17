@@ -25,6 +25,8 @@ This is that map.
 
 <!-- more -->
 
+![The Knowledge Infrastructure for Agentic Development](/assets/images/kcp-ecosystem-tour/title-knowledge-infrastructure.png)
+
 ---
 
 ## Start here: the problem each tool solves
@@ -33,9 +35,13 @@ You are working with Claude Code (or another agent-based IDE). You have a large 
 
 None of these are model problems. They are knowledge infrastructure problems.
 
+![The Three Problems: Context Burn, Amnesia, Blind Navigation](/assets/images/kcp-ecosystem-tour/three-problems-context-burn-amnesia-blind-navigation.png)
+
 The KCP ecosystem is the infrastructure.
 
 ---
+
+![The Missing Half: MCP for Action, KCP for Understanding](/assets/images/kcp-ecosystem-tour/missing-half-mcp-vs-kcp.png)
 
 ## The spec: Knowledge Context Protocol
 
@@ -51,9 +57,13 @@ The foundation is a YAML file — `knowledge.yaml` — that every other tool in 
 
 Think of it as the mirror image of MCP. MCP solved "how does an agent connect to tools?" KCP solves "how does an agent navigate knowledge?" The two standards complement each other — MCP for action, KCP for understanding.
 
+![The Foundation: knowledge.yaml structure](/assets/images/kcp-ecosystem-tour/foundation-knowledge-yaml-structure.png)
+
 One manifest, per project. Everything else builds on it.
 
 ---
+
+![Navigating the KCP Ecosystem — Infographic](/assets/images/kcp-ecosystem-tour/navigating-kcp-ecosystem-infographic.png)
 
 ## The ecosystem at a glance
 
@@ -89,6 +99,8 @@ One manifest, per project. Everything else builds on it.
 
 Each box is a separate tool you install independently. You don't need all of them to get started.
 
+![KCP Ecosystem Architecture — Four Quadrants](/assets/images/kcp-ecosystem-tour/ecosystem-architecture-overview.png)
+
 ---
 
 ## The tools, one by one
@@ -116,6 +128,8 @@ curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/insta
 curl -fsSL https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/install.sh | bash -s -- --node
 ```
 
+![kcp-commands: Three-Phase Hook Flow](/assets/images/kcp-ecosystem-tour/kcp-commands-three-phase-hook.png)
+
 ---
 
 ### kcp-memory — cross-session episodic memory
@@ -130,6 +144,8 @@ It runs as a background daemon and indexes `~/.kcp/events.jsonl` (written by kcp
 It also indexes subagent transcripts, which means memory is shared across parallel agent sessions in the same project. The storage is SQLite, entirely local, no cloud.
 
 Think of it as the difference between a colleague who was there last week and one who has never heard of your project.
+
+![kcp-memory: Cross-Session Episodic Memory Flow](/assets/images/kcp-ecosystem-tour/kcp-memory-cross-session-flow.png)
 
 ---
 
@@ -147,6 +163,8 @@ A [Bubble Tea](https://github.com/charmbracelet/bubbletea) terminal TUI that giv
 - Governance compliance metrics if kcp-harness is running
 
 Run it in a split pane while Claude Code is running and you get a live view of what the knowledge layer is doing. Optional — you don't need it for the tools to work — but useful when you're tuning your setup or demonstrating to someone what's happening.
+
+![kcp-dashboard: Real-Time Visibility](/assets/images/kcp-ecosystem-tour/kcp-dashboard-realtime-visibility.png)
 
 ---
 
@@ -177,6 +195,8 @@ synthesis ask "what calls this function?"
 
 The MCP server integrates with Claude Code automatically once configured in `.claude/mcp.json`.
 
+![Synthesis: Workspace Intelligence Layers](/assets/images/kcp-ecosystem-tour/synthesis-workspace-intelligence-layers.png)
+
 ---
 
 ### kcp-triage — knowledge for external APIs
@@ -195,6 +215,8 @@ You give it a URL. It produces a `sites/<domain>/` directory containing:
 It uses a three-tier LLM strategy internally: Opus for orchestration, Sonnet for analysis, Haiku for grunt work. The output is designed to be loaded by kcp-agent, not read by humans.
 
 Use kcp-triage when you're working with a third-party API and want the agent to be properly oriented from session one rather than discovering the API structure through trial and error.
+
+![kcp-triage: External API Pipeline](/assets/images/kcp-ecosystem-tour/kcp-triage-external-api-pipeline.png)
 
 ---
 
@@ -248,6 +270,8 @@ kcp-harness does not require you to modify your agent. It wraps the knowledge la
 
 Use kcp-harness when auditability and governance matter more than setup simplicity. In practice: production deployments, regulated industries, multi-tenant systems.
 
+![Enterprise Trust: kcp-agent + kcp-harness + Content-Free Audit Trace](/assets/images/kcp-ecosystem-tour/kcp-agent-harness-governance-trust.png)
+
 ---
 
 ## Where to start
@@ -287,6 +311,8 @@ Add kcp-agent for inspectable load planning, kcp-harness for enforcement. These 
 
 Run kcp-triage against the API's documentation site. Get a signed manifest and workbench in minutes rather than spending the first hour of every session re-orienting the agent to the API surface.
 
+![The Adoption Blueprint: Stack Value Progressively](/assets/images/kcp-ecosystem-tour/adoption-blueprint-four-steps.png)
+
 ---
 
 ## The bigger picture
@@ -298,6 +324,8 @@ Every tool is open source (Apache 2.0), maintained by the [Cantara Norwegian Sof
 The 140-day timeline of how this was built — and why the decisions were made in the order they were — is documented in [The Knowledge Layer: A Record](https://wiki.totto.org/blog/2026/07/16/the-knowledge-layer-a-record/). If you want to understand the reasoning rather than just the tools, that's the place to start.
 
 ---
+
+![The Knowledge Layer for Agentic Development — All Tools, Open Source](/assets/images/kcp-ecosystem-tour/closing-oss-links.png)
 
 **Links:**
 

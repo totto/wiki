@@ -95,6 +95,8 @@ Twenty-four published RFCs. Eleven conformance vectors. Three reference parsers 
 
 Three independent convergences arrived in 2026.
 
+![Three Independent Discoveries. One Architecture.](/assets/images/kcp-record-2026/v2-three-independent-discoveries.png)
+
 ![The Split-Brain Reality of Agent Governance](/assets/images/kcp-record-2026/kcp-record-11-split-brain-governance.png)
 
 **Databricks Omnigent (June 2026)** confirmed the action/knowledge split. Omnigent governs what an agent *does* — tool calls, OS access, cost budgets, human-in-the-loop gates. Six independently-derived primitives. Four overlap precisely with KCP's core design: deterministic layer, per-session budget ceilings, least privilege, wraps any agent.
@@ -135,6 +137,8 @@ That's not a caveat. It's the point. Determinism is the prerequisite, not the fe
 
 ## Where to Start
 
+![The Adoption Gradient: Five Minutes to Level 1](/assets/images/kcp-record-2026/v2-adoption-gradient-three-levels.png)
+
 The spec is open source (Apache 2.0): [github.com/Cantara/knowledge-context-protocol](https://github.com/Cantara/knowledge-context-protocol).
 
 If you're building with AI agents and you're not governing what they know — not just what they can do — start with a `knowledge.yaml`. Three fields. Five minutes. The [adoption guide](https://wiki.totto.org/blog/2026/02/28/add-knowledge-yaml-to-your-project-in-five-minutes/) handles the rest.
@@ -142,6 +146,8 @@ If you're building with AI agents and you're not governing what they know — no
 If you're researching knowledge governance for agents, the [full spec](https://github.com/Cantara/knowledge-context-protocol/blob/main/SPEC.md) and [all 24 RFCs](https://github.com/Cantara/knowledge-context-protocol) are timestamped on GitHub from February 25, 2026 forward. ContextNest (2607.02116) is the closest parallel in the literature; the comparison is direct.
 
 If you're working on the action layer — Omnigent, Microsoft Agent Governance Toolkit, similar — these compose with KCP. They're not competing layers. The split is real: governing the blast radius does not govern the reasoning.
+
+![Where to Start: For Builders, Researchers, and Architects](/assets/images/kcp-record-2026/v2-where-to-start-builders-researchers-architects.png)
 
 ---
 
