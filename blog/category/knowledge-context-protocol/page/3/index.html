@@ -6427,6 +6427,61 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-14 14:00:00+00:00">June 14, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../../../governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              8 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="sixteen-versions-of-metadata-nobody-read"><a class="toclink" href="../../../../2026/06/14/sixteen-versions-of-metadata-nobody-read/">Sixteen Versions of Metadata Nobody Read</a></h2>
+<p><em>Practitioner notes on shipping a feature that was already a no-op, in two different ways.</em></p>
+<p>The Mynder regulatory knowledge base has 63 fragment manifests covering 101 units of EU regulation — GDPR, NIS2, the EU AI Act, DORA, Norwegian and Swedish data protection law. Every unit carries temporal validity (<code>valid_from</code>, <code>valid_until</code>, <code>superseded_by</code>), per-unit content hashes (sha256), <code>not_for</code> audience filtering, content structure declarations, and Ed25519 JWS signatures. All of it declared in KCP v0.21.</p>
+<p>Synthesis — the workspace intelligence tool that indexes and searches this corpus — was reading it at v0.5 feature level.</p>
+<p>Sixteen spec versions of metadata, sitting in the files, being dutifully indexed and completely ignored by the tool whose job was to understand them. The corpus was "searchable" but not "knowledge-aware." You could find GDPR articles by keyword. You could not ask what was in effect in 2022 and get a time-correct answer.</p>
+<p><img alt="Sixteen Versions of Metadata Nobody Read: a circuit board blueprint showing KCP v0.21, Temporal Validity, and Ed25519 JWS Signatures as three input connectors feeding into a central processor — but the connection is broken with an X. Diagnostic: the gap between organized data and intelligent infrastructure." src="/assets/images/blog/sixteen-versions-metadata/slide-01.png" /></p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/06/14/sixteen-versions-of-metadata-nobody-read/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-14 12:00:00+00:00">June 14, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6903,60 +6958,6 @@
     
       <nav class="md-post__action">
         <a href="../../../../2026/06/01/the-law-is-also-knowledge-package-it/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-05-30 10:00:00+00:00">May 30, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../../governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              18 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="from-policy-to-practice-how-kcp-makes-regulations-machine-readable-for-ai-agents"><a class="toclink" href="../../../../2026/05/30/from-policy-to-practice-how-kcp-makes-regulations-machine-readable-for-ai-agents/">From Policy to Practice: How KCP Makes Regulations Machine-Readable for AI Agents</a></h2>
-<p><em>A presentation version of this post is available as <a href="/assets/images/blog/kcp-policy-practice/Machine_Readable_AI_Compliance.pdf">slides</a>.</em></p>
-<p>Your agent reads customer data. It makes a decision. It writes something to a database.</p>
-<p>Somewhere in your system prompt, there is a line that says: <em>"You must comply with GDPR data minimization principles when accessing customer data."</em></p>
-<p>That line does nothing. It is not verifiable. It is not testable. It is not auditable. It is a string that your model may or may not attend to, depending on context length, prompt position, and the phase of the moon.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/05/30/from-policy-to-practice-how-kcp-makes-regulations-machine-readable-for-ai-agents/">
           Continue reading
         </a>
       </nav>

@@ -6,19 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Regulations are knowledge. KCP types them as versioned packages with temporal validity and cryptographic binding -- compliance becomes evaluable, not anecdotal.">
+        <meta name="description" content="A practical tour of the KCP toolchain — kcp-commands, kcp-memory, kcp-dashboard, kcp-triage, kcp-agent, kcp-harness, and Synthesis. What each tool does, how they fit together, and exactly where to start.">
       
       
         <meta name="author" content="Thor Henning Hetland">
       
       
-        <link rel="canonical" href="https://wiki.totto.org/blog/2026/06/01/the-law-is-also-knowledge-package-it/">
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/07/17/the-kcp-ecosystem-a-tour-for-new-arrivals/">
       
       
-        <link rel="prev" href="../../../05/30/from-policy-to-practice-how-kcp-makes-regulations-machine-readable-for-ai-agents/">
+        <link rel="prev" href="../a-firewall-for-what-your-agent-knows/">
       
-      
-        <link rel="next" href="../everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/">
       
       
         
@@ -32,7 +30,7 @@
     
     
       
-        <title>The Law Is Also Knowledge. Package It. - Thor Henning Hetland</title>
+        <title>The KCP Ecosystem: A Tour for New Arrivals - Thor Henning Hetland</title>
       
     
     
@@ -81,29 +79,29 @@
 <!-- Open Graph -->
 <meta property="og:site_name" content="Thor Henning Hetland">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://wiki.totto.org/blog/2026/06/01/the-law-is-also-knowledge-package-it/">
-<meta property="og:title" content="The Law Is Also Knowledge. Package It.">
-<meta property="og:description" content="Regulations are knowledge. KCP types them as versioned packages with temporal validity and cryptographic binding -- compliance becomes evaluable, not anecdotal.">
-<meta property="og:image" content="https://wiki.totto.org/assets/images/kcp-laws-00-overview.webp">
-<meta property="og:image:alt" content="The Law Is Also Knowledge. Package It.">
+<meta property="og:url" content="https://wiki.totto.org/blog/2026/07/17/the-kcp-ecosystem-a-tour-for-new-arrivals/">
+<meta property="og:title" content="The KCP Ecosystem: A Tour for New Arrivals">
+<meta property="og:description" content="A practical tour of the KCP toolchain — kcp-commands, kcp-memory, kcp-dashboard, kcp-triage, kcp-agent, kcp-harness, and Synthesis. What each tool does, how they fit together, and exactly where to start.">
+<meta property="og:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
+<meta property="og:image:alt" content="Thor Henning Hetland">
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@javatotto">
 <meta name="twitter:creator" content="@javatotto">
-<meta name="twitter:title" content="The Law Is Also Knowledge. Package It.">
-<meta name="twitter:description" content="Regulations are knowledge. KCP types them as versioned packages with temporal validity and cryptographic binding -- compliance becomes evaluable, not anecdotal.">
-<meta name="twitter:image" content="https://wiki.totto.org/assets/images/kcp-laws-00-overview.webp">
+<meta name="twitter:title" content="The KCP Ecosystem: A Tour for New Arrivals">
+<meta name="twitter:description" content="A practical tour of the KCP toolchain — kcp-commands, kcp-memory, kcp-dashboard, kcp-triage, kcp-agent, kcp-harness, and Synthesis. What each tool does, how they fit together, and exactly where to start.">
+<meta name="twitter:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
 
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "The Law Is Also Knowledge. Package It.",
-  "url": "https://wiki.totto.org/blog/2026/06/01/the-law-is-also-knowledge-package-it/",
+  "headline": "The KCP Ecosystem: A Tour for New Arrivals",
+  "url": "https://wiki.totto.org/blog/2026/07/17/the-kcp-ecosystem-a-tour-for-new-arrivals/",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://wiki.totto.org/blog/2026/06/01/the-law-is-also-knowledge-package-it/"
+    "@id": "https://wiki.totto.org/blog/2026/07/17/the-kcp-ecosystem-a-tour-for-new-arrivals/"
   },
   "author": {
     "@type": "Person",
@@ -116,12 +114,12 @@
     "url": "https://wiki.totto.org",
     "image": "https://wiki.totto.org/assets/images/totto-2025.jpg"
   },
-  "image": "https://wiki.totto.org/assets/images/kcp-laws-00-overview.webp",
-  "datePublished": "2026-06-01 09:30:00",
-  "dateModified": "2026-07-08 08:34:13",
-  "description": "Regulations are knowledge. KCP types them as versioned packages with temporal validity and cryptographic binding -- compliance becomes evaluable, not anecdotal.",
-  "articleSection": "Knowledge Context Protocol, Governance, Trust \u0026 Compliance",
-  "keywords": "kcp, ai-governance, audit, provenance, compliance, nis2, eu-ai-act, regulations"
+  "image": "https://wiki.totto.org/assets/images/totto-2025.jpg",
+  "datePublished": "2026-07-17 12:00:00",
+  "dateModified": "2026-07-17 12:32:00",
+  "description": "A practical tour of the KCP toolchain \u2014 kcp-commands, kcp-memory, kcp-dashboard, kcp-triage, kcp-agent, kcp-harness, and Synthesis. What each tool does, how they fit together, and exactly where to start.",
+  "articleSection": "AI Agents \u0026 the Agentic Web, Knowledge Context Protocol",
+  "keywords": "kcp, kcp-commands, kcp-memory, synthesis, tutorial, getting-started"
 }
 </script>
 
@@ -147,8 +145,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "The Law Is Also Knowledge. Package It.",
-      "item": "https://wiki.totto.org/blog/2026/06/01/the-law-is-also-knowledge-package-it/"
+      "name": "The KCP Ecosystem: A Tour for New Arrivals",
+      "item": "https://wiki.totto.org/blog/2026/07/17/the-kcp-ecosystem-a-tour-for-new-arrivals/"
     }
   ]
 }
@@ -174,7 +172,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-law-is-also-knowledge-package-it" class="md-skip">
+        <a href="#the-kcp-ecosystem-a-tour-for-new-arrivals" class="md-skip">
           Skip to content
         </a>
       
@@ -230,7 +228,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The Law Is Also Knowledge. Package It.
+              The KCP Ecosystem: A Tour for New Arrivals
             
           </span>
         </div>
@@ -6433,10 +6431,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-regulation-is-also-knowledge" class="md-nav__link">
+  <a href="#start-here-the-problem-each-tool-solves" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Regulation Is Also Knowledge
+        Start here: the problem each tool solves
       
     </span>
   </a>
@@ -6444,10 +6442,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#before-and-after-a-nis2-supply-chain-evaluator" class="md-nav__link">
+  <a href="#the-spec-knowledge-context-protocol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Before and After: A NIS2 Supply Chain Evaluator
+        The spec: Knowledge Context Protocol
       
     </span>
   </a>
@@ -6455,10 +6453,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-pattern-repeats-eu-ai-act-article-9" class="md-nav__link">
+  <a href="#the-ecosystem-at-a-glance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Pattern Repeats: EU AI Act Article 9
+        The ecosystem at a glance
       
     </span>
   </a>
@@ -6466,10 +6464,104 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-loop-closes" class="md-nav__link">
+  <a href="#the-tools-one-by-one" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Loop Closes
+        The tools, one by one
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The tools, one by one">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kcp-commands-the-first-thing-to-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-commands — the first thing to install
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-memory-cross-session-episodic-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-memory — cross-session episodic memory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-dashboard-see-whats-happening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-dashboard — see what's happening
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synthesis-workspace-intelligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synthesis — workspace intelligence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-triage-knowledge-for-external-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-triage — knowledge for external APIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-agent-deterministic-load-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-agent — deterministic load planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kcp-harness-governance-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kcp-harness — governance enforcement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where to start
       
     </span>
   </a>
@@ -6477,21 +6569,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-tired-ciso-revisited" class="md-nav__link">
+  <a href="#the-bigger-picture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Tired CISO, Revisited
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-broader-implication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Broader Implication
+        The bigger picture
       
     </span>
   </a>
@@ -6540,21 +6621,6 @@
                     </span>
                   </div>
                 
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="https://github.com/anthropics.png" alt="Claude Code">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          Claude Code
-                        
-                      </strong>
-                      <br>
-                      Anthropic's AI coding assistant — co-author of research, structure, and prose
-                    </span>
-                  </div>
-                
               </div>
             
             <ul class="md-post__meta md-nav__list">
@@ -6569,7 +6635,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-06-01 09:30:00+00:00" class="md-ellipsis">June 1, 2026</time>
+                        <time datetime="2026-07-17 12:00:00+00:00" class="md-ellipsis">July 17, 2026</time>
                       </div>
                     </li>
                     
@@ -6580,8 +6646,8 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/knowledge-context-protocol/">Knowledge Context Protocol</a>, 
-                              <a href="../../../../category/governance-trust--compliance/">Governance, Trust &amp; Compliance</a></span>
+                              <a href="../../../../category/ai-agents--the-agentic-web/">AI Agents &amp; the Agentic Web</a>, 
+                              <a href="../../../../category/knowledge-context-protocol/">Knowledge Context Protocol</a></span>
                         </div>
                       </li>
                     
@@ -6592,7 +6658,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              16 min read
+                              10 min read
                             
                           </span>
                         </div>
@@ -6620,28 +6686,7 @@
       
       
       
-        <span class="md-tag">ai-governance</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">audit</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">compliance</span>
-      
-    
-      
-      
-      
-      
-        <span class="md-tag">eu-ai-act</span>
+        <span class="md-tag">getting-started</span>
       
     
       
@@ -6655,188 +6700,232 @@
       
       
       
-        <span class="md-tag">nis2</span>
+        <span class="md-tag">kcp-commands</span>
       
     
       
       
       
       
-        <span class="md-tag">provenance</span>
+        <span class="md-tag">kcp-memory</span>
       
     
       
       
       
       
-        <span class="md-tag">regulations</span>
+        <span class="md-tag">synthesis</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">tutorial</span>
       
     
   </nav>
 
 
 
-<h1 id="the-law-is-also-knowledge-package-it">The Law Is Also Knowledge. Package It.<a class="headerlink" href="#the-law-is-also-knowledge-package-it" title="Permanent link">&para;</a></h1>
-<p><img alt="Overview: The Law as Code — Solving the AI Compliance Identity Crisis. The problem (shapeless regulations as prose), the KCP solution (typed regulatory packages), and real-world applications across NIS2 and EU AI Act." src="../../../../../assets/images/kcp-laws-00-overview.webp" /></p>
-<p>In the <a href="../everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/">previous post</a>, I argued that the AI provenance problem is a format problem. The knowledge going into and out of AI systems -- policies, observations, interpretations -- has no stable shape. No type, no version, no cryptographic binding. The audit trail records that something was reviewed. It cannot record what was reviewed, because the thing itself is prose that could have drifted between the moment of review and the moment of use.</p>
-<p>KCP solves this by giving knowledge a shape: typed, versioned, signed packages. A compliance observation becomes a structured declaration with <code>type</code>, <code>version</code>, <code>signed_by</code>, <code>derived_from</code>, <code>review_depth</code>, <code>valid_until</code>. The audit trail becomes precise: "reviewed a cryptographically signed declaration of type <code>evaluation:nis2-art21-supply-chain</code> v1.2.0" -- not "reviewed a document."</p>
-<p>But there is a gap I did not address. I gave shape to the <strong>outputs</strong> -- the policies, the observations, the interpretations. I left the <strong>inputs</strong> shapeless. The regulations and laws that AI agents evaluate against are still prose in the system prompt.</p>
-<p>This post closes that gap.</p>
+<h1 id="the-kcp-ecosystem-a-tour-for-new-arrivals">The KCP Ecosystem: A Tour for New Arrivals<a class="headerlink" href="#the-kcp-ecosystem-a-tour-for-new-arrivals" title="Permanent link">&para;</a></h1>
+<p>There are now eight open-source tools in the KCP ecosystem. They were built incrementally over 140 days, each solving one specific problem. If you're arriving for the first time, the map is not obvious.</p>
+<p>This is that map.</p>
 <!-- more -->
 
 <hr />
-<h2 id="the-regulation-is-also-knowledge">The Regulation Is Also Knowledge<a class="headerlink" href="#the-regulation-is-also-knowledge" title="Permanent link">&para;</a></h2>
-<p><img alt="Unstructured Inputs vs Structured Outputs: the crumbling arch on the left (system prompts, shapeless prose, PDFs on authority websites) vs the solid structured arch on the right (typed, versioned, cryptographically signed). We gave shape to AI compliance outputs. But the regulations they evaluate against remain shapeless prose in the system prompt." src="../../../../../assets/images/kcp-laws-02-unstructured-vs-structured.webp" /></p>
-<p>When a compliance agent evaluates a supplier against NIS2 Article 21, it needs two things: the supplier's security documentation to evaluate, and the regulation to evaluate it against.</p>
-<p>KCP, as described in the previous post, gives the supplier documentation a shape. The evaluation result gets a shape. But the regulation itself -- the specific requirements of Article 21(2), the interpretive guidance from ENISA, the national implementation notes -- lives where it has always lived: as prose in the system prompt.</p>
-<p>This is the same problem, one layer deeper.</p>
-<p><img alt="Terminal audit log showing the problem: {&quot;action&quot;: &quot;evaluated&quot;, &quot;target&quot;: &quot;NIS2 Article 21&quot;, &quot;date&quot;: &quot;2026-04-14&quot;, &quot;result&quot;: &quot;partial&quot;} — with unanswerable questions: Which version of the ENISA implementation guidance? Which national competent authority's sector-specific interpretation? Partially according to what baseline? The audit trail cannot record what was reviewed, because the regulation has no stable identity." src="../../../../../assets/images/kcp-laws-03-audit-log.webp" /></p>
-<p>The regulation text in a system prompt has no version. It has no signature. It has no <code>valid_until</code>. If ENISA updates its implementation guidance on Article 21 -- tightening what "supply chain security measures" requires, or adding clarity on incident notification timelines -- someone has to remember to update the prompt. There is no mechanism to detect that the guidance has changed. There is no mechanism to identify which previous evaluations used the old guidance. When the evaluator says "Article 21(2)(d): partial" -- which version of the guidance is "partial" measured against?</p>
-<p>The audit log says "evaluated 2026-04-14." It cannot say anything more precise, because the regulation against which the evaluation was performed has no identity.</p>
-<p>The fix is straightforward: the regulation is also knowledge. Package it.</p>
+<h2 id="start-here-the-problem-each-tool-solves">Start here: the problem each tool solves<a class="headerlink" href="#start-here-the-problem-each-tool-solves" title="Permanent link">&para;</a></h2>
+<p>You are working with Claude Code (or another agent-based IDE). You have a large codebase. You keep burning context window. Your agent keeps rediscovering the same things every session. It issues Bash commands and gets walls of Maven output back. It has no idea what APIs are available or how to navigate the knowledge that already exists.</p>
+<p>None of these are model problems. They are knowledge infrastructure problems.</p>
+<p>The KCP ecosystem is the infrastructure.</p>
 <hr />
-<h2 id="before-and-after-a-nis2-supply-chain-evaluator">Before and After: A NIS2 Supply Chain Evaluator<a class="headerlink" href="#before-and-after-a-nis2-supply-chain-evaluator" title="Permanent link">&para;</a></h2>
-<p><img alt="Law as Prose (Unversioned) vs Law as Package (Cryptographic): regulation:nis2-art21@enisa-2025-q3 — The regulation is also knowledge. It requires a stable shape to participate in the provenance chain." src="../../../../../assets/images/kcp-laws-04-prose-vs-package.webp" /></p>
-<p>Imagine an enterprise security team -- any large organization in a regulated sector -- using an AI agent to evaluate their critical suppliers against NIS2 Article 21. NIS2 requires organizations to implement supply chain security measures. For each critical supplier, the team needs to determine whether the supplier's documented security controls satisfy the Article 21(2) requirements.</p>
-<p>This is a plausible production system. The evaluations feed into a supplier risk register. When a supplier's assessment drops below threshold, procurement decisions change. The stakes are real.</p>
-<p><strong>Today, without the regulation as a package:</strong></p>
-<p>The Article 21(2) requirements are hardcoded in the system prompt as prose. The prompt references "NIS2 Article 21" but does not version it. The requirements are written in natural language, drawn from a specific interpretation of the directive that was current when the prompt was authored. That interpretation reflects ENISA's implementation guidance as of a particular quarter -- but the prompt does not record which quarter.</p>
-<p>Member states implement NIS2 differently. ENISA publishes implementation guidelines that get refined. National competent authorities issue sector-specific interpretations. If any of these update -- a national authority publishes a new Q&amp;A clarifying what "documented incident response procedures" requires from sub-contractors -- someone on the development team has to notice the update, interpret its implications for the prompt, edit the prompt, and redeploy. There is no automated trigger. There is no version comparison. The prompt is prose. Prose does not diff against a regulatory source.</p>
-<p>When the evaluator produces a result -- "Article 21(2)(d) supply chain security: partial" -- the audit trail records the date, the model, and the verdict. It does not record which version of the regulatory guidance the verdict was measured against. Six months later, the organization's compliance officer asks: "Your system said our supplier partially covers the supply chain requirement. Partially according to what?" The honest answer today is: "According to whatever was in the system prompt on that date. We can check our git history for prompt changes, but we cannot tell you precisely which regulatory interpretation was active at evaluation time without manual reconstruction."</p>
-<p>This is not a failure of engineering. The engineers built a working system. It is a failure of format. The regulation had no shape, so the evaluation result could not inherit provenance from it.</p>
-<p><strong>With KCP -- the regulation as a package:</strong></p>
-<p><img alt="A regulation package gives the law a machine-readable identity. Layer 3: Cryptographic Signature (signed_by: ENISA). Layer 1: Base Data (Article 21(2)(d) supply chain security controls). Fields: type: regulation, version: enisa-2025-q3, valid_until: 2026-03-31, source: enisa.europa.eu/official. It can be fetched, diffed, and validated before the evaluation ever runs." src="../../../../../assets/images/kcp-laws-05-package-anatomy.webp" /></p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulation:nis2-art21</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enisa-2025-q3</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">signed_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enisa.europa.eu/official</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://www.enisa.europa.eu/publications/nis2-implementation-guidance/2025-q3</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">valid_until</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-03-31</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nt">requirements</span><span class="p">:</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="s">&quot;2a&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Policies</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">risk</span><span class="nv"> </span><span class="s">analysis</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">system</span><span class="nv"> </span><span class="s">security&quot;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="s">&quot;2b&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Incident</span><span class="nv"> </span><span class="s">handling</span><span class="nv"> </span><span class="s">procedures&quot;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="s">&quot;2c&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Business</span><span class="nv"> </span><span class="s">continuity</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">crisis</span><span class="nv"> </span><span class="s">management&quot;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="s">&quot;2d&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Supply</span><span class="nv"> </span><span class="s">chain</span><span class="nv"> </span><span class="s">security,</span><span class="nv"> </span><span class="s">including</span><span class="nv"> </span><span class="s">supplier</span><span class="nv"> </span><span class="s">relationships&quot;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="s">&quot;2e&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Security</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">network</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">information</span><span class="nv"> </span><span class="s">systems</span><span class="nv"> </span><span class="s">acquisition</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">development&quot;</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="s">&quot;2f&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Policies</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">assess</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">effectiveness</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">cybersecurity</span><span class="nv"> </span><span class="s">measures&quot;</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="s">&quot;2g&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Basic</span><span class="nv"> </span><span class="s">cyber</span><span class="nv"> </span><span class="s">hygiene</span><span class="nv"> </span><span class="s">practices</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">cybersecurity</span><span class="nv"> </span><span class="s">training&quot;</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="s">&quot;2h&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Policies</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">use</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">cryptography</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">encryption&quot;</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="s">&quot;2i&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Human</span><span class="nv"> </span><span class="s">resources</span><span class="nv"> </span><span class="s">security,</span><span class="nv"> </span><span class="s">access</span><span class="nv"> </span><span class="s">control,</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">asset</span><span class="nv"> </span><span class="s">management&quot;</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="s">&quot;2j&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Use</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">multi-factor</span><span class="nv"> </span><span class="s">authentication</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">continuous</span><span class="nv"> </span><span class="s">authentication&quot;</span>
-</span></code></pre></div>
-<p>The regulation package has a type, a version, a signer, a source URL, and an expiry date. The requirements are structured data, not prose in a prompt. The package can be validated: does <code>enisa.europa.eu/official</code> correspond to a known authority? Is <code>enisa-2025-q3</code> the current version? Has <code>valid_until</code> passed?</p>
-<p>Now the evaluation result is also a package:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">evaluation:nis2-art21-supply-chain</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">derived_from</span><span class="p">:</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulation:nis2-art21@enisa-2025-q3</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">supplier-security-docs:acme-corp@fetched-2026-04-14</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nt">evaluated_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4.1/compliance-deployment-prod</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nt">results</span><span class="p">:</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="s">&quot;2a&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.91</span><span class="p p-Indicator">}</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="s">&quot;2b&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.88</span><span class="p p-Indicator">}</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">  </span><span class="s">&quot;2c&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;partial&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.74</span><span class="p p-Indicator">}</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="s">&quot;2d&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;partial&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.69</span><span class="p p-Indicator">}</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="s">&quot;2e&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.92</span><span class="p p-Indicator">}</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="s">&quot;2f&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.87</span><span class="p p-Indicator">}</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nt">gaps</span><span class="p">:</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;No</span><span class="nv"> </span><span class="s">documented</span><span class="nv"> </span><span class="s">sub-processor</span><span class="nv"> </span><span class="s">incident</span><span class="nv"> </span><span class="s">notification</span><span class="nv"> </span><span class="s">timeline&quot;</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Security</span><span class="nv"> </span><span class="s">effectiveness</span><span class="nv"> </span><span class="s">review</span><span class="nv"> </span><span class="s">cadence</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">specified&quot;</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nt">risk_level</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nt">valid_until</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-07-14</span>
-</span></code></pre></div>
-<p><img alt="Provenance graph: regulation:nis2-art21@enisa-2025-q3 and supplier-security-docs:acme-corp@fetched-2026-04-14 both connect via derived_from to evaluation:nis2-art21-supply-chain@1.0.0. Provenance is not reconstructed after the fact. It is declared at creation time. The evaluation inherits its regulatory context the way software inherits dependency versions." src="../../../../../assets/images/kcp-laws-06-derived-from.webp" /></p>
-<p>Look at <code>derived_from</code>. The evaluation result declares two parents: the regulation package at version <code>enisa-2025-q3</code>, and the supplier's security documentation as fetched on a specific date. The provenance is not reconstructed after the fact. It is declared at creation time. The result knows what it was measured against.</p>
-<p><img alt="Evaluating Supplier Supply Chain Security against NIS2 — Without KCP vs With KCP. Without: hardcoded prose, developer notices ENISA update manually, audit log says &quot;Evaluated supplier on 2026-04-14&quot;, compliance answer is &quot;according to whatever was in our git history&quot;. With: structured validated KCP package, automated version comparison triggers targeted re-evaluation, audit log records derived_from regulation:nis2-art21@enisa-2025-q3, exact cryptographically verifiable regulatory snapshot." src="../../../../../assets/images/kcp-laws-07-nis2-before-after.webp" /></p>
-<p>Now the audit trail says: "NIS2 Art.21 evaluation derived from <code>regulation:nis2-art21@enisa-2025-q3</code> (signed by ENISA) against <code>supplier-security-docs:acme-corp@fetched-2026-04-14</code>." Not "evaluated a supplier." The compliance officer asks "partially according to what?" and the answer is: "According to <code>regulation:nis2-art21@enisa-2025-q3</code>, ENISA's Q3 2025 implementation guidance, which was current on the evaluation date and valid until 2026-03-31."</p>
-<hr />
-<h2 id="the-pattern-repeats-eu-ai-act-article-9">The Pattern Repeats: EU AI Act Article 9<a class="headerlink" href="#the-pattern-repeats-eu-ai-act-article-9" title="Permanent link">&para;</a></h2>
-<p>The same structure applies to the EU AI Act. Article 9 requires providers of high-risk AI systems to implement a risk management system. Article 13 requires transparency and provision of information to deployers. These are requirements that AI system providers need to evaluate their own systems against -- and that procurement teams need to evaluate AI vendors against.</p>
-<p>Today, a compliance team checking whether a vendor's AI system satisfies Article 9's risk management requirements has those requirements embedded in its review checklist as prose. The checklist references "EU AI Act Article 9" but does not version it. The EU AI Act has delegated acts, implementing regulations, and ENISA guidelines that will be published and updated after the base text. When the compliance team's assessment says "Article 9(2) risk management system: partial coverage" -- which interpretation of the delegated acts was that against?</p>
-<p>With KCP:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulation:eu-ai-act-art9</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2025-implementing-regs-1.0</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">signed_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ec.europa.eu/official</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://ec.europa.eu/ai-act/implementing-regulations/2025/art9</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">valid_until</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2026-12-31</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nt">requirements</span><span class="p">:</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="s">&quot;2a&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Risk</span><span class="nv"> </span><span class="s">identification</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">analysis</span><span class="nv"> </span><span class="s">throughout</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">lifecycle&quot;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="s">&quot;2b&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Estimation</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">evaluation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">risks</span><span class="nv"> </span><span class="s">when</span><span class="nv"> </span><span class="s">used</span><span class="nv"> </span><span class="s">as</span><span class="nv"> </span><span class="s">intended&quot;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="s">&quot;2c&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Evaluation</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">risks</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">light</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">post-market</span><span class="nv"> </span><span class="s">monitoring</span><span class="nv"> </span><span class="s">data&quot;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="s">&quot;2d&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;Adoption</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">residual</span><span class="nv"> </span><span class="s">risk</span><span class="nv"> </span><span class="s">management</span><span class="nv"> </span><span class="s">measures&quot;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="s">&quot;4&quot;</span><span class="p p-Indicator">:</span><span class="w">  </span><span class="s">&quot;Risk</span><span class="nv"> </span><span class="s">management</span><span class="nv"> </span><span class="s">measures</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">be</span><span class="nv"> </span><span class="s">applied</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">each</span><span class="nv"> </span><span class="s">identified</span><span class="nv"> </span><span class="s">risk&quot;</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="s">&quot;6&quot;</span><span class="p p-Indicator">:</span><span class="w">  </span><span class="s">&quot;Testing</span><span class="nv"> </span><span class="s">throughout</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">development</span><span class="nv"> </span><span class="s">lifecycle&quot;</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="s">&quot;9&quot;</span><span class="p p-Indicator">:</span><span class="w">  </span><span class="s">&quot;Consideration</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">effects</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">persons</span><span class="nv"> </span><span class="s">particularly</span><span class="nv"> </span><span class="s">at</span><span class="nv"> </span><span class="s">risk&quot;</span>
-</span></code></pre></div>
-<p>An AI system assessment against a vendor's technical documentation produces:</p>
-<div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">evaluation:eu-ai-act-art9-risk-mgmt</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">derived_from</span><span class="p">:</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regulation:eu-ai-act-art9@2025-implementing-regs-1.0</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">vendor-technical-docs:vendorcorp-ai-hiring-tool@submitted-2026-03-01</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">evaluated_by</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude-opus-4-6/procurement-compliance</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nt">results</span><span class="p">:</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="s">&quot;2a&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;partial&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.82</span><span class="p p-Indicator">}</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="s">&quot;2b&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.91</span><span class="p p-Indicator">}</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="s">&quot;2c&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;no&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.88</span><span class="p p-Indicator">}</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="s">&quot;4&quot;</span><span class="p p-Indicator">:</span><span class="w">  </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;partial&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.76</span><span class="p p-Indicator">}</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="s">&quot;6&quot;</span><span class="p p-Indicator">:</span><span class="w">  </span><span class="p p-Indicator">{</span><span class="nt">covered</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;yes&quot;</span><span class="p p-Indicator">,</span><span class="nt"> confidence</span><span class="p">:</span><span class="w"> </span><span class="nv">0.85</span><span class="p p-Indicator">}</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nt">gaps</span><span class="p">:</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;No</span><span class="nv"> </span><span class="s">documented</span><span class="nv"> </span><span class="s">post-market</span><span class="nv"> </span><span class="s">monitoring</span><span class="nv"> </span><span class="s">integration</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">risk</span><span class="nv"> </span><span class="s">update</span><span class="nv"> </span><span class="s">process&quot;</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;Residual</span><span class="nv"> </span><span class="s">risk</span><span class="nv"> </span><span class="s">thresholds</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">quantified&quot;</span>
-</span></code></pre></div>
-<p><img alt="Regulatory Change &amp; Targeted Re-evaluation: eu-ai-act-art9@2024-base (evaluates vendor risk management systems) → eu-ai-act-art9@2025-implementing-regs-1.0 (requires post-market monitoring feedback loops). Query: &quot;Which vendor assessments used the old 2024 base?&quot; — affected evaluations highlighted. When implementing regulations update, the system flags affected evaluations automatically via the derived_from field. Re-evaluation is targeted, not blanket." src="../../../../../assets/images/kcp-laws-11-targeted-reeval.webp" /></p>
-<p>When the European Commission publishes a second round of implementing regulations for Article 9 in 2026 -- adding requirements for post-market monitoring feedback loops, which was always implied but not specified -- the system can query: "Which AI vendor assessments used <code>regulation:eu-ai-act-art9@2025-implementing-regs-1.0</code>?" and flag them for re-evaluation against the new version. The re-evaluation is targeted, not blanket. You do not re-run every compliance check in the system. You re-run the ones whose regulatory input changed. The <code>derived_from</code> field makes this query trivial.</p>
-<hr />
-<h2 id="the-loop-closes">The Loop Closes<a class="headerlink" href="#the-loop-closes" title="Permanent link">&para;</a></h2>
-<p><img alt="Automatic Provenance Closure: In a system evaluating dozens of suppliers across multiple regulatory frameworks, varying by member state, manual provenance tracking is impossible. If the regulation is a typed package, and the evaluation declares derived_from, the audit loop closes automatically. No extra annotation. No retroactive tagging. Tree diagram showing Regulation Packages → Corporate Policies → Supplier Evaluations, all with derived_from links." src="../../../../../assets/images/kcp-laws-13-auto-provenance.webp" /></p>
-<p>Here is the key structural insight. When the regulation is a KCP package, the evaluation loop closes provenance automatically. No extra annotation. No retroactive tagging. No manual reconstruction.</p>
-<p>The before state:</p>
-<blockquote>
-<p>Regulation prose in system prompt → GPT → verdict as text.
-Audit trail: "evaluated. Date: 2026-04-14."</p>
-</blockquote>
-<p>The after state:</p>
-<blockquote>
-<p><code>regulation:nis2-art21@enisa-2025-q3</code> → GPT → <code>evaluation:nis2-art21-supply-chain@1.0.0</code> with <code>derived_from: regulation:nis2-art21@enisa-2025-q3</code>.
-Audit trail: "evaluated NIS2 Art.21 enisa-2025-q3 → result v1.0.0 → risk level: medium."</p>
-</blockquote>
-<p>The provenance propagates through the <code>derived_from</code> chain without any additional work by the developer. The evaluation result inherits its regulatory context the same way a software build inherits its dependency versions: by declaring them at build time, not by hoping someone wrote them down afterward.</p>
-<p>This is what makes the pattern powerful at scale. In a system evaluating dozens of suppliers across multiple regulatory frameworks, each with their own versioning schedules and national implementation variants -- which is what enterprise compliance infrastructure looks like in practice -- manual provenance tracking is not feasible. You cannot ask a developer to annotate every evaluation with the regulation version it was checked against. But if the regulation is a typed package and the evaluation result declares <code>derived_from</code>, the provenance is automatic.</p>
-<p>Six months later, when a competent authority asks: "Did your system evaluate this supplier's security posture against current NIS2 guidance?" -- you can answer precisely. Not "yes, we evaluated it." But: "Yes, we evaluated it against <code>regulation:nis2-art21@enisa-2025-q3</code>, signed by ENISA, which was current on 2026-04-14. The guidance was updated to <code>enisa-2025-q4</code> on 2026-01-15. Our system detected the version change and flagged 34 supplier evaluations for re-run against the new version. Re-evaluation completed 2026-01-18. Here are the assessments that changed."</p>
-<p>That is an answer that survives regulatory scrutiny. The answer "yes, we evaluated it" does not.</p>
-<hr />
-<h2 id="the-tired-ciso-revisited">The Tired CISO, Revisited<a class="headerlink" href="#the-tired-ciso-revisited" title="Permanent link">&para;</a></h2>
-<p><img alt="Timeline: ENISA quietly updates its Article 21 implementation guidance to enisa-2025-q4 on Feb 15, 2026. The Tired CISO approves 47 evaluations on March 14, 2026 at 16:47 CET. The AI evaluated the suppliers. The CISO approved the evaluations. Six months later, a supply chain incident occurs." src="../../../../../assets/images/kcp-laws-08-tired-ciso-timeline.webp" /></p>
-<p>In the previous post I introduced the Tired CISO: a security leader who reviews 47 AI-generated policy updates on a Friday afternoon. Approves all. Six months later, incident. The audit log says "approved" but cannot answer what was actually approved, or whether the underlying context has changed since.</p>
-<p>Now extend the scenario. Those 47 policy updates were AI-evaluated compliance assessments -- the system had checked supplier security documentation against NIS2 Article 21. The CISO was reviewing the evaluations, not the raw documentation.</p>
-<p><img alt="Standard Logging vs KCP Logging: Standard — &quot;[2026-03-14] CISO approved 47 evaluations.&quot; Investigator note: Were these run against the new Feb 15 guidance or the old prompt? Nobody knows. Weeks of forensic reconstruction required. KCP — &quot;[2026-03-14] CISO approved evaluation:nis2-art21-supply-chain@1.0.0 derived_from regulation:nis2-art21@enisa-2025-q3.&quot; Investigator note: Instant discovery — enisa-2025-q3 was superseded on Feb 15. The evaluations were approved against stale guidance. Precise, actionable finding." src="../../../../../assets/images/kcp-laws-09-standard-vs-kcp-logging.webp" /></p>
-<p>Without KCP, the approval event says: "CISO approved 47 evaluations, 2026-03-14 16:47 CET." The incident investigation six months later reveals that ENISA updated its Article 21 implementation guidance on 2026-02-15 -- a month before the CISO's review. Were the evaluations she approved run against the old guidance or the new? Nobody knows. The regulation text in the system prompt might have been updated. It might not have been. There is no version to check. There is no <code>derived_from</code> to follow.</p>
-<p>With KCP, the approval event says: "CISO approved <code>evaluation:nis2-art21-supply-chain@1.0.0</code> derived from <code>regulation:nis2-art21@enisa-2025-q3</code>." The incident investigation checks: was <code>enisa-2025-q3</code> current on 2026-03-14? Answer: no. <code>enisa-2025-q4</code> was published on 2026-02-15. The evaluations were approved against stale guidance.</p>
-<p>That is a finding. It is precise. It is actionable. And it was discoverable in seconds, not weeks of forensic reconstruction. The CISO can explain exactly what happened and what was missed. More importantly, the system can be fixed: add a check that compares the regulation version in <code>derived_from</code> against the latest available version before presenting evaluations for human review. If the regulatory input has been superseded, flag the evaluation before it reaches the CISO's desk.</p>
-<p><img alt="The Air Canada Precedent: The chatbot hallucinated a retroactive bereavement discount. The tribunal found liability because the chatbot's knowledge had no shape — nobody could reconstruct what policy it actually consulted. With KCP: policy:bereavement@2.1 → derived_from → Chatbot Response. Forensics shifts from &quot;the chatbot said something wrong&quot; to &quot;the chatbot consulted version 2.1, which contained an error, later corrected in version 2.2 deployed three weeks post-incident.&quot;" src="../../../../../assets/images/kcp-laws-10-air-canada.webp" /></p>
-<p>Compare this to the Air Canada scenario from the first post. The tribunal found liability because nobody could reconstruct what the chatbot knew. The chatbot's knowledge had no shape. If the bereavement policy the chatbot consulted had been a typed, versioned package -- and if the chatbot's response had declared <code>derived_from</code> pointing to that package -- the reconstruction would have been trivial. Not "the chatbot said something wrong." But: "The chatbot consulted <code>policy:bereavement@2.1</code>. That version contained an error in clause 3 regarding retroactive discounts. The error was introduced in version 2.1, not present in version 2.0, and was corrected in version 2.2 deployed three weeks after the incident."</p>
-<p>The difference between "something went wrong" and a precise forensic account is not better workflow tooling. It is giving the knowledge -- including the regulatory knowledge -- a shape that supports forensic inquiry.</p>
-<hr />
-<h2 id="the-broader-implication">The Broader Implication<a class="headerlink" href="#the-broader-implication" title="Permanent link">&para;</a></h2>
-<p><img alt="Framework table: DORA (Financial Services ICT Risk) — current state: PDFs of RTS standards updated dynamically → future: regulation:dora-ict-risk@esma-rts-v1.2. SOC 2 (Audit Framework) — current: typed controls (CC6.1) sitting in Confluence pages → future: framework:soc2-cc6.1@2017. ISO 27001 (InfoSec) — current: Annex A numbered controls as bullet points → future: framework:iso27001-annex-a-5.1@2022. These inform, but do not currently participate in the provenance chain. They are one step away from being typed packages." src="../../../../../assets/images/kcp-laws-12-frameworks-table.webp" /></p>
-<p>NIS2 Article 21 and EU AI Act Article 9 are two examples. The pattern applies everywhere a machine-readable regulation meets an AI evaluator:</p>
+<h2 id="the-spec-knowledge-context-protocol">The spec: Knowledge Context Protocol<a class="headerlink" href="#the-spec-knowledge-context-protocol" title="Permanent link">&para;</a></h2>
+<p><strong>Repo</strong>: <a href="https://github.com/Cantara/knowledge-context-protocol">github.com/Cantara/knowledge-context-protocol</a></p>
+<p>The foundation is a YAML file — <code>knowledge.yaml</code> — that every other tool in this ecosystem reads, writes, or enforces. It declares:</p>
 <ul>
-<li><strong>DORA</strong> -- the Digital Operational Resilience Act for financial services, with ICT risk management requirements that need to be evaluated per-vendor, per-contract, against RTS standards that will be updated.</li>
-<li><strong>SOC 2</strong> -- not a regulation but an audit framework with typed controls (CC6.1, CC6.2, ...) that map naturally to structured packages with version history.</li>
-<li><strong>ISO 27001</strong> -- Annex A controls are already numbered and categorized. They are one step away from being typed packages with versions and signatures.</li>
-<li><strong>Sector-specific frameworks</strong> -- national implementations of NIS2 that vary by member state, EBA guidelines for banking, sector telecom requirements. Each is a versioned set of requirements. Each needs to be evaluated against. None currently has a stable machine-readable identity.</li>
+<li><strong>What</strong> the project contains (units: files, directories, URLs)</li>
+<li><strong>Why</strong> each unit exists (intent, written in natural language)</li>
+<li><strong>Who</strong> it's for (audience: human, agent, developer)</li>
+<li><strong>How</strong> to find related units (triggers, dependencies, federation links)</li>
+<li><strong>Whether</strong> to trust it (ED25519 signature, content hashes)</li>
 </ul>
-<p>Every one of these frameworks has the same structural property: a set of requirements, issued by an authority, versioned over time, that AI agents need to evaluate against. Today, those requirements live as prose in prompts, PDFs on authority websites, or paragraphs in Confluence pages. They are consulted but not consumed as data. They inform but do not participate in the provenance chain.</p>
-<p>The format problem at the regulation level is the same format problem as at the knowledge level. The knowledge has no shape, so the audit trail cannot grip it. The regulation has no shape, so the evaluation result cannot inherit provenance from it. The fix is the same: give it a shape. Type it. Version it. Sign it. Let the downstream artifacts declare <code>derived_from</code> and let the provenance propagate.</p>
-<p>The organizations that figure this out first -- that start packaging their regulatory inputs as typed, versioned, signed knowledge rather than prose in prompts -- will have audit trails that answer questions their competitors cannot. Not because they built better workflow tooling. Because they solved the format problem at the input layer, not just the output layer.</p>
-<p><img alt="The format problem goes all the way down. Fix it all the way down. Stop defending audit trails built on shapeless prose. Start packaging regulatory inputs as typed, versioned, signed knowledge." src="../../../../../assets/images/kcp-laws-14-closing.webp" /></p>
-<p>The format problem goes all the way down. Fix it all the way down.</p>
+<p>Think of it as the mirror image of MCP. MCP solved "how does an agent connect to tools?" KCP solves "how does an agent navigate knowledge?" The two standards complement each other — MCP for action, KCP for understanding.</p>
+<p>One manifest, per project. Everything else builds on it.</p>
 <hr />
-<p><em>Co-authored with Claude. The thesis and structure are mine; Claude helped draft and sharpen the argument.</em></p>
+<h2 id="the-ecosystem-at-a-glance">The ecosystem at a glance<a class="headerlink" href="#the-ecosystem-at-a-glance" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>                    Your project (knowledge.yaml)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                             │
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>             ┌───────────────┼───────────────┐
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>             │               │               │
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>       [kcp-agent]    [kcp-harness]    [kcp-triage]
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>       load planning  governance       build manifests
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>       (deterministic) enforcement     for external APIs
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>             │               │
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>             └───────┬───────┘
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                     │
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>              Claude Code / Cursor
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                     │
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>           ┌─────────┴─────────┐
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>           │                   │
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    [kcp-commands]       [Synthesis]
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    hook: inject +       MCP: search +
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    filter + log         index + arch
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>           │
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    ~/.kcp/events.jsonl
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>           │
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    [kcp-memory]
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    cross-session
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    episodic memory
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>           │
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    [kcp-dashboard]
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    TUI: savings +
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    compliance view
+</span></code></pre></div>
+<p>Each box is a separate tool you install independently. You don't need all of them to get started.</p>
+<hr />
+<h2 id="the-tools-one-by-one">The tools, one by one<a class="headerlink" href="#the-tools-one-by-one" title="Permanent link">&para;</a></h2>
+<h3 id="kcp-commands-the-first-thing-to-install">kcp-commands — the first thing to install<a class="headerlink" href="#kcp-commands-the-first-thing-to-install" title="Permanent link">&para;</a></h3>
+<p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-commands">github.com/Cantara/kcp-commands</a>
+<strong>Version</strong>: 0.28.0 | 292 bundled CLI manifests</p>
+<p>A Claude Code <a href="https://docs.anthropic.com/en/docs/claude-code/hooks">PreToolUse + PostToolUse hook</a> that intercepts every Bash call in three phases:</p>
+<p><strong>Phase A — before execution</strong>: For recognised commands (<code>mvn</code>, <code>git</code>, <code>kubectl</code>, <code>terraform</code>, <code>docker</code>, <code>npm</code>, …), injects a compact syntax hint — the flags you actually want, not a manpage. 292 manifests cover the most common CLI tools in software development.</p>
+<p><strong>Phase B — after execution</strong>: Strips boilerplate from noisy output. A <code>mvn clean install</code> that would return 800 lines of reactor output comes back as the 12 lines that matter. Git diffs, <code>kubectl get pods</code>, Docker image lists — all filtered.</p>
+<p><strong>Phase C — event logging</strong>: Every Bash call is appended to <code>~/.kcp/events.jsonl</code>. This is the feed that kcp-memory indexes.</p>
+<p>Measured result: <strong>33% context window saved</strong> per session. 84% of Bash calls are well-known tools that trigger filtering. The hook runs in Java (12 ms/call) with a Node.js fallback.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Install (Java daemon, recommended):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--java
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Node.js only (no JVM required):</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--node
+</span></code></pre></div>
+<hr />
+<h3 id="kcp-memory-cross-session-episodic-memory">kcp-memory — cross-session episodic memory<a class="headerlink" href="#kcp-memory-cross-session-episodic-memory" title="Permanent link">&para;</a></h3>
+<p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-memory">github.com/Cantara/kcp-memory</a>
+<strong>Version</strong>: 0.32.0</p>
+<p>Agents are amnesiac by default. Every new session starts from zero. kcp-memory fixes this.</p>
+<p>It runs as a background daemon and indexes <code>~/.kcp/events.jsonl</code> (written by kcp-commands) plus session transcripts from Claude Code. When a new session starts, relevant context from previous sessions is injected automatically — which commands you ran last time, what the agent concluded, what files were modified.</p>
+<p>It also indexes subagent transcripts, which means memory is shared across parallel agent sessions in the same project. The storage is SQLite, entirely local, no cloud.</p>
+<p>Think of it as the difference between a colleague who was there last week and one who has never heard of your project.</p>
+<hr />
+<h3 id="kcp-dashboard-see-whats-happening">kcp-dashboard — see what's happening<a class="headerlink" href="#kcp-dashboard-see-whats-happening" title="Permanent link">&para;</a></h3>
+<p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-dashboard">github.com/Cantara/kcp-dashboard</a>
+<strong>Version</strong>: 0.27.0</p>
+<p>A <a href="https://github.com/charmbracelet/bubbletea">Bubble Tea</a> terminal TUI that gives you live visibility into the KCP toolchain:</p>
+<ul>
+<li>Token savings vs. unhooked sessions (rolling average)</li>
+<li>Which commands triggered Phase A injection vs. Phase B filtering</li>
+<li>Session history with guidance quality scores</li>
+<li>kcp-memory recall stats (what got injected, from when)</li>
+<li>Governance compliance metrics if kcp-harness is running</li>
+</ul>
+<p>Run it in a split pane while Claude Code is running and you get a live view of what the knowledge layer is doing. Optional — you don't need it for the tools to work — but useful when you're tuning your setup or demonstrating to someone what's happening.</p>
+<hr />
+<h3 id="synthesis-workspace-intelligence">Synthesis — workspace intelligence<a class="headerlink" href="#synthesis-workspace-intelligence" title="Permanent link">&para;</a></h3>
+<p><strong>Repo</strong>: <a href="https://github.com/exoreaction/Synthesis">github.com/exoreaction/Synthesis</a>
+<strong>Version</strong>: 1.43.1</p>
+<p>Synthesis is the indexing and search layer. It scans your workspace — code, docs, PDFs, configs — builds a Lucene search index and a relationship graph, and exposes 52 MCP tools to Claude Code, Cursor, Aider, or any MCP-compatible agent.</p>
+<p>Where KCP tells an agent <em>what to load</em>, Synthesis answers <em>where is it and how does it relate to everything else</em>.</p>
+<p>What it does:
+- <strong>Full-text search</strong> across any file type (code, markdown, PDFs, even video transcripts)
+- <strong>Relationship mapping</strong>: bidirectional imports, references, cross-repo dependencies
+- <strong>Architecture analysis</strong>: god classes, dead code, circular dependencies, test gaps
+- <strong>AI Q&amp;A</strong>: natural language questions answered against your indexed workspace
+- <strong>Semantic search</strong> with vector embeddings
+- <strong>Real-time daemon</strong> (<code>synthesis watch</code>) for live updates as files change</p>
+<p>Synthesis is the tool you run across your entire organisation's repos — not just one project. It works independently of KCP but pairs naturally with it: KCP provides the declared intent, Synthesis provides the discovered structure.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>synthesis<span class="w"> </span>scan<span class="w"> </span>/path/to/workspace
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>synthesis<span class="w"> </span>search<span class="w"> </span><span class="s2">&quot;authentication middleware&quot;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>synthesis<span class="w"> </span>ask<span class="w"> </span><span class="s2">&quot;what calls this function?&quot;</span>
+</span></code></pre></div>
+<p>The MCP server integrates with Claude Code automatically once configured in <code>.claude/mcp.json</code>.</p>
+<hr />
+<h3 id="kcp-triage-knowledge-for-external-apis">kcp-triage — knowledge for external APIs<a class="headerlink" href="#kcp-triage-knowledge-for-external-apis" title="Permanent link">&para;</a></h3>
+<p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-triage">github.com/Cantara/kcp-triage</a>
+<strong>Version</strong>: 0.1.0</p>
+<p>An LLM-orchestrated CLI that crawls a website, classifies its API surface, audits its security headers, and builds an agent-ready workbench for it — including a signed <code>knowledge.yaml</code>.</p>
+<p>You give it a URL. It produces a <code>sites/&lt;domain&gt;/</code> directory containing:
+- <code>CLAUDE.md</code> — project context for the agent
+- <code>skills/</code> — executable workflow patterns
+- API inventory (endpoints, schemas, authentication)
+- <code>knowledge.yaml</code> — a KCP manifest so any KCP-aware agent can navigate the site</p>
+<p>It uses a three-tier LLM strategy internally: Opus for orchestration, Sonnet for analysis, Haiku for grunt work. The output is designed to be loaded by kcp-agent, not read by humans.</p>
+<p>Use kcp-triage when you're working with a third-party API and want the agent to be properly oriented from session one rather than discovering the API structure through trial and error.</p>
+<hr />
+<h3 id="kcp-agent-deterministic-load-planning">kcp-agent — deterministic load planning<a class="headerlink" href="#kcp-agent-deterministic-load-planning" title="Permanent link">&para;</a></h3>
+<p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-agent">github.com/Cantara/kcp-agent</a>
+<strong>Version</strong>: 0.13.0</p>
+<p>The reference agent that consumes KCP end-to-end. Given a task and a <code>knowledge.yaml</code>, it produces an <strong>inspectable load plan</strong> — a deterministic, auditable decision about which units to load, in what order, and why — before it synthesises a response.</p>
+<p>The planning step is <strong>LLM-free</strong>. No model is invoked until the load plan is approved. This means you can inspect the plan before the agent reads a single byte of knowledge — a property that matters for compliance and debugging.</p>
+<p>The full pipeline:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>discover manifest
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  → verify signature
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  → trust-gate
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  → score units by task relevance
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  → federate (follow links to other manifests)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  → temporal filter (skip stale units)
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  → budget (respect token ceiling)
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  → emit load plan
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>  → [load units]
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>  → [synthesise answer]
+</span></code></pre></div>
+<p>Each step is deterministic. All decisions are defensible. The agent can explain every unit it loaded and every unit it skipped.</p>
+<p>kcp-agent ships with worked examples (<code>examples/fjordwire/</code>, <code>examples/vault/</code>) that show how to wire it up for real projects.</p>
+<hr />
+<h3 id="kcp-harness-governance-enforcement">kcp-harness — governance enforcement<a class="headerlink" href="#kcp-harness-governance-enforcement" title="Permanent link">&para;</a></h3>
+<p><strong>Repo</strong>: <a href="https://github.com/Cantara/kcp-harness">github.com/Cantara/kcp-harness</a>
+<strong>Version</strong>: 0.4.2</p>
+<p>A compliance proxy that sits between an agent and its knowledge tools, enforcing a 13-gate governance cascade on every request:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>classify → verify → trust → score → federate
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>→ temporal → budget → permission → audit → execute
+</span></code></pre></div>
+<p>Every gate either passes or blocks. If the harness can't verify a request, the agent gets nothing. Fail-closed by design.</p>
+<p>The key property: the harness emits <strong>content-free audit traces</strong> — logs that prove what governance decisions were made without recording the knowledge content itself. This matters in regulated environments where you need to demonstrate compliance without creating a second copy of sensitive data.</p>
+<p>kcp-harness does not require you to modify your agent. It wraps the knowledge layer as an MCP proxy — the agent calls the same MCP tools it always did, the harness intercepts and governs.</p>
+<p>Use kcp-harness when auditability and governance matter more than setup simplicity. In practice: production deployments, regulated industries, multi-tenant systems.</p>
+<hr />
+<h2 id="where-to-start">Where to start<a class="headerlink" href="#where-to-start" title="Permanent link">&para;</a></h2>
+<p>Not all at once. The ecosystem is layered — each tool adds value independently.</p>
+<p><strong>Day 1 — save context now:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 1. Install kcp-commands (immediate 33% savings)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://raw.githubusercontent.com/Cantara/kcp-commands/main/bin/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--java
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># 2. Open Claude Code. Start a session. Notice the Phase A hints appearing</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">#    before Bash calls. Notice the quieter output.</span>
+</span></code></pre></div>
+<p><strong>Day 2 — add memory:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Install kcp-memory (episodic cross-session recall)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># See: https://github.com/Cantara/kcp-memory#install</span>
+</span></code></pre></div>
+<p><strong>Day 3 — add workspace intelligence:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Configure Synthesis MCP in .claude/mcp.json</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># Then: synthesis scan . (from your project root)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Claude Code can now search, relate, and ask across your entire codebase</span>
+</span></code></pre></div>
+<p><strong>When you want governance:</strong></p>
+<p>Add kcp-agent for inspectable load planning, kcp-harness for enforcement. These are for when you're building agents that will run in production or in environments where "the agent read file X because..." needs to be provable.</p>
+<p><strong>When you're working with external APIs:</strong></p>
+<p>Run kcp-triage against the API's documentation site. Get a signed manifest and workbench in minutes rather than spending the first hour of every session re-orienting the agent to the API surface.</p>
+<hr />
+<h2 id="the-bigger-picture">The bigger picture<a class="headerlink" href="#the-bigger-picture" title="Permanent link">&para;</a></h2>
+<p>The KCP ecosystem is the knowledge layer for agentic development — the infrastructure that sits between the model and the knowledge it reasons over. It does for knowledge what MCP did for tools: makes it structured, navigable, auditable, and trustworthy.</p>
+<p>Every tool is open source (Apache 2.0), maintained by the <a href="https://github.com/Cantara">Cantara Norwegian Software Development Foundation</a> and <a href="https://github.com/exoreaction">eXOReaction</a>.</p>
+<p>The 140-day timeline of how this was built — and why the decisions were made in the order they were — is documented in <a href="https://wiki.totto.org/blog/2026/07/16/the-knowledge-layer-a-record/">The Knowledge Layer: A Record</a>. If you want to understand the reasoning rather than just the tools, that's the place to start.</p>
+<hr />
+<p><strong>Links:</strong></p>
+<ul>
+<li><a href="https://github.com/Cantara/knowledge-context-protocol">Knowledge Context Protocol spec</a></li>
+<li><a href="https://github.com/Cantara/kcp-commands">kcp-commands</a> — install first</li>
+<li><a href="https://github.com/Cantara/kcp-memory">kcp-memory</a></li>
+<li><a href="https://github.com/Cantara/kcp-dashboard">kcp-dashboard</a></li>
+<li><a href="https://github.com/Cantara/kcp-triage">kcp-triage</a></li>
+<li><a href="https://github.com/Cantara/kcp-agent">kcp-agent</a></li>
+<li><a href="https://github.com/Cantara/kcp-harness">kcp-harness</a></li>
+<li><a href="https://github.com/exoreaction/Synthesis">Synthesis</a></li>
+</ul>
 <hr />
 <div class="admonition info">
 <p class="admonition-title">Series: Knowledge Context Protocol</p>
-<p><a href="/blog/2026/05/30/from-policy-to-practice-how-kcp-makes-regulations-machine-readable-for-ai-agents/">← From Policy to Practice: How KCP Makes Regulations Machine-Readable for AI Agents</a> &ensp;·&ensp; Part 27 of 49 &ensp;·&ensp; <a href="/blog/2026/06/01/everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/">Everyone Is Auditing the Workflow. Nobody Is Fixing the Knowledge. →</a></p>
+<p><a href="/blog/2026/07/17/a-firewall-for-what-your-agent-knows/">← A Firewall for What Your Agent Knows</a> &ensp;·&ensp; Part 49 of 49</p>
 </div>
 
 
@@ -6860,7 +6949,7 @@ Audit trail: "evaluated NIS2 Art.21 enisa-2025-q3 → result v1.0.0 → risk lev
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 8, 2026 08:34:13 UTC">July 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 17, 2026 12:32:00 UTC">July 17, 2026</span>
   </span>
 
     
@@ -6870,7 +6959,7 @@ Audit trail: "evaluated NIS2 Art.21 enisa-2025-q3 → result v1.0.0 → risk lev
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 1, 2026 09:59:15 UTC">June 1, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 17, 2026 12:32:00 UTC">July 17, 2026</span>
   </span>
 
     
@@ -6911,7 +7000,7 @@ Audit trail: "evaluated NIS2 Art.21 enisa-2025-q3 → result v1.0.0 → risk lev
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../05/30/from-policy-to-practice-how-kcp-makes-regulations-machine-readable-for-ai-agents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: From Policy to Practice: How KCP Makes Regulations Machine-Readable for AI Agents">
+          <a href="../a-firewall-for-what-your-agent-knows/" class="md-footer__link md-footer__link--prev" aria-label="Previous: A Firewall for What Your Agent Knows">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -6921,27 +7010,11 @@ Audit trail: "evaluated NIS2 Art.21 enisa-2025-q3 → result v1.0.0 → risk lev
                 Previous
               </span>
               <div class="md-ellipsis">
-                From Policy to Practice: How KCP Makes Regulations Machine-Readable for AI Agents
+                A Firewall for What Your Agent Knows
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/" class="md-footer__link md-footer__link--next" aria-label="Next: Everyone Is Auditing the Workflow. Nobody Is Fixing the Knowledge.">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Everyone Is Auditing the Workflow. Nobody Is Fixing the Knowledge.
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
