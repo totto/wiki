@@ -21,11 +21,7 @@ I founded **eXOReaction** to answer that question with today's tools. We're an A
 
 The core of our approach is **Skill-Driven Development (SDD)** -- a methodology I created for structured human-AI collaboration. SDD treats AI skills as composable, versioned building blocks that compound over time. It's been validated across four sectors (manufacturing, finance, renewable energy, AI security) with measured productivity gains of 25--66x compared to traditional approaches.
 
-<<<<<<< HEAD
 I also built **Synthesis** (v1.42.0), a local-first knowledge infrastructure platform. It indexes workspaces at 200--300 files/second, builds multi-layer knowledge graphs, exposes 76 CLI commands and 52 MCP tools, integrates Notion as a first-class workspace source, and ships full-stack KCP v0.25 support -- from manifest scaffolding to Ed25519 signing and verification. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built -- and to keep AI agents from reasoning over stale or contradictory information.
-=======
-I also built **Synthesis** (v1.42.0), a local-first knowledge infrastructure platform. It indexes workspaces at 200--300 files/second, builds multi-layer knowledge graphs, exposes 76 CLI commands and 52 MCP tools, integrates Notion as a first-class workspace source, and ships full-stack KCP v0.25 support -- from manifest scaffolding to Ed25519 signing and verification. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built -- and to keep AI agents from reasoning over stale or contradictory information.
->>>>>>> origin/main
 
 Alongside Synthesis, I created the **Knowledge Context Protocol (KCP)** -- a YAML specification that makes knowledge navigable by AI agents (submitted to the Linux Foundation's Agentic AI Foundation), **kcp-commands** (a Claude Code hook that saves ~67,000 tokens per session), and **kcp-memory** (episodic memory for Claude Code via session indexing). Together these form the ExoCortex -- the knowledge infrastructure stack I run daily.
 
