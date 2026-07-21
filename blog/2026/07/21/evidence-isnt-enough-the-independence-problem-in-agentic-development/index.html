@@ -6,40 +6,38 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+        <meta name="description" content="A test in our suite was green for six weeks. It asserted nothing. When an agent writes the code, the test, and the proof, a passing check certifies nothing — the circle just moves up a level. Daniel Bentes is right that we should check evidence, not trust agents. But evidence is only as good as the independence of whatever checks it — and that runs on both what the agent does and what it knows.">
       
       
         <meta name="author" content="Thor Henning Hetland">
       
       
-        <link rel="canonical" href="https://wiki.totto.org/blog/page/4/">
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/07/21/evidence-isnt-enough-the-independence-problem-in-agentic-development/">
       
       
-        <link rel="prev" href="../../../start-here/">
+        <link rel="prev" href="../../17/the-kcp-ecosystem-a-tour-for-new-arrivals/">
       
-      
-        <link rel="next" href="../../topics/">
       
       
         
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/totto-2025.jpg">
+      <link rel="icon" href="../../../../../assets/images/totto-2025.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Writing - Thor Henning Hetland</title>
+        <title>Evidence isn't enough: the independence problem in agentic development - Thor Henning Hetland</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -58,9 +56,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -76,26 +74,54 @@
     
 <link rel="knowledge" href="/knowledge.yaml" type="application/yaml" title="KCP v0.20 — 101 units">
 
-<meta name="robots" content="noindex, follow">
-
 
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Thor Henning Hetland">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://wiki.totto.org/blog/page/4/">
-<meta property="og:title" content="Writing">
-<meta property="og:description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
-<meta property="og:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
-<meta property="og:image:alt" content="Thor Henning Hetland">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wiki.totto.org/blog/2026/07/21/evidence-isnt-enough-the-independence-problem-in-agentic-development/">
+<meta property="og:title" content="Evidence isn't enough: the independence problem in agentic development">
+<meta property="og:description" content="A test in our suite was green for six weeks. It asserted nothing. When an agent writes the code, the test, and the proof, a passing check certifies nothing — the circle just moves up a level. Daniel Bentes is right that we should check evidence, not trust agents. But evidence is only as good as the independence of whatever checks it — and that runs on both what the agent does and what it knows.">
+<meta property="og:image" content="https://wiki.totto.org/assets/images/evidence-11-accountability-decade.webp">
+<meta property="og:image:alt" content="Evidence isn't enough: the independence problem in agentic development">
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@javatotto">
 <meta name="twitter:creator" content="@javatotto">
-<meta name="twitter:title" content="Writing">
-<meta name="twitter:description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
-<meta name="twitter:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
+<meta name="twitter:title" content="Evidence isn't enough: the independence problem in agentic development">
+<meta name="twitter:description" content="A test in our suite was green for six weeks. It asserted nothing. When an agent writes the code, the test, and the proof, a passing check certifies nothing — the circle just moves up a level. Daniel Bentes is right that we should check evidence, not trust agents. But evidence is only as good as the independence of whatever checks it — and that runs on both what the agent does and what it knows.">
+<meta name="twitter:image" content="https://wiki.totto.org/assets/images/evidence-11-accountability-decade.webp">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Evidence isn\u0027t enough: the independence problem in agentic development",
+  "url": "https://wiki.totto.org/blog/2026/07/21/evidence-isnt-enough-the-independence-problem-in-agentic-development/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wiki.totto.org/blog/2026/07/21/evidence-isnt-enough-the-independence-problem-in-agentic-development/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org",
+    "image": "https://wiki.totto.org/assets/images/totto-2025.jpg"
+  },
+  "image": "https://wiki.totto.org/assets/images/evidence-11-accountability-decade.webp",
+  "datePublished": "2026-07-21 09:00:00",
+  "dateModified": "2026-07-21 05:16:27",
+  "description": "A test in our suite was green for six weeks. It asserted nothing. When an agent writes the code, the test, and the proof, a passing check certifies nothing \u2014 the circle just moves up a level. Daniel Bentes is right that we should check evidence, not trust agents. But evidence is only as good as the independence of whatever checks it \u2014 and that runs on both what the agent does and what it knows.",
+  "articleSection": "AI Agents \u0026 the Agentic Web, Governance, Trust \u0026 Compliance",
+  "keywords": "defendable-agents, agentic-development, verification, adversarial-review, provenance, kcp, context-integrity"
+}
+</script>
 
 
 
@@ -114,7 +140,13 @@
       "@type": "ListItem",
       "position": 2,
       "name": "Writing",
-      "item": "https://wiki.totto.org/blog/page/4/"
+      "item": "https://wiki.totto.org/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Evidence isn\u0027t enough: the independence problem in agentic development",
+      "item": "https://wiki.totto.org/blog/2026/07/21/evidence-isnt-enough-the-independence-problem-in-agentic-development/"
     }
   ]
 }
@@ -140,7 +172,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#writing" class="md-skip">
+        <a href="#evidence-isnt-enough-the-independence-problem-in-agentic-development" class="md-skip">
           Skip to content
         </a>
       
@@ -177,9 +209,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
       
-  <img src="../../../assets/images/totto-2025.jpg" alt="logo">
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -196,7 +228,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Writing
+              Evidence isn't enough: the independence problem in agentic development
             
           </span>
         </div>
@@ -296,7 +328,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../../.." class="md-tabs__link">
         
   
   
@@ -315,7 +347,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../start-here/" class="md-tabs__link">
+      <a href="../../../../../start-here/" class="md-tabs__link">
         
   
   
@@ -338,7 +370,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../../" class="md-tabs__link">
           
   
   
@@ -360,7 +392,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/" class="md-tabs__link">
+        <a href="../../../../../about/" class="md-tabs__link">
           
   
   
@@ -382,7 +414,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/presentations/" class="md-tabs__link">
+        <a href="../../../../../about/presentations/" class="md-tabs__link">
           
   
   
@@ -404,7 +436,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../knowledge-infrastructure/" class="md-tabs__link">
+        <a href="../../../../../knowledge-infrastructure/" class="md-tabs__link">
           
   
   
@@ -424,7 +456,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../open-source/" class="md-tabs__link">
+      <a href="../../../../../open-source/" class="md-tabs__link">
         
   
   
@@ -445,7 +477,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../interests/sci-fi/" class="md-tabs__link">
+        <a href="../../../../../interests/sci-fi/" class="md-tabs__link">
           
   
   
@@ -467,7 +499,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../interests/food-and-wine/" class="md-tabs__link">
+        <a href="../../../../../interests/food-and-wine/" class="md-tabs__link">
           
   
   
@@ -487,7 +519,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../glossary/" class="md-tabs__link">
+      <a href="../../../../../glossary/" class="md-tabs__link">
         
   
   
@@ -506,7 +538,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../../tags/" class="md-tabs__link">
         
   
   
@@ -536,7 +568,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -547,9 +581,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
       
-  <img src="../../../assets/images/totto-2025.jpg" alt="logo">
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
 
     </a>
     Thor Henning Hetland
@@ -564,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
@@ -591,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../start-here/" class="md-nav__link">
+      <a href="../../../../../start-here/" class="md-nav__link">
         
   
   
@@ -654,7 +688,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../../" class="md-nav__link ">
               
   
   
@@ -698,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/" class="md-nav__link">
+      <a href="../../../../topics/" class="md-nav__link">
         
   
   
@@ -726,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../series/" class="md-nav__link">
+      <a href="../../../../series/" class="md-nav__link">
         
   
   
@@ -853,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/07/" class="md-nav__link">
+      <a href="../../../../archive/2026/07/" class="md-nav__link">
         
   
   
@@ -883,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/06/" class="md-nav__link">
+      <a href="../../../../archive/2026/06/" class="md-nav__link">
         
   
   
@@ -913,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/05/" class="md-nav__link">
+      <a href="../../../../archive/2026/05/" class="md-nav__link">
         
   
   
@@ -943,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/04/" class="md-nav__link">
+      <a href="../../../../archive/2026/04/" class="md-nav__link">
         
   
   
@@ -973,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/03/" class="md-nav__link">
+      <a href="../../../../archive/2026/03/" class="md-nav__link">
         
   
   
@@ -1003,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/02/" class="md-nav__link">
+      <a href="../../../../archive/2026/02/" class="md-nav__link">
         
   
   
@@ -1033,7 +1067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/01/" class="md-nav__link">
+      <a href="../../../../archive/2026/01/" class="md-nav__link">
         
   
   
@@ -1063,7 +1097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/12/" class="md-nav__link">
+      <a href="../../../../archive/2025/12/" class="md-nav__link">
         
   
   
@@ -1093,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/11/" class="md-nav__link">
+      <a href="../../../../archive/2025/11/" class="md-nav__link">
         
   
   
@@ -1123,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/10/" class="md-nav__link">
+      <a href="../../../../archive/2025/10/" class="md-nav__link">
         
   
   
@@ -1153,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/09/" class="md-nav__link">
+      <a href="../../../../archive/2025/09/" class="md-nav__link">
         
   
   
@@ -1183,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/08/" class="md-nav__link">
+      <a href="../../../../archive/2025/08/" class="md-nav__link">
         
   
   
@@ -1213,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/05/" class="md-nav__link">
+      <a href="../../../../archive/2025/05/" class="md-nav__link">
         
   
   
@@ -1243,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/04/" class="md-nav__link">
+      <a href="../../../../archive/2025/04/" class="md-nav__link">
         
   
   
@@ -1273,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/09/" class="md-nav__link">
+      <a href="../../../../archive/2009/09/" class="md-nav__link">
         
   
   
@@ -1303,7 +1337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/06/" class="md-nav__link">
+      <a href="../../../../archive/2009/06/" class="md-nav__link">
         
   
   
@@ -1333,7 +1367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/05/" class="md-nav__link">
+      <a href="../../../../archive/2009/05/" class="md-nav__link">
         
   
   
@@ -1363,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/04/" class="md-nav__link">
+      <a href="../../../../archive/2009/04/" class="md-nav__link">
         
   
   
@@ -1393,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/03/" class="md-nav__link">
+      <a href="../../../../archive/2009/03/" class="md-nav__link">
         
   
   
@@ -1423,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/02/" class="md-nav__link">
+      <a href="../../../../archive/2009/02/" class="md-nav__link">
         
   
   
@@ -1542,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-agents/" class="md-nav__link">
+      <a href="../../../../category/ai-agents/" class="md-nav__link">
         
   
   
@@ -1572,7 +1606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-agents--the-agentic-web/" class="md-nav__link">
+      <a href="../../../../category/ai-agents--the-agentic-web/" class="md-nav__link">
         
   
   
@@ -1602,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-augmented-development/" class="md-nav__link">
+      <a href="../../../../category/ai-augmented-development/" class="md-nav__link">
         
   
   
@@ -1632,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/architecture/" class="md-nav__link">
+      <a href="../../../../category/architecture/" class="md-nav__link">
         
   
   
@@ -1662,7 +1696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/career--community/" class="md-nav__link">
+      <a href="../../../../category/career--community/" class="md-nav__link">
         
   
   
@@ -1692,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/cloud-computing/" class="md-nav__link">
+      <a href="../../../../category/cloud-computing/" class="md-nav__link">
         
   
   
@@ -1722,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/governance-trust--compliance/" class="md-nav__link">
+      <a href="../../../../category/governance-trust--compliance/" class="md-nav__link">
         
   
   
@@ -1752,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/knowledge-context-protocol/" class="md-nav__link">
+      <a href="../../../../category/knowledge-context-protocol/" class="md-nav__link">
         
   
   
@@ -1782,7 +1816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/knowledge-infrastructure/" class="md-nav__link">
+      <a href="../../../../category/knowledge-infrastructure/" class="md-nav__link">
         
   
   
@@ -1812,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/quantum-computing/" class="md-nav__link">
+      <a href="../../../../category/quantum-computing/" class="md-nav__link">
         
   
   
@@ -1842,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/security/" class="md-nav__link">
+      <a href="../../../../category/security/" class="md-nav__link">
         
   
   
@@ -1872,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/software-architecture/" class="md-nav__link">
+      <a href="../../../../category/software-architecture/" class="md-nav__link">
         
   
   
@@ -1948,7 +1982,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../about/" class="md-nav__link ">
+            <a href="../../../../../about/" class="md-nav__link ">
               
   
   
@@ -1992,7 +2026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/ventures/" class="md-nav__link">
+      <a href="../../../../../about/ventures/" class="md-nav__link">
         
   
   
@@ -2020,7 +2054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/cv-english/" class="md-nav__link">
+      <a href="../../../../../about/cv-english/" class="md-nav__link">
         
   
   
@@ -2048,7 +2082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/cv-norwegian/" class="md-nav__link">
+      <a href="../../../../../about/cv-norwegian/" class="md-nav__link">
         
   
   
@@ -2076,7 +2110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/projects/" class="md-nav__link">
+      <a href="../../../../../about/projects/" class="md-nav__link">
         
   
   
@@ -2104,7 +2138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/organizations/" class="md-nav__link">
+      <a href="../../../../../about/organizations/" class="md-nav__link">
         
   
   
@@ -2201,7 +2235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/presentations/" class="md-nav__link">
+      <a href="../../../../../about/presentations/" class="md-nav__link">
         
   
   
@@ -2291,7 +2325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
+      <a href="../../../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
         
   
   
@@ -2319,7 +2353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/thousands-of-releases/" class="md-nav__link">
+      <a href="../../../../../presentations/thousands-of-releases/" class="md-nav__link">
         
   
   
@@ -2347,7 +2381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/best-practice-wtf/" class="md-nav__link">
+      <a href="../../../../../presentations/best-practice-wtf/" class="md-nav__link">
         
   
   
@@ -2375,7 +2409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/fixing-the-problem/" class="md-nav__link">
+      <a href="../../../../../presentations/fixing-the-problem/" class="md-nav__link">
         
   
   
@@ -2479,7 +2513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/internet-of-things/" class="md-nav__link">
+      <a href="../../../../../presentations/internet-of-things/" class="md-nav__link">
         
   
   
@@ -2507,7 +2541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
+      <a href="../../../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
         
   
   
@@ -2535,7 +2569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/neo4dogs/" class="md-nav__link">
+      <a href="../../../../../presentations/neo4dogs/" class="md-nav__link">
         
   
   
@@ -2563,7 +2597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
+      <a href="../../../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
         
   
   
@@ -2591,7 +2625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/agile-wine-2011/" class="md-nav__link">
+      <a href="../../../../../presentations/agile-wine-2011/" class="md-nav__link">
         
   
   
@@ -2619,7 +2653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/cloud-psychology/" class="md-nav__link">
+      <a href="../../../../../presentations/cloud-psychology/" class="md-nav__link">
         
   
   
@@ -2647,7 +2681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/architecture-vs-agile/" class="md-nav__link">
+      <a href="../../../../../notes/architecture-vs-agile/" class="md-nav__link">
         
   
   
@@ -2745,7 +2779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
+      <a href="../../../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
         
   
   
@@ -2773,7 +2807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/edr-mds-mdm/" class="md-nav__link">
+      <a href="../../../../../presentations/edr-mds-mdm/" class="md-nav__link">
         
   
   
@@ -2801,7 +2835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/laws-of-soa/" class="md-nav__link">
+      <a href="../../../../../presentations/laws-of-soa/" class="md-nav__link">
         
   
   
@@ -2829,7 +2863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/design-time-governance/" class="md-nav__link">
+      <a href="../../../../../presentations/design-time-governance/" class="md-nav__link">
         
   
   
@@ -2913,7 +2947,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../knowledge-infrastructure/" class="md-nav__link ">
+            <a href="../../../../../knowledge-infrastructure/" class="md-nav__link ">
               
   
   
@@ -2957,7 +2991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/agentic-web/" class="md-nav__link">
+      <a href="../../../../../topics/agentic-web/" class="md-nav__link">
         
   
   
@@ -2985,7 +3019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/knowledge-context-protocol/" class="md-nav__link">
+      <a href="../../../../../topics/knowledge-context-protocol/" class="md-nav__link">
         
   
   
@@ -3013,7 +3047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/synthesis/" class="md-nav__link">
+      <a href="../../../../../topics/synthesis/" class="md-nav__link">
         
   
   
@@ -3041,7 +3075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/skill-driven-development/" class="md-nav__link">
+      <a href="../../../../../topics/skill-driven-development/" class="md-nav__link">
         
   
   
@@ -3127,7 +3161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/kcp-vs-mcp/" class="md-nav__link">
+      <a href="../../../../../topics/kcp-vs-mcp/" class="md-nav__link">
         
   
   
@@ -3155,7 +3189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/sdd-vs-spec-driven/" class="md-nav__link">
+      <a href="../../../../../topics/sdd-vs-spec-driven/" class="md-nav__link">
         
   
   
@@ -3234,7 +3268,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../topics/defendable-agents/" class="md-nav__link ">
+            <a href="../../../../../topics/defendable-agents/" class="md-nav__link ">
               
   
   
@@ -3336,7 +3370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/orientation/how-to-read/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/orientation/how-to-read/" class="md-nav__link">
         
   
   
@@ -3364,7 +3398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/orientation/glossary/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/orientation/glossary/" class="md-nav__link">
         
   
   
@@ -3464,7 +3498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/the-governance-gap/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/the-governance-gap/" class="md-nav__link">
         
   
   
@@ -3492,7 +3526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/what-defendable-means/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/what-defendable-means/" class="md-nav__link">
         
   
   
@@ -3520,7 +3554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/threat-model/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/threat-model/" class="md-nav__link">
         
   
   
@@ -3548,7 +3582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/determinism-vs-probabilism/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/determinism-vs-probabilism/" class="md-nav__link">
         
   
   
@@ -3576,7 +3610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/why-guardrails-fail/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/why-guardrails-fail/" class="md-nav__link">
         
   
   
@@ -3678,7 +3712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/overview/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/overview/" class="md-nav__link">
         
   
   
@@ -3706,7 +3740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/deterministic-planner/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/deterministic-planner/" class="md-nav__link">
         
   
   
@@ -3734,7 +3768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/governance-harness/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/governance-harness/" class="md-nav__link">
         
   
   
@@ -3762,7 +3796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/model-at-the-edge/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/model-at-the-edge/" class="md-nav__link">
         
   
   
@@ -3790,7 +3824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/data-flow/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/data-flow/" class="md-nav__link">
         
   
   
@@ -3818,7 +3852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/fail-closed-behavior/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/fail-closed-behavior/" class="md-nav__link">
         
   
   
@@ -3926,7 +3960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/overview/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/overview/" class="md-nav__link">
         
   
   
@@ -3954,7 +3988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/fail-closed-policy/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/fail-closed-policy/" class="md-nav__link">
         
   
   
@@ -3982,7 +4016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/audit-trail/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/audit-trail/" class="md-nav__link">
         
   
   
@@ -4010,7 +4044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/decision-traces/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/decision-traces/" class="md-nav__link">
         
   
   
@@ -4038,7 +4072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/budget-and-bounding/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/budget-and-bounding/" class="md-nav__link">
         
   
   
@@ -4066,7 +4100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/temporal-pinning/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/temporal-pinning/" class="md-nav__link">
         
   
   
@@ -4094,7 +4128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/drift-detection/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/drift-detection/" class="md-nav__link">
         
   
   
@@ -4122,7 +4156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/trust-and-attestation/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/trust-and-attestation/" class="md-nav__link">
         
   
   
@@ -4150,7 +4184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/multi-tenancy/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -4252,7 +4286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/anatomy-of-a-score/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/anatomy-of-a-score/" class="md-nav__link">
         
   
   
@@ -4280,7 +4314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/scoring-model-manifest/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/scoring-model-manifest/" class="md-nav__link">
         
   
   
@@ -4308,7 +4342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/layers-weights-bands/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/layers-weights-bands/" class="md-nav__link">
         
   
   
@@ -4336,7 +4370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/variable-design/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/variable-design/" class="md-nav__link">
         
   
   
@@ -4364,7 +4398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/reproducibility/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/reproducibility/" class="md-nav__link">
         
   
   
@@ -4392,7 +4426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/versioning-models/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/versioning-models/" class="md-nav__link">
         
   
   
@@ -4490,7 +4524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/kcp/manifest-basics/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/manifest-basics/" class="md-nav__link">
         
   
   
@@ -4518,7 +4552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/kcp/declaring-governed-units/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/declaring-governed-units/" class="md-nav__link">
         
   
   
@@ -4546,7 +4580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/kcp/wiring-kcp-agent-mcp/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/wiring-kcp-agent-mcp/" class="md-nav__link">
         
   
   
@@ -4574,7 +4608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/kcp/federation-and-dogfood/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/federation-and-dogfood/" class="md-nav__link">
         
   
   
@@ -4682,7 +4716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/00-project-layout/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/00-project-layout/" class="md-nav__link">
         
   
   
@@ -4710,7 +4744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/01-first-harness/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/01-first-harness/" class="md-nav__link">
         
   
   
@@ -4738,7 +4772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/02-scoring-model/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/02-scoring-model/" class="md-nav__link">
         
   
   
@@ -4766,7 +4800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/03-governed-session/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/03-governed-session/" class="md-nav__link">
         
   
   
@@ -4794,7 +4828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/04-audit-log/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/04-audit-log/" class="md-nav__link">
         
   
   
@@ -4822,7 +4856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/05-budget-ceiling/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/05-budget-ceiling/" class="md-nav__link">
         
   
   
@@ -4850,7 +4884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/06-temporal-drift/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/06-temporal-drift/" class="md-nav__link">
         
   
   
@@ -4878,7 +4912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/07-multi-tenant/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/07-multi-tenant/" class="md-nav__link">
         
   
   
@@ -4906,7 +4940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/08-evidence-export/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/08-evidence-export/" class="md-nav__link">
         
   
   
@@ -5008,7 +5042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/buyer-scoring-pipeline/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/buyer-scoring-pipeline/" class="md-nav__link">
         
   
   
@@ -5036,7 +5070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/spend-approval-agent/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/spend-approval-agent/" class="md-nav__link">
         
   
   
@@ -5064,7 +5098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/regulatory-qa-provenance/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/regulatory-qa-provenance/" class="md-nav__link">
         
   
   
@@ -5092,7 +5126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/reproduce-a-decision/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/reproduce-a-decision/" class="md-nav__link">
         
   
   
@@ -5120,7 +5154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/catch-an-injection/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/catch-an-injection/" class="md-nav__link">
         
   
   
@@ -5148,7 +5182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/compliant-screening-agent/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/compliant-screening-agent/" class="md-nav__link">
         
   
   
@@ -5246,7 +5280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/compliance/control-mapping/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/control-mapping/" class="md-nav__link">
         
   
   
@@ -5274,7 +5308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/compliance/evidence-packages/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/evidence-packages/" class="md-nav__link">
         
   
   
@@ -5302,7 +5336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/compliance/verifying-defendability/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/verifying-defendability/" class="md-nav__link">
         
   
   
@@ -5330,7 +5364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/compliance/operating-and-maintenance/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/operating-and-maintenance/" class="md-nav__link">
         
   
   
@@ -5428,7 +5462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/reference/case-study-lodestar/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/case-study-lodestar/" class="md-nav__link">
         
   
   
@@ -5456,7 +5490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/reference/starter-kit/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/starter-kit/" class="md-nav__link">
         
   
   
@@ -5484,7 +5518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/reference/anti-patterns/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/anti-patterns/" class="md-nav__link">
         
   
   
@@ -5512,7 +5546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/reference/faq/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/faq/" class="md-nav__link">
         
   
   
@@ -5556,7 +5590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/synthesis-releases/" class="md-nav__link">
+      <a href="../../../../../notes/synthesis-releases/" class="md-nav__link">
         
   
   
@@ -5584,7 +5618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/linkedin-posts/" class="md-nav__link">
+      <a href="../../../../../notes/linkedin-posts/" class="md-nav__link">
         
   
   
@@ -5612,7 +5646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linkedin/" class="md-nav__link">
+      <a href="../../../../../linkedin/" class="md-nav__link">
         
   
   
@@ -5647,7 +5681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../open-source/" class="md-nav__link">
+      <a href="../../../../../open-source/" class="md-nav__link">
         
   
   
@@ -5727,7 +5761,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../interests/sci-fi/" class="md-nav__link ">
+            <a href="../../../../../interests/sci-fi/" class="md-nav__link ">
               
   
   
@@ -5771,7 +5805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2025/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2025/" class="md-nav__link">
         
   
   
@@ -5799,7 +5833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2024/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2024/" class="md-nav__link">
         
   
   
@@ -5827,7 +5861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2023/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2023/" class="md-nav__link">
         
   
   
@@ -5855,7 +5889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2022/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2022/" class="md-nav__link">
         
   
   
@@ -5883,7 +5917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2021/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2021/" class="md-nav__link">
         
   
   
@@ -5911,7 +5945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2020/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2020/" class="md-nav__link">
         
   
   
@@ -5939,7 +5973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2019/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2019/" class="md-nav__link">
         
   
   
@@ -5967,7 +6001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2018/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2018/" class="md-nav__link">
         
   
   
@@ -5995,7 +6029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2017/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2017/" class="md-nav__link">
         
   
   
@@ -6023,7 +6057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2016/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2016/" class="md-nav__link">
         
   
   
@@ -6051,7 +6085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2015/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2015/" class="md-nav__link">
         
   
   
@@ -6079,7 +6113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2014/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2014/" class="md-nav__link">
         
   
   
@@ -6107,7 +6141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2013/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2013/" class="md-nav__link">
         
   
   
@@ -6135,7 +6169,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2012/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2012/" class="md-nav__link">
         
   
   
@@ -6163,7 +6197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2011/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2011/" class="md-nav__link">
         
   
   
@@ -6256,7 +6290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/food-and-wine/" class="md-nav__link">
+      <a href="../../../../../interests/food-and-wine/" class="md-nav__link">
         
   
   
@@ -6284,7 +6318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/tools/" class="md-nav__link">
+      <a href="../../../../../interests/tools/" class="md-nav__link">
         
   
   
@@ -6319,7 +6353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/" class="md-nav__link">
+      <a href="../../../../../glossary/" class="md-nav__link">
         
   
   
@@ -6346,7 +6380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tags/" class="md-nav__link">
+      <a href="../../../../../tags/" class="md-nav__link">
         
   
   
@@ -6374,6 +6408,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -6388,6 +6424,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-circle-doesnt-break-it-moves-up-a-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The circle doesn't break — it moves up a level
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-keeps-the-verifier-honest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What keeps the verifier honest
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-other-half-what-the-agent-knows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The other half: what the agent knows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The principle
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6395,574 +6483,237 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="writing">Writing<a class="headerlink" href="#writing" title="Permanent link">&para;</a></h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-14 12:00:00+00:00">June 14, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Thor Henning Hetland
+                        
+                      </strong>
+                      <br>
+                      Co-founder of JavaZone, Java Champion, Founder of eXOReaction
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-07-21 09:00:00+00:00" class="md-ellipsis">July 21, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai-agents--the-agentic-web/">AI Agents &amp; the Agentic Web</a>, 
+                              <a href="../../../../category/governance-trust--compliance/">Governance, Trust &amp; Compliance</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="discoverable-is-not-navigable"><a class="toclink" href="../../2026/06/14/discoverable-is-not-navigable/">Discoverable Is Not Navigable</a></h2>
-<p>This morning I spent three hours on regulatory knowledge infrastructure. 63 fragment manifests across Arbeidsmiljøloven, GDPR, NIS2, DORA, AI Act, NSM Grunnprinsipper, Dutch financial supervision law. Fixed a scope validation bug across 30+ files. Extracted 38 Dutch obligation units from inline YAML to standalone navigable text. Everything passing <code>kcp validate</code> by lunch.</p>
-<p>None of it would normally get published. Too narrow. Too technical. No audience in the traditional sense — a compliance engineer isn't subscribing to this blog, and a developer evaluating KCP isn't refreshing the RSS feed waiting for fragment extraction patterns.</p>
-<p>That instinct is correct. If you're writing for humans, ruthless editing is the right move. Cut the scope validation bug. Keep the summary. Optimize for skimmability, because human reading bandwidth is fixed and attention is scarce.</p>
-<p>The instinct is right. The assumption about who's reading has become incomplete.</p>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
 
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/14/discoverable-is-not-navigable/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-12 17:00:00+00:00">June 12, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              11 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="stale-knowledge-is-worse-than-no-knowledge-kcp-v019-and-v020-close-the-temporal-gap"><a class="toclink" href="../../2026/06/12/stale-knowledge-is-worse-than-no-knowledge-kcp-v019-and-v020-close-the-temporal-gap/">Stale Knowledge Is Worse Than No Knowledge: KCP v0.19 and v0.20 Close the Temporal Gap</a></h2>
-<p><img alt="Closing the Temporal Gap: the problem with timeless knowledge (compliance risk, deprecated-vs-temporal), v0.19's bi-temporal model (valid time vs transaction time, superseded_by link, manifest-level defaults), v0.20's as_of query parameter (audit mode vs production mode, critical use cases), and the new four-step search flow (semantic scoring → not_for filter → temporal evaluation → final selection)." src="../../../assets/images/kcp-019-020-01-temporal-overview.webp" /></p>
-<p>The previous post ended with a list of gaps still visible after v0.18: federated trust delegation, transport integrity, digest cost budgets. The one I left off the list, because it was already in progress, was time.</p>
-<p>Not performance. Not latency. Actual calendar time — the question that turns out to matter enormously for knowledge that agents load into context: <em>when is this unit valid?</em></p>
-<p>v0.19 and v0.20 answer that question. v0.19 lets manifest authors declare temporal validity. v0.20 lets agents query against it.</p>
 
+  <nav class="md-tags" >
     
-      <nav class="md-post__action">
-        <a href="../../2026/06/12/stale-knowledge-is-worse-than-no-knowledge-kcp-v019-and-v020-close-the-temporal-gap/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-12 14:00:00+00:00">June 12, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              16 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="2026-06-12-kcp-018-unit-integrity"><a class="toclink" href="../../2026/06/12/2026-06-12-kcp-018-unit-integrity/">2026 06 12 kcp 0.18 unit integrity</a></h2>
-<!-- Title options:
-  1. "The Map Is Not the Territory: How KCP v0.18 Closes the Gap Between Signing the Manifest and Signing What It Points To"
-  2. "Signing the Map, Not the Territory: KCP v0.18 Adds Unit Content Integrity and Origin Evidence"
-  3. "Your Signature Covers the YAML. It Doesn't Cover the Files. KCP v0.18 Fixes That."
--->
-
-<h2 id="signing-the-map-not-the-territory-kcp-v018-adds-unit-content-integrity-and-origin-evidence"><a class="toclink" href="../../2026/06/12/2026-06-12-kcp-018-unit-integrity/#signing-the-map-not-the-territory-kcp-v018-adds-unit-content-integrity-and-origin-evidence">Signing the Map, Not the Territory: KCP v0.18 Adds Unit Content Integrity and Origin Evidence</a></h2>
-<p><img alt="KCP v0.18 — Signing the Map, Not the Territory: a JWS signature covers the manifest YAML, but not the files the units point to. v0.18 adds per-unit content hashes and origin evidence classes to close the gap." src="../../../assets/images/kcp-018-01-title.webp" /></p>
-<p>The previous post showed how KCP v0.16 gives manifests a trust model: cryptographic signing, trust tiers, a render pipeline that fails closed. The signature covers the manifest -- the YAML bytes that describe your knowledge units. It does not cover the files those units point to. The signature says "this map is authentic." It says nothing about the territory.</p>
-<p>That gap has a name: T9, the manifest relocation attack. v0.18 closes it.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/12/2026-06-12-kcp-018-unit-integrity/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-12 11:00:00+00:00">June 12, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              20 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard"><a class="toclink" href="../../2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard</a></h2>
-<p><img alt="The evolution of KCP: from the 33-tool-call incident and the comprehension gap (January 2026), through Skill-Driven Development and &quot;agents need a map, not just a table of contents&quot; (February), to the KCP stack — knowledge.yaml, kcp-memory, kcp-commands (March) — and the governance and trust layer of v0.10–v0.17 (April–June)." src="../../../assets/images/kcp-journey-00-evolution.webp" /></p>
-<p>It started with a question no one expected to be hard.</p>
-<p>Day seven of the lib-pcb build. January 2026. A single developer, eleven days to produce what the industry does in ten to eighteen months. The AI was generating code at a pace that defied every estimate. Features that should take a week arrived in hours. The skill library -- YAML files encoding project-specific context for Claude Code -- had grown to over forty entries. Everything was working.</p>
-<p>And then everything stopped.</p>
-<p>"What fields does the DrillHit class have?"</p>
-<p>The AI did not know. The class had been written four days earlier. It was central to the entire parsing architecture. It had been discussed in multiple sessions. But the context was gone -- fresh session, blank slate. The AI started searching. Grep for the class name. Read the file. Follow the imports. Check the parent class. Read that file. Check the serializer. Follow another import. Back to grep. Thirty-three tool calls to answer a question that any developer on the project for a week could answer in ten seconds.</p>
-<p>Eleven minutes. For one question.</p>
-<p>That was the moment something broke open. Not the code -- the assumption underneath it. The assumption that making AI faster at <em>creating</em> code was sufficient. Creation had been accelerated by an order of magnitude. Comprehension had not moved at all.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-12 10:00:00+00:00">June 12, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              13 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="beyond-rag-how-kcp-016-017-give-agents-trustworthy-self-describing-knowledge"><a class="toclink" href="../../2026/06/12/beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">Beyond RAG: How KCP 0.16--0.17 Give Agents Trustworthy, Self-Describing Knowledge</a></h2>
-<p><img alt="Overview: KCP v0.16 closes the trust gap with the Trusted Render Pipeline — signing, trust tiers, and sanitization. KCP v0.17 closes the content gap with content structure metadata and subtractive not_for matching. Together they compose a precision retrieval pipeline." src="../../../assets/images/kcp-trust-content-00-overview.webp" /></p>
-<p>When a compliance agent evaluates a supplier against NIS2 Article 21, it needs two things: the supplier's security documentation to evaluate, and the regulation to evaluate it against. KCP, as described in the previous post, gives the supplier documentation a shape. The evaluation result gets a shape. But the regulation itself -- the specific requirements of Article 21(2), the interpretive guidance from ENISA, the national implementation notes -- lives where it has always lived: as prose in the system prompt.</p>
-<p>That worked when agents consumed knowledge from a single, trusted source. It does not work when your agent pulls context from four federated manifests across two organisations, one of which was generated by an automated crawl three weeks ago. The question is no longer "does this knowledge have a shape?" It is: "can I trust this knowledge, and is it even the right content for what I need?"</p>
-<p>KCP v0.16 and v0.17 answer those two questions. v0.16 introduces a trust model -- cryptographic signing, trust tiers, a render pipeline that fails closed. v0.17 introduces a content model -- structural metadata that tells you what a unit contains before you fetch it, and subtractive matching that tells you what it is explicitly not about. Together, they close two gaps that have been open since the beginning of the series.</p>
-<p>This post walks through both releases. The examples are concrete. The threat model is explicit. If you are building systems where agents ingest knowledge from sources you do not fully control, this is the machinery that makes that safe.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/12/beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-11 18:00:00+00:00">June 11, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              10 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="explorative-development"><a class="toclink" href="../../2026/06/11/explorative-development/">Explorative Development</a></h2>
-<p><em>Practitioner notes on engineering as a sequence of experiments — and on who does what in the loop.</em></p>
-<p>Before we wrote the production code for a recent platform feature, we ran a fictional organization through two years of using it.</p>
-<p>Twenty-four simulated months of compliance life: onboarding, supplier churn, audits, incidents, people leaving with their knowledge. The simulation produced fifteen architectural findings — wrong assumptions and missing pieces, discovered while every fix was still cheap and no customer existed yet. Sibling simulations took the total to twenty-five. A design meeting on the same material would have produced opinions.</p>
-<p>That run is the clearest recent example of how I've worked for years, and of what I've started calling the approach out loud: <strong>explorative development</strong>. An idea becomes a hypothesis. The hypothesis becomes the cheapest implementation or simulation that could prove it wrong. The result gets verified. What survives is kept — and what was learned gets encoded, either way.</p>
-<p>It is not a new method. It's the scientific method wearing a hoodie. Two things are new: the price list, and the fact that I no longer run the loop alone.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/11/explorative-development/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-11 16:00:00+00:00">June 11, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="organized-truths"><a class="toclink" href="../../2026/06/11/organized-truths/">Organized Truths</a></h2>
-<p><em>Practitioner notes on the verification you only do once.</em></p>
-<p>In the <a href="/blog/2026/06/11/false-alarms-and-false-assurances/">previous post</a> I described catching an agent claiming a parser was "fully RFC compliant." I caught it by opening the RFC — four minutes of reading against a parser that handled none of the wildcard support the spec requires.</p>
-<p>The tips in that post were about catching such claims. This post is about a better question that took me longer to ask:</p>
-<p><strong>Why did the agent never open the RFC?</strong></p>
-<p>Not because it couldn't read it. Because the RFC wasn't <em>there</em>. The agent had the parser in its context and the spec in its vibes — a compressed, lossy impression from training data. Asked to compare code against a standard, it compared code against its <em>memory of the genre</em> of that standard. Of course it produced an adjective.</p>
-<p>You can audit that failure forever. Or you can change what the agent reasons from.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/11/organized-truths/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-11 14:00:00+00:00">June 11, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="false-alarms-and-false-assurances"><a class="toclink" href="../../2026/06/11/false-alarms-and-false-assurances/">False Alarms and False Assurances</a></h2>
-<p><em>Practitioner notes on verifying what your agents tell you.</em></p>
-<p>This week an agent told me, confidently, that an API endpoint had no authentication.</p>
-<p>It did. The router was mounted twelve lines after the auth middleware. The agent had read the route file — clean, self-contained, no auth code in sight — and reported what it saw. What it saw was true. What it concluded was false.</p>
-<p>The same afternoon, two more claims from the same research run didn't survive contact with the source: a parser described as "fully RFC compliant" (it lacked the wildcard support the RFC requires), and a plugin described as "active" (it was active only because of an import side effect in an unrelated legacy file — a load-order accident no test asserted).</p>
-<p>Three wrong claims, one afternoon, inside an otherwise excellent piece of agent research that compressed days of code archaeology into hours. This is not a complaint about agents. It is a job description for the human.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/11/false-alarms-and-false-assurances/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-02 12:00:00+00:00">June 2, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              12 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-compound-developer"><a class="toclink" href="../../2026/06/02/the-compound-developer/">The Compound Developer</a></h2>
-<p><img alt="A developer at their desk, knowledge network nodes glowing through the dark" src="/assets/images/blog/compound-developer/hero.jpg" /></p>
-<p>In the most rigorous study of AI coding tools conducted to date — a randomized controlled trial by METR published in July 2025 — sixteen experienced open-source developers used AI assistance on tasks in their own projects. Projects they had worked on for an average of five years. Before each task, they predicted AI would reduce their completion time by 24%. After each task, they estimated they had been sped up by 20%.</p>
-<p>The actual measurement: they were 19% slower.</p>
-<p><img alt="The METR perception-reality gap: predicted +24%, felt +20%, actual -19%" src="/assets/images/blog/compound-developer/slide-02-metr-gap.jpg" /></p>
-<p>The perception-reality gap in that study is between 39 and 44 percentage points. The developers were not exaggerating. Working with AI genuinely <em>feels</em> faster. But something in the translation from felt experience to measured outcome goes wrong — and understanding what, exactly, goes wrong is the only path to what actually works.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/02/the-compound-developer/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-01 10:00:00+00:00">June 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a>, 
-              <a href="../../category/software-architecture/" class="md-meta__link">Software Architecture</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              13 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge"><a class="toclink" href="../../2026/06/01/everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/">Everyone Is Auditing the Workflow. Nobody Is Fixing the Knowledge.</a></h2>
-<p><img alt="Overview: Beyond the Audit Trail — Solving the AI Provenance Problem. The three problem areas, incomplete solutions, and the KCP/composable trust solution." src="../../../assets/images/kcp-provenance-00-overview.webp" /></p>
-<p>In February 2024, a Canadian small claims tribunal ruled against Air Canada. Their chatbot had told a passenger he could book a full-fare ticket and claim a bereavement discount retroactively. He couldn't. When he tried, Air Canada's position was: the chatbot said that, not us. The tribunal disagreed. You deployed it, you own what it says.</p>
-<p>The ruling was correct. But the more interesting problem was underneath: when the incident happened, nobody could reconstruct what context the chatbot had been given. Nobody could confirm whether a human had ever reviewed the policy the bot was consulting. Nobody could determine whether the specific bereavement policy text had been modified between deployment and the passenger's interaction. The audit trail recorded that the system was deployed. It did not record what the system <em>knew</em>.</p>
-<p>That's the provenance problem. And every organization running AI agents at enterprise scale is about to hit a version of it.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/01/everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
       
       
-        
-          
+      
+      
+        <span class="md-tag">adversarial-review</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">agentic-development</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">context-integrity</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">defendable-agents</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">kcp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">provenance</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">verification</span>
+      
+    
+  </nav>
 
 
 
-<nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../2/">2</a> <a class="md-pagination__link" href="../3/">3</a> <span class="md-pagination__current">4</span> <a class="md-pagination__link" href="../5/">5</a> <a class="md-pagination__link" href="../6/">6</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../19/">19</a>
-</nav>
-        
+<h1 id="evidence-isnt-enough-the-independence-problem-in-agentic-development">Evidence isn't enough: the independence problem in agentic development<a class="headerlink" href="#evidence-isnt-enough-the-independence-problem-in-agentic-development" title="Permanent link">&para;</a></h1>
+<p>A test in our suite was green for six weeks. It asserted nothing.</p>
+<!-- more -->
+
+<p>It created a deviation through the UI, then checked that a deviation with a matching <em>title</em> showed up in the register. The title was written by an AI generation step — so the AI could rephrase it, the lookup would miss, and on a good night a different leftover record would match instead. Green. Every layer did its job. The evidence was there. The evidence was worthless.</p>
+<p><img alt="The anatomy of a fake pass, in five steps: (1) the agent creates a deviation through the UI, (2) an AI rephrases the deviation's title on the fly, (3) the system fails to find the newly phrased title, (4) it randomly matches a leftover record, (5) the test goes green. Every layer did its job; the evidence was there; the evidence was worthless." src="../../../../../assets/images/evidence-01-anatomy-fake-pass.webp" /></p>
+<p>I've been thinking about this since reading Daniel Bentes' write-up of <strong>Flow</strong>, his Claude Code plugin. His diagnosis is sharp, and most of the industry hasn't caught up to it: when an agent writes the code, writes the test, and decides the test passed, <em>a passing check stops meaning much.</em> His answer is to move the unit of trust from the agent to the evidence it leaves behind — reviewers read proof instead of diffs, "done means proven," no evidence, no merge.</p>
+<p>He's right about the direction. I want to push on where it isn't enough yet, because the gap is the whole game.</p>
+<h2 id="the-circle-doesnt-break-it-moves-up-a-level">The circle doesn't break — it moves up a level<a class="headerlink" href="#the-circle-doesnt-break-it-moves-up-a-level" title="Permanent link">&para;</a></h2>
+<p>"Stop trusting the agent, start checking what it leaves behind" is a real improvement. But evidence is only as trustworthy as its <em>independence from the thing it verifies.</em> If the same agent produces the code, the test, and the proof, you haven't broken the circle — you've relocated it. Now the agent is optimized to produce <em>convincing evidence</em>, and a system that rewards convincing evidence will eventually hand you evidence theater instead of correctness.</p>
+<p><img alt="The circle doesn't break — it moves up a level. The agent's optimization loop, once wrapped around code generation, is simply relocated outward to wrap the test and the proof — now optimized to produce convincing evidence. Evidence is only as trustworthy as its independence from the thing it verifies." src="../../../../../assets/images/evidence-04-circle-moves-up.webp" /></p>
+<p>That green-for-six-weeks test is what evidence theater looks like when nobody meant to build it. Nobody gamed anything. The proof simply wasn't independent of the actor producing it — and it wasn't checking the thing that mattered.</p>
+<p><img alt="Evidence theater emerges when &quot;done&quot; merely means &quot;proven.&quot; Left, the current standard — reviewing proofs, not just diffs. Right, evidence theater — a polished proof sitting on collapsed scaffolding. If the same agent produces the code, the test, and the proof, a passing check stops meaning much." src="../../../../../assets/images/evidence-02-evidence-theater.webp" /></p>
+<p>So there are two gaps hiding under "done means proven":</p>
+<p><strong>Independence</strong> — who checks the evidence, and are they downstream of whoever made it?</p>
+<p><strong>Soundness</strong> — does the evidence bear weight? Does green mean the <em>right</em> thing was verified, or just that <em>a</em> thing turned green?</p>
+<h2 id="what-keeps-the-verifier-honest">What keeps the verifier honest<a class="headerlink" href="#what-keeps-the-verifier-honest" title="Permanent link">&para;</a></h2>
+<p>We run an agentic development rig — I call it ExoCortex — across real client codebases. The practices that survived contact with production are all attacks on those two gaps, not on evidence volume.</p>
+<p><img alt="True independence requires a two-sided governance equation. Output governance — what the agent does — is cross-model review, unfakeable outcomes, and frozen human judgment. Input governance — what the agent knows — is knowledge provenance (KCP), declared context, and traceability. The ExoCortex rig attacks two gaps: independence (who checks) and soundness (does it bear weight)." src="../../../../../assets/images/evidence-05-two-sided-governance.webp" /></p>
+<p><strong>An independent verifier.</strong> Our adversarial review is <em>cross-model</em>: a different model is pointed at a finding and told to <em>refute</em> it, not confirm it. Same-model self-review drifts toward agreement; a model that doesn't share the author's blind spots is the cheapest independence you can buy. The verifier's job is disagreement.</p>
+<p><img alt="Output pillar 1 — cross-model adversarial review. Model A (the author) and Model B (the refuter) meet head-on at &quot;engineered disagreement&quot;; the verifier's job is to refute, not confirm. Same-model review drifts toward agreement." src="../../../../../assets/images/evidence-06-cross-model-review.webp" /></p>
+<p><strong>Outcomes the agent can't fake.</strong> We don't trust "the fix works." Before I'd call a set of flaky tests fixed this week, I ran the three worst offenders eighteen times against real infrastructure and reported the tally: eighteen clean. Not because I doubted the change — because a claim of correctness on the agent's own say-so is precisely the circle we're trying to break. Real outcomes on real infra are evidence the agent doesn't author.</p>
+<p><img alt="Output pillar 2 — outcomes the agent cannot fake. The agent's say-so (&quot;the fix works&quot;) is the exact circle we're trying to break. Before calling flaky tests fixed, run the worst offenders against real infrastructure; eighteen tally marks — eighteen clean runs on real infra — form a verified anchor the agent doesn't author." src="../../../../../assets/images/evidence-07-outcomes-cant-fake.webp" /></p>
+<p><strong>Freeze human judgment, then make drift loud.</strong> On one codebase we froze the current access-control behavior — who can reach what — into a checked-in matrix. It captures whatever is true today, bugs included. The point isn't that the matrix is <em>right</em>; it's that any change to a real allow/deny decision now surfaces as a reviewed diff a human signs, instead of drifting silently while every test stays green. The independent check is the frozen human decision, not a fresh agent-authored assertion.</p>
+<p><img alt="Output pillar 3 — freeze human judgment, make drift loud. Silent AI logic drift meets a review-gate tripwire in front of a frozen access-control matrix. We checked in a matrix of current access-control behaviours, bugs included; any change to a real allow/deny decision now surfaces as a reviewed diff a human signs, instead of drifting silently while tests stay green." src="../../../../../assets/images/evidence-08-freeze-human-judgment.webp" /></p>
+<h2 id="the-other-half-what-the-agent-knows">The other half: what the agent knows<a class="headerlink" href="#the-other-half-what-the-agent-knows" title="Permanent link">&para;</a></h2>
+<p>Everything above governs what the agent <em>does</em>. There's a second half the evidence conversation keeps skipping: what the agent <em>knows</em>. A verifier can be perfectly independent and still certify the wrong claim — because the agent reasoned from context that was stale, unsourced, or quietly poisoned. Sound proof of the wrong thing.</p>
+<p>That's an input problem, and it wants the same discipline we give outputs: the knowledge an agent reasons from should be <em>declared, signed, and traceable to where it came from</em> — structured context, not a scraped pile. (This is the work we've been calling KCP — knowledge provenance for agents.) And here's the honest limit, the one that keeps it from being a silver bullet: provenance answers <em>"where did this come from, and has it changed?"</em> It does <strong>not</strong> answer <em>"is this the right thing to reason from?"</em> That second question is still human judgment — the same frozen-decision, review-gate independence, moved to the input side. Governing what an agent does and governing what it knows are two halves of the same accountability problem, and almost everyone is only building the first half.</p>
+<p><img alt="Knowledge provenance (KCP) — governing the input. Scraped piles of unverified context are funnelled down into declared, signed, traceable units. The knowledge an agent reasons from must be structured context, not a scraped pile." src="../../../../../assets/images/evidence-10-kcp-provenance.webp" /></p>
+<h2 id="the-principle">The principle<a class="headerlink" href="#the-principle" title="Permanent link">&para;</a></h2>
+<p>Don't trust the agent. Fine. But don't stop at "trust the evidence" either — because the agent can write the evidence too, and reason from context nobody checked. Trust the <em>independence of the check</em>: a verifier that doesn't share the author's incentives, an outcome the author can't manufacture, a human decision frozen where it counts — on both what the agent does and what it knows.</p>
+<p><img alt="The evolution of trust in agentic workflows. Trust the Agent (past): focus on capability, nobody checks, failure mode hallucination. Trust the Evidence (present): focus on artifacts, the agent's own tests check, failure mode evidence theater. Trust the Independence (future): focus on accountability, independent anchors check, solved via structural friction. Capability was the last decade's problem; accountability is this decade's." src="../../../../../assets/images/evidence-03-evolution-of-trust.webp" /></p>
+<p>Capability was the last decade's problem, and the loop mostly solved it — agents can write the code. Accountability is this decade's problem, and it is not an evidence-<em>collection</em> problem. It's an <em>independence</em> problem. Flow is asking the right question. The answer runs a level deeper than the artifact — and it runs on both sides of the agent.</p>
+<p><img alt="The accountability decade. Two green trusses — independent verification and knowledge provenance — triangulate and anchor the agent, while the old relocated optimization loop lies shattered beneath. Don't stop at &quot;trust the evidence&quot;; true independence runs a level deeper than the artifact, and it must run on both sides of the agent." src="../../../../../assets/images/evidence-11-accountability-decade.webp" /></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
       
-    </div>
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 21, 2026 05:16:27 UTC">July 21, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 21, 2026 05:16:27 UTC">July 21, 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
   </div>
 
           
@@ -6981,10 +6732,12 @@
   
     
       
+        
+      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../start-here/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Start Here">
+          <a href="../../17/the-kcp-ecosystem-a-tour-for-new-arrivals/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The KCP Ecosystem: A Tour for New Arrivals">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -6994,27 +6747,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Start Here
+                The KCP Ecosystem: A Tour for New Arrivals
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../topics/" class="md-footer__link md-footer__link--next" aria-label="Next: Browse by Topic">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Browse by Topic
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
@@ -7074,10 +6811,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

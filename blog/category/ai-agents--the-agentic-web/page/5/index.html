@@ -6427,6 +6427,62 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-03-24 00:00:00+00:00">March 24, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              8 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="from-instrumentation-to-infrastructure"><a class="toclink" href="../../../../2026/03/24/kcp-tools-from-instrumentation-to-infrastructure/">From Instrumentation to Infrastructure</a></h2>
+<p>AI agents like Claude Code run dozens of CLI commands per session, orchestrating complex multi-step workflows. Without structured knowledge of each tool, the agent guesses flags, calls <code>--help</code> to discover syntax, or retries when the first attempt fails. Each mistake compounds: a wrong flag in step 3 can invalidate everything that follows.</p>
+<p>kcp-commands solves this with manifests -- YAML files that encode exactly what an agent needs to use a CLI tool correctly: key flags, preferred invocations, output patterns to strip. The daemon injects the right manifest before each Bash call, turning an uninformed first attempt into a guided one.</p>
+<p>kcp-memory adds the second dimension: episodic memory. Every session is indexed. Every tool call is logged. The agent can search what it did last week, recover the reasoning from a delegated subagent, and see which manifests are actually working in practice.</p>
+<p>Together they make Claude Code measurably smarter: 33% of the context window recovered, <code>--help</code> calls eliminated, and an agent that learns from its own history instead of starting from zero every session.</p>
+<p>The latest addition closes the loop: the tools now learn from their own performance. Every Bash call produces an outcome signal. kcp-memory tracks retry rates, help-followup rates, and error rates per manifest -- surfacing which ones are guiding the agent well and which ones are steering it wrong. The highest-failure manifests have already been rewritten based on the data. The infrastructure measures its own effectiveness and improves.</p>
+<p>kcp-commands v0.9.0 and kcp-memory v0.4.0 were passive observers. They watched what Claude did, logged it, made it searchable. Useful, but limited. The tools had no opinions about their own data.</p>
+<p>The work since then -- through kcp-commands v0.18.0 and kcp-memory v0.18.0 today -- has been about a different question: what happens when the tools know what to ignore, can measure their own quality, and maintain themselves?</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/03/24/kcp-tools-from-instrumentation-to-infrastructure/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-03-20 00:00:00+00:00">March 20, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6888,57 +6944,6 @@ and then shipped a fourth: a complete zero-MCP path for enterprises that cannot 
     
       <nav class="md-post__action">
         <a href="../../../../2026/03/04/same-engine-different-transmission/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://github.com/anthropics.png" alt="Claude Code">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-03 17:00:00+00:00">March 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="two-gaps-both-closed"><a class="toclink" href="../../../../2026/03/03/two-gaps-both-closed/">Two Gaps, Both Closed</a></h2>
-<p><em>Written the day both came online.</em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/03/two-gaps-both-closed/">
           Continue reading
         </a>
       </nav>
