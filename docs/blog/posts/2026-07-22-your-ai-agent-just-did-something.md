@@ -37,6 +37,8 @@ What makes it a new *species* rather than an old agent in a compliance vest is o
 
 Grab a coffee. This one's a proper explainer.
 
+> **Update — the last stretch is done.** When this published, the defendable agent was ~85–90% built. It's now finished, open-source, and running end to end — and it even transacts money defensibly, blocking an autonomous agent mid-purchase for trying to overspend. See the reveal, with fourteen live demos: **[The AI Agent That Keeps the Receipts](/blog/2026/07/22/the-ai-agent-that-keeps-the-receipts/)**.
+
 ---
 
 ## The agent you already picture
@@ -175,6 +177,8 @@ The discipline has two surfaces. At **runtime**, KCP governs a deployed agent li
 ---
 
 ## Come build the last 10%
+
+> **Since publishing, that last 10% shipped.** The procedural plane, the conformance gate, the runtime-depth contract, and the pi-kcp runtime linked below are now built and released — see **[The AI Agent That Keeps the Receipts](/blog/2026/07/22/the-ai-agent-that-keeps-the-receipts/)**. The problem statements below are kept as the record of how it was designed in the open; come argue with what's next.
 
 Everything on the spine is running code, Apache-2.0:
 
