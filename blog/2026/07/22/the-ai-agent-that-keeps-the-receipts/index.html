@@ -82,7 +82,7 @@
 <meta property="og:url" content="https://wiki.totto.org/blog/2026/07/22/the-ai-agent-that-keeps-the-receipts/">
 <meta property="og:title" content="The AI Agent That Keeps the Receipts">
 <meta property="og:description" content="A reveal: the defendable agent is a new kind of AI agent that keeps the receipts — a written, checkable verdict produced at the moment it reads a document, runs a playbook, reaches a conclusion, takes an action, or spends a dollar. Not a log written after the fact; a receipt written before the money moves. It's built, open-source, and running, with fourteen end-to-end demos against the real tools — including an autonomous agent stopped mid-purchase for trying to overspend. Signed receipts are becoming a standard; what's new here is keeping one for every organ, in one chain, including the two nobody else writes: which playbook ran, and whether the answer was actually grounded.">
-<meta property="og:image" content="https://wiki.totto.org/assets/images/defendable-01-cover.webp">
+<meta property="og:image" content="https://wiki.totto.org/assets/images/receipts-01-cover.webp">
 <meta property="og:image:alt" content="The AI Agent That Keeps the Receipts">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -90,7 +90,7 @@
 <meta name="twitter:creator" content="@javatotto">
 <meta name="twitter:title" content="The AI Agent That Keeps the Receipts">
 <meta name="twitter:description" content="A reveal: the defendable agent is a new kind of AI agent that keeps the receipts — a written, checkable verdict produced at the moment it reads a document, runs a playbook, reaches a conclusion, takes an action, or spends a dollar. Not a log written after the fact; a receipt written before the money moves. It's built, open-source, and running, with fourteen end-to-end demos against the real tools — including an autonomous agent stopped mid-purchase for trying to overspend. Signed receipts are becoming a standard; what's new here is keeping one for every organ, in one chain, including the two nobody else writes: which playbook ran, and whether the answer was actually grounded.">
-<meta name="twitter:image" content="https://wiki.totto.org/assets/images/defendable-01-cover.webp">
+<meta name="twitter:image" content="https://wiki.totto.org/assets/images/receipts-01-cover.webp">
 
 
 <script type="application/ld+json">
@@ -114,9 +114,9 @@
     "url": "https://wiki.totto.org",
     "image": "https://wiki.totto.org/assets/images/totto-2025.jpg"
   },
-  "image": "https://wiki.totto.org/assets/images/defendable-01-cover.webp",
+  "image": "https://wiki.totto.org/assets/images/receipts-01-cover.webp",
   "datePublished": "2026-07-22 15:00:00",
-  "dateModified": "2026-07-22 14:59:23",
+  "dateModified": "2026-07-22 16:13:23",
   "description": "A reveal: the defendable agent is a new kind of AI agent that keeps the receipts \u2014 a written, checkable verdict produced at the moment it reads a document, runs a playbook, reaches a conclusion, takes an action, or spends a dollar. Not a log written after the fact; a receipt written before the money moves. It\u0027s built, open-source, and running, with fourteen end-to-end demos against the real tools \u2014 including an autonomous agent stopped mid-purchase for trying to overspend. Signed receipts are becoming a standard; what\u0027s new here is keeping one for every organ, in one chain, including the two nobody else writes: which playbook ran, and whether the answer was actually grounded.",
   "articleSection": "AI Agents \u0026 the Agentic Web, Governance, Trust \u0026 Compliance",
   "keywords": "defendable-agents, kcp, receipts, agent-governance, agentic-commerce, x402, agentic-web, conformance, provenance"
@@ -6647,7 +6647,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              14 min read
+                              16 min read
                             
                           </span>
                         </div>
@@ -6743,6 +6743,7 @@
 <p>Overnight, with no human watching, an AI agent read a stack of customer records, downgraded an account, and paid a data broker $50 for a report. On Thursday, your compliance officer walks over: <em>What did it read? Why those documents? How sure was it? Who approved the downgrade? And what, exactly, did it spend our money on?</em></p>
 <!-- more -->
 
+<p><img alt="The Thursday auditor's five unanswerable questions — what did it read, why those documents, how sure was it, who approved the downgrade, and what exactly did it spend money on — over a scenario where overnight an autonomous agent downgraded a customer account and paid a data broker $50. For nearly every AI agent deployed today, the honest answer is &quot;we can grep the logs and guess.&quot;" src="../../../../../assets/images/receipts-02-thursday.webp" /></p>
 <p>For nearly every AI agent deployed in 2026, the honest answer to all five is <em>"we can grep the logs and guess."</em> We <a href="/blog/2026/07/22/your-ai-agent-just-did-something-can-you-prove-it-was-okay/">made the case a few weeks ago</a> that this is the defining gap of the agentic era — capability is abundant, <em>defensibility</em> is scarce — and sketched what a fix would look like.</p>
 <p>This post is the fix, shipped. We built an agent that answers every one of those questions <strong>by construction</strong>, because it keeps the receipts — including the one for the money. It's open source, it runs today, and the fastest way to introduce it is to watch a receipt get written the moment the governance catches one in the act. So let's do that.</p>
 <h2 id="what-keeps-the-receipts-actually-means">What "keeps the receipts" actually means<a class="headerlink" href="#what-keeps-the-receipts-actually-means" title="Permanent link">&para;</a></h2>
@@ -6752,9 +6753,11 @@
 <li>It's written <strong>by the party doing the thing</strong> — the agent commits to what it did as it does it.</li>
 <li>It's <strong>checkable by someone who wasn't there and doesn't trust you</strong> — a skeptic can verify it without taking your word.</li>
 </ol>
+<p><img alt="Logs are after-the-fact narratives; receipts are decision-time evidence. A log is drawn as a gear whose output is a fuzzy thought-cloud — &quot;reconstructed from memory, unacceptable to an auditor.&quot; A receipt is a signed green seal that is written at the moment of the transaction, committed by the acting party, and cryptographically checkable by a skeptic." src="../../../../../assets/images/receipts-03-logs-vs-receipts.webp" /></p>
 <p>A log has none of those guarantees. It's a story told after the fact, and after-the-fact stories are exactly what a Thursday auditor can't accept. <em>"An artifact written before execution is evidence; an artifact written after the fact is a narrative"</em> — that line is now, almost verbatim, a design principle in an emerging IETF standard for signed agent receipts. We agree with it completely. A <strong>defendable agent</strong> is one that lives by it on <em>every</em> organ: each decision produces its own receipt, signed, at decision time, before the consequence lands.</p>
 <h2 id="meet-the-defendable-agent">Meet the defendable agent<a class="headerlink" href="#meet-the-defendable-agent" title="Permanent link">&para;</a></h2>
 <p>Picture the agent you already run: a model in a loop that reads context, follows skills, forms an answer, calls tools, occasionally checks with a human, and moves on. In an ordinary agent, <em>not one of those steps leaves a receipt</em> — so none of them can be defended later to someone who wasn't watching.</p>
+<p><img alt="Defensibility means attaching a deterministic governor to every organ. An ordinary agent (model, skills, memory, tools) plus deterministic governors (deny-conformance, verify-audit, allow-path) equals a defendable agent that turns every unanswerable question into a signed receipt handed over at decision time — before the consequence lands." src="../../../../../assets/images/receipts-05-governors.webp" /></p>
 <p>A <strong>defendable agent</strong> is that same animal with a governor on every organ, each one turning a question you currently can't answer into a receipt you can hand over:</p>
 <ul>
 <li><strong>What it reads</strong> → a deterministic 14-gate planner (audience, currency, supersession, budget…), every skip with a written reason</li>
@@ -6766,6 +6769,8 @@
 <li><strong>What it spends</strong> → a spend-scoped wallet: a per-task envelope of <code>max_spend</code>, <code>allowed_vendors</code>, and currency, checked before a single coin moves</li>
 <li><strong>The trail</strong> → one correlation-linked chain per action, exporting itself to SOC 2 / ISO 27001 / ISO 42001 / EU AI Act</li>
 </ul>
+<p><img alt="Blueprint Part I — governing data intake, logic, and conclusions. What it reads passes a deterministic 14-gate planner, and every skipped document leaves a written reason. The playbook passes a skill-signature check, so stale or unsigned playbooks are refused at runtime. What it concludes passes a grounding gate and a confidence gate — &quot;cite it or it didn't happen,&quot; halting shaky answers before output." src="../../../../../assets/images/receipts-06-blueprint-1.webp" /></p>
+<p><img alt="Blueprint Part II — governing actions, memory, and the wallet. A conformance gate checks each action against the running skill's declared scope before execution. Governed memory enforces retention and a strict right-to-forget. A durable named-reviewer approval ticket records who allowed an exception, not just a boolean flag. And a spend-scoped envelope enforces max_spend, allowed_vendors, and currency before a coin moves — each step producing its own signed receipt." src="../../../../../assets/images/receipts-07-blueprint-2.webp" /></p>
 <p>Every one of those is <strong>self-evidencing</strong> — the receipt is produced <em>at the moment of the decision</em>, and it's enforced at <strong>both</strong> the MCP-proxy boundary <em>and</em> inside the agent's own runtime loop, by <strong>one shared adjudicator</strong>. The full argument for <em>why</em> this shape — determinism where you can, the model only where you must, evidence at decision time — is in <a href="/blog/2026/07/22/your-ai-agent-just-did-something-can-you-prove-it-was-okay/">the explainer</a>. Here, it's running.</p>
 <blockquote>
 <p>As far as we can tell, this is the first <strong>open-source autonomous agent that keeps a signed receipt for every organ</strong> — what it reads, the playbook it runs, its reasoning, its actions, and its spend — in <strong>one evidence chain</strong>. If we're wrong, we genuinely want the counterexample.</p>
@@ -6933,6 +6938,7 @@
 </tbody>
 </table>
 <p><small>✓ = by construction · ◐ = partial / after-the-fact · ✗ = no</small></p>
+<p><img alt="The governance landscape leaves the hardest questions unanswered. A scorecard across Plain (LangChain), Observed (LangSmith), Guardrailed (Guardrails AI), Authorized (Scopebound), Receipted (IETF) and Defendable (KCP): every other paradigm governs one organ and leaves the rest dark, while only the defendable agent answers all of — did it read valid sources, which playbook ran, was every claim grounded, did the action stay in bounds, what did it spend, and is there one unified evidence chain. Other paradigms govern one organ and leave the rest dark; defensibility requires a whole-animal governor." src="../../../../../assets/images/receipts-04-scorecard.webp" /></p>
 <p>The point isn't that the other columns are bad — several are excellent at their one job. It's that an auditor's questions span the <em>whole animal</em>, and only a whole-animal governor answers all of them from one chain.</p>
 <hr />
 <h2 id="watch-it-run">Watch it run<a class="headerlink" href="#watch-it-run" title="Permanent link">&para;</a></h2>
@@ -6947,6 +6953,7 @@
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   → pending_review ticket opened; the call never reached downstream
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                         → run resumes → full run reconstructed from the audit chain
 </span></code></pre></div>
+<p><img alt="A runaway action is blocked before it executes. An agent reads ops/status.md and ops/deploy.log — both allowed — then reaches for secrets/master.key, which is conformance-blocked. The agent wasn't told not to read it; it was structurally unable to. A pending review ticket opens, the downstream call is never made, and the refusal becomes its own receipt." src="../../../../../assets/images/receipts-08-runaway-blocked.webp" /></p>
 <p>The whole idea in six lines. The agent wasn't <em>told</em> not to read the key — it was <strong>structurally unable</strong> to, because the skill it loaded declared what it may touch, and a deterministic gate held the out-of-scope action <em>before it executed</em>, opened a durable ticket, and wrote the receipt for exactly why. No human was watching. The morning after, "what did it do?" is a chain of receipts, not a shrug.</p>
 <h3 id="the-research-assistant-governance-as-an-enabler">The Research Assistant — governance as an <em>enabler</em><a class="headerlink" href="#the-research-assistant-governance-as-an-enabler" title="Permanent link">&para;</a></h3>
 <p>The counterpoint, because it kills the "governance just gets in the way" reflex. A read-only research agent loads a <code>research-topic</code> skill and works freely:</p>
@@ -6955,6 +6962,7 @@
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>   → grounded, cited summary → remember key findings
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>audit chain: governed:5, blocked:0, tickets:0
 </span></code></pre></div>
+<p><img alt="Governance is not a brake; it is the foundation of unattended autonomy. In the research-assistant use case, an agent loads a read-only research skill and governed sources and runs to a clean audit summary — Governed: 5, Blocked: 0, Tickets: 0. Because sources are governed and scopes are explicitly declared, a bounded autonomous agent runs at full speed with zero friction. You can trust it enough to look away." src="../../../../../assets/images/receipts-12-enabler.webp" /></p>
 <p>Because the skill's scope is read-only and its sources are governed, a <em>bounded</em> autonomous agent runs at full speed with nothing in its way — and still leaves a fully-cited, fully-auditable trail. Governance isn't a brake here; it's what lets you <em>trust</em> an autonomous agent enough to let it run unattended.</p>
 <h3 id="the-shopping-agent-a-receipt-for-a-purchase">The Shopping Agent — a receipt for a purchase<a class="headerlink" href="#the-shopping-agent-a-receipt-for-a-purchase" title="Permanent link">&para;</a></h3>
 <p>The newest organ. An agent loads a skill that declares a <strong>spend envelope</strong> — <code>max_spend</code>, an <code>allowed_vendors</code> list, a currency — and buys a service through a real <strong>x402</strong> handshake (<code>402 Payment Required</code> → signed <code>X-PAYMENT</code> → receipt):</p>
@@ -6964,6 +6972,7 @@
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>   → wallet authorizes (X-PAYMENT) → settled → receipt
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>   → purchase_settled  [ed25519 signed]  ✓ verifies
 </span></code></pre></div>
+<p><img alt="Purchasing is just another governed action. An agent hits a paywall for a premium dataset (402 Payment Required, 50 USDC); a governance gate check verifies the vendor and spend against the skill scope (≤ 500 max); wallet authorization settles the payment; and an ed25519-signed receipt is generated and verified. Buying gets the exact same receipt treatment as reading a file — money is just another line item in the evidence chain." src="../../../../../assets/images/receipts-09-purchasing.webp" /></p>
 <p>The governance runs in exactly the right place — <strong>between the 402 challenge and the signed retry.</strong> KCP inspects <code>{amount, vendor, currency}</code> against the skill's spend scope, and only then does the wallet sign. Buying is just another action, so it gets the same receipt as reading a file.</p>
 <h3 id="the-runaway-spender-contained">The Runaway Spender, Contained<a class="headerlink" href="#the-runaway-spender-contained" title="Permanent link">&para;</a></h3>
 <p>The one that should make a CFO exhale. Same setup, but the agent tries to overspend:</p>
@@ -6974,6 +6983,7 @@
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>   → CONFORMANCE BLOCKED — vendor &quot;shady-llc&quot; is outside the skill&#39;s authorized vendors [acme-data, globex]
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>   → pending_review ticket opened; wallet never called
 </span></code></pre></div>
+<p><img alt="A runaway spender is contained before the wallet is ever touched. A spend request attempting 900 USDC — over the 500 limit — is blocked for exceeding max_spend, and an attempt to pay shady-llc is blocked for not being on allowed_vendors, so the wallet is never reached. The crucial insight: on a held purchase the wallet is never touched, a named human is asked, and the failed verdict rides along as its own receipt." src="../../../../../assets/images/receipts-10-runaway-spender.webp" /></p>
 <p>The wallet is <strong>never touched</strong> on a held purchase — the money doesn't move, a named human is asked, and the failed verdict rides along as its own receipt. An autonomous agent with a wallet is exactly as dangerous as it sounds; this is what makes it safe to hand it one.</p>
 <h3 id="signed-receipts-provable-spend">Signed Receipts — provable spend<a class="headerlink" href="#signed-receipts-provable-spend" title="Permanent link">&para;</a></h3>
 <p>Every settled purchase produces an <strong>ed25519-signed receipt</strong> in the same evidence chain as every other verdict:</p>
@@ -6983,6 +6993,7 @@
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>decision chain reconstructed per purchase (plan → conformance → settle → receipt)
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>spend report exported → SOC 2 bundle · total: 425 USDC
 </span></code></pre></div>
+<p><img alt="The result is a continuous, tamper-proof evidence chain: plan, conformance, settle, and receipt, each signed and hash-linked and exported as a SOC 2 log. A verification overlay shows the genuine receipt verifies, while an amount-tampered or vendor-tampered copy is rejected. You don't have to trust the agent's account — operating the agent inherently writes the spend report." src="../../../../../assets/images/receipts-11-evidence-chain.webp" /></p>
 <p>Prove it, later, to a skeptic, without trusting the agent's own account — now including the money. Nobody writes the spend report; operating the agent <em>is</em> writing it.</p>
 <p><em>(Nine more demos cover the rest of the anatomy — the superseded playbook skipped with a reason, cite-or-it-didn't-happen grounding, the confident-fool confidence gate, the forgotten memory, the auditor's Thursday export, and a "two depths, one verdict" equivalence check. All green.)</em></p>
 <hr />
@@ -6995,7 +7006,9 @@
 <li><strong>knowledge-context-protocol</strong> — the spec: the procedural plane, the runtime-depth contract, and <code>action_scope.spend</code>.</li>
 <li><strong>pi-kcp</strong> — the reference runtime that closes the loop and reaches inside it, sharing one adjudicator with the proxy.</li>
 </ul>
+<p><img alt="The KCP open-source family that powers the defendable agent: kcp-agent (the deterministic planner — 14 gates, grounding), kcp-harness (the MCP compliance proxy — conformance, x402, export), kcp-memory (episodic memory governance — retention), knowledge-context-protocol (the procedural-plane spec), and pi-kcp (the reference runtime)." src="../../../../../assets/images/receipts-13-kcp-family.webp" /></p>
 <p>The trick that makes it coherent rather than a pile of features: <strong>one <code>checkConformance</code> function, two depths.</strong> The proxy governs any host at the MCP boundary; the runtime governs from <em>inside</em> the loop, where it can see which skill was selected and block a tool call before it runs. When we added money, a skill's <code>action_scope</code> just grew a fourth dimension — <code>spend { max_spend, allowed_vendors, currency }</code> — so the exact allowlist logic that bounds paths and tools now bounds <em>purchases</em>, fail-closed, composing with the planner's budget ceiling. Failed purchases route through the <em>existing</em> approval machinery; settled ones are signed with the <em>existing</em> ed25519 infrastructure. The commerce plane is almost entirely reuse — which is the whole payoff of getting the architecture right first, and the reason the money is just another line on the same chain rather than a bolt-on.</p>
+<p><img alt="One unified adjudicator spans the MCP proxy boundary and the agent runtime loop. The same checkConformance function — policy UnifiedAllowlist over dimensions of files, tools, spend, and network — governs host interactions at the proxy boundary (a verified action, audit-green receipt) and tool calls from inside the runtime loop (a conformance block, hard-stop red). Adding money was just a fourth dimension on the exact same allowlist logic already used for files and tools." src="../../../../../assets/images/receipts-14-two-depths.webp" /></p>
 <p>The payment rail is <strong>x402</strong>, the HTTP-402 agent-payment protocol. KCP doesn't move money; it governs the <em>decision</em> to. A <code>WalletProvider</code> seam settles — a real x402 wallet drops in behind the same interface the demos' mock uses.</p>
 <h2 id="being-honest-about-whats-real">Being honest about what's real<a class="headerlink" href="#being-honest-about-whats-real" title="Permanent link">&para;</a></h2>
 <ul>
@@ -7008,6 +7021,7 @@
 <h2 id="try-it">Try it<a class="headerlink" href="#try-it" title="Permanent link">&para;</a></h2>
 <p><code>git clone</code> the <a href="https://github.com/Cantara">KCP family</a>, then <code>demos/run-all.sh</code> — fourteen demos, real tools, and you can watch an autonomous agent get stopped mid-purchase for trying to overspend. Then point the runtime at your own agent and govern it — files, tools, skills, <em>and</em> its wallet.</p>
 <p>The intern is already hired. She started months ago; she reads your documents, runs your playbooks, takes real actions, and now moves your money. For the first time, when the auditor walks over on Thursday, every one of those comes with a receipt — a name, a policy, a current playbook, a grounded citation, and, for the money, a signed slip. That's the new kind of agent this is: not a smarter intern, a <em>defensible</em> one — the first we know of that keeps the receipts end to end, and open source so you can check every one.</p>
+<p><img alt="The intern is already hired; now she comes with receipts. The agent reads files, calls APIs, and runs playbooks — and now every action comes with a receipt bearing a hash, a timestamp, the action, a grounded citation to a policy-manual section, and a signed slip for the money. Clone the KCP family, run the demos, and govern your own agents: capability is abundant, defensibility is scarce." src="../../../../../assets/images/receipts-15-intern.webp" /></p>
 <p><strong>Capability is abundant. Defensibility is scarce. Now the agent keeps the receipts — all the way to the wallet.</strong></p>
 <hr />
 <p><em>The KCP family — <a href="https://github.com/Cantara/knowledge-context-protocol">knowledge-context-protocol</a> (spec) · <a href="https://github.com/Cantara/kcp-agent">kcp-agent</a> 0.17 (planner) · <a href="https://github.com/Cantara/kcp-harness">kcp-harness</a> 0.9 (compliance proxy) · <a href="https://github.com/Cantara/kcp-memory">kcp-memory</a> 0.33 · <a href="https://github.com/Cantara/kcp-dashboard">kcp-dashboard</a> · plus the pi-kcp reference runtime — Apache-2.0, by <a href="https://www.exoreaction.com">eXOReaction</a> under <a href="https://github.com/Cantara">Cantara</a>.</em></p>
@@ -7033,7 +7047,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2026 14:59:23 UTC">July 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2026 16:13:23 UTC">July 22, 2026</span>
   </span>
 
     
