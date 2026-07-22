@@ -18,6 +18,8 @@
         <link rel="prev" href="../../21/evidence-isnt-enough-the-independence-problem-in-agentic-development/">
       
       
+        <link rel="next" href="../the-ai-agent-that-keeps-the-receipts/">
+      
       
         
       
@@ -116,7 +118,7 @@
   },
   "image": "https://wiki.totto.org/assets/images/defendable-01-cover.webp",
   "datePublished": "2026-07-22 09:00:00",
-  "dateModified": "2026-07-22 08:01:36",
+  "dateModified": "2026-07-22 15:03:26",
   "description": "You already know what an AI agent is: a model in a loop that reads context, follows skills, forms an answer, calls tools, checks with a human, and leaves a trail. Here\u0027s the claim \u2014 we now know how to build a genuinely new kind of agent, one that can answer for every one of those parts by construction, and the architecture is roughly 85\u201390% built. A defendable agent is self-evidencing: every organ emits a written, checkable verdict at the moment it decides. This is the complete picture \u2014 the KCP planner, grounding, and confidence and approval gates that are live today, plus the procedural plane, the conformance gate, and the pi-kcp reference runtime that finish it \u2014 with an honest account of the last stretch.",
   "articleSection": "AI Agents \u0026 the Agentic Web, Governance, Trust \u0026 Compliance",
   "keywords": "defendable-agents, kcp, agentic-development, governance, eu-ai-act, audit, provenance, human-in-the-loop"
@@ -6675,7 +6677,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              15 min read
+                              16 min read
                             
                           </span>
                         </div>
@@ -6769,6 +6771,9 @@
 <p>This post is about the fix, and the fix is not a policy binder bolted onto an ordinary agent. It's a <strong>different kind of agent</strong> — one that can answer every one of those questions <em>by construction</em> — and the surprising part is how close it is. I'll defend a specific claim: <strong>the architecture of a defendable agent is roughly 85–90% built, mostly as running code</strong>, with a clearly-named last stretch and the reference runtime that ties it together.</p>
 <p>What makes it a new <em>species</em> rather than an old agent in a compliance vest is one property: it is <strong>self-evidencing.</strong> Every part of it emits a written, checkable verdict <em>at the moment it decides</em> — not a log you reconstruct afterward, but a defense produced as a side effect of simply operating. No agent you run today does that. And to see how it's possible, we don't need a new abstraction — just a careful look at the thing you already picture when you hear the word "agent."</p>
 <p>Grab a coffee. This one's a proper explainer.</p>
+<blockquote>
+<p><strong>Update — the last stretch is done.</strong> When this published, the defendable agent was ~85–90% built. It's now finished, open-source, and running end to end — and it even transacts money defensibly, blocking an autonomous agent mid-purchase for trying to overspend. See the reveal, with fourteen live demos: <strong><a href="/blog/2026/07/22/the-ai-agent-that-keeps-the-receipts/">The AI Agent That Keeps the Receipts</a></strong>.</p>
+</blockquote>
 <hr />
 <h2 id="the-agent-you-already-picture">The agent you already picture<a class="headerlink" href="#the-agent-you-already-picture" title="Permanent link">&para;</a></h2>
 <p>Close your eyes and picture an agent working. You already have the model:</p>
@@ -6893,6 +6898,9 @@
 <p>The discipline has two surfaces. At <strong>runtime</strong>, KCP governs a deployed agent like Nora. At <strong>development time</strong>, the same four laws govern the agents that <em>build the software</em> — I run a rig I call <strong>ExoCortex</strong> across real client codebases: cross-model adversarial review, a verify-gate, end-to-end tests as the behavior truth, provenance on everything read. (More in <a href="/blog/2026/07/21/evidence-isnt-enough-the-independence-problem-in-agentic-development/">"Evidence isn't enough: the independence problem in agentic development"</a>.) And the skills organ? I hit it the hard way: ExoCortex already runs 561 skills as a <strong>read-only mirror of <code>origin/dev</code> — never edited in place, synced only through a reviewed PR.</strong> A governed skill corpus with provenance and versioning, <em>built by hand because the tooling didn't offer it yet.</em> Living proof the last stretch is real, and buildable.</p>
 <hr />
 <h2 id="come-build-the-last-10">Come build the last 10%<a class="headerlink" href="#come-build-the-last-10" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Since publishing, that last 10% shipped.</strong> The procedural plane, the conformance gate, the runtime-depth contract, and the pi-kcp runtime linked below are now built and released — see <strong><a href="/blog/2026/07/22/the-ai-agent-that-keeps-the-receipts/">The AI Agent That Keeps the Receipts</a></strong>. The problem statements below are kept as the record of how it was designed in the open; come argue with what's next.</p>
+</blockquote>
 <p>Everything on the spine is running code, Apache-2.0:</p>
 <ul>
 <li><strong>Play in the browser</strong> (no install): the <a href="https://cantara.github.io/kcp-harness/demo-live-dashboard.html">live governance dashboard demo</a> — press <strong>👤 Human-approval hold</strong> and watch a ticket get requested, resolved by a named reviewer, and honored. Or the <a href="https://cantara.github.io/kcp-dashboard/">agent thought-graph</a>.</li>
@@ -6928,7 +6936,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2026 08:01:36 UTC">July 22, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 22, 2026 15:03:26 UTC">July 22, 2026</span>
   </span>
 
     
@@ -6994,6 +7002,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../the-ai-agent-that-keeps-the-receipts/" class="md-footer__link md-footer__link--next" aria-label="Next: The AI Agent That Keeps the Receipts">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                The AI Agent That Keeps the Receipts
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     

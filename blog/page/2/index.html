@@ -6415,6 +6415,63 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-07-12 09:00:00+00:00">July 12, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              6 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="175-posts-no-map"><a class="toclink" href="../../2026/07/12/175-posts-no-map/">175 Posts, No Map</a></h2>
+<p>I have spent six months writing about one idea: <strong>AI made creating easy but understanding
+harder.</strong> Output outruns navigation. Every jump in creation speed eventually produces a
+library with no catalog.</p>
+<p>Last week I looked at this site and laughed. One hundred and seventy-five posts. Six series.
+Tens of thousands of words about knowledge infrastructure — organized as a reverse-chronological
+feed, which is to say, organized by the only dimension nobody searches by. The site <em>about</em> the
+comprehension bottleneck had hit its own comprehension bottleneck. If you arrived here from a
+search result, your options were the newest post and archaeology.</p>
+<p>So the past week was a renovation — done the way the posts themselves argue it should be done.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/07/12/175-posts-no-map/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-07-11 09:00:00+00:00">July 11, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6815,7 +6872,7 @@
 <p>Yesterday's post ended with an architectural claim: the model belongs at the edge, on a leash, and <a href="../../2026/07/05/the-vibes-based-agent-era-deserves-to-end/">the vibes-based agent era deserves to end</a>. The obvious objection arrived on schedule: <em>"Nice. But I already have an agent. I'm not rewriting it around your planner."</em></p>
 <p>Good. You don't have to.</p>
 <p><strong>kcp-agent 0.3.0</strong> ships the answer as one command:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>kcp<span class="w"> </span>--<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>kcp-agent<span class="w"> </span>mcp
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>kcp<span class="w"> </span>--<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>kcp-agent<span class="w"> </span>mcp
 </span></code></pre></div>
 <p>That line hands <em>any</em> MCP-capable agent — Claude Code, an IDE, your homegrown orchestrator, somebody else's swarm — a deterministic knowledge navigator as a set of tools. The borrowing agent stays exactly as probabilistic as it was this morning. But every knowledge decision it delegates across that boundary comes back planned, gated, budgeted, and reproducible.</p>
 <p>Your agent doesn't have to become deterministic. <strong>It just has to ask someone who is.</strong></p>
@@ -6882,58 +6939,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/07/05/the-vibes-based-agent-era-deserves-to-end/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-05 00:00:00+00:00">July 5, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              11 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="selling-news-to-robots"><a class="toclink" href="../../2026/07/05/selling-news-to-robots/">Selling News to Robots</a></h2>
-<p>Yesterday's <a href="../../2026/07/04/one-agents-journey-through-the-whole-protocol/">tour of the whole protocol</a> ended with a loose thread: <em>"A knowledge economy ends with a payment — and RFC-0005 is still sitting at the RFC stage, waiting."</em></p>
-<p>It didn't wait long. v0.25 landed on main the same day: <strong>Economic Metadata</strong>, the full promotion of RFC-0005. <code>payment.methods[]</code> — free, x402 micropayments, metered billing, subscriptions — plus per-tier <code>rate_limits</code>, all at manifest <em>and</em> unit level. Nothing of RFC-0005 remains RFC-only.</p>
-<p>Which means something new is possible on the agentic web this weekend that wasn't possible last weekend: you can open a shop. So let's open one — a newswire that sells to agents — and then play the customer: an agent with a funded wallet, a briefing to write, and a budget. Step by step, both sides of the counter.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/05/selling-news-to-robots/">
           Continue reading
         </a>
       </nav>
