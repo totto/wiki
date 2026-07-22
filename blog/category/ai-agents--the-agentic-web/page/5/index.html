@@ -6449,6 +6449,58 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
+    <h2 id="the-manifest-quality-feedback-loop"><a class="toclink" href="../../../../2026/03/24/kcp-manifest-quality-feedback-loop/">The Manifest Quality Feedback Loop</a></h2>
+<p>kcp-commands ships 291 manifests. Each one is a bet: that the flags we chose are the ones the agent will actually need, that the output filter is tight enough, that the preferred invocations match real usage. Some of those bets pay off. Some do not.</p>
+<p>Until now there was no way to know which. A manifest for <code>kubectl apply</code> could be steering the agent into the wrong flags on every invocation, and we would never see it unless we happened to watch the session in real time. At 291 manifests and hundreds of tool calls per day, that does not scale.</p>
+<p>Today we are shipping two small releases that close that gap: <strong>kcp-commands v0.15.0</strong> and <strong>kcp-memory v0.7.0</strong>. Together they create a feedback loop from agent behaviour back to manifest quality -- not by guessing, but by measuring what actually happened.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/03/24/kcp-manifest-quality-feedback-loop/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-03-24 00:00:00+00:00">March 24, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              8 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
     <h2 id="from-instrumentation-to-infrastructure"><a class="toclink" href="../../../../2026/03/24/kcp-tools-from-instrumentation-to-infrastructure/">From Instrumentation to Infrastructure</a></h2>
 <p>AI agents like Claude Code run dozens of CLI commands per session, orchestrating complex multi-step workflows. Without structured knowledge of each tool, the agent guesses flags, calls <code>--help</code> to discover syntax, or retries when the first attempt fails. Each mistake compounds: a wrong flag in step 3 can invalidate everything that follows.</p>
 <p>kcp-commands solves this with manifests -- YAML files that encode exactly what an agent needs to use a CLI tool correctly: key flags, preferred invocations, output patterns to strip. The daemon injects the right manifest before each Bash call, turning an uninformed first attempt into a guided one.</p>
@@ -6892,58 +6944,6 @@ and then shipped a fourth: a complete zero-MCP path for enterprises that cannot 
     
       <nav class="md-post__action">
         <a href="../../../../2026/03/06/kcp-mcp-v0100-github-copilot-gets-kcp--including-mcp-locked-enterprises/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-04 00:00:00+00:00">March 4, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              11 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="same-engine-different-transmission"><a class="toclink" href="../../../../2026/03/04/same-engine-different-transmission/">Same Engine, Different Transmission</a></h2>
-<p>Most AI productivity discussion asks the wrong question. "How much faster?" assumes the difference is speed. It is not. Two developers using the same model, the same IDE integration, the same subscription tier -- one of them starts every session cold and the other does not. The gap between them is not the engine. It is the transmission. But the transmission alone is not the full story either. There is a third variable: how the driver was trained.</p>
-<p><img alt="Same Engine, Different Transmission: The 4-Gear AI Memory Architecture -- standard 1-gear setup vs four gears, honest productivity numbers" src="/assets/images/blog/same-engine-different-transmission-overview.webp" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/04/same-engine-different-transmission/">
           Continue reading
         </a>
       </nav>

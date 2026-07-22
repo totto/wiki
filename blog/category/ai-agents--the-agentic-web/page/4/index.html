@@ -6427,6 +6427,58 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-05-10 00:00:00+00:00">May 10, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              16 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-harness-before-the-service"><a class="toclink" href="../../../../2026/05/10/the-harness-before-the-service/">The Harness Before the Service</a></h2>
+<p>In May 2026, Anthropic shipped Managed Agents. I read through the docs, the API spec, the beta header (<code>managed-agents-2026-04-01</code>), and felt something I can only describe as architectural recognition.</p>
+<p>Not surprise. Recognition. The way you recognize your own design decisions in someone else's implementation — because the problem space, if you take it seriously, produces the same structural answers.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/05/10/the-harness-before-the-service/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-05-08 00:00:00+00:00">May 8, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6880,58 +6932,6 @@
     
       <nav class="md-post__action">
         <a href="../../../../2026/03/25/every-agent-that-queries-a-knowledge-manifest-reinvents-filtering/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-24 00:00:00+00:00">March 24, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-manifest-quality-feedback-loop"><a class="toclink" href="../../../../2026/03/24/kcp-manifest-quality-feedback-loop/">The Manifest Quality Feedback Loop</a></h2>
-<p>kcp-commands ships 291 manifests. Each one is a bet: that the flags we chose are the ones the agent will actually need, that the output filter is tight enough, that the preferred invocations match real usage. Some of those bets pay off. Some do not.</p>
-<p>Until now there was no way to know which. A manifest for <code>kubectl apply</code> could be steering the agent into the wrong flags on every invocation, and we would never see it unless we happened to watch the session in real time. At 291 manifests and hundreds of tool calls per day, that does not scale.</p>
-<p>Today we are shipping two small releases that close that gap: <strong>kcp-commands v0.15.0</strong> and <strong>kcp-memory v0.7.0</strong>. Together they create a feedback loop from agent behaviour back to manifest quality -- not by guessing, but by measuring what actually happened.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/24/kcp-manifest-quality-feedback-loop/">
           Continue reading
         </a>
       </nav>
