@@ -6429,6 +6429,59 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-07-23 00:00:00+00:00">July 23, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="./" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              7 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-agent-that-knows-what-it-knows"><a class="toclink" href="../../2026/07/23/the-agent-that-knows-what-it-knows/">The Agent That Knows What It Knows</a></h2>
+<p><img alt="The Agent That Knows What It Knows — moving AI procedural memory from flat grep to a living protocol" src="/assets/images/blog/agent-knows-what-it-knows/title-hero.png" /></p>
+<p>Here is a confession. Our AI development rig — the one we call ExoCortex — has <strong>644 skills</strong>: little packets of procedural memory that tell it how we deploy, how we review, how a specific client's CI is wired, how to publish to this very blog. And until this week, the way it <em>found</em> the right one, out of 644, was <strong>grep</strong>.</p>
+<p>Keyword match against a flat index. No ranking. No freshness. When a query touched a common word, it got back a pile of candidates and had to read through them to guess. We only really noticed the cost the day we discovered that one of the skills it leans on daily had sat <strong>three weeks stale</strong> — describing a system four pull-requests out of date — and nothing, anywhere, had flagged it.</p>
+<p>An agent that can't tell which of its own memories is rotting is not, in any deep sense, remembering. It's hoarding.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/07/23/the-agent-that-knows-what-it-knows/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-07-22 15:00:00+00:00">July 22, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6876,60 +6929,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/07/14/getting-into-the-phone-book-of-the-agentic-internet-took-an-afternoon-heres-why/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-11 09:00:00+00:00">July 11, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="./" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              15 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="three-memory-schemes-for-agents-that-ship"><a class="toclink" href="../../2026/07/11/three-memory-schemes-for-agents-that-ship/">Three Memory Schemes for Agents That Ship</a></h2>
-<p><img alt="Beyond the vector store: three memory schemes for production AI agents — moving from approximated embedding blobs to verifiable knowledge coordinates, covering session memory (kcp-memory), semantic memory (Synthesis), and claim memory (kcp-agent), with the convergence principle: memory is a coordinate, not a blob" src="../../../assets/images/three-memory-00-memory-is-a-coordinate.webp" /></p>
-<p>Every agent framework ships a memory module. Almost all of them work the same way: embed the interaction, store the vector, retrieve by similarity. It works for demos. It does not survive contact with production — where "the agent remembered the wrong thing" is a bug report, not a philosophy seminar.</p>
-<p>We have been shipping agents for six months across three codebases — <a href="https://github.com/Cantara/kcp-memory">kcp-memory</a> (a session-indexing daemon), <a href="https://github.com/exoreaction/Synthesis">Synthesis</a> (a codebase-aware semantic index and MCP server), and <a href="https://github.com/Cantara/kcp-agent">kcp-agent</a> (a deterministic knowledge navigator). Each one needed memory. Each one built it independently, for different reasons, with different schemas. None of them use embeddings.</p>
-<p>That is not a coincidence. It is a pattern worth examining.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/11/three-memory-schemes-for-agents-that-ship/">
           Continue reading
         </a>
       </nav>
