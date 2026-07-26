@@ -1,7 +1,7 @@
 ---
 description: "The worst property of AI tooling is not that it is sometimes wrong — it is that wrong and right arrive in the same voice. That is not a model limitation. It is a fail-open default, and it can be designed away. Seven Synthesis releases, one rule, traced through the evidence."
 date: 2026-07-13T09:00:00
-draft: false
+draft: true
 categories:
   - Knowledge Infrastructure
 tags:
