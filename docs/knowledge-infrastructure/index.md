@@ -78,7 +78,7 @@ This page maps the body of work that emerged from that problem. It spans five co
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-harness)
 
--   :material-pi: **pi-kcp** · v0.3.0
+-   :material-pi: **pi-kcp** · v0.3.1
 
     ---
 

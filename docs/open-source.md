@@ -127,7 +127,7 @@ Deterministic knowledge governance for any AI agent. An MCP compliance proxy tha
 ### pi-kcp
 
 **Repository:** [github.com/Cantara/pi-kcp](https://github.com/Cantara/pi-kcp)
-**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.3.0
+**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.3.1
 
 KCP agent proficiency and ergonomics for the [Pi coding agent](https://github.com/earendil-works/pi) harness. Human-facing `/kcp` commands (plan, validate, recall, health) and agent-facing skills on **stock Pi** — no MCP client required — with kcp-agent invoked as a CLI for deterministic plans and kcp-memory over HTTP for episodic recall. Its runtime-depth milestone added enforcement: a skill declared in `knowledge.yaml` with an `action_scope` becomes enforced authority — native tool calls outside the declared tools/paths/capabilities are blocked by the same deterministic decision the kcp-harness proxy makes, and every governed turn carries one correlation id. Code intelligence (Synthesis or any other provider) stays behind Pi's MCP configuration as an optional, substitutable backend.
 
