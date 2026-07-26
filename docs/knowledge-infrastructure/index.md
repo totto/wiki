@@ -60,7 +60,7 @@ This page maps the body of work that emerged from that problem. It spans five co
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-memory)
 
--   :material-compass-outline: **kcp-agent** · v0.19.0
+-   :material-compass-outline: **kcp-agent** · v0.19.1
 
     ---
 
@@ -70,7 +70,7 @@ This page maps the body of work that emerged from that problem. It spans five co
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-agent)
 
--   :material-shield-check-outline: **kcp-harness** · v0.10.1
+-   :material-shield-check-outline: **kcp-harness** · v0.10.3
 
     ---
 
@@ -86,7 +86,7 @@ This page maps the body of work that emerged from that problem. It spans five co
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-skill)
 
--   :material-pi: **pi-kcp** · v0.3.1
+-   :material-pi: **pi-kcp** · v0.3.2
 
     ---
 
