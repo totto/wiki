@@ -118,7 +118,7 @@ See the [Defendable Agents](topics/defendable-agents/index.md) field guide for t
 ### kcp-harness
 
 **Repository:** [github.com/Cantara/kcp-harness](https://github.com/Cantara/kcp-harness)
-**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.10.0
+**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.10.1
 
 Deterministic knowledge governance for any AI agent. An MCP compliance proxy that sits between an agent and its tools, routing every knowledge request through a deterministic multi-gate governance cascade — fail-closed policy, append-only audit trail, budget ledger, and temporal pinning — and emitting the decision traces, audit logs, and budget records that map onto SOC 2 / ISO 27001 / GDPR controls. No model involvement in the governed decision. Recent releases extend governance from knowledge reads to **actions**: human approval workflows for held requests, temporal watch (re-decide a standing plan when time alone changes the outcome), action conformance checking, resolution signatures, and an x402 payment wallet under hard budget ceilings.
 
@@ -127,7 +127,7 @@ Deterministic knowledge governance for any AI agent. An MCP compliance proxy tha
 ### pi-kcp
 
 **Repository:** [github.com/Cantara/pi-kcp](https://github.com/Cantara/pi-kcp)
-**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.2.0
+**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.3.0
 
 KCP agent proficiency and ergonomics for the [Pi coding agent](https://github.com/earendil-works/pi) harness. Human-facing `/kcp` commands (plan, validate, recall, health) and agent-facing skills on **stock Pi** — no MCP client required — with kcp-agent invoked as a CLI for deterministic plans and kcp-memory over HTTP for episodic recall. Its runtime-depth milestone added enforcement: a skill declared in `knowledge.yaml` with an `action_scope` becomes enforced authority — native tool calls outside the declared tools/paths/capabilities are blocked by the same deterministic decision the kcp-harness proxy makes, and every governed turn carries one correlation id. Code intelligence (Synthesis or any other provider) stays behind Pi's MCP configuration as an optional, substitutable backend.
 
