@@ -102,9 +102,9 @@ java -jar ~/.kcp/kcp-memory-daemon.jar mcp
 ### kcp-agent
 
 **Repository:** [github.com/Cantara/kcp-agent](https://github.com/Cantara/kcp-agent)
-**Language:** TypeScript (npm) + native binaries | **License:** Apache 2.0 | **Current version:** v0.11.0
+**Language:** TypeScript (npm) + native binaries | **License:** Apache 2.0 | **Current version:** v0.18.0
 
-The reference agent for KCP — a **deterministic, fail-closed navigation planner** plus optional LLM synthesis. It reads a `knowledge.yaml`, scores and gates units against declared trust, freshness, audience, and budget, and produces an inspectable plan *before* any content is loaded or any model is called. Determinism at the core, the model at the edge. Ships as an MCP server (`kcp_plan`, `kcp_load`, `kcp_validate`) and as self-contained native binaries.
+The reference agent for KCP — a **deterministic, fail-closed navigation planner** plus optional LLM synthesis. It reads a `knowledge.yaml`, scores and gates units against declared trust, freshness, audience, and budget, and produces an inspectable plan *before* any content is loaded or any model is called. Determinism at the core, the model at the edge. Since v0.11 the surface has grown into the full gate triad — *load* (`plan`), *assert* (`ground`), *act* (`assess`) — plus per-unit decision traces (`--trace`), versioned plan JSON with `diff` and `replay`, episodic memory (`remember`/`recall`), serving-endpoint discovery, and 13 published conformance vectors other implementations can test against. Ships as an MCP server (`kcp_plan`, `kcp_load`, `kcp_validate`) and as self-contained native binaries.
 
 ```bash
 npx kcp-agent plan "your task" --manifest https://example.com/knowledge.yaml
@@ -118,9 +118,20 @@ See the [Defendable Agents](topics/defendable-agents/index.md) field guide for t
 ### kcp-harness
 
 **Repository:** [github.com/Cantara/kcp-harness](https://github.com/Cantara/kcp-harness)
-**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.4.0
+**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.10.0
 
-Deterministic knowledge governance for any AI agent. An MCP compliance proxy that sits between an agent and its tools, routing every knowledge request through a deterministic multi-gate governance cascade — fail-closed policy, append-only audit trail, budget ceilings, and temporal pinning — and emitting the decision traces, audit logs, and budget records that map onto SOC 2 / ISO 27001 / GDPR controls. No model involvement in the governed decision.
+Deterministic knowledge governance for any AI agent. An MCP compliance proxy that sits between an agent and its tools, routing every knowledge request through a deterministic multi-gate governance cascade — fail-closed policy, append-only audit trail, budget ledger, and temporal pinning — and emitting the decision traces, audit logs, and budget records that map onto SOC 2 / ISO 27001 / GDPR controls. No model involvement in the governed decision. Recent releases extend governance from knowledge reads to **actions**: human approval workflows for held requests, temporal watch (re-decide a standing plan when time alone changes the outcome), action conformance checking, resolution signatures, and an x402 payment wallet under hard budget ceilings.
+
+---
+
+### pi-kcp
+
+**Repository:** [github.com/Cantara/pi-kcp](https://github.com/Cantara/pi-kcp)
+**Language:** TypeScript | **License:** Apache 2.0 | **Current version:** v0.2.0
+
+KCP agent proficiency and ergonomics for the [Pi coding agent](https://github.com/earendil-works/pi) harness. Human-facing `/kcp` commands (plan, validate, recall, health) and agent-facing skills on **stock Pi** — no MCP client required — with kcp-agent invoked as a CLI for deterministic plans and kcp-memory over HTTP for episodic recall. Its runtime-depth milestone added enforcement: a skill declared in `knowledge.yaml` with an `action_scope` becomes enforced authority — native tool calls outside the declared tools/paths/capabilities are blocked by the same deterministic decision the kcp-harness proxy makes, and every governed turn carries one correlation id. Code intelligence (Synthesis or any other provider) stays behind Pi's MCP configuration as an optional, substitutable backend.
+
+Companion post: [The AI Agent That Keeps the Receipts](/blog/2026/07/22/the-agent-that-keeps-the-receipts/) · [interactive demos](https://cantara.github.io/pi-kcp/playground/)
 
 ---
 
