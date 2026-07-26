@@ -266,6 +266,10 @@ info  SK007  release-and-tag  capabilities empty/omitted — fail-closed default
 0 error(s), 0 warning(s), 1 info
 ```
 
+> **▶ Try it yourself** — the [kcp-skill playground](https://cantara.github.io/kcp-skill/) runs this exact
+> linter in your browser. Load a conformance vector, empty a skill's `capabilities` and watch it flip to
+> fail-closed, or describe a procedure and have a governed skill *drafted and linted live*.
+
 The compounding loop this closes is, I think, the actual headline. Watch the shape of it:
 work happens → sessions leave receipts and episodic memory → recurring workflows get
 captured as skills → envelopes are inferred from the evidence → linted, signed, granted →
