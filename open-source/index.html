@@ -5780,6 +5780,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pi-kcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pi-kcp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#kcp-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6714,6 +6725,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#pi-kcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pi-kcp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#kcp-dashboard" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6906,8 +6928,8 @@
 <hr />
 <h3 id="kcp-agent">kcp-agent<a class="headerlink" href="#kcp-agent" title="Permanent link">&para;</a></h3>
 <p><strong>Repository:</strong> <a href="https://github.com/Cantara/kcp-agent">github.com/Cantara/kcp-agent</a>
-<strong>Language:</strong> TypeScript (npm) + native binaries | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.11.0</p>
-<p>The reference agent for KCP — a <strong>deterministic, fail-closed navigation planner</strong> plus optional LLM synthesis. It reads a <code>knowledge.yaml</code>, scores and gates units against declared trust, freshness, audience, and budget, and produces an inspectable plan <em>before</em> any content is loaded or any model is called. Determinism at the core, the model at the edge. Ships as an MCP server (<code>kcp_plan</code>, <code>kcp_load</code>, <code>kcp_validate</code>) and as self-contained native binaries.</p>
+<strong>Language:</strong> TypeScript (npm) + native binaries | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.19.0</p>
+<p>The reference agent for KCP — a <strong>deterministic, fail-closed navigation planner</strong> plus optional LLM synthesis. It reads a <code>knowledge.yaml</code>, scores and gates units against declared trust, freshness, audience, and budget, and produces an inspectable plan <em>before</em> any content is loaded or any model is called. Determinism at the core, the model at the edge. Since v0.11 the surface has grown into the full gate triad — <em>load</em> (<code>plan</code>), <em>assert</em> (<code>ground</code>), <em>act</em> (<code>assess</code>) — plus per-unit decision traces (<code>--trace</code>), versioned plan JSON with <code>diff</code> and <code>replay</code>, episodic memory (<code>remember</code>/<code>recall</code>), serving-endpoint discovery, and 13 published conformance vectors other implementations can test against. Ships as an MCP server (<code>kcp_plan</code>, <code>kcp_load</code>, <code>kcp_validate</code>) and as self-contained native binaries.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npx<span class="w"> </span>kcp-agent<span class="w"> </span>plan<span class="w"> </span><span class="s2">&quot;your task&quot;</span><span class="w"> </span>--manifest<span class="w"> </span>https://example.com/knowledge.yaml
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>kcp<span class="w"> </span>--<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>kcp-agent<span class="w"> </span>mcp
 </span></code></pre></div>
@@ -6915,8 +6937,14 @@
 <hr />
 <h3 id="kcp-harness">kcp-harness<a class="headerlink" href="#kcp-harness" title="Permanent link">&para;</a></h3>
 <p><strong>Repository:</strong> <a href="https://github.com/Cantara/kcp-harness">github.com/Cantara/kcp-harness</a>
-<strong>Language:</strong> TypeScript | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.4.0</p>
-<p>Deterministic knowledge governance for any AI agent. An MCP compliance proxy that sits between an agent and its tools, routing every knowledge request through a deterministic multi-gate governance cascade — fail-closed policy, append-only audit trail, budget ceilings, and temporal pinning — and emitting the decision traces, audit logs, and budget records that map onto SOC 2 / ISO 27001 / GDPR controls. No model involvement in the governed decision.</p>
+<strong>Language:</strong> TypeScript | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.10.1</p>
+<p>Deterministic knowledge governance for any AI agent. An MCP compliance proxy that sits between an agent and its tools, routing every knowledge request through a deterministic multi-gate governance cascade — fail-closed policy, append-only audit trail, budget ledger, and temporal pinning — and emitting the decision traces, audit logs, and budget records that map onto SOC 2 / ISO 27001 / GDPR controls. No model involvement in the governed decision. Recent releases extend governance from knowledge reads to <strong>actions</strong>: human approval workflows for held requests, temporal watch (re-decide a standing plan when time alone changes the outcome), action conformance checking, resolution signatures, and an x402 payment wallet under hard budget ceilings.</p>
+<hr />
+<h3 id="pi-kcp">pi-kcp<a class="headerlink" href="#pi-kcp" title="Permanent link">&para;</a></h3>
+<p><strong>Repository:</strong> <a href="https://github.com/Cantara/pi-kcp">github.com/Cantara/pi-kcp</a>
+<strong>Language:</strong> TypeScript | <strong>License:</strong> Apache 2.0 | <strong>Current version:</strong> v0.3.1</p>
+<p>KCP agent proficiency and ergonomics for the <a href="https://github.com/earendil-works/pi">Pi coding agent</a> harness. Human-facing <code>/kcp</code> commands (plan, validate, recall, health) and agent-facing skills on <strong>stock Pi</strong> — no MCP client required — with kcp-agent invoked as a CLI for deterministic plans and kcp-memory over HTTP for episodic recall. Its runtime-depth milestone added enforcement: a skill declared in <code>knowledge.yaml</code> with an <code>action_scope</code> becomes enforced authority — native tool calls outside the declared tools/paths/capabilities are blocked by the same deterministic decision the kcp-harness proxy makes, and every governed turn carries one correlation id. Code intelligence (Synthesis or any other provider) stays behind Pi's MCP configuration as an optional, substitutable backend.</p>
+<p>Companion post: <a href="/blog/2026/07/22/the-agent-that-keeps-the-receipts/">The AI Agent That Keeps the Receipts</a> · <a href="https://cantara.github.io/pi-kcp/playground/">interactive demos</a></p>
 <hr />
 <h3 id="kcp-dashboard">kcp-dashboard<a class="headerlink" href="#kcp-dashboard" title="Permanent link">&para;</a></h3>
 <p><strong>Repository:</strong> <a href="https://github.com/Cantara/kcp-dashboard">github.com/Cantara/kcp-dashboard</a>
@@ -7012,7 +7040,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 10, 2026 06:07:25 UTC">July 10, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 26, 2026 04:42:32 UTC">July 26, 2026</span>
   </span>
 
     
