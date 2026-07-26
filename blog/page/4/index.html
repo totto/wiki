@@ -6415,6 +6415,59 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-22 00:00:00+00:00">June 22, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              20 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="your-ai-agent-does-not-know-the-law-and-how-to-fix-that"><a class="toclink" href="../../2026/06/22/your-ai-agent-does-not-know-the-law-and-how-to-fix-that/">Your AI Agent Does Not Know the Law (and How to Fix That)</a></h2>
+<p>You're building a product. It handles personal data. You've added an AI assistant that helps customers understand their compliance obligations. Good instinct, bad outcome -- because the assistant will tell a customer their processing of health data is fine since they have consent. It will say this fluently, with bullet points, citing GDPR Article 6. It will be wrong.</p>
+<p>Article 9 requires a <em>separate</em> legal basis for special category data. Consent under Article 9(2)(a) must be <em>explicit</em> -- a higher bar than the regular consent in Article 6(1)(a). The agent doesn't know this, because it has no authoritative source for it. It's working from training data where "consent" is the answer to most GDPR questions.</p>
+<p>This post shows the architecture that fixes that. Six layers, each solving a distinct failure mode, each buildable independently. By the end you'll have a pattern for turning any regulation into machine-readable knowledge, wiring it into an agent, and proving the agent's answers are correct.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/22/your-ai-agent-does-not-know-the-law-and-how-to-fix-that/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-19 00:00:00+00:00">June 19, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6883,62 +6936,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/06/11/explorative-development/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-11 16:00:00+00:00">June 11, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="organized-truths"><a class="toclink" href="../../2026/06/11/organized-truths/">Organized Truths</a></h2>
-<p><em>Practitioner notes on the verification you only do once.</em></p>
-<p>In the <a href="/blog/2026/06/11/false-alarms-and-false-assurances/">previous post</a> I described catching an agent claiming a parser was "fully RFC compliant." I caught it by opening the RFC — four minutes of reading against a parser that handled none of the wildcard support the spec requires.</p>
-<p>The tips in that post were about catching such claims. This post is about a better question that took me longer to ask:</p>
-<p><strong>Why did the agent never open the RFC?</strong></p>
-<p>Not because it couldn't read it. Because the RFC wasn't <em>there</em>. The agent had the parser in its context and the spec in its vibes — a compressed, lossy impression from training data. Asked to compare code against a standard, it compared code against its <em>memory of the genre</em> of that standard. Of course it produced an adjective.</p>
-<p>You can audit that failure forever. Or you can change what the agent reasons from.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/11/organized-truths/">
           Continue reading
         </a>
       </nav>
