@@ -78,6 +78,14 @@ This page maps the body of work that emerged from that problem. It spans five co
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-harness)
 
+-   :material-school-outline: **kcp-skill** · v0.1.0
+
+    ---
+
+    Conventions, linter, conformance vectors, and a curated library for **governed skills** — `kind: skill` units whose `action_scope` (KCP v0.26 §4.3a) bounds what an agent may touch when enacting them. Authoring profile ("write the envelope like a firewall rule"), 8 lint rules, 5 vectors, 3 starter playbooks — fail-closed by default.
+
+    [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-skill)
+
 -   :material-pi: **pi-kcp** · v0.3.1
 
     ---

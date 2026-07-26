@@ -124,6 +124,15 @@ Deterministic knowledge governance for any AI agent. An MCP compliance proxy tha
 
 ---
 
+### kcp-skill
+
+**Repository:** [github.com/Cantara/kcp-skill](https://github.com/Cantara/kcp-skill)
+**Language:** TypeScript/Node | **License:** Apache 2.0 | **Current version:** v0.1.0
+
+Conventions, linter, conformance vectors, and a curated library for **governed skills** — `kind: skill` units whose declared `action_scope` (tools / paths / capabilities, KCP v0.26 §4.3a) bounds what an agent may touch when enacting a procedure. The repo owns the layer between the spec and the implementations: an authoring profile ("author the envelope like a firewall rule — start from nothing"), 8 lint rules (SK001–SK008, fail-closed exit codes), 5 conformance vectors, and starter playbooks (key rotation, verified dependency bumps, release-and-tag) that any KCP-aware harness can adopt. Enforcement stays with pi-kcp / kcp-harness; evidence-based generation is tracked in [Synthesis #477](https://github.com/exoreaction/Synthesis/issues/477).
+
+---
+
 ### pi-kcp
 
 **Repository:** [github.com/Cantara/pi-kcp](https://github.com/Cantara/pi-kcp)
