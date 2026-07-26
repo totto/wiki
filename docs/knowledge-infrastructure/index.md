@@ -60,23 +60,33 @@ This page maps the body of work that emerged from that problem. It spans five co
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-memory)
 
--   :material-compass-outline: **kcp-agent** · v0.11.0
+-   :material-compass-outline: **kcp-agent** · v0.19.0
 
     ---
 
-    The reference agent — a deterministic, fail-closed navigation planner plus optional LLM synthesis. Reads a `knowledge.yaml`, produces an inspectable plan before any content loads or model runs. Ships as an MCP server and native binaries.
+    The reference agent — a deterministic, fail-closed navigation planner plus optional LLM synthesis. Reads a `knowledge.yaml`, produces an inspectable plan before any content loads or model runs. Now the full gate triad — *load* (`plan`), *assert* (`ground`), *act* (`assess`) — with per-unit decision traces, plan diffs and replay, episodic memory, and 13 published conformance vectors. Ships as an MCP server and native binaries.
 
     Determinism at the core, the model at the edge · [Defendable Agents guide](../topics/defendable-agents/index.md)
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-agent)
 
--   :material-shield-check-outline: **kcp-harness** · v0.4.0
+-   :material-shield-check-outline: **kcp-harness** · v0.10.1
 
     ---
 
-    Deterministic knowledge governance for any AI agent. An MCP compliance proxy that routes every knowledge request through a fail-closed governance cascade — audit trail, budget ceilings, temporal pinning — emitting the records that map to SOC 2 / ISO 27001 / GDPR.
+    Deterministic knowledge governance for any AI agent. An MCP compliance proxy that routes every knowledge request through a fail-closed governance cascade — audit trail, budget ledger, temporal pinning — emitting the records that map to SOC 2 / ISO 27001 / GDPR. Now with human approval workflows, temporal watch (re-decide when time changes the outcome), action conformance, and an x402 wallet with hard spend ceilings.
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-harness)
+
+-   :material-pi: **pi-kcp** · v0.3.1
+
+    ---
+
+    KCP ergonomics for the [Pi coding agent](https://github.com/earendil-works/pi) — `/kcp` commands for plans, validation, and episodic recall on stock Pi, plus runtime governance: skills declared in `knowledge.yaml` with an `action_scope` become enforced authority over native tool calls, one correlation id per governed turn.
+
+    [The AI Agent That Keeps the Receipts](/blog/2026/07/22/the-agent-that-keeps-the-receipts/) · [interactive demos](https://cantara.github.io/pi-kcp/playground/)
+
+    [:octicons-link-external-16: GitHub](https://github.com/Cantara/pi-kcp)
 
 -   :material-robot: **IronClaw**
 
