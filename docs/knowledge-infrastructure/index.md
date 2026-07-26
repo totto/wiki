@@ -60,7 +60,7 @@ This page maps the body of work that emerged from that problem. It spans five co
 
     [:octicons-link-external-16: GitHub](https://github.com/Cantara/kcp-memory)
 
--   :material-compass-outline: **kcp-agent** · v0.18.0
+-   :material-compass-outline: **kcp-agent** · v0.19.0
 
     ---
 

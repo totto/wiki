@@ -102,7 +102,7 @@ java -jar ~/.kcp/kcp-memory-daemon.jar mcp
 ### kcp-agent
 
 **Repository:** [github.com/Cantara/kcp-agent](https://github.com/Cantara/kcp-agent)
-**Language:** TypeScript (npm) + native binaries | **License:** Apache 2.0 | **Current version:** v0.18.0
+**Language:** TypeScript (npm) + native binaries | **License:** Apache 2.0 | **Current version:** v0.19.0
 
 The reference agent for KCP — a **deterministic, fail-closed navigation planner** plus optional LLM synthesis. It reads a `knowledge.yaml`, scores and gates units against declared trust, freshness, audience, and budget, and produces an inspectable plan *before* any content is loaded or any model is called. Determinism at the core, the model at the edge. Since v0.11 the surface has grown into the full gate triad — *load* (`plan`), *assert* (`ground`), *act* (`assess`) — plus per-unit decision traces (`--trace`), versioned plan JSON with `diff` and `replay`, episodic memory (`remember`/`recall`), serving-endpoint discovery, and 13 published conformance vectors other implementations can test against. Ships as an MCP server (`kcp_plan`, `kcp_load`, `kcp_validate`) and as self-contained native binaries.
 
