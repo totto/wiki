@@ -41,9 +41,13 @@ because boring examples keep us honest: *how does the AI help you cut a release?
 
 <!-- more -->
 
-## Era I — The pasted prompt (2023–2024)
+## Era I — The pasted prompt (late 2022–2024)
 
-The first agentic skills weren't files. They were folklore.
+ChatGPT shipped on November 30, 2022, and within weeks every developer had discovered
+the same thing: the model's usefulness tracked the quality of the instructions you fed
+it. OpenAI formalised the observation as "custom instructions" in July 2023 and as
+shareable GPTs that November — but for working developers, the first agentic skills
+weren't files or features. They were folklore.
 
 > *"You are a meticulous release engineer. When I say release, you will: check that CI is
 > green, bump the version in pom.xml — never a SNAPSHOT — update the changelog, tag with
@@ -66,8 +70,13 @@ reinvented tribal knowledge with a paste buffer.
 The fix was obvious in hindsight: put the prompt in version control, next to the code it
 operates on.
 
-This is the era of `CLAUDE.md`, of `AGENTS.md`, of `.claude/skills/` directories — the
-prompt-folder era. Our release folklore became a file:
+The artifacts arrived in a two-year drumbeat. Cursor's `.cursorrules` and GitHub
+Copilot's `.github/copilot-instructions.md` landed in 2024 — the first mainstream
+per-repo instruction files. Claude Code arrived in February 2025 and made `CLAUDE.md`
+a convention; `AGENTS.md` followed the same year as the tool-neutral umbrella; and in
+October 2025, Claude Code's Agent Skills gave the pattern real structure — named
+`SKILL.md` directories, loaded on demand instead of stuffed into every context. The
+prompt-folder era, fully assembled. Our release folklore became a file:
 
 ```yaml
 # .claude/skills/release-and-tag.yaml
@@ -104,15 +113,21 @@ from touching a file the release process should never touch. Instructions shape 
 they do not bound it. Every guarantee in the prompt-folder era was, at bottom, a
 politeness.
 
-## Era III — The skill becomes knowledge a machine can select (2025–2026)
+## Era III — The skill becomes knowledge a machine can select (Feb–Jul 2026)
 
 The next shift came from an unexpected direction: not better prompts, but better
-*addressing*.
+*addressing* — and it moved an order of magnitude faster than the first two eras.
 
-As the [Knowledge Context Protocol](../../topics/knowledge-context-protocol.md) grew from
-a table of contents into a full protocol, skills started being described the way any
-knowledge unit is described — with an `intent` (the question this answers), `triggers`,
-a content hash, a validation date, and eventually an Ed25519 signature:
+The idea had precursors: llms.txt (September 2024) proposed telling agents what a
+*website* contains, and MCP (November 2024) gave agents a protocol for *tools*. But
+knowledge — which files matter, what each is for, in what order to read them — had no
+protocol until the [Knowledge Context Protocol](../../topics/knowledge-context-protocol.md)
+published its v0.1 draft on **February 25, 2026**. Five months and twenty-six minor
+versions later it had grown from a table of contents into a full protocol, and along
+the way skills started
+being described the way any knowledge unit is described — with an `intent` (the question
+this answers), `triggers`, a content hash (v0.18), temporal validity (v0.19, June 12),
+and an Ed25519 signature:
 
 ```yaml
 - id: release-and-tag
@@ -129,9 +144,9 @@ a content hash, a validation date, and eventually an Ed25519 signature:
 Three things changed at once, and each fixed an Era-II disease.
 
 **Selection became deterministic.** Instead of hoping the model notices the right skill,
-a planner — [kcp-agent](https://github.com/Cantara/kcp-agent), no LLM in the loop —
-matches the task against intents and triggers and produces an inspectable plan: *this*
-skill, for *this* reason, at *this* score. The silent-skill problem became measurable:
+a planner — [kcp-agent](https://github.com/Cantara/kcp-agent), the reference agent that
+shipped July 5, 2026, no LLM in the loop — matches the task against intents and triggers
+and produces an inspectable plan: *this* skill, for *this* reason, at *this* score. The silent-skill problem became measurable:
 if a skill is never selected, the planner's logs tell you, and you can ask why.
 
 **Freshness became checkable.** A hash-pinned, date-stamped skill can be *verified*
@@ -146,10 +161,10 @@ But even here — described, hashed, signed, selectable — the skill remained a
 Sharper, fresher, better-routed advice. The gap between *what the skill says* and *what
 the agent may do* had not moved an inch since 2023.
 
-## Era IV — The skill becomes a charter (2026)
+## Era IV — The skill becomes a charter (July 14, 2026)
 
-This year, the gap finally closed. KCP v0.26 §4.3a gave the skill unit one new block,
-and the block changed what a skill *is*:
+Twelve days ago, the gap finally closed. KCP v0.26 — tagged July 14, 2026 — gave the
+skill unit one new block in §4.3a, and the block changed what a skill *is*:
 
 ```yaml
 - id: release-and-tag
@@ -166,7 +181,8 @@ and the block changed what a skill *is*:
 
 `action_scope` is the envelope: the tools this procedure may invoke, the paths it may
 touch, the named capabilities it exercises. And crucially, it is not documentation — it
-is **enforced**. In a [Pi session running pi-kcp](https://github.com/Cantara/pi-kcp), a
+is **enforced**. Since July 22, in a
+[Pi session running pi-kcp](https://github.com/Cantara/pi-kcp), a
 native tool call that reaches outside the active skill's envelope is *blocked*, by the
 same deterministic decision function the kcp-harness compliance proxy uses, with the
 specific reason (which tool, which path, which capability) written into the turn's
@@ -206,7 +222,7 @@ revocable grant of authority, from a principal to an agent, with an audit trail.
 Organizations have run on these for centuries. They just never had one that a machine
 could both read and enforce.
 
-## Era V — The charter writes itself, from evidence (this week)
+## Era V — The charter writes itself, from evidence (July 26, 2026)
 
 One problem remained, and it was the same problem the prompt-folder era had: hand-written
 declarations rot. If humans must author every envelope by hand, envelopes will be stale,
@@ -280,12 +296,41 @@ the stack.
 charter.** Advice became property became authority — and authority, unlike advice, is
 something you can delegate, audit, revoke, and build an organization on.
 
+Notice the tempo. The first two eras took three years between them. The last three took
+**twenty-two weeks** — protocol draft in February, reference agent in early July,
+enforcement a week later, spec'd charters the week after that, generated charters today.
+That compression is not hype outrunning substance; every step above ships with a test
+suite and a conformance gauntlet. It is what happens when the coordination layer itself
+becomes executable: specs with reference implementations, linters with vectors, CI
+pinned to the neighbor's release. The eras stopped waiting for consensus because the
+contracts started enforcing it.
+
 The next time someone tells you agentic development is about better prompts, ask them
 who signs their prompts, who granted them, and what happens when one reaches for a file
 it never declared. The teams that can answer are not prompting. They're chartering.
 
 ---
 
+## Appendix: the dates, measured
+
+| Date | Event | Source |
+|---|---|---|
+| Nov 30, 2022 | ChatGPT ships; the pasted-prompt era begins | public record |
+| Jul 2023 / Nov 2023 | OpenAI custom instructions / shareable GPTs | public record |
+| 2024 | `.cursorrules`, `.github/copilot-instructions.md` — instructions enter the repo | public record |
+| Sep 2024 / Nov 2024 | llms.txt proposal / MCP — addressing for websites and tools | public record |
+| Feb 2025 | Claude Code ships; `CLAUDE.md` becomes a convention (`AGENTS.md` follows the same year) | public record |
+| Oct 2025 | Claude Code Agent Skills — `SKILL.md` directories, loaded on demand | public record |
+| Feb 25, 2026 | KCP v0.1.0 draft published — knowledge gets a protocol | spec repo git history |
+| Jun 12, 2026 | KCP v0.19 — temporal validity joins content hashes (v0.18) | spec repo tag |
+| Jul 4, 2026 | KCP v0.25 | spec repo tag |
+| Jul 5, 2026 | kcp-agent 0.1.1, the reference agent, first npm release | npm registry |
+| Jul 7, 2026 | kcp-harness 0.1.0 — deterministic governance proxy | npm registry |
+| **Jul 14, 2026** | **KCP v0.26 — `kind: skill` + `action_scope`: the charter, spec'd** | spec repo tag |
+| Jul 22, 2026 | pi-kcp runtime-depth governance — envelopes enforced on live tool calls | pi-kcp repo |
+| **Jul 26, 2026** | kcp-skill v0.1.0 (conventions, linter, vectors) + `synthesis kcp skills` (charters generated from evidence) | repo tags, this morning's runs |
+
 *The release-skill outputs above are real artifacts from this morning's toolchain runs —
-generated, linted, planned, and refused-by-default exactly as shown. Measured, not
+generated, linted, planned, and refused-by-default exactly as shown. Every date in this
+post is from a git tag, an npm publish timestamp, or the public record. Measured, not
 remembered.*
