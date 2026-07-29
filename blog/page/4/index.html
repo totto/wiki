@@ -6415,6 +6415,59 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-28 00:00:00+00:00">June 28, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              6 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="three-hooks-that-give-claude-code-memory"><a class="toclink" href="../../2026/06/28/three-hooks-that-give-claude-code-memory/">Three Hooks That Give Claude Code Memory</a></h2>
+<p>Every Claude Code session starts from zero. You know your codebase, your conventions, your past decisions. Claude doesn't — until you explain them. Again. Every time.</p>
+<p>This is not a Claude problem. It's an architecture problem. The context window is the right unit of work, but it has no built-in mechanism for accumulating knowledge across sessions.</p>
+<p>I've been running three passive hooks to fix this for months. Today I packaged them up: <strong><a href="https://github.com/Cantara/kcp-hooks">kcp-hooks</a></strong>.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/28/three-hooks-that-give-claude-code-memory/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-23 00:00:00+00:00">June 23, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6880,61 +6933,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-12 10:00:00+00:00">June 12, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              13 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="beyond-rag-how-kcp-016-017-give-agents-trustworthy-self-describing-knowledge"><a class="toclink" href="../../2026/06/12/beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">Beyond RAG: How KCP 0.16--0.17 Give Agents Trustworthy, Self-Describing Knowledge</a></h2>
-<p><img alt="Overview: KCP v0.16 closes the trust gap with the Trusted Render Pipeline — signing, trust tiers, and sanitization. KCP v0.17 closes the content gap with content structure metadata and subtractive not_for matching. Together they compose a precision retrieval pipeline." src="../../../assets/images/kcp-trust-content-00-overview.webp" /></p>
-<p>When a compliance agent evaluates a supplier against NIS2 Article 21, it needs two things: the supplier's security documentation to evaluate, and the regulation to evaluate it against. KCP, as described in the previous post, gives the supplier documentation a shape. The evaluation result gets a shape. But the regulation itself -- the specific requirements of Article 21(2), the interpretive guidance from ENISA, the national implementation notes -- lives where it has always lived: as prose in the system prompt.</p>
-<p>That worked when agents consumed knowledge from a single, trusted source. It does not work when your agent pulls context from four federated manifests across two organisations, one of which was generated by an automated crawl three weeks ago. The question is no longer "does this knowledge have a shape?" It is: "can I trust this knowledge, and is it even the right content for what I need?"</p>
-<p>KCP v0.16 and v0.17 answer those two questions. v0.16 introduces a trust model -- cryptographic signing, trust tiers, a render pipeline that fails closed. v0.17 introduces a content model -- structural metadata that tells you what a unit contains before you fetch it, and subtractive matching that tells you what it is explicitly not about. Together, they close two gaps that have been open since the beginning of the series.</p>
-<p>This post walks through both releases. The examples are concrete. The threat model is explicit. If you are building systems where agents ingest knowledge from sources you do not fully control, this is the machinery that makes that safe.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/12/beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">
           Continue reading
         </a>
       </nav>
