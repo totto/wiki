@@ -32,9 +32,13 @@ This is the complete map. If you have never heard of KCP, start at the top and i
 
 <!-- more -->
 
+![The KCP Universe — 12 repositories, 1,012 commits, and the shift from relevance to authority](/assets/images/kcp-universe/title-kcp-universe.webp)
+
 ---
 
 ## The problem, stated once
+
+![Relevance is not authority — RAG guesses, KCP proves](/assets/images/kcp-universe/relevance-is-not-authority.webp)
 
 An AI agent reading your codebase has no idea what is true.
 
@@ -54,6 +58,8 @@ That is the whole idea. Everything below is what it took to make it real.
 
 Twelve repositories. Here is what each one is, in the order you would meet them.
 
+![Ecosystem topology — the spec at the centre, enforcement points in the inner orbit, tooling and organisational scale further out](/assets/images/kcp-universe/ecosystem-topology-12-repositories.webp)
+
 | Repository | What it is | July |
 |---|---|---|
 | **knowledge-context-protocol** | The specification, JSON schemas, and conformance vectors. The thing everything else implements. | 163 commits · 16 releases |
@@ -72,6 +78,8 @@ Twelve repositories. Here is what each one is, in the order you would meet them.
 If that table looks like a lot, here is the compression: **a spec, three enforcement points, and a set of tools that make the spec pleasant to live with.**
 
 ### What a manifest actually looks like
+
+![The atomic unit of trust — each knowledge.yaml field answers a question an agent would otherwise guess at](/assets/images/kcp-universe/atomic-unit-of-trust-knowledge-yaml.webp)
 
 Before going further, the concrete thing. This is a real unit from `kcp-agent`'s own manifest — the one fully-formed governed procedure in the ecosystem today:
 
@@ -141,6 +149,8 @@ The month, compressed:
 | 28 Jul | v0.30 **eligibility grants** (RFC-0028) + `grant_request_events` |
 | 29 Jul | v0.30.3 · **pi-kcp 0.5.0** — the governed runtime, on by default |
 
+![The July momentum — implementation parity, the procedural plane, eligibility grants, parse diagnostics](/assets/images/kcp-universe/july-momentum-four-shifts.webp)
+
 Four things in that list changed what the protocol can do that changed what the protocol can do. They are related, and they arrived in an order that turns out to be the argument.
 
 ### 1. Implementation Parity (v0.28, 27 July)
@@ -171,6 +181,8 @@ v0.30 introduced grants: a unit can be made eligible under specific conditions, 
 
 ### 4. Parse diagnostics — a typo is no longer silent
 
+![The invisible bug — before July a misspelled field parsed cleanly and left the unit ungoverned forever](/assets/images/kcp-universe/invisible-bug-silent-failures.webp)
+
 My favourite, because it is so small and so telling.
 
 Before July, a misspelled field in a manifest was simply ignored. You wrote `audiance:` instead of `audience:`, and the manifest parsed cleanly, and your unit was quietly ungoverned forever. Nothing failed. Nothing warned. It just did not work, invisibly.
@@ -182,6 +194,8 @@ There is a theme running through this entire project, and that is it: **the diff
 ---
 
 ## The runtime: pi-kcp 0.5.0
+
+![Proxy depth versus runtime depth — the same adjudicator, two places it can act](/assets/images/kcp-universe/enforcement-proxy-vs-runtime-depth.webp)
 
 Shipped today, and it deserves its own section because it is where the protocol stops being a description and starts being a thing that intervenes.
 
@@ -213,6 +227,8 @@ An audit trail that records the decision and stops there is a record of *intent*
 
 **It comes in three strengths.**
 
+![The governed runtime — seven stages, the approved-versus-executed delta, and three modes](/assets/images/kcp-universe/governed-runtime-pi-kcp-050.webp)
+
 | Mode | What runs | Cost |
 |---|---|---|
 | `full` | all seven stages, including a per-turn planner trace that gates which skills may load | one planner call per turn (~57ms, measured) |
@@ -227,6 +243,8 @@ A detail I want to keep, because it nearly went wrong: turning the cycle on by d
 
 ## What this enables: Sunstone Atlas
 
+![The artifact trinity — knowledge, skill, playbook as the three governed classes](/assets/images/kcp-universe/artifact-trinity-sunstone.webp)
+
 The clearest answer to "so what?" was born on 23 July, six days before this post.
 
 **Sunstone Atlas** is a governed substrate for an entire organisation — and it is built on exactly the three artifact classes the protocol grew this month:
@@ -239,6 +257,8 @@ The clearest answer to "so what?" was born on 23 July, six days before this post
 
 That is not a coincidence, and it is the reason to pay attention to July specifically. The spec grew `kind: playbook` on 27 July. Sunstone was designed on the assumption that Knowledge / Skill / Playbook are the three things an organisation has. **The protocol and the first system built on it converged in the same month**, from opposite directions.
 
+![The autonomy dividend — a chokepoint caps autonomy, a signed substrate compounds it](/assets/images/kcp-universe/autonomy-dividend.webp)
+
 Sunstone's design document contains the best one-line statement of what this whole universe is for:
 
 > A **chokepoint gateway** inspects traffic and blocks — it sees calls, not meaning, and it caps autonomy: every action is suspect, gated at the choke. Sunstone binds each decision to an approved, versioned knowledge substrate, conformance-checks it, and signs it. Because the action is defendable *by construction*, the agent can safely be granted **more** autonomy.
@@ -250,6 +270,8 @@ That inversion is the thesis. Governance is usually sold as the brake. Here it i
 ---
 
 ## Fifteen things you can run
+
+![Executable scenarios — out of bounds, cite or it didn't happen, the auditor's Thursday, the runaway spender](/assets/images/kcp-universe/prove-it-executable-scenarios.webp)
 
 Abstractions about governance are cheap. The pi-kcp repository ships **fifteen executable demos**, each one a scenario that either works or does not, and most of them need nothing installed beyond the repo itself.
 
@@ -279,6 +301,8 @@ Sunstone Atlas has its own set — ten browser-based demos including a board-buy
 
 ## An honest accounting
 
+![The adoption gap — 65 skill files to one declared procedure, zero playbooks, and one repo five versions behind](/assets/images/kcp-universe/honest-accounting-adoption-gap.webp)
+
 I would rather you got this from me than found it yourself.
 
 Across the nine core repositories there are **65 `SKILL.md` files**. Exactly **one** of them is declared in a manifest as a governed procedure, with `kind: skill`, `load_eligible`, and a declared `action_scope`: `kcp-agent`'s own `navigator-skill`.
@@ -296,6 +320,8 @@ August is for closing that gap. If you want to watch something concrete, watch t
 ---
 
 ## Where to start
+
+![Where to start — four routes in, by how much time you have](/assets/images/kcp-universe/where-to-start.webp)
 
 **If you want a result in ten minutes**, install `kcp-commands`. It wraps common commands to be far more token-efficient — a measured **33% of the context window saved per session** — and requires you to understand nothing about the protocol. It is the only entry point with an immediate, measurable payoff.
 
@@ -330,3 +356,5 @@ If you read one thing beyond this post, make it demo 10: the same adjudicator, a
 ---
 
 *Written with Claude Code, which also wrote most of pi-kcp 0.5.0 and found the bug where every ordinary turn would have announced itself as ungoverned. The commit and release counts in this post were measured on 29 July 2026 with `git rev-list --count` across the twelve repositories, not estimated.*
+
+*The diagrams were generated by NotebookLM from this post and then checked against it — which is the same discipline the post argues for, applied to itself. Two things were corrected in the process: a fabricated document stamp (a wrong date and an author group that does not exist) was removed from four slides, and a companion infographic was held back because four of its six repository figures did not match the measured ones. A picture of a number is still a claim.*
