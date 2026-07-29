@@ -6427,6 +6427,58 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-07-05 00:00:00+00:00">July 5, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              11 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="selling-news-to-robots"><a class="toclink" href="../../../../2026/07/05/selling-news-to-robots/">Selling News to Robots</a></h2>
+<p>Yesterday's <a href="../../../../2026/07/04/one-agents-journey-through-the-whole-protocol/">tour of the whole protocol</a> ended with a loose thread: <em>"A knowledge economy ends with a payment — and RFC-0005 is still sitting at the RFC stage, waiting."</em></p>
+<p>It didn't wait long. v0.25 landed on main the same day: <strong>Economic Metadata</strong>, the full promotion of RFC-0005. <code>payment.methods[]</code> — free, x402 micropayments, metered billing, subscriptions — plus per-tier <code>rate_limits</code>, all at manifest <em>and</em> unit level. Nothing of RFC-0005 remains RFC-only.</p>
+<p>Which means something new is possible on the agentic web this weekend that wasn't possible last weekend: you can open a shop. So let's open one — a newswire that sells to agents — and then play the customer: an agent with a funded wallet, a briefing to write, and a budget. Step by step, both sides of the counter.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/07/05/selling-news-to-robots/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-07-04 00:00:00+00:00">July 4, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6889,61 +6941,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-12 10:00:00+00:00">June 12, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../../governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              13 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="beyond-rag-how-kcp-016-017-give-agents-trustworthy-self-describing-knowledge"><a class="toclink" href="../../../../2026/06/12/beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">Beyond RAG: How KCP 0.16--0.17 Give Agents Trustworthy, Self-Describing Knowledge</a></h2>
-<p><img alt="Overview: KCP v0.16 closes the trust gap with the Trusted Render Pipeline — signing, trust tiers, and sanitization. KCP v0.17 closes the content gap with content structure metadata and subtractive not_for matching. Together they compose a precision retrieval pipeline." src="../../../../../assets/images/kcp-trust-content-00-overview.webp" /></p>
-<p>When a compliance agent evaluates a supplier against NIS2 Article 21, it needs two things: the supplier's security documentation to evaluate, and the regulation to evaluate it against. KCP, as described in the previous post, gives the supplier documentation a shape. The evaluation result gets a shape. But the regulation itself -- the specific requirements of Article 21(2), the interpretive guidance from ENISA, the national implementation notes -- lives where it has always lived: as prose in the system prompt.</p>
-<p>That worked when agents consumed knowledge from a single, trusted source. It does not work when your agent pulls context from four federated manifests across two organisations, one of which was generated by an automated crawl three weeks ago. The question is no longer "does this knowledge have a shape?" It is: "can I trust this knowledge, and is it even the right content for what I need?"</p>
-<p>KCP v0.16 and v0.17 answer those two questions. v0.16 introduces a trust model -- cryptographic signing, trust tiers, a render pipeline that fails closed. v0.17 introduces a content model -- structural metadata that tells you what a unit contains before you fetch it, and subtractive matching that tells you what it is explicitly not about. Together, they close two gaps that have been open since the beginning of the series.</p>
-<p>This post walks through both releases. The examples are concrete. The threat model is explicit. If you are building systems where agents ingest knowledge from sources you do not fully control, this is the machinery that makes that safe.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/06/12/beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
       
         
           
@@ -6951,7 +6948,7 @@
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../2/">2</a> <span class="md-pagination__current">3</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../8/">8</a>
+  <a class="md-pagination__link" href="../../">1</a> <a class="md-pagination__link" href="../2/">2</a> <span class="md-pagination__current">3</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../9/">9</a>
 </nav>
         
       
