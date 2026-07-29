@@ -1,7 +1,7 @@
 ---
 description: "The complete map of the Knowledge Context Protocol universe — twelve repositories, 1,012 commits and 88 releases in July alone. What each piece does, what landed this month, what it enables, and exactly where to start. Written for people arriving for the first time and for people who have been here since February."
 date: 2026-07-29T18:00:00
-draft: true
+draft: false
 series: "Knowledge Context Protocol"
 categories:
   - Knowledge Context Protocol
