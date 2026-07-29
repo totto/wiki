@@ -1,7 +1,7 @@
 ---
 description: "Anthropic published how they built self-service analytics on Claude — a four-layer stack that gets 95% of their business queries automated. We read it looking for where we were wrong, and found instead a stack we'd already built from a different door: governed skills, adversarial review, provenance. Then we shipped the one piece neither post had covered."
 date: 2026-07-29
-draft: true
+draft: false
 categories:
   - Knowledge Infrastructure
   - AI Agents & the Agentic Web
