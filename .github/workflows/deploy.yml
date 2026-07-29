@@ -20,6 +20,11 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install mkdocs==1.6.1 mkdocs-material==9.7.2 mkdocs-rss-plugin mkdocs-git-revision-date-localized-plugin pyyaml
+      - name: Check the hand-maintained blog indices still match the posts
+        # series.md and topics.md carry counts nothing regenerates. They were accurate
+        # when written and drifted silently for five months. Fail the build instead.
+        run: python scripts/check-blog-indices.py
+
       - name: Refresh generated blog snippet (home "Recent writing")
         run: |
           python scripts/generate-blog-manifest.py

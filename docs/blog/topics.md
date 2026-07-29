@@ -15,7 +15,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Synthesis, ExoCortex, and the memory systems that stop agents forgetting — temporal analytics, knowledge graphs, episodic and semantic memory.
 
-    [:octicons-arrow-right-24: 77 posts](/blog/category/knowledge-infrastructure/)
+    [:octicons-arrow-right-24: 84 posts](/blog/category/knowledge-infrastructure/)
 
 -   :material-map-marker-path:{ .lg .middle } **Knowledge Context Protocol**
 
@@ -23,7 +23,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     KCP from first sketch to full protocol — RFCs, releases, the `kcp-*` tools, and the reference agent. How agents find and trust knowledge.
 
-    [:octicons-arrow-right-24: 72 posts](/blog/category/knowledge-context-protocol/)
+    [:octicons-arrow-right-24: 79 posts](/blog/category/knowledge-context-protocol/)
 
 -   :material-rocket-launch-outline:{ .lg .middle } **AI-Augmented Development**
 
@@ -31,7 +31,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     The practice of building software with AI — Skill-Driven Development, verification, testing discipline, velocity, and the developer's changing role.
 
-    [:octicons-arrow-right-24: 71 posts](/blog/category/ai-augmented-development/)
+    [:octicons-arrow-right-24: 72 posts](/blog/category/ai-augmented-development/)
 
 -   :material-robot-outline:{ .lg .middle } **AI Agents & the Agentic Web**
 
@@ -39,7 +39,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Agent architecture, multi-agent systems, MCP and A2A, identity and federation — how autonomous agents actually navigate the web.
 
-    [:octicons-arrow-right-24: 68 posts](/blog/category/ai-agents--the-agentic-web/)
+    [:octicons-arrow-right-24: 82 posts](/blog/category/ai-agents--the-agentic-web/)
 
 -   :material-shield-check-outline:{ .lg .middle } **Governance, Trust & Compliance**
 
@@ -47,7 +47,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     GDPR, the EU AI Act, audit and provenance, signing and attestation — making AI agents defendable, not just capable.
 
-    [:octicons-arrow-right-24: 28 posts](/blog/category/governance-trust--compliance/)
+    [:octicons-arrow-right-24: 38 posts](/blog/category/governance-trust--compliance/)
 
 -   :material-vector-arrange-below:{ .lg .middle } **Software Architecture**
 
