@@ -301,13 +301,27 @@ Sunstone Atlas has its own set — ten browser-based demos including a board-buy
 
 ## An honest accounting
 
-![The adoption gap — 65 skill files to one declared procedure, zero playbooks, and one repo five versions behind](/assets/images/kcp-universe/honest-accounting-adoption-gap.webp)
+![The adoption gap — skill files to one declared procedure, zero playbooks, and one repo five versions behind](/assets/images/kcp-universe/honest-accounting-adoption-gap.webp)
+
+!!! warning "Correction, 30 July 2026 — the 65 was wrong, and the anatomy of the miscount is the point"
+    This section originally claimed **65 skill files**. The real number is **24**. The 65 came
+    from a naive `find` that counted 26 duplicates inside stale `.claude/worktrees/` copies and
+    12 files in `examples/governed-skills/` — several of which are *deliberately* non-conformant
+    negative test fixtures (`poisoned-playbook`, `ungranted-skill`). Counting a negative test
+    fixture as a governance gap inverts its meaning. The slide above still shows the wrong
+    figure; the sentence below is corrected. On a post about measurement, the miscount and its
+    cause stay visible rather than quietly rewritten.
+
+    The ratio the section actually argued from — many skill files, **one** governed — was right,
+    and naming it publicly had a consequence: within 48 hours, **all 24 real skills across six
+    repositories were declared as governed procedures**, each verified against the planner. What
+    an honest map triggers is a story for the next post.
 
 I would rather you got this from me than found it yourself.
 
-Across the nine core repositories there are **65 `SKILL.md` files**. Exactly **one** of them is declared in a manifest as a governed procedure, with `kind: skill`, `load_eligible`, and a declared `action_scope`: `kcp-agent`'s own `navigator-skill`.
+Across the nine core repositories there are **24 real `SKILL.md` files** *(originally misstated as 65 — see the correction above)*. At publication, exactly **one** of them was declared in a manifest as a governed procedure, with `kind: skill`, `load_eligible`, and a declared `action_scope`: `kcp-agent`'s own `navigator-skill`.
 
-Ask the planner about any of the others and it says, accurately: *"not a governed procedure."*
+Ask the planner about any of the others and it said, accurately: *"not a governed procedure."*
 
 **Zero playbooks are declared in any repository's own manifest.** The spec shipped `kind: playbook` two days ago, and it is exercised — demo 15 runs a real governed composition end to end — but no repo yet governs its own procedures with one.
 
