@@ -15,7 +15,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Synthesis, ExoCortex, and the memory systems that stop agents forgetting — temporal analytics, knowledge graphs, episodic and semantic memory.
 
-    [:octicons-arrow-right-24: 84 posts](/blog/category/knowledge-infrastructure/)
+    [:octicons-arrow-right-24: 85 posts](/blog/category/knowledge-infrastructure/)
 
 -   :material-map-marker-path:{ .lg .middle } **Knowledge Context Protocol**
 
@@ -39,7 +39,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Agent architecture, multi-agent systems, MCP and A2A, identity and federation — how autonomous agents actually navigate the web.
 
-    [:octicons-arrow-right-24: 83 posts](/blog/category/ai-agents--the-agentic-web/)
+    [:octicons-arrow-right-24: 84 posts](/blog/category/ai-agents--the-agentic-web/)
 
 -   :material-shield-check-outline:{ .lg .middle } **Governance, Trust & Compliance**
 
@@ -55,7 +55,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Architecture patterns, temporal data, migrations, and three decades of lessons about what AI changes and what it doesn't.
 
-    [:octicons-arrow-right-24: 26 posts](/blog/category/software-architecture/)
+    [:octicons-arrow-right-24: 27 posts](/blog/category/software-architecture/)
 
 -   :material-cloud-outline:{ .lg .middle } **Cloud Computing**
 

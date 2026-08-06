@@ -103,12 +103,13 @@ Some posts form a natural sequence and are best read in order. Each series below
         44. [Three Memory Schemes for Agents That Ship](/blog/2026/07/11/three-memory-schemes-for-agents-that-ship/)
         45. [Prompt Injection Is SQL Injection for Agents. Here's the Prepared Statement.](/blog/2026/07/15/prompt-injection-is-sql-injection-for-agents-heres-the-prepared-statement/)
         46. [OWASP Just Mapped the Agentic Top 10. Here's the Root Cause Four of Them Share.](/blog/2026/07/16/owasp-just-mapped-the-agentic-top-10-heres-the-root-cause-four-of-them-share/)
-        47. [The Knowledge Layer: A Record](/blog/2026/07/16/the-knowledge-layer-a-record/)
-        48. [A Firewall for What Your Agent Knows](/blog/2026/07/17/a-firewall-for-what-your-agent-knows/)
-        49. [The KCP Ecosystem: A Tour for New Arrivals](/blog/2026/07/17/the-kcp-ecosystem-a-tour-for-new-arrivals/)
-        50. [The KCP Universe: Everything, and What July Changed](/blog/2026/07/29/the-kcp-universe-everything-and-what-july-changed/)
+        47. [Defensible Agents: When Every Gate Writes Its Verdict](/blog/2026/07/16/defensible-agents-when-every-gate-writes-its-verdict/)
+        48. [The Knowledge Layer: A Record](/blog/2026/07/16/the-knowledge-layer-a-record/)
+        49. [A Firewall for What Your Agent Knows](/blog/2026/07/17/a-firewall-for-what-your-agent-knows/)
+        50. [The KCP Ecosystem: A Tour for New Arrivals](/blog/2026/07/17/the-kcp-ecosystem-a-tour-for-new-arrivals/)
+        51. [The KCP Universe: Everything, and What July Changed](/blog/2026/07/29/the-kcp-universe-everything-and-what-july-changed/)
 
-    **50 posts &nbsp;·&nbsp; February – July 2026**
+    **51 posts &nbsp;·&nbsp; February – July 2026**
 
     [:octicons-arrow-right-24: Start reading](/blog/2026/02/24/who-describes-you-to-ai/)
 
