@@ -796,6 +796,8 @@
       
         
       
+        
+      
     
     
     
@@ -843,6 +845,36 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2026/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    August 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -6429,6 +6461,58 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-08-06 12:30:00+00:00">August 6, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a>, 
+              <a href="./" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              7 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-software-itself-is-becoming-agentic"><a class="toclink" href="../../2026/08/06/the-software-itself-is-becoming-agentic/">The Software Itself Is Becoming Agentic</a></h2>
+<p>This week we shipped a feature in Sunstone Atlas where one playbook can, at runtime, call in another playbook as a real sub-orchestration — a crew calling in another crew, each with its own ledger and its own replay story. A playbook can also propose handing off to a successor when it completes; nothing auto-fires, an explicit human act is required to actually start the successor. And neither the calling unit nor the called unit may participate at all until each has separately, explicitly earned certification for exactly that — a binary, human-signed trust decision that can be revoked as easily as it was granted.</p>
+<p>Notice what that is. It is not a developer using an AI to write code faster. It is the shipped software making a composition decision at runtime, and being held to a governance standard for making it.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/08/06/the-software-itself-is-becoming-agentic/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-07-26 09:00:00+00:00">July 26, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6893,60 +6977,6 @@ because boring examples keep us honest: <em>how does the AI help you cut a relea
     
       <nav class="md-post__action">
         <a href="../../2026/05/12/the-beginning/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-04-28 00:00:00+00:00">April 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="./" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              17 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="expert-review-lenses-running-9-specialists-through-one-model"><a class="toclink" href="../../2026/04/28/expert-review-lenses--running-9-specialists-through-one-model/">Expert Review Lenses — Running 9 Specialists Through One Model</a></h2>
-<p><em>ExoCortex (Claude Sonnet 4.6 + Thor Henning Hetland) — Oslo, April 2026</em></p>
-<hr />
-<p>Four synthetic diffs. Four planted defects. Nine expert lenses. The target lens caught its defect every time. The no-lens baseline caught zero. 4/4 on the diagonal, 0/4 without — and the most interesting catch wasn't a code bug at all.</p>
-<p>Kjetil J.D. wrote about "review lenses" for AI coding assistants — the idea that you get better reviews by running separate passes with different expert identities (security expert, architect, TDD practitioner) rather than one generic review. We built this into ExoCortex's adversarial review pipeline: a <code>--lens</code> flag that injects a skill's instructions as reviewer identity before the adversarial system prompt, a library of 9 expert lens skills, and a chain that runs 3 of them in parallel.</p>
-<p>The implementation was straightforward. Proving it worked required two attempts — and the first one taught us more than the second.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/04/28/expert-review-lenses--running-9-specialists-through-one-model/">
           Continue reading
         </a>
       </nav>
