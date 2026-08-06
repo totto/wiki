@@ -6936,20 +6936,20 @@ building the same shape from opposite doors.</p>
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-07-16 08:00:00+00:00">July 16, 2026</time></li>
+          <time datetime="2026-07-16 09:00:00+00:00">July 16, 2026</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="../governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a>, 
+              <a href="../knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
               <a href="./" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../security/" class="md-meta__link">Security</a></li>
+              <a href="../software-architecture/" class="md-meta__link">Software Architecture</a></li>
         
         
           
           <li class="md-meta__item">
             
-              11 min read
+              9 min read
             
           </li>
         
@@ -6959,15 +6959,15 @@ building the same shape from opposite doors.</p>
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="owasp-just-mapped-the-agentic-top-10-heres-the-root-cause-four-of-them-share"><a class="toclink" href="../../2026/07/16/owasp-just-mapped-the-agentic-top-10-heres-the-root-cause-four-of-them-share/">OWASP Just Mapped the Agentic Top 10. Here's the Root Cause Four of Them Share.</a></h2>
-<p><img alt="The OWASP Agentic Top 10 Field Guide: mapping the risks, finding the hidden pattern, and securing the autonomous stack. An AI Agent Core at the centre connected to Knowledge Data Stores, Internal APIs, Model Weights, External Integrations, Actionable APIs, Executive Functions, Policy &amp; Constraints, Human-in-the-Loop, and Audit Logs." src="../../../assets/images/owasp-00-title.webp" /></p>
-<p>In December 2025, OWASP published the <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">Top 10 for Agentic Applications</a> — 100+ security experts, peer-reviewed, the first serious attempt to name what goes wrong when AI systems plan, act, and talk to each other autonomously.</p>
-<p>The list is correct. Every item on it maps to a real incident category. If you're building or deploying AI agents and you haven't read it, stop here and do that first.</p>
-<p>This post does two things: a fast field guide to all ten risks, and then a close reading that reveals the pattern four of them share — a pattern the list describes but doesn't name, and which points at a common architectural fix.</p>
+    <h2 id="defensible-agents-when-every-gate-writes-its-verdict"><a class="toclink" href="../../2026/07/16/defensible-agents-when-every-gate-writes-its-verdict/">Defensible Agents: When Every Gate Writes Its Verdict</a></h2>
+<p>Two weeks ago we <a href="../../2026/07/05/the-vibes-based-agent-era-deserves-to-end/">shipped an agent</a> that plans deterministically and <a href="../../2026/07/05/the-vibes-based-agent-era-deserves-to-end/">told the vibes-based era to end</a>. The argument was real — a pure-function planner, zero-token navigation, scored reasons for every unit selected or skipped. But one question kept coming up, and it was fair:</p>
+<p><em>"The plan says it skipped something. But</em> <strong><em>why</em></strong> <em>did gate 3 reject it and not gate 7? What was the actual decision path?"</em></p>
+<p>The plan was evidence. But it was a verdict without a trial transcript.</p>
+<p>Today <strong>kcp-agent 0.10.0</strong> ships the trial transcript.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/07/16/owasp-just-mapped-the-agentic-top-10-heres-the-root-cause-four-of-them-share/">
+        <a href="../../2026/07/16/defensible-agents-when-every-gate-writes-its-verdict/">
           Continue reading
         </a>
       </nav>
