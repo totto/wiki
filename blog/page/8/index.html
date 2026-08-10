@@ -6447,6 +6447,67 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-03-31 00:00:00+00:00">March 31, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              14 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-kcp-ecosystem-how-five-tools-turn-claude-code-into-a-persistent-intelligence-platform"><a class="toclink" href="../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/">The KCP Ecosystem: How Five Tools Turn Claude Code Into a Persistent Intelligence Platform</a></h2>
+<p><img alt="The KCP Ecosystem — Turning Claude Code into a Persistent Intelligence Platform" src="/assets/images/blog/kcp-ecosystem-slide-01-cover.webp" /></p>
+<hr />
+<h3 id="the-problem"><a class="toclink" href="../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/#the-problem">The Problem</a></h3>
+<p>Every session with Claude Code starts from zero.</p>
+<p><img alt="Every AI session starts from zero — the Start-From-Zero Loop" src="/assets/images/blog/kcp-ecosystem-slide-02-start-from-zero.webp" /></p>
+<p>You open a new session, and the model has no idea what you were doing yesterday. Which services are running. What you decided about the database schema last Thursday. Why you chose the library you chose. You re-explain it. Claude asks clarifying questions you answered two sessions ago. You paste the same background context you always paste. Then the work begins.</p>
+<p>And when the work does begin, there's a different problem: output flooding the context window. Run <code>mvn package</code> and you get 400 lines of Maven lifecycle noise. Run <code>terraform plan</code> and the diff buries the actual changes in scaffolding. Run <code>kubectl get pods</code> cluster-wide and you've spent 8,000 tokens on status rows you didn't need.</p>
+<p><img alt="Context flooding destroys working memory — 33.7% of a 200K context is recovery overhead" src="/assets/images/blog/kcp-ecosystem-slide-03-context-flooding.webp" /></p>
+<p>The context window is your working memory. Filling it with boilerplate and re-explaining the same setup repeatedly is waste — not just inconvenient, but structurally limiting. A 200K token context sounds vast until a third of it is recovery overhead.</p>
+<p>What's missing is infrastructure. Not smarter prompting. Not longer context. Infrastructure — a persistent layer that handles memory, filters noise, and gives the model the right knowledge at the right moment without you having to manage it manually.</p>
+<p>That infrastructure is KCP.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-03-28 00:00:00+00:00">March 28, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6908,61 +6969,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-14 00:00:00+00:00">March 14, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              9 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-agents-were-forgetting-everything-they-discovered"><a class="toclink" href="../../2026/03/14/the-agents-were-forgetting-everything-they-discovered/">The agents were forgetting everything they discovered</a></h2>
-<p>Something felt off.</p>
-<p>I'd been using the Task tool heavily — delegating research tasks to Claude subagents, letting them explore codebases, map dependencies, surface patterns. The results coming back were good. But when I'd start a new session and ask about the same topic, there was no trace of that prior investigation. The context window had reset, and the episodic memory layer — kcp-memory — wasn't helping.</p>
-<p>Here's what that looked like in practice: I'd asked a subagent to map the co-events repository ecosystem earlier this week. It came back with a clear picture — co-events is the CatalystOne HRIS event-sourcing platform, seven repos, with a dependency chain running from co-event-typelib through co-event-sdk into co-analytics-vanilla (which, by the way, uses Neo4j with APOC, not SQL — a non-obvious choice). Two days later, I started a new session, asked about co-events architecture, and got a blank stare. The agent had no idea any of this had been mapped. It treated the question as entirely novel.</p>
-<p>My first hypothesis was handover loss. Maybe something was being compressed or summarized too aggressively when agents returned their findings. Maybe the model transition (often Opus for the delegated tasks, Sonnet for the orchestrating session) was dropping context. That felt plausible, and a little unsettling.</p>
-<p>The real cause was more concrete — and more fixable.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/14/the-agents-were-forgetting-everything-they-discovered/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
       
         
           
@@ -6970,7 +6976,7 @@
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../6/">6</a> <a class="md-pagination__link" href="../7/">7</a> <span class="md-pagination__current">8</span> <a class="md-pagination__link" href="../9/">9</a> <a class="md-pagination__link" href="../10/">10</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../19/">19</a>
+  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../6/">6</a> <a class="md-pagination__link" href="../7/">7</a> <span class="md-pagination__current">8</span> <a class="md-pagination__link" href="../9/">9</a> <a class="md-pagination__link" href="../10/">10</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../20/">20</a>
 </nav>
         
       

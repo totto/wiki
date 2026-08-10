@@ -6463,6 +6463,61 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-08-10 09:00:00+00:00">August 10, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a>, 
+              <a href="category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              16 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-skill-is-the-security-boundary"><a class="toclink" href="2026/08/10/the-skill-is-the-security-boundary/">The Skill Is the Security Boundary</a></h2>
+<p><img alt="The Skill Is the Security Boundary — deterministic, declarative governance for defendable AI agents with pi-kcp" src="/assets/images/blog/the-skill-is-the-security-boundary/title-hero.png" /></p>
+<p>When your agent loads a skill, it loads a playbook — and, implicitly, an author's idea of what that playbook should be allowed to touch. A deploy skill means the deploy scripts. A research skill means the research corpus. But in almost every agent harness today, that idea stays implicit: the skill shapes the agent's <em>behavior</em> while the agent keeps its <em>entire</em> toolbelt. The deploy skill can read <code>/etc/shadow</code>. The research skill can call out to the network. Nothing binds the actions to what the skill claimed to be.</p>
+<p><img alt="The illusion of implicit boundaries — an agent with an active &quot;deploy&quot; skill still holds a robotic arm that can reach network access and /etc/shadow, because nothing binds the claim to the action" src="/assets/images/blog/the-skill-is-the-security-boundary/illusion-of-implicit-boundaries.png" /></p>
+<p><a href="https://github.com/Cantara/pi-kcp">pi-kcp</a> makes the binding explicit. A governed skill declares its authority — an allowlist of tools and path prefixes called an <code>action_scope</code> — in the same <code>knowledge.yaml</code> that already governs what the agent knows. At runtime, inside the turn, every native tool call taken under that skill is adjudicated against the declaration. In scope: it runs. Out of scope: it is held, fail-closed, with a written reason naming the violating target and the authorized scope it fell outside of. Deterministic. No LLM in the loop.</p>
+<p>This is the hands-on follow-up to the <em>Policy vs. Enforcement</em> post from earlier today, which named both <code>kcp-harness</code> and <code>pi-kcp</code> but didn't show the mechanics. Below are the mechanics — three worked demos, real outputs pasted from real runs, ending with the one that motivated the LinkedIn post: the same out-of-scope action, checked at two different depths of the stack, producing a byte-identical verdict.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="2026/08/10/the-skill-is-the-security-boundary/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-08-06 12:30:00+00:00">August 6, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6936,59 +6991,6 @@ because boring examples keep us honest: <em>how does the AI help you cut a relea
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-17 08:00:00+00:00">July 17, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a>, 
-              <a href="category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              10 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="a-firewall-for-what-your-agent-knows"><a class="toclink" href="2026/07/17/a-firewall-for-what-your-agent-knows/">A Firewall for What Your Agent Knows</a></h2>
-<p>Everyone is building firewalls for what agents <em>do</em>. Sandboxes, budget caps, tool permissions, egress filters — the action side of agent governance is getting crowded, and that is good news. But almost nobody is building firewalls for what agents <em>know</em>. Your agent's context window is an unauthenticated ingestion pipeline: whatever text lands in it becomes, functionally, trusted input. If someone edits a policy document, swaps a mirror, or serves your agent a stale copy of the rules, no sandbox in the world will catch it — because nothing <em>wrong</em> ever executed. The agent just <em>knew</em> the wrong thing.</p>
-<p><img alt="Split panel: the action side of agent governance — sandboxes, budget caps, tool permissions, egress filters — behind a locked brick wall, while on the knowledge side an open funnel pours unverified documents straight into the context window. We are only securing half the agent architecture." src="../assets/images/knowledge-firewall-01-two-halves.webp" /></p>
-<p>This post is the hands-on companion to <a href="2026/07/08/two-halves-of-the-governance-problem/">Two Halves of the Governance Problem</a>. That one argued the thesis; this one is a tutorial. In about ten minutes, we take two markdown files and give them a declared, signed, tamper-evident boundary that an agent verifies <em>before</em> loading a single byte. Every command output below is pasted from a real run.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2026/07/17/a-firewall-for-what-your-agent-knows/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
       
         
           
@@ -6996,7 +6998,7 @@ because boring examples keep us honest: <em>how does the AI help you cut a relea
 
 
 <nav class="md-pagination">
-  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a> <a class="md-pagination__link" href="page/3/">3</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="page/19/">19</a>
+  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a> <a class="md-pagination__link" href="page/3/">3</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="page/20/">20</a>
 </nav>
         
       
