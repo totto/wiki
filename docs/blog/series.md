@@ -88,7 +88,7 @@ Some posts form a natural sequence and are best read in order. Each series below
         32. [Stale Knowledge Is Worse Than No Knowledge: KCP v0.19 and v0.20 Close the Temporal Gap](/blog/2026/06/12/stale-knowledge-is-worse-than-no-knowledge-kcp-v019-and-v020-close-the-temporal-gap/)
         33. [Google's Open Knowledge Format and the problems it deliberately doesn't solve](/blog/2026/06/17/googles-open-knowledge-format-and-the-problems-it-deliberately-doesnt-solve/)
 
-        **The protocol in full** &nbsp;·&nbsp; 17 posts
+        **The protocol in full** &nbsp;·&nbsp; 18 posts
 
         34. [One Agent's Journey Through the Whole Protocol](/blog/2026/07/04/one-agents-journey-through-the-whole-protocol/)
         35. [The Agentic Web Has No Login Page](/blog/2026/07/04/the-agentic-web-has-no-login-page/)
@@ -108,8 +108,9 @@ Some posts form a natural sequence and are best read in order. Each series below
         49. [A Firewall for What Your Agent Knows](/blog/2026/07/17/a-firewall-for-what-your-agent-knows/)
         50. [The KCP Ecosystem: A Tour for New Arrivals](/blog/2026/07/17/the-kcp-ecosystem-a-tour-for-new-arrivals/)
         51. [The KCP Universe: Everything, and What July Changed](/blog/2026/07/29/the-kcp-universe-everything-and-what-july-changed/)
+        52. [The Skill Is the Security Boundary](/blog/2026/08/10/the-skill-is-the-security-boundary/)
 
-    **51 posts &nbsp;·&nbsp; February – July 2026**
+    **52 posts &nbsp;·&nbsp; February – August 2026**
 
     [:octicons-arrow-right-24: Start reading](/blog/2026/02/24/who-describes-you-to-ai/)
 
