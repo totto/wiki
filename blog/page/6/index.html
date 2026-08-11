@@ -1517,6 +1517,8 @@
       
         
       
+        
+      
     
     
     
@@ -1732,6 +1734,36 @@
     
   
     Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering
   
 
     
@@ -6447,6 +6479,60 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-01 09:30:00+00:00">June 1, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              16 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-law-is-also-knowledge-package-it"><a class="toclink" href="../../2026/06/01/the-law-is-also-knowledge-package-it/">The Law Is Also Knowledge. Package It.</a></h2>
+<p><img alt="Overview: The Law as Code — Solving the AI Compliance Identity Crisis. The problem (shapeless regulations as prose), the KCP solution (typed regulatory packages), and real-world applications across NIS2 and EU AI Act." src="../../../assets/images/kcp-laws-00-overview.webp" /></p>
+<p>In the <a href="../../2026/06/01/everyone-is-auditing-the-workflow-nobody-is-fixing-the-knowledge/">previous post</a>, I argued that the AI provenance problem is a format problem. The knowledge going into and out of AI systems -- policies, observations, interpretations -- has no stable shape. No type, no version, no cryptographic binding. The audit trail records that something was reviewed. It cannot record what was reviewed, because the thing itself is prose that could have drifted between the moment of review and the moment of use.</p>
+<p>KCP solves this by giving knowledge a shape: typed, versioned, signed packages. A compliance observation becomes a structured declaration with <code>type</code>, <code>version</code>, <code>signed_by</code>, <code>derived_from</code>, <code>review_depth</code>, <code>valid_until</code>. The audit trail becomes precise: "reviewed a cryptographically signed declaration of type <code>evaluation:nis2-art21-supply-chain</code> v1.2.0" -- not "reviewed a document."</p>
+<p>But there is a gap I did not address. I gave shape to the <strong>outputs</strong> -- the policies, the observations, the interpretations. I left the <strong>inputs</strong> shapeless. The regulations and laws that AI agents evaluate against are still prose in the system prompt.</p>
+<p>This post closes that gap.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/01/the-law-is-also-knowledge-package-it/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-05-30 10:00:00+00:00">May 30, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6904,58 +6990,6 @@ federated, and cryptographically signed. Here's what I did and what I learned.</
     
       <nav class="md-post__action">
         <a href="../../2026/04/21/when-your-agent-can-finally-read-the-room/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-04-18 00:00:00+00:00">April 18, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="ai-agents-forget-everything-thats-a-choice-not-a-constraint"><a class="toclink" href="../../2026/04/18/ai-agents-forget-everything-thats-a-choice-not-a-constraint/">AI agents forget everything. That's a choice, not a constraint.</a></h2>
-<p>Every session with Claude Code starts blank. No memory of last week's refactor, no awareness of which team worked on this module, no continuity between the agent you ran on Tuesday and the one running today.</p>
-<p>For a personal productivity tool, that's fine. For an enterprise deploying a fleet of AI agents, it's a fundamental architectural gap.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/04/18/ai-agents-forget-everything-thats-a-choice-not-a-constraint/">
           Continue reading
         </a>
       </nav>
