@@ -128,14 +128,17 @@ Here is the AI judgment agent from the Nordvik build — the one that reads a wh
 
 The charter's `scope` is the enforcement surface. When this agent runs, its proposal is conformance-checked against these lists **by exact match**: a proposed action on the `never` list is an automatic DENY, and anything *not exactly on the propose list* is a deny too — allow is enumerated, never inferred. The model can phrase its reasoning however it likes; the only actions that can survive the gate are the two it's chartered to propose.
 
+![Layer 2: Agents are charter-bound participants — Knowledge Unit + Signed Charter = Agent. Propose (read_knowledge, generate_plan, request_approval, log_action) is enumerated; Never (delete_knowledge, execute_unapproved, override_deny, access_external) is exact; everything else is automatically denied](/assets/images/blog/how-to-build-agentic-software-on-sunstone-atlas/charter-bound-participants.webp)
+*Allow is enumerated. Never is exact. Everything else is automatically denied — the same shape as the charter JSON above.*
+
 ### The trust ladder
 
 Notice `control.mode: "review_after"` on the rule. This is the graduated-autonomy mechanism, and it's worth being precise about because it's commonly confused with authority levels.
 
 `authority_level` is a **ceiling** — authored per assessed risk, composed lowest-of across playbook, step, and skill, never something an agent climbs. The trust ladder is a separate field: `control.mode`, per rule, moving **block → review_after / sample → monitor**. A new agent starts with heavy oversight (every decision blocked pending review, or reviewed after the fact). As a track record accrues — a configured window, a minimum count of clean decisions, a maximum deviation count, all conjunctive — a rule becomes *eligible* to graduate one rung looser:
 
-![Governing the Machine: the Canvas workflow — the four building blocks, the five-rung safety ladder (Observe / Explain / Suggest / Prepare / Commit), the draft-to-publish governance lifecycle, and the guardrails that make it auditable](/assets/images/blog/how-to-build-agentic-software-on-sunstone-atlas/canvas-workflow.webp)
-*The same authority ceiling from the code above, drawn as a ladder — a skill or step can only ever get as high as its authored rung allows.*
+![Graduated Autonomy trust ladder activation curve — Block, then Review After/Sample, then Monitor, climbed as a clean track record of decisions accrues; one deviation or human overturn drops the rule straight back to Block](/assets/images/blog/how-to-build-agentic-software-on-sunstone-atlas/trust-ladder-activation-curve.webp)
+*Not the same ladder as the authority ceiling above — this one is earned and can be lost. Climbed slowly, one clean-decision window at a time; dropped instantly on the first deviation.*
 
 ```json
 "graduation": { "mode": "manual", "window": "P30D",
@@ -152,9 +155,15 @@ Three properties make this defensible rather than decorative:
 
 Before an AI agent's judgment steps can dispatch at all, the agent must be **cleared**: staged on an isolated gateway, exercised with at least one real test run, then signed off by a human whose role matches the charter's `authority_required`. The clearance event pins a hash of the charter's actual content. Edit the charter afterward and the clearance goes *stale* — the next run refuses to start (HTTP 409, before a single event is written) until a human re-clears against the current content. Grant-once-drift-forever is structurally impossible.
 
+![Content-pinned human clearance — before edit, the charter's hash matches a signed CLEARED stamp and runs freely; after any edit to the charter, the hash breaks and the next run attempt returns HTTP 409: STALE until a human re-clears against the new content](/assets/images/blog/how-to-build-agentic-software-on-sunstone-atlas/content-pinned-clearance.webp)
+*Edit the charter, and the old clearance simply stops matching — there's no code path where a stale grant survives.*
+
 ## Functions: decisions that replay byte-for-byte
 
 Anything that *can* be decided deterministically *should* be — because a deterministic decision can be re-evaluated later against the recorded facts and reproduce itself exactly. An LLM decision can be attested; it can never be replayed. Functions are the replayable half.
+
+![Layer 3: Functions — a predicate expression tree (AND / exists / == over user.status and transaction.amount) balanced against byte-for-byte replayability: a past fact weighed against a past decision, fail-closed evaluation that escalates to a human instead of defaulting or guessing](/assets/images/blog/how-to-build-agentic-software-on-sunstone-atlas/functions-byte-for-byte.webp)
+*No eval, no regex, fail-closed — a Function is data, not code, which is exactly what makes it replayable months later.*
 
 A Function is a predicate expressed as a JSON tree in a small, closed language — comparisons, membership, existence, boolean composition. Never code, never `eval`, deliberately no arithmetic or regex. Here's the gate that checks a quote's rebate against what the supplier actually confirmed:
 
@@ -260,6 +269,9 @@ Several design moves here are worth stealing regardless of platform:
 
 **Data flow is declared and validated, not discovered.** Look at the `bind` on `price-control`: it consumes `steps.supplier-confirmation.rebate_confirmed` — the recorded output of the *human* confirmation step upstream. The validator checks every such reference at author time: it must point to a declared run input or to a field an upstream dependency actually produces. The human confirmation is never repeated by the machine — it is *re-verified*: the deterministic gate checks that the quote actually uses the rebate the supplier confirmed. And because a model-judgment step's referencable outputs are a fixed four-field shape (`outcome`, `proposed_action`, `confidence`, `citation`), there is no schema surface through which a model-*extracted* value — an amount, a date read out of free text — can launder itself into a downstream deterministic decision.
 
+![Layer 4: Playbooks and structural non-goals — sub-playbooks, AI judgments, and deterministic gates wired together inside a non-goals deny list; if "create order" sits on the top-level deny list, the entire procedure is mathematically incapable of executing a payment or sending a quote](/assets/images/blog/how-to-build-agentic-software-on-sunstone-atlas/playbooks-structural-non-goals.webp)
+*The deny list wraps the whole procedure, not just one step — every sub-playbook, every AI judgment, every gate inside it inherits the same non-goals.*
+
 ## Enactment: what actually happens at run time
 
 Publishing a playbook makes it a signed, inert artifact. Enactment makes it run. Every step dispatches on the performer's `decision_basis`:
@@ -268,6 +280,9 @@ Publishing a playbook makes it a signed, inert artifact. Enactment makes it run.
 - **`deterministic`** → the exact *published* Function version bound to each charter rule is fetched and evaluated against the declared facts. Any missing input or `not_evaluable` result escalates the whole step — no partial credit.
 - **`model_judgment`** → the request goes to an **isolated staging gateway**: a separate service, own OS user, own budget, loopback-only, never the production instance. The model gets the step description and the run's recorded facts — no tools, no browsing, one grounded verdict call. Its proposal passes the conformance check against the charter's propose/never lists, then an **asymmetric confidence gate**: low confidence can downgrade an auto-approve to a human escalation, but no amount of confidence can ever upgrade an escalation to an approval. Confidence only ever makes the outcome more cautious.
 
+![Enactment: the append-only ledger — human, deterministic, and model-judgment paths all resolve into dual-signed blocks on a verified chain; AI decisions carry two signatures, one for who decided (the gateway's embedded receipt) and one for what belongs on the chain (the engine's conformance signature)](/assets/images/blog/how-to-build-agentic-software-on-sunstone-atlas/enactment-append-only-ledger.webp)
+*Current state is never held in memory — it's reconstructed by replaying this chain, which is why a restarted server always reasons its way back to the identical answer.*
+
 Every decision becomes a signed event on the run's append-only ledger: `run-initiated`, `judgment-decision`, `deterministic-decision`, `escalation-raised`, `human-approval`, through to `run-completed`. A judgment event is **dual-signed** — the gateway's embedded receipt attests *who decided* (the real model call, the real conformance check); the engine's wrapper signature attests *what belongs on this run's chain*. Nothing about a run's state is held in memory: current state is always reconstructed by replaying the ledger, so a restarted server reasons its way to the identical answer.
 
 And the ledger is checkable, not just readable: a verify endpoint re-evaluates every deterministic decision's pinned Function version against its recorded facts (byte-for-byte reproduction) and re-checks that every upstream fact a decision consumed still matches the signed event that produced it — catching a substituted fact, not merely a bad recomputation.
@@ -275,6 +290,9 @@ And the ledger is checkable, not just readable: a verify endpoint re-evaluates e
 One production war story that shows the gates are real: while wiring the Nordvik UI to the engine, the team discovered that a run of `quote-control` **would not start at all** — a 409 before any event was written — because the coherence agent had been staged but not yet cleared. The fix was not a config flag; it was a human with the `responsible-seller` role recording a signed clearance, once, after a real test run. The team deliberately refused to script that sign-off into the deployment automation: forging the human signature from infrastructure-as-code would hollow out exactly the thing the platform exists to prove.
 
 ## The worked flow, end to end
+
+![The end-to-end composition — Lead, Dedup, Build Quote, Quote-Control Run, Customer Accepts; the Quote-Control Run expands into AI Check (proposes), Human Step (records supplier confirmation), and Function Check (mathematically re-verifies) — the AI is an accountable employee, only the terminal human step has authority to send](/assets/images/blog/how-to-build-agentic-software-on-sunstone-atlas/end-to-end-composition.webp)
+*Zoomed into the one box that does the governed work — everything either side of it is ordinary application flow.*
 
 Composed, the Nordvik system runs five stages:
 
