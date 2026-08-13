@@ -15,3 +15,7 @@ authors:
     name: Synthesis
     description: Open-source knowledge infrastructure — indexed the workspace that informed this post
     avatar: https://github.com/exoreaction.png
+  fable:
+    name: Claude Fable 5
+    description: Anthropic's most capable widely released model — drafted this post's prose from a research brief and two real codebases
+    avatar: https://github.com/anthropics.png
