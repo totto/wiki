@@ -6492,6 +6492,60 @@
           
           <li class="md-meta__item">
             
+              11 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-agentic-web-has-no-login-page"><a class="toclink" href="../../2026/07/04/the-agentic-web-has-no-login-page/">The Agentic Web Has No Login Page</a></h2>
+<p>Think about what makes the human web economically viable. Not the browser. Not HTML. It's the login page — and everything it implies. Paywalls, licenses, subscriptions, terms of access. The mundane machinery that lets someone publish valuable knowledge <em>without giving it away</em>. Remove that machinery and the web would contain only what people are willing to publish for free.</p>
+<p>Now look at the agentic web. Agents consume knowledge from manifests, MCP servers, and context files across organisational boundaries — and there is no equivalent machinery. A knowledge source is either open to every agent that finds it, or it's locked behind a bespoke API that no standard agent can negotiate. Nothing in between. No standard way for a publisher to say <em>"this knowledge is for certified consumers only — prove who you are."</em></p>
+<p>The consequence is quiet but enormous: the knowledge layer of the agentic web contains only what publishers are willing to give away. Authoritative sources — legal data providers, regulatory interpreters, standards bodies, paid research — stay off it entirely. So agents answer compliance questions from scraped blog posts instead of authoritative guidance, because the authoritative guidance has no way to come online on terms its publisher can accept.</p>
+<p>KCP v0.22 and v0.23, both shipping today, are the missing machinery.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/07/04/the-agentic-web-has-no-login-page/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-04 00:00:00+00:00">July 4, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
               8 min read
             
           </li>
@@ -6926,61 +6980,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/06/17/googles-open-knowledge-format-and-the-problems-it-deliberately-doesnt-solve/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-14 14:00:00+00:00">June 14, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="sixteen-versions-of-metadata-nobody-read"><a class="toclink" href="../../2026/06/14/sixteen-versions-of-metadata-nobody-read/">Sixteen Versions of Metadata Nobody Read</a></h2>
-<p><em>Practitioner notes on shipping a feature that was already a no-op, in two different ways.</em></p>
-<p>The Mynder regulatory knowledge base has 63 fragment manifests covering 101 units of EU regulation — GDPR, NIS2, the EU AI Act, DORA, Norwegian and Swedish data protection law. Every unit carries temporal validity (<code>valid_from</code>, <code>valid_until</code>, <code>superseded_by</code>), per-unit content hashes (sha256), <code>not_for</code> audience filtering, content structure declarations, and Ed25519 JWS signatures. All of it declared in KCP v0.21.</p>
-<p>Synthesis — the workspace intelligence tool that indexes and searches this corpus — was reading it at v0.5 feature level.</p>
-<p>Sixteen spec versions of metadata, sitting in the files, being dutifully indexed and completely ignored by the tool whose job was to understand them. The corpus was "searchable" but not "knowledge-aware." You could find GDPR articles by keyword. You could not ask what was in effect in 2022 and get a time-correct answer.</p>
-<p><img alt="Sixteen Versions of Metadata Nobody Read: a circuit board blueprint showing KCP v0.21, Temporal Validity, and Ed25519 JWS Signatures as three input connectors feeding into a central processor — but the connection is broken with an X. Diagnostic: the gap between organized data and intelligent infrastructure." src="/assets/images/blog/sixteen-versions-metadata/slide-01.png" /></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/14/sixteen-versions-of-metadata-nobody-read/">
           Continue reading
         </a>
       </nav>
