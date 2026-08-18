@@ -1,7 +1,7 @@
 ---
 description: "Five agent architectures walk into a comparison: Claude Code (the dominant IDE agent), Crush (Charm's model-flexible terminal agent), OpenClaw (the viral local-first personal assistant), kcp-agent (the deterministic knowledge planner), and pi-kcp (KCP governance running inside the Pi coding agent — the only entry that verifies its own execution against what was approved). They solve different problems — and the differences reveal what the industry still disagrees about."
 date: 2026-08-14T15:00:00
-draft: true
+draft: false
 categories:
   - AI Agents
   - Architecture
