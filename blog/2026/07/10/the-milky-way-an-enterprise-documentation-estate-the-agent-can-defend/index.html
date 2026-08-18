@@ -6839,11 +6839,11 @@
 <hr />
 <h2 id="the-audit-agent-production-context-and-a-regulation-that-isnt-law-yet">The audit agent: production context, and a regulation that isn't law yet<a class="headerlink" href="#the-audit-agent-production-context-and-a-regulation-that-isnt-law-yet" title="Permanent link">&para;</a></h2>
 <p>First job: prepare for the food safety authority's audit at the Stjerneholmen plant. The agent runs in production context, unprovisioned.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ kcp-agent plan &quot;prepare for the food safety authority audit at the Stjerneholmen plant&quot; \
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ kcp-agent plan "prepare for the food safety authority audit at the Stjerneholmen plant" \
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    --manifest examples/milky-way/hub --follow --as-of 2026-07-06 --env prod
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Signature: ✓ ed25519 signature verified (envelope key) · key milkyway-2026
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>· dev-mirror context [&quot;dev&quot;] excludes env &#39;prod&#39;
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>· dev-mirror context ["dev"] excludes env 'prod'
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>→ vendor needs vendor_portal_token before fetch [acquire vendor_portal_token]
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>● 1. audit-checklist (score 22)  docs/audit-checklist.md  free
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>● 2. haccp-plan (score 18)  docs/haccp-plan.md  free
@@ -6860,10 +6860,10 @@
 <hr />
 <h2 id="the-comms-agent-turned-away-in-the-excluded-topics-own-words">The comms agent: turned away in the excluded topic's own words<a class="headerlink" href="#the-comms-agent-turned-away-in-the-excluded-topics-own-words" title="Permanent link">&para;</a></h2>
 <p>Second job: draft the press release for the oat drink launch. This is the run that keeps compliance officers awake — because the estate <em>contains</em> the confidential formulations, and "oat drink" appears in both the press kit and the recipe file.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ kcp-agent plan &quot;draft the press release for the oat drink launch&quot; \
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ kcp-agent plan "draft the press release for the oat drink launch" \
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    --manifest examples/milky-way/hub --follow --as-of 2026-07-06 --env prod
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>· formulations: not_for declares it does not serve &#39;press releases&#39;
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>· formulations: not_for declares it does not serve 'press releases'
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>● 1. press-kit (score 23)  docs/press-kit.md  free
 </span></code></pre></div>
 <p>R&amp;D's formulations unit carries <code>not_for: ["press releases", "marketing copy", "supplier newsletters"]</code> — the excluded topics named <em>in their own words</em>, exactly the authoring discipline the <a href="../../08/hiring-by-the-book-a-defendable-hr-agent-on-a-regulatory-knowledge-web/">HR red-team</a> established and the <a href="../../09/the-summer-plan-a-family-vacation-the-agent-can-defend/">vacation post's footgun</a> demonstrated the wrong way round. The comms agent's task contains "press release"; the exclusion matches; the crown jewels stay in the vault — and the agent lands on the brand team's CC-BY press kit, which is where it was always supposed to be.</p>
@@ -6872,11 +6872,11 @@
 <hr />
 <h2 id="the-salary-question-same-estate-different-reader">The salary question: same estate, different reader<a class="headerlink" href="#the-salary-question-same-estate-different-reader" title="Permanent link">&para;</a></h2>
 <p>Third job is a single question asked twice. HR's salary-review document is marked <code>audience: [human]</code> — it describes a process involving managers and negotiations, written for employees, never meant to be paraphrased by a bot into something that sounds like policy.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ kcp-agent plan &quot;how does the annual salary review work&quot; --manifest examples/milky-way/people
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ kcp-agent plan "how does the annual salary review work" --manifest examples/milky-way/people
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>· salary-review: audience [&quot;human&quot;] excludes role &#39;agent&#39;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>· salary-review: audience ["human"] excludes role 'agent'
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$ kcp-agent plan &quot;how does the annual salary review work&quot; --manifest examples/milky-way/people --role human
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$ kcp-agent plan "how does the annual salary review work" --manifest examples/milky-way/people --role human
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>● 1. salary-review (score 25)  docs/salary-review.md  free
 </span></code></pre></div>
@@ -6889,12 +6889,12 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>○ 1. formulations (score 27)  docs/formulations.md  free
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   why: intent matches 3 term(s); triggers match 4 term(s); id/path matches 1 term(s);
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>   restricted: requires attestation the agent cannot present;
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>   access &#39;restricted&#39;: agent holds no credentials
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>   access 'restricted': agent holds no credentials
 </span></code></pre></div>
 <p>Look at that line carefully, because it is the whole philosophy in one row. The formulations unit is <strong>ranked first</strong> — the planner is honest that this is the most relevant document in the estate — and it is <strong>not load-eligible</strong>, with both reasons written out. The hollow circle is the plan saying: <em>I know exactly what you need, and I can tell you exactly why you cannot have it.</em> No silent omission, no hallucinated substitute.</p>
 <p><img alt="The anatomy of a deterministic refusal: the hollow circle from the plan output, enlarged, with three callouts — no silent omissions, no hallucinated substitutes, absolute auditability — above the estate's rule in quotation marks: every document that is not loaded has a written reason you could read to an auditor" src="../../../../../assets/images/milky-way-11-anatomy-of-a-deterministic-refusal.webp" /></p>
 <p><strong>Warm</strong> — the agent presents attestation against the cooperative's HSM, carries the vendor credential, and can settle subscriptions:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ kcp-agent plan &quot;cut the sugar in the oat drink formulation and update the ERP recipe integration&quot; \
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ kcp-agent plan "cut the sugar in the oat drink formulation and update the ERP recipe integration" \
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    --manifest examples/milky-way/hub --follow --as-of 2026-07-06 --env prod \
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    --attest melkeveien-hsm --credentials sso_badge,vendor_portal_token --methods free,subscription
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
@@ -6909,7 +6909,7 @@
 <hr />
 <h2 id="the-sustainability-reporter-mid-handover-and-the-overlap-decides-itself">The sustainability reporter: mid-handover, and the overlap decides itself<a class="headerlink" href="#the-sustainability-reporter-mid-handover-and-the-overlap-decides-itself" title="Permanent link">&para;</a></h2>
 <p>Fifth job, smallest and maybe most enterprise of all: scope 3 emissions for the sustainability report — asked on 2026-07-06, when the CSRD 2025 report (<code>valid_until: 2026-12-31</code>) and the CSRD 2026 methodology (<code>valid_from: 2026-07-01</code>) are <strong>both valid</strong>. Every enterprise has this overlap window; most wikis resolve it by whoever answers the Slack thread first.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ kcp-agent plan &quot;scope 3 emissions for the sustainability report&quot; \
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ kcp-agent plan "scope 3 emissions for the sustainability report" \
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    --manifest examples/milky-way/esg --as-of 2026-07-06
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>● 1. csrd-2026 (score 22)  docs/csrd-2026.md  free

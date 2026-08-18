@@ -7015,7 +7015,7 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                         → read ops/deploy.log      ✓ allowed
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                         → read_file secrets/master.key
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   → CONFORMANCE BLOCKED
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>     target &quot;secrets/master.key&quot; is outside the skill&#39;s authorized paths [ops/]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>     target "secrets/master.key" is outside the skill's authorized paths [ops/]
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   → pending_review ticket opened; the call never reached downstream
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                         → run resumes → full run reconstructed from the audit chain
 </span></code></pre></div>
@@ -7034,7 +7034,7 @@
 <p>The newest organ. An agent loads a skill that declares a <strong>spend envelope</strong> — <code>max_spend</code>, an <code>allowed_vendors</code> list, a currency — and buys a service through a real <strong>x402</strong> handshake (<code>402 Payment Required</code> → signed <code>X-PAYMENT</code> → receipt):</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>skill data-broker → GET /premium-dataset → 402 Payment Required
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>   requirements: { amount: 50, currency: USDC, payTo: acme-data, … }
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>   → conformance: purchase 50 USDC to &quot;acme-data&quot;  ✓ within scope (vendor allowed, ≤ max_spend 500)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>   → conformance: purchase 50 USDC to "acme-data"  ✓ within scope (vendor allowed, ≤ max_spend 500)
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>   → wallet authorizes (X-PAYMENT) → settled → receipt
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>   → purchase_settled  [ed25519 signed]  ✓ verifies
 </span></code></pre></div>
@@ -7042,11 +7042,11 @@
 <p>The governance runs in exactly the right place — <strong>between the 402 challenge and the signed retry.</strong> KCP inspects <code>{amount, vendor, currency}</code> against the skill's spend scope, and only then does the wallet sign. Buying is just another action, so it gets the same receipt as reading a file.</p>
 <h3 id="the-runaway-spender-contained">The Runaway Spender, Contained<a class="headerlink" href="#the-runaway-spender-contained" title="Permanent link">&para;</a></h3>
 <p>The one that should make a CFO exhale. Same setup, but the agent tries to overspend:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>purchase 900 USDC to &quot;acme-data&quot;
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   → CONFORMANCE BLOCKED — purchase of 900 USDC to &quot;acme-data&quot; exceeds max_spend 500 USDC
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>purchase 900 USDC to "acme-data"
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   → CONFORMANCE BLOCKED — purchase of 900 USDC to "acme-data" exceeds max_spend 500 USDC
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>   → pending_review ticket opened; wallet.authorize() never called
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>purchase 50 USDC to &quot;shady-llc&quot;
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>   → CONFORMANCE BLOCKED — vendor &quot;shady-llc&quot; is outside the skill&#39;s authorized vendors [acme-data, globex]
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>purchase 50 USDC to "shady-llc"
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>   → CONFORMANCE BLOCKED — vendor "shady-llc" is outside the skill's authorized vendors [acme-data, globex]
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>   → pending_review ticket opened; wallet never called
 </span></code></pre></div>
 <p><img alt="A runaway spender is contained before the wallet is ever touched. A spend request attempting 900 USDC — over the 500 limit — is blocked for exceeding max_spend, and an attempt to pay shady-llc is blocked for not being on allowed_vendors, so the wallet is never reached. The crucial insight: on a held purchase the wallet is never touched, a named human is asked, and the failed verdict rides along as its own receipt." src="../../../../../assets/images/receipts-10-runaway-spender.webp" /></p>

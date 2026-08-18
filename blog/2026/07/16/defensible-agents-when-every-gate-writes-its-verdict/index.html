@@ -6773,12 +6773,12 @@
 <hr />
 <h2 id="the-thirteen-gates-written-down">The thirteen gates, written down<a class="headerlink" href="#the-thirteen-gates-written-down" title="Permanent link">&para;</a></h2>
 <p>Every unit in a knowledge manifest is evaluated through a cascade of thirteen gates, in order. The first gate that rejects a unit ends the evaluation — no further gates fire. Until now, the plan told you the outcome. Now the trace tells you the journey.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> 1. audience        — does the unit address this agent&#39;s role?
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> 1. audience        — does the unit address this agent's role?
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> 2. not_for         — does the task match a negative-targeting declaration?
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> 3. temporal        — is the unit within its valid_from / valid_until window?
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a> 4. deprecated      — is the unit deprecated?
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a> 5. supersession    — is the unit superseded by a selectable successor?
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a> 6. relevance       — does the task match the unit&#39;s intent or triggers?
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a> 6. relevance       — does the task match the unit's intent or triggers?
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a> 7. attestation     — does the unit require attestation the agent can present?
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a> 8. payment         — is there an affordable payment method?
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a> 9. access          — does the unit require credentials the agent holds?
@@ -6794,7 +6794,7 @@
 <h2 id="what-the-trace-looks-like">What the trace looks like<a class="headerlink" href="#what-the-trace-looks-like" title="Permanent link">&para;</a></h2>
 <p>Here is the shipping output — the fjordwire newsstand manifest, task "sovereign compute award", as-of July 6th. Two units tell the story: the exclusive that passed every gate, and the rumour that didn't survive gate 5.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chipfab-exclusive — selected
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  ✓ audience         role &quot;agent&quot; is in [agent, analyst]
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  ✓ audience         role "agent" is in [agent, analyst]
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  ✓ temporal         active (2026-07-05 → ∞) as of 2026-07-06
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  ✓ relevance        score 21: intent matches 3 term(s), triggers match 3 term(s)
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  ✓ payment          x402 0.25 USDC/request — affordable
@@ -6802,7 +6802,7 @@
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  ✓ money_budget     0.25 USDC cumulative — within budget
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>chipfab-rumour — skipped (rejected by temporal)
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  ✓ audience         role &quot;agent&quot; is in [agent]
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>  ✓ audience         role "agent" is in [agent]
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>  ✗ temporal         expired 2026-07-05 (superseded by chipfab-exclusive)
 </span></code></pre></div>
 <p>Every gate the exclusive passed is a sentence. Every gate the rumour <em>didn't reach</em> is implicit — the trace stops at the first rejection, just as the planner does. The rumour didn't get to relevance, payment, or budget, because temporal rejected it first. That's not an implementation detail; that's the protocol's semantics, written down.</p>
@@ -6874,12 +6874,12 @@
 <h2 id="the-mcp-surface-kcp_trace">The MCP surface: kcp_trace<a class="headerlink" href="#the-mcp-surface-kcp_trace" title="Permanent link">&para;</a></h2>
 <p>The trace is a first-class MCP tool — <code>kcp_trace</code> — alongside <code>kcp_plan</code>, <code>kcp_load</code>, <code>kcp_validate</code>, and <code>kcp_replay</code>. Any MCP client (Claude Code, an IDE, another agent) can request the gate cascade for any task against any manifest:</p>
 <div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tools/call&quot;</span><span class="p">,</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;kcp_trace&quot;</span><span class="p">,</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;arguments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="nt">&quot;task&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sovereign compute award&quot;</span><span class="p">,</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="nt">&quot;manifest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;examples/fjordwire&quot;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tools/call"</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kcp_trace"</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="nt">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sovereign compute award"</span><span class="p">,</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">      </span><span class="nt">"manifest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"examples/fjordwire"</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p">}</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
@@ -6930,7 +6930,7 @@
 <p><img alt="This agent decided not to show me this document. Why? The AI Excuse (indefensible): &quot;The model didn't think it was relevant.&quot; Subtext: a shrug with an API bill attached. The Engineered Standard (defensible): &quot;Gate 3 (temporal) rejected it. The document expired on July 5th and its declared successor chipfab-exclusive is selectable. Here is the trace, here is the diff from yesterday, and here is the replay proving the planner would make the same decision again right now.&quot;" src="../../../../../assets/images/defensible-agents-11.webp" /></p>
 <hr />
 <p>265 tests. 18 narrated demos, each CI-asserted. One gate cascade that writes its own verdict. Two more implementations that have to agree or the spec has a bug.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>npx<span class="w"> </span>kcp-agent<span class="w"> </span>plan<span class="w"> </span><span class="s2">&quot;your task&quot;</span><span class="w"> </span>--manifest<span class="w"> </span>.<span class="w"> </span>--trace
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>npx<span class="w"> </span>kcp-agent<span class="w"> </span>plan<span class="w"> </span><span class="s2">"your task"</span><span class="w"> </span>--manifest<span class="w"> </span>.<span class="w"> </span>--trace
 </span></code></pre></div>
 <p>The plan is the evidence. The trace is the transcript. The diff is the delta. And replay is the cross-examination.</p>
 <p>Vibes don't testify. This does.</p>

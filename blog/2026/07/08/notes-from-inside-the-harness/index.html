@@ -6758,7 +6758,7 @@
 <p>We fixed it by naming the genuinely-distinct excluded domains instead of negating the unit's own subject — a GDPR text is <code>not_for</code> money-laundering reporting, not <code>not_for</code> "personal data." 104 warnings went to zero. What stayed with me was the feeling of the check itself: <strong>cold, specific, and on my side.</strong></p>
 <h2 id="watching-an-agent-read-the-law">Watching an agent read the law<a class="headerlink" href="#watching-an-agent-read-the-law" title="Permanent link">&para;</a></h2>
 <p>Then the good part. A real question, run against the real corpus:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ kcp-agent plan &quot;GDPR processor obligations and Article 28 DPA requirements?&quot;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ kcp-agent plan "GDPR processor obligations and Article 28 DPA requirements?"
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Signature:  ✓ ed25519 signature verified (declared key)
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Load plan (5 units):
@@ -6766,8 +6766,8 @@
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>       why: intent matches 3; triggers match 2
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  ● …
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Skipped (52):
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  · gdpr-full        not_for: &#39;B2C consumer rights outside data protection&#39;
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  · nis2-directive   not_for: &#39;questions about personal data processing&#39;
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  · gdpr-full        not_for: 'B2C consumer rights outside data protection'
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  · nis2-directive   not_for: 'questions about personal data processing'
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  · … 50 more, each with a written reason
 </span></code></pre></div>
 <p>Five units selected, each with a scored, written justification. Fifty-two skipped, <strong>each with a reason I could read</strong>. A signature verified before a single byte of content loaded. A budget applied.</p>

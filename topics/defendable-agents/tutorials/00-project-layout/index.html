@@ -6853,7 +6853,7 @@
 </tbody>
 </table>
 <p>The split between <code>data/</code> (shared, public) and <code>.state/</code> (confidential, per-run) is the same split that later separates tenants. Keep it clean from day one. Add a <code>.gitignore</code>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.state/&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">".state/"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
 </span></code></pre></div>
 <h2 id="the-two-manifests">The two manifests<a class="headerlink" href="#the-two-manifests" title="Permanent link">&para;</a></h2>
 <p><code>harness.yaml</code> is the smallest thing you can write that still governs. It names the domains the agent may touch, sets a fail-closed policy, and caps spend and context:</p>

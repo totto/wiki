@@ -6809,7 +6809,7 @@
 <p><strong>Why this is a scar:</strong> Automated knowledge extraction is seductive — the system learns from itself. But the output distribution is heavily right-tailed. Most auto-reflected output is noise. If you don't filter aggressively, you accumulate junk that's harder to remove than it was to add.</p>
 <p><strong>The mechanical fix in <code>~/.kcp/stop-hook.sh</code>:</strong></p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Quality gate 1: delete stubs with &lt; 100 chars of instructions</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Quality gate 2: strip &quot;noise&quot; Reflected blocks</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Quality gate 2: strip "noise" Reflected blocks</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">is_noise_block</span><span class="p">(</span><span class="n">block</span><span class="p">):</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="c1"># Fewer than 3 non-blank lines with &gt; 5 chars each = noise</span>
 </span></code></pre></div>
@@ -6829,8 +6829,8 @@
 <p><strong>The name:</strong> "Ralph Wiggum" — named for the character who keeps trying the same thing expecting different results. Santander independently built a tool called <code>ralph</code> for the same failure mode. Convergent naming from convergent pain.</p>
 <p><strong>The mechanical fix in <code>~/.kcp/stop-hook.sh</code>:</strong> A retry circuit breaker via a <code>.claude-retry</code> file in the working directory. The file contains <code>max_retries</code>, <code>current_retry</code>, <code>success_command</code> (a command to verify success), and the task prompt. When retries are exhausted, the hook blocks with a hard message requiring manual intervention.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># On exhaustion:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s2">&quot;Ralph Wiggum loop exhausted after </span><span class="nv">$MAX_RETRIES</span><span class="s2"> attempts.</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s2"> Manual intervention required for: </span><span class="nv">$TASK_PROMPT</span><span class="s2">&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s2">"Ralph Wiggum loop exhausted after </span><span class="nv">$MAX_RETRIES</span><span class="s2"> attempts.</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s2"> Manual intervention required for: </span><span class="nv">$TASK_PROMPT</span><span class="s2">"</span>
 </span></code></pre></div>
 <p>The circuit breaker is <em>outside</em> the model's control. If the retry logic were prose-instructed, the model would reason past it under task pressure.</p>
 <p><strong>The lesson:</strong> Agents need mechanical circuit breakers. The circuit breaker must be file-based — a contract the hook reads directly.</p>
