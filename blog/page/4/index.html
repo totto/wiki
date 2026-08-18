@@ -6479,6 +6479,65 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-07-05 15:00:00+00:00">July 5, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              9 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-vibes-based-agent-era-deserves-to-end"><a class="toclink" href="../../2026/07/05/the-vibes-based-agent-era-deserves-to-end/">The Vibes-Based Agent Era Deserves to End</a></h2>
+<p>Every agent demo you've seen this year works the same way: stuff the context window, let the model improvise, applaud the output. Ask the obvious follow-up questions and the whole edifice wobbles. <em>Why did it read those files?</em> It seemed relevant. <em>Will it do the same thing tomorrow?</em> Probably not. <em>What happens when a document it reads contains instructions?</em> Please don't ask that one.</p>
+<p>We've been building agents where <strong>the model decides everything</strong> — what to load, what to trust, what to believe, what to spend — and then acting surprised that the result can't be audited, can't be reproduced, and can't be defended in front of anyone who signs things for a living.</p>
+<p>Today <strong>kcp-agent 0.2.0</strong> ships to npm, and it's not really a release. It's a counter-argument. It inverts the agent stack: <strong>determinism at the core, the model at the edge — on a leash.</strong> Its slogan is a falsifiable engineering claim, and CI falsifies it daily, and fails to:</p>
+<blockquote>
+<p><strong>The most deterministic agents in the world. Every decision defensible.</strong></p>
+</blockquote>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>npx<span class="w"> </span>kcp-agent<span class="w"> </span>plan<span class="w"> </span><span class="s2">"how does the planner score units?"</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--manifest<span class="w"> </span>https://raw.githubusercontent.com/Cantara/kcp-agent/main/knowledge.yaml
+</span></code></pre></div>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/07/05/the-vibes-based-agent-era-deserves-to-end/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-07-05 00:00:00+00:00">July 5, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6929,57 +6988,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/06/22/your-ai-agent-does-not-know-the-law-and-how-to-fix-that/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-19 00:00:00+00:00">June 19, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/software-architecture/" class="md-meta__link">Software Architecture</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              6 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-zombie-in-the-basement"><a class="toclink" href="../../2026/06/19/the-zombie-in-the-basement/">The Zombie in the Basement</a></h2>
-<p>A company spent three years planning an ERP migration. Their architecture catalog was clean, tidy, and fully documented. It was also seventeen connections short of the truth — before they even opened the deployment config.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/19/the-zombie-in-the-basement/">
           Continue reading
         </a>
       </nav>

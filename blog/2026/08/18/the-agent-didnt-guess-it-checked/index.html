@@ -6,38 +6,38 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Software architect and AI development pioneer. 30 years building software and communities. Founder of eXOReaction, co-founder of JavaZone. Writes about Skill-Driven Development and working with AI at scale.">
+        <meta name="description" content="Last night, for the first time, a production agentic playbook stopped estimating what a change would break and queried a deterministic simulator holding the real dependency graph instead. The judgment steps around it were still LLM calls — but they reasoned from a computed fact, not a guess. Verification before judgment, as a step type, not a prompt instruction.">
       
       
         <meta name="author" content="Thor Henning Hetland">
       
       
-        <link rel="canonical" href="https://wiki.totto.org/">
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/08/18/the-agent-didnt-guess-it-checked/">
       
       
+        <link rel="prev" href="../../14/five-agents-compared/">
       
-        <link rel="next" href="start-here/">
       
       
         
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="assets/images/totto-2025.jpg">
+      <link rel="icon" href="../../../../../assets/images/totto-2025.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Thor Henning Hetland</title>
+        <title>The Agent Didn't Guess. It Checked. - Thor Henning Hetland</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -56,9 +56,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/extra.css">
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -78,52 +78,79 @@
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Thor Henning Hetland">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://wiki.totto.org/">
-<meta property="og:title" content="Home">
-<meta property="og:description" content="Software architect and AI development pioneer. 30 years building software and communities. Founder of eXOReaction, co-founder of JavaZone. Writes about Skill-Driven Development and working with AI at scale.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wiki.totto.org/blog/2026/08/18/the-agent-didnt-guess-it-checked/">
+<meta property="og:title" content="The Agent Didn't Guess. It Checked.">
+<meta property="og:description" content="Last night, for the first time, a production agentic playbook stopped estimating what a change would break and queried a deterministic simulator holding the real dependency graph instead. The judgment steps around it were still LLM calls — but they reasoned from a computed fact, not a guess. Verification before judgment, as a step type, not a prompt instruction.">
 <meta property="og:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
 <meta property="og:image:alt" content="Thor Henning Hetland">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@javatotto">
 <meta name="twitter:creator" content="@javatotto">
-<meta name="twitter:title" content="Home">
-<meta name="twitter:description" content="Software architect and AI development pioneer. 30 years building software and communities. Founder of eXOReaction, co-founder of JavaZone. Writes about Skill-Driven Development and working with AI at scale.">
+<meta name="twitter:title" content="The Agent Didn't Guess. It Checked.">
+<meta name="twitter:description" content="Last night, for the first time, a production agentic playbook stopped estimating what a change would break and queried a deterministic simulator holding the real dependency graph instead. The judgment steps around it were still LLM calls — but they reasoned from a computed fact, not a guess. Verification before judgment, as a step type, not a prompt instruction.">
 <meta name="twitter:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
+
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Thor Henning Hetland",
-  "url": "https://wiki.totto.org",
-  "image": "https://wiki.totto.org/assets/images/totto-2025.jpg",
-  "sameAs": [
-    "https://www.linkedin.com/in/hetland/",
-    "https://github.com/totto",
-    "https://twitter.com/javatotto"
-  ],
-  "jobTitle": "Software Architect",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "eXOReaction",
-    "url": "https://exoreaction.com"
+  "@type": "BlogPosting",
+  "headline": "The Agent Didn\u0027t Guess. It Checked.",
+  "url": "https://wiki.totto.org/blog/2026/08/18/the-agent-didnt-guess-it-checked/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wiki.totto.org/blog/2026/08/18/the-agent-didnt-guess-it-checked/"
   },
-  "knowsAbout": [
-    "Software Architecture",
-    "Artificial Intelligence",
-    "AI-Augmented Development",
-    "Skill-Driven Development",
-    "Knowledge Context Protocol",
-    "Java",
-    "Cloud Computing"
-  ],
-  "description": "Software architect and AI development pioneer. 30 years building software and communities. Founder of eXOReaction, co-founder of JavaZone."
+  "author": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org",
+    "image": "https://wiki.totto.org/assets/images/totto-2025.jpg"
+  },
+  "image": "https://wiki.totto.org/assets/images/totto-2025.jpg",
+  "datePublished": "2026-08-18 14:00:00",
+  "dateModified": "2026-08-18 13:58:33",
+  "description": "Last night, for the first time, a production agentic playbook stopped estimating what a change would break and queried a deterministic simulator holding the real dependency graph instead. The judgment steps around it were still LLM calls \u2014 but they reasoned from a computed fact, not a guess. Verification before judgment, as a step type, not a prompt instruction.",
+  "articleSection": "AI Agents, Engineering",
+  "keywords": "sunstone-atlas, agentic, simulation, playbooks, verification, defendable-agents"
 }
 </script>
 
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://wiki.totto.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Writing",
+      "item": "https://wiki.totto.org/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Agent Didn\u0027t Guess. It Checked.",
+      "item": "https://wiki.totto.org/blog/2026/08/18/the-agent-didnt-guess-it-checked/"
+    }
+  ]
+}
+</script>
 
 
   </head>
@@ -145,7 +172,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#thor-henning-hetland" class="md-skip">
+        <a href="#the-agent-didnt-guess-it-checked" class="md-skip">
           Skip to content
         </a>
       
@@ -182,9 +209,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
       
-  <img src="assets/images/totto-2025.jpg" alt="logo">
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -201,7 +228,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              The Agent Didn't Guess. It Checked.
             
           </span>
         </div>
@@ -299,11 +326,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
         
   
   
@@ -322,7 +347,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="start-here/" class="md-tabs__link">
+      <a href="../../../../../start-here/" class="md-tabs__link">
         
   
   
@@ -339,11 +364,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="blog/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
           
   
   
@@ -365,7 +392,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="about/" class="md-tabs__link">
+        <a href="../../../../../about/" class="md-tabs__link">
           
   
   
@@ -387,7 +414,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="about/presentations/" class="md-tabs__link">
+        <a href="../../../../../about/presentations/" class="md-tabs__link">
           
   
   
@@ -409,7 +436,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="knowledge-infrastructure/" class="md-tabs__link">
+        <a href="../../../../../knowledge-infrastructure/" class="md-tabs__link">
           
   
   
@@ -429,7 +456,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="open-source/" class="md-tabs__link">
+      <a href="../../../../../open-source/" class="md-tabs__link">
         
   
   
@@ -450,7 +477,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="interests/sci-fi/" class="md-tabs__link">
+        <a href="../../../../../interests/sci-fi/" class="md-tabs__link">
           
   
   
@@ -472,7 +499,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="interests/food-and-wine/" class="md-tabs__link">
+        <a href="../../../../../interests/food-and-wine/" class="md-tabs__link">
           
   
   
@@ -492,7 +519,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="glossary/" class="md-tabs__link">
+      <a href="../../../../../glossary/" class="md-tabs__link">
         
   
   
@@ -511,7 +538,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="tags/" class="md-tabs__link">
+      <a href="../../../../../tags/" class="md-tabs__link">
         
   
   
@@ -554,9 +581,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
       
-  <img src="assets/images/totto-2025.jpg" alt="logo">
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
 
     </a>
     Thor Henning Hetland
@@ -568,37 +595,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
@@ -614,72 +614,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#recent-writing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recent writing
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-im-working-on" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What I'm working on
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-proof" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The proof
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#speaking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Speaking
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -691,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="start-here/" class="md-nav__link">
+      <a href="../../../../../start-here/" class="md-nav__link">
         
   
   
@@ -715,6 +649,8 @@
       
   
   
+    
+  
   
   
     
@@ -736,20 +672,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="blog/" class="md-nav__link ">
+            <a href="../../../../" class="md-nav__link ">
               
   
   
@@ -767,13 +706,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -793,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/topics/" class="md-nav__link">
+      <a href="../../../../topics/" class="md-nav__link">
         
   
   
@@ -821,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/series/" class="md-nav__link">
+      <a href="../../../../series/" class="md-nav__link">
         
   
   
@@ -899,17 +838,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   
@@ -947,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2026/08/" class="md-nav__link">
+      <a href="../../../../archive/2026/08/" class="md-nav__link">
         
   
   
@@ -977,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2026/07/" class="md-nav__link">
+      <a href="../../../../archive/2026/07/" class="md-nav__link">
         
   
   
@@ -1007,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2026/06/" class="md-nav__link">
+      <a href="../../../../archive/2026/06/" class="md-nav__link">
         
   
   
@@ -1037,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2026/05/" class="md-nav__link">
+      <a href="../../../../archive/2026/05/" class="md-nav__link">
         
   
   
@@ -1067,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2026/04/" class="md-nav__link">
+      <a href="../../../../archive/2026/04/" class="md-nav__link">
         
   
   
@@ -1097,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2026/03/" class="md-nav__link">
+      <a href="../../../../archive/2026/03/" class="md-nav__link">
         
   
   
@@ -1127,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2026/02/" class="md-nav__link">
+      <a href="../../../../archive/2026/02/" class="md-nav__link">
         
   
   
@@ -1157,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2026/01/" class="md-nav__link">
+      <a href="../../../../archive/2026/01/" class="md-nav__link">
         
   
   
@@ -1187,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2025/12/" class="md-nav__link">
+      <a href="../../../../archive/2025/12/" class="md-nav__link">
         
   
   
@@ -1217,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2025/11/" class="md-nav__link">
+      <a href="../../../../archive/2025/11/" class="md-nav__link">
         
   
   
@@ -1247,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2025/10/" class="md-nav__link">
+      <a href="../../../../archive/2025/10/" class="md-nav__link">
         
   
   
@@ -1277,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2025/09/" class="md-nav__link">
+      <a href="../../../../archive/2025/09/" class="md-nav__link">
         
   
   
@@ -1307,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2025/08/" class="md-nav__link">
+      <a href="../../../../archive/2025/08/" class="md-nav__link">
         
   
   
@@ -1337,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2025/05/" class="md-nav__link">
+      <a href="../../../../archive/2025/05/" class="md-nav__link">
         
   
   
@@ -1367,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2025/04/" class="md-nav__link">
+      <a href="../../../../archive/2025/04/" class="md-nav__link">
         
   
   
@@ -1397,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2009/09/" class="md-nav__link">
+      <a href="../../../../archive/2009/09/" class="md-nav__link">
         
   
   
@@ -1427,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2009/06/" class="md-nav__link">
+      <a href="../../../../archive/2009/06/" class="md-nav__link">
         
   
   
@@ -1457,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2009/05/" class="md-nav__link">
+      <a href="../../../../archive/2009/05/" class="md-nav__link">
         
   
   
@@ -1487,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2009/04/" class="md-nav__link">
+      <a href="../../../../archive/2009/04/" class="md-nav__link">
         
   
   
@@ -1517,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2009/03/" class="md-nav__link">
+      <a href="../../../../archive/2009/03/" class="md-nav__link">
         
   
   
@@ -1547,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/archive/2009/02/" class="md-nav__link">
+      <a href="../../../../archive/2009/02/" class="md-nav__link">
         
   
   
@@ -1617,17 +1559,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
             
   
   
@@ -1665,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/ai-agents/" class="md-nav__link">
+      <a href="../../../../category/ai-agents/" class="md-nav__link">
         
   
   
@@ -1695,7 +1640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/ai-agents--the-agentic-web/" class="md-nav__link">
+      <a href="../../../../category/ai-agents--the-agentic-web/" class="md-nav__link">
         
   
   
@@ -1725,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/ai-augmented-development/" class="md-nav__link">
+      <a href="../../../../category/ai-augmented-development/" class="md-nav__link">
         
   
   
@@ -1755,7 +1700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/architecture/" class="md-nav__link">
+      <a href="../../../../category/architecture/" class="md-nav__link">
         
   
   
@@ -1785,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/career--community/" class="md-nav__link">
+      <a href="../../../../category/career--community/" class="md-nav__link">
         
   
   
@@ -1815,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/cloud-computing/" class="md-nav__link">
+      <a href="../../../../category/cloud-computing/" class="md-nav__link">
         
   
   
@@ -1845,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/engineering/" class="md-nav__link">
+      <a href="../../../../category/engineering/" class="md-nav__link">
         
   
   
@@ -1875,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/governance-trust--compliance/" class="md-nav__link">
+      <a href="../../../../category/governance-trust--compliance/" class="md-nav__link">
         
   
   
@@ -1905,7 +1850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/knowledge-context-protocol/" class="md-nav__link">
+      <a href="../../../../category/knowledge-context-protocol/" class="md-nav__link">
         
   
   
@@ -1935,7 +1880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/knowledge-infrastructure/" class="md-nav__link">
+      <a href="../../../../category/knowledge-infrastructure/" class="md-nav__link">
         
   
   
@@ -1965,7 +1910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/quantum-computing/" class="md-nav__link">
+      <a href="../../../../category/quantum-computing/" class="md-nav__link">
         
   
   
@@ -1995,7 +1940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/security/" class="md-nav__link">
+      <a href="../../../../category/security/" class="md-nav__link">
         
   
   
@@ -2025,7 +1970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blog/category/software-architecture/" class="md-nav__link">
+      <a href="../../../../category/software-architecture/" class="md-nav__link">
         
   
   
@@ -2101,7 +2046,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="about/" class="md-nav__link ">
+            <a href="../../../../../about/" class="md-nav__link ">
               
   
   
@@ -2145,7 +2090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/ventures/" class="md-nav__link">
+      <a href="../../../../../about/ventures/" class="md-nav__link">
         
   
   
@@ -2173,7 +2118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/cv-english/" class="md-nav__link">
+      <a href="../../../../../about/cv-english/" class="md-nav__link">
         
   
   
@@ -2201,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/cv-norwegian/" class="md-nav__link">
+      <a href="../../../../../about/cv-norwegian/" class="md-nav__link">
         
   
   
@@ -2229,7 +2174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/projects/" class="md-nav__link">
+      <a href="../../../../../about/projects/" class="md-nav__link">
         
   
   
@@ -2257,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/organizations/" class="md-nav__link">
+      <a href="../../../../../about/organizations/" class="md-nav__link">
         
   
   
@@ -2354,7 +2299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/presentations/" class="md-nav__link">
+      <a href="../../../../../about/presentations/" class="md-nav__link">
         
   
   
@@ -2444,7 +2389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/delivering-continuous-innovation/" class="md-nav__link">
+      <a href="../../../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
         
   
   
@@ -2472,7 +2417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/thousands-of-releases/" class="md-nav__link">
+      <a href="../../../../../presentations/thousands-of-releases/" class="md-nav__link">
         
   
   
@@ -2500,7 +2445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/best-practice-wtf/" class="md-nav__link">
+      <a href="../../../../../presentations/best-practice-wtf/" class="md-nav__link">
         
   
   
@@ -2528,7 +2473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/fixing-the-problem/" class="md-nav__link">
+      <a href="../../../../../presentations/fixing-the-problem/" class="md-nav__link">
         
   
   
@@ -2632,7 +2577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/internet-of-things/" class="md-nav__link">
+      <a href="../../../../../presentations/internet-of-things/" class="md-nav__link">
         
   
   
@@ -2660,7 +2605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/nyere-forskningsresultater/" class="md-nav__link">
+      <a href="../../../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
         
   
   
@@ -2688,7 +2633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/neo4dogs/" class="md-nav__link">
+      <a href="../../../../../presentations/neo4dogs/" class="md-nav__link">
         
   
   
@@ -2716,7 +2661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/kan-vi-skape-verdi/" class="md-nav__link">
+      <a href="../../../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
         
   
   
@@ -2744,7 +2689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/agile-wine-2011/" class="md-nav__link">
+      <a href="../../../../../presentations/agile-wine-2011/" class="md-nav__link">
         
   
   
@@ -2772,7 +2717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/cloud-psychology/" class="md-nav__link">
+      <a href="../../../../../presentations/cloud-psychology/" class="md-nav__link">
         
   
   
@@ -2800,7 +2745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/architecture-vs-agile/" class="md-nav__link">
+      <a href="../../../../../notes/architecture-vs-agile/" class="md-nav__link">
         
   
   
@@ -2898,7 +2843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/robust-smidig-utvikling/" class="md-nav__link">
+      <a href="../../../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
         
   
   
@@ -2926,7 +2871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/edr-mds-mdm/" class="md-nav__link">
+      <a href="../../../../../presentations/edr-mds-mdm/" class="md-nav__link">
         
   
   
@@ -2954,7 +2899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/laws-of-soa/" class="md-nav__link">
+      <a href="../../../../../presentations/laws-of-soa/" class="md-nav__link">
         
   
   
@@ -2982,7 +2927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="presentations/design-time-governance/" class="md-nav__link">
+      <a href="../../../../../presentations/design-time-governance/" class="md-nav__link">
         
   
   
@@ -3066,7 +3011,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="knowledge-infrastructure/" class="md-nav__link ">
+            <a href="../../../../../knowledge-infrastructure/" class="md-nav__link ">
               
   
   
@@ -3110,7 +3055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/agentic-web/" class="md-nav__link">
+      <a href="../../../../../topics/agentic-web/" class="md-nav__link">
         
   
   
@@ -3138,7 +3083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/knowledge-context-protocol/" class="md-nav__link">
+      <a href="../../../../../topics/knowledge-context-protocol/" class="md-nav__link">
         
   
   
@@ -3166,7 +3111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/synthesis/" class="md-nav__link">
+      <a href="../../../../../topics/synthesis/" class="md-nav__link">
         
   
   
@@ -3194,7 +3139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/skill-driven-development/" class="md-nav__link">
+      <a href="../../../../../topics/skill-driven-development/" class="md-nav__link">
         
   
   
@@ -3280,7 +3225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/kcp-vs-mcp/" class="md-nav__link">
+      <a href="../../../../../topics/kcp-vs-mcp/" class="md-nav__link">
         
   
   
@@ -3308,7 +3253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/sdd-vs-spec-driven/" class="md-nav__link">
+      <a href="../../../../../topics/sdd-vs-spec-driven/" class="md-nav__link">
         
   
   
@@ -3387,7 +3332,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="topics/defendable-agents/" class="md-nav__link ">
+            <a href="../../../../../topics/defendable-agents/" class="md-nav__link ">
               
   
   
@@ -3489,7 +3434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/orientation/how-to-read/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/orientation/how-to-read/" class="md-nav__link">
         
   
   
@@ -3517,7 +3462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/orientation/glossary/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/orientation/glossary/" class="md-nav__link">
         
   
   
@@ -3617,7 +3562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/argument/the-governance-gap/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/the-governance-gap/" class="md-nav__link">
         
   
   
@@ -3645,7 +3590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/argument/what-defendable-means/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/what-defendable-means/" class="md-nav__link">
         
   
   
@@ -3673,7 +3618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/argument/threat-model/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/threat-model/" class="md-nav__link">
         
   
   
@@ -3701,7 +3646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/argument/determinism-vs-probabilism/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/determinism-vs-probabilism/" class="md-nav__link">
         
   
   
@@ -3729,7 +3674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/argument/why-guardrails-fail/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/why-guardrails-fail/" class="md-nav__link">
         
   
   
@@ -3831,7 +3776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/architecture/overview/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/overview/" class="md-nav__link">
         
   
   
@@ -3859,7 +3804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/architecture/deterministic-planner/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/deterministic-planner/" class="md-nav__link">
         
   
   
@@ -3887,7 +3832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/architecture/governance-harness/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/governance-harness/" class="md-nav__link">
         
   
   
@@ -3915,7 +3860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/architecture/model-at-the-edge/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/model-at-the-edge/" class="md-nav__link">
         
   
   
@@ -3943,7 +3888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/architecture/data-flow/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/data-flow/" class="md-nav__link">
         
   
   
@@ -3971,7 +3916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/architecture/fail-closed-behavior/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/fail-closed-behavior/" class="md-nav__link">
         
   
   
@@ -4079,7 +4024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/primitives/overview/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/overview/" class="md-nav__link">
         
   
   
@@ -4107,7 +4052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/primitives/fail-closed-policy/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/fail-closed-policy/" class="md-nav__link">
         
   
   
@@ -4135,7 +4080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/primitives/audit-trail/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/audit-trail/" class="md-nav__link">
         
   
   
@@ -4163,7 +4108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/primitives/decision-traces/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/decision-traces/" class="md-nav__link">
         
   
   
@@ -4191,7 +4136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/primitives/budget-and-bounding/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/budget-and-bounding/" class="md-nav__link">
         
   
   
@@ -4219,7 +4164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/primitives/temporal-pinning/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/temporal-pinning/" class="md-nav__link">
         
   
   
@@ -4247,7 +4192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/primitives/drift-detection/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/drift-detection/" class="md-nav__link">
         
   
   
@@ -4275,7 +4220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/primitives/trust-and-attestation/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/trust-and-attestation/" class="md-nav__link">
         
   
   
@@ -4303,7 +4248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/primitives/multi-tenancy/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -4405,7 +4350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/decisions/anatomy-of-a-score/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/anatomy-of-a-score/" class="md-nav__link">
         
   
   
@@ -4433,7 +4378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/decisions/scoring-model-manifest/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/scoring-model-manifest/" class="md-nav__link">
         
   
   
@@ -4461,7 +4406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/decisions/layers-weights-bands/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/layers-weights-bands/" class="md-nav__link">
         
   
   
@@ -4489,7 +4434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/decisions/variable-design/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/variable-design/" class="md-nav__link">
         
   
   
@@ -4517,7 +4462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/decisions/reproducibility/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/reproducibility/" class="md-nav__link">
         
   
   
@@ -4545,7 +4490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/decisions/versioning-models/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/versioning-models/" class="md-nav__link">
         
   
   
@@ -4643,7 +4588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/kcp/manifest-basics/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/manifest-basics/" class="md-nav__link">
         
   
   
@@ -4671,7 +4616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/kcp/declaring-governed-units/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/declaring-governed-units/" class="md-nav__link">
         
   
   
@@ -4699,7 +4644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/kcp/wiring-kcp-agent-mcp/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/wiring-kcp-agent-mcp/" class="md-nav__link">
         
   
   
@@ -4727,7 +4672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/kcp/federation-and-dogfood/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/federation-and-dogfood/" class="md-nav__link">
         
   
   
@@ -4835,7 +4780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/tutorials/00-project-layout/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/00-project-layout/" class="md-nav__link">
         
   
   
@@ -4863,7 +4808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/tutorials/01-first-harness/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/01-first-harness/" class="md-nav__link">
         
   
   
@@ -4891,7 +4836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/tutorials/02-scoring-model/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/02-scoring-model/" class="md-nav__link">
         
   
   
@@ -4919,7 +4864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/tutorials/03-governed-session/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/03-governed-session/" class="md-nav__link">
         
   
   
@@ -4947,7 +4892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/tutorials/04-audit-log/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/04-audit-log/" class="md-nav__link">
         
   
   
@@ -4975,7 +4920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/tutorials/05-budget-ceiling/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/05-budget-ceiling/" class="md-nav__link">
         
   
   
@@ -5003,7 +4948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/tutorials/06-temporal-drift/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/06-temporal-drift/" class="md-nav__link">
         
   
   
@@ -5031,7 +4976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/tutorials/07-multi-tenant/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/07-multi-tenant/" class="md-nav__link">
         
   
   
@@ -5059,7 +5004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/tutorials/08-evidence-export/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/08-evidence-export/" class="md-nav__link">
         
   
   
@@ -5161,7 +5106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/examples/buyer-scoring-pipeline/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/buyer-scoring-pipeline/" class="md-nav__link">
         
   
   
@@ -5189,7 +5134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/examples/spend-approval-agent/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/spend-approval-agent/" class="md-nav__link">
         
   
   
@@ -5217,7 +5162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/examples/regulatory-qa-provenance/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/regulatory-qa-provenance/" class="md-nav__link">
         
   
   
@@ -5245,7 +5190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/examples/reproduce-a-decision/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/reproduce-a-decision/" class="md-nav__link">
         
   
   
@@ -5273,7 +5218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/examples/catch-an-injection/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/catch-an-injection/" class="md-nav__link">
         
   
   
@@ -5301,7 +5246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/examples/compliant-screening-agent/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/compliant-screening-agent/" class="md-nav__link">
         
   
   
@@ -5399,7 +5344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/compliance/control-mapping/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/control-mapping/" class="md-nav__link">
         
   
   
@@ -5427,7 +5372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/compliance/evidence-packages/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/evidence-packages/" class="md-nav__link">
         
   
   
@@ -5455,7 +5400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/compliance/verifying-defendability/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/verifying-defendability/" class="md-nav__link">
         
   
   
@@ -5483,7 +5428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/compliance/operating-and-maintenance/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/operating-and-maintenance/" class="md-nav__link">
         
   
   
@@ -5581,7 +5526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/reference/case-study-lodestar/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/case-study-lodestar/" class="md-nav__link">
         
   
   
@@ -5609,7 +5554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/reference/starter-kit/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/starter-kit/" class="md-nav__link">
         
   
   
@@ -5637,7 +5582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/reference/anti-patterns/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/anti-patterns/" class="md-nav__link">
         
   
   
@@ -5665,7 +5610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topics/defendable-agents/reference/faq/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/faq/" class="md-nav__link">
         
   
   
@@ -5709,7 +5654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/synthesis-releases/" class="md-nav__link">
+      <a href="../../../../../notes/synthesis-releases/" class="md-nav__link">
         
   
   
@@ -5737,7 +5682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/linkedin-posts/" class="md-nav__link">
+      <a href="../../../../../notes/linkedin-posts/" class="md-nav__link">
         
   
   
@@ -5765,7 +5710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="linkedin/" class="md-nav__link">
+      <a href="../../../../../linkedin/" class="md-nav__link">
         
   
   
@@ -5800,7 +5745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="open-source/" class="md-nav__link">
+      <a href="../../../../../open-source/" class="md-nav__link">
         
   
   
@@ -5880,7 +5825,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="interests/sci-fi/" class="md-nav__link ">
+            <a href="../../../../../interests/sci-fi/" class="md-nav__link ">
               
   
   
@@ -5924,7 +5869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2025/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2025/" class="md-nav__link">
         
   
   
@@ -5952,7 +5897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2024/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2024/" class="md-nav__link">
         
   
   
@@ -5980,7 +5925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2023/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2023/" class="md-nav__link">
         
   
   
@@ -6008,7 +5953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2022/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2022/" class="md-nav__link">
         
   
   
@@ -6036,7 +5981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2021/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2021/" class="md-nav__link">
         
   
   
@@ -6064,7 +6009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2020/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2020/" class="md-nav__link">
         
   
   
@@ -6092,7 +6037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2019/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2019/" class="md-nav__link">
         
   
   
@@ -6120,7 +6065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2018/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2018/" class="md-nav__link">
         
   
   
@@ -6148,7 +6093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2017/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2017/" class="md-nav__link">
         
   
   
@@ -6176,7 +6121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2016/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2016/" class="md-nav__link">
         
   
   
@@ -6204,7 +6149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2015/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2015/" class="md-nav__link">
         
   
   
@@ -6232,7 +6177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2014/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2014/" class="md-nav__link">
         
   
   
@@ -6260,7 +6205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2013/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2013/" class="md-nav__link">
         
   
   
@@ -6288,7 +6233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2012/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2012/" class="md-nav__link">
         
   
   
@@ -6316,7 +6261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/sci-fi/books-2011/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2011/" class="md-nav__link">
         
   
   
@@ -6409,7 +6354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/food-and-wine/" class="md-nav__link">
+      <a href="../../../../../interests/food-and-wine/" class="md-nav__link">
         
   
   
@@ -6437,7 +6382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interests/tools/" class="md-nav__link">
+      <a href="../../../../../interests/tools/" class="md-nav__link">
         
   
   
@@ -6472,7 +6417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="glossary/" class="md-nav__link">
+      <a href="../../../../../glossary/" class="md-nav__link">
         
   
   
@@ -6499,7 +6444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tags/" class="md-nav__link">
+      <a href="../../../../../tags/" class="md-nav__link">
         
   
   
@@ -6529,7 +6474,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -6550,10 +6495,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#recent-writing" class="md-nav__link">
+  <a href="#a-question-with-a-computable-answer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recent writing
+        A question with a computable answer
       
     </span>
   </a>
@@ -6561,10 +6506,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-im-working-on" class="md-nav__link">
+  <a href="#the-run" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What I'm working on
+        The run
       
     </span>
   </a>
@@ -6572,10 +6517,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-proof" class="md-nav__link">
+  <a href="#computation-is-not-persuasion" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The proof
+        Computation is not persuasion
       
     </span>
   </a>
@@ -6583,10 +6528,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#speaking" class="md-nav__link">
+  <a href="#one-evenings-search-of-the-field" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Speaking
+        One evening's search of the field
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-one-run-proves-and-what-it-doesnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What one run proves, and what it doesn't
       
     </span>
   </a>
@@ -6602,174 +6558,239 @@
             
           
           
-            <div class="md-content" data-md-component="content">
-              
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
                 
-
-  
-
-
-
-  
-
-
-              
-              <article class="md-content__inner md-typeset">
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Thor Henning Hetland
+                        
+                      </strong>
+                      <br>
+                      Co-founder of JavaZone, Java Champion, Founder of eXOReaction
+                    </span>
+                  </div>
                 
-                  
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/anthropics.png" alt="Claude Fable 5">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Claude Fable 5
+                        
+                      </strong>
+                      <br>
+                      Anthropic's most capable widely released model — drafted this post's prose from a research brief and two real codebases
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/anthropics.png" alt="Claude Code">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Claude Code
+                        
+                      </strong>
+                      <br>
+                      Anthropic's AI coding assistant — co-author of research, structure, and prose
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-08-18 14:00:00+00:00" class="md-ellipsis">August 18, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai-agents/">AI Agents</a>, 
+                              <a href="../../../../category/engineering/">Engineering</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              10 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
   
 
 
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">agentic</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">defendable-agents</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">playbooks</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">simulation</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">sunstone-atlas</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">verification</span>
+      
+    
+  </nav>
 
 
-<div class="hero">
-<div class="hero-content">
-<h1 id="thor-henning-hetland">Thor Henning Hetland<a class="headerlink" href="#thor-henning-hetland" title="Permanent link">&para;</a></h1>
-<p><strong>Software architect. AI development pioneer. Community builder.</strong></p>
-<p>30 years building software, communities, and organizations. Co-founder of <a href="https://javazone.no">JavaZone</a> and founder of <a href="https://exoreaction.com">eXOReaction</a>. Java Champion since 2005. Based in Oslo.</p>
-<p>These days I'm focused on what happens when experienced architects work <em>with</em> AI -- not just alongside it.</p>
-<p><a class="md-button md-button--primary" href="start-here/">Start here</a>
-<a class="md-button" href="blog/">Read the blog</a>
-<a class="md-button" href="about/">About me</a></p>
+
+<h1 id="the-agent-didnt-guess-it-checked">The Agent Didn't Guess. It Checked.<a class="headerlink" href="#the-agent-didnt-guess-it-checked" title="Permanent link">&para;</a></h1>
+<p>Somewhere in the middle of a playbook run last night, on a live production deployment, a step returned this: <strong>41 nodes and 96 edges downstream, including two production-planning flows.</strong></p>
+<p>No model wrote that sentence. Nobody had to decide whether to believe it. A deterministic simulator — a separately built model holding the real dependency graph of a real system — computed it, signed it, and handed it to the next step. The AI steps on either side of that moment then had to reason <em>from</em> the number instead of <em>around</em> it. That's the whole mechanic, it ran end to end for the first time last night, and I think it's the most important small thing we've shipped this year.</p>
+<!-- more -->
+
+<div class="admonition note">
+<p class="admonition-title">What's real here, and what's not</p>
+<p>The mechanism, the run, and the research below are real. The client is not named — every client-specific identifier in this post (company, industry, integration IDs, counts, graph sizes) is invented or altered to protect a customer under confidentiality. The numbers preserve the shape of the story, not the facts of any real organization.</p>
 </div>
-<div class="hero-image">
-<p><img src="assets/images/totto-2014.jpg" alt="Thor Henning Hetland" /></p>
-</div>
-</div>
+<p><img alt="From guessing to checking: the fact lane and the judgment lane, the deterministic simulator, the signed ledger, and why a 0.92 confidence score isn't a key to the door" src="/assets/images/blog/the-agent-didnt-guess-it-checked/hero-evolution-of-agentic-verification.png" /></p>
+<h2 id="a-question-with-a-computable-answer">A question with a computable answer<a class="headerlink" href="#a-question-with-a-computable-answer" title="Permanent link">&para;</a></h2>
+<p>The setting: a large migration. The client — call them <strong>Havstad</strong>, a coastal seafood-logistics cooperative — is moving a two-decade-old on-premise ERP to its vendor's cloud successor. The ERP itself is the easy part. The hard part is the roughly six hundred integrations that grew up around it over twenty years, each of which has to be assessed and slotted into one of five migration waves before anything moves.</p>
+<p>An agentic playbook on Sunstone Atlas Canvas does the assessing: read the catalog entry, classify what the integration talks to and how, work out what breaks if it moves early, propose a wave. Most of that is research-and-judgment work that an LLM accelerates well. But buried in the middle is one question that is not like the others:</p>
+<p><strong>What is actually downstream of this thing, and how far does the damage travel if we get the order wrong?</strong></p>
+<p>Until last night, the playbook answered that question the way every agent answers it: the model read a catalog description and estimated. And here's the thing about that estimate — it might be right. It might even be <em>usually</em> right. But it's unfalsifiable in the moment, because the model is reasoning about a <em>description</em> of the dependency graph, not the graph. The gap between those two is exactly where confident-sounding wrong answers live. Meanwhile, the question has a computable answer: somewhere there is a real graph of what depends on what, and "what's transitively downstream of node X" is not a matter of opinion.</p>
+<p>So we stopped asking the model. We built the graph into a simulator — about 950 nodes and 2,600 edges, constructed independently from the organization's real integration catalog — and gave the playbook a step that queries it.</p>
+<p><img alt="A two-decade migration hinges on one un-guessable question: what is actually downstream of this integration, and how far does the damage travel if we get the order wrong" src="/assets/images/blog/the-agent-didnt-guess-it-checked/slide-two-decade-migration-question.png" /></p>
+<h2 id="the-run">The run<a class="headerlink" href="#the-run" title="Permanent link">&para;</a></h2>
+<p>Here's last night's run, for one real integration, compressed into the events it left on the ledger:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>run-initiated           wave-assessment · HAV-311 orders-sync
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>judgment-decision       classify dependency type → synchronous, order-flow
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                        (model proposal, confidence 0.92)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>escalation-raised       held — this decision type requires a human, at any confidence
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>human-approval          approved
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>deterministic-decision  blast_radius(HAV-311) → 41 nodes, 96 edges downstream,
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>                        2 production-planning flows affected. Hub: no. Impact: high.
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                        (simulator query — completed, no approval required)
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>judgment-decision       assess blast radius → HIGH, do not move before dependents
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>                        (model proposal, confidence 0.92 — grounded in the query above)
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>escalation-raised       held · human-approval → approved
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>judgment-decision       propose migration wave → late wave, after its dependents
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>escalation-raised       held · human-approval → approved
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>run-completed           every event above individually Ed25519-signed, replayable
+</span></code></pre></div>
+<p><img alt="Anatomy of a breakthrough run on a live production deployment: the classification and assessment steps each held at 0.92 confidence, and the deterministic graph query — 41 nodes and 96 edges downstream — executed and signed with no hold at all" src="/assets/images/blog/the-agent-didnt-guess-it-checked/slide-anatomy-of-the-run.png" /></p>
+<p>Two things in that trace deserve a slow look.</p>
+<p><strong>The judgment steps were held at 0.92 confidence.</strong> The classification step proposed its answer at 0.92 and was held for a human anyway — and so was the assessment step, at the same 0.92. That's not a threshold being missed. There is no confidence threshold that would have let those steps through, because on this platform the gate isn't "how sure is the model" — it's "what <em>kind</em> of decision is this, and what authority tier does that kind require." A wave-sequencing judgment on a live logistics estate requires a human signature. Full stop. The model's confidence score is information for the human, never a key to the door.</p>
+<p><strong>The simulator step wasn't held at all.</strong> It completed the moment the answer came back, with no human in the loop — not because it was trusted <em>more</em>, but because it isn't a judgment. A deterministic query against a system that actually knows the answer is not a decision anyone needs to bless; it's the input a decision gets made from. Asking a human to approve "41 nodes" would be asking them to approve arithmetic.</p>
+<p>That asymmetry — judgments gated by decision type, facts flowing freely, both signed onto the same ledger — is the design. The human oversight didn't get weaker when the automatic step arrived. It got <em>concentrated</em> where the actual judgment happens.</p>
+<h2 id="computation-is-not-persuasion">Computation is not persuasion<a class="headerlink" href="#computation-is-not-persuasion" title="Permanent link">&para;</a></h2>
+<p>The obvious objection: why not just prompt the model to be careful? Give it the catalog, tell it to enumerate dependencies methodically, ask it to cite its reasoning?</p>
+<p>Because "be careful and cite your sources" doesn't give the model a source — it gives it permission to <em>sound</em> careful. A simulator is different in kind, not in degree. The query either returns real, reproducible data or the step fails closed and the run stops. There is nothing to tune, because there is nothing to be confident <em>about</em>: the number is what the number is, and anyone can re-run the query and get the same one.</p>
+<p>And the payoff isn't the number itself — it's what every step downstream of it inherits. Before last night, the wave decision at the end of the run rested on a chain shaped like <em>guess → judgment about the guess → decision built on the judgment</em>. Compounding estimates. After last night, the same chain reads <em>computed fact → judgment about the fact → decision built on the judgment</em>. The LLM steps didn't get smarter. Their foundations did.</p>
+<p>The pattern is not about dependency graphs. Swap "blast radius" for whatever your domain's version of "what happens if we do this" is — expected load, financial exposure, physical clearance, chemical interaction — and the move is the same: <strong>before the agent reasons about a consequence, make it check the consequence against something that actually models it.</strong> As a step in the workflow that fails closed, not as a sentence in the prompt.</p>
+<p><img alt="Shifting from compounding errors to a verified foundation: before, guess feeds judgment feeds decision; last night, a computed fact feeds judgment feeds decision" src="/assets/images/blog/the-agent-didnt-guess-it-checked/slide-compounding-errors-vs-verified-foundation.png" /></p>
+<h2 id="one-evenings-search-of-the-field">One evening's search of the field<a class="headerlink" href="#one-evenings-search-of-the-field" title="Permanent link">&para;</a></h2>
+<p>The same night, we went looking for who else has shipped this combination. It was a good month to ask: Microsoft's <strong>Agent 365</strong> went GA in May, Salesforce shipped <strong>Agentforce Operations</strong> in April, and Snowflake announced its <strong>Cortex AI Gateway</strong> at Black Hat two weeks ago. Each covers real pieces of the governed-agent problem — fleet observability, centralized policy, agent audit trails. On the research side, two June arXiv papers, <em>Proof-Carrying Agent Actions</em> and <em>Proof of Execution</em>, are the closest conceptual neighbors; they even coin the term <strong>enforceability classes</strong> for the idea that different kinds of agent decisions deserve different kinds of enforcement — which is precisely the asymmetry in the run trace above.</p>
+<p>What one evening's search did not turn up is a shipped system with the specific combination that ran last night: real tool execution against a deterministic model of the domain, <em>inside</em> the reasoning loop; authority gating differentiated by decision type rather than by confidence score; and both kinds of step — computed fact and model judgment — landing as signed events on one unified, replayable ledger. The vendors govern agents from the outside. The papers describe the classes but don't build the mechanic. That's a report of one night's search in August 2026, not a claim about everything that exists — someone may well have built it quietly. But the field's center of gravity is visibly elsewhere.</p>
+<p><img alt="One evening's search of the field, August 2026: external governance from Microsoft Agent 365, Salesforce Agentforce, and Snowflake Cortex AI Gateway; theoretical internal mechanics from two June arXiv papers coining &quot;enforceability classes&quot;; and, in the middle, the shipped internal mechanics found nowhere else — real tool execution against a deterministic model, inside the reasoning loop, with authority gating, landing as signed events on a unified ledger" src="/assets/images/blog/the-agent-didnt-guess-it-checked/slide-one-evenings-search.png" /></p>
+<h2 id="what-one-run-proves-and-what-it-doesnt">What one run proves, and what it doesn't<a class="headerlink" href="#what-one-run-proves-and-what-it-doesnt" title="Permanent link">&para;</a></h2>
+<p>It proves the mechanism. One real integration went end to end: the simulator returned computed data mid-run, the judgment steps reasoned over it instead of guessing, three humans signed three judgments, and the whole thing is sitting on a ledger where any step can be replayed and re-verified.</p>
+<p>It does not prove that this scales cleanly across six hundred integrations, or that every domain has a simulator worth building. That last part deserves honesty: constructing and maintaining a deterministic model of your system is real work, and it only pays when the cost of a wrong guess exceeds the cost of building the thing that checks the guess. Here it clearly does — a wrong blast-radius estimate risks a live logistics operation mid-migration. In a domain where a wrong guess costs a shrug, skip the simulator and keep the shrug.</p>
+<p><img alt="The diagnostic framework for when to build a simulator: cost of a wrong agentic guess against cost to build a deterministic simulator, with the target case — a wrong blast-radius estimate risking a live logistics operation — landing squarely in the quadrant where building one pays off" src="/assets/images/blog/the-agent-didnt-guess-it-checked/slide-when-to-build-a-simulator.png" /></p>
+<p>But when the stakes are real, the line worth drawing is this one: a pattern-matched paragraph and a checked answer can look <em>identical</em> on the page. Same fluent prose, same confident tone, same 0.92. The only way to tell them apart is to ask what, if anything, the answer was checked against before anyone reasoned from it.</p>
+<p><img alt="The indistinguishable surface, the completely different foundation: two identical-looking 0.92-confidence paragraphs, one resting on nothing, one resting on a computed, signed fact. Last night, for one live system, the answer was: something that actually knew" src="/assets/images/blog/the-agent-didnt-guess-it-checked/slide-indistinguishable-surface.png" /></p>
+<p>Last night, for one integration on one live system, the answer was: something that actually knew.</p>
 <hr />
-<h2 id="recent-writing">Recent writing<a class="headerlink" href="#recent-writing" title="Permanent link">&para;</a></h2>
-<div class="grid cards">
-<ul>
-<li>
-<p><span class="twemoji card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong><a href="blog/2026/08/18/the-agent-didnt-guess-it-checked/">The Agent Didn't Guess. It Checked.</a></strong></p>
-<hr />
-<p>Last night, for the first time, a production agentic playbook stopped estimating what a change would break and queried a deterministic simulator holding the real dependency graph instead. The judgment steps around it were still LLM calls — but they reasoned from a computed fact, not a guess. Verification before judgment, as a step type, not a prompt instruction.</p>
-<p><span class="card-meta">August 18, 2026</span></p>
-</li>
-<li>
-<p><span class="twemoji card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg></span> <strong><a href="blog/2026/08/14/five-agents-compared/">Five Agents Compared</a></strong></p>
-<hr />
-<p>Five agent architectures walk into a comparison: Claude Code (the dominant IDE agent), Crush (Charm's model-flexible terminal agent), OpenClaw (the viral local-first personal assistant), kcp-agent (the deterministic knowledge planner), and pi-kcp (KCP governance running inside the Pi coding agent — the only entry that verifies its own execution against what was approved). They solve different problems — and the differences reveal what the industry still disagrees about.</p>
-<p><span class="card-meta">August 14, 2026</span></p>
-</li>
-<li>
-<p><span class="twemoji card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 21H2V3h2v16h2v-9h4v9h2V6h4v13h2v-5h4z"/></svg></span> <strong><a href="blog/2026/08/13/how-to-build-agentic-software-on-sunstone-atlas/">How to Build Agentic Software on Sunstone Atlas</a></strong></p>
-<hr />
-<p>A hands-on walkthrough of Sunstone Atlas's building blocks — Knowledge, Skills, Agents, Functions, Playbooks — using a real production system as the worked example. Add agents. Keep control.</p>
-<p><span class="card-meta">August 13, 2026</span></p>
-</li>
-</ul>
-</div>
-<p><a href="blog/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> All posts</a></p>
-<hr />
-<h2 id="what-im-working-on">What I'm working on<a class="headerlink" href="#what-im-working-on" title="Permanent link">&para;</a></h2>
-<div class="grid cards">
-<ul>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.33 12.91c.09 1.55-.62 3.04-1.89 3.95l.77 1.49c.23.45.26.98.06 1.45-.19.47-.58.84-1.06 1l-.79.25a1.687 1.687 0 0 1-1.86-.55L14.44 18c-.89-.15-1.73-.53-2.44-1.1-.5.15-1 .23-1.5.23-.88 0-1.76-.27-2.5-.79-.53.16-1.07.23-1.62.22-.79.01-1.57-.15-2.3-.45a4.1 4.1 0 0 1-2.43-3.61c-.08-.72.04-1.45.35-2.11-.29-.75-.32-1.57-.07-2.33C2.3 7.11 3 6.32 3.87 5.82c.58-1.69 2.21-2.82 4-2.7 1.6-1.5 4.05-1.66 5.83-.37.42-.11.86-.17 1.3-.17 1.36-.03 2.65.57 3.5 1.64 2.04.53 3.5 2.35 3.58 4.47.05 1.11-.25 2.2-.86 3.13.07.36.11.72.11 1.09m-5-1.41c.57.07 1.02.5 1.02 1.07a1 1 0 0 1-1 1h-.63c-.32.9-.88 1.69-1.62 2.29.25.09.51.14.77.21 5.13-.07 4.53-3.2 4.53-3.25a2.59 2.59 0 0 0-2.69-2.49 1 1 0 0 1-1-1 1 1 0 0 1 1-1c1.23.03 2.41.49 3.33 1.3.05-.29.08-.59.08-.89-.06-1.24-.62-2.32-2.87-2.53-1.25-2.96-4.4-1.32-4.4-.4-.03.23.21.72.25.75a1 1 0 0 1 1 1c0 .55-.45 1-1 1-.53-.02-1.03-.22-1.43-.56-.48.31-1.03.5-1.6.56-.57.05-1.04-.35-1.07-.9a.97.97 0 0 1 .88-1.1c.16-.02.94-.14.94-.77 0-.66.25-1.29.68-1.79-.92-.25-1.91.08-2.91 1.29C6.75 5 6 5.25 5.45 7.2 4.5 7.67 4 8 3.78 9c1.08-.22 2.19-.13 3.22.25.5.19.78.75.59 1.29-.19.52-.77.78-1.29.59-.73-.32-1.55-.34-2.3-.06-.32.27-.32.83-.32 1.27 0 .74.37 1.43 1 1.83.53.27 1.12.41 1.71.4q-.225-.39-.39-.81a1.038 1.038 0 0 1 1.96-.68c.4 1.14 1.42 1.92 2.62 2.05 1.37-.07 2.59-.88 3.19-2.13.23-1.38 1.34-1.5 2.56-1.5m2 7.47-.62-1.3-.71.16 1 1.25zm-4.65-8.61a1 1 0 0 0-.91-1.03c-.71-.04-1.4.2-1.93.67-.57.58-.87 1.38-.84 2.19a1 1 0 0 0 1 1c.57 0 1-.45 1-1 0-.27.07-.54.23-.76.12-.1.27-.15.43-.15.55.03 1.02-.38 1.02-.92"/></svg></span> <strong>Skill-Driven Development</strong></p>
-<hr />
-<p>A methodology for structured AI collaboration that compounds daily. Six pillars. Proven 25--66x productivity gains across manufacturing, finance, energy, and security.</p>
-<p><a href="https://exoreaction.com"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> About eXOReaction</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg></span> <strong>Synthesis · v1.42.0</strong></p>
-<hr />
-<p>Local-first knowledge infrastructure platform. 76 CLI commands, 52 MCP tools, 4,700+ tests. Indexes workspaces, builds multi-layer knowledge graphs, exposes episodic memory and Notion integration to AI agents.</p>
-<p><a href="knowledge-infrastructure/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Knowledge Infrastructure</a> · <a href="open-source/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"/></svg></span> Open Source</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m15 19-6-2.11V5l6 2.11M20.5 3h-.16L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5a.5.5 0 0 0 .5.5c.05 0 .11 0 .16-.03L9 18.9l6 2.1 5.64-1.9c.21-.1.36-.25.36-.48V3.5a.5.5 0 0 0-.5-.5"/></svg></span> <strong>Knowledge Context Protocol</strong></p>
-<hr />
-<p>A YAML standard that makes knowledge navigable by AI agents. Topology, intent, freshness, audience targeting. Submitted to the Linux Foundation's Agentic AI Foundation alongside MCP and AGENTS.md.</p>
-<p><a href="knowledge-infrastructure/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Knowledge Infrastructure</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3zm5 11v3h1v-3zm2 0v3h1v-3zm2 0v3h1v-3z"/></svg></span> <strong>lib-pcb</strong></p>
-<hr />
-<p>A complete PCB design file processing library in Java. 8 format parsers, 28 validators, 17 auto-fixers, manufacturing-ready Gerber output. The project that proved SDD at scale -- 197,831 lines in 11 days.</p>
-<p><a href="open-source/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Open Source</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m5.86 10.31C16.23 21.22 14.28 22.45 12 23c-2.56-.61-4.7-2.07-6.42-4.37C3.86 16.34 3 13.8 3 11V5l9-4 9 4v6c0 2.39-.64 4.61-1.92 6.67l-2.91-2.91c.52-.79.83-1.76.83-2.76a5 5 0 0 0-5-5 5 5 0 0 0-5 5 5 5 0 0 0 5 5c1 0 1.97-.31 2.76-.83z"/></svg></span> <strong>Xorcery AAA</strong></p>
-<hr />
-<p>Temporal analytics and DevSecOps intelligence platform built on the Xorcery reactive framework. Tracks vulnerability lifecycles, answers "why did this break?", and automates compliance -- without cloud lock-in.</p>
-<p><a href="open-source/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Open Source</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"/></svg></span> <strong>Quadim</strong></p>
-<hr />
-<p>A competence management SaaS platform. Helps organisations map, develop, and visualise the skills of their people. Built with the same AI-augmented methodology as lib-pcb.</p>
-<p><a href="https://quadim.ai"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> quadim.ai</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg></span> <strong>Workshops &amp; Training</strong></p>
-<hr />
-<p>Hands-on SDD workshops for development teams. From full-day intensives to multi-week mentoring programs. Real code, real methodology, real results.</p>
-<p><a href="mailto:selina@exoreaction.com"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Get in touch</a></p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 21h18v-2H2M20 8h-2V5h2m0-2H4v10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4v-3h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/></svg></span> <strong>JavaZone &amp; Community</strong></p>
-<hr />
-<p>Co-founded JavaZone in 2001 -- now Scandinavia's largest developer conference with ~3,000 attendees. Communities are where real knowledge transfer happens.</p>
-<p><a href="about/organizations/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Organizations</a></p>
-</li>
-</ul>
-</div>
-<hr />
-<h2 id="the-proof">The proof<a class="headerlink" href="#the-proof" title="Permanent link">&para;</a></h2>
-<div class="proof-block">
-<p>In January 2026, I built <strong>lib-pcb</strong> -- a complete PCB design library in Java.</p>
-<div class="proof-stats">
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>197,831</strong></td>
-<td>lines of Java</td>
-</tr>
-<tr>
-<td><strong>7,461</strong></td>
-<td>tests (99.8% pass)</td>
-</tr>
-<tr>
-<td><strong>11 days</strong></td>
-<td>total build time</td>
-</tr>
-<tr>
-<td><strong>10--18 months</strong></td>
-<td>industry standard</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>8 format parsers. 28 validators. 17 auto-fixers. Manufacturing-ready Gerber output. Zero AI-induced production bugs.</p>
-<p>This was not magic. It was methodology -- Skill-Driven Development applied systematically with Claude Code. The kind of thing I <a href="blog/">write about</a> and <a href="mailto:selina@exoreaction.com">teach in workshops</a>.</p>
-</div>
-<hr />
-<h2 id="speaking">Speaking<a class="headerlink" href="#speaking" title="Permanent link">&para;</a></h2>
-<p>Conference talks on architecture, productivity, and development methodology. JavaZone, JavaOne, NDC, and more.</p>
-<div class="grid cards">
-<ul>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-2 14.5 6-4.5-6-4.5z"/></svg></span> <strong><a href="presentations/best-practice-wtf/">Best Practice -- WTF!</a></strong></p>
-<p>JavaZone 2023 (lightning talk, video)</p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg></span> <strong><a href="presentations/delivering-continuous-innovation/">Delivering Continuous Innovation</a></strong></p>
-<p>Thousands of releases, zero downtime (~2023)</p>
-</li>
-<li>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 3h8a2 2 0 0 1 2-2 2 2 0 0 1 2 2h8v2h-1v11h-5.75L17 22h-2l-1.75-6h-2.5L9 22H7l1.75-6H3V5H2zm3 2v9h14V5z"/></svg></span> <strong><a href="presentations/thousands-of-releases/">Thousands of Releases per Year</a></strong></p>
-<p>Rebel Share (~2022)</p>
-</li>
-</ul>
-</div>
-<p><a href="about/presentations/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> All presentations</a></p>
+<p><em>Sunstone Atlas Canvas is our governed agent platform; the playbook mechanics, authority tiers, and signed ledger described here are its real mechanisms — the <a href="../../13/how-to-build-agentic-software-on-sunstone-atlas/">Nordvik walkthrough</a> covers them in depth. Client identity, industry, names, identifiers, and scale figures in this post are fictional or altered to protect a customer under confidentiality. The run was real.</em></p>
 
 
 
@@ -6792,7 +6813,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 19, 2026 11:08:38 UTC">July 19, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 18, 2026 13:58:33 UTC">August 18, 2026</span>
   </span>
 
     
@@ -6802,7 +6823,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 23, 2026 17:36:15 UTC">February 23, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 18, 2026 13:58:33 UTC">August 18, 2026</span>
   </span>
 
     
@@ -6818,10 +6839,10 @@
 
 
 
-                
-              </article>
-            </div>
-          
+      
+    </article>
+  </div>
+
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
@@ -6842,22 +6863,22 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        
           
-          <a href="start-here/" class="md-footer__link md-footer__link--next" aria-label="Next: Start Here">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Start Here
-              </div>
-            </div>
+          <a href="../../14/five-agents-compared/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Five Agents Compared">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Five Agents Compared
+              </div>
             </div>
           </a>
+        
         
       </nav>
     
@@ -6917,10 +6938,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
