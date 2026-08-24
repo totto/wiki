@@ -6,40 +6,38 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+        <meta name="description" content="Local models don't just cost you quality for sovereignty — they're too literal to cooperate with the unstated assumptions a strong cloud model quietly papers over. On why local/embedded LLM support matters, and what it actually takes to ship it: two rounds of bugs, neither of them the model's fault.">
       
       
         <meta name="author" content="Thor Henning Hetland">
       
       
-        <link rel="canonical" href="https://wiki.totto.org/blog/page/16/">
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/08/23/the-cloud-was-covering-for-us/">
       
       
-        <link rel="prev" href="../../../start-here/">
+        <link rel="prev" href="../../18/the-agent-didnt-guess-it-checked/">
       
-      
-        <link rel="next" href="../../topics/">
       
       
         
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/totto-2025.jpg">
+      <link rel="icon" href="../../../../../assets/images/totto-2025.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Writing - Thor Henning Hetland</title>
+        <title>The Cloud Was Covering for Us - Thor Henning Hetland</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -58,9 +56,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/extra.css">
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -76,26 +74,54 @@
     
 <link rel="knowledge" href="/knowledge.yaml" type="application/yaml" title="KCP v0.20 — 101 units">
 
-<meta name="robots" content="noindex, follow">
-
 
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Thor Henning Hetland">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://wiki.totto.org/blog/page/16/">
-<meta property="og:title" content="Writing">
-<meta property="og:description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wiki.totto.org/blog/2026/08/23/the-cloud-was-covering-for-us/">
+<meta property="og:title" content="The Cloud Was Covering for Us">
+<meta property="og:description" content="Local models don't just cost you quality for sovereignty — they're too literal to cooperate with the unstated assumptions a strong cloud model quietly papers over. On why local/embedded LLM support matters, and what it actually takes to ship it: two rounds of bugs, neither of them the model's fault.">
 <meta property="og:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
 <meta property="og:image:alt" content="Thor Henning Hetland">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@javatotto">
 <meta name="twitter:creator" content="@javatotto">
-<meta name="twitter:title" content="Writing">
-<meta name="twitter:description" content="Software architect, AI development pioneer, founder of JavaZone and eXOReaction">
+<meta name="twitter:title" content="The Cloud Was Covering for Us">
+<meta name="twitter:description" content="Local models don't just cost you quality for sovereignty — they're too literal to cooperate with the unstated assumptions a strong cloud model quietly papers over. On why local/embedded LLM support matters, and what it actually takes to ship it: two rounds of bugs, neither of them the model's fault.">
 <meta name="twitter:image" content="https://wiki.totto.org/assets/images/totto-2025.jpg">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The Cloud Was Covering for Us",
+  "url": "https://wiki.totto.org/blog/2026/08/23/the-cloud-was-covering-for-us/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wiki.totto.org/blog/2026/08/23/the-cloud-was-covering-for-us/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org",
+    "image": "https://wiki.totto.org/assets/images/totto-2025.jpg"
+  },
+  "image": "https://wiki.totto.org/assets/images/totto-2025.jpg",
+  "datePublished": "2026-08-23 09:00:00",
+  "dateModified": "2026-08-24 06:40:29",
+  "description": "Local models don\u0027t just cost you quality for sovereignty \u2014 they\u0027re too literal to cooperate with the unstated assumptions a strong cloud model quietly papers over. On why local/embedded LLM support matters, and what it actually takes to ship it: two rounds of bugs, neither of them the model\u0027s fault.",
+  "articleSection": "AI Agents, Engineering",
+  "keywords": "local-llm, embedded-ai, agents, verification, data-sovereignty, llama.cpp"
+}
+</script>
 
 
 
@@ -114,7 +140,13 @@
       "@type": "ListItem",
       "position": 2,
       "name": "Writing",
-      "item": "https://wiki.totto.org/blog/page/16/"
+      "item": "https://wiki.totto.org/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Cloud Was Covering for Us",
+      "item": "https://wiki.totto.org/blog/2026/08/23/the-cloud-was-covering-for-us/"
     }
   ]
 }
@@ -140,7 +172,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#writing" class="md-skip">
+        <a href="#the-cloud-was-covering-for-us" class="md-skip">
           Skip to content
         </a>
       
@@ -177,9 +209,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
       
-  <img src="../../../assets/images/totto-2025.jpg" alt="logo">
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -196,7 +228,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Writing
+              The Cloud Was Covering for Us
             
           </span>
         </div>
@@ -296,7 +328,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../../.." class="md-tabs__link">
         
   
   
@@ -315,7 +347,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../start-here/" class="md-tabs__link">
+      <a href="../../../../../start-here/" class="md-tabs__link">
         
   
   
@@ -338,7 +370,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../../" class="md-tabs__link">
           
   
   
@@ -360,7 +392,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/" class="md-tabs__link">
+        <a href="../../../../../about/" class="md-tabs__link">
           
   
   
@@ -382,7 +414,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/presentations/" class="md-tabs__link">
+        <a href="../../../../../about/presentations/" class="md-tabs__link">
           
   
   
@@ -404,7 +436,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../knowledge-infrastructure/" class="md-tabs__link">
+        <a href="../../../../../knowledge-infrastructure/" class="md-tabs__link">
           
   
   
@@ -424,7 +456,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../open-source/" class="md-tabs__link">
+      <a href="../../../../../open-source/" class="md-tabs__link">
         
   
   
@@ -445,7 +477,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../interests/sci-fi/" class="md-tabs__link">
+        <a href="../../../../../interests/sci-fi/" class="md-tabs__link">
           
   
   
@@ -467,7 +499,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../interests/food-and-wine/" class="md-tabs__link">
+        <a href="../../../../../interests/food-and-wine/" class="md-tabs__link">
           
   
   
@@ -487,7 +519,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../glossary/" class="md-tabs__link">
+      <a href="../../../../../glossary/" class="md-tabs__link">
         
   
   
@@ -506,7 +538,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
+      <a href="../../../../../tags/" class="md-tabs__link">
         
   
   
@@ -536,7 +568,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -547,9 +581,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
       
-  <img src="../../../assets/images/totto-2025.jpg" alt="logo">
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
 
     </a>
     Thor Henning Hetland
@@ -564,7 +598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   
@@ -591,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../start-here/" class="md-nav__link">
+      <a href="../../../../../start-here/" class="md-nav__link">
         
   
   
@@ -654,7 +688,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../../" class="md-nav__link ">
               
   
   
@@ -698,7 +732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../topics/" class="md-nav__link">
+      <a href="../../../../topics/" class="md-nav__link">
         
   
   
@@ -726,7 +760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../series/" class="md-nav__link">
+      <a href="../../../../series/" class="md-nav__link">
         
   
   
@@ -855,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/08/" class="md-nav__link">
+      <a href="../../../../archive/2026/08/" class="md-nav__link">
         
   
   
@@ -885,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/07/" class="md-nav__link">
+      <a href="../../../../archive/2026/07/" class="md-nav__link">
         
   
   
@@ -915,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/06/" class="md-nav__link">
+      <a href="../../../../archive/2026/06/" class="md-nav__link">
         
   
   
@@ -945,7 +979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/05/" class="md-nav__link">
+      <a href="../../../../archive/2026/05/" class="md-nav__link">
         
   
   
@@ -975,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/04/" class="md-nav__link">
+      <a href="../../../../archive/2026/04/" class="md-nav__link">
         
   
   
@@ -1005,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/03/" class="md-nav__link">
+      <a href="../../../../archive/2026/03/" class="md-nav__link">
         
   
   
@@ -1035,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/02/" class="md-nav__link">
+      <a href="../../../../archive/2026/02/" class="md-nav__link">
         
   
   
@@ -1065,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2026/01/" class="md-nav__link">
+      <a href="../../../../archive/2026/01/" class="md-nav__link">
         
   
   
@@ -1095,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/12/" class="md-nav__link">
+      <a href="../../../../archive/2025/12/" class="md-nav__link">
         
   
   
@@ -1125,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/11/" class="md-nav__link">
+      <a href="../../../../archive/2025/11/" class="md-nav__link">
         
   
   
@@ -1155,7 +1189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/10/" class="md-nav__link">
+      <a href="../../../../archive/2025/10/" class="md-nav__link">
         
   
   
@@ -1185,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/09/" class="md-nav__link">
+      <a href="../../../../archive/2025/09/" class="md-nav__link">
         
   
   
@@ -1215,7 +1249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/08/" class="md-nav__link">
+      <a href="../../../../archive/2025/08/" class="md-nav__link">
         
   
   
@@ -1245,7 +1279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/05/" class="md-nav__link">
+      <a href="../../../../archive/2025/05/" class="md-nav__link">
         
   
   
@@ -1275,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2025/04/" class="md-nav__link">
+      <a href="../../../../archive/2025/04/" class="md-nav__link">
         
   
   
@@ -1305,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/09/" class="md-nav__link">
+      <a href="../../../../archive/2009/09/" class="md-nav__link">
         
   
   
@@ -1335,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/06/" class="md-nav__link">
+      <a href="../../../../archive/2009/06/" class="md-nav__link">
         
   
   
@@ -1365,7 +1399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/05/" class="md-nav__link">
+      <a href="../../../../archive/2009/05/" class="md-nav__link">
         
   
   
@@ -1395,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/04/" class="md-nav__link">
+      <a href="../../../../archive/2009/04/" class="md-nav__link">
         
   
   
@@ -1425,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/03/" class="md-nav__link">
+      <a href="../../../../archive/2009/03/" class="md-nav__link">
         
   
   
@@ -1455,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archive/2009/02/" class="md-nav__link">
+      <a href="../../../../archive/2009/02/" class="md-nav__link">
         
   
   
@@ -1576,7 +1610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-agents/" class="md-nav__link">
+      <a href="../../../../category/ai-agents/" class="md-nav__link">
         
   
   
@@ -1606,7 +1640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-agents--the-agentic-web/" class="md-nav__link">
+      <a href="../../../../category/ai-agents--the-agentic-web/" class="md-nav__link">
         
   
   
@@ -1636,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/ai-augmented-development/" class="md-nav__link">
+      <a href="../../../../category/ai-augmented-development/" class="md-nav__link">
         
   
   
@@ -1666,7 +1700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/architecture/" class="md-nav__link">
+      <a href="../../../../category/architecture/" class="md-nav__link">
         
   
   
@@ -1696,7 +1730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/career--community/" class="md-nav__link">
+      <a href="../../../../category/career--community/" class="md-nav__link">
         
   
   
@@ -1726,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/cloud-computing/" class="md-nav__link">
+      <a href="../../../../category/cloud-computing/" class="md-nav__link">
         
   
   
@@ -1756,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/engineering/" class="md-nav__link">
+      <a href="../../../../category/engineering/" class="md-nav__link">
         
   
   
@@ -1786,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/governance-trust--compliance/" class="md-nav__link">
+      <a href="../../../../category/governance-trust--compliance/" class="md-nav__link">
         
   
   
@@ -1816,7 +1850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/knowledge-context-protocol/" class="md-nav__link">
+      <a href="../../../../category/knowledge-context-protocol/" class="md-nav__link">
         
   
   
@@ -1846,7 +1880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/knowledge-infrastructure/" class="md-nav__link">
+      <a href="../../../../category/knowledge-infrastructure/" class="md-nav__link">
         
   
   
@@ -1876,7 +1910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/quantum-computing/" class="md-nav__link">
+      <a href="../../../../category/quantum-computing/" class="md-nav__link">
         
   
   
@@ -1906,7 +1940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/security/" class="md-nav__link">
+      <a href="../../../../category/security/" class="md-nav__link">
         
   
   
@@ -1936,7 +1970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../category/software-architecture/" class="md-nav__link">
+      <a href="../../../../category/software-architecture/" class="md-nav__link">
         
   
   
@@ -2012,7 +2046,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../about/" class="md-nav__link ">
+            <a href="../../../../../about/" class="md-nav__link ">
               
   
   
@@ -2056,7 +2090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/ventures/" class="md-nav__link">
+      <a href="../../../../../about/ventures/" class="md-nav__link">
         
   
   
@@ -2084,7 +2118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/cv-english/" class="md-nav__link">
+      <a href="../../../../../about/cv-english/" class="md-nav__link">
         
   
   
@@ -2112,7 +2146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/cv-norwegian/" class="md-nav__link">
+      <a href="../../../../../about/cv-norwegian/" class="md-nav__link">
         
   
   
@@ -2140,7 +2174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/projects/" class="md-nav__link">
+      <a href="../../../../../about/projects/" class="md-nav__link">
         
   
   
@@ -2168,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/organizations/" class="md-nav__link">
+      <a href="../../../../../about/organizations/" class="md-nav__link">
         
   
   
@@ -2265,7 +2299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/presentations/" class="md-nav__link">
+      <a href="../../../../../about/presentations/" class="md-nav__link">
         
   
   
@@ -2355,7 +2389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
+      <a href="../../../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
         
   
   
@@ -2383,7 +2417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/thousands-of-releases/" class="md-nav__link">
+      <a href="../../../../../presentations/thousands-of-releases/" class="md-nav__link">
         
   
   
@@ -2411,7 +2445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/best-practice-wtf/" class="md-nav__link">
+      <a href="../../../../../presentations/best-practice-wtf/" class="md-nav__link">
         
   
   
@@ -2439,7 +2473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/fixing-the-problem/" class="md-nav__link">
+      <a href="../../../../../presentations/fixing-the-problem/" class="md-nav__link">
         
   
   
@@ -2543,7 +2577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/internet-of-things/" class="md-nav__link">
+      <a href="../../../../../presentations/internet-of-things/" class="md-nav__link">
         
   
   
@@ -2571,7 +2605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
+      <a href="../../../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
         
   
   
@@ -2599,7 +2633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/neo4dogs/" class="md-nav__link">
+      <a href="../../../../../presentations/neo4dogs/" class="md-nav__link">
         
   
   
@@ -2627,7 +2661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
+      <a href="../../../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
         
   
   
@@ -2655,7 +2689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/agile-wine-2011/" class="md-nav__link">
+      <a href="../../../../../presentations/agile-wine-2011/" class="md-nav__link">
         
   
   
@@ -2683,7 +2717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/cloud-psychology/" class="md-nav__link">
+      <a href="../../../../../presentations/cloud-psychology/" class="md-nav__link">
         
   
   
@@ -2711,7 +2745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/architecture-vs-agile/" class="md-nav__link">
+      <a href="../../../../../notes/architecture-vs-agile/" class="md-nav__link">
         
   
   
@@ -2809,7 +2843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
+      <a href="../../../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
         
   
   
@@ -2837,7 +2871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/edr-mds-mdm/" class="md-nav__link">
+      <a href="../../../../../presentations/edr-mds-mdm/" class="md-nav__link">
         
   
   
@@ -2865,7 +2899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/laws-of-soa/" class="md-nav__link">
+      <a href="../../../../../presentations/laws-of-soa/" class="md-nav__link">
         
   
   
@@ -2893,7 +2927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentations/design-time-governance/" class="md-nav__link">
+      <a href="../../../../../presentations/design-time-governance/" class="md-nav__link">
         
   
   
@@ -2977,7 +3011,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../knowledge-infrastructure/" class="md-nav__link ">
+            <a href="../../../../../knowledge-infrastructure/" class="md-nav__link ">
               
   
   
@@ -3021,7 +3055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/agentic-web/" class="md-nav__link">
+      <a href="../../../../../topics/agentic-web/" class="md-nav__link">
         
   
   
@@ -3049,7 +3083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/knowledge-context-protocol/" class="md-nav__link">
+      <a href="../../../../../topics/knowledge-context-protocol/" class="md-nav__link">
         
   
   
@@ -3077,7 +3111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/synthesis/" class="md-nav__link">
+      <a href="../../../../../topics/synthesis/" class="md-nav__link">
         
   
   
@@ -3105,7 +3139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/skill-driven-development/" class="md-nav__link">
+      <a href="../../../../../topics/skill-driven-development/" class="md-nav__link">
         
   
   
@@ -3191,7 +3225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/kcp-vs-mcp/" class="md-nav__link">
+      <a href="../../../../../topics/kcp-vs-mcp/" class="md-nav__link">
         
   
   
@@ -3219,7 +3253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/sdd-vs-spec-driven/" class="md-nav__link">
+      <a href="../../../../../topics/sdd-vs-spec-driven/" class="md-nav__link">
         
   
   
@@ -3298,7 +3332,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../topics/defendable-agents/" class="md-nav__link ">
+            <a href="../../../../../topics/defendable-agents/" class="md-nav__link ">
               
   
   
@@ -3400,7 +3434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/orientation/how-to-read/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/orientation/how-to-read/" class="md-nav__link">
         
   
   
@@ -3428,7 +3462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/orientation/glossary/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/orientation/glossary/" class="md-nav__link">
         
   
   
@@ -3528,7 +3562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/the-governance-gap/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/the-governance-gap/" class="md-nav__link">
         
   
   
@@ -3556,7 +3590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/what-defendable-means/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/what-defendable-means/" class="md-nav__link">
         
   
   
@@ -3584,7 +3618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/threat-model/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/threat-model/" class="md-nav__link">
         
   
   
@@ -3612,7 +3646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/determinism-vs-probabilism/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/determinism-vs-probabilism/" class="md-nav__link">
         
   
   
@@ -3640,7 +3674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/argument/why-guardrails-fail/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/argument/why-guardrails-fail/" class="md-nav__link">
         
   
   
@@ -3742,7 +3776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/overview/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/overview/" class="md-nav__link">
         
   
   
@@ -3770,7 +3804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/deterministic-planner/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/deterministic-planner/" class="md-nav__link">
         
   
   
@@ -3798,7 +3832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/governance-harness/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/governance-harness/" class="md-nav__link">
         
   
   
@@ -3826,7 +3860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/model-at-the-edge/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/model-at-the-edge/" class="md-nav__link">
         
   
   
@@ -3854,7 +3888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/data-flow/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/data-flow/" class="md-nav__link">
         
   
   
@@ -3882,7 +3916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/architecture/fail-closed-behavior/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/architecture/fail-closed-behavior/" class="md-nav__link">
         
   
   
@@ -3990,7 +4024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/overview/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/overview/" class="md-nav__link">
         
   
   
@@ -4018,7 +4052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/fail-closed-policy/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/fail-closed-policy/" class="md-nav__link">
         
   
   
@@ -4046,7 +4080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/audit-trail/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/audit-trail/" class="md-nav__link">
         
   
   
@@ -4074,7 +4108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/decision-traces/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/decision-traces/" class="md-nav__link">
         
   
   
@@ -4102,7 +4136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/budget-and-bounding/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/budget-and-bounding/" class="md-nav__link">
         
   
   
@@ -4130,7 +4164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/temporal-pinning/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/temporal-pinning/" class="md-nav__link">
         
   
   
@@ -4158,7 +4192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/drift-detection/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/drift-detection/" class="md-nav__link">
         
   
   
@@ -4186,7 +4220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/trust-and-attestation/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/trust-and-attestation/" class="md-nav__link">
         
   
   
@@ -4214,7 +4248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/primitives/multi-tenancy/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/primitives/multi-tenancy/" class="md-nav__link">
         
   
   
@@ -4316,7 +4350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/anatomy-of-a-score/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/anatomy-of-a-score/" class="md-nav__link">
         
   
   
@@ -4344,7 +4378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/scoring-model-manifest/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/scoring-model-manifest/" class="md-nav__link">
         
   
   
@@ -4372,7 +4406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/layers-weights-bands/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/layers-weights-bands/" class="md-nav__link">
         
   
   
@@ -4400,7 +4434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/variable-design/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/variable-design/" class="md-nav__link">
         
   
   
@@ -4428,7 +4462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/reproducibility/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/reproducibility/" class="md-nav__link">
         
   
   
@@ -4456,7 +4490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/decisions/versioning-models/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/decisions/versioning-models/" class="md-nav__link">
         
   
   
@@ -4554,7 +4588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/kcp/manifest-basics/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/manifest-basics/" class="md-nav__link">
         
   
   
@@ -4582,7 +4616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/kcp/declaring-governed-units/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/declaring-governed-units/" class="md-nav__link">
         
   
   
@@ -4610,7 +4644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/kcp/wiring-kcp-agent-mcp/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/wiring-kcp-agent-mcp/" class="md-nav__link">
         
   
   
@@ -4638,7 +4672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/kcp/federation-and-dogfood/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/kcp/federation-and-dogfood/" class="md-nav__link">
         
   
   
@@ -4746,7 +4780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/00-project-layout/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/00-project-layout/" class="md-nav__link">
         
   
   
@@ -4774,7 +4808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/01-first-harness/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/01-first-harness/" class="md-nav__link">
         
   
   
@@ -4802,7 +4836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/02-scoring-model/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/02-scoring-model/" class="md-nav__link">
         
   
   
@@ -4830,7 +4864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/03-governed-session/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/03-governed-session/" class="md-nav__link">
         
   
   
@@ -4858,7 +4892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/04-audit-log/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/04-audit-log/" class="md-nav__link">
         
   
   
@@ -4886,7 +4920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/05-budget-ceiling/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/05-budget-ceiling/" class="md-nav__link">
         
   
   
@@ -4914,7 +4948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/06-temporal-drift/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/06-temporal-drift/" class="md-nav__link">
         
   
   
@@ -4942,7 +4976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/07-multi-tenant/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/07-multi-tenant/" class="md-nav__link">
         
   
   
@@ -4970,7 +5004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/tutorials/08-evidence-export/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/tutorials/08-evidence-export/" class="md-nav__link">
         
   
   
@@ -5072,7 +5106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/buyer-scoring-pipeline/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/buyer-scoring-pipeline/" class="md-nav__link">
         
   
   
@@ -5100,7 +5134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/spend-approval-agent/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/spend-approval-agent/" class="md-nav__link">
         
   
   
@@ -5128,7 +5162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/regulatory-qa-provenance/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/regulatory-qa-provenance/" class="md-nav__link">
         
   
   
@@ -5156,7 +5190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/reproduce-a-decision/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/reproduce-a-decision/" class="md-nav__link">
         
   
   
@@ -5184,7 +5218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/catch-an-injection/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/catch-an-injection/" class="md-nav__link">
         
   
   
@@ -5212,7 +5246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/examples/compliant-screening-agent/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/examples/compliant-screening-agent/" class="md-nav__link">
         
   
   
@@ -5310,7 +5344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/compliance/control-mapping/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/control-mapping/" class="md-nav__link">
         
   
   
@@ -5338,7 +5372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/compliance/evidence-packages/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/evidence-packages/" class="md-nav__link">
         
   
   
@@ -5366,7 +5400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/compliance/verifying-defendability/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/verifying-defendability/" class="md-nav__link">
         
   
   
@@ -5394,7 +5428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/compliance/operating-and-maintenance/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/compliance/operating-and-maintenance/" class="md-nav__link">
         
   
   
@@ -5492,7 +5526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/reference/case-study-lodestar/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/case-study-lodestar/" class="md-nav__link">
         
   
   
@@ -5520,7 +5554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/reference/starter-kit/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/starter-kit/" class="md-nav__link">
         
   
   
@@ -5548,7 +5582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/reference/anti-patterns/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/anti-patterns/" class="md-nav__link">
         
   
   
@@ -5576,7 +5610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../topics/defendable-agents/reference/faq/" class="md-nav__link">
+      <a href="../../../../../topics/defendable-agents/reference/faq/" class="md-nav__link">
         
   
   
@@ -5620,7 +5654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/synthesis-releases/" class="md-nav__link">
+      <a href="../../../../../notes/synthesis-releases/" class="md-nav__link">
         
   
   
@@ -5648,7 +5682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../notes/linkedin-posts/" class="md-nav__link">
+      <a href="../../../../../notes/linkedin-posts/" class="md-nav__link">
         
   
   
@@ -5676,7 +5710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../linkedin/" class="md-nav__link">
+      <a href="../../../../../linkedin/" class="md-nav__link">
         
   
   
@@ -5711,7 +5745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../open-source/" class="md-nav__link">
+      <a href="../../../../../open-source/" class="md-nav__link">
         
   
   
@@ -5791,7 +5825,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../interests/sci-fi/" class="md-nav__link ">
+            <a href="../../../../../interests/sci-fi/" class="md-nav__link ">
               
   
   
@@ -5835,7 +5869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2025/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2025/" class="md-nav__link">
         
   
   
@@ -5863,7 +5897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2024/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2024/" class="md-nav__link">
         
   
   
@@ -5891,7 +5925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2023/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2023/" class="md-nav__link">
         
   
   
@@ -5919,7 +5953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2022/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2022/" class="md-nav__link">
         
   
   
@@ -5947,7 +5981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2021/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2021/" class="md-nav__link">
         
   
   
@@ -5975,7 +6009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2020/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2020/" class="md-nav__link">
         
   
   
@@ -6003,7 +6037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2019/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2019/" class="md-nav__link">
         
   
   
@@ -6031,7 +6065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2018/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2018/" class="md-nav__link">
         
   
   
@@ -6059,7 +6093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2017/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2017/" class="md-nav__link">
         
   
   
@@ -6087,7 +6121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2016/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2016/" class="md-nav__link">
         
   
   
@@ -6115,7 +6149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2015/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2015/" class="md-nav__link">
         
   
   
@@ -6143,7 +6177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2014/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2014/" class="md-nav__link">
         
   
   
@@ -6171,7 +6205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2013/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2013/" class="md-nav__link">
         
   
   
@@ -6199,7 +6233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2012/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2012/" class="md-nav__link">
         
   
   
@@ -6227,7 +6261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/sci-fi/books-2011/" class="md-nav__link">
+      <a href="../../../../../interests/sci-fi/books-2011/" class="md-nav__link">
         
   
   
@@ -6320,7 +6354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/food-and-wine/" class="md-nav__link">
+      <a href="../../../../../interests/food-and-wine/" class="md-nav__link">
         
   
   
@@ -6348,7 +6382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../interests/tools/" class="md-nav__link">
+      <a href="../../../../../interests/tools/" class="md-nav__link">
         
   
   
@@ -6383,7 +6417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/" class="md-nav__link">
+      <a href="../../../../../glossary/" class="md-nav__link">
         
   
   
@@ -6410,7 +6444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tags/" class="md-nav__link">
+      <a href="../../../../../tags/" class="md-nav__link">
         
   
   
@@ -6438,6 +6472,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -6452,6 +6488,58 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-direction-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why this direction matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round-one-four-bugs-none-of-them-the-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round one: four bugs, none of them the model's
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#round-two-actually-shipping-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Round two: actually shipping it
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -6459,533 +6547,250 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="writing">Writing<a class="headerlink" href="#writing" title="Permanent link">&para;</a></h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-01 08:00:00+00:00">February 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="../../category/software-architecture/" class="md-meta__link">Software Architecture</a></li>
-        
-        
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Thor Henning Hetland
+                        
+                      </strong>
+                      <br>
+                      Co-founder of JavaZone, Java Champion, Founder of eXOReaction
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/anthropics.png" alt="Claude Code">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Claude Code
+                        
+                      </strong>
+                      <br>
+                      Anthropic's AI coding assistant — co-author of research, structure, and prose
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-08-23 09:00:00+00:00" class="md-ellipsis">August 23, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai-agents/">AI Agents</a>, 
+                              <a href="../../../../category/engineering/">Engineering</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              8 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="why-temporal-matters-the-time-capsule-graph"><a class="toclink" href="../../2026/02/01/why-temporal-matters-the-time-capsule-graph/">Why Temporal Matters: The Time Capsule Graph</a></h2>
-<p>Most systems I have built over thirty years answer one question well: what is the current state? A database query returns the latest row. A service responds with the live configuration. A dashboard shows what is happening right now. Current state is the default, and it is sufficient most of the time.</p>
-<p>Some systems go further. They add history. An audit table, an event log, a change data capture stream. Now you can answer: what was the state at time T? Useful for compliance, useful for debugging. But still a limited question, because history stored as a sequence of snapshots tells you what changed without telling you how those changes relate to each other.</p>
-<p>The questions I keep running into -- the ones that matter most -- are different. How did we get here? In what order? What does that trajectory mean? Those questions require something most architectures are not built to answer.</p>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
 
-    
-      <nav class="md-post__action">
-        <a href="../../2026/02/01/why-temporal-matters-the-time-capsule-graph/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-01 00:00:00+00:00">February 1, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/software-architecture/" class="md-meta__link">Software Architecture</a>, 
-              <a href="../../category/career--community/" class="md-meta__link">Career &amp; Community</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              9 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="three-decades-of-architecture-what-ai-actually-changes-and-what-doesnt"><a class="toclink" href="../../2026/02/01/three-decades-of-architecture-what-ai-actually-changes-and-what-doesnt/">Three Decades of Architecture: What AI Actually Changes (And What Doesn't)</a></h2>
-<p>I have been writing software and designing systems since 1994. That is thirty-two years. Long enough to have watched several waves arrive with the promise that everything was about to change, and long enough to have noticed that the pattern of arrival is remarkably consistent. Breathless proclamation. A period of confusion as people try to apply old practices to new technology. Then a gradual, quieter recognition of what actually changed and what did not.</p>
 
+  <nav class="md-tags" >
     
-      <nav class="md-post__action">
-        <a href="../../2026/02/01/three-decades-of-architecture-what-ai-actually-changes-and-what-doesnt/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-30 00:00:00+00:00">January 30, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/software-architecture/" class="md-meta__link">Software Architecture</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-more-ai-the-more-control"><a class="toclink" href="../../2026/01/30/the-more-ai-the-more-control/">The More AI, The More Control</a></h2>
-<p>The fear is intuitive and sounds right: the more you delegate to AI, the less you understand your codebase, the less you control what ships. You become a passenger in your own project. Every prompt you type is a piece of agency you surrender.</p>
-<p>I have thirty years of shipping software. I have watched entire teams lose control of codebases they wrote themselves, without any AI involved. And I have watched my own control over a codebase <em>increase</em> as I delegated more to AI. The intuition is wrong. But it is wrong in a specific way, and understanding that specificity matters.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/01/30/the-more-ai-the-more-control/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-28 00:00:00+00:00">January 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              6 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="subscription-economics-and-the-ai-development-workflow"><a class="toclink" href="../../2026/01/28/subscription-economics-and-the-ai-development-workflow/">Subscription Economics and the AI Development Workflow</a></h2>
-<p>The most important decision in AI-assisted development has nothing to do with models, prompts, or methodology. It is the billing model. Per-token API pricing and flat-rate subscriptions produce fundamentally different rational behaviors, and most teams do not realize they are optimizing for their invoice instead of their output.</p>
-<p>I discovered this by accident. Building <a href="https://github.com/exoreaction/lib-pcb">lib-pcb</a> over eleven days -- 197,831 lines of Java, 7,461 tests, eight format parsers -- involved an intensity of AI interaction that would have been economically irrational under per-token pricing. A back-of-the-envelope estimate puts the API cost for that project somewhere around $100,000 at standard rates. On a flat subscription, the marginal cost of every additional iteration, every regenerated test suite, every discarded alternative approach was zero.</p>
-<p>That difference shaped everything.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/01/28/subscription-economics-and-the-ai-development-workflow/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-27 00:00:00+00:00">January 27, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="when-big-claims-backfire"><a class="toclink" href="../../2026/01/27/when-big-claims-backfire/">When Big Claims Backfire</a></h2>
-<p>Two days after the most successful LinkedIn post I'd published — 25 likes, 19 comments, six qualified leads — I posted the worst one.</p>
-<p>Not the lowest engagement. The most counterproductive.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/01/27/when-big-claims-backfire/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-26 00:00:00+00:00">January 26, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="documentation-that-writes-itself-no-really"><a class="toclink" href="../../2026/01/26/documentation-that-writes-itself-no-really/">Documentation That Writes Itself (No, Really)</a></h2>
-<p>Yes, I know. "Self-writing documentation" is the perpetual motion machine of software engineering. Every generation of tooling has promised it. Javadoc would generate your API reference. README generators would scaffold your project descriptions. Wiki pages would capture institutional knowledge. Sprint retrospectives would produce living documents. None of it worked. The documentation was either generated and useless, or useful and never written.</p>
-<p>So when I say that skill-driven development produces documentation as a natural byproduct of building software, I understand why the reasonable response is skepticism. I would be skeptical too. But after 75 skill files emerged during an 11-day build of <a href="https://github.com/exoreaction/lib-pcb">lib-pcb</a>, I have to describe what actually happened, because it was not what any previous "auto-documentation" approach looked like.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/01/26/documentation-that-writes-itself-no-really/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-25 00:00:00+00:00">January 25, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/career--community/" class="md-meta__link">Career &amp; Community</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-workshop-invitation"><a class="toclink" href="../../2026/01/25/the-workshop-invitation/">The Workshop Invitation</a></h2>
-<p>After two weeks of posting about lib-pcb — the parsing complexity, the weekend experiments, the velocity numbers, the testing discipline — I posted something different.</p>
-<p>Not more proof. An invitation.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/01/25/the-workshop-invitation/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-24 00:00:00+00:00">January 24, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/software-architecture/" class="md-meta__link">Software Architecture</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              9 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-cost-of-iteration-collapsed-now-what"><a class="toclink" href="../../2026/01/24/the-cost-of-iteration-collapsed-now-what/">The Cost of Iteration Collapsed. Now What?</a></h2>
-<p>For most of my thirty years in software, iteration has been expensive. Not in theory. In practice, in the way that shapes every decision a team makes. When changing a core data structure takes two weeks of careful refactoring across dozens of files, you do not change the data structure on a hunch. You analyze. You write a proposal. You get approval. You schedule it for the next sprint, or the one after that. The cost of being wrong is measured in weeks, and so the entire machinery of software engineering orients itself around not being wrong.</p>
-<p>That cost has collapsed. Not gradually. Not by half. By orders of magnitude. And I am not sure we have reckoned with what that means for the way we work.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/01/24/the-cost-of-iteration-collapsed-now-what/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-23 00:00:00+00:00">January 23, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-testing-discipline-25-to-93"><a class="toclink" href="../../2026/01/23/the-testing-discipline-25-to-93/">The Testing Discipline: 25% to 93%</a></h2>
-<p>Unit tests passed. Every one of them. Green across the board.</p>
-<p>And then we ran the parser against real legacy Gerber files — files from actual PCB designs, exported by real design tools used by real engineers over the last twenty years — and the success rate was 25%.</p>
-<p>Three out of four failed.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/01/23/the-testing-discipline-25-to-93/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-01-22 00:00:00+00:00">January 22, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a>, 
-              <a href="../../category/software-architecture/" class="md-meta__link">Software Architecture</a>, 
-              <a href="../../category/career--community/" class="md-meta__link">Career &amp; Community</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="strategic-delegation-when-developers-become-architects"><a class="toclink" href="../../2026/01/22/strategic-delegation-when-developers-become-architects/">Strategic Delegation: When Developers Become Architects</a></h2>
-<p>For thirty years I have broken work into tasks. Decompose the feature into subtasks, estimate the hours, write the code, move the ticket. The unit of progress was the line of code. The measure of a good day was how much I shipped. That loop was so deeply embedded in how I worked that I did not notice it was a loop. It was just what development meant.</p>
-<p>Then I started delegating implementation to AI, and the loop broke. Not gradually. In about a week.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/01/22/strategic-delegation-when-developers-become-architects/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
       
       
-        
-          
+      
+      
+        <span class="md-tag">agents</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">data-sovereignty</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">embedded-ai</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">llama.cpp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">local-llm</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">verification</span>
+      
+    
+  </nav>
 
 
 
-<nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../14/">14</a> <a class="md-pagination__link" href="../15/">15</a> <span class="md-pagination__current">16</span> <a class="md-pagination__link" href="../17/">17</a> <a class="md-pagination__link" href="../18/">18</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../20/">20</a>
-</nav>
-        
+<h1 id="the-cloud-was-covering-for-us">The Cloud Was Covering for Us<a class="headerlink" href="#the-cloud-was-covering-for-us" title="Permanent link">&para;</a></h1>
+<p>We expected the usual trade when we pointed one of our agents at a local model instead of a cloud API: somewhat worse answers, in exchange for the documents never leaving the machine. What we got instead was a smaller, more literal model walking straight into real bugs in our own verification logic — bugs a large cloud model had been sailing past for months without ever tripping them. The local model didn't get dumber. It got honest, and honesty found the gaps.</p>
+<!-- more -->
+
+<p><img alt="The Cloud Was Covering For Us: why embedded local LLMs expose the hidden flaws in your system architecture, and the engineering reality of shipping them." src="/assets/images/blog/the-cloud-was-covering-for-us/hero-cloud-was-covering.png" /></p>
+<p>That was the first lesson. The second, which took longer to learn, was how much of the real work of shipping local inference has nothing to do with models at all.</p>
+<h2 id="why-this-direction-matters">Why this direction matters<a class="headerlink" href="#why-this-direction-matters" title="Permanent link">&para;</a></h2>
+<p>There's a structural tension in AI products right now. Everything about how they get built pulls toward the cloud: the strongest models live behind APIs, the tooling assumes an API key, the economics reward metered calls. "Cloud service" is the default shape of an AI product — not because anyone decided that, but because every incremental choice points the same way.</p>
+<p>Now look at who most needs a product like ours — an agent that evaluates documents against externally supplied requirements and has to justify every verdict, not just state one. The customers with the strongest need for that are disproportionately the ones cloud-first design serves worst: regulated industries where a document legally cannot cross a boundary, organizations for whom a foreign API in the loop is a sovereignty problem rather than a latency problem, environments that are simply offline. The pattern generalizes past our niche: the more an AI system's output has to stand up to scrutiny, the less acceptable "we sent your document to someone else's computer" becomes. Cloud-first design quietly optimizes for the customers with the weakest requirements.</p>
+<p><img alt="Table: cloud-first defaults versus sovereignty-first reality, across regulated industries, sovereign organizations, air-gapped environments, and accountable systems — the more scrutiny an AI system's output must survive, the faster the cloud-first default breaks down." src="/assets/images/blog/the-cloud-was-covering-for-us/cloud-first-weakest-requirements.png" /></p>
+<p>There's a second, quieter reason to care. If your system has only ever run against one vendor's strongest model, you don't know that your system is correct. You know that it's compatible. Those are different properties, and a local model is the cheapest way to find out which one you have.</p>
+<h2 id="round-one-four-bugs-none-of-them-the-models">Round one: four bugs, none of them the model's<a class="headerlink" href="#round-one-four-bugs-none-of-them-the-models" title="Permanent link">&para;</a></h2>
+<p>The plan was boring on purpose: same pipeline, swap cloud for local, ordinary CPU hardware, measure what quality costs. What happened instead was that the agent stopped being able to report a straightforward, correct "no."</p>
+<ol>
+<li>Our verification logic could confirm a positive citation but had no way to confirm an absence. A claim like "the document doesn't address this" has nothing to cite, so it failed verification regardless of whether it was true. The cloud model phrased negatives in ways that happened to dodge this; the local model hit it constantly.</li>
+<li>A "thinking" model spent its entire token budget on internal reasoning and returned nothing — a fixed token cap in our code, dressed up as a model-quality problem.</li>
+<li>Our confidence handling treated a negative answer as inherently less certain than a positive one. It isn't.</li>
+<li>The model's own conclusion-and-confidence trailer got mistaken for a claim about the document and failed verification against the source text.</li>
+</ol>
+<p><img alt="Four bugs across four layers — verification, token/memory, logic, and parsing — each traced to what the code assumed, not to model quality." src="/assets/images/blog/the-cloud-was-covering-for-us/round-one-four-bugs.png" /></p>
+<p>Fixing these improved results with the cloud model too — decent evidence the bugs were ours all along. Performance tuning (reasoning off, thread counts, cache-friendly prompt ordering) helped modestly; the more useful finding was that prompt processing, not generation, dominates on CPU, and that a specialized low-bit kernel lost to a conventional quantization path that had simply earned years more optimization.</p>
+<h2 id="round-two-actually-shipping-it">Round two: actually shipping it<a class="headerlink" href="#round-two-actually-shipping-it" title="Permanent link">&para;</a></h2>
+<p>The first shippable step was an opt-in setting pointing the agent at a local inference server the customer already runs. That's real, tested, and merged — and not enough on its own, because most people cannot be expected to install and operate an inference server. The honest next step is a bundle: a second, much larger download containing a real inference engine and a real model, so a non-technical person gets local inference with zero setup. As of writing, that bundle is code-complete and has run a real end-to-end evaluation cycle successfully.</p>
+<p>Nearly everything hard about it was systems work, not AI work:</p>
+<ul>
+<li><strong>Sourcing.</strong> An MIT-licensed engine (prebuilt binaries, deliberately the generic build rather than a chip-specific one — customer hardware is whatever it is) and a permissively licensed model of about 2.2GB. We checked before designing, not after, that our distribution channel caps file sizes below the model's size, so the model downloads from its upstream host instead.</li>
+<li><strong>Integrity.</strong> Every artifact's checksum is computed from the actual downloaded bytes — never trusted from a response header — and pinned in a lockfile. Rebuilds are reproducible and tamper-evident, not "it worked last time."</li>
+<li><strong>Supervision.</strong> The engine runs as a supervised subprocess: picks its own free port, waits for real readiness (model loads take real time), and fails loudly if the bundle is missing or torn. It never silently falls back to a cloud call the customer didn't ask for and has no credentials for.</li>
+</ul>
+<p><img alt="Anatomy of a zero-setup bundle: sourcing (generic, license-checked engine builds), integrity (checksums from downloaded bytes, never response headers), and supervision (subprocess manages its own ports, fails loudly, no silent cloud fallback) — systems engineering, not AI." src="/assets/images/blog/the-cloud-was-covering-for-us/zero-setup-bundle-anatomy.png" /></p>
+<ul>
+<li><strong>Two more bugs.</strong> An end-to-end run — not unit tests — caught that our planned context window was too small: a real prompt needed roughly 2.6 times the tokens we'd guessed. The fix went everywhere that number appeared, including the earlier release's bring-your-own-server documentation. And reading the actual code path — not testing the happy path — caught that our settings persistence would have silently written a session-only server address into the customer's permanent configuration the moment they touched an unrelated checkbox, breaking things only after the next restart. The fix separates "what the running process uses" from "what gets saved to disk."</li>
+<li><strong>Verification, and a false alarm.</strong> We independently re-ran the whole pipeline — download, verify, package — from a fresh checkout on a second machine, and every checksum matched the first machine's byte-for-byte. The live run itself, on the original machine, crashed mid-inference with an out-of-memory-adjacent failure. Instead of assuming the fix was broken, we checked: the real cause was unrelated memory pressure already on that machine, nothing to do with the new code. We moved the live run to the second machine, where it completed cleanly — real model load, real inference, a real signed finding, ed25519 signature and all. A failure during verification is not automatically evidence that the thing you just built is broken. Isolate the cause first, then conclude.</li>
+</ul>
+<p><img alt="A failure during verification is not automatically evidence your code is broken: isolating the crash found pre-existing memory pressure on the first machine, unrelated to the fix — moving to a clean machine produced a real model load, real inference, and a real signed finding." src="/assets/images/blog/the-cloud-was-covering-for-us/verification-false-alarm.png" /></p>
+<h2 id="the-pattern">The pattern<a class="headerlink" href="#the-pattern" title="Permanent link">&para;</a></h2>
+<p>Count the failures across both rounds: an unverifiable negative, a token cap, a confidence prior, a misparsed trailer, a guessed context size, an untested persistence path, a crash we nearly misattributed. Not one was a model-quality problem. Every one was an unstated assumption, an unverified guess, or an unread code path in the system around the model.</p>
+<p>The cloud model's fluency had been covering for those assumptions — it produced answers shaped like the ones our code expected, so the code never got tested. The local model was too literal to cooperate, and that turned out to be its most valuable property.</p>
+<p>So if you're building verification logic on top of an LLM: build for the plain, terse, occasionally negative answer a small model actually gives, and treat every number you didn't measure as a bug you haven't hit yet. The question a local model asks isn't whether your product can survive a weaker model. It's whether your system was ever correct, or just well-covered. Ours wasn't, until we did the work — and the cloud path is better for it too.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
       
-    </div>
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 24, 2026 06:40:29 UTC">August 24, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 24, 2026 06:40:29 UTC">August 24, 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
   </div>
 
           
@@ -7004,10 +6809,12 @@
   
     
       
+        
+      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../start-here/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Start Here">
+          <a href="../../18/the-agent-didnt-guess-it-checked/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The Agent Didn&#39;t Guess. It Checked.">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -7017,27 +6824,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Start Here
+                The Agent Didn't Guess. It Checked.
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../topics/" class="md-footer__link md-footer__link--next" aria-label="Next: Browse by Topic">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Browse by Topic
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
@@ -7097,10 +6888,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

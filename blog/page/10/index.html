@@ -6479,6 +6479,59 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-03-08 00:00:00+00:00">March 8, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              14 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-front-door-and-the-filing-cabinet-a2a-agent-cards-meet-kcp"><a class="toclink" href="../../2026/03/08/the-front-door-and-the-filing-cabinet-a2a-agent-cards-meet-kcp/">The Front Door and the Filing Cabinet: A2A Agent Cards Meet KCP</a></h2>
+<p><img alt="The Front Door and the Filing Cabinet: Composing A2A and KCP in Multi-Agent Systems" src="/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-01.webp" /></p>
+<p>Multi-agent systems need two kinds of identity. The first answers "who is this agent and how do I call it." The second answers "what knowledge does this agent have and who is allowed to see each piece of it." Google's A2A protocol handles the first. KCP handles the second. They are not competitors. They are different layers of the same stack.</p>
+<p>This post started as that explanation. Then, the same day it was published, we built four simulators and 150 adversarial tests against the spec. The tests found 8 concrete gaps. Those gaps are now driving KCP v0.7. The full story follows.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/03/08/the-front-door-and-the-filing-cabinet-a2a-agent-cards-meet-kcp/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-03-07 00:00:00+00:00">March 7, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6960,65 +7013,6 @@ Claude immediately knows what it was doing here last time.</p>
     
       <nav class="md-post__action">
         <a href="../../2026/03/03/kcp-memory-give-claude-code-a-memory/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-03 00:00:00+00:00">March 3, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              6 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-comes-to-opencode-the-first-ai-coding-tool-plugin"><a class="toclink" href="../../2026/03/03/kcp-comes-to-opencode-the-first-ai-coding-tool-plugin/">KCP Comes to OpenCode: The First AI Coding Tool Plugin</a></h2>
-<p><a href="../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">kcp-commands</a> recovers 33% of Claude Code's context window
-by intercepting Bash tool calls. Today we are extending that same principle to
-<a href="https://github.com/anomalyco/opencode">OpenCode</a> — the 114K-star TypeScript alternative to
-Claude Code.</p>
-<p>The result is <a href="https://www.npmjs.com/package/opencode-kcp-plugin"><code>opencode-kcp-plugin</code></a>: a plugin
-that injects a <code>knowledge.yaml</code> knowledge map into every OpenCode session and annotates file
-search results with intent descriptions. The mechanism is different from kcp-commands, and the
-target is different, but the underlying idea is identical: give the agent a map so it does not
-have to rediscover the territory on every session.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/03/kcp-comes-to-opencode-the-first-ai-coding-tool-plugin/">
           Continue reading
         </a>
       </nav>
