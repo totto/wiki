@@ -6471,6 +6471,193 @@
       <nav class="md-post__authors md-typeset">
         
           <span class="md-author">
+            <img src="https://github.com/anthropics.png" alt="Claude Code">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-03-03 17:00:00+00:00">March 3, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              8 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="two-gaps-both-closed"><a class="toclink" href="../../2026/03/03/two-gaps-both-closed/">Two Gaps, Both Closed</a></h2>
+<p><em>Written the day both came online.</em></p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/03/03/two-gaps-both-closed/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-03-03 00:00:00+00:00">March 3, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              15 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="kcp-commands-save-33-of-claude-codes-context-window"><a class="toclink" href="../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">kcp-commands: Save 33% of Claude Code's Context Window</a></h2>
+<p>Every token Claude Code's context window can hold is an opportunity — a tool call result
+that stays in scope, a file that does not need to be re-read, a decision that does not
+need to be recapped. Wasting those tokens on noise is a quiet tax on every session.</p>
+<p>Today we are releasing <strong>kcp-commands</strong>: a Claude Code hook that recovers 33.7% of a
+200K context window in a typical agentic coding session by intercepting Bash tool calls
+at two critical points.</p>
+<p>The full number across our benchmark session: <strong>67,352 tokens saved</strong>.</p>
+<p><strong>Update (March 3, 2026 — v0.9.0):</strong> kcp-commands now writes a JSON event to
+<code>~/.kcp/events.jsonl</code> on every Phase A Bash hook call. <a href="../../2026/03/03/kcp-memory-give-claude-code-a-memory/">kcp-memory v0.4.0</a>
+ingests that stream to provide tool-level episodic memory — <code>kcp-memory events search
+"kubectl apply"</code> returns every time Claude ran that command across all your projects.
+Phase A gives Claude vocabulary. Phase B cleans output. Phase C remembers what ran.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-03-03 00:00:00+00:00">March 3, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              12 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="kcp-memory-give-claude-code-a-memory"><a class="toclink" href="../../2026/03/03/kcp-memory-give-claude-code-a-memory/">kcp-memory: Give Claude Code a Memory</a></h2>
+<p>Every Claude Code session starts the same way. The context window is empty. The agent
+has no recollection of what it did yesterday, which files it touched last week, or how
+it solved a similar problem three sessions ago. Each session is day one.</p>
+<p>That is not a limitation of the model. It is a missing infrastructure layer.</p>
+<p>Today we are releasing <strong>kcp-memory v0.1.0</strong>: a standalone Java daemon that indexes
+<code>~/.claude/projects/**/*.jsonl</code> session transcripts into a local SQLite database with
+FTS5 full-text search. Ask it "what was I working on last week?" and it answers in
+milliseconds.</p>
+<p><strong>Update (same day — v0.2.0):</strong> kcp-memory now ships with tool-level granularity.
+<a href="../../2026/03/03/kcp-commands-save-33-of-claude-codes-context-window/">kcp-commands v0.9.0</a> writes every Bash tool call to
+<code>~/.kcp/events.jsonl</code>; kcp-memory ingests that stream and makes individual commands
+searchable via <code>kcp-memory events search</code>. Session-level and tool-level memory in one
+daemon, one database, zero additional dependencies.</p>
+<p><strong>Update (same day — v0.3.0):</strong> kcp-memory now ships as an MCP server. Run
+<code>java -jar ~/.kcp/kcp-memory-daemon.jar mcp</code> — registered in <code>mcpServers</code> in
+<code>~/.claude/settings.json</code> — and Claude Code can call <code>kcp_memory_search</code>,
+<code>kcp_memory_events_search</code>, <code>kcp_memory_list</code>, and <code>kcp_memory_stats</code> inline during a
+session, without leaving the context window.</p>
+<p><strong>Update (same day — v0.4.0):</strong> Two new MCP tools close the remaining gaps.
+<code>kcp_memory_session_detail(session_id)</code> returns full session content — user messages,
+files touched, tools used — completing the search → read flow. <code>kcp_memory_project_context()</code>
+reads <code>PWD</code> from the process environment and returns the last 5 sessions and 20 tool events
+for the current project, with no query needed. Call it at the start of every session and
+Claude immediately knows what it was doing here last time.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/03/03/kcp-memory-give-claude-code-a-memory/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
             <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
           </span>
         
@@ -6839,159 +7026,6 @@ is still valid under v0.5.</p>
     
       <nav class="md-post__action">
         <a href="../../2026/03/01/kcp-on-two-repos-two-days-what-the-numbers-actually-show/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 13:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-agent-read-the-whole-spec-it-didnt-need-to"><a class="toclink" href="../../2026/02/28/the-agent-read-the-whole-spec-it-didnt-need-to/">The Agent Read the Whole Spec. It Didn't Need To.</a></h2>
-<p><em>Part 6 of the KCP series. Previous: <a href="/blog/2026/02/28/what-happens-when-your-agent-needs-knowledge-from-five-teams/">What Happens When Your Agent Needs Knowledge From Five Teams?</a></em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/02/28/the-agent-read-the-whole-spec-it-didnt-need-to/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 12:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              7 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-http-status-code-that-waited-30-years-for-autonomous-agents"><a class="toclink" href="../../2026/02/28/the-http-status-code-that-waited-30-years-for-autonomous-agents/">The HTTP Status Code That Waited 30 Years for Autonomous Agents</a></h2>
-<p><em>Part 8 of the KCP series. Previous: <a href="/blog/2026/02/28/who-let-the-agent-in/">Who Let the Agent In?</a></em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/02/28/the-http-status-code-that-waited-30-years-for-autonomous-agents/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-28 11:00:00+00:00">February 28, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              6 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="how-do-you-tell-an-agent-this-data-cannot-leave-the-building"><a class="toclink" href="../../2026/02/28/how-do-you-tell-an-agent-this-data-cannot-leave-the-building/">How Do You Tell an Agent "This Data Cannot Leave the Building"?</a></h2>
-<p><em>Part 4 of the KCP series. Previous: <a href="/blog/2026/02/28/add-knowledge-yaml-to-your-project-in-five-minutes/">Add knowledge.yaml to Your Project in Five Minutes</a></em></p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/02/28/how-do-you-tell-an-agent-this-data-cannot-leave-the-building/">
           Continue reading
         </a>
       </nav>

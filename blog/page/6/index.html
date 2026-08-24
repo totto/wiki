@@ -6479,6 +6479,172 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-06-12 11:00:00+00:00">June 12, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              20 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard"><a class="toclink" href="../../2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard</a></h2>
+<p><img alt="The evolution of KCP: from the 33-tool-call incident and the comprehension gap (January 2026), through Skill-Driven Development and &quot;agents need a map, not just a table of contents&quot; (February), to the KCP stack — knowledge.yaml, kcp-memory, kcp-commands (March) — and the governance and trust layer of v0.10–v0.17 (April–June)." src="../../../assets/images/kcp-journey-00-evolution.webp" /></p>
+<p>It started with a question no one expected to be hard.</p>
+<p>Day seven of the lib-pcb build. January 2026. A single developer, eleven days to produce what the industry does in ten to eighteen months. The AI was generating code at a pace that defied every estimate. Features that should take a week arrived in hours. The skill library -- YAML files encoding project-specific context for Claude Code -- had grown to over forty entries. Everything was working.</p>
+<p>And then everything stopped.</p>
+<p>"What fields does the DrillHit class have?"</p>
+<p>The AI did not know. The class had been written four days earlier. It was central to the entire parsing architecture. It had been discussed in multiple sessions. But the context was gone -- fresh session, blank slate. The AI started searching. Grep for the class name. Read the file. Follow the imports. Check the parent class. Read that file. Check the serializer. Follow another import. Back to grep. Thirty-three tool calls to answer a question that any developer on the project for a week could answer in ten seconds.</p>
+<p>Eleven minutes. For one question.</p>
+<p>That was the moment something broke open. Not the code -- the assumption underneath it. The assumption that making AI faster at <em>creating</em> code was sufficient. Creation had been accelerated by an order of magnitude. Comprehension had not moved at all.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/12/down-the-rabbit-hole-how-a-33-tool-call-bug-became-a-knowledge-standard/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-06-12 10:00:00+00:00">June 12, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              13 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="beyond-rag-how-kcp-016-017-give-agents-trustworthy-self-describing-knowledge"><a class="toclink" href="../../2026/06/12/beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">Beyond RAG: How KCP 0.16--0.17 Give Agents Trustworthy, Self-Describing Knowledge</a></h2>
+<p><img alt="Overview: KCP v0.16 closes the trust gap with the Trusted Render Pipeline — signing, trust tiers, and sanitization. KCP v0.17 closes the content gap with content structure metadata and subtractive not_for matching. Together they compose a precision retrieval pipeline." src="../../../assets/images/kcp-trust-content-00-overview.webp" /></p>
+<p>When a compliance agent evaluates a supplier against NIS2 Article 21, it needs two things: the supplier's security documentation to evaluate, and the regulation to evaluate it against. KCP, as described in the previous post, gives the supplier documentation a shape. The evaluation result gets a shape. But the regulation itself -- the specific requirements of Article 21(2), the interpretive guidance from ENISA, the national implementation notes -- lives where it has always lived: as prose in the system prompt.</p>
+<p>That worked when agents consumed knowledge from a single, trusted source. It does not work when your agent pulls context from four federated manifests across two organisations, one of which was generated by an automated crawl three weeks ago. The question is no longer "does this knowledge have a shape?" It is: "can I trust this knowledge, and is it even the right content for what I need?"</p>
+<p>KCP v0.16 and v0.17 answer those two questions. v0.16 introduces a trust model -- cryptographic signing, trust tiers, a render pipeline that fails closed. v0.17 introduces a content model -- structural metadata that tells you what a unit contains before you fetch it, and subtractive matching that tells you what it is explicitly not about. Together, they close two gaps that have been open since the beginning of the series.</p>
+<p>This post walks through both releases. The examples are concrete. The threat model is explicit. If you are building systems where agents ingest knowledge from sources you do not fully control, this is the machinery that makes that safe.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/12/beyond-rag-how-kcp-016--017-give-agents-trustworthy-self-describing-knowledge/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-06-11 18:00:00+00:00">June 11, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="explorative-development"><a class="toclink" href="../../2026/06/11/explorative-development/">Explorative Development</a></h2>
+<p><em>Practitioner notes on engineering as a sequence of experiments — and on who does what in the loop.</em></p>
+<p>Before we wrote the production code for a recent platform feature, we ran a fictional organization through two years of using it.</p>
+<p>Twenty-four simulated months of compliance life: onboarding, supplier churn, audits, incidents, people leaving with their knowledge. The simulation produced fifteen architectural findings — wrong assumptions and missing pieces, discovered while every fix was still cheap and no customer existed yet. Sibling simulations took the total to twenty-five. A design meeting on the same material would have produced opinions.</p>
+<p>That run is the clearest recent example of how I've worked for years, and of what I've started calling the approach out loud: <strong>explorative development</strong>. An idea becomes a hypothesis. The hypothesis becomes the cheapest implementation or simulation that could prove it wrong. The result gets verified. What survives is kept — and what was learned gets encoded, either way.</p>
+<p>It is not a new method. It's the scientific method wearing a hoodie. Two things are new: the price list, and the fact that I no longer run the loop alone.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/06/11/explorative-development/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-06-11 16:00:00+00:00">June 11, 2026</time></li>
         
           <li class="md-meta__item">
@@ -6836,167 +7002,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/05/12/the-beginning/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-05-10 00:00:00+00:00">May 10, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              16 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-harness-before-the-service"><a class="toclink" href="../../2026/05/10/the-harness-before-the-service/">The Harness Before the Service</a></h2>
-<p>In May 2026, Anthropic shipped Managed Agents. I read through the docs, the API spec, the beta header (<code>managed-agents-2026-04-01</code>), and felt something I can only describe as architectural recognition.</p>
-<p>Not surprise. Recognition. The way you recognize your own design decisions in someone else's implementation — because the problem space, if you take it seriously, produces the same structural answers.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/05/10/the-harness-before-the-service/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-05-08 00:00:00+00:00">May 8, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              13 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="why-kcp-is-passive-data-not-executable-config-and-why-that-matters-now"><a class="toclink" href="../../2026/05/08/why-kcp-is-passive-data-not-executable-config--and-why-that-matters-now/">Why KCP Is Passive Data, Not Executable Config — And Why That Matters Now</a></h2>
-<p><img alt="The Architecture of Safe Context — passive data vs executable config" src="../../../assets/images/blog/trustfall-passive-data/architecture-of-safe-context.jpg" /></p>
-<p>Yesterday, Adversa AI disclosed a vulnerability they call TrustFall. The mechanic is straightforward: a <code>.mcp.json</code> or <code>.claude/settings.json</code> file checked into a repository can silently configure and launch arbitrary MCP servers when a developer opens the project. The developer sees a trust dialog — "Trust this folder?" — clicks yes, and processes spawn with their full user privileges. Claude Code, Gemini CLI, Cursor CLI, and Copilot CLI are all affected. In CI/CD pipelines, where there is no human to click, the execution is zero-click.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/05/08/why-kcp-is-passive-data-not-executable-config--and-why-that-matters-now/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-05-07 00:00:00+00:00">May 7, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              6 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="making-gis-machine-readable-in-one-session"><a class="toclink" href="../../2026/05/07/making-%C3%A6gis-machine-readable-in-one-session/">Making Ægis Machine-Readable in One Session</a></h2>
-<p>An AI-era consulting company that isn't machine-readable is a contradiction.
-Clients evaluating you will use AI to do it. Agents will look up your services,
-your methodology, your pricing model. If the only thing they find is a wall of
-HTML, you're invisible to half the evaluation pipeline before the first
-conversation starts.</p>
-<p>So I spent a session making <a href="https://xn--gis-xla.no">ægis.no</a> properly
-machine-readable. Not just an LLM-friendly page — actually structured,
-federated, and cryptographically signed. Here's what I did and what I learned.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/05/07/making-%C3%A6gis-machine-readable-in-one-session/">
           Continue reading
         </a>
       </nav>
