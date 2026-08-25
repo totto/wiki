@@ -31,7 +31,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     The practice of building software with AI — Skill-Driven Development, verification, testing discipline, velocity, and the developer's changing role.
 
-    [:octicons-arrow-right-24: 73 posts](/blog/category/ai-augmented-development/)
+    [:octicons-arrow-right-24: 74 posts](/blog/category/ai-augmented-development/)
 
 -   :material-robot-outline:{ .lg .middle } **AI Agents & the Agentic Web**
 
