@@ -1,0 +1,98 @@
+---
+description: "Paul Graham's 2009 essay described two incompatible ways of structuring a working day: the maker's and the manager's. In 2026 there is a third kind of worker in the organization — the agent — and it has neither. Its arrival breaks the essay's quietest assumption: that maker time is singular. Builder time has become parallelizable — and the new scheduling problem isn't protecting the maker's afternoon. It's absorbing the output of workers who don't have afternoons."
+date: 2026-08-25T12:00:00
+draft: true
+categories:
+  - AI Agents
+  - Ways of Working
+tags:
+  - ai-agents
+  - agentic
+  - productivity
+  - attention
+  - sunstone-atlas
+  - ways-of-working
+authors:
+  - totto
+  - claude
+---
+
+# The Third Schedule
+
+In July 2009, Paul Graham published [Maker's Schedule, Manager's Schedule](https://paulgraham.com/makersschedule.html). If you build things for a living you probably didn't need it explained; you needed it *named*. His argument: there are two incompatible ways of structuring a working day. The manager's schedule is cut into one-hour intervals — meetings slot in cheaply, because changing what you're doing every hour is the default. The maker's schedule runs on units of half a day at least, because meaningful work — programming, writing — doesn't fit in an hour, and a single meeting "can blow a whole afternoon" by breaking it into two pieces too small for anything hard. Graham went further: the damage starts before the meeting does. Merely *knowing* your afternoon is broken dampens the morning, because ambitious work needs a horizon you no longer have.
+
+Seventeen years later I think the essay is still correct about humans — and no longer a complete map of the organization. Because there is now a third kind of worker in the room, and it doesn't run on either schedule. Its arrival quietly breaks an assumption Graham's essay never had to state.
+
+<!-- more -->
+
+## The worker with no afternoon
+
+Agentic development at real scale is not one assistant polishing a person's prose. Structurally, it's several workers running continuously and in parallel on separate workstreams — RFCs, design documents, code — while the human does something else. That's the shape of the practice for anyone running coding agents seriously in 2026, and it's the shape of mine: for months now, most of the real deliverables I'm involved in have been produced this way.
+
+Ask Graham's framing question about one of these workers — *what schedule does it need?* — and the question dissolves. It doesn't need a protected afternoon. It doesn't need meetings batched at the end of the day. It doesn't experience the dread of a 2:30 appointment eating its morning. It can be interrupted mid-task, redirected, forked into three parallel copies, and none of that carries the psychological tax the essay is about. The two-schedule model wasn't wrong; a third column just appeared, and most of its cells read "not applicable."
+
+The deepest of those not-applicable cells is the assumption Graham never had to write down, because in 2009 it was too obvious to state: that maker time is *singular*. One maker, one thread of work, one afternoon — protectable or blowable, but never plural. That is the assumption that just broke, and it is the claim this post organizes around: **builder time itself has become parallelizable.** Not "more output happens," not "the schedule shifted" — the unit Graham's whole essay treats as inherently one-at-a-time can now genuinely run as multiple simultaneous threads of real maker-work under a single human director. The rest of this post states that claim carefully, then tests it against data.
+
+## Does the agent have a schedule at all? An honest look
+
+I want to interrogate that, though, rather than assert it, because "agents have no context-switch cost" is the kind of claim that sounds obviously true and isn't quite.
+
+Agents do have something schedule-shaped: the context window. An agent deep in a task has accumulated state — files read, decisions made, dead ends remembered — and that state is bounded. When it runs out, the session gets *compacted*: summarized, truncated, resumed from notes. When we [read the source of five agent architectures](2026-08-14-five-agents-compared.md), this turned out to be one of the places serious engineering effort concentrates. One agent stops itself 20,000 tokens before the ceiling and folds its own todo list into the summary so the resumed session knows where it was. Another replays the interrupted user message after compaction so the task continues as if the seam weren't there. A third treats compaction as unconfigurable and invisible. All of that machinery exists because resumption after compaction is *lossy* — which is exactly what a human maker means by the cost of getting back into it.
+
+So yes: there is an analogue. But it differs from the maker's version in three ways that matter, and the differences are the point.
+
+First, the cost is per-task-context, not per-day. Nothing about an agent's Tuesday is degraded because it was interrupted on Monday. There's no dread, no morning spent under the shadow of an afternoon meeting — the anticipatory tax, which Graham identified as half the damage, simply isn't there.
+
+Second, the mitigation is engineering, not calendar defense. A maker protects flow by *arranging time* — blocking mornings, batching meetings. An agent's flow is protected by *building better resumption*: summaries, ledgers, replayable state. One is a scheduling problem; the other is a systems problem, and systems problems compound in your favor.
+
+Third — and this is the one with no human analogue at all — the agent parallelizes. A maker who loses an afternoon has lost it; there is no second copy of them holding the thread. An interrupted agent is one of several, and the others didn't notice.
+
+So the honest statement is: the agent has switching costs, but no *schedule* — no scarce, fragile, unitary block of attention that a calendar can protect or destroy. Graham's essay is about the economics of exactly that scarcity. Remove the scarcity and the economics invert.
+
+## The problem Graham didn't have to solve
+
+Here's what inverts. In 2009, the design problem was protecting the maker's *input* time: don't let the manager's schedule fragment the maker's afternoon. The bottleneck was production, so you defended the producers.
+
+In 2026, with agents in the org, production is no longer the bottleneck — which is what has to follow if builder time really does parallelize. That's the general claim, and it's the kind of claim practitioners tend to back with informal multipliers — I used to quote 20x myself, always flagged as a gut number, not a measurement. But a gut number is how a vivid feeling dresses up as a finding. I wanted to know whether the claim was actually true, or just felt true — so I tested it against the one practice I have full data on: my own. What follows is a case study, offered as exactly that. A sample of one practitioner can't prove the pattern generalizes; it can prove the pattern *exists*, and show its shape.
+
+The data: commit timestamps from every repository we own — 8,672 commits across 159 repos, January through late August 2026, with commits landing on 223 of 236 calendar days. Timestamps don't measure quality, and I'll be precise below about what they can't prove. But they measure structure — and structure is exactly where a broken singular-maker assumption would show.
+
+The headline finding is the parallelism, because parallelism *is* the claim — which is exactly why it's the number I went back and stress-tested hardest. First pass, raw: cut the commit stream into continuous sessions — a new session whenever there's a two-hour gap — and just over half of all sessions (51.7%) put commits into two or more repositories; roughly one in nine (11.7%) touches five or more. That's after excluding the scripted batch rollouts, where one command fans an identical commit across the whole portfolio; those look spectacular in the data and are just tooling, so they don't count. But repo-touch counts alone still flatter the claim, because not every commit is builder-work. So, second pass: I re-scored every commit for complexity — stripping out merges, doc-and-chore traffic, scripted rollouts under a finer sieve, and sub-ten-line tweaks — and counted only sessions where a repository received genuinely *substantive* work. The modest parallelism mostly survives the audit: 42.2% of all sessions still carry substantive commits in two or more repos — four out of five of the raw multi-repo sessions pass the stricter test. The wide fan-out largely doesn't: sessions with five or more *substantive* threads drop to 5.2%, roughly half the raw figure. The honest shape of the practice is sustained parallel judgment at two to four threads, routinely; five-plus is real but rare, and the raw count overstated it by about two to one.
+
+July 14 is the day that taught me to run that second pass — the most extreme day in the sample, and the one I first reached for as the showpiece: 209 commits across 63 repositories in one 12-hour stretch, a commit landing somewhere every three and a half minutes. Impressive — and, complexity-scored, mostly not what it looks like. The bulk of that day's breadth was a single platform change, designed once, then rolled out across roughly sixty repositories by script. The number of repos that received genuine, substantive, non-mechanical attention that day is eight or nine. Not 63 parallel threads of builder judgment — eight or nine, plus one real engineering decision amplified by tooling. And the corrected reading is more interesting than the flashy one, because it puts the actual mechanism on display: you scale breadth by driving the per-task attention cost toward zero, and you keep a small, hard core where the judgment lives. I can't prove from timestamps who typed each line. I can observe that eight or nine simultaneous threads of substantive maker-work under one human's direction is still nothing the singular-maker model can describe. Multiple threads of building, advancing at once: that is maker time running in parallel, visible in ordinary git metadata — it just runs at single digits, not dozens.
+
+Two secondary findings describe what parallel builder time does to the *shape* of the day — supporting facts about schedule structure, not the headline. First, the weekday has quietly stopped existing: 27% of those commits landed on weekends — Saturday and Sunday each carry as much volume as a typical weekday, and Sunday out-produces Wednesday. Second, the day is stretched: 25.9% of all commits land after 18:00, holding a near-flat plateau through the evening instead of falling off a cliff at five. But only 3.1% happen at night. That number matters, because it kills the dramatic version of this story: this is *not* "agents working while the human sleeps." The rhythm starts around 07:00 and stops by 23:00, anchored to one human being awake. What disappeared isn't sleep. It's the boundary between days that count as work and days that don't — which is exactly what you'd expect once maker time parallelizes and the unit of human engagement shrinks from a protected afternoon to a short check-in. A check-in fits into a Sunday morning without costing you the Sunday.
+
+That's the output side, measured. And it's a volume that *neither* human schedule was built to consume. The maker's schedule can't absorb it — reviewing five parallel workstreams properly is itself deep work, and there's only one afternoon. The manager's schedule can't either — an hour-slot calendar assumes the incoming stream is meetings, not finished RFCs demanding real judgment.
+
+So the new collision isn't maker-versus-manager. It's *both human schedules versus the third worker's output rate*. The scarce resource has moved from the maker's unbroken time to the human's judgment bandwidth: the capacity to review, verify, decide, and stay accountable for work you didn't type.
+
+On the human side, the working pattern this produces is a series of short, decisive check-ins. Minutes each: read the state, redirect or approve, leave. (This post is itself an instance — drafted in one such session, alongside parallel agents on unrelated deliverables — but one anecdote carries no weight; the record does.) And the record says the check-in day is routine, not a stunt: two in five sessions across the sample carry substantive work in two or more distinct repositories, and two dozen sessions ran five or more substantive threads in a single continuous sitting. Squint at that from 2009 and it looks like a *manager's* schedule — the day chunked into small units, each one a decision point. The twist Graham couldn't have anticipated: the people being managed are makers who never needed the afternoon protected, and the "meetings" are close to free for both sides. The human directing agents ends up on a manager's schedule *by choice*, precisely because the maker work is happening elsewhere, continuously, in parallel.
+
+But — and this is where it stops being tidy — the check-ins are only cheap when the judgment in them is cheap. And judgment on real work isn't an hour-slot activity. Which is the actual design problem.
+
+## Absorption is a design problem, not a discipline problem
+
+Graham's fix for the two-schedule collision was clever and calendar-shaped: office hours. Batch the manager-schedule interactions at the end of the day, where they can't break anything. The 2026 equivalent can't be calendar-shaped, because the third worker doesn't have a day to batch against. The fix has to live in *how the output is structured for human attention*.
+
+There is a pattern that anyone absorbing agent output at volume seems to converge on — I keep arriving at it independently across projects, and the serious agent architectures encode versions of it too. It is some form of: **brief now, full detail on demand, evidence attached**. The unit of communication from agent to human isn't "everything I did" — it's a decision-shaped summary, with the full trail one step away and *checkable* rather than merely readable. That's what makes a five-minute check-in genuinely sufficient instead of negligently short: you're not trusting the summary, you're sampling against a trail that's actually there.
+
+This is also, I've come to think, the real subject of the recent governance posts on this site, seen from a different angle. The [Sunstone Atlas trust ladder](2026-08-24-trust-is-earned-not-asserted-introducing-sunstone-atlas.md) — oversight modes that relax from *block* through *review-after* and *sampling* to *monitor* as track record accrues — reads, in the language of this post, as a **schedule policy for human attention**: an explicit, auditable answer to "how much of this worker's output must a human absorb, and when." And the argument in [the third post in that series](2026-08-24-arms-not-just-a-voice-what-it-takes-to-let-agents-act.md) — that verification cost is the real ceiling on automation, and a signed, replayable evidence trail is what lowers it — is this post's argument in economic form. Ungoverned agent output doesn't remove the human from the loop; it moves the human *behind* the loop, checking. The checking scales with volume. Judgment bandwidth is the ceiling, and structuring output for cheap verification is the only thing that raises it.
+
+One boundary worth drawing explicitly: [Who Is This Document For?](2026-08-25-who-is-this-document-for.md), published the same day as this post, is a sibling of this one, not a prerequisite — the same underlying shift, cut along a different axis. That post is about the *correspondence and trust* dimension: what happens to human-to-human collaboration when agents do real epistemic labor inside the loop, verifying claims before the other human ever reads them. This one is about the *time and attention* dimension: what happens to Graham's schedule economics when a third kind of worker has no schedule to collide with. They meet in one place — documents written dense, dated, and evidence-first are simultaneously what makes cross-organization trust work *and* what makes a five-minute check-in enough. Write for verification, and both problems get cheaper at once.
+
+## What I'm not claiming
+
+Some honesty about the edges of this.
+
+I'm not claiming the maker's schedule is obsolete. The half-day block didn't disappear from my life; it moved. Architecture decisions, adversarial review of a design I'm accountable for, writing whose argument I have to own — that's still deep work, still fragile, still wrecked by a badly placed meeting. Graham's essay remains exactly right about it. What changed is what fills the rest of the day, and what the blocks are *for*: less production, more judgment.
+
+I'm not claiming the check-in pattern scales indefinitely. A sample of one practitioner, on work he chose, with agents he configured, proves the pattern exists — not that it survives a team of forty or a domain where the cost of a shallow review is a production incident. The governance posts above are honest that most of that machinery is early.
+
+And I'm not claiming the commit data proves more than it does. The parallelism figures above are reported twice — raw and complexity-scored — because the first cut of this analysis quoted only the raw ones, and a stricter second pass showed the flashiest example was mostly a scripted rollout wearing a maker's costume. Catching that is not a retreat from the argument; it's the same discipline this section exists for, applied one level deeper — and the claim that survives it is the one worth making. Beyond that: timestamps can't distinguish "agent-authored, human-approved" from "one fast human context-switching a lot" — the sustained multi-repo rate is strong circumstantial evidence for the former, but git metadata doesn't record who typed, and I won't pretend it does. Nor is there any night-shift miracle in the record: 3.1% of commits happen overnight, because the pipeline stops when I do — anyone selling you the stronger story should show you their timestamps. As for the 20x multiplier I used to quote: it remains a gut number about volume, not a measurement. The rhythm data captures the shape of the work, not its size — and the shape alone carries the argument, which is why I've stopped needing the gut number.
+
+What I am claiming: Graham named the two human schedules so precisely that we've spent seventeen years designing organizations around defending one from the other — while the assumption underneath both, that maker time is singular, quietly stopped being true. Builder time now parallelizes. The third worker doesn't need defending. It needs *absorbing* — and neither of the schedules we have was built for that. The organizations that figure out the absorption problem — brief now, detail on demand, evidence attached, oversight that relaxes with track record — will get the multiplier, whatever it turns out to be. The ones that don't will drown in the output of their most productive workers, on schedules built for a world where the makers slept.
+
+---
+
+*Co-authored with Claude. The framing and the working pattern described are mine; Claude helped draft and sharpen the argument. Paul Graham's original essay is [Maker's Schedule, Manager's Schedule](https://paulgraham.com/makersschedule.html), July 2009 — if you've somehow never read it, read it first; it's better than this.*
