@@ -1,6 +1,6 @@
 ---
 date: 2026-08-25T09:00:00
-draft: true
+draft: false
 categories:
   - AI-Augmented Development
   - Ways of Working
