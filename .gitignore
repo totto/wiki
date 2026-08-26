@@ -2,3 +2,5 @@ site/
 .png-originals/
 __pycache__/
 *.pyc
+.synthesis/
+.synthesis.md
