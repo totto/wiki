@@ -19,7 +19,7 @@ authors:
 
 # The Negative Control
 
-This morning I published [The Third Schedule](2026-08-25-the-third-schedule.md), arguing from my own commit history — 8,672 commits across 159 repositories — that maker time is no longer singular. Three companion pieces followed it out into the world: [The Robots Got There First](2026-08-25-the-robots-got-there-first.md) checked the claim against robotics and cognitive science, [the field survey](2026-08-25-the-third-schedule-field-survey.md) checked it against everything practitioners and telemetry vendors have published, and [Fan-Out: What the Literature Already Knew](2026-08-25-fan-out-what-the-literature-already-knew.md) traced the lineage back through supervisory control to Graicunas in 1933. All four share a weakness they were honest about but could not fix: every measured number in them comes from one practitioner's git history. Mine.
+This morning I published [The Third Schedule](2026-08-25-the-third-schedule.md), arguing from my own commit history — 9,806 commits across 183 repositories — that maker time is no longer singular. Three companion pieces followed it out into the world: [The Robots Got There First](2026-08-25-the-robots-got-there-first.md) checked the claim against robotics and cognitive science, [the field survey](2026-08-25-the-third-schedule-field-survey.md) checked it against everything practitioners and telemetry vendors have published, and [Fan-Out: What the Literature Already Knew](2026-08-25-fan-out-what-the-literature-already-knew.md) traced the lineage back through supervisory control to Graicunas in 1933. All four share a weakness they were honest about but could not fix: every measured number in them comes from one practitioner's git history. Mine.
 
 The field survey ended with an invitation — open your own window, publish your distribution, three windows would make it a literature. This post is what happened when I opened every other window I could reach: ten more datasets, run through the same pipeline. Nine of them belong to practices I'm involved in. The tenth is the important one: the multi-year git history of a conventional, non-agentic full-stack developer, run through the identical analysis. A negative control — the thing every measurement in this series had been missing.
 
@@ -67,7 +67,7 @@ The control reframes the question for every other dataset: not "does it show mul
 
 | Source | Repos | Commits | Substantive | 2+ (raw/subst) | 5+ (raw/subst) | What it's evidence of |
 |---|---|---|---|---|---|---|
-| Original practice (reference) | 159 | 8,672 | — | 51.7% / 42.2% | 11.7% / 5.2% | the claim under test |
+| Original practice (reference) | 183 | 9,806 | — | 51.7% / 42.2% | 11.7% / 5.2% | the claim under test |
 | Conventional dev, control A | 17 avail. | 7,212 | 38.4% | **59.6%** / 34.2% | **0.0% / 0.0%** | 2+ is ordinary; 5+ never happens |
 | Conventional dev, control B | 17 avail. | 4,617 | 46.5% | 48.1% / 31.6% | 1.1% / 0.3% | same, second sample |
 | KCP family (public) | 9 | 1,021 | 46.9% | 39.7% / 25.9% | 2.6% / 0.9%* | July-14 caution replicates; *floor-compressed |
