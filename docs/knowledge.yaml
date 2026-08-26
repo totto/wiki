@@ -528,7 +528,6 @@ units:
     scope: global
     audience: [human, developer, architect, agent]
     validated: 2026-03-08
-    depends_on: [blog-kcp-auth-and-delegation]
     triggers: [a2a, agent-card, multi-agent, agent-to-agent, front-door, filing-cabinet, invocation, knowledge-access, complementary, google-a2a]
 
   - id: blog-kcp-manifest-quality
@@ -591,7 +590,7 @@ units:
     scope: global
     audience: [human, developer, architect, agent, enterprise]
     validated: 2026-04-18
-    depends_on: [blog-what-accumulates, kcp-memory]
+    depends_on: [blog-what-accumulates]
     triggers: [kcp-memory, agent-fleet, distributed-memory, enterprise-memory, episodic-memory, context-boundaries, isolation, auditability, continuity, self-maintenance, memory-infrastructure, agent-infrastructure, ai-native-enterprise, kcp-tags, union-merge, subagent-inheritance, memory-layer, firehose, bounded-context, compliance-scope, peer-sync, context-aware, organizational-memory, fleet-agents, ai-stack]
 
   - id: blog-seven-out-of-eight
@@ -600,7 +599,7 @@ units:
     scope: global
     audience: [human, developer, architect, agent]
     validated: 2026-04-16
-    depends_on: [blog-meeting-was-never-the-problem, kcp-manifest-syntax]
+    depends_on: [blog-meeting-was-never-the-problem]
     triggers: [benchmark, smidja, self-assessment, completion-reporting, autoregressive, context-momentum, ghost-branch, byoa, kcp-governance, external-verification, typescript-cli, supabase, opentelemetry, gpt-5, kimi-k2, gemini, deepseek, qwen, grok, devstral, model-comparison, agent-runtime, declare-enforce-verify, artifact-check, model-agnostic, llm-benchmark, over-reporting]
 
   - id: blog-meeting-was-never-the-problem
@@ -644,7 +643,7 @@ units:
     scope: global
     audience: [human, developer, architect, agent]
     validated: 2026-04-06
-    depends_on: [blog-synthesis-practitioners-journal, blog-three-layer-ai-memory]
+    depends_on: [blog-synthesis-practitioners-journal, blog-three-layer-memory]
     triggers: [agent-memory, memory-rot, topic-health, topic-triage, consolidate-state, memory-maintenance, freshness, completeness, hot-warm-cold, archive-prune-update-keep, exocortex, synthesis, fts5, behavioral-scoring, nightly-cron, circular-dependency, llm-maintenance, episodic-semantic-gap, false-hot, memory-lies, index-lies]
 
   - id: blog-synthesis-practitioners-journal
@@ -1111,7 +1110,7 @@ relationships:
     to: blog-agent-memory-rots
     type: enables
 
-  - from: blog-three-layer-ai-memory
+  - from: blog-three-layer-memory
     to: blog-agent-memory-rots
     type: enables
 
@@ -1243,10 +1242,6 @@ relationships:
   - from: blog-what-accumulates
     to: blog-distributed-memory-agent-fleets
     type: enables
-
-  - from: kcp-memory
-    to: blog-distributed-memory-agent-fleets
-    type: context
 
   - from: blog-quantum-hardware-abstractions-leak
     to: blog-merkabit-computer
