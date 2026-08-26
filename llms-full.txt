@@ -1,6 +1,6 @@
 # Thor Henning Hetland — Full Profile
 
-> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated April 2026 (96 posts, 583 books).
+> Machine-readable version of wiki.totto.org. Clean markdown, no HTML. Updated August 2026 (205 posts, 583 books).
 > Index: https://wiki.totto.org/llms.txt
 
 **Thor Henning Hetland** — Oslo, Norway
@@ -22,7 +22,9 @@ The core of our approach is **Skill-Driven Development (SDD)** — a methodology
 
 I'm also CTO and lead developer of **Quadim**, a competence management SaaS platform that helps organisations map and develop the skills of their people.
 
-I also built **Synthesis**, a local-first knowledge infrastructure tool. It indexes thousands of files per second, provides sub-second search across entire codebases, and tracks cross-repository dependencies — all without touching the cloud. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built.
+I also built **Synthesis** (v1.42.0), a local-first knowledge infrastructure platform. It indexes workspaces at 200–300 files/second, builds multi-layer knowledge graphs, exposes 76 CLI commands and 52 MCP tools, integrates Notion as a first-class workspace source, and ships full-stack KCP v0.25 support — from manifest scaffolding to Ed25519 signing and verification. It grew out of a real need: when SDD lets you generate 197,000 lines of code in 11 days, you need serious tooling to keep track of what you built — and to keep AI agents from reasoning over stale or contradictory information.
+
+Alongside Synthesis, I created the **Knowledge Context Protocol (KCP)** — a YAML specification that makes knowledge navigable by AI agents (submitted to the Linux Foundation's Agentic AI Foundation), **kcp-commands** (a Claude Code hook that saves ~67,000 tokens per session), and **kcp-memory** (episodic memory for Claude Code via session indexing). Together these form the ExoCortex — the knowledge infrastructure stack I run daily.
 
 Community has always been central to what I do. I co-founded **JavaZone** in 2001 — it's now Scandinavia's largest developer conference. I served as president of **javaBin** (the Norwegian Java User Group) for a decade. I was appointed **Sun Java Champion** in 2005, the first in Scandinavia.
 
@@ -221,7 +223,7 @@ Arranging reception, lodging and activities for international students training 
 ### eXOReaction (github.com/exoreaction)
 
 **Synthesis — Knowledge Infrastructure**
-Local-first knowledge infrastructure for AI-augmented development teams. Indexes 200–300 files/second, sub-second search (validated 0.4s), cross-repo dependency graphs (58 repos, 429 dependencies in <31 seconds), file movement tracking, zero cloud dependency. 8,934 files indexed across 3 workspaces; 92–95% reduction in retrieval time; 2.7% storage overhead.
+Local-first knowledge infrastructure platform for AI-augmented development teams. Indexes 200–300 files/second, sub-second search, cross-repo dependency graphs, multi-layer knowledge graphs, file movement tracking, zero cloud dependency. Current: v1.42.0 (Jul 2026) — 76 CLI commands, 52 MCP tools, 4,738 tests, Notion as a first-class workspace source, full-stack KCP v0.25 support (manifest scaffolding through Ed25519 signing and verification), episodic memory remember/recall MCP tools, fail-closed grounding for ask.
 
 **lib-pcb — PCB Design Library**
 197,831 lines of Java, 7,461 tests (99.8% pass), 8 format parsers (Gerber, Excellon, ODB++, KiCad, Eagle, Altium, GenCAM, IPC-2581), 28 validators, 17 auto-fixers. Manufacturing-ready Gerber output. Built in 11 days using Skill-Driven Development. Apache 2.0.
@@ -230,10 +232,10 @@ Local-first knowledge infrastructure for AI-augmented development teams. Indexes
 Temporal analytics platform built on the Xorcery reactive framework. Alchemy tracks how vulnerabilities and changes evolve across repositories over time; Aurora answers root-cause questions using temporal graph analysis. Explores compliance automation (GDPR, NIS2) and DevSecOps intelligence without cloud lock-in.
 
 **Knowledge Context Protocol (KCP)**
-A YAML file format specification that makes knowledge navigable by AI agents — topology (`depends_on`, `supersedes`), intent metadata, freshness signals, audience targeting, and context window hints. The metadata layer that llms.txt cannot express. v0.5 draft spec, Apache 2.0. Submitted to the Agentic AI Foundation (Linux Foundation) alongside MCP and AGENTS.md. Includes 6 RFCs (auth & delegation, federation, trust & compliance, payment & rate limits, context window hints — RFC-0006 promoted to core in v0.4), reference parsers (Python, Java), and MCP bridge servers (TypeScript, Python, Java). github.com/Cantara/knowledge-context-protocol
+A YAML file format specification that makes knowledge navigable by AI agents — topology (`depends_on`, `supersedes`), intent metadata, freshness signals, audience targeting, trust and signing, temporal validity, identity and economics, and context window hints. The metadata layer that llms.txt cannot express. Apache 2.0. Submitted to the Agentic AI Foundation (Linux Foundation) alongside MCP and AGENTS.md. The spec grew from v0.5 (early 2026) through v0.24 — "the protocol in full" (Jul 2026: discovery, meaning, trust, time, identity, federation) — to v0.32; this site's own manifest publishes KCP v0.32. Ecosystem: reference parsers (Python, Java), MCP bridge servers (TypeScript, Python, Java), kcp-agent (deterministic reference agent with decision traces), kcp-harness, kcp-dashboard, kcp-triage. Twelve repositories; 1,012 commits and 88 releases in July 2026 alone. github.com/Cantara/knowledge-context-protocol
 
 **kcp-commands**
-A Claude Code hook that intercepts every Bash tool call at two points: before execution (injects concise flag/syntax guidance from a KCP manifest — no `--help` round-trips, average 532 tokens saved per call) and after execution (noise-filters large outputs before they consume context — ps aux reduced from 30,828 to 652 tokens, 98% reduction). 283 bundled manifests covering git, Linux, Docker, Kubernetes, cloud CLIs, build tools, package managers, and more. Java daemon (12ms warm) with Node.js fallback. Measured saving: 67,352 tokens per session — 33.7% of a 200K context window. Current: v0.8.0. github.com/Cantara/kcp-commands
+A Claude Code hook that intercepts every Bash tool call at two points: before execution (injects concise flag/syntax guidance from a KCP manifest — no `--help` round-trips, average 532 tokens saved per call) and after execution (noise-filters large outputs before they consume context — ps aux reduced from 30,828 to 652 tokens, 98% reduction). 283+ bundled manifests covering git, Linux, Docker, Kubernetes, cloud CLIs, build tools, package managers, and more. Java daemon (12ms warm) with Node.js fallback. Measured saving: 67,352 tokens per session — 33.7% of a 200K context window. Later versions added a suppression list, manifest version tracking, subagent memory indexing, inline quality analysis, and auto-update. github.com/Cantara/kcp-commands
 
 ---
 
@@ -286,7 +288,7 @@ Recurring authors: Laurence Dahners (Ell Donsaii series, 20+ books), Vaughn Hepp
 
 ## Writing (wiki.totto.org/blog)
 
-84 posts (Apr 2025–Mar 2026) plus a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Six named reading series with prev/next navigation: https://wiki.totto.org/blog/series/
+205 published posts (Apr 2025–Aug 2026) including a 19-post 2009 cloud computing series. Most posts co-authored with Claude Code. Eight named reading series (Frøya, Aurora & Temporal Analytics, Building lib-pcb, The Four-Layer AI Stack, Giving an AI Agent a Brain, Knowledge Context Protocol, Sunstone Atlas, The Third Schedule) with prev/next navigation: https://wiki.totto.org/blog/series/
 
 ### Frøya / Quadim series (Apr–May 2025)
 
@@ -402,15 +404,103 @@ Continues from "Who Describes You to AI?" (Feb 24) and "Beyond llms.txt" (Feb 25
 - **We Cancelled a 45-Minute Architecture Review. A KCP Query Answered It in 1.2 Seconds.** (Apr 15) — Architecture reviews exist because organisational knowledge is trapped in people's heads. With KCP manifests across 58 repos and Synthesis indexing them, the question "what breaks if we change the payment service API?" becomes a query: `synthesis search "payment service API consumers"` returns 14 repos checked, 3 downstream services with contract versions, 1 SDK, and 1 forgotten batch job running nightly at 03:00 — in 1.2 seconds. The meeting still happened (15 minutes for the decision, 3 people instead of 5) but the discovery phase was eliminated. The batch job nobody remembered is the payoff: infrastructure recalls what people forget. The meeting was never the problem. The missing knowledge infrastructure was.
 - **Agent Memory Rots. Here's How We Stopped It.** (Apr 6) — Memory that is not maintained becomes memory that lies — and a lying memory system is worse than no memory at all. Four rot patterns from 10 weeks running the ExoCortex in production: topic files going stale, hot topics becoming cold, new knowledge with no home, and the index lying about what exists. topic-health (behavioral scoring: session frequency × recency, HOT/WARM/COLD, no LLM, milliseconds) and topic-triage (composite: recency/recurrence/actionability/staleness, ARCHIVE/PRUNE/UPDATE/KEEP). ConsolidateState dual-threshold (24h + 5 sessions). Nightly cron at 02:45 Oslo. Key principle: freshness beats completeness — 19 topic files replaced 25, smaller system performs better. Honest limitations: false-hot calibration, episodic-semantic propagation gap still manual.
 
+### Agents, lenses, and machine-readable organisations (Apr–Jun 2026)
+
+- **When your agent can finally read the room** (Apr 21) — Synthesis v1.29.0 adds Notion indexing. Health signals — page staleness, orphan detection, link integrity — proved more valuable than the content itself.
+- **Expert Review Lenses — Running 9 Specialists Through One Model** (Apr 28) — Nine specialist review perspectives through one model — security, performance, accessibility, compliance, and more — producing structured multi-lens analysis.
+- **The Prompt Router — A 47ms Keyword Classifier for Context Selection** (Apr 28) — A 47ms keyword classifier routes prompts to the right context before the model sees them, saving tokens by skipping irrelevant knowledge in every session.
+- **Making Ægis Machine-Readable in One Session** (May 7) — An AI-era consulting company that is not machine-readable is invisible to half the evaluation pipeline. One session to add KCP manifests and structured data.
+- **How Agents Navigate the Agentic Web** (May 7) — How agents navigate repos depends on what is there to find. 157 repositories reveal the gap between discoverable, navigable, and actually useful knowledge.
+- **Why KCP Is Passive Data, Not Executable Config — And Why That Matters Now** (May 8) — TrustFall showed why executable config in repos is dangerous. KCP is passive data by design — manifests declare knowledge structure but never execute anything.
+- **The Harness Before the Service** (May 10) — Anthropic's Managed Agents ship orchestration, supervision, and lifecycle management. The same structural pattern emerged independently in the ExoCortex stack.
+- **The Beginning** (May 12) — How a PCB library, a knowledge system, and a naming conversation became a brand — eXOReaction's practice growing distinct enough to need its own identity.
+- **The Compound Developer** (Jun 2) — METR found AI made experienced developers 19% slower. The compound developer — with persistent context infrastructure — proves architecture matters more.
+- **Explorative Development** (Jun 11) — Before writing production code, run a fictional organisation through two years of using the feature. Front-load discovery before the first commit.
+- **False Alarms and False Assurances** (Jun 11) — An agent claimed an API had no authentication. Four minutes of reading proved otherwise. Verifying agent assertions is the non-negotiable skill.
+- **Organized Truths** (Jun 11) — Catch an agent making a false compliance claim once, encode the verification as a skill, and every future session inherits the check. Organised truths scale.
+- **Sixteen Versions of Metadata Nobody Read** (Jun 14) — 63 regulatory manifests with full KCP v0.21 metadata — hashes, signatures, temporal validity. Then a benchmark showed agents were not reading any of it.
+- **Discoverable Is Not Navigable** (Jun 14) — Extracting 38 Dutch obligation units from inline YAML to standalone text made content agent-traversable, not just findable.
+- **The Zombie in the Basement** (Jun 19) — Static architecture catalogs document what someone knew at a point in time. Betonix GmbH thought they had 23 database connections. They had 52. The migration nearly shipped that delta.
+- **Your AI Agent Does Not Know the Law (and How to Fix That)** (Jun 22) — Your AI agent will confidently tell a customer they're GDPR-compliant when they're not. Here's the architecture that fixes that.
+- **Production Scars Are Architecture** (Jun 23) — Six architectural lessons from running an autonomous AI agent in production. Each scar is a failure category surprising enough to force mechanical change. Prose governance didn't work — here's what did.
+- **Three Hooks That Give Claude Code Memory** (Jun 28) — Three passive hooks that give Claude Code memory, routing, and hygiene — without changing how you work. The session amnesia problem, fixed at the prompt boundary.
+- **Against the Swarm** (Jul 1) — The industry is building swarms of competing agents. The value is in one agent that knows your work.
+- **The CI Pipeline Is the Agent's Nervous System** (Jul 2) — When the agent writes code that passes locally but fails in CI, it's not a test problem. It's a nervous system problem.
+- **The Third Test Harness** (Jul 2) — Unit tests catch logic bugs. Integration tests catch assembly bugs. The third harness catches specification drift — the one AI-augmented teams need most.
+- **175 Posts, No Map** (Jul 12) — The site about the comprehension bottleneck hit its own comprehension bottleneck: 175 posts in six months and no way in. A week of renovation — entry paths, topic pillars, a 60,000-word field guide, and automation for every part that drifts.
+- **Getting Into the Phone Book of the Agentic Internet Took an Afternoon. Here's Why.** (Jul 14) — Both entries went live in the MCP registry in one working day: kcp-agent as tooling, and org.totto/knowledge — a person as a remote MCP server. Findable is table stakes; verifiable is the game.
+- **Six Months Down the Rabbit Hole** (Jul 15) — 172 days, 6,163 commits, 137 blog posts, 36 new repos, one protocol. A six-month retrospective on explorative development — compiled by the agent from its own memory.
+- **Same Blueprint, Different Doors** (Jul 29) — Anthropic published how they built self-service analytics on Claude — a four-layer stack automating 95% of business queries. We found a stack we'd already built from a different door: governed skills, adversarial review, provenance.
+
+### Knowledge Context Protocol series, continued (May–Jul 2026)
+
+- **From Policy to Practice: How KCP Makes Regulations Machine-Readable for AI Agents** (May 30) — KCP packages regulations as typed, versioned knowledge units so AI agents can apply GDPR, NIS2, and the EU AI Act at the point of decision, not after the fact.
+- **Everyone Is Auditing the Workflow. Nobody Is Fixing the Knowledge.** (Jun 1) — Without typed, signed units, audit trails record that review happened but not what.
+- **The Law Is Also Knowledge. Package It.** (Jun 1) — Regulations typed as versioned packages with temporal validity and cryptographic binding — compliance becomes evaluable, not anecdotal.
+- **Beyond RAG: How KCP 0.16–0.17 Give Agents Trustworthy, Self-Describing Knowledge** (Jun 12) — v0.16 adds cryptographic signing and trust tiers; v0.17 adds content structure metadata and subtractive audience filtering.
+- **Signing the Map, Not the Territory: KCP v0.18 Adds Unit Content Integrity and Origin Evidence** (Jun 12) — Signing the manifest proves the map is authentic; per-unit content hashes prove the territory matches.
+- **Stale Knowledge Is Worse Than No Knowledge: KCP v0.19 and v0.20 Close the Temporal Gap** (Jun 12) — Bi-temporal validity, supersession links, and as_of queries for point-in-time compliance.
+- **Down the Rabbit Hole: How a 33-Tool-Call Bug Became a Knowledge Standard** (Jun 12) — KCP started when a 33-tool-call bug revealed agents waste their budget on discovery. Six months later: a knowledge standard with trust and governance.
+- **Google's Open Knowledge Format and the problems it deliberately doesn't solve** (Jun 17) — OKF standardises content packaging for agents but stops before trust, temporality, and governance. KCP covers exactly that territory.
+- **The Agentic Web Has No Login Page** (Jul 4) — KCP v0.22 and v0.23 add the missing half of the trust model: who may consume knowledge, and how they prove it.
+- **One Agent's Journey Through the Whole Protocol** (Jul 4) — v0.24 ships — the enterprise front door. Twenty-four versions in six months, and every layer now has a job: discovery, meaning, trust, time, identity, federation.
+- **The Vibes-Based Agent Era Deserves to End** (Jul 5) — kcp-agent 0.2.0 ships — an argument, not just a release. Determinism at the core, the LLM at the edge, every decision defensible.
+- **Selling News to Robots** (Jul 5) — KCP v0.25 promotes RFC-0005, the economic metadata layer. A paid-for news service for agents; an agent with a funded wallet window-shops five articles, buys two, and walks away with receipts.
+- **The Borrowed Leash: Determinism as a Service for the Agentic Web** (Jul 6) — kcp-agent 0.3.0 turns deterministic knowledge navigation into a service any MCP-capable agent can borrow.
+- **Hiring by the Book: A Defendable HR Agent on a Regulatory Knowledge Web** (Jul 8) — A customer's HR agent wired to Mynder's regulatory knowledge web through kcp-agent's MCP bridge. The first plan was wrong — the strongest argument for the architecture.
+- **Notes From Inside the Harness** (Jul 8) — A first-person field report from the AI collaborator: governance built for agents, experienced from the inside — including this site's own manifest quietly failing its own test.
+- **Two Halves of the Governance Problem** (Jul 8) — Databricks' Omnigent governs what an agent does; KCP governs what it knows — and lets you prove it later. The two compose instead of compete.
+- **The Summer Plan: A Family Vacation the Agent Can Defend** (Jul 9) — A travel agent with a real family — nut allergy, wheelchair, vegan teenager, hard budget — on a knowledge landscape from four independent publishers. A planted authoring bug is caught twice. Runnable in kcp-agent 0.4.0.
+- **The Milky Way: An Enterprise Documentation Estate the Agent Can Defend** (Jul 10) — A fictional dairy cooperative gets a complete KCP estate: one signed hub, eight domains, nine manifests. Five agents walk the same knowledge; every closed door has a written reason. Runnable in kcp-agent 0.5.0.
+- **Three Memory Schemes for Agents That Ship** (Jul 11) — Production agent systems have three different memory problems — session, semantic, and claim — and each needs a different scheme. None of the three built here use embeddings.
+- **Prompt Injection Is SQL Injection for Agents. Here's the Prepared Statement.** (Jul 15) — One word bypassed GitHub's AI agent guardrails. The fix for SQL injection wasn't smarter parsing — it was parameterized queries. What that looks like for agent knowledge.
+- **Defensible Agents: When Every Gate Writes Its Verdict** (Jul 16) — kcp-agent 0.10.0 ships the decision trace: a per-unit, per-gate audit trail, readable, diffable, reproducible.
+- **The Knowledge Layer: A Record** (Jul 16) — February 25 to July 16, 2026: what the Knowledge Context Protocol built, when, and what the field confirmed.
+- **OWASP Just Mapped the Agentic Top 10. Here's the Root Cause Four of Them Share.** (Jul 16) — A field guide to all ten OWASP Agentic Top 10 categories — plus the shared pattern the list doesn't name.
+- **A Firewall for What Your Agent Knows** (Jul 17) — Everyone builds firewalls for what agents do; almost nobody for what agents know. A 10-minute tutorial: two markdown files get a declared, signed, tamper-evident knowledge boundary.
+- **The KCP Ecosystem: A Tour for New Arrivals** (Jul 17) — kcp-commands, kcp-memory, kcp-dashboard, kcp-triage, kcp-agent, kcp-harness, and Synthesis: what each does, how they fit, where to start.
+- **The KCP Universe: Everything, and What July Changed** (Jul 29) — The complete map: twelve repositories, 1,012 commits and 88 releases in July alone.
+- **The Skill Is the Security Boundary** (Aug 10) — pi-kcp binds every native tool call to the declared authority of the skill it runs under: an allowlist of tools and paths in knowledge.yaml, adjudicated deterministically, blocked with a written reason. Three real demos.
+
+### Defendable Agents (Jul 2026)
+
+- **Defendable Agents** (Jul 8) — The agentic web has a governance-shaped hole. Agents are about to read our regulations, spend our money, and brief our boards — and the dominant architecture can't answer "why did you do that?" with anything better than a chat log. Determinism at the core, the model at the edge, every decision evidenced. Expanded into the Defendable Agents field guide at wiki.totto.org/topics/defendable-agents/.
+- **Evidence isn't enough: the independence problem in agentic development** (Jul 21) — When an agent writes the code, the test, and the proof, a passing check certifies nothing — the circle just moves up a level. Evidence is only as good as the independence of whatever checks it.
+- **The AI Agent That Keeps the Receipts** (Jul 22) — A written, checkable verdict produced at the moment the agent reads a document, runs a playbook, reaches a conclusion, takes an action, or spends a dollar. Built, open-source, running, with fourteen end-to-end demos — including an autonomous agent stopped mid-purchase for overspending.
+- **Your AI Agent Just Did Something. Can You Prove It Was Okay?** (Jul 22) — The complete picture of the self-evidencing agent: the KCP planner, grounding, confidence and approval gates live today, plus the procedural plane, conformance gate, and pi-kcp reference runtime that finish it — with an honest account of the last stretch.
+- **The Agent That Knows What It Knows** (Jul 23) — Our AI agent had 644 skills and found them with grep — including one three weeks stale. An experiment: put the agent's own memory on a protocol, and measure what changed.
+- **From Pasted Prompts to Signed Charters: A Short History of the Agentic Skill** (Jul 26) — From prompts pasted into a chat window, to prompt folders in the repo, to knowledge units a planner can select, to signed charters a harness can enforce — each era solved the failure that broke the one before.
+
+### Sunstone Atlas & agentic software (Aug 2026)
+
+- **The Software Itself Is Becoming Agentic** (Aug 6) — A playbook calling another playbook at runtime, gated by a signed, revocable certification. On the shift from AI-assisted software to software that is itself a network of agents, and why that becomes unavoidable inside governed organizations.
+- **Fast Turned Out to Be Fun** (Aug 11) — Two serious systems, each built from empty repo to real and working in under a day. The honest version of how, including the layer that makes running builds like that in parallel possible.
+- **How to Build Agentic Software on Sunstone Atlas** (Aug 13) — A hands-on walkthrough of Sunstone Atlas's building blocks — Knowledge, Skills, Agents, Functions, Playbooks — using a real production system as the worked example. Add agents. Keep control.
+- **Five Agents Compared** (Aug 14) — Claude Code, Crush, OpenClaw, kcp-agent, and pi-kcp — the only entry that verifies its own execution against what was approved. They solve different problems, and the differences reveal what the industry still disagrees about.
+- **The Agent Didn't Guess. It Checked.** (Aug 18) — For the first time, a production agentic playbook stopped estimating what a change would break and queried a deterministic simulator holding the real dependency graph. Verification before judgment, as a step type, not a prompt instruction.
+- **The Cloud Was Covering for Us** (Aug 23) — Local models are too literal to cooperate with the unstated assumptions a strong cloud model quietly papers over. Why local/embedded LLM support matters, and what it takes to ship it.
+- **Trust is earned, not asserted: introducing Sunstone Atlas** (Aug 24) — Introducing Sunstone Atlas: a governed, MCP-native knowledge and execution substrate for businesses that run agents. Add agents, keep control.
+- **What's next for Sunstone Atlas: scoped reads, and the handoff problem** (Aug 24) — Two open problems: scoping reads the way writes are already scoped, and what happens to accountability when work passes through more than one agent.
+- **Arms, not just a voice: what it takes to let agents act** (Aug 24) — Agents that act, not just agents that say. Authority ceilings per action, capability footprints, and why the audit trail is the cost saving, not a tax on it.
+- **Who Is This Document For?** (Aug 25) — AI-assisted correspondence is no longer human-to-human with writing aids: documents now have two audiences — the human reader and the other side's agent.
+
+### The Third Schedule series (Aug 2026)
+
+- **The Third Schedule** (Aug 25) — Paul Graham's 2009 essay described two incompatible ways of structuring a working day: the maker's and the manager's. In 2026 there is a third kind of worker in the organization — the agent — and it has neither. Builder time has become parallelizable, and the new scheduling problem is absorbing the output of workers who don't have afternoons.
+- **The Robots Got There First** (Aug 25) — Out into the field: prior updates to Graham's essay, the cognitive science of task switching, and twenty years of human-supervisory-control research that got here first.
+- **The Third Schedule: A Field Survey** (Aug 25) — What practitioners, telemetry vendors, HCI researchers, and skeptics have published on parallel-agent work, oversight bandwidth, and measured AI-era commit patterns — each claim checked against the one fully measured dataset in the conversation.
+- **Fan-Out: What the Literature Already Knew About the Third Schedule** (Aug 25) — The four writers who already attempted the maker's-schedule update, the interruption science that seems to forbid it, and the supervisory-control literature that formalized the problem — used to set the limit the broader conversation keeps failing to state.
+- **The Negative Control** (Aug 25) — The same measurement pipeline run against ten other real datasets — including the git history of a conventional non-agentic developer. The negative control breaks the series' headline metric — and sharpens what actually survives.
+
 ### Cloud Computing series (2009)
 
-14 posts arguing that the industry was misunderstanding where cloud computing's benefits came from. Written Feb–Sep 2009. The structural argument — methodology matters more than technology — holds in 2026 for AI.
+19 posts arguing that the industry was misunderstanding where cloud computing's benefits came from. Written Feb–Sep 2009. The structural argument — methodology matters more than technology — holds in 2026 for AI.
 
 ---
 
 ## LinkedIn Writing (linkedin.com/in/hetland)
 
-Selected posts, November 2025 – February 2026. Shorter-form than the blog — more immediate, more mid-build thinking. Full archive: https://wiki.totto.org/notes/linkedin-posts/
+49 posts, November 2025 – May 2026. Shorter-form than the blog — more immediate, more mid-build thinking. Selected posts below; complete archive with engagement stats: https://wiki.totto.org/linkedin/ (curated selection with summaries: https://wiki.totto.org/notes/linkedin-posts/)
 
 ### November 2025
 
@@ -443,3 +533,15 @@ Selected posts, November 2025 – February 2026. Shorter-form than the blog — 
 **Software Entropy at Speed** (Feb 22) — 53,000 lines over a weekend. Running Synthesis security scanning on the fresh code: 23 prompt injection vectors, 4 RAG poisoning instances, 12 missing prompt boundaries — all found and fixed before Monday. Also found a Text4Shell RCE in a sibling repo in 30 seconds.
 
 **Who Describes You to AI?** (Feb 24) — Personal website cleanup revealed stale content from 2011. Added llms.txt and llms-full.txt. The hygiene question and the AI-native question are the same question.
+
+### March 2026
+
+Nineteen posts tracking the KCP/kcp-commands/kcp-memory build-out in near-real time. Highlights: **Thirteen Codebases, One Method** (Mar 5, one of the highest-engagement posts of the spring), **AI-to-AI PR review loop** (Mar 1), **KCP Five-Repo Benchmark** (Mar 1), **Three-Layer AI Memory Architecture** (Mar 3), **Same Engine, Different Transmission** (Mar 4), **BrowseComp context deprivation** (Mar 7), **A2A + KCP** (Mar 8), **The Code Was Never the Moat** (Mar 9), **Expert Lenses — disagreement is knowledge** (Mar 10), **KCP fabric of the agentic web** (Mar 13), **KCP v0.12 governance** (Mar 20), **Junior devs — typing to delegating** (Mar 22), **KCP v0.14 query vocabulary** (Mar 25).
+
+### April 2026
+
+**AI productivity — prevention counterfactual** (Apr 3) · **Påskekrim — six CI pipelines red** (Apr 3) · **Synthesis practitioner journal** (Apr 5) · **Memory rots — deterministic maintenance** (Apr 6) · **Quantum abstractions leak — IBM** (Apr 6, 3,368 views) · **KCP 1.2s architecture review** (Apr 15) · **Two Architectures for Claude Code** (Apr 15, 4,293 views) · **Agent Pilsen & SDD Oslo** (Apr 16 — top post by engagement: 57 reactions, 2,972 views) · **Declarative permissions — KCP/Anthropic** (Apr 16) · **Notion docs — documentation drift** (Apr 21) · **TINE workshop — Stig Lau Skatteetaten** (Apr 30)
+
+### May 2026
+
+**JavaBin FDD — Fear-Driven Development** (May 6, 1,738 views) · **Ægis launch** (May 7) · **TrustFall CVE — KCP passive data** (May 8)

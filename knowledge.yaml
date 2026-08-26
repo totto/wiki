@@ -1,10 +1,15 @@
 # wiki.totto.org — KCP root manifest (federated)
-# KCP v0.26 — see https://github.com/Cantara/knowledge-context-protocol
-kcp_version: "0.26"
+# KCP v0.32 — see https://github.com/Cantara/knowledge-context-protocol
+kcp_version: "0.32"
 project: wiki-totto-org
-version: "0.26"
+version: "2.0.0"
+# version reset 2026-08-26: version had been incorrectly conflated with
+# kcp_version since commit 7f6cbb87 (both moved in lockstep on every bump
+# since). Resuming independent content-version tracking per spec §6.2 —
+# bump this on real content changes, not on kcp_version bumps.
+updated: "2026-08-26"
 
-entity:
+x-entity:
   name: Thor Henning Hetland (Totto)
   domain: wiki.totto.org
   type: personal-knowledge-hub
@@ -13,15 +18,19 @@ entity:
     engineering, agentic development methodology, knowledge infrastructure,
     and conference speaking.
 
-authority:
-  owner: Thor Henning Hetland
-  email: totto@exoreaction.com
-  url: https://wiki.totto.org/about/
+trust:
+  provenance:
+    publisher: "Thor Henning Hetland (Totto)"
+    publisher_url: "https://wiki.totto.org/about/"
+    contact: "totto@exoreaction.com"
 
 discovery:
-  provenance: canonical
-  confidence: high
-  staleness_days: 7
+  source: manual
+  verification_status: declared
+
+freshness_policy:
+  max_age_days: 7
+  on_stale: warn
 
 signing:
   scheme: ed25519
@@ -37,19 +46,19 @@ serving:
   mcp:
     - https://mcp.totto.org/mcp
 
-includes:
-  - knowledge/about.yaml
-  - knowledge/projects.yaml
-  - knowledge/talks.yaml
-  - knowledge/blog.yaml
-  - knowledge/defendable-agents.yaml
+composition:
+  includes:
+    - source: knowledge/defendable-agents.yaml
 
-# Legacy v0.6 units preserved below for backwards compatibility
-# Agents capable of KCP v0.14 should follow the includes above.
-# -------------------------------------------------------------------
-_legacy_v06:
-  kcp_version: "0.6"
-  updated: 2026-04-18
+# about.yaml, projects.yaml, talks.yaml, and blog.yaml are freeform reference
+# data (bio prose, project descriptions, talk lists, blog post index) fetched
+# directly by humans/agents from their URLs — intentionally NOT included here
+# via composition because none of them declare a spec-conformant units: array.
+# This manifest's own units: below already provides spec-conformant navigable
+# entries covering that same ground (about, cv-english, cv-norwegian, projects,
+# organizations, presentations-all + 14 pres-* units, blog-series, ~50 blog-*
+# post units, ventures, etc). Only defendable-agents.yaml (57/57 units,
+# spec-shaped) is genuine KCP federation.
 
 units:
   # ── Core identity ────────────────────────────────────────────────────────────
@@ -519,7 +528,6 @@ units:
     scope: global
     audience: [human, developer, architect, agent]
     validated: 2026-03-08
-    depends_on: [blog-kcp-auth-and-delegation]
     triggers: [a2a, agent-card, multi-agent, agent-to-agent, front-door, filing-cabinet, invocation, knowledge-access, complementary, google-a2a]
 
   - id: blog-kcp-manifest-quality
@@ -582,7 +590,7 @@ units:
     scope: global
     audience: [human, developer, architect, agent, enterprise]
     validated: 2026-04-18
-    depends_on: [blog-what-accumulates, kcp-memory]
+    depends_on: [blog-what-accumulates]
     triggers: [kcp-memory, agent-fleet, distributed-memory, enterprise-memory, episodic-memory, context-boundaries, isolation, auditability, continuity, self-maintenance, memory-infrastructure, agent-infrastructure, ai-native-enterprise, kcp-tags, union-merge, subagent-inheritance, memory-layer, firehose, bounded-context, compliance-scope, peer-sync, context-aware, organizational-memory, fleet-agents, ai-stack]
 
   - id: blog-seven-out-of-eight
@@ -591,7 +599,7 @@ units:
     scope: global
     audience: [human, developer, architect, agent]
     validated: 2026-04-16
-    depends_on: [blog-meeting-was-never-the-problem, kcp-manifest-syntax]
+    depends_on: [blog-meeting-was-never-the-problem]
     triggers: [benchmark, smidja, self-assessment, completion-reporting, autoregressive, context-momentum, ghost-branch, byoa, kcp-governance, external-verification, typescript-cli, supabase, opentelemetry, gpt-5, kimi-k2, gemini, deepseek, qwen, grok, devstral, model-comparison, agent-runtime, declare-enforce-verify, artifact-check, model-agnostic, llm-benchmark, over-reporting]
 
   - id: blog-meeting-was-never-the-problem
@@ -635,7 +643,7 @@ units:
     scope: global
     audience: [human, developer, architect, agent]
     validated: 2026-04-06
-    depends_on: [blog-synthesis-practitioners-journal, blog-three-layer-ai-memory]
+    depends_on: [blog-synthesis-practitioners-journal, blog-three-layer-memory]
     triggers: [agent-memory, memory-rot, topic-health, topic-triage, consolidate-state, memory-maintenance, freshness, completeness, hot-warm-cold, archive-prune-update-keep, exocortex, synthesis, fts5, behavioral-scoring, nightly-cron, circular-dependency, llm-maintenance, episodic-semantic-gap, false-hot, memory-lies, index-lies]
 
   - id: blog-synthesis-practitioners-journal
@@ -793,87 +801,7 @@ units:
     depends_on: [blog-four-layers]
     triggers: [ai-agent, pr-review, pull-request, loop, automation, ironclaw, github, klaw]
 
-  # ── Defendable Agents field guide (curated entry points; full set in knowledge/defendable-agents.yaml) ──
-
-  - id: defendable-agents-overview
-    path: topics/defendable-agents/index.md
-    intent: "What is a defendable agent, and how is this field guide organized?"
-    scope: global
-    audience: [human, agent, architect, ciso]
-    validated: 2026-07-08
-    triggers: [defendable-agents, auditable-agents, compliant-agents, ai-governance, deterministic-agents, audit-trail, reproducible, temporal, drift, compliance, governance, soc2, iso27001, gdpr, evidence, defensible, field-guide]
-
-  - id: da-argument-what-defendable-means
-    path: topics/defendable-agents/argument/what-defendable-means.md
-    intent: "A defendable decision is declared in advance, reproducible, and evidenced. Here is what each property means, why it differs from explainable AI, and how legal and engineering defensibility meet."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-
-  - id: da-argument-the-governance-gap
-    path: topics/defendable-agents/argument/the-governance-gap.md
-    intent: "Why you cannot govern an improvising agent. Non-reproducibility, unauditability and injection-by-default are structural properties of vibes-based architecture, not bugs to patch."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-
-  - id: da-architecture-overview
-    path: topics/defendable-agents/architecture/overview.md
-    intent: "Determinism at the core, the model at the edge. The three components of a defendable agent — planner, harness, model — and how a task becomes evidence you can defend to an auditor."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-
-  - id: da-primitives-overview
-    path: topics/defendable-agents/primitives/overview.md
-    intent: "The four mechanical primitives every governed operation routes through — fail-closed policy, audit-all, budget ceilings and temporal pinning — at a glance."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-
-  - id: da-primitives-audit-trail
-    path: topics/defendable-agents/primitives/audit-trail.md
-    intent: "The append-only JSONL audit log and its event schema — the evidence a defendable agent produces as a byproduct of how it works, not as an afterthought."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-
-  - id: da-decisions-anatomy-of-a-score
-    path: topics/defendable-agents/decisions/anatomy-of-a-score.md
-    intent: "How a 0-100 buyer score is computed deterministically in Lodestar: 1-5 variables averaged and scaled per layer, combined by fixed weights, then bucketed into a priority band."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-
-  - id: da-compliance-control-mapping
-    path: topics/defendable-agents/compliance/control-mapping.md
-    intent: "Each defendable-agent primitive mapped to the audit control it satisfies, with the concrete mechanism and the record you export as evidence — satisfied by mechanism, not by claim."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-
-  - id: da-examples-regulatory-qa-provenance
-    path: topics/defendable-agents/examples/regulatory-qa-provenance.md
-    intent: "A worked example of a regulatory Q&A agent that answers every question with a provenance chain: each claim traces to a declared, temporally-pinned source unit, and stale rules are flagged."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-
-  - id: da-reference-case-study-lodestar
-    path: topics/defendable-agents/reference/case-study-lodestar.md
-    intent: "A full anonymized walkthrough of Lodestar, a governed competitive-intelligence scoring system in a regulated professional-services market, from pipeline to compliance."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
-    triggers: [lodestar, case-study, scoring-engine, buyer-scoring, worked-example, temporal, drift]
-
-  - id: da-kcp-manifest-basics
-    triggers: [kcp, manifest, knowledge-yaml, governed-units, declaring-knowledge, federation]
-    path: topics/defendable-agents/kcp/manifest-basics.md
-    intent: "The knowledge.yaml manifest that makes a decision system navigable and governable — kind, metadata, a temporal window, and explicitly declared governed units instead of a flat pile of files."
-    scope: global
-    audience: [human, agent, architect]
-    validated: 2026-07-08
+  # Defendable Agents field guide (57 units) — federated via composition.includes above, not duplicated here.
 
   # ── Site entry points & reference ─────────────────────────────────────────────
 
@@ -1182,7 +1110,7 @@ relationships:
     to: blog-agent-memory-rots
     type: enables
 
-  - from: blog-three-layer-ai-memory
+  - from: blog-three-layer-memory
     to: blog-agent-memory-rots
     type: enables
 
@@ -1314,10 +1242,6 @@ relationships:
   - from: blog-what-accumulates
     to: blog-distributed-memory-agent-fleets
     type: enables
-
-  - from: kcp-memory
-    to: blog-distributed-memory-agent-fleets
-    type: context
 
   - from: blog-quantum-hardware-abstractions-leak
     to: blog-merkabit-computer
