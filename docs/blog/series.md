@@ -162,4 +162,36 @@ Some posts form a natural sequence and are best read in order. Each series below
 
     [:octicons-arrow-right-24: Start reading](/blog/2026/01/15/the-surprisingly-hard-problem-of-semiconductor-part-numbers/)
 
+-   :material-shield-check: **Sunstone Atlas**
+
+    ---
+
+    Launching Sunstone Atlas: a governed, MCP-native knowledge and execution substrate for businesses that run agents — the signed publish ceremony and trust ladder, the open problems of scoped reads and multi-agent handoffs, and what it takes to let agents act, not just speak.
+
+    ??? "Posts in this series"
+        1. Trust is earned, not asserted: introducing Sunstone Atlas
+        2. What's next for Sunstone Atlas: scoped reads, and the handoff problem
+        3. Arms, not just a voice: what it takes to let agents act
+
+    **3 posts &nbsp;·&nbsp; August 2026**
+
+    [:octicons-arrow-right-24: Start reading](/blog/2026/08/24/trust-is-earned-not-asserted-introducing-sunstone-atlas/)
+
+-   :material-calendar-clock: **The Third Schedule**
+
+    ---
+
+    Paul Graham described the maker's and the manager's schedule. Agents have neither — builder time has become parallelizable. One practitioner's measured git history makes the claim, the research literature pushes back, and a negative control tests what survives.
+
+    ??? "Posts in this series"
+        1. The Third Schedule
+        2. The Robots Got There First
+        3. The Third Schedule: A Field Survey
+        4. Fan-Out: What the Literature Already Knew About the Third Schedule
+        5. The Negative Control
+
+    **5 posts &nbsp;·&nbsp; August 2026**
+
+    [:octicons-arrow-right-24: Start reading](/blog/2026/08/25/the-third-schedule/)
+
 </div>

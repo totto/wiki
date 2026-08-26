@@ -1,6 +1,7 @@
 ---
 description: "Two open problems for Sunstone Atlas: scoping reads the way writes are already scoped, and what happens to accountability when work passes through more than one agent."
 date: 2026-08-24T10:00:00
+series: "Sunstone Atlas"
 draft: false
 categories:
   - AI Agents

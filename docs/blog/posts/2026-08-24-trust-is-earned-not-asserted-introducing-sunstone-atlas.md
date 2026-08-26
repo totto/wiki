@@ -1,6 +1,7 @@
 ---
 description: "Introducing Sunstone Atlas: a governed, MCP-native knowledge and execution substrate for businesses that run agents. Add agents, keep control."
 date: 2026-08-24T09:00:00
+series: "Sunstone Atlas"
 draft: false
 categories:
   - AI Agents

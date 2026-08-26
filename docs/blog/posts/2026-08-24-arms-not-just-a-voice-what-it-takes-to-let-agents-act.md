@@ -1,6 +1,7 @@
 ---
 description: "The next dimension for Sunstone Atlas: agents that act, not just agents that say. Authority ceilings per action, capability footprints, and why the audit trail is the cost saving, not a tax on it."
 date: 2026-08-24T11:00:00
+series: "Sunstone Atlas"
 draft: false
 categories:
   - AI Agents

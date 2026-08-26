@@ -1,6 +1,7 @@
 ---
 description: "The Third Schedule series argued from one practitioner's git history that builder time has become parallelizable. This closing piece does what the other four could not: runs the same measurement pipeline against ten other real datasets — public open-source repos, venture builds, client platforms, and, most importantly, the git history of a conventional non-agentic developer. The negative control comes back with a result that breaks the series' headline metric — and sharpens what actually survives."
 date: 2026-08-25T20:00:00
+series: "The Third Schedule"
 draft: false
 categories:
   - AI Agents & the Agentic Web
