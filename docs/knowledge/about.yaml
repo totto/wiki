@@ -1,14 +1,18 @@
 # wiki.totto.org — About sub-manifest
 # Parent: https://wiki.totto.org/knowledge.yaml
 version: "0.14"
+kcp_version: "0.32"
 
 id: about
 parent: https://wiki.totto.org/knowledge.yaml
 
 discovery:
-  provenance: canonical
-  confidence: high
-  staleness_days: 90
+  source: manual
+  verification_status: verified
+
+freshness_policy:
+  max_age_days: 90
+  on_stale: warn
 
 signing:
   scheme: ed25519
