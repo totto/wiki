@@ -1,14 +1,18 @@
 # wiki.totto.org — Projects sub-manifest
 # Parent: https://wiki.totto.org/knowledge.yaml
 version: "0.14"
+kcp_version: "0.32"
 
 id: projects
 parent: https://wiki.totto.org/knowledge.yaml
 
 discovery:
-  provenance: canonical
-  confidence: high
-  staleness_days: 30
+  source: manual
+  verification_status: verified
+
+freshness_policy:
+  max_age_days: 30
+  on_stale: warn
 
 signing:
   scheme: ed25519
@@ -32,6 +36,12 @@ projects:
       - kcp-memory (episodic memory hub for agent networks)
       - kcp-triage (deterministic nightly memory maintenance, zero LLM calls)
       - kcp-dashboard (terminal TUI for KCP toolchain observability)
+      - kcp-harness (deterministic knowledge governance for any AI agent)
+      - kcp-skill (conventions, linter, and conformance vectors for governed KCP skills)
+      - kcp-forge (forges loose skill files into governed KCP units, corpus-level QA)
+      - pi-kcp (interactive playground running the real KCP decision code in-browser)
+      - kcp-hooks (Claude Code hooks for memory, routing, and hygiene)
+      - kcp-playground (in-browser demos of the defendable agent, with signed receipts)
     reference_implementation: https://xn--gis-xla.no/knowledge.yaml
 
   synthesis:
@@ -59,10 +69,12 @@ projects:
   skills_library:
     title: Skills Library
     description: >
-      529 skills for Claude Code, mined from real production sessions.
-      Covers Java, Spring, Kotlin, TypeScript, Python, React, architecture,
-      security, testing, and DX patterns. Auto-curated, behaviourally scored.
-    size: 529
+      590 skills across 29 domains for Claude Code, mined from real production
+      sessions. Covers Java, Spring, Kotlin, TypeScript, Python, React,
+      architecture, security, testing, and DX patterns. Auto-curated,
+      behaviourally scored.
+    size: 590
+    domains: 29
     licensing: [personal, business]
     contact: selina@exoreaction.com
 
