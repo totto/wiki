@@ -1,9 +1,9 @@
 ---
 description: "The Third Schedule claimed, from one measured practice, that builder time has become parallelizable. This post takes that claim outside: to the four writers who already attempted the maker's-schedule update, to the interruption science that seems to forbid it, and to a twenty-year-old supervisory-control literature that quietly formalized the whole problem — then uses the one hard dataset we have to set the limit the broader conversation keeps failing to state."
 date: 2026-08-25T16:00:00
-draft: true
+draft: false
 categories:
-  - AI Agents
+  - AI Agents & the Agentic Web
   - Ways of Working
 tags:
   - ai-agents

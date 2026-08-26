@@ -1,9 +1,9 @@
 ---
 description: "The Third Schedule argued from one practitioner's git history that builder time has become parallelizable. This companion piece takes that claim out into the field: what has actually been published — by practitioners, telemetry vendors, HCI researchers, and skeptics — on parallel-agent work, oversight bandwidth, and measured AI-era commit patterns, and how does each claim hold up when checked against the one dataset in this conversation that is fully measured?"
 date: 2026-08-25T16:00:00
-draft: true
+draft: false
 categories:
-  - AI Agents
+  - AI Agents & the Agentic Web
   - Ways of Working
 tags:
   - ai-agents

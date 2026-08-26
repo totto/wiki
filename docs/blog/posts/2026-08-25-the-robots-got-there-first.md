@@ -1,9 +1,9 @@
 ---
 description: "The Third Schedule argued from one practitioner's dataset outward. This companion piece runs the opposite motion: out into the field, to see what 2025–2026 research and commentary actually says about parallel agent-directed work — prior updates to Graham's essay, the cognitive science of task switching, and twenty years of human-supervisory-control research that got here first. Then our one measured practice comes back in, not as proof, but as the reality check on everyone's numbers — including ours."
 date: 2026-08-25T16:00:00
-draft: true
+draft: false
 categories:
-  - AI Agents
+  - AI Agents & the Agentic Web
   - Ways of Working
 tags:
   - ai-agents

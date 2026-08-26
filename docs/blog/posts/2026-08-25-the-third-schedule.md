@@ -1,9 +1,9 @@
 ---
 description: "Paul Graham's 2009 essay described two incompatible ways of structuring a working day: the maker's and the manager's. In 2026 there is a third kind of worker in the organization — the agent — and it has neither. Its arrival breaks the essay's quietest assumption: that maker time is singular. Builder time has become parallelizable — and the new scheduling problem isn't protecting the maker's afternoon. It's absorbing the output of workers who don't have afternoons."
 date: 2026-08-25T12:00:00
-draft: true
+draft: false
 categories:
-  - AI Agents
+  - AI Agents & the Agentic Web
   - Ways of Working
 tags:
   - ai-agents
