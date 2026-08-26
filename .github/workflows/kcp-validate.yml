@@ -1,0 +1,47 @@
+name: Validate KCP Manifests
+
+# Signing (kcp-manifests.yml) does not substitute for validation — it proves the
+# manifest wasn't tampered with after the fact, not that it conforms to spec. This
+# site ran with a stack of real conformance bugs (misused authority:/discovery:
+# fields, invalid composition.includes syntax, dangling depends_on/relationships
+# references, a version/kcp_version conflation) for months with nothing catching
+# any of it, found only by a manual 2026-08-26 audit. This workflow is that audit,
+# running on every push instead of by chance.
+#
+# Only docs/knowledge.yaml and docs/knowledge/defendable-agents.yaml are validated:
+# they're the only two files here with a real units: array. about.yaml, projects.yaml,
+# talks.yaml, and blog.yaml are deliberately freeform reference data (see the comment
+# above composition.includes in docs/knowledge.yaml) and are not KCP manifests — running
+# `kcp validate` against them fails on the REQUIRED units:/project: fields they were
+# never meant to have.
+
+on:
+  push:
+    branches: [main]
+    paths: ['docs/knowledge.yaml', 'docs/knowledge/defendable-agents.yaml']
+  pull_request:
+    paths: ['docs/knowledge.yaml', 'docs/knowledge/defendable-agents.yaml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      # Pinned rather than `latest`: a validator release that adds a conformance rule
+      # should be adopted deliberately, not arrive as a surprise red build on an
+      # unrelated PR. Bump deliberately when the spec moves — see kcp-triage's
+      # kcp-validate.yml for the precedent this is copied from, and note in its
+      # commit message why: @0.30 silently mis-processes a kcp_version: "0.32"
+      # manifest as spec 0.8 rather than failing loud, so an outdated pin here is a
+      # false sense of security, not just a missed feature.
+      - name: Validate docs/knowledge.yaml
+        run: npx --yes @cantara.no/kcp@0.32.2 validate docs/knowledge.yaml
+      - name: Validate docs/knowledge/defendable-agents.yaml
+        run: npx --yes @cantara.no/kcp@0.32.2 validate docs/knowledge/defendable-agents.yaml
