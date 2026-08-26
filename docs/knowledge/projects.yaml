@@ -65,3 +65,20 @@ projects:
     size: 529
     licensing: [personal, business]
     contact: selina@exoreaction.com
+
+  sunstone_atlas:
+    title: Sunstone Atlas
+    description: >
+      Governed, MCP-native knowledge and execution substrate for businesses
+      that run agents. Content moves propose → review → publish as
+      Ed25519-signed, append-only versions; playbook runs land as signed,
+      replayable events on a per-run ledger; agent autonomy is earned via a
+      trust ladder (block → review-after → sampling → monitor) and regresses
+      instantly on deviation. Tagline: add agents, keep control.
+    company: Sunstone Tech AS
+    status: in production (live deployment; not open source)
+    related_topic: https://wiki.totto.org/topics/defendable-agents/
+    blog:
+      - https://wiki.totto.org/blog/2026/08/24/trust-is-earned-not-asserted-introducing-sunstone-atlas/
+      - https://wiki.totto.org/blog/2026/08/13/how-to-build-agentic-software-on-sunstone-atlas/
+      - https://wiki.totto.org/blog/2026/08/24/whats-next-for-sunstone-atlas-scoped-reads-and-the-handoff-problem/

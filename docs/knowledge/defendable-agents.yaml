@@ -719,6 +719,21 @@ units:
   depends_on:
   - defendable-agents-overview
   tags: *id010
+- id: da-reference-case-study-sunstone-atlas
+  path: blog/posts/2026-08-24-trust-is-earned-not-asserted-introducing-sunstone-atlas.md
+  intent: 'Sunstone Atlas as a shipped instance of the field guide''s ideas: a governed, MCP-native knowledge and execution substrate where publishing produces Ed25519-signed append-only versions, runs land as replayable ledger events, agent autonomy is earned on a graduated trust ladder and regresses on deviation, and import gates fail closed on unprovable provenance.'
+  scope: global
+  audience:
+  - human
+  - agent
+  - architect
+  validated: '2026-08-26'
+  depends_on:
+  - defendable-agents-overview
+  - da-architecture-governance-harness
+  - da-primitives-audit-trail
+  - da-primitives-trust-and-attestation
+  tags: *id010
 - id: da-reference-faq
   path: topics/defendable-agents/reference/faq.md
   intent: Straight answers on determinism, correctness, performance, where the LLM lives, cost, when a defendable agent is overkill, and how it maps to the EU AI Act.
