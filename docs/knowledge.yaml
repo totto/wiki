@@ -26,7 +26,7 @@ trust:
 
 discovery:
   source: manual
-  verification_status: verified
+  verification_status: declared
 
 freshness_policy:
   max_age_days: 7
