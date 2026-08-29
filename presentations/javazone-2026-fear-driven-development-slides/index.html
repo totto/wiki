@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fear-Driven Development &mdash; JavaZone Talk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg-dark: #0a0b0d; --bg-navy: #101115; --navy2: #16181d;
+  --red: #d9524a; --red-light: #e8887e; --crimson: #b8423a;
+  --orange: #d9975c; --orange-light: #e8b888; --green: #8ab87a;
+  --teal: #5cb8d8; --purple: #a88ad8; --text: #e8e4da; --text-muted: #8a8478;
+  --text-dim: #c9c4b4; --code-bg: #16181d; --amber: #e8b45c;
+  --pink: #d88aae; --blue-light: #6ca8e8; --nav-h: 56px;
+  --t-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --t-disp: 'Newsreader', ui-serif, Georgia, serif;
+}
+html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-dark); color:var(--text); font-family:var(--t-mono); -webkit-font-smoothing:antialiased; }
+#viewport { position:fixed; inset:0 0 var(--nav-h) 0; overflow:hidden; }
+.slide-track { position:absolute; inset:0; display:none; }
+.slide-track.active { display:block; }
+.slide { position:absolute; inset:0; display:none; align-items:center; justify-content:center; }
+.slide.visible { display:flex; }
+.slide.img-slide { background:#000; }
+.slide.img-slide img { max-width:100%; max-height:100%; width:100%; height:100%; object-fit:contain; display:block; }
+.slide.custom { flex-direction:column; padding:36px 56px; background:var(--bg-dark); overflow-y:auto; align-items:flex-start; justify-content:flex-start; }
+.slide.custom.centered { align-items:center; justify-content:center; text-align:center; }
+.universe-bar { position:absolute; top:0; left:0; right:0; height:4px; }
+.universe-bar.f1 { background:var(--red); }
+.universe-bar.f2 { background:var(--orange); }
+.universe-bar.f3 { background:var(--amber); }
+.universe-bar.f4 { background:var(--teal); }
+.universe-bar.f5 { background:var(--purple); }
+.universe-bar.f6 { background:var(--pink); }
+.universe-bar.demo { background:var(--green); }
+@keyframes slideInRight { from { transform:translateX(100%); opacity:0; } to { transform:translateX(0); opacity:1; } }
+@keyframes slideInLeft  { from { transform:translateX(-100%); opacity:0; } to { transform:translateX(0); opacity:1; } }
+@keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+.anim-in-right { animation:slideInRight 320ms cubic-bezier(0.4,0,0.2,1) forwards; }
+.anim-in-left  { animation:slideInLeft  320ms cubic-bezier(0.4,0,0.2,1) forwards; }
+.blink { animation:blink 1s step-end infinite; }
+.caret { display:inline-block; margin-left:6px; color:var(--amber); animation:blink 1.05s step-end infinite; }
+@keyframes revealItem { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+.reveal-item { animation:revealItem 420ms cubic-bezier(0.16,1,0.3,1) both; }
+@keyframes breathe { 0%,100% { opacity:0.65; } 50% { opacity:1; } }
+.radial-bg { animation:breathe 6s ease-in-out infinite; }
+#nav { position:fixed; bottom:0; left:0; right:0; height:var(--nav-h); background:rgba(8,10,24,0.97); backdrop-filter:blur(12px); border-top:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; gap:4px; padding:0 12px; z-index:1000; }
+#nav::before { content:''; position:absolute; bottom:100%; left:0; right:0; height:3px; transition:background 0.3s; }
+body.ctx-main  #nav::before { background:rgba(232,180,92,0.35); }
+body.ctx-f1    #nav::before { background:var(--red); }
+body.ctx-f2    #nav::before { background:var(--orange); }
+body.ctx-f3    #nav::before { background:var(--amber); }
+body.ctx-f4    #nav::before { background:var(--teal); }
+body.ctx-f5    #nav::before { background:var(--purple); }
+body.ctx-f6    #nav::before { background:var(--pink); }
+body.ctx-demo  #nav::before { background:var(--green); }
+.nav-arrow { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:var(--text); padding:6px 14px; border-radius:6px; cursor:pointer; font-size:15px; transition:background 0.2s; flex-shrink:0; }
+.nav-arrow:hover { background:rgba(255,255,255,0.12); }
+.nav-arrow:disabled { opacity:0.3; cursor:default; }
+.nav-ctx { display:flex; gap:3px; flex:1; justify-content:center; flex-wrap:wrap; }
+.nav-btn { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--text-muted); padding:5px 10px; border-radius:6px; cursor:pointer; font-size:10px; font-weight:500; letter-spacing:0.02em; transition:background 0.2s,border-color 0.2s,color 0.2s; white-space:nowrap; }
+.nav-btn:hover { background:rgba(255,255,255,0.1); color:var(--text); }
+.nav-btn.main-btn.active  { background:rgba(232,180,92,0.2); color:#f0c878; border-color:rgba(232,180,92,0.45); }
+.nav-btn.f1-btn.active    { background:rgba(217,82,74,0.22); color:#e8887e; border-color:var(--red); }
+.nav-btn.f2-btn.active    { background:rgba(217,151,92,0.22);  color:#e8be94; border-color:var(--orange); }
+.nav-btn.f3-btn.active    { background:rgba(232,180,92,0.22); color:#f0c878; border-color:var(--amber); }
+.nav-btn.f4-btn.active    { background:rgba(92,184,216,0.22);  color:#8ad0e8; border-color:var(--teal); }
+.nav-btn.f5-btn.active    { background:rgba(168,138,216,0.22); color:#c4aee8; border-color:var(--purple); }
+.nav-btn.f6-btn.active    { background:rgba(216,138,174,0.22); color:#e8a8c8; border-color:var(--pink); }
+.nav-btn.demo-btn.active  { background:rgba(138,184,122,0.22);  color:#a8d89a; border-color:var(--green); }
+.nav-btn.f1-btn:hover  { border-color:var(--red); }
+.nav-btn.f2-btn:hover  { border-color:var(--orange); }
+.nav-btn.f3-btn:hover  { border-color:var(--amber); }
+.nav-btn.f4-btn:hover  { border-color:var(--teal); }
+.nav-btn.f5-btn:hover  { border-color:var(--purple); }
+.nav-btn.f6-btn:hover  { border-color:var(--pink); }
+.nav-btn.demo-btn:hover { border-color:var(--green); }
+#ctx-indicator { position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size:11px; color:var(--text-muted); white-space:nowrap; pointer-events:none; background:rgba(8,10,24,0.9); padding:2px 10px; border-radius:4px 4px 0 0; }
+.radial-bg { position:absolute; inset:0; background:radial-gradient(ellipse at 40% 50%,rgba(217,82,74,0.12) 0%,transparent 55%),radial-gradient(ellipse at 75% 30%,rgba(184,90,66,0.08) 0%,transparent 50%); pointer-events:none; }
+.radial-bg.red    { background:radial-gradient(ellipse at 35% 50%,rgba(217,82,74,0.18) 0%,transparent 55%); }
+.radial-bg.orange { background:radial-gradient(ellipse at 35% 50%,rgba(217,151,92,0.12) 0%,transparent 55%); }
+.radial-bg.purple { background:radial-gradient(ellipse at 35% 50%,rgba(168,138,216,0.18) 0%,transparent 55%); }
+.radial-bg.green  { background:radial-gradient(ellipse at 35% 50%,rgba(138,184,122,0.18) 0%,transparent 55%); }
+.radial-bg.amber  { background:radial-gradient(ellipse at 35% 50%,rgba(232,180,92,0.18) 0%,transparent 55%); }
+.radial-bg.pink   { background:radial-gradient(ellipse at 35% 50%,rgba(216,138,174,0.18) 0%,transparent 55%); }
+.radial-bg.teal   { background:radial-gradient(ellipse at 35% 50%,rgba(92,184,216,0.18) 0%,transparent 55%); }
+.slide-tag { font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--red-light); margin-bottom:14px; }
+.slide-tag::before { content:'//'; margin-right:0.5em; opacity:0.55; font-weight:400; }
+.slide-tag.red    { color:#e8887e; }
+.slide-tag.orange { color:var(--orange-light); }
+.slide-tag.amber  { color:#f0c878; }
+.slide-tag.teal   { color:#8ad0e8; }
+.slide-tag.purple { color:#c4aee8; }
+.slide-tag.pink   { color:#e8a8c8; }
+.slide-tag.green  { color:#a8d89a; }
+h1.slide-title { font-size:clamp(28px,4vw,58px); font-weight:600; line-height:1.08; letter-spacing:-0.02em; margin-bottom:16px; }
+h2.slide-title { font-size:clamp(22px,3vw,42px); font-weight:600; line-height:1.12; letter-spacing:-0.02em; margin-bottom:14px; }
+.slide-sub { font-size:clamp(13px,1.5vw,19px); color:var(--text-dim); line-height:1.55; margin-bottom:10px; }
+.slide-note { font-size:12px; color:var(--text-muted); margin-top:10px; }
+.slide-footer { position:absolute; bottom:18px; left:56px; right:56px; font-size:11px; color:var(--text-muted); border-top:1px solid rgba(255,255,255,0.07); padding-top:10px; }
+.statement { font-family:var(--t-disp); font-weight:300; font-size:clamp(17px,2.3vw,27px); font-style:italic; color:var(--text-dim); line-height:1.55; max-width:800px; margin-bottom:28px; position:relative; z-index:1; }
+.badge { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:4px; margin-bottom:10px; }
+.badge.red    { background:rgba(217,82,74,0.18); color:#e8887e; border:1px solid rgba(217,82,74,0.35); }
+.badge.amber  { background:rgba(232,180,92,0.18); color:#f0c878; border:1px solid rgba(232,180,92,0.35); }
+.badge.green  { background:rgba(138,184,122,0.15);  color:#a8d89a; border:1px solid rgba(138,184,122,0.3); }
+.badge.orange { background:rgba(217,151,92,0.18);  color:#e8be94; border:1px solid rgba(217,151,92,0.35); }
+.badge.purple { background:rgba(168,138,216,0.18); color:#c4aee8; border:1px solid rgba(168,138,216,0.35); }
+.badge.teal   { background:rgba(92,184,216,0.18);  color:#8ad0e8; border:1px solid rgba(92,184,216,0.35); }
+.badge.pink   { background:rgba(216,138,174,0.18); color:#e8a8c8; border:1px solid rgba(216,138,174,0.35); }
+.tag-row { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:17px; width:100%; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:11px; margin-top:17px; width:100%; }
+.card { background:rgba(10,11,13,0.55); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:14px; transition:background 0.2s,border-color 0.2s; }
+.card.red   { background:rgba(217,82,74,0.06); border-color:rgba(217,82,74,0.2); }
+.card.green { background:rgba(138,184,122,0.06); border-color:rgba(138,184,122,0.2); }
+.card-num { font-size:11px; color:var(--text-muted); font-weight:600; margin-bottom:8px; }
+.card-q { font-size:14px; font-weight:600; color:var(--text); line-height:1.4; }
+.slide-table { width:100%; border-collapse:collapse; margin-top:14px; font-size:13px; }
+.slide-table th { text-align:left; padding:7px 12px; background:rgba(255,255,255,0.05); color:var(--text-muted); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid rgba(255,255,255,0.1); }
+.slide-table td { padding:7px 12px; border-bottom:1px solid rgba(255,255,255,0.05); color:var(--text-dim); line-height:1.35; vertical-align:top; }
+.code-block { background:var(--code-bg); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:13px 18px; font-family:'SF Mono','Fira Code','Cascadia Code',monospace; font-size:12.5px; line-height:1.55; margin-top:12px; overflow-x:auto; white-space:pre; }
+.code-block .k { color:#8ad0e8; } .code-block .v { color:#e8be94; } .code-block .s { color:#a8d89a; }
+.code-block .c { color:#475569; font-style:italic; } .code-block .cmd { color:#c4aee8; } .code-block .arg { color:#93c5fd; }
+blockquote.slide-quote { font-family:var(--t-disp); font-weight:300; border-left:4px solid var(--red); padding:14px 22px; margin:20px 0; background:rgba(217,82,74,0.07); border-radius:0 10px 10px 0; font-size:19px; font-style:italic; color:var(--text-dim); line-height:1.5; }
+blockquote.slide-quote.green  { border-color:var(--green); background:rgba(138,184,122,0.07); }
+blockquote.slide-quote.orange { border-color:var(--orange); background:rgba(217,151,92,0.07); }
+blockquote.slide-quote.amber  { border-color:var(--amber); background:rgba(232,180,92,0.07); }
+blockquote.slide-quote.purple { border-color:var(--purple); background:rgba(168,138,216,0.07); }
+blockquote.slide-quote.teal   { border-color:var(--teal); background:rgba(92,184,216,0.07); }
+blockquote.slide-quote.pink   { border-color:var(--pink); background:rgba(216,138,174,0.07); }
+.steps { margin-top:14px; display:flex; flex-direction:column; gap:8px; width:100%; }
+.step { display:flex; align-items:flex-start; gap:14px; background:rgba(10,11,13,0.5); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:10px 16px; }
+.step-num { width:30px; height:30px; border-radius:50%; background:var(--red); color:#e8e4da; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.step-num.orange { background:var(--orange); } .step-num.amber  { background:var(--amber); color:#000; }
+.step-num.teal   { background:var(--teal); }   .step-num.purple { background:var(--purple); }
+.step-num.green  { background:var(--green); color:#000; } .step-num.pink { background:var(--pink); }
+.step-content strong { font-size:14px; color:var(--text); }
+.step-content p { font-size:13px; color:var(--text-muted); margin-top:3px; line-height:1.5; }
+.callouts { display:flex; flex-direction:column; gap:7px; }
+.callout { background:rgba(10,11,13,0.55); border-left:3px solid var(--text-muted); border-radius:0 8px 8px 0; padding:7px 13px; }
+.callout.red    { border-left-color:var(--red);    background:linear-gradient(rgba(217,82,74,0.10),rgba(217,82,74,0.10)), rgba(10,11,13,0.55); }
+.callout.green  { border-left-color:var(--green);  background:linear-gradient(rgba(138,184,122,0.10),rgba(138,184,122,0.10)), rgba(10,11,13,0.55); }
+.callout.orange { border-left-color:var(--orange); background:linear-gradient(rgba(217,151,92,0.10),rgba(217,151,92,0.10)), rgba(10,11,13,0.55); }
+.callout.amber  { border-left-color:var(--amber);  background:linear-gradient(rgba(232,180,92,0.10),rgba(232,180,92,0.10)), rgba(10,11,13,0.55); }
+.callout.teal   { border-left-color:var(--teal);   background:linear-gradient(rgba(92,184,216,0.10),rgba(92,184,216,0.10)), rgba(10,11,13,0.55); }
+.callout.purple { border-left-color:var(--purple); background:linear-gradient(rgba(168,138,216,0.10),rgba(168,138,216,0.10)), rgba(10,11,13,0.55); }
+.callout.pink   { border-left-color:var(--pink);   background:linear-gradient(rgba(216,138,174,0.10),rgba(216,138,174,0.10)), rgba(10,11,13,0.55); }
+.callout strong { font-size:12px; font-weight:700; color:var(--text); display:block; margin-bottom:2px; }
+.callout span   { font-size:12px; color:var(--text-muted); line-height:1.4; display:block; }
+.term-line { font-size:13px; color:var(--text-muted); letter-spacing:0.02em; }
+.term-line .prompt { color:var(--red-light); }
+.fear-list { border-top:1px solid rgba(255,255,255,0.08); margin-top:6px; }
+.fear-row { display:flex; gap:18px; align-items:baseline; padding:6px 2px; border-bottom:1px solid rgba(255,255,255,0.08); font-size:14px; color:var(--text-dim); }
+.fear-mark { color:var(--red-light); font-weight:500; flex-shrink:0; width:22px; font-size:12px; }
+.callout p      { font-size:13px; color:var(--text-dim); line-height:1.55; }
+.ba-table { width:100%; border-collapse:collapse; margin-top:18px; font-size:13px; }
+.ba-table th { padding:9px 15px; text-align:left; font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; }
+.ba-table th.before { background:rgba(232,160,136,0.09); color:#e8887e; }
+.ba-table th.after  { background:rgba(138,184,122,0.09);  color:#a8d89a; }
+.ba-table td { padding:9px 15px; border-bottom:1px solid rgba(255,255,255,0.05); color:var(--text-dim); line-height:1.45; vertical-align:top; }
+.ba-table td.before { background:rgba(232,160,136,0.03); } .ba-table td.after { background:rgba(138,184,122,0.03); }
+.stat-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-top:24px; width:100%; }
+.stat-card { border-radius:14px; padding:24px 20px; text-align:center; }
+.stat-card.green  { background:rgba(138,184,122,0.07);  border:1px solid rgba(138,184,122,0.25); }
+.stat-card.red    { background:rgba(217,82,74,0.07);  border:1px solid rgba(217,82,74,0.25); }
+.stat-card.teal   { background:rgba(92,184,216,0.07);  border:1px solid rgba(92,184,216,0.25); }
+.stat-card.purple { background:rgba(168,138,216,0.07); border:1px solid rgba(168,138,216,0.25); }
+.stat-card .stat-num   { font-size:clamp(28px,4vw,48px); font-weight:800; line-height:1; }
+.stat-card .stat-label { font-size:13px; color:var(--text-dim); margin-top:8px; line-height:1.4; }
+.stat-card.green  .stat-num { color:#a8d89a; }
+.stat-card.red    .stat-num { color:#e8887e; }
+.stat-card.teal   .stat-num { color:#8ad0e8; }
+.stat-card.purple .stat-num { color:#c4aee8; }
+.hl-red    { color:#e8887e; } .hl-orange { color:#e8be94; } .hl-amber  { color:#f0c878; }
+.hl-green  { color:#a8d89a; } .hl-teal   { color:#8ad0e8; } .hl-purple { color:#c4aee8; }
+.hl-pink   { color:#e8a8c8; } .hl-text   { color:var(--text); }
+#overlay { display:none; position:fixed; inset:0; z-index:2000; background:rgba(4,6,18,0.92); backdrop-filter:blur(10px); align-items:center; justify-content:center; padding:40px; }
+#overlay.open { display:flex; }
+#overlay-inner { background:var(--navy2); border:1px solid rgba(255,255,255,0.14); border-radius:16px; padding:38px; max-width:640px; width:100%; position:relative; }
+#overlay-q { font-size:18px; font-weight:700; margin-bottom:18px; color:var(--text); }
+#overlay-a { font-size:15px; color:var(--text-dim); line-height:1.75; }
+#overlay-close { position:absolute; top:14px; right:18px; background:none; border:none; color:var(--text-muted); font-size:22px; cursor:pointer; }
+#shortcut-overlay { display:none; position:fixed; inset:0; z-index:2000; background:rgba(4,6,18,0.92); backdrop-filter:blur(10px); align-items:center; justify-content:center; }
+#shortcut-overlay.open { display:flex; }
+.shortcut-box { background:var(--navy2); border:1px solid rgba(255,255,255,0.14); border-radius:16px; padding:36px; min-width:400px; }
+.shortcut-box h3 { font-size:17px; font-weight:700; margin-bottom:20px; }
+.shortcut-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px; color:var(--text-dim); }
+kbd { background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:3px 7px; font-size:12px; font-family:monospace; color:var(--text); }
+#narrator-bar { position:fixed; bottom:var(--nav-h); left:0; right:0; background:rgba(15,20,40,0.95); border-top:1px solid rgba(217,82,74,0.3); padding:10px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; z-index:999; backdrop-filter:blur(8px); font-size:13px; }
+#narrator-content { display:flex; align-items:flex-start; gap:10px; flex:1; line-height:1.5; }
+#narrator-icon { font-size:16px; flex-shrink:0; margin-top:1px; }
+#narrator-text { color:#c9c4b4; }
+#narrator-toggle { background:none; border:1px solid rgba(217,82,74,0.3); color:#8a8478; padding:3px 10px; border-radius:4px; cursor:pointer; font-size:11px; flex-shrink:0; }
+#narrator-toggle:hover { border-color:rgba(217,82,74,0.6); color:#e8887e; }
+body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
+.terminal-window { background:rgba(13,17,23,0.8); backdrop-filter:blur(2px); border-radius:10px; border:1px solid rgba(255,255,255,0.1); font-family:'JetBrains Mono','Fira Code','Courier New',monospace; font-size:13px; line-height:1.6; width:100%; max-width:640px; margin:0 auto; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+.terminal-titlebar { background:rgba(28,33,40,0.82); border-bottom:1px solid rgba(255,255,255,0.08); padding:10px 16px; display:flex; align-items:center; gap:8px; border-radius:10px 10px 0 0; }
+.term-dot { width:12px; height:12px; border-radius:50%; }
+.term-dot.red { background:#ff5f56; } .term-dot.yellow { background:#ffbd2e; } .term-dot.green { background:#27c93f; }
+.terminal-titlebar span { font-size:12px; color:#8b949e; margin-left:8px; font-family:sans-serif; }
+.terminal-body { padding:14px 20px; min-height:0; max-height:380px; overflow-y:auto; }
+.term-prompt { color:#58a6ff; } .term-cmd { color:#e6edf3; } .term-out { color:#8b949e; }
+.term-ok { color:#3fb950; } .term-warn { color:#e3b341; } .term-err { color:#f85149; }
+.term-highlight { color:#ffa657; } .term-dim { color:#484f58; }
+.term-line { margin:0; white-space:pre-wrap; word-break:break-all; }
+.formula-chain { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:28px 0; justify-content:center; }
+.formula-node { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:10px 18px; font-size:15px; font-weight:600; color:var(--text); }
+.formula-node.red    { background:rgba(217,82,74,0.12);  border-color:rgba(217,82,74,0.3);  color:#e8887e; }
+.formula-node.green  { background:rgba(138,184,122,0.12);  border-color:rgba(138,184,122,0.3);  color:#a8d89a; }
+.formula-node.amber  { background:rgba(232,180,92,0.12); border-color:rgba(232,180,92,0.3); color:#f0c878; }
+.formula-arrow { font-size:20px; color:var(--text-muted); }
+</style>
+</head>
+<body class="ctx-main">
+<div id="viewport">
+
+<!-- ══════════════════════════════════════════════════════════
+     MAIN TRACK (26 slides: main-0 through main-25)
+     JavaZone 2026 fork — added: main-0 (Start Page),
+     main-1 (video, was static cover image), main-2 (Confession,
+     moved up — Title slide removed), main-3 (Who is Totto),
+     main-4 (Agenda), main-20/21 (rabbit hole), main-22 (dark side)
+═══════════════════════════════════════════════════════════ -->
+<div class="slide-track active" id="track-main">
+
+  <!-- main-0: Start Page (pre-show holding slide) -->
+  <div class="slide custom visible" id="main-0" data-note="On screen while the room fills. Don't rush this — let people settle, then cue the video when ready." style="justify-content:center;background-color:var(--bg-dark);background-image:url('./assets/title-background-waterfall.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.8) 0%, rgba(10,11,13,0.4) 45%, transparent 70%);"></div>
+    <div style="position:relative;z-index:1;text-align:left;max-width:520px;">
+      <div class="slide-tag" style="color:var(--text-muted);">JavaZone &middot; September 2026</div>
+      <h1 class="slide-title" style="font-size:clamp(24px,3.5vw,48px);"><span style="color:var(--amber);">Fear</span>-Driven Development</h1>
+      <p class="slide-sub" style="max-width:480px;">Thor Henning Hetland &middot; eXOReaction</p>
+      <p class="slide-note" style="margin-top:32px;opacity:0.75;">We'll begin shortly.<span class="caret">&#9615;</span></p>
+    </div>
+  </div>
+
+  <!-- main-1: Ghost in the Machine — video cold open -->
+  <div class="slide img-slide" id="main-1" data-note="Cue this and step aside. Let it play in near-silence, full 119 seconds — don't talk over it. When it ends, pause 5 seconds, then: I have a confession to make. I'm scared of AI.">
+    <video src="./assets/ghost-in-the-machine.mp4" poster="./assets/gitm-cover-poster.webp" controls preload="metadata" style="width:100%;height:100%;object-fit:contain;background:#000;"></video>
+  </div>
+
+  <!-- main-2: The Confession (moved up from old main-5, replaces Title slide) -->
+  <div class="slide custom" id="main-2" data-note="Read them slowly. Pause after each. Most in the room share these — but nobody says it. You just did." style="background-color:var(--bg-dark);background-image:url('./assets/hook-background-heartbeat.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.55) 55%, transparent 78%);"></div>
+    <div style="position:relative;z-index:1;max-width:860px;width:100%;">
+      <div class="slide-tag">The Hook</div>
+      <h2 class="slide-title">Most developers won't admit this.</h2>
+      <div class="term-line" style="margin:14px 0 8px;"><span class="prompt">$</span> whoami --honest</div>
+      <blockquote class="slide-quote" style="font-size:20px;padding:11px 20px;margin:10px 0 16px;">"I'm scared of AI."</blockquote>
+      <div class="fear-list">
+        <div class="fear-row"><span class="fear-mark">01</span><span>Scared the AI is hallucinating and I can't tell</span></div>
+        <div class="fear-row"><span class="fear-mark">02</span><span>Scared something will break in production</span></div>
+        <div class="fear-row"><span class="fear-mark">03</span><span>Scared I'll ship hallucinated code</span></div>
+        <div class="fear-row"><span class="fear-mark">04</span><span>Scared costs will spiral out of control</span></div>
+        <div class="fear-row"><span class="fear-mark">05</span><span>Scared of losing control to the AI</span></div>
+        <div class="fear-row"><span class="fear-mark">06</span><span>Scared of silent failures nobody notices</span></div>
+      </div>
+      <p style="margin-top:16px;font-size:17px;font-weight:600;color:var(--text);">Those fears built the system.<span class="caret">&#9615;</span></p>
+    </div>
+  </div>
+
+  <!-- main-2: Who is Totto -->
+  <div class="slide custom" id="main-3" data-note="Quick, humble, concrete. Just enough credibility to earn the next slide's confession — don't linger, don't sell.">
+    <div style="max-width:900px;width:100%;">
+      <div class="slide-tag amber">Before We Start</div>
+      <h2 class="slide-title">Who's talking.</h2>
+      <div class="two-col" style="margin-top:10px;align-items:center;">
+        <div class="callouts">
+          <div class="callout"><span>40 years building software</span></div>
+          <div class="callout"><span>Co-founder of JavaZone, 2001</span></div>
+          <div class="callout"><span>Founder, eXOReaction &middot; Ægis &middot; Quadim &middot; Sunstone Tech &middot; Cantara &middot; former president, javaBin</span></div>
+          <div class="callout"><span>Java Champion since 2005</span></div>
+        </div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);">
+          <img src="./assets/who-is-totto-console.webp" alt="Totto at the console, running a fleet of AI agents" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+      <p style="margin-top:20px;font-size:16px;color:var(--text-dim);">These days: shipping production code with AI agents at speeds that shouldn't be possible.</p>
+    </div>
+  </div>
+
+  <!-- main-4: The Experiment -->
+  <div class="slide custom" id="main-4" data-note="This is the origin story — the concrete anchor for everything that follows. Let the numbers sit for a beat before moving to the agenda." style="background-color:var(--bg-dark);background-image:url('./assets/experiment-background-spark.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div style="position:relative;z-index:1;max-width:920px;width:100%;">
+      <div class="slide-tag">The Experiment</div>
+      <h2 class="slide-title">January 16, 2026. I wanted to see how far I could push Claude Code in a weekend.</h2>
+      <p style="margin-top:14px;font-size:15px;color:var(--text-dim);line-height:1.6;max-width:760px;">The domain: PCB manufacturing file formats &mdash; binary parsers, validators, industry specs. I chose it because I knew almost nothing about it. Not a prototype. Production code, handling real manufacturing data for actual fabricators.</p>
+      <div class="stat-cards" style="margin-top:20px;">
+        <div class="stat-card purple"><div class="stat-num">197,831</div><div class="stat-label">Lines of Java (11 days)</div></div>
+        <div class="stat-card teal"><div class="stat-num">7,461</div><div class="stat-label">Tests (99.8% pass rate)</div></div>
+        <div class="stat-card purple"><div class="stat-num">445</div><div class="stat-label">Commits, all via PR</div></div>
+        <div class="stat-card teal"><div class="stat-num">25&ndash;66&times;</div><div class="stat-label">vs. a 9&ndash;24 month industry estimate</div></div>
+      </div>
+      <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">8 file-format parsers &middot; 28 validators &middot; 17 auto-fix types &middot; a domain I didn't know</p>
+    </div>
+  </div>
+
+  <!-- main-5: Agenda -->
+  <div class="slide custom" id="main-5" data-note="Quick roadmap, 15 seconds max. This is orientation, not content — don't dwell." style="background-color:var(--bg-dark);background-image:url('./assets/agenda-background-waypoints.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,11,13,0.5) 0%, rgba(10,11,13,0.3) 60%, transparent 78%);"></div>
+    <div style="position:relative;z-index:1;max-width:900px;width:100%;">
+      <div class="slide-tag amber">Where We're Going</div>
+      <h2 class="slide-title">Six fears. Six systems. Then what happened next.</h2>
+      <div class="cards" style="margin-top:24px;">
+        <div class="card"><div class="card-num">01</div><div class="card-q">The Framework &mdash; every fear becomes a system</div></div>
+        <div class="card"><div class="card-num">02</div><div class="card-q">Fear &rarr; System &mdash; one fear at a time, six times</div></div>
+        <div class="card"><div class="card-num">03</div><div class="card-q">The Proof &mdash; the numbers, the zero bugs</div></div>
+        <div class="card"><div class="card-num">04</div><div class="card-q">Down the Rabbit Hole &mdash; what came after</div></div>
+        <div class="card"><div class="card-num">05</div><div class="card-q">Welcome to the Dark Side &mdash; where we are today</div></div>
+        <div class="card"><div class="card-num">06</div><div class="card-q">The Lesson</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main-3: Framework -->
+  <div class="slide custom" id="main-6" data-note="This is the pivot. You've confessed the fears, shown the experiment — now name the pattern out loud: every fear, left alone, is just anxiety. But turn it into a system and it compounds into speed. Say it like you're realizing it live. Then move to Fear #1." style="background-color:var(--bg-dark);background-image:url('./assets/framework-background-thought-bubble.webp');background-size:cover;background-position:center;background-repeat:no-repeat;justify-content:center;align-items:center;">
+    <div class="slide-tag" style="position:absolute;top:36px;left:56px;">The Framework</div>
+    <div style="position:relative;z-index:1;text-align:center;max-width:520px;transform:translateY(-11%);">
+      <div style="font-size:clamp(15px,1.8vw,21px);font-weight:800;color:#e8887e;margin-bottom:12px;">Fear Without Systems = Just Anxiety</div>
+      <div style="font-size:clamp(15px,1.8vw,21px);font-weight:800;color:#a8d89a;margin-bottom:22px;">Fear With Systems = 10&times; Productivity</div>
+      <p style="font-family:var(--t-disp);font-weight:300;font-style:italic;font-size:15px;color:var(--text-dim);line-height:1.6;">Every fear in this talk became a system.<br>Every system made things faster. Watch how.</p>
+    </div>
+  </div>
+
+  <!-- main-4: Fear #1 intro -->
+  <div class="slide custom" id="main-7" data-note="This is the first moment. Pause before the number — 1.1 gigabytes. Let it land." style="background-color:var(--bg-dark);background-image:url('./assets/fear1-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f1"></div>
+    <div style="max-width:640px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag red">Fear #1 &middot; AI Hallucinations</div>
+      <h2 class="slide-title">Day 4, midnight. A 500KB file wanted to be 1.1 gigabytes.</h2>
+      <div class="callouts" style="margin-bottom:10px;">
+        <div class="callout"><span>"The format needed 11 primitive fields — ints, bools, floats — before any strings. The parser read a string first."</span></div>
+        <div class="callout"><span>"One misplaced field type. The whole byte stream silently misaligned."</span></div>
+        <div class="callout red"><strong>The crash:</strong><span>"Requested 1174405120 bytes (1.1GB) for string length exceeds buffer size."</span></div>
+      </div>
+      <div class="code-block" style="max-width:470px;"><span class="c">// Spec: 11 primitives BEFORE strings.</span>
+<span class="k">String</span> name = reader.readString(); <span class="c">// ← reads garbage</span>
+<span class="k">int</span> type = reader.readInt8();
+<span class="c">// 575KB later: misalignment explodes → 1.1GB requested</span></div>
+      <p style="margin-top:10px;font-size:16px;font-weight:700;color:#e8887e;max-width:470px;">I can't trust my ability to spot hallucinations by reading code.</p>
+    </div>
+  </div>
+
+  <!-- main-5: System #1 -->
+  <div class="slide custom" id="main-8" data-note="Key insight: stop reading code for correctness. Prove correctness mathematically." style="background-color:var(--bg-dark);background-image:url('./assets/sys1-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f1" style="background:var(--amber);"></div>
+    <div style="max-width:940px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag amber">System #1 &middot; Round-Trip Testing</div>
+      <h2 class="slide-title">If You Can't Trust What You Read, Prove What It Does</h2>
+      <div class="two-col">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Round-trip test</div>
+          <div class="code-block" style="margin-top:0;font-size:12px;background:rgba(22,24,29,0.72);backdrop-filter:blur(2px);"><span class="k">byte</span>[] original = Files.readAllBytes(testFile);
+<span class="k">PCBDesign</span> design = parser.parse(testFile);
+<span class="k">byte</span>[] written = writer.write(design);
+assertArrayEquals(original, written);
+<span class="c">// If this fails → AI lied somewhere</span></div>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Property-based test</div>
+          <div class="code-block" style="margin-top:0;font-size:12px;background:rgba(22,24,29,0.72);backdrop-filter:blur(2px);"><span class="cmd">@Property</span>
+<span class="k">void</span> boundingBoxContainsAllFeatures(<span class="k">Layer</span> layer) {
+    <span class="k">BoundBox</span> box = layer.getBoundBox();
+    <span class="k">for</span> (<span class="k">Feature</span> f : layer.getFeatures()) {
+        assertTrue(box.contains(f.getBoundBox()));
+    }
+}
+<span class="c">// AI can't hallucinate away invariants</span></div>
+        </div>
+      </div>
+      <div style="margin-top:20px;padding:14px 18px;background:rgba(138,184,122,0.07);border:1px solid rgba(138,184,122,0.25);border-radius:10px;font-size:15px;font-weight:700;color:#a8d89a;">23 tests &rarr; 10,035 tests. Zero false confidence.</div>
+    </div>
+  </div>
+
+  <!-- main-6: Fear #2 intro -->
+  <div class="slide custom" id="main-9" data-note="Key word: lurking. This is what keeps you up at night. Not the bugs you find. The bugs hiding." style="background-color:var(--bg-dark);background-image:url('./assets/fear2-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f2" style="background:var(--red);"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag red">Fear #2 &middot; Production Bugs</div>
+      <h2 class="slide-title">Tests passed. Production broke. Next day.</h2>
+      <div class="callouts" style="margin-bottom:16px;">
+        <div class="callout"><span>"I implemented filtering of embedded documentation from German PCB manufacturer files. Tests pass. Looks great."</span></div>
+        <div class="callout red"><strong>User reports:</strong><span>"The drill holes are 2&times; too large."</span></div>
+        <div class="callout"><span>"Coordinate scaling in DrillListing.java was calibrated against inflated dimensions (400mm). After filtering, actual PCB is 216mm &mdash; but drill holes still scale to 432mm."</span></div>
+      </div>
+      <p style="font-size:16px;font-weight:700;color:#e8887e;">The code looked fine. But there was a <em>lurking</em> interaction between two features I'd never tested together.</p>
+    </div>
+  </div>
+
+  <!-- main-7: System #2 -->
+  <div class="slide custom" id="main-10" data-note="The German manufacturer files are the killer example. You'd never invent that edge case. It has to come from the real world." style="background-color:var(--bg-dark);background-image:url('./assets/sys2-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f2" style="background:var(--amber);"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag amber">System #2 &middot; Battle Testing</div>
+      <h2 class="slide-title">Test Against the Chaos of the Real World</h2>
+      <div class="callouts" style="margin-bottom:12px;">
+        <div class="callout amber"><span>Collected 191 real PCB files from the wild &mdash; KiCad, Altium, Eagle, German manufacturers, ancient legacy formats</span></div>
+        <div class="callout amber"><span>Every change runs against ALL 191. If ANYTHING breaks, build fails.</span></div>
+        <div class="callout amber"><span>Not synthetic examples. Real-world chaos you'd never invent.</span></div>
+      </div>
+      <div class="terminal-window">
+        <div class="terminal-titlebar"><div class="term-dot red"></div><div class="term-dot yellow"></div><div class="term-dot green"></div><span>terminal</span></div>
+        <div class="terminal-body">
+          <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">mvn test</span></p>
+          <p class="term-line term-out">Running com.exoreaction.pcb.BattleTestSuite</p>
+          <p class="term-line"><span class="term-ok">Tests run: 10,035, Failures: 0, Errors: 0, Skipped: 30</span></p>
+          <p class="term-line"><span class="term-ok">[INFO] BUILD SUCCESS</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main-8: Fear #3 intro -->
+  <div class="slide custom" id="main-11" data-note="Read the git log out loud. The audience will laugh. Then go quiet. They've all been there." style="background-color:var(--bg-dark);background-image:url('./assets/fear3-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f3" style="background:var(--red);"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag red">Fear #3 &middot; Shipping Bad Code</div>
+      <h2 class="slide-title">main was broken for 23 minutes.</h2>
+      <div class="code-block" style="margin-bottom:16px;"><span class="term-prompt">$ git log --oneline</span>
+<span class="term-ok">7c8d9e4</span> Fix bounding box (for real this time)
+<span class="term-warn">2e5f6a3</span> Revert "Actually fix bounding box"
+<span class="term-err">8b9c4d2</span> Actually fix bounding box calculation
+<span class="term-err">3a7f2e1</span> Fix bounding box calculation</div>
+      <div class="callouts">
+        <div class="callout"><span>Working directly on main, accepting AI suggestions, committing fast.</span></div>
+        <div class="callout red"><span>The 'fix' introduced a bug that broke 47 tests. For 23 minutes, main was broken.</span></div>
+      </div>
+      <p style="margin-top:18px;font-size:16px;font-weight:700;color:#e8887e;">Direct commits to main with AI-generated code is playing Russian roulette.</p>
+    </div>
+  </div>
+
+  <!-- main-9: System #3 -->
+  <div class="slide custom" id="main-12" data-note="The hook is beautiful. Four lines. Never break main again." style="background-color:var(--bg-dark);background-image:url('./assets/sys3-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f3"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag amber">System #3 &middot; CI as Final Arbiter</div>
+      <h2 class="slide-title">CI is the Truth. Not My Code Review.</h2>
+      <div class="code-block" style="margin-bottom:20px;max-width:560px;background:rgba(22,24,29,0.7);backdrop-filter:blur(2px);"><span class="c">#!/bin/bash</span>
+<span class="k">if</span> [ <span class="s">"$(git rev-parse --abbrev-ref HEAD)"</span> = <span class="s">"main"</span> ]; <span class="k">then</span>
+  <span class="cmd">echo</span> <span class="s">"ERROR: Direct commits to main are forbidden"</span>
+  <span class="cmd">echo</span> <span class="s">"Use: git checkout -b feature/your-branch"</span>
+  <span class="cmd">exit</span> <span class="v">1</span>
+<span class="k">fi</span></div>
+      <div class="formula-chain" style="justify-content:flex-start;margin:14px 0 10px;">
+        <div class="formula-node amber">Branch</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node">AI generates</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node">Local tests</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node amber">PR &middot; CI &middot; 10,035 tests</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node green">Merge</div>
+      </div>
+      <p style="font-size:13px;color:var(--text-muted);">CI is the final gate. AI can convince me. It cannot convince CI.</p>
+      <p style="margin-top:10px;font-size:14px;font-weight:700;color:#a8d89a;">695 commits. Zero broken builds on main.</p>
+    </div>
+  </div>
+
+  <!-- main-10: Fear #4 intro -->
+  <div class="slide custom centered" id="main-13" data-note="Let the number breathe. Don't explain it immediately. Then: this is not exaggeration, this is math." style="background-color:var(--bg-dark);background-image:url('./assets/fear4-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.35) 0%, transparent 32%);"></div>
+    <div class="universe-bar f4" style="background:var(--red);"></div>
+    <div class="radial-bg red"></div>
+    <div style="position:relative;z-index:1;text-align:center;max-width:820px;margin-top:8px;">
+      <div class="slide-tag red" style="display:flex;justify-content:center;">Fear #4 &middot; Cost Spiral</div>
+      <h2 class="slide-title">$100,000. For one 2.5-week project.</h2>
+      <div style="font-size:clamp(48px,8vw,96px);font-weight:900;color:#e8887e;line-height:1;margin:20px 0;">$100,000</div>
+      <p style="font-size:18px;color:var(--text-dim);margin-bottom:20px;">Not per year. For this one project.</p>
+      <div class="callout" style="text-align:left;margin-bottom:16px;"><span>Heavy AI usage. Multiple sessions per day. Long context windows. All the testing, verification, and measurement required for Fear-Driven Development.</span></div>
+      <div class="callout red" style="text-align:left;"><span>What if I build my entire workflow around this and the pricing changes?</span></div>
+    </div>
+  </div>
+
+  <!-- main-11: System #4 -->
+  <div class="slide custom" id="main-14" data-note="Only fear with a product answer. But the selection discipline still matters — for speed and clarity of thought." style="background-color:var(--bg-dark);background-image:url('./assets/sys4-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f4" style="background:var(--amber);"></div>
+    <div style="max-width:620px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag amber">System #4 &middot; Sustainable Economics</div>
+      <h2 class="slide-title">Make the Economics Non-Negotiable</h2>
+      <div class="callout amber" style="margin-bottom:10px;"><strong>Claude MAX</strong><span>Unlimited usage makes FDD economically possible. Without it, testing everything, verifying everything = $100k+ per project.</span></div>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Why optimize even with unlimited? Latency + discipline + future-proofing.</p>
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Model selection</div>
+      <table class="slide-table">
+        <thead><tr><th>Complexity</th><th>Model</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td>Simple queries</td><td style="color:#8ad0e8;">Haiku</td><td>File ops, searches</td></tr>
+          <tr><td>Standard coding</td><td style="color:#f0c878;">Sonnet</td><td>Most work (60&ndash;70%)</td></tr>
+          <tr><td>Architecture</td><td style="color:#e8887e;">Opus</td><td>Complex reasoning</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- main-12: Fear #5 intro -->
+  <div class="slide custom" id="main-15" data-note="The existential fear. Pause on 'Am I still a developer?' Most in the room have felt this." style="background-color:var(--bg-dark);background-image:url('./assets/fear5-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f5" style="background:var(--red);"></div>
+    <div style="max-width:640px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag red">Fear #5 &middot; Losing Control</div>
+      <h2 class="slide-title">47 changed files. Understood maybe 60%.</h2>
+      <div class="callouts" style="margin-bottom:12px;">
+        <div class="callout"><span>"I gave Claude a high-level description. It came back with a plan."</span></div>
+        <div class="callout"><span>"I said 'looks good, do it.' One hour later: 47 changed files."</span></div>
+        <div class="callout"><span>"I merged it. Tests passed."</span></div>
+        <div class="callout red"><span>"But I had this nagging feeling: I just shipped code I don't understand."</span></div>
+      </div>
+      <blockquote class="slide-quote" style="font-size:19px;padding:11px 20px;">Am I still a developer if the AI is doing the thinking?</blockquote>
+    </div>
+  </div>
+
+  <!-- main-13: System #5 -->
+  <div class="slide custom" id="main-16" data-note="The word is directed, not delegated. I don't verify AI output by asking the same AI to check itself — I send it through tools that don't share its blind spots. Walk through the three lenses, then land the punchline: if they agree, I trust it." style="background-color:var(--bg-dark);background-image:url('./assets/sys5-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f5" style="background:var(--amber);"></div>
+    <div style="max-width:620px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag amber">System #5 &middot; Directed Synthesis</div>
+      <h2 class="slide-title">Don't Grade Your Own Homework</h2>
+      <p style="margin-top:6px;font-size:14px;color:var(--text-dim);">When something needs spot-checking &mdash; a deep-dive report, 10+ pages &mdash; I don't just re-read it. I ask ExoCortex to write it, then pick whichever of these actually answers the question I have &mdash; rarely all three.</p>
+      <div class="cards" style="margin-top:16px;">
+        <div class="card"><div class="card-q">Is the science real?</div><div style="margin-top:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">ChatGPT deep-research &mdash; peer-review it against actual published research.</div></div>
+        <div class="card"><div class="card-q">Does it match my mental model?</div><div style="margin-top:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">NotebookLM &rarr; infographic &mdash; a fast visual gut-check against what I expected.</div></div>
+        <div class="card"><div class="card-q">Do I actually understand it?</div><div style="margin-top:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">NotebookLM &rarr; slide deck, 10&ndash;20 slides &mdash; forces me to learn it, not just skim it.</div></div>
+      </div>
+      <div style="margin-top:16px;padding:12px 18px;background:rgba(232,180,92,0.08);border:1px solid rgba(232,180,92,0.2);border-radius:8px;font-size:13px;color:var(--text-muted);">
+        Different product areas need different lenses. The point isn't running all three &mdash; it's never checking the AI's work with the same kind of AI that produced it.
+      </div>
+    </div>
+  </div>
+
+  <!-- main-14: Fear #6 intro -->
+  <div class="slide custom" id="main-17" data-note="The most subtle fear. CI green ≠ correct. CI green = matches what you tested." style="background-color:var(--bg-dark);background-image:url('./assets/fear6-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f6" style="background:var(--red);"></div>
+    <div style="max-width:640px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag red">Fear #6 &middot; Silent Failures</div>
+      <h2 class="slide-title">Green tests. Wrong answer.</h2>
+      <div class="callouts" style="margin-bottom:16px;">
+        <div class="callout"><span>A user reports: "The PCB bounding box is wrong. The board should be 216mm wide, but your library says 425mm."</span></div>
+        <div class="callout"><span>"Individual drill holes: correct position. Assembly components: correct position."</span></div>
+        <div class="callout"><span>"Overall bounding box: including a documentation layer with inflated coordinates."</span></div>
+        <div class="callout red"><span>Tests were green. The code worked. But the result was wrong because I was measuring the wrong thing.</span></div>
+      </div>
+      <p style="font-size:16px;font-weight:700;color:#e8887e;">Green tests don't mean the system is correct. They mean it matches what you tested.</p>
+    </div>
+  </div>
+
+  <!-- main-15: System #6 -->
+  <div class="slide custom" id="main-18" data-note="Not 'did it crash?' but 'are the values reasonable?' That's the shift." style="background-color:var(--bg-dark);background-image:url('./assets/sys6-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar f6" style="background:var(--amber);"></div>
+    <div style="max-width:600px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag amber">System #6 &middot; Extreme Measurement</div>
+      <h2 class="slide-title">Don't Just Test. Measure.</h2>
+      <div class="code-block" style="font-size:12px;background:rgba(22,24,29,0.7);backdrop-filter:blur(2px);">System.out.printf(<span class="s">"PCB boundBox: %.1fmm × %.1fmm%n"</span>,
+    width / <span class="v">1_000_000.0</span>, height / <span class="v">1_000_000.0</span>);
+System.out.printf(<span class="s">"Expected: ~216mm × 206mm%n"</span>);
+System.out.printf(<span class="s">"Alignment: %.1f%%%n"</span>, misalignment * <span class="v">100</span>);
+
+assertTrue(misalignment &lt; <span class="v">0.25</span>,
+    <span class="s">"BoundBox should be within 25% of copper dimensions"</span>);
+
+<span class="k">if</span> (Math.abs(x) &gt; <span class="v">3_000_000_000L</span>) { <span class="c">// 3 meters</span>
+    logger.warn(<span class="s">"Extreme coordinate: {}mm. Overflow?"</span>, x/<span class="v">1_000_000.0</span>);
+}</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;">
+        <div class="callout green"><strong>Test count</strong><span>Tracked &uarr; over time</span></div>
+        <div class="callout green"><strong>Pass rate</strong><span>Must stay &gt;99%</span></div>
+        <div class="callout green"><strong>Battle coverage</strong><span>191 real files, 100%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- main-16: Transformation Table -->
+  <div class="slide custom" id="main-19" data-note="Read row by row. Point out: every system is mechanical. None require trust." style="background-color:var(--bg-dark);background-image:url('./assets/table-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div style="max-width:940px;width:100%;position:relative;z-index:1;">
+      <div class="slide-tag">The System</div>
+      <h2 class="slide-title">Fear &rarr; System &rarr; Result</h2>
+      <table class="slide-table">
+        <thead>
+          <tr><th>Fear</th><th>System</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td style="color:#e8887e;">AI hallucinations</td><td>Round-trip + property tests</td><td style="color:#a8d89a;">10,035 tests, zero false confidence</td></tr>
+          <tr><td style="color:#e8be94;">Production bugs</td><td>Battle testing (191 files)</td><td style="color:#a8d89a;">Zero AI bugs in prod</td></tr>
+          <tr><td style="color:#f0c878;">Shipping bad code</td><td>PR-only + CI gates</td><td style="color:#a8d89a;">main always green, 695 commits</td></tr>
+          <tr><td style="color:#8ad0e8;">Cost spiral</td><td>Claude MAX subscription</td><td style="color:#a8d89a;">$100k API costs &rarr; unlimited</td></tr>
+          <tr><td style="color:#c4aee8;">Losing control</td><td>Directed synthesis</td><td style="color:#a8d89a;">Better codebase understanding</td></tr>
+          <tr><td style="color:#e8a8c8;">Silent failures</td><td>Extreme measurement</td><td style="color:#a8d89a;">Fast bug detection</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:20px;font-size:16px;font-weight:700;color:var(--text);">Formula: <span class="hl-red">Fear</span> &rarr; <span class="hl-amber">Discipline</span> &rarr; <span class="hl-green">Results</span></p>
+    </div>
+  </div>
+
+  <!-- main-17: Results -->
+  <div class="slide custom" id="main-20" data-note="Let the numbers speak. Don't explain them. The audience can read." style="background-color:var(--bg-dark);background-image:url('./assets/proof-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div style="max-width:940px;width:100%;position:relative;z-index:1;">
+      <div class="slide-tag green">The Proof</div>
+      <h2 class="slide-title">2.5 Weeks. Real Numbers.</h2>
+      <div class="stat-cards">
+        <div class="stat-card green"><div class="stat-num">10,035</div><div class="stat-label">Tests (99.8% pass rate)</div></div>
+        <div class="stat-card green"><div class="stat-num">695</div><div class="stat-label">Commits (278/week, ~40/day)</div></div>
+        <div class="stat-card green"><div class="stat-num">0</div><div class="stat-label">AI-induced production bugs</div></div>
+        <div class="stat-card green"><div class="stat-num">$0</div><div class="stat-label">API costs (Claude MAX)</div></div>
+      </div>
+      <div style="margin-top:20px;padding:14px 18px;max-width:600px;background:linear-gradient(rgba(138,184,122,0.08),rgba(138,184,122,0.08)), rgba(10,11,13,0.68);border:1px solid rgba(138,184,122,0.15);border-radius:10px;font-size:13px;color:var(--text-muted);">
+        191 real-world PCB files in battle suite<br>main branch: always green &nbsp;&middot;&nbsp; lib-pcb: 2.5 weeks, Jan&ndash;Feb 2026
+      </div>
+    </div>
+  </div>
+
+  <!-- main-19: Down the Rabbit Hole — The Wall -->
+  <div class="slide custom" id="main-21" data-note="Pivot from 'we shipped lib-pcb' to 'and then it got complicated.' Slower pace — this is a different kind of beat, not another fear." style="background-color:var(--bg-dark);background-image:url('./assets/wall-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.92) 0%, rgba(10,11,13,0.7) 55%, rgba(10,11,13,0.15) 78%, transparent 92%);"></div>
+    <div class="universe-bar" style="background:var(--teal);"></div>
+    <div style="max-width:620px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag teal">Down the Rabbit Hole</div>
+      <h2 class="slide-title">I'd solved the generation problem.<br>I'd created a comprehension problem.</h2>
+      <div class="callouts" style="margin-top:16px;">
+        <div class="callout teal"><span>8,934 files across the workspace by the time lib-pcb shipped &mdash; not just code, but skills, docs, tests, plans</span></div>
+        <div class="callout teal"><span>Standard RAG (vector search) was categorically inadequate &mdash; it answers "find something like X," not "what breaks if I change this?"</span></div>
+        <div class="callout teal"><span>Graph questions need graph answers, not semantic similarity</span></div>
+      </div>
+      <p style="margin-top:20px;font-size:16px;font-weight:700;color:var(--text);">So I built the tool I needed: Synthesis &mdash; an open-source knowledge graph over the codebase.</p>
+    </div>
+  </div>
+
+  <!-- main-20: Down the Rabbit Hole — The Pattern -->
+  <div class="slide custom" id="main-22" data-note="The zoom-out. lib-pcb -> SDD -> Synthesis -> KCP isn't a line, it's a loop. Land 'I don't know where the bottom is' honestly, not for effect." style="background-color:var(--bg-dark);background-image:url('./assets/pattern-background.webp');background-size:cover;background-position:75% center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar" style="background:var(--purple);"></div>
+    <div style="max-width:900px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag purple">The Shape of It</div>
+      <h2 class="slide-title">Explore lean &rarr; hit a wall &rarr; build deeper &rarr; explore again.</h2>
+      <div class="formula-chain" style="margin:24px 0;">
+        <div class="formula-node red">lib-pcb</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node amber">SDD</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node teal">Synthesis</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node purple">KCP</div>
+      </div>
+      <p class="statement" style="margin:0 auto;">KCP &mdash; Knowledge Context Protocol &mdash; is where I am now. Not a product. A proposal: what an AI agent should <em>know</em> before it acts, not just what it can <em>do</em>.</p>
+      <p style="margin-top:16px;font-size:15px;color:var(--text-muted);">I don't know where the bottom of this rabbit hole is. I'm not sure there is one.</p>
+    </div>
+  </div>
+
+  <!-- main-22b: KCP Evolution (June-August) -->
+  <div class="slide custom" id="main-23" data-note="This is the part that happened after the last slide's 'I don't know where the bottom is.' The proposal got tested for real, from two different directions at once. Land on: I still don't know which enforcement point wins — that's honest, not a gap." style="background-color:var(--bg-dark);background-image:url('./assets/kcpevo-background.webp');background-size:cover;background-position:80% center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div class="universe-bar" style="background:var(--purple);"></div>
+    <div style="max-width:960px;width:100%;margin-top:8px;position:relative;z-index:1;">
+      <div class="slide-tag purple">June &ndash; August 2026</div>
+      <h2 class="slide-title">A spec isn't a system. So I built the system.</h2>
+      <p style="margin-top:6px;font-size:14px;color:var(--text-dim);max-width:780px;">KCP stopped being just a proposal. Four things made it real, each testing a different piece of the idea.</p>
+      <div class="cards" style="margin-top:20px;">
+        <div class="card"><div class="card-q">kcp-agent</div><div style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5;">The reference deterministic agent. The model proposes a plan, the planner disposes &mdash; fail-closed, every step audited before it runs.</div></div>
+        <div class="card"><div class="card-q">kcp-harness</div><div style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5;">Governance from outside: an MCP proxy that checks every tool call against policy before it reaches the downstream server.</div></div>
+        <div class="card"><div class="card-q">pi-kcp</div><div style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5;">Governance from inside: the same enforcement, but living inside the agent's own turn instead of in front of it.</div></div>
+        <div class="card"><div class="card-q">Sunstone Atlas</div><div style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5;">The first real product built on top of it &mdash; a governed knowledge, skill, and playbook substrate for an actual organization.</div></div>
+      </div>
+      <p style="margin-top:16px;font-size:15px;color:var(--text-muted);">Two different enforcement points, tested in parallel, on purpose. I still don't know which one wins.</p>
+    </div>
+  </div>
+
+  <!-- main-21: Welcome to the Dark Side -->
+  <div class="slide custom" id="main-24" data-note="Today's numbers, not the lib-pcb snapshot from earlier — say so explicitly. The turns-not-sessions line is the honest one, don't cut it for a cleaner story." style="background-color:var(--bg-dark);background-image:url('./assets/darkside-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
+    <div style="max-width:960px;width:100%;position:relative;z-index:1;">
+      <div class="slide-tag pink">Welcome to the Dark Side</div>
+      <h2 class="slide-title">This didn't stop. Here's today.</h2>
+      <div class="stat-cards">
+        <div class="stat-card purple"><div class="stat-num">1,337</div><div class="stat-label">Skills in the library (548 in May)</div></div>
+        <div class="stat-card teal"><div class="stat-num">21</div><div class="stat-label">Knowledge-graph workspaces live (10 in May)</div></div>
+        <div class="stat-card teal"><div class="stat-num">90,050</div><div class="stat-label">Files indexed across them (66,350 in May)</div></div>
+        <div class="stat-card purple"><div class="stat-num">252</div><div class="stat-label">KCP command manifests (152 in May)</div></div>
+      </div>
+      <div style="margin-top:20px;padding:14px 18px;background:linear-gradient(rgba(216,138,174,0.08),rgba(216,138,174,0.08)), rgba(10,11,13,0.62);border:1px solid rgba(216,138,174,0.15);border-radius:10px;font-size:13px;color:var(--text-muted);">
+        The hard part now isn't writing more code &mdash; it's staying oriented inside what you've already built.
+      </div>
+      <p style="margin-top:20px;padding:12px 18px;background:rgba(10,11,13,0.55);border-radius:10px;font-size:15px;color:var(--text-dim);line-height:1.6;">A harder confession: even <em>measuring</em> this got harder. Session counts fell 25&times; between February and July &mdash; not because the work stopped, but because sessions got longer: 61 turns per session in February, 1,737 by June. The naive metric would have told you the opposite of what actually happened.</p>
+    </div>
+  </div>
+
+  <!-- main-22: The House Remembers -->
+  <div class="slide img-slide" id="main-25" data-note="The house remembers being haunted. Pause. Let it land. Your test suite is the house. 10,035 tests. They remember every hallucination the AI tried to slip past you.">
+    <img src="./assets/gitm-house-remembers.webp" alt="The House Remembers">
+  </div>
+
+  <!-- main-19: The Lesson -->
+  <div class="slide custom centered" id="main-26" data-note="Deliver this slowly. The confident vs scared contrast lands hard with 200 developers." style="background-color:var(--bg-dark);background-image:url('./assets/lesson-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.35) 0%, transparent 32%);"></div>
+    <div class="radial-bg green"></div>
+    <div style="position:relative;z-index:1;text-align:center;max-width:960px;">
+      <div class="slide-tag green" style="display:flex;justify-content:center;">The Lesson</div>
+      <h2 class="slide-title" style="font-size:clamp(20px,3vw,40px);margin-bottom:28px;">The developers who are scared of AI<br>get the most value from it.</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left;margin-bottom:24px;">
+        <div class="callout red"><strong>The confident ones</strong><span>Trust the AI. Ship without tests. Wake up to production bugs.</span></div>
+        <div class="callout green"><strong>The scared ones</strong><span>Test everything. Measure everything. Automate their paranoia.</span></div>
+        <div class="callout"><strong>The paranoid ones</strong><span>Trust nothing. Read every line by hand. No automation, no sleep, no shipping.</span></div>
+      </div>
+      <div style="font-size:clamp(18px,2.5vw,30px);font-weight:700;color:var(--text);">Only the ones who automate their fear sleep well at night.</div>
+    </div>
+  </div>
+
+  <!-- main-20: Closing -->
+  <div class="slide custom centered" id="main-27" data-note="End on the formula. Not on the fear. They leave with a system, not just a story." style="background-color:var(--bg-dark);background-image:url('./assets/closing-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg, transparent 0%, rgba(10,11,13,0.75) 28%, rgba(10,11,13,0.75) 72%, transparent 100%);"></div>
+    <div class="radial-bg red"></div>
+    <div style="position:relative;z-index:1;text-align:center;max-width:820px;">
+      <div class="slide-tag" style="display:flex;justify-content:center;">Fear-Driven Development</div>
+      <h2 class="slide-title">Turn Your Anxiety Into Automation</h2>
+      <div class="formula-chain">
+        <div class="formula-node red">Fear</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node">Identify Risk</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node amber">Design System</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node">Automate Paranoia</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node">Trust Process</div>
+        <div class="formula-arrow">&rarr;</div>
+        <div class="formula-node green">10&times; Productivity</div>
+      </div>
+      <div class="callout" style="text-align:left;margin:16px 0;">
+        <strong>Think of your agent as a colleague, not a tool.</strong>
+        <span>When you see it struggle &mdash; a wrong turn, a missing detail, a shortcut taken under pressure &mdash; you don't just catch the mistake. You give it what it needs: a skill, a tool, the context it was missing. Fewer hallucinations aren't caught. They're prevented.</span>
+      </div>
+      <p style="font-size:18px;font-weight:700;color:var(--text);margin-top:20px;">That's Fear-Driven Development.</p>
+      <p class="slide-note" style="margin-top:16px;">Questions? &nbsp;&middot;&nbsp; Press <kbd>1</kbd>&ndash;<kbd>6</kbd> for deep-dives &nbsp;&middot;&nbsp; <kbd>N</kbd> for notes</p>
+    </div>
+  </div>
+
+</div><!-- /track-main -->
+
+<!-- ══════════════════════════════════════════════════════════
+     F1 TRACK (5 slides — AI Hallucinations deep-dive)
+═══════════════════════════════════════════════════════════ -->
+<div class="slide-track" id="track-f1">
+
+  <!-- f1-0: The Moment -->
+  <div class="slide custom" id="f1-0" data-note="Start here when they press 1. Tell the bounding box story in full. This is the bug that started everything.">
+    <div class="universe-bar f1"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag red">Fear 1 &middot; The Moment</div>
+      <h2 class="slide-title">The bounding box bug.</h2>
+      <div class="callouts" style="margin-bottom:10px;">
+        <div class="callout"><span>Week 1 of lib-pcb. I ask Claude to implement bounding box calculation for PCB layers &mdash; aggregate the spatial extent of all features in a layer.</span></div>
+        <div class="callout"><span>Claude produces clean, readable Java. Union loop. Sensible initialization. Looks right. I review it, nod, merge it.</span></div>
+        <div class="callout"><span>Tests pass. I write a few unit tests. Those pass too. Ship it.</span></div>
+        <div class="callout red"><strong>Three days later:</strong><span>"The layer thumbnail is completely black."</span></div>
+      </div>
+      <div class="code-block" style="font-size:12px;"><span class="c">// Claude's code — looks correct, isn't</span>
+<span class="k">BoundBox</span> result = features.get(<span class="v">0</span>).getBoundBox(); <span class="c">// &larr; problem here</span>
+<span class="k">for</span> (<span class="k">Feature</span> f : features) {
+    result = result.union(f.getBoundBox());
+}
+<span class="c">// features.get(0) often has empty bbox (0,0,0,0) — common for metadata features</span>
+<span class="c">// union(0,0,0,0, real) expands to include origin → wrong dimensions → thumbnail all black</span></div>
+      <p style="margin-top:10px;font-size:15px;color:var(--text-muted);">The fix was trivial. The lesson was not: <span style="color:#e8887e;font-weight:700;">I cannot trust code review for AI-generated code.</span></p>
+    </div>
+  </div>
+
+  <!-- f1-1: The Fear -->
+  <div class="slide custom" id="f1-1" data-note="The visual review problem. Code that looks right but isn't. And you have no way to tell by reading.">
+    <div class="universe-bar f1"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag red">Fear 1 &middot; The Fear</div>
+      <h2 class="slide-title">Visual code review is insufficient.</h2>
+      <blockquote class="slide-quote" style="margin-bottom:12px;padding:11px 20px;">"If I couldn't catch that bug reading the code, what else am I missing?"</blockquote>
+      <div class="callouts">
+        <div class="callout red"><strong>The problem with visual review</strong><span>AI code is stylistically convincing. Clean names. Sensible structure. It looks like it should work. Your brain pattern-matches to "correct" before you've actually verified it.</span></div>
+        <div class="callout red"><strong>Off-by-one errors</strong><span>AI consistently confuses inclusive vs exclusive bounds. Hard to spot reading code. A property-based test catches it instantly.</span></div>
+        <div class="callout red"><strong>Edge case blindness</strong><span>AI generates for the happy path. Features with empty bboxes, features with negative coordinates, features at the origin — AI doesn't think to guard against these.</span></div>
+        <div class="callout red"><strong>Semantic correctness</strong><span>The code can be syntactically perfect and logically coherent while being semantically wrong for your domain.</span></div>
+      </div>
+      <p style="margin-top:16px;font-size:15px;font-weight:700;color:var(--text);">Solution: stop reading for correctness. Prove correctness mechanically.</p>
+    </div>
+  </div>
+
+  <!-- f1-2: Round-Trip Testing -->
+  <div class="slide custom" id="f1-2" data-note="The round-trip test is the single most powerful thing in the whole talk. Parse → write → compare bytes. If bytes differ, something was lost or transformed.">
+    <div class="universe-bar f1"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag red">Fear 1 &middot; Round-Trip Testing</div>
+      <h2 class="slide-title">Parse &rarr; Write &rarr; Compare bytes.</h2>
+      <div class="code-block" style="margin-bottom:10px;"><span class="cmd">@Test</span>
+<span class="k">void</span> roundTripPreservesFile(<span class="k">Path</span> testFile) <span class="k">throws</span> Exception {
+    <span class="k">byte</span>[] original = Files.readAllBytes(testFile);
+    <span class="k">byte</span>[] written  = writer.write(parser.parse(testFile));
+    assertArrayEquals(original, written, <span class="s">"Round-trip must preserve every byte"</span>);
+    <span class="c">// If ANY transformation is lossy → fails immediately. AI cannot hallucinate away byte-level identity.</span>
+}</div>
+      <div class="callouts">
+        <div class="callout green"><strong>Why bytes?</strong><span>Not structural equality — byte equality. Every comment, every whitespace, every coordinate format. Nothing is lost.</span></div>
+        <div class="callout green"><strong>Why it works</strong><span>Even clever hallucinations can't survive a round-trip test. If the AI misunderstood the format, the bytes will differ. Period.</span></div>
+        <div class="callout green"><strong>Scale it</strong><span>Run against all 191 real files. Every format, every quirk, every edge case the real world throws at you.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f1-3: Property-Based Testing -->
+  <div class="slide custom" id="f1-3" data-note="Property-based testing is the second pillar. Mathematical invariants that must hold for ANY valid input. The AI can't hallucinate a universe where a bounding box doesn't contain its features.">
+    <div class="universe-bar f1"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag red">Fear 1 &middot; Property-Based Testing</div>
+      <h2 class="slide-title">Mathematical invariants the AI can't violate.</h2>
+      <div class="code-block" style="margin-bottom:12px;"><span class="c">// jqwik property-based test — runs with hundreds of random inputs</span>
+<span class="cmd">@Property</span>
+<span class="k">void</span> boundingBoxContainsAllFeatures(<span class="cmd">@ForAll</span> <span class="k">Layer</span> layer) {
+    <span class="k">BoundBox</span> box = layer.getBoundBox();
+    <span class="k">for</span> (<span class="k">Feature</span> f : layer.getFeatures()) {
+        assertTrue(box.contains(f.getBoundBox()),
+            <span class="s">"Layer bbox must contain all feature bboxes"</span>);
+    }
+}
+<span class="c">// + a second invariant: adding a feature can only expand the bbox, never shrink it</span></div>
+      <div class="callouts">
+        <div class="callout red"><strong>What this catches</strong><span>Off-by-one errors, wrong union logic, initialization bugs (the original bounding box bug!), coordinate overflow, sign errors.</span></div>
+        <div class="callout red"><strong>Why it's powerful</strong><span>You don't define inputs. The framework generates hundreds of random valid inputs. Your paranoia is automated at scale.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f1-4: Results -->
+  <div class="slide custom" id="f1-4" data-note="The progression matters. 23 tests gave false confidence. 10,035 tests give real confidence. And zero production bugs from AI hallucinations.">
+    <div class="universe-bar f1"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag red">Fear 1 &middot; The Results</div>
+      <h2 class="slide-title">From 23 tests to 10,035.</h2>
+      <div class="stat-cards" style="margin-bottom:14px;">
+        <div class="stat-card red"><div class="stat-num">23</div><div class="stat-label">Tests when I started (false confidence)</div></div>
+        <div class="stat-card teal"><div class="stat-num">2,847</div><div class="stat-label">Tests after round-trip suite added</div></div>
+        <div class="stat-card green"><div class="stat-num">10,035</div><div class="stat-label">Final count (99.8% pass)</div></div>
+      </div>
+      <div class="callouts">
+        <div class="callout green"><strong>Zero AI-induced production bugs</strong><span>After implementing round-trip and property tests, not a single hallucination made it past CI.</span></div>
+        <div class="callout green"><strong>Hallucinations caught in minutes</strong><span>Average time from AI write to hallucination detection: the time to run tests locally. Not days. Not weeks.</span></div>
+        <div class="callout green"><strong>Formula</strong><span>Read code for comprehension. Test code for correctness. These are different activities. Separate them.</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /track-f1 -->
+
+<!-- ══════════════════════════════════════════════════════════
+     F2 TRACK (5 slides — Production Bugs deep-dive)
+═══════════════════════════════════════════════════════════ -->
+<div class="slide-track" id="track-f2">
+
+  <!-- f2-0: The Moment -->
+  <div class="slide custom" id="f2-0" data-note="Tell the German PCB story. It's the most specific and surprising. The audience will not expect the connection between documentation filtering and drill hole size.">
+    <div class="universe-bar f2"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag orange">Fear 2 &middot; The Moment</div>
+      <h2 class="slide-title">German PCB manufacturer. Drill holes 2&times; too large.</h2>
+      <div class="callouts" style="margin-bottom:16px;">
+        <div class="callout"><span>lib-pcb needed to handle files from a specific German PCB manufacturer that embeds extensive documentation inside the Gerber file. Comments, revision history, layer metadata &mdash; inflating the coordinate space to 400mm &times; 400mm.</span></div>
+        <div class="callout"><span>I implement a filter that strips the documentation layers before processing. Tests pass. CI is green. The PCB now measures correctly at 216mm &times; 206mm.</span></div>
+        <div class="callout orange"><span>But DrillListing.java had a coordinate scaling factor calibrated against the pre-filter 400mm coordinate space. After filtering: scale factor is now 2&times; too large.</span></div>
+        <div class="callout red"><strong>Next day:</strong><span>"The drill holes are 2&times; too large. Every board we ordered is scrap."</span></div>
+      </div>
+      <p style="font-size:15px;color:var(--text-muted);">This was not an AI hallucination. This was a correct change that broke a correct assumption in a different module. <span style="color:#e8be94;font-weight:700;">The bug was lurking in the interaction.</span></p>
+    </div>
+  </div>
+
+  <!-- f2-1: The Fear -->
+  <div class="slide custom" id="f2-1" data-note="The opacity of AI reasoning. When Claude changes module A, it doesn't fully model what module B assumes about module A. That's your job. And it's hard.">
+    <div class="universe-bar f2"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag orange">Fear 2 &middot; The Fear</div>
+      <h2 class="slide-title">Bugs that hide for weeks.</h2>
+      <blockquote class="slide-quote orange">"The code was correct. The tests were green. And yet the result was wrong."</blockquote>
+      <div class="callouts" style="margin-top:16px;">
+        <div class="callout orange"><strong>Lurking interactions</strong><span>Module A is correct. Module B is correct. Their interaction is wrong. Neither test suite covers the combined behavior.</span></div>
+        <div class="callout orange"><strong>AI reasoning opacity</strong><span>Claude doesn't have a global model of your codebase. When it changes DrillListing.java, it doesn't know that BoundBox.java relied on the 400mm coordinate space assumption.</span></div>
+        <div class="callout orange"><strong>Time delay</strong><span>The bug was introduced week 1. Discovered week 3. Seven production boards printed with wrong drill holes before anyone noticed.</span></div>
+        <div class="callout orange"><strong>Synthetic test blindness</strong><span>My synthetic test files were clean, normalized, well-structured. The German manufacturer file was none of those things.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f2-2: Battle Testing Setup -->
+  <div class="slide custom" id="f2-2" data-note="The collection strategy. You can't invent real-world chaos. You have to collect it.">
+    <div class="universe-bar f2"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag orange">Fear 2 &middot; Battle Testing Setup</div>
+      <h2 class="slide-title">Collect the chaos of the real world.</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num orange">1</div><div class="step-content"><strong>Start with your own project files</strong><p>Whatever PCB designs you have in-house. These cover your primary use cases.</p></div></div>
+        <div class="step"><div class="step-num orange">2</div><div class="step-content"><strong>Mine open-source hardware projects</strong><p>GitHub is full of KiCad, Altium, Eagle projects with real Gerber exports. Download and include.</p></div></div>
+        <div class="step"><div class="step-num orange">3</div><div class="step-content"><strong>Seek out the oddballs</strong><p>Legacy formats. Non-standard tools. Manufacturer-specific variants. These are the bugs waiting to happen.</p></div></div>
+        <div class="step"><div class="step-num orange">4</div><div class="step-content"><strong>Run the full suite on every PR</strong><p>Not a subset. Not a sample. All 191. If you're skipping files "because they're slow", the slow files are the ones that matter.</p></div></div>
+        <div class="step"><div class="step-num orange">5</div><div class="step-content"><strong>Add every reported bug as a fixture</strong><p>Each production bug becomes a permanent test. It can never come back silently.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f2-3: Edge Cases Covered -->
+  <div class="slide custom" id="f2-3" data-note="Walk through the table. Each row is a category of bugs you'd never think to invent.">
+    <div class="universe-bar f2"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag orange">Fear 2 &middot; Edge Cases in the Wild</div>
+      <h2 class="slide-title">The files you'd never invent.</h2>
+      <table class="slide-table">
+        <thead><tr><th>File type</th><th>What it catches</th></tr></thead>
+        <tbody>
+          <tr><td style="color:#e8be94;">German manufacturer exports</td><td>Embedded documentation, inflated coordinate spaces, comment-only layers</td></tr>
+          <tr><td style="color:#e8be94;">KiCad legacy format (.brd)</td><td>Coordinate system origin differences, unit variations, non-standard layer names</td></tr>
+          <tr><td style="color:#e8be94;">Altium Designer exports</td><td>Multi-layer pad stacks, blind/buried vias, non-integer drill sizes</td></tr>
+          <tr><td style="color:#e8be94;">Eagle 6.x exports</td><td>Negative coordinate origins, arc representation differences, metric vs imperial</td></tr>
+          <tr><td style="color:#e8be94;">Hand-authored Gerber</td><td>Minimal headers, missing optional fields, non-standard but valid syntax</td></tr>
+          <tr><td style="color:#e8be94;">Flex PCB designs</td><td>Non-rectangular board outlines, unusual layer counts, overlay geometries</td></tr>
+        </tbody>
+      </table>
+      <div style="margin-top:16px;padding:12px 18px;background:rgba(217,151,92,0.06);border:1px solid rgba(217,151,92,0.2);border-radius:8px;font-size:13px;color:var(--text-muted);">
+        191 files. 10,035 tests. If something regresses on any of these, CI fails before it reaches production.
+      </div>
+    </div>
+  </div>
+
+  <!-- f2-4: Results -->
+  <div class="slide custom" id="f2-4" data-note="The value proposition: bugs caught in CI, not in production. The cost difference is enormous.">
+    <div class="universe-bar f2"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag orange">Fear 2 &middot; The Results</div>
+      <h2 class="slide-title">Bugs caught in CI. Not in production.</h2>
+      <div class="stat-cards" style="margin-bottom:20px;">
+        <div class="stat-card green"><div class="stat-num">0</div><div class="stat-label">Production bugs from AI-generated code</div></div>
+        <div class="stat-card green"><div class="stat-num">191</div><div class="stat-label">Real-world files in battle suite</div></div>
+        <div class="stat-card teal"><div class="stat-num">14</div><div class="stat-label">Regressions caught by CI before merge</div></div>
+      </div>
+      <div class="callouts">
+        <div class="callout green"><strong>The drill hole bug, if caught by CI</strong><span>5 minutes to fix, zero scrap boards. Caught in production: 2 weeks delay + material cost.</span></div>
+        <div class="callout green"><strong>The rule</strong><span>Every production bug that reaches a user becomes a permanent test fixture. The second occurrence is the system's fault, not the developer's.</span></div>
+        <div class="callout green"><strong>Real-world files don't lie</strong><span>You can construct any synthetic test you want. Real-world files contain surprises you'd never think to test for.</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /track-f2 -->
+
+<!-- ══════════════════════════════════════════════════════════
+     F3 TRACK (4 slides — Shipping Bad Code deep-dive)
+═══════════════════════════════════════════════════════════ -->
+<div class="slide-track" id="track-f3">
+
+  <!-- f3-0: The Moment -->
+  <div class="slide custom" id="f3-0" data-note="Read the git log out loud. Slowly. The audience will laugh in recognition, then get quiet. They've all been here.">
+    <div class="universe-bar f3"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag amber">Fear 3 &middot; The Moment</div>
+      <h2 class="slide-title">The 23-minute broken main.</h2>
+      <div class="terminal-window" style="margin-bottom:16px;">
+        <div class="terminal-titlebar"><div class="term-dot red"></div><div class="term-dot yellow"></div><div class="term-dot green"></div><span>git log --oneline</span></div>
+        <div class="terminal-body">
+          <p class="term-line"><span class="term-ok">7c8d9e4</span> Fix bounding box (for real this time)</p>
+          <p class="term-line"><span class="term-warn">2e5f6a3</span> Revert "Actually fix bounding box"</p>
+          <p class="term-line"><span class="term-err">8b9c4d2</span> Actually fix bounding box calculation</p>
+          <p class="term-line"><span class="term-err">3a7f2e1</span> Fix bounding box calculation</p>
+          <p class="term-line term-dim">...</p>
+        </div>
+      </div>
+      <div class="callouts">
+        <div class="callout"><span>Pattern: I'm working fast. Claude suggests a fix. I read it, it looks right, I commit directly to main. Repeat.</span></div>
+        <div class="callout amber"><span>8b9c4d2 introduced a regression that broke 47 tests. I didn't run the full suite before committing &mdash; "it's a small change."</span></div>
+        <div class="callout red"><span>For 23 minutes, main was broken. Anyone who pulled during that window got a broken build.</span></div>
+      </div>
+      <p style="margin-top:16px;font-size:15px;font-weight:700;color:#f0c878;">The AI's confidence is contagious. Its mistakes are invisible until they aren't.</p>
+    </div>
+  </div>
+
+  <!-- f3-1: The Fear -->
+  <div class="slide custom" id="f3-1" data-note="What if this was a team project? What if someone was deploying from main? The solo developer risk is manageable. The team risk is not.">
+    <div class="universe-bar f3"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag amber">Fear 3 &middot; The Fear</div>
+      <h2 class="slide-title">What could have happened during those 23 minutes.</h2>
+      <div class="callouts">
+        <div class="callout red"><strong>A teammate pulls main</strong><span>Their local build is now broken. They spend 20 minutes debugging before realizing it's not their fault. Morale hit. Trust hit.</span></div>
+        <div class="callout red"><strong>CI/CD deploys from main</strong><span>If main is the deploy branch and CI is fast, a broken build can reach staging in under 5 minutes. Users see errors.</span></div>
+        <div class="callout red"><strong>Cascade of fixes</strong><span>Look at the git log. Three fix commits for one bug. Each "fix" creates risk of introducing another regression. This is the spiral.</span></div>
+        <div class="callout red"><strong>Velocity illusion</strong><span>Committing fast feels like moving fast. But the revert + re-fix costs 3&times; the time a proper branch workflow would have taken.</span></div>
+      </div>
+      <blockquote class="slide-quote amber" style="margin-top:16px;">Direct commits to main with AI-generated code is playing Russian roulette. You win most of the time. Until you don't.</blockquote>
+    </div>
+  </div>
+
+  <!-- f3-2: Pre-Commit Hook + PR Workflow -->
+  <div class="slide custom" id="f3-2" data-note="The pre-commit hook is the physical law. You cannot break main. The system prevents it. Four lines of bash.">
+    <div class="universe-bar f3"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag amber">Fear 3 &middot; The System</div>
+      <h2 class="slide-title">Four lines of bash. Never break main again.</h2>
+      <div class="code-block" style="margin-bottom:20px;"><span class="c">#!/bin/bash  # .git/hooks/pre-commit</span>
+<span class="k">if</span> [ <span class="s">"$(git rev-parse --abbrev-ref HEAD)"</span> = <span class="s">"main"</span> ]; <span class="k">then</span>
+  <span class="cmd">echo</span> <span class="s">"&#10060; ERROR: Direct commits to main are forbidden"</span>
+  <span class="cmd">echo</span> <span class="s">"&#128273; Use: git checkout -b feature/your-branch"</span>
+  <span class="cmd">exit</span> <span class="v">1</span>
+<span class="k">fi</span></div>
+      <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">The PR workflow</div>
+      <div class="steps" style="margin-top:0;">
+        <div class="step"><div class="step-num amber" style="color:#000;">1</div><div class="step-content"><strong>Branch</strong><p><code style="font-size:12px;">git checkout -b feature/fix-bounding-box</code></p></div></div>
+        <div class="step"><div class="step-num amber" style="color:#000;">2</div><div class="step-content"><strong>AI generates &amp; I review</strong><p>Multiple commits, reverts, experiments — all safely on the branch</p></div></div>
+        <div class="step"><div class="step-num amber" style="color:#000;">3</div><div class="step-content"><strong>Full test suite locally</strong><p>10,035 tests. If any fail, fix before pushing.</p></div></div>
+        <div class="step"><div class="step-num amber" style="color:#000;">4</div><div class="step-content"><strong>Push PR &rarr; CI gates &rarr; Merge</strong><p>CI is the final arbiter. The AI can convince me. It cannot convince CI.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f3-3: Results -->
+  <div class="slide custom" id="f3-3" data-note="695 commits. Zero broken builds. The discipline is not slower — it's faster because you never spend time on emergency reverts.">
+    <div class="universe-bar f3"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag amber">Fear 3 &middot; The Results</div>
+      <h2 class="slide-title">695 commits. main always green.</h2>
+      <div class="stat-cards" style="margin-bottom:20px;">
+        <div class="stat-card green"><div class="stat-num">695</div><div class="stat-label">Commits over 2.5 weeks</div></div>
+        <div class="stat-card green"><div class="stat-num">0</div><div class="stat-label">Broken builds on main</div></div>
+        <div class="stat-card green"><div class="stat-num">278</div><div class="stat-label">Commits per week (avg)</div></div>
+      </div>
+      <div class="callouts">
+        <div class="callout green"><strong>CI as final arbiter</strong><span>The AI can produce convincing-looking code. But it cannot produce code that makes 10,035 tests pass when the logic is wrong. CI is the immune system.</span></div>
+        <div class="callout green"><strong>Branch freedom</strong><span>On a branch, you can commit dirty, revert, experiment. The mess stays contained. main sees only the final, tested result.</span></div>
+        <div class="callout green"><strong>The paradox</strong><span>Adding the PR step feels like it slows you down. It speeds you up by eliminating emergency recovery time, broken-main debugging, and the 3-fix spirals.</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /track-f3 -->
+
+<!-- ══════════════════════════════════════════════════════════
+     F4 TRACK (4 slides — Cost Spiral deep-dive)
+═══════════════════════════════════════════════════════════ -->
+<div class="slide-track" id="track-f4">
+
+  <!-- f4-0: The Moment / The Math -->
+  <div class="slide custom" id="f4-0" data-note="Show the math. This is not an exaggeration. This is what heavy AI-assisted development actually costs on pay-per-token.">
+    <div class="universe-bar f4"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag teal">Fear 4 &middot; The Math</div>
+      <h2 class="slide-title">$100,000. Here's the calculation.</h2>
+      <table class="slide-table" style="margin-bottom:16px;">
+        <thead><tr><th>Activity</th><th>Tokens/day</th><th>Cost/day (Sonnet)</th></tr></thead>
+        <tbody>
+          <tr><td>Code generation (10 sessions)</td><td style="color:#8ad0e8;">~2M output</td><td style="color:#e8887e;">$30</td></tr>
+          <tr><td>Test generation (full suite)</td><td style="color:#8ad0e8;">~800K output</td><td style="color:#e8887e;">$12</td></tr>
+          <tr><td>Code review + analysis</td><td style="color:#8ad0e8;">~500K input</td><td style="color:#e8887e;">$1.50</td></tr>
+          <tr><td>Battle test analysis</td><td style="color:#8ad0e8;">~300K output</td><td style="color:#e8887e;">$4.50</td></tr>
+          <tr><td style="font-weight:700;color:var(--text);">Total per day</td><td></td><td style="color:#e8887e;font-weight:700;">~$48/day</td></tr>
+          <tr><td style="font-weight:700;color:var(--text);">Over 17.5 days (2.5 weeks)</td><td></td><td style="color:#e8887e;font-weight:700;font-size:16px;">~$840</td></tr>
+        </tbody>
+      </table>
+      <div class="callout teal"><strong>Wait — $840, not $100,000?</strong><span>Correct. The $100,000 figure assumes Opus for all tasks at full API rates. Real-world FDD with model selection and Claude MAX: the cost is either $840 or $0. The $100k is the worst case that makes people scared of even starting.</span></div>
+      <p style="margin-top:16px;font-size:14px;color:var(--text-muted);">The fear is real even if the worst-case number is an upper bound. The solution addresses both the real cost and the fear of the theoretical maximum.</p>
+    </div>
+  </div>
+
+  <!-- f4-1: The Fear -->
+  <div class="slide custom" id="f4-1" data-note="The dependency risk. What happens to FDD if API prices change? This is a legitimate strategic concern.">
+    <div class="universe-bar f4"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag teal">Fear 4 &middot; The Fear</div>
+      <h2 class="slide-title">What if pricing changes?</h2>
+      <blockquote class="slide-quote teal">"I'm building a methodology that depends on a specific pricing model. That's fragile."</blockquote>
+      <div class="callouts" style="margin-top:16px;">
+        <div class="callout red"><strong>Structural dependency</strong><span>FDD generates more AI calls than non-FDD workflows. Every fear becomes a system that runs tests, measures things, verifies outputs. All of that costs tokens.</span></div>
+        <div class="callout red"><strong>Switching cost</strong><span>Once you're doing 695 commits/week with 10,035 tests driven by AI, you can't easily step back if costs change. You're committed to the workflow.</span></div>
+        <div class="callout red"><strong>The reinforcement loop</strong><span>The more successful FDD is, the more you use it. The more you use it, the higher the token costs. Success increases exposure.</span></div>
+        <div class="callout amber"><strong>But wait</strong><span>This fear shaped the entire cost discipline. Model selection. Batch processing. Caching context. Not just because of money — because of strategic resilience.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f4-2: Claude MAX + Model Selection -->
+  <div class="slide custom" id="f4-2" data-note="Claude MAX makes FDD possible. Model selection makes it fast. Even with unlimited, optimizing model choice saves latency and builds better habits.">
+    <div class="universe-bar f4"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag teal">Fear 4 &middot; The System</div>
+      <h2 class="slide-title">Claude MAX + disciplined model selection.</h2>
+      <div class="two-col">
+        <div>
+          <div class="callout teal" style="margin-bottom:12px;"><strong>Claude MAX ($100/month)</strong><span>Unlimited usage. This single subscription makes Fear-Driven Development economically viable. Without it, every test, every verification, every measurement has a cost that accumulates into an impossible number.</span></div>
+          <div class="callout teal"><strong>Strategic resilience</strong><span>MAX pricing is stable. If token pricing changes, the subscription model is a hedge. The worst case is a price increase on the subscription itself — predictable, budgetable.</span></div>
+        </div>
+        <div>
+          <table class="slide-table">
+            <thead><tr><th>Model</th><th>Use case</th><th>Why</th></tr></thead>
+            <tbody>
+              <tr><td style="color:#8ad0e8;">Haiku</td><td>File ops, simple search, boilerplate</td><td>Fast. No reasoning needed.</td></tr>
+              <tr><td style="color:#f0c878;">Sonnet</td><td>Most coding (60&ndash;70% of work)</td><td>Best quality/speed ratio</td></tr>
+              <tr><td style="color:#e8887e;">Opus</td><td>Architecture, complex debugging</td><td>When thinking matters most</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">Even with unlimited: wrong model = slow feedback loops = less FDD discipline.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f4-3: Results -->
+  <div class="slide custom" id="f4-3" data-note="$100k in potential costs → $0 with MAX + discipline. The fear became the budget strategy.">
+    <div class="universe-bar f4"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag teal">Fear 4 &middot; The Results</div>
+      <h2 class="slide-title">$100k potential costs. $0 actual costs.</h2>
+      <div class="stat-cards" style="margin-bottom:20px;">
+        <div class="stat-card teal"><div class="stat-num">$0</div><div class="stat-label">API costs for the entire 2.5-week project</div></div>
+        <div class="stat-card teal"><div class="stat-num">$100</div><div class="stat-label">Monthly MAX subscription (the only cost)</div></div>
+        <div class="stat-card green"><div class="stat-num">100%</div><div class="stat-label">FDD methodology executed without budget compromise</div></div>
+      </div>
+      <div class="callouts">
+        <div class="callout green"><strong>The fear became the system</strong><span>Worrying about costs forced disciplined model selection. That discipline made FDD faster, not just cheaper.</span></div>
+        <div class="callout green"><strong>Sustainable methodology</strong><span>A methodology that requires $100k/project is a demo, not a practice. MAX makes FDD repeatable across every project.</span></div>
+        <div class="callout green"><strong>Future-proofing</strong><span>Model selection habits built now transfer to any pricing model, any provider. The discipline is portable even if the economics change.</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /track-f4 -->
+
+<!-- ══════════════════════════════════════════════════════════
+     F5 TRACK (5 slides — Losing Control deep-dive)
+═══════════════════════════════════════════════════════════ -->
+<div class="slide-track" id="track-f5">
+
+  <!-- f5-0: The Moment -->
+  <div class="slide custom" id="f5-0" data-note="47 changed files. The physical sensation of having lost the thread. Tell this one with vulnerability.">
+    <div class="universe-bar f5"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag purple">Fear 5 &middot; The Moment</div>
+      <h2 class="slide-title">47 changed files. 60% understood.</h2>
+      <div class="callouts" style="margin-bottom:16px;">
+        <div class="callout"><span>"I need to refactor the coordinate system to support both metric and imperial PCB units. I describe it to Claude at a high level."</span></div>
+        <div class="callout"><span>"Claude comes back with a detailed plan. 7 steps. Sounds reasonable. I say: 'Go ahead.'"</span></div>
+        <div class="callout"><span>"One hour later: 47 changed files. I review the PR. I understand the changes in about 28 of them clearly. The other 19, I can see what changed but I'm not fully sure why."</span></div>
+        <div class="callout purple"><span>"I merge it. Tests pass. But for the next three days I have a nagging feeling: I shipped code I don't fully understand."</span></div>
+        <div class="callout red"><strong>The question that wouldn't leave:</strong><span>"Am I still a developer if the AI is doing the thinking?"</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f5-1: Existential Pivot -->
+  <div class="slide img-slide" id="f5-1" data-note="The existential pivot. This is what AI does to developers. 'Am I the same developer who started this? Or am I just someone reading my own code?' Thor's answer: Does it matter? Yours should be: Build a system so it doesn't.">
+    <img src="./assets/gitm-existential-pivot.webp" alt="The Existential Pivot">
+  </div>
+
+  <!-- f5-2: Mechanism of Symbiosis -->
+  <div class="slide img-slide" id="f5-2" data-note="The mechanism of symbiosis. Human avoids drowning in detail. AI avoids hallucination. Together, we process. This is directed synthesis, visualized. You stay in the driver's seat — AI is the navigation system.">
+    <img src="./assets/gitm-mechanism-of-symbiosis.webp" alt="The Mechanism of Symbiosis">
+  </div>
+
+  <!-- f5-3: The Existential Fear -->
+  <div class="slide custom centered" id="f5-3" data-note="This is the deepest fear in the talk. Take your time. Many developers in the room have felt their identity shift and don't know how to name it.">
+    <div class="universe-bar f5"></div>
+    <div class="radial-bg purple"></div>
+    <div style="position:relative;z-index:1;text-align:center;max-width:820px;margin-top:8px;">
+      <div class="slide-tag purple" style="display:flex;justify-content:center;">Fear 5 &middot; The Existential Fear</div>
+      <h2 class="slide-title">Am I still a developer?</h2>
+      <div class="callouts" style="text-align:left;margin:20px 0;">
+        <div class="callout purple"><strong>The identity question</strong><span>Software development has always been: I write code. I understand the code I write. If an AI writes code I don't fully understand, what is my role exactly?</span></div>
+        <div class="callout purple"><strong>The competence question</strong><span>If I can't read 47 changed files and fully verify each one, am I being reckless? Or am I adapting to a new way of working that requires different verification skills?</span></div>
+        <div class="callout purple"><strong>The accountability question</strong><span>When something breaks, who is responsible? "The AI did it" is not an answer. I merged the PR. I own the outcome.</span></div>
+      </div>
+      <blockquote class="slide-quote purple" style="text-align:left;">"The developer who delegates everything to the AI has outsourced their judgment. The developer who directs the AI has amplified their judgment."</blockquote>
+    </div>
+  </div>
+
+  <!-- f5-4: Directed Synthesis Workflow -->
+  <div class="slide custom" id="f5-4" data-note="The 7-step workflow. Each step keeps the human in the loop in a meaningful way. Not rubber-stamping — actual decisions at each gate.">
+    <div class="universe-bar f5"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag purple">Fear 5 &middot; Directed Synthesis</div>
+      <h2 class="slide-title">Directed, not delegated.</h2>
+      <div class="steps">
+        <div class="step"><div class="step-num purple">1</div><div class="step-content"><strong>I identify the problem and the approach</strong><p>Not just "fix this" — I define the architecture before Claude touches a file.</p></div></div>
+        <div class="step"><div class="step-num purple">2</div><div class="step-content"><strong>AI explores the codebase</strong><p>Claude finds relevant files. I review the list and make decisions about what's in scope.</p></div></div>
+        <div class="step"><div class="step-num purple">3</div><div class="step-content"><strong>I review findings, decide what to change</strong><p>Claude proposes. I approve, reject, or modify each finding.</p></div></div>
+        <div class="step"><div class="step-num purple">4</div><div class="step-content"><strong>AI implements to my specification</strong><p>Not to its interpretation of my vague request. To a specification I have approved.</p></div></div>
+        <div class="step"><div class="step-num purple">5</div><div class="step-content"><strong>I review every changed file</strong><p>Small tasks mean small diffs. 5&ndash;8 files per task, not 47.</p></div></div>
+        <div class="step"><div class="step-num purple">6</div><div class="step-content"><strong>AI runs tests, reports results</strong><p>I see the test output. I make the call on what failures mean.</p></div></div>
+        <div class="step"><div class="step-num purple">7</div><div class="step-content"><strong>I make the merge decision</strong><p>Not automatic. Not because CI passed. Because I have reviewed and understood.</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f5-5: Task Breakdown Example -->
+  <div class="slide custom" id="f5-5" data-note="The coordinate system refactoring as explicit tasks. Each task is reviewable in isolation. This is the technique that transforms 47-file diffs into 5-file diffs.">
+    <div class="universe-bar f5"></div>
+    <div style="max-width:940px;width:100%;margin-top:8px;">
+      <div class="slide-tag purple">Fear 5 &middot; Task Breakdown</div>
+      <h2 class="slide-title">Break it down before you hand it over.</h2>
+      <div class="two-col">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#e8887e;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Black box (what I said before)</div>
+          <div class="callout red" style="margin-bottom:8px;"><span>"Refactor the coordinate system to support both metric and imperial units."</span></div>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Result: 47 changed files, 19 I don't fully understand, a nagging feeling for 3 days.</p>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#a8d89a;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Directed synthesis (what I do now)</div>
+          <div class="steps" style="margin-top:0;gap:8px;">
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">1</div><div class="step-content"><strong style="font-size:13px;">Find all files using coordinate scaling</strong></div></div>
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">2</div><div class="step-content"><strong style="font-size:13px;">Identify 2.5&times; vs 1.0&times; usage patterns</strong></div></div>
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">3</div><div class="step-content"><strong style="font-size:13px;">Create CoordinateMode enum + conditional logic</strong></div></div>
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">4</div><div class="step-content"><strong style="font-size:13px;">Update each converter separately (one PR each)</strong></div></div>
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">5</div><div class="step-content"><strong style="font-size:13px;">Add tests for both metric and imperial mode</strong></div></div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:16px;font-size:14px;color:var(--text-muted);">Each task: 3&ndash;8 changed files. Each reviewable in minutes. Total understanding: 100%.</p>
+    </div>
+  </div>
+
+  <!-- f5-6: Results -->
+  <div class="slide custom" id="f5-6" data-note="Better codebase understanding with AI assistance than without. That's the counterintuitive result.">
+    <div class="universe-bar f5"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag purple">Fear 5 &middot; The Results</div>
+      <h2 class="slide-title">AI amplifies agency. It doesn't replace it.</h2>
+      <div class="stat-cards" style="margin-bottom:20px;">
+        <div class="stat-card purple"><div class="stat-num">100%</div><div class="stat-label">Files reviewed and understood in final workflow</div></div>
+        <div class="stat-card green"><div class="stat-num">5&ndash;8</div><div class="stat-label">Files per task (vs 47 in the black-box approach)</div></div>
+        <div class="stat-card green"><div class="stat-num">7</div><div class="stat-label">Decision gates where I stay in control</div></div>
+      </div>
+      <div class="callouts">
+        <div class="callout green"><strong>The paradox</strong><span>I understand this codebase better with AI assistance than I would have without it. Because Directed Synthesis forces me to articulate my decisions before Claude implements them.</span></div>
+        <div class="callout green"><strong>The identity answer</strong><span>I'm not less of a developer. I'm a developer who has learned to direct an extremely capable collaborator. The architect who designs the building is still the architect, even when others pour the concrete.</span></div>
+        <div class="callout green"><strong>The accountability answer</strong><span>When I understand every file in the PR, I own the outcome. When I don't, I don't. Fear of that accountability forces the discipline that makes understanding possible.</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /track-f5 -->
+
+<!-- ══════════════════════════════════════════════════════════
+     F6 TRACK (4 slides — Silent Failures deep-dive)
+═══════════════════════════════════════════════════════════ -->
+<div class="slide-track" id="track-f6">
+
+  <!-- f6-0: The Moment -->
+  <div class="slide custom" id="f6-0" data-note="CI was green. The answer was wrong. This is the most subtle and most dangerous failure mode.">
+    <div class="universe-bar f6"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag pink">Fear 6 &middot; The Moment</div>
+      <h2 class="slide-title">425mm. Should be 216mm. CI was green.</h2>
+      <div class="callouts" style="margin-bottom:16px;">
+        <div class="callout"><span>A user reports: "Your library says the PCB bounding box is 425mm wide. The board is clearly 216mm wide."</span></div>
+        <div class="callout"><span>I investigate. Open the file. Individual drill holes: correct position. Copper traces: correct position. Board outline: correct at 216mm.</span></div>
+        <div class="callout pink"><span>Overall bounding box: 425mm. Includes a documentation layer &mdash; frame, title block, revision table &mdash; that extends well outside the board boundary.</span></div>
+        <div class="callout red"><strong>CI was green.</strong><span>All 2,847 tests at the time passed. The code worked correctly. My tests just didn't test what the user needed.</span></div>
+      </div>
+      <p style="font-size:15px;font-weight:700;color:#e8a8c8;">I was testing whether the code ran. Not whether the output was correct.</p>
+    </div>
+  </div>
+
+  <!-- f6-1: The Fear -->
+  <div class="slide custom" id="f6-1" data-note="The gap between 'does the test pass' and 'is the answer right'. This gap is where silent failures live.">
+    <div class="universe-bar f6"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag pink">Fear 6 &middot; The Fear</div>
+      <h2 class="slide-title">What you don't measure, you don't know.</h2>
+      <blockquote class="slide-quote pink">"Green tests don't mean the system is correct. They mean it matches what you tested."</blockquote>
+      <div class="callouts" style="margin-top:16px;">
+        <div class="callout pink"><strong>Testing the test, not the result</strong><span>assertNotNull(boundingBox) passes when boundingBox is 425mm and when it's 216mm. The assertion is too weak to catch the semantic error.</span></div>
+        <div class="callout pink"><strong>Semantic drift</strong><span>As AI adds features, the semantics of a return value can drift. The function still returns a BoundBox. It now returns a different BoundBox. Your tests pass. Your users are confused.</span></div>
+        <div class="callout pink"><strong>Long feedback loops</strong><span>The bug was in the code for weeks before a user noticed. During those weeks: CI green, no warnings, no alerts. Total silence.</span></div>
+        <div class="callout pink"><strong>The measurement gap</strong><span>You know the code runs. You don't know if the output is physically reasonable. 425mm &times; 400mm for a 216mm board should have triggered an alarm.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- f6-2: Extreme Measurement -->
+  <div class="slide custom" id="f6-2" data-note="The full measurement system. Printf is not just debugging — it's an audit trail. Assertions with values are documentation of what's expected.">
+    <div class="universe-bar f6"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag pink">Fear 6 &middot; Extreme Measurement</div>
+      <h2 class="slide-title">Assert values, not just existence.</h2>
+      <div class="code-block" style="font-size:12px;"><span class="c">// Don't just assert non-null. Assert the value makes sense.</span>
+<span class="k">double</span> widthMm  = design.getBoundBox().getWidth()  / <span class="v">1_000_000.0</span>;
+<span class="k">double</span> heightMm = design.getBoundBox().getHeight() / <span class="v">1_000_000.0</span>;
+
+<span class="c">// Print for audit trail — shows up in CI logs</span>
+System.out.printf(<span class="s">"PCB boundBox: %.1fmm × %.1fmm%n"</span>, widthMm, heightMm);
+System.out.printf(<span class="s">"Expected: ~216mm × 206mm (copper layer extent)%n"</span>);
+
+<span class="c">// Assert with domain knowledge</span>
+<span class="k">double</span> copperWidth = design.getCopperLayer().getBoundBox().getWidth() / <span class="v">1_000_000.0</span>;
+<span class="k">double</span> misalignment = Math.abs(widthMm - copperWidth) / copperWidth;
+
+assertTrue(misalignment &lt; <span class="v">0.25</span>,
+    String.format(<span class="s">"Board bbox (%.1fmm) should be within 25%% of copper (%.1fmm)"</span>,
+        widthMm, copperWidth));
+
+<span class="c">// Guard against coordinate overflow</span>
+<span class="k">for</span> (<span class="k">Feature</span> f : design.getAllFeatures()) {
+    <span class="k">if</span> (Math.abs(f.getX()) &gt; <span class="v">3_000_000_000L</span>) { <span class="c">// 3 meters</span>
+        logger.warn(<span class="s">"Extreme coordinate: {}mm. Possible overflow."</span>, f.getX()/<span class="v">1_000_000.0</span>);
+    }
+}</div>
+      <p style="margin-top:12px;font-size:14px;color:var(--text-muted);">The printf output appears in CI logs. When something's wrong, you see the actual values, not just a pass/fail.</p>
+    </div>
+  </div>
+
+  <!-- f6-3: Results -->
+  <div class="slide custom" id="f6-3" data-note="The shift from binary testing to value-based assertions. You know not just that it ran, but that it got the right answer.">
+    <div class="universe-bar f6"></div>
+    <div style="max-width:860px;width:100%;margin-top:8px;">
+      <div class="slide-tag pink">Fear 6 &middot; The Results</div>
+      <h2 class="slide-title">Fast detection. Confidence through numbers.</h2>
+      <div class="stat-cards" style="margin-bottom:20px;">
+        <div class="stat-card green"><div class="stat-num">minutes</div><div class="stat-label">Time to detect semantic bugs (was: weeks)</div></div>
+        <div class="stat-card green"><div class="stat-num">100%</div><div class="stat-label">Test output includes actual measured values</div></div>
+        <div class="stat-card green"><div class="stat-num">0</div><div class="stat-label">Silent failures since measurement system added</div></div>
+      </div>
+      <div class="callouts">
+        <div class="callout green"><strong>The shift</strong><span>From: "Did it crash?" To: "Are the values physically reasonable?" That one-sentence shift in your testing mindset eliminates an entire category of bugs.</span></div>
+        <div class="callout green"><strong>CI as measurement dashboard</strong><span>Every CI run now prints actual PCB dimensions for 191 files. If any value looks wrong, you investigate immediately. The numbers don't lie.</span></div>
+        <div class="callout green"><strong>The fear becomes the metric</strong><span>"I'm scared the output is semantically wrong" → assert that the output is semantically correct, with domain-specific bounds. Fear drives the assertion design.</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /track-f6 -->
+
+<!-- ══════════════════════════════════════════════════════════
+     DEMO TRACK (5 slides)
+═══════════════════════════════════════════════════════════ -->
+<div class="slide-track" id="track-demo">
+
+  <!-- demo-0: FDD Infographic -->
+  <div class="slide img-slide" id="demo-0" data-note="The full picture. All 6 fears, all 6 antidote systems, the 2.5-week victory lap. This is what productive paranoia looks like when you diagram it.">
+    <img src="./assets/fdd-infographic.webp" alt="Fear-Driven Development Infographic">
+  </div>
+
+  <!-- demo-1: The Numbers -->
+  <div class="slide custom" id="demo-1" data-note="All the numbers in one place. Let them read. Don't narrate the table — it speaks for itself.">
+    <div class="universe-bar demo"></div>
+    <div style="max-width:940px;width:100%;margin-top:8px;">
+      <div class="slide-tag green">Demo &middot; The Numbers</div>
+      <h2 class="slide-title">lib-pcb: 2.5 weeks, Jan&ndash;Feb 2026.</h2>
+      <div class="two-col">
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Project metrics</div>
+          <table class="slide-table">
+            <tbody>
+              <tr><td style="color:#a8d89a;">Tests</td><td>10,035 (99.8% pass rate)</td></tr>
+              <tr><td style="color:#a8d89a;">Commits</td><td>695 (278/week, ~40/day)</td></tr>
+              <tr><td style="color:#a8d89a;">Production bugs (AI)</td><td>0</td></tr>
+              <tr><td style="color:#a8d89a;">Broken main builds</td><td>0</td></tr>
+              <tr><td style="color:#a8d89a;">API costs</td><td>$0 (Claude MAX)</td></tr>
+              <tr><td style="color:#a8d89a;">Battle test files</td><td>191 real PCB files</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Timeline</div>
+          <table class="slide-table">
+            <tbody>
+              <tr><td style="color:#f0c878;">Week 1</td><td>Core parser, 23 tests, first hallucination bug</td></tr>
+              <tr><td style="color:#f0c878;">Week 1.5</td><td>Round-trip + property tests. 2,847 tests.</td></tr>
+              <tr><td style="color:#f0c878;">Week 2</td><td>Battle suite (191 files). Pre-commit hook. PR workflow.</td></tr>
+              <tr><td style="color:#f0c878;">Week 2.5</td><td>Extreme measurement. 10,035 tests. Main always green.</td></tr>
+            </tbody>
+          </table>
+          <div style="margin-top:12px;padding:10px 14px;background:rgba(138,184,122,0.06);border:1px solid rgba(138,184,122,0.2);border-radius:8px;font-size:13px;color:var(--text-muted);">
+            Each fear emerged as a real incident. Each system was built in response. No upfront planning. Pure reaction.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- demo-2: Round-Trip Test Output -->
+  <div class="slide custom" id="demo-2" data-note="Show the terminal. Walk through what each line means. The key is: bytes identical = no hallucination survived.">
+    <div class="universe-bar demo"></div>
+    <div style="max-width:940px;width:100%;margin-top:8px;">
+      <div class="slide-tag green">Demo &middot; Round-Trip Test Output</div>
+      <h2 class="slide-title">Catching hallucinations in CI.</h2>
+      <div class="terminal-window">
+        <div class="terminal-titlebar"><div class="term-dot red"></div><div class="term-dot yellow"></div><div class="term-dot green"></div><span>mvn test -pl lib-pcb -Dtest=RoundTripTestSuite</span></div>
+        <div class="terminal-body">
+          <p class="term-line term-out">Running com.exoreaction.pcb.roundtrip.RoundTripTestSuite</p>
+          <p class="term-line term-out">[RoundTrip] Testing: kicad-nightly-sample.gbr ... <span class="term-ok">PASS (bytes identical)</span></p>
+          <p class="term-line term-out">[RoundTrip] Testing: altium-flex-pcb.gbr ... <span class="term-ok">PASS (bytes identical)</span></p>
+          <p class="term-line term-out">[RoundTrip] Testing: german-manufacturer-rs274x.gbr ... <span class="term-ok">PASS (bytes identical)</span></p>
+          <p class="term-line term-out">[RoundTrip] Testing: eagle-legacy-6x.brd ... <span class="term-ok">PASS (bytes identical)</span></p>
+          <p class="term-line term-out">... [187 more files] ...</p>
+          <p class="term-line"><span class="term-ok">Tests run: 2,847, Failures: 0, Errors: 0, Skipped: 12</span></p>
+          <p class="term-line"><span class="term-ok">All round-trips preserved byte identity.</span></p>
+          <p class="term-line"><span class="term-highlight">Property tests: 1,200 random inputs, all invariants held.</span></p>
+          <p class="term-line"><span class="term-ok">[INFO] BUILD SUCCESS</span></p>
+          <p class="term-line term-dim">Total time: 4:32 min</p>
+        </div>
+      </div>
+      <p style="margin-top:12px;font-size:14px;color:var(--text-muted);">Every line with "bytes identical" is a hallucination that could not survive. 2,847 assertions that the AI told the truth about the file format.</p>
+    </div>
+  </div>
+
+  <!-- demo-3: Battle Test Run -->
+  <div class="slide custom" id="demo-3" data-note="191 files. All green. Show the variety in the output — different formats, different tools, all passing.">
+    <div class="universe-bar demo"></div>
+    <div style="max-width:940px;width:100%;margin-top:8px;">
+      <div class="slide-tag green">Demo &middot; Battle Test Run</div>
+      <h2 class="slide-title">191 real-world files. All green.</h2>
+      <div class="terminal-window">
+        <div class="terminal-titlebar"><div class="term-dot red"></div><div class="term-dot yellow"></div><div class="term-dot green"></div><span>mvn test -pl lib-pcb</span></div>
+        <div class="terminal-body">
+          <p class="term-line term-out">Running com.exoreaction.pcb.BattleTestSuite</p>
+          <p class="term-line term-out">[Battle] KiCad projects (47 files): <span class="term-ok">ALL PASS</span></p>
+          <p class="term-line term-out">[Battle] Altium Designer (38 files): <span class="term-ok">ALL PASS</span></p>
+          <p class="term-line term-out">[Battle] Eagle &lt;=6.x (22 files): <span class="term-ok">ALL PASS</span></p>
+          <p class="term-line term-out">[Battle] German manufacturers (18 files): <span class="term-ok">ALL PASS</span></p>
+          <p class="term-line term-out">[Battle] Flex PCB designs (11 files): <span class="term-ok">ALL PASS</span></p>
+          <p class="term-line term-out">[Battle] Hand-authored / legacy (31 files): <span class="term-ok">ALL PASS</span></p>
+          <p class="term-line term-out">[Battle] Edge cases / bug fixtures (24 files): <span class="term-ok">ALL PASS</span></p>
+          <p class="term-line"><span class="term-ok">Tests run: 10,035, Failures: 0, Errors: 0, Skipped: 30</span></p>
+          <p class="term-line"><span class="term-ok">[INFO] BUILD SUCCESS</span></p>
+          <p class="term-line term-dim">Total time: 6:48 min</p>
+        </div>
+      </div>
+      <p style="margin-top:12px;font-size:14px;color:var(--text-muted);">The 30 skipped: known format variants not yet implemented. Documented, tracked, not hidden.</p>
+    </div>
+  </div>
+
+  <!-- demo-4: Git Log Main -->
+  <div class="slide custom" id="demo-4" data-note="695 commits. Every one via PR. Every one tested. The git log is evidence of a working process.">
+    <div class="universe-bar demo"></div>
+    <div style="max-width:940px;width:100%;margin-top:8px;">
+      <div class="slide-tag green">Demo &middot; Git Log Main</div>
+      <h2 class="slide-title">695 commits. Zero broken builds.</h2>
+      <div class="terminal-window">
+        <div class="terminal-titlebar"><div class="term-dot red"></div><div class="term-dot yellow"></div><div class="term-dot green"></div><span>git log --oneline main | head -20</span></div>
+        <div class="terminal-body">
+          <p class="term-line"><span class="term-ok">a9f3c21</span> Add coordinate overflow detection for extreme values</p>
+          <p class="term-line"><span class="term-ok">87e2b14</span> Implement imperial mode for DrillListing converter</p>
+          <p class="term-line"><span class="term-ok">6c4d8a9</span> Property test: bbox monotonicity under feature addition</p>
+          <p class="term-line"><span class="term-ok">5b1f7e3</span> Fix: filter documentation layers before bbox calculation</p>
+          <p class="term-line"><span class="term-ok">4a9c2d8</span> Battle test: add 18 German manufacturer fixtures</p>
+          <p class="term-line"><span class="term-ok">3e8b5f1</span> Add measurement assertions to BoundBox test suite</p>
+          <p class="term-line"><span class="term-ok">2d7a4c9</span> Round-trip tests for all KiCad legacy formats</p>
+          <p class="term-line"><span class="term-ok">1c6f3b8</span> Pre-commit hook: enforce feature-branch workflow</p>
+          <p class="term-line term-dim">... [687 more commits, all green] ...</p>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;">
+        <div class="callout green"><strong>Every commit:</strong><span>Passed CI before merge. No exceptions.</span></div>
+        <div class="callout green"><strong>Pattern:</strong><span>Fix, test, measurement, battle fixture, property. The 6 fears visible in the commit history.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- demo-5: The Paranoia Engine -->
+  <div class="slide custom centered" id="demo-5" data-note="The full picture. Six fears. Six systems. Six results. This is the architecture of productive paranoia.">
+    <div class="universe-bar demo"></div>
+    <div style="max-width:960px;width:100%;margin-top:8px;">
+      <div class="slide-tag green" style="display:flex;justify-content:center;">Demo &middot; The Paranoia Engine</div>
+      <h2 class="slide-title" style="text-align:center;">Fear &rarr; System &rarr; Result &rarr; Trust</h2>
+      <table class="slide-table" style="margin-top:16px;">
+        <thead><tr>
+          <th style="color:#e8887e;">Fear</th>
+          <th style="color:#f0c878;">System</th>
+          <th style="color:#a8d89a;">Result</th>
+          <th style="color:#8ad0e8;">Metric</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td style="color:#e8887e;">AI hallucinations</td>
+            <td>Round-trip + property tests</td>
+            <td style="color:#a8d89a;">Hallucinations caught in CI</td>
+            <td style="color:#8ad0e8;">10,035 tests</td>
+          </tr>
+          <tr>
+            <td style="color:#e8be94;">Production bugs</td>
+            <td>Battle testing (191 files)</td>
+            <td style="color:#a8d89a;">Zero AI bugs in prod</td>
+            <td style="color:#8ad0e8;">191 real files</td>
+          </tr>
+          <tr>
+            <td style="color:#f0c878;">Shipping bad code</td>
+            <td>Pre-commit hook + PR gates</td>
+            <td style="color:#a8d89a;">main always green</td>
+            <td style="color:#8ad0e8;">695 commits, 0 breaks</td>
+          </tr>
+          <tr>
+            <td style="color:#8ad0e8;">Cost spiral</td>
+            <td>Claude MAX + model selection</td>
+            <td style="color:#a8d89a;">$100k costs &rarr; $0</td>
+            <td style="color:#8ad0e8;">$0 API spend</td>
+          </tr>
+          <tr>
+            <td style="color:#c4aee8;">Losing control</td>
+            <td>Directed synthesis (7 steps)</td>
+            <td style="color:#a8d89a;">100% files understood</td>
+            <td style="color:#8ad0e8;">5&ndash;8 files/task</td>
+          </tr>
+          <tr>
+            <td style="color:#e8a8c8;">Silent failures</td>
+            <td>Extreme measurement</td>
+            <td style="color:#a8d89a;">Fast semantic detection</td>
+            <td style="color:#8ad0e8;">Minutes, not weeks</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="margin-top:20px;text-align:center;font-size:16px;font-weight:700;color:var(--text);">
+        Formula: <span class="hl-red">Fear</span> &rarr; <span class="hl-amber">Discipline</span> &rarr; <span class="hl-green">Results</span> &rarr; <span style="color:#8ad0e8;">Sleep</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /track-demo -->
+
+</div><!-- /viewport -->
+
+<!-- Narrator bar -->
+<div id="narrator-bar" style="display:none;">
+  <div id="narrator-content">
+    <span id="narrator-icon">&#128161;</span>
+    <span id="narrator-text">Starting...</span>
+  </div>
+  <button id="narrator-toggle" onclick="toggleNarrator()">hide</button>
+</div>
+
+<!-- Nav bar -->
+<div id="nav">
+  <div id="ctx-indicator">Main &mdash; 1 / 20</div>
+  <button class="nav-arrow" id="btn-prev" onclick="navigate(-1)" title="Previous">&#8592;</button>
+  <div class="nav-ctx">
+    <button class="nav-btn main-btn active" id="btn-main" onclick="switchCtx('main')">MAIN</button>
+    <button class="nav-btn f1-btn"   id="btn-f1"   onclick="switchCtx('f1')">FEAR 1 &#9658;</button>
+    <button class="nav-btn f2-btn"   id="btn-f2"   onclick="switchCtx('f2')">FEAR 2 &#9658;</button>
+    <button class="nav-btn f3-btn"   id="btn-f3"   onclick="switchCtx('f3')">FEAR 3 &#9658;</button>
+    <button class="nav-btn f4-btn"   id="btn-f4"   onclick="switchCtx('f4')">FEAR 4 &#9658;</button>
+    <button class="nav-btn f5-btn"   id="btn-f5"   onclick="switchCtx('f5')">FEAR 5 &#9658;</button>
+    <button class="nav-btn f6-btn"   id="btn-f6"   onclick="switchCtx('f6')">FEAR 6 &#9658;</button>
+    <button class="nav-btn demo-btn" id="btn-demo" onclick="switchCtx('demo')">&#9654; DEMO</button>
+  </div>
+  <button class="nav-arrow" id="btn-next" onclick="navigate(1)" title="Next">&#8594;</button>
+</div>
+
+<!-- Shortcut overlay -->
+<div id="shortcut-overlay">
+  <div class="shortcut-box">
+    <h3>Keyboard Shortcuts</h3>
+    <div class="shortcut-row"><span>Previous slide</span><kbd>&#8592;</kbd></div>
+    <div class="shortcut-row"><span>Next slide</span><div><kbd>&#8594;</kbd> <kbd>Space</kbd></div></div>
+    <div class="shortcut-row"><span>Main thread</span><kbd>M</kbd></div>
+    <div class="shortcut-row"><span>Fear 1 &mdash; AI Hallucinations</span><kbd>1</kbd></div>
+    <div class="shortcut-row"><span>Fear 2 &mdash; Production Bugs</span><kbd>2</kbd></div>
+    <div class="shortcut-row"><span>Fear 3 &mdash; Shipping Bad Code</span><kbd>3</kbd></div>
+    <div class="shortcut-row"><span>Fear 4 &mdash; Cost Spiral</span><kbd>4</kbd></div>
+    <div class="shortcut-row"><span>Fear 5 &mdash; Losing Control</span><kbd>5</kbd></div>
+    <div class="shortcut-row"><span>Fear 6 &mdash; Silent Failures</span><kbd>6</kbd></div>
+    <div class="shortcut-row"><span>Demo</span><kbd>7</kbd></div>
+    <div class="shortcut-row"><span>Toggle narrator</span><kbd>N</kbd></div>
+    <div class="shortcut-row"><span>Fullscreen</span><kbd>F</kbd></div>
+    <div class="shortcut-row"><span>Show shortcuts</span><kbd>?</kbd></div>
+    <div class="shortcut-row"><span>Return to main</span><kbd>Esc</kbd></div>
+    <div style="margin-top:18px;text-align:center;">
+      <button onclick="closeShortcuts()" style="background:rgba(217,82,74,0.15);border:1px solid rgba(217,82,74,0.3);color:#e8887e;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:13px;">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const SLIDE_COUNTS = { main:28, f1:5, f2:5, f3:4, f4:4, f5:7, f6:4, demo:6 };
+const CTX_LABELS  = { main:'Main', f1:'Fear 1', f2:'Fear 2', f3:'Fear 3', f4:'Fear 4', f5:'Fear 5', f6:'Fear 6', demo:'Demo' };
+const CTX_KEYS    = { main:'btn-main', f1:'btn-f1', f2:'btn-f2', f3:'btn-f3', f4:'btn-f4', f5:'btn-f5', f6:'btn-f6', demo:'btn-demo' };
+
+let ctx = 'main';
+let positions = { main:0, f1:0, f2:0, f3:0, f4:0, f5:0, f6:0, demo:0 };
+let busy = false;
+
+function getSlide(c, p) { return document.getElementById(c + '-' + p); }
+function getTrack(c)    { return document.getElementById('track-' + c); }
+
+var REVEAL_SELECTOR = '.callout, .card, .stat-card, .badge, .fear-row, .slide-table tbody tr, .formula-node';
+
+function animateCountUp(el) {
+  var raw = el.textContent.trim();
+  var m = raw.match(/^([^\d]*)([\d,]+)([^\d]*)$/);
+  if (!m) return;
+  var prefix = m[1], suffix = m[3];
+  var target = parseInt(m[2].replace(/,/g, ''), 10);
+  if (isNaN(target)) return;
+  var start = null, dur = 700;
+  function tick(now) {
+    if (start === null) start = now;
+    var t = Math.min(1, (now - start) / dur);
+    var eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = prefix + Math.round(target * eased).toLocaleString('en-US') + suffix;
+    if (t < 1) requestAnimationFrame(tick);
+    else el.textContent = prefix + target.toLocaleString('en-US') + suffix;
+  }
+  requestAnimationFrame(tick);
+}
+
+function runReveal(sl) {
+  var items = sl.querySelectorAll(REVEAL_SELECTOR);
+  items.forEach(function(el, i) {
+    el.classList.remove('reveal-item');
+    void el.offsetWidth;
+    el.style.animationDelay = (i * 70) + 'ms';
+    el.classList.add('reveal-item');
+  });
+  sl.querySelectorAll('.stat-num').forEach(function(el) { animateCountUp(el); });
+}
+
+function renderSlide(c, p, dir) {
+  var track = getTrack(c);
+  track.querySelectorAll('.slide').forEach(function(s) {
+    s.classList.remove('visible', 'anim-in-right', 'anim-in-left');
+    s.style.display = 'none';
+  });
+  var sl = getSlide(c, p);
+  if (!sl) return;
+  sl.style.display = 'flex';
+  void sl.offsetWidth;
+  sl.classList.add('visible');
+  if (dir > 0) sl.classList.add('anim-in-right');
+  else if (dir < 0) sl.classList.add('anim-in-left');
+  var note = sl.getAttribute('data-note');
+  if (note) { showNarrator(note); } else { hideNarrator(); }
+  runReveal(sl);
+}
+
+function activateTrack(c) {
+  document.querySelectorAll('.slide-track').forEach(function(t) { t.classList.remove('active'); });
+  getTrack(c).classList.add('active');
+}
+
+function updateNav() {
+  var total = SLIDE_COUNTS[ctx];
+  var pos   = positions[ctx];
+  document.getElementById('ctx-indicator').innerHTML = CTX_LABELS[ctx] + ' &mdash; ' + (pos + 1) + ' / ' + total;
+  document.getElementById('btn-prev').disabled = pos === 0;
+  document.getElementById('btn-next').disabled = pos === total - 1;
+  Object.keys(CTX_KEYS).forEach(function(c) {
+    document.getElementById(CTX_KEYS[c]).classList.toggle('active', c === ctx);
+  });
+  document.body.className = 'ctx-' + ctx;
+  if (narratorVisible) document.body.classList.add('narrator-visible');
+}
+
+function navigate(dir) {
+  if (busy) return;
+  var np = positions[ctx] + dir;
+  if (np < 0 || np >= SLIDE_COUNTS[ctx]) return;
+  busy = true;
+  positions[ctx] = np;
+  renderSlide(ctx, np, dir);
+  updateNav();
+  setTimeout(function() { busy = false; }, 360);
+}
+
+function switchCtx(newCtx) {
+  if (busy) return;
+  if (newCtx === ctx) return;
+  busy = true;
+  ctx = newCtx;
+  activateTrack(newCtx);
+  renderSlide(newCtx, positions[newCtx], 0);
+  updateNav();
+  setTimeout(function() { busy = false; }, 360);
+}
+
+function closeShortcuts() { document.getElementById('shortcut-overlay').classList.remove('open'); }
+
+var narratorHidden  = false;
+var narratorVisible = false;
+
+function showNarrator(text) {
+  if (narratorHidden) return;
+  var bar = document.getElementById('narrator-bar');
+  document.getElementById('narrator-text').textContent = text;
+  bar.style.display = 'flex';
+  narratorVisible = true;
+  document.body.classList.add('narrator-visible');
+}
+function hideNarrator() {
+  document.getElementById('narrator-bar').style.display = 'none';
+  narratorVisible = false;
+  document.body.classList.remove('narrator-visible');
+}
+function toggleNarrator() {
+  narratorHidden = !narratorHidden;
+  if (narratorHidden) {
+    hideNarrator();
+    document.getElementById('narrator-toggle').textContent = 'show';
+  } else {
+    document.getElementById('narrator-toggle').textContent = 'hide';
+    var sl = getSlide(ctx, positions[ctx]);
+    if (sl) { var n = sl.getAttribute('data-note'); if (n) showNarrator(n); }
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (document.getElementById('shortcut-overlay').classList.contains('open')) {
+    if (e.key === 'Escape' || e.key === '?') closeShortcuts();
+    return;
+  }
+  switch (e.key) {
+    case 'ArrowLeft':  navigate(-1); break;
+    case 'ArrowRight': navigate(1);  break;
+    case ' ': e.preventDefault(); navigate(1); break;
+    case 'm': case 'M': switchCtx('main'); break;
+    case '1': switchCtx('f1');   break;
+    case '2': switchCtx('f2');   break;
+    case '3': switchCtx('f3');   break;
+    case '4': switchCtx('f4');   break;
+    case '5': switchCtx('f5');   break;
+    case '6': switchCtx('f6');   break;
+    case '7': switchCtx('demo'); break;
+    case 'n': case 'N': toggleNarrator(); break;
+    case 'f': case 'F':
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(function(){});
+      else document.exitFullscreen().catch(function(){});
+      break;
+    case '?': document.getElementById('shortcut-overlay').classList.add('open'); break;
+    case 'Escape': if (ctx !== 'main') switchCtx('main'); break;
+  }
+});
+
+(function() {
+  activateTrack('main');
+  renderSlide('main', 0, 0);
+  ['f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'demo'].forEach(function(c) {
+    var t = getTrack(c);
+    if (t) t.querySelectorAll('.slide').forEach(function(s) {
+      s.style.display = 'none';
+      s.classList.remove('visible');
+    });
+  });
+  updateNav();
+})();
+</script>
+</body>
+</html>
