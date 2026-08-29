@@ -19,12 +19,17 @@
   --t-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --t-disp: 'Newsreader', ui-serif, Georgia, serif;
 }
-html, body { width:100%; height:100%; margin:0; overflow:hidden; background:var(--bg-dark); color:var(--text); font-family:var(--t-mono); -webkit-font-smoothing:antialiased; }
+html, body { width:100%; height:100%; margin:0; overflow:auto; background:var(--bg-dark); color:var(--text); font-family:var(--t-mono); -webkit-font-smoothing:antialiased; }
+/* body must be a positioned ancestor so #stage's position:absolute (and its
+   scaled overflow) is contained within it for scrolling — otherwise it's
+   positioned relative to the initial containing block, like position:fixed,
+   and never registers as scrollable overflow at all. */
+body { position:relative; }
 /* Fixed design canvas — scaled to fit the real window by JS (fitStage), so every
    slide always renders at the exact proportions it was designed/QA'd at, regardless
    of actual browser size. See fitStage() near the end of the script. */
 #stage { position:absolute; top:0; left:0; width:1786px; height:950px; transform-origin:top left; overflow:hidden; background:var(--bg-dark); }
-#viewport { position:fixed; inset:0 0 var(--nav-h) 0; overflow:hidden; }
+#viewport { position:absolute; inset:0 0 var(--nav-h) 0; overflow:hidden; }
 .slide-track { position:absolute; inset:0; display:none; }
 .slide-track.active { display:block; }
 .slide { position:absolute; inset:0; display:none; align-items:center; justify-content:center; }
@@ -1645,6 +1650,7 @@ function runReveal(sl) {
 }
 
 function renderSlide(c, p, dir) {
+  document.body.scrollTo(0, 0);
   document.querySelectorAll('video').forEach(function(v) { v.pause(); });
   var track = getTrack(c);
   track.querySelectorAll('.slide').forEach(function(s) {
@@ -1779,10 +1785,16 @@ try {
 } catch (e) {}
 function fitStage() {
   var stage = document.getElementById('stage');
-  var fitScale = Math.min(window.innerWidth / STAGE_W, window.innerHeight / STAGE_H);
+  var vw = window.innerWidth, vh = window.innerHeight;
+  var fitScale = Math.min(vw / STAGE_W, vh / STAGE_H);
   var scale = fitScale * manualScale;
-  var left = Math.round((window.innerWidth  - STAGE_W * scale) / 2);
-  var top  = Math.round((window.innerHeight - STAGE_H * scale) / 2);
+  // Anchor top-left instead of centering: at manualScale=1 this exactly fits
+  // (left/top ~0, unchanged from before). Above 1, extra content hangs off
+  // the bottom-right where the page's own scroll (html/body, see CSS) can
+  // reach it, instead of being centered into negative offsets that clip
+  // unreachably off-screen.
+  var left = Math.max(0, Math.round((vw - STAGE_W * scale) / 2));
+  var top  = Math.max(0, Math.round((vh - STAGE_H * scale) / 2));
   stage.style.transform = 'translate(' + left + 'px,' + top + 'px) scale(' + scale + ')';
 }
 function nudgeScale(delta) {
@@ -1794,6 +1806,7 @@ function resetScale() {
   manualScale = 1;
   try { localStorage.removeItem('fdd-manual-scale'); } catch (e) {}
   fitStage();
+  document.body.scrollTo(0, 0);
 }
 var fitStageRAF = null;
 window.addEventListener('resize', function() {
