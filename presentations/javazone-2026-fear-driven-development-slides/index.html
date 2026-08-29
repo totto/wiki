@@ -19,7 +19,11 @@
   --t-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --t-disp: 'Newsreader', ui-serif, Georgia, serif;
 }
-html, body { width:100%; height:100%; overflow:hidden; background:var(--bg-dark); color:var(--text); font-family:var(--t-mono); -webkit-font-smoothing:antialiased; }
+html, body { width:100%; height:100%; margin:0; overflow:hidden; background:var(--bg-dark); color:var(--text); font-family:var(--t-mono); -webkit-font-smoothing:antialiased; }
+/* Fixed design canvas — scaled to fit the real window by JS (fitStage), so every
+   slide always renders at the exact proportions it was designed/QA'd at, regardless
+   of actual browser size. See fitStage() near the end of the script. */
+#stage { position:absolute; top:0; left:0; width:1786px; height:950px; transform-origin:top left; overflow:hidden; background:var(--bg-dark); }
 #viewport { position:fixed; inset:0 0 var(--nav-h) 0; overflow:hidden; }
 .slide-track { position:absolute; inset:0; display:none; }
 .slide-track.active { display:block; }
@@ -97,12 +101,12 @@ body.ctx-demo  #nav::before { background:var(--green); }
 .slide-tag.purple { color:#c4aee8; }
 .slide-tag.pink   { color:#e8a8c8; }
 .slide-tag.green  { color:#a8d89a; }
-h1.slide-title { font-size:clamp(28px,4vw,58px); font-weight:600; line-height:1.08; letter-spacing:-0.02em; margin-bottom:16px; }
-h2.slide-title { font-size:clamp(22px,3vw,42px); font-weight:600; line-height:1.12; letter-spacing:-0.02em; margin-bottom:14px; }
-.slide-sub { font-size:clamp(13px,1.5vw,19px); color:var(--text-dim); line-height:1.55; margin-bottom:10px; }
+h1.slide-title { font-size:58px; font-weight:600; line-height:1.08; letter-spacing:-0.02em; margin-bottom:16px; }
+h2.slide-title { font-size:42px; font-weight:600; line-height:1.12; letter-spacing:-0.02em; margin-bottom:14px; }
+.slide-sub { font-size:19px; color:var(--text-dim); line-height:1.55; margin-bottom:10px; }
 .slide-note { font-size:12px; color:var(--text-muted); margin-top:10px; }
 .slide-footer { position:absolute; bottom:18px; left:56px; right:56px; font-size:11px; color:var(--text-muted); border-top:1px solid rgba(255,255,255,0.07); padding-top:10px; }
-.statement { font-family:var(--t-disp); font-weight:300; font-size:clamp(17px,2.3vw,27px); font-style:italic; color:var(--text-dim); line-height:1.55; max-width:800px; margin-bottom:28px; position:relative; z-index:1; }
+.statement { font-family:var(--t-disp); font-weight:300; font-size:27px; font-style:italic; color:var(--text-dim); line-height:1.55; max-width:800px; margin-bottom:28px; position:relative; z-index:1; }
 .badge { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:4px; margin-bottom:10px; }
 .badge.red    { background:rgba(217,82,74,0.18); color:#e8887e; border:1px solid rgba(217,82,74,0.35); }
 .badge.amber  { background:rgba(232,180,92,0.18); color:#f0c878; border:1px solid rgba(232,180,92,0.35); }
@@ -169,7 +173,7 @@ blockquote.slide-quote.pink   { border-color:var(--pink); background:rgba(216,13
 .stat-card.red    { background:rgba(217,82,74,0.07);  border:1px solid rgba(217,82,74,0.25); }
 .stat-card.teal   { background:rgba(92,184,216,0.07);  border:1px solid rgba(92,184,216,0.25); }
 .stat-card.purple { background:rgba(168,138,216,0.07); border:1px solid rgba(168,138,216,0.25); }
-.stat-card .stat-num   { font-size:clamp(28px,4vw,48px); font-weight:800; line-height:1; }
+.stat-card .stat-num   { font-size:48px; font-weight:800; line-height:1; }
 .stat-card .stat-label { font-size:13px; color:var(--text-dim); margin-top:8px; line-height:1.4; }
 .stat-card.green  .stat-num { color:#a8d89a; }
 .stat-card.red    .stat-num { color:#e8887e; }
@@ -216,6 +220,7 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
 </style>
 </head>
 <body class="ctx-main">
+<div id="stage">
 <div id="viewport">
 
 <!-- ══════════════════════════════════════════════════════════
@@ -232,7 +237,7 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
     <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.8) 0%, rgba(10,11,13,0.4) 45%, transparent 70%);"></div>
     <div style="position:relative;z-index:1;text-align:left;max-width:520px;">
       <div class="slide-tag" style="color:var(--text-muted);">JavaZone &middot; September 2026</div>
-      <h1 class="slide-title" style="font-size:clamp(24px,3.5vw,48px);"><span style="color:var(--amber);">Fear</span>-Driven Development</h1>
+      <h1 class="slide-title" style="font-size:48px;"><span style="color:var(--amber);">Fear</span>-Driven Development</h1>
       <p class="slide-sub" style="max-width:480px;">Thor Henning Hetland &middot; eXOReaction</p>
       <p class="slide-note" style="margin-top:32px;opacity:0.75;">We'll begin shortly.<span class="caret">&#9615;</span></p>
     </div>
@@ -321,8 +326,8 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
   <div class="slide custom" id="main-6" data-note="This is the pivot. You've confessed the fears, shown the experiment — now name the pattern out loud: every fear, left alone, is just anxiety. But turn it into a system and it compounds into speed. Say it like you're realizing it live. Then move to Fear #1." style="background-color:var(--bg-dark);background-image:url('./assets/framework-background-thought-bubble.webp');background-size:cover;background-position:center;background-repeat:no-repeat;justify-content:center;align-items:center;">
     <div class="slide-tag" style="position:absolute;top:36px;left:56px;">The Framework</div>
     <div style="position:relative;z-index:1;text-align:center;max-width:520px;transform:translateY(-11%);">
-      <div style="font-size:clamp(15px,1.8vw,21px);font-weight:800;color:#e8887e;margin-bottom:12px;">Fear Without Systems = Just Anxiety</div>
-      <div style="font-size:clamp(15px,1.8vw,21px);font-weight:800;color:#a8d89a;margin-bottom:22px;">Fear With Systems = 10&times; Productivity</div>
+      <div style="font-size:21px;font-weight:800;color:#e8887e;margin-bottom:12px;">Fear Without Systems = Just Anxiety</div>
+      <div style="font-size:21px;font-weight:800;color:#a8d89a;margin-bottom:22px;">Fear With Systems = 10&times; Productivity</div>
       <p style="font-family:var(--t-disp);font-weight:300;font-style:italic;font-size:15px;color:var(--text-dim);line-height:1.6;">Every fear in this talk became a system.<br>Every system made things faster. Watch how.</p>
     </div>
   </div>
@@ -476,7 +481,7 @@ assertArrayEquals(original, written);
     <div style="position:relative;z-index:1;text-align:center;max-width:820px;margin-top:8px;">
       <div class="slide-tag red" style="display:flex;justify-content:center;">Fear #4 &middot; Cost Spiral</div>
       <h2 class="slide-title">$100,000. For one 2.5-week project.</h2>
-      <div style="font-size:clamp(48px,8vw,96px);font-weight:900;color:#e8887e;line-height:1;margin:20px 0;">$100,000</div>
+      <div style="font-size:96px;font-weight:900;color:#e8887e;line-height:1;margin:20px 0;">$100,000</div>
       <p style="font-size:18px;color:var(--text-dim);margin-bottom:20px;">Not per year. For this one project.</p>
       <div class="callout" style="text-align:left;margin-bottom:16px;"><span>Heavy AI usage. Multiple sessions per day. Long context windows. All the testing, verification, and measurement required for Fear-Driven Development.</span></div>
       <div class="callout red" style="text-align:left;"><span>What if I build my entire workflow around this and the pricing changes?</span></div>
@@ -709,13 +714,13 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div class="radial-bg green"></div>
     <div style="position:relative;z-index:1;text-align:center;max-width:960px;">
       <div class="slide-tag green" style="display:flex;justify-content:center;">The Lesson</div>
-      <h2 class="slide-title" style="font-size:clamp(20px,3vw,40px);margin-bottom:28px;">The developers who are scared of AI<br>get the most value from it.</h2>
+      <h2 class="slide-title" style="font-size:40px;margin-bottom:28px;">The developers who are scared of AI<br>get the most value from it.</h2>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left;margin-bottom:24px;">
         <div class="callout red"><strong>The confident ones</strong><span>Trust the AI. Ship without tests. Wake up to production bugs.</span></div>
         <div class="callout green"><strong>The scared ones</strong><span>Test everything. Measure everything. Automate their paranoia.</span></div>
         <div class="callout"><strong>The paranoid ones</strong><span>Trust nothing. Read every line by hand. No automation, no sleep, no shipping.</span></div>
       </div>
-      <div style="font-size:clamp(18px,2.5vw,30px);font-weight:700;color:var(--text);">Only the ones who automate their fear sleep well at night.</div>
+      <div style="font-size:30px;font-weight:700;color:var(--text);">Only the ones who automate their fear sleep well at night.</div>
     </div>
   </div>
 
@@ -1577,6 +1582,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     </div>
   </div>
 </div>
+</div><!-- /stage -->
 
 <script>
 const SLIDE_COUNTS = { main:28, f1:5, f2:5, f3:4, f4:4, f5:7, f6:4, demo:6 };
@@ -1737,7 +1743,22 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+var STAGE_W = 1786, STAGE_H = 950;
+function fitStage() {
+  var stage = document.getElementById('stage');
+  var scale = Math.min(window.innerWidth / STAGE_W, window.innerHeight / STAGE_H);
+  var left = Math.round((window.innerWidth  - STAGE_W * scale) / 2);
+  var top  = Math.round((window.innerHeight - STAGE_H * scale) / 2);
+  stage.style.transform = 'translate(' + left + 'px,' + top + 'px) scale(' + scale + ')';
+}
+var fitStageRAF = null;
+window.addEventListener('resize', function() {
+  if (fitStageRAF) cancelAnimationFrame(fitStageRAF);
+  fitStageRAF = requestAnimationFrame(fitStage);
+});
+
 (function() {
+  fitStage();
   activateTrack('main');
   renderSlide('main', 0, 0);
   ['f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'demo'].forEach(function(c) {
