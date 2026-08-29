@@ -1575,6 +1575,8 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div class="shortcut-row"><span>Demo</span><kbd>7</kbd></div>
     <div class="shortcut-row"><span>Toggle narrator</span><kbd>N</kbd></div>
     <div class="shortcut-row"><span>Fullscreen</span><kbd>F</kbd></div>
+    <div class="shortcut-row"><span>Bigger / smaller</span><div><kbd>+</kbd> <kbd>-</kbd></div></div>
+    <div class="shortcut-row"><span>Reset size</span><kbd>0</kbd></div>
     <div class="shortcut-row"><span>Show shortcuts</span><kbd>?</kbd></div>
     <div class="shortcut-row"><span>Return to main</span><kbd>Esc</kbd></div>
     <div style="margin-top:18px;text-align:center;">
@@ -1740,27 +1742,43 @@ document.addEventListener('keydown', function(e) {
       break;
     case '?': document.getElementById('shortcut-overlay').classList.add('open'); break;
     case 'Escape': if (ctx !== 'main') switchCtx('main'); break;
+    case '+': case '=': nudgeScale(0.05); break;
+    case '-': case '_': nudgeScale(-0.05); break;
+    case '0': resetScale(); break;
   }
 });
 
 var STAGE_W = 1786, STAGE_H = 950;
-// Whatever zoom level is active when the page loads becomes the baseline —
-// fitStage() auto-fits the *window*, but browser zoom on top of that still
-// behaves like normal zoom (enlarges/shrinks) instead of being fought by the
-// auto-fit. Browser zoom changes devicePixelRatio proportionally but doesn't
-// change the physical window size, so normalizing innerWidth/innerHeight by
-// the zoom factor recovers "the window's real size at the baseline zoom" —
-// stable across zoom changes, still responsive to genuine window resizes.
-var stageBaselineDPR = window.devicePixelRatio || 1;
+// Plain fit-to-window scaling — deliberately does NOT try to detect/compensate
+// for browser zoom. That was attempted (normalizing by devicePixelRatio) and
+// broke on remembered per-site zoom: Chrome/Firefox silently reapply a site's
+// last zoom level on every load (survives hard refresh), so the "baseline"
+// was already zoomed before this script ever ran, undoing the zoom instead of
+// preserving it. Fighting zoom detection is a losing game — instead, manual
+// +/- controls below give explicit, reliable sizing that doesn't depend on
+// guessing browser zoom state.
+var manualScale = 1;
+try {
+  var saved = localStorage.getItem('fdd-manual-scale');
+  if (saved) manualScale = Math.max(0.5, Math.min(2, parseFloat(saved) || 1));
+} catch (e) {}
 function fitStage() {
   var stage = document.getElementById('stage');
-  var zoomFactor = (window.devicePixelRatio || 1) / stageBaselineDPR;
-  var effW = window.innerWidth  * zoomFactor;
-  var effH = window.innerHeight * zoomFactor;
-  var scale = Math.min(effW / STAGE_W, effH / STAGE_H);
+  var fitScale = Math.min(window.innerWidth / STAGE_W, window.innerHeight / STAGE_H);
+  var scale = fitScale * manualScale;
   var left = Math.round((window.innerWidth  - STAGE_W * scale) / 2);
   var top  = Math.round((window.innerHeight - STAGE_H * scale) / 2);
   stage.style.transform = 'translate(' + left + 'px,' + top + 'px) scale(' + scale + ')';
+}
+function nudgeScale(delta) {
+  manualScale = Math.max(0.5, Math.min(2, manualScale + delta));
+  try { localStorage.setItem('fdd-manual-scale', manualScale); } catch (e) {}
+  fitStage();
+}
+function resetScale() {
+  manualScale = 1;
+  try { localStorage.removeItem('fdd-manual-scale'); } catch (e) {}
+  fitStage();
 }
 var fitStageRAF = null;
 window.addEventListener('resize', function() {
