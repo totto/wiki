@@ -152,6 +152,8 @@ nav:
     - "Organizations": about/organizations.md
   - Talks:
     - "All Presentations": about/presentations.md
+    - "2026":
+      - presentations/javazone-2026-fear-driven-development.md
     - "2019--2023":
       - presentations/delivering-continuous-innovation.md
       - presentations/thousands-of-releases.md

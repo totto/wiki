@@ -16,6 +16,10 @@ Presentations with slides or video recordings are linked to their own pages.
 
 <div class="grid cards" markdown>
 
+-   :material-presentation-play: **[Fear-Driven Development](../presentations/javazone-2026-fear-driven-development.md)**
+
+    JavaZone, Sep 2026 -- Turn your anxiety into automation. Six real AI-assisted-coding incidents, six systems built in response, with the full interactive slide deck.
+
 -   :material-play-circle-outline: **[Best Practice -- WTF!](../presentations/best-practice-wtf.md)**
 
     JavaZone 2023 -- Lightning talk with video recording. Why "best practice" is an utterly meaningless term that blocks innovation.
@@ -40,6 +44,7 @@ Presentations with slides or video recordings are linked to their own pages.
 
 | Date | Presentation | Venue |
 |------|-------------|-------|
+| Sep 2026 | [Fear-Driven Development: Turn Your Anxiety Into Automation](../presentations/javazone-2026-fear-driven-development.md) | JavaZone, Oslo |
 | Apr 2026 | Agent Pilsen — Skill-Driven Development (ongoing) | Eileff Landhandleri, Oslo (weekly) |
 | Mar 2026 | Skill-Driven Development — full-day workshop | Item Consulting, Oslo |
 | Mar 2026 | Skill-Driven Development | OSWA / Oslo Software Architecture |
