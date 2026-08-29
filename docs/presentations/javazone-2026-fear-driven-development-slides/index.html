@@ -1744,9 +1744,20 @@ document.addEventListener('keydown', function(e) {
 });
 
 var STAGE_W = 1786, STAGE_H = 950;
+// Whatever zoom level is active when the page loads becomes the baseline —
+// fitStage() auto-fits the *window*, but browser zoom on top of that still
+// behaves like normal zoom (enlarges/shrinks) instead of being fought by the
+// auto-fit. Browser zoom changes devicePixelRatio proportionally but doesn't
+// change the physical window size, so normalizing innerWidth/innerHeight by
+// the zoom factor recovers "the window's real size at the baseline zoom" —
+// stable across zoom changes, still responsive to genuine window resizes.
+var stageBaselineDPR = window.devicePixelRatio || 1;
 function fitStage() {
   var stage = document.getElementById('stage');
-  var scale = Math.min(window.innerWidth / STAGE_W, window.innerHeight / STAGE_H);
+  var zoomFactor = (window.devicePixelRatio || 1) / stageBaselineDPR;
+  var effW = window.innerWidth  * zoomFactor;
+  var effH = window.innerHeight * zoomFactor;
+  var scale = Math.min(effW / STAGE_W, effH / STAGE_H);
   var left = Math.round((window.innerWidth  - STAGE_W * scale) / 2);
   var top  = Math.round((window.innerHeight - STAGE_H * scale) / 2);
   stage.style.transform = 'translate(' + left + 'px,' + top + 'px) scale(' + scale + ')';
