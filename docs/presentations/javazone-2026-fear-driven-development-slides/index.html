@@ -474,15 +474,15 @@ assertArrayEquals(original, written);
   </div>
 
   <!-- main-10: Fear #4 intro -->
-  <div class="slide custom centered" id="main-13" data-note="Let the number breathe. Don't explain it immediately. Then: this is not exaggeration, this is math." style="background-color:var(--bg-dark);background-image:url('./assets/fear4-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+  <div class="slide custom centered" id="main-13" data-note="Let the number breathe. Don't explain it immediately. Then: this isn't a guess — it's a real burn rate, extrapolated. The gap between this and $0 is the system, not luck." style="background-color:var(--bg-dark);background-image:url('./assets/fear4-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
     <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.35) 0%, transparent 32%);"></div>
     <div class="universe-bar f4" style="background:var(--red);"></div>
     <div class="radial-bg red"></div>
     <div style="position:relative;z-index:1;text-align:center;max-width:820px;margin-top:8px;">
       <div class="slide-tag red" style="display:flex;justify-content:center;">Fear #4 &middot; Cost Spiral</div>
-      <h2 class="slide-title">$100,000. For one 2.5-week project.</h2>
-      <div style="font-size:96px;font-weight:900;color:#e8887e;line-height:1;margin:20px 0;">$100,000</div>
-      <p style="font-size:18px;color:var(--text-dim);margin-bottom:20px;">Not per year. For this one project.</p>
+      <h2 class="slide-title">$80,000&ndash;$120,000. For one 2.5-week project.</h2>
+      <div style="font-size:76px;font-weight:900;color:#e8887e;line-height:1;margin:20px 0;">$80K&ndash;$120K</div>
+      <p style="font-size:18px;color:var(--text-dim);margin-bottom:20px;">Not per year. For this one project, at heavy usage, metered.</p>
       <div class="callout" style="text-align:left;margin-bottom:16px;"><span>Heavy AI usage. Multiple sessions per day. Long context windows. All the testing, verification, and measurement required for Fear-Driven Development.</span></div>
       <div class="callout red" style="text-align:left;"><span>What if I build my entire workflow around this and the pricing changes?</span></div>
     </div>
@@ -495,8 +495,8 @@ assertArrayEquals(original, written);
     <div style="max-width:620px;width:100%;margin-top:8px;position:relative;z-index:1;">
       <div class="slide-tag amber">System #4 &middot; Sustainable Economics</div>
       <h2 class="slide-title">Make the Economics Non-Negotiable</h2>
-      <div class="callout amber" style="margin-bottom:10px;"><strong>Claude MAX</strong><span>Unlimited usage makes FDD economically possible. Without it, testing everything, verifying everything = $100k+ per project.</span></div>
-      <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Why optimize even with unlimited? Latency + discipline + future-proofing.</p>
+      <div class="callout amber" style="margin-bottom:10px;"><strong>Claude MAX</strong><span>Flat-rate usage makes FDD economically possible. Without it, testing everything, verifying everything can run $80K&ndash;$120K per project.</span></div>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Why optimize even on flat-rate? Latency + discipline + future-proofing.</p>
       <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Model selection</div>
       <table class="slide-table">
         <thead><tr><th>Complexity</th><th>Model</th><th>Use</th></tr></thead>
@@ -600,9 +600,9 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         </thead>
         <tbody>
           <tr><td style="color:#e8887e;">AI hallucinations</td><td>Round-trip + property tests</td><td style="color:#a8d89a;">10,035 tests, zero false confidence</td></tr>
-          <tr><td style="color:#e8be94;">Production bugs</td><td>Battle testing (191 files)</td><td style="color:#a8d89a;">Zero AI bugs in prod</td></tr>
+          <tr><td style="color:#e8be94;">Production bugs</td><td>Battle testing (191 files)</td><td style="color:#a8d89a;">Zero AI bugs past the systems</td></tr>
           <tr><td style="color:#f0c878;">Shipping bad code</td><td>PR-only + CI gates</td><td style="color:#a8d89a;">main always green, 695 commits</td></tr>
-          <tr><td style="color:#8ad0e8;">Cost spiral</td><td>Claude MAX subscription</td><td style="color:#a8d89a;">$100k API costs &rarr; unlimited</td></tr>
+          <tr><td style="color:#8ad0e8;">Cost spiral</td><td>Claude MAX subscription</td><td style="color:#a8d89a;">$80K&ndash;$120K exposure &rarr; $0 spent</td></tr>
           <tr><td style="color:#c4aee8;">Losing control</td><td>Directed synthesis</td><td style="color:#a8d89a;">Better codebase understanding</td></tr>
           <tr><td style="color:#e8a8c8;">Silent failures</td><td>Extreme measurement</td><td style="color:#a8d89a;">Fast bug detection</td></tr>
         </tbody>
@@ -1057,24 +1057,23 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
 <div class="slide-track" id="track-f4">
 
   <!-- f4-0: The Moment / The Math -->
-  <div class="slide custom" id="f4-0" data-note="Show the math. This is not an exaggeration. This is what heavy AI-assisted development actually costs on pay-per-token.">
+  <div class="slide custom" id="f4-0" data-note="Two tables, one point: same project, two totally different bills, and the difference is discipline, not luck. The $850/90min figure is real — mine, from a heavy session a few weeks back — not Opus-pricing guesswork.">
     <div class="universe-bar f4"></div>
     <div style="max-width:860px;width:100%;margin-top:8px;">
       <div class="slide-tag teal">Fear 4 &middot; The Math</div>
-      <h2 class="slide-title">$100,000. Here's the calculation.</h2>
-      <table class="slide-table" style="margin-bottom:16px;">
-        <thead><tr><th>Activity</th><th>Tokens/day</th><th>Cost/day (Sonnet)</th></tr></thead>
+      <h2 class="slide-title">Two ways to run this. Two different bills.</h2>
+      <table class="slide-table" style="margin-bottom:14px;">
+        <thead><tr><th>Disciplined (model selection + MAX)</th><th>Tokens/day</th><th>Cost/day (Sonnet)</th></tr></thead>
         <tbody>
           <tr><td>Code generation (10 sessions)</td><td style="color:#8ad0e8;">~2M output</td><td style="color:#e8887e;">$30</td></tr>
           <tr><td>Test generation (full suite)</td><td style="color:#8ad0e8;">~800K output</td><td style="color:#e8887e;">$12</td></tr>
           <tr><td>Code review + analysis</td><td style="color:#8ad0e8;">~500K input</td><td style="color:#e8887e;">$1.50</td></tr>
           <tr><td>Battle test analysis</td><td style="color:#8ad0e8;">~300K output</td><td style="color:#e8887e;">$4.50</td></tr>
-          <tr><td style="font-weight:700;color:var(--text);">Total per day</td><td></td><td style="color:#e8887e;font-weight:700;">~$48/day</td></tr>
           <tr><td style="font-weight:700;color:var(--text);">Over 17.5 days (2.5 weeks)</td><td></td><td style="color:#e8887e;font-weight:700;font-size:16px;">~$840</td></tr>
         </tbody>
       </table>
-      <div class="callout teal"><strong>Wait — $840, not $100,000?</strong><span>Correct. The $100,000 figure assumes Opus for all tasks at full API rates. Real-world FDD with model selection and Claude MAX: the cost is either $840 or $0. The $100k is the worst case that makes people scared of even starting.</span></div>
-      <p style="margin-top:16px;font-size:14px;color:var(--text-muted);">The fear is real even if the worst-case number is an upper bound. The solution addresses both the real cost and the fear of the theoretical maximum.</p>
+      <div class="callout red" style="margin-bottom:10px;"><strong>Undisciplined, heavy parallel usage: a real number, not a guess</strong><span>A burn rate I've actually hit since: $850 in 90 minutes on a heavy multi-session sprint &mdash; $566/hour. Run anything close to that pace for 8&ndash;12 hours a day across a 2.5-week project and you land at $80,000&ndash;$120,000. Extrapolated from something real, not assumed Opus pricing.</span></div>
+      <p style="margin-top:10px;font-size:13px;color:var(--text-muted);">The $100k fear was never precise math. But the range it was pointing at turns out to be real &mdash; the gap between $840 and six figures is entirely which of these two ways you're running.</p>
     </div>
   </div>
 
@@ -1095,14 +1094,14 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
   </div>
 
   <!-- f4-2: Claude MAX + Model Selection -->
-  <div class="slide custom" id="f4-2" data-note="Claude MAX makes FDD possible. Model selection makes it fast. Even with unlimited, optimizing model choice saves latency and builds better habits.">
+  <div class="slide custom" id="f4-2" data-note="Claude MAX makes FDD possible. Model selection makes it fast. Even on flat-rate, optimizing model choice saves latency and builds better habits — and keeps you inside the weekly quota.">
     <div class="universe-bar f4"></div>
     <div style="max-width:860px;width:100%;margin-top:8px;">
       <div class="slide-tag teal">Fear 4 &middot; The System</div>
       <h2 class="slide-title">Claude MAX + disciplined model selection.</h2>
       <div class="two-col">
         <div>
-          <div class="callout teal" style="margin-bottom:12px;"><strong>Claude MAX ($100/month)</strong><span>Unlimited usage. This single subscription makes Fear-Driven Development economically viable. Without it, every test, every verification, every measurement has a cost that accumulates into an impossible number.</span></div>
+          <div class="callout teal" style="margin-bottom:12px;"><strong>Claude MAX ($100/month)</strong><span>Flat-rate, not unlimited — there's a weekly quota. But it's a subscription, not per-token billing: every test, every verification, every measurement is already paid for, not a cost that accumulates toward $80K&ndash;$120K.</span></div>
           <div class="callout teal"><strong>Strategic resilience</strong><span>MAX pricing is stable. If token pricing changes, the subscription model is a hedge. The worst case is a price increase on the subscription itself — predictable, budgetable.</span></div>
         </div>
         <div>
@@ -1114,18 +1113,18 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
               <tr><td style="color:#e8887e;">Opus</td><td>Architecture, complex debugging</td><td>When thinking matters most</td></tr>
             </tbody>
           </table>
-          <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">Even with unlimited: wrong model = slow feedback loops = less FDD discipline.</p>
+          <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">Even on flat-rate: wrong model = slow feedback loops = less FDD discipline = closer to that weekly quota.</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- f4-3: Results -->
-  <div class="slide custom" id="f4-3" data-note="$100k in potential costs → $0 with MAX + discipline. The fear became the budget strategy.">
+  <div class="slide custom" id="f4-3" data-note="$80K–$120K of real exposure → $0 actual spend, with MAX + discipline. The fear became the budget strategy.">
     <div class="universe-bar f4"></div>
     <div style="max-width:860px;width:100%;margin-top:8px;">
       <div class="slide-tag teal">Fear 4 &middot; The Results</div>
-      <h2 class="slide-title">$100k potential costs. $0 actual costs.</h2>
+      <h2 class="slide-title">$80K&ndash;$120K of exposure. $0 actual spend.</h2>
       <div class="stat-cards" style="margin-bottom:20px;">
         <div class="stat-card teal"><div class="stat-num">$0</div><div class="stat-label">API costs for the entire 2.5-week project</div></div>
         <div class="stat-card teal"><div class="stat-num">$100</div><div class="stat-label">Monthly MAX subscription (the only cost)</div></div>
@@ -1133,7 +1132,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
       </div>
       <div class="callouts">
         <div class="callout green"><strong>The fear became the system</strong><span>Worrying about costs forced disciplined model selection. That discipline made FDD faster, not just cheaper.</span></div>
-        <div class="callout green"><strong>Sustainable methodology</strong><span>A methodology that requires $100k/project is a demo, not a practice. MAX makes FDD repeatable across every project.</span></div>
+        <div class="callout green"><strong>Sustainable methodology</strong><span>A methodology that risks $80K&ndash;$120K/project unmanaged is a demo, not a practice. MAX + discipline makes FDD repeatable across every project.</span></div>
         <div class="callout green"><strong>Future-proofing</strong><span>Model selection habits built now transfer to any pricing model, any provider. The discipline is portable even if the economics change.</span></div>
       </div>
     </div>
@@ -1494,7 +1493,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
           <tr>
             <td style="color:#e8be94;">Production bugs</td>
             <td>Battle testing (191 files)</td>
-            <td style="color:#a8d89a;">Zero AI bugs in prod</td>
+            <td style="color:#a8d89a;">Zero AI bugs past the systems</td>
             <td style="color:#8ad0e8;">191 real files</td>
           </tr>
           <tr>
@@ -1506,7 +1505,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
           <tr>
             <td style="color:#8ad0e8;">Cost spiral</td>
             <td>Claude MAX + model selection</td>
-            <td style="color:#a8d89a;">$100k costs &rarr; $0</td>
+            <td style="color:#a8d89a;">$80K&ndash;$120K exposure &rarr; $0</td>
             <td style="color:#8ad0e8;">$0 API spend</td>
           </tr>
           <tr>
