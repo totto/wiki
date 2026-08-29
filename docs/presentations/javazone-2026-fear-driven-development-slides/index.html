@@ -289,19 +289,19 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
   </div>
 
   <!-- main-4: The Experiment -->
-  <div class="slide custom" id="main-4" data-note="This is the origin story — the concrete anchor for everything that follows. Let the numbers sit for a beat before moving to the agenda." style="background-color:var(--bg-dark);background-image:url('./assets/experiment-background-spark.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+  <div class="slide custom" id="main-4" data-note="This is the origin story — the concrete anchor for everything that follows. Let the numbers sit for a beat before moving to the agenda. These are day-11 numbers, not final — say so. The final numbers (10,035 tests, 695 commits) show up on the Proof slide; don't let the two sets of numbers look like a contradiction." style="background-color:var(--bg-dark);background-image:url('./assets/experiment-background-spark.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
     <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
     <div style="position:relative;z-index:1;max-width:920px;width:100%;">
       <div class="slide-tag">The Experiment</div>
       <h2 class="slide-title">January 16, 2026. I wanted to see how far I could push Claude Code in a weekend.</h2>
       <p style="margin-top:14px;font-size:15px;color:var(--text-dim);line-height:1.6;max-width:760px;">The domain: PCB manufacturing file formats &mdash; binary parsers, validators, industry specs. I chose it because I knew almost nothing about it. Not a prototype. Production code, handling real manufacturing data for actual fabricators.</p>
       <div class="stat-cards" style="margin-top:20px;">
-        <div class="stat-card purple"><div class="stat-num">197,831</div><div class="stat-label">Lines of Java (11 days)</div></div>
-        <div class="stat-card teal"><div class="stat-num">7,461</div><div class="stat-label">Tests (99.8% pass rate)</div></div>
-        <div class="stat-card purple"><div class="stat-num">445</div><div class="stat-label">Commits, all via PR</div></div>
+        <div class="stat-card purple"><div class="stat-num">197,831</div><div class="stat-label">Lines of Java (day 11)</div></div>
+        <div class="stat-card teal"><div class="stat-num">7,461</div><div class="stat-label">Tests, day 11 (99.8% pass rate)</div></div>
+        <div class="stat-card purple"><div class="stat-num">445</div><div class="stat-label">Commits, day 11, all via PR</div></div>
         <div class="stat-card teal"><div class="stat-num">25&ndash;66&times;</div><div class="stat-label">vs. a 9&ndash;24 month industry estimate</div></div>
       </div>
-      <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">8 file-format parsers &middot; 28 validators &middot; 17 auto-fix types &middot; a domain I didn't know</p>
+      <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">8 file-format parsers &middot; 28 validators &middot; 17 auto-fix types &middot; a domain I didn't know &mdash; still a week of hardening left; final numbers land on the Proof slide.</p>
     </div>
   </div>
 
@@ -612,7 +612,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
   </div>
 
   <!-- main-17: Results -->
-  <div class="slide custom" id="main-20" data-note="Let the numbers speak. Don't explain them. The audience can read." style="background-color:var(--bg-dark);background-image:url('./assets/proof-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
+  <div class="slide custom" id="main-20" data-note="Let the numbers speak. Don't explain them. The audience can read. On the '0' card: say it out loud — zero AI-induced bugs reached production ONCE the six systems were running. Before that, three of the fears you just walked through were exactly this happening. The systems are why it's zero now, not a claim the AI never got anything wrong." style="background-color:var(--bg-dark);background-image:url('./assets/proof-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
     <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
     <div style="max-width:940px;width:100%;position:relative;z-index:1;">
       <div class="slide-tag green">The Proof</div>
@@ -620,7 +620,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
       <div class="stat-cards">
         <div class="stat-card green"><div class="stat-num">10,035</div><div class="stat-label">Tests (99.8% pass rate)</div></div>
         <div class="stat-card green"><div class="stat-num">695</div><div class="stat-label">Commits (278/week, ~40/day)</div></div>
-        <div class="stat-card green"><div class="stat-num">0</div><div class="stat-label">AI-induced production bugs</div></div>
+        <div class="stat-card green"><div class="stat-num">0</div><div class="stat-label">AI-induced bugs past the systems</div></div>
         <div class="stat-card green"><div class="stat-num">$0</div><div class="stat-label">API costs (Claude MAX)</div></div>
       </div>
       <div style="margin-top:20px;padding:14px 18px;max-width:600px;background:linear-gradient(rgba(138,184,122,0.08),rgba(138,184,122,0.08)), rgba(10,11,13,0.68);border:1px solid rgba(138,184,122,0.15);border-radius:10px;font-size:13px;color:var(--text-muted);">
@@ -1631,6 +1631,7 @@ function runReveal(sl) {
 }
 
 function renderSlide(c, p, dir) {
+  document.querySelectorAll('video').forEach(function(v) { v.pause(); });
   var track = getTrack(c);
   track.querySelectorAll('.slide').forEach(function(s) {
     s.classList.remove('visible', 'anim-in-right', 'anim-in-left');
@@ -1690,7 +1691,7 @@ function switchCtx(newCtx) {
 
 function closeShortcuts() { document.getElementById('shortcut-overlay').classList.remove('open'); }
 
-var narratorHidden  = false;
+var narratorHidden  = true;
 var narratorVisible = false;
 
 function showNarrator(text) {
