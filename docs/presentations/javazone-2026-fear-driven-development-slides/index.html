@@ -149,8 +149,6 @@ blockquote.slide-quote.pink   { border-color:var(--pink); background:rgba(216,13
 .step-num.green  { background:var(--green); color:#000; } .step-num.pink { background:var(--pink); }
 .step-content strong { font-size:21px; color:var(--text); }
 .step-content p { font-size:20px; color:var(--text-muted); margin-top:3px; line-height:1.5; }
-#f5-4 .step-content strong { font-size:18px; }
-#f5-4 .step-content p { font-size:16px; line-height:1.4; }
 .callouts { display:flex; flex-direction:column; gap:7px; }
 .callout { background:rgba(10,11,13,0.55); border-left:3px solid var(--text-muted); border-radius:0 8px 8px 0; padding:7px 13px; }
 .callout.red    { border-left-color:var(--red);    background:linear-gradient(rgba(217,82,74,0.10),rgba(217,82,74,0.10)), rgba(10,11,13,0.55); }
@@ -458,7 +456,7 @@ assertArrayEquals(original, written);
     <div style="max-width:860px;width:100%;margin-top:8px;position:relative;z-index:1;">
       <div class="slide-tag amber">System #3 &middot; CI as Final Arbiter</div>
       <h2 class="slide-title">CI is the Truth. Not My Code Review.</h2>
-      <div class="code-block" style="margin-bottom:20px;max-width:560px;font-size:15px;background:rgba(22,24,29,0.7);backdrop-filter:blur(2px);"><span class="c">#!/bin/bash</span>
+      <div class="code-block" style="margin-bottom:20px;max-width:560px;font-size:14px;background:rgba(22,24,29,0.7);backdrop-filter:blur(2px);"><span class="c">#!/bin/bash</span>
 <span class="k">if</span> [ <span class="s">"$(git rev-parse --abbrev-ref HEAD)"</span> = <span class="s">"main"</span> ]; <span class="k">then</span>
   <span class="cmd">echo</span> <span class="s">"ERROR: Direct commits to main are forbidden"</span>
   <span class="cmd">echo</span> <span class="s">"Use: git checkout -b feature/your-branch"</span>
