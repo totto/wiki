@@ -67,11 +67,11 @@ body.ctx-f4    #nav::before { background:var(--teal); }
 body.ctx-f5    #nav::before { background:var(--purple); }
 body.ctx-f6    #nav::before { background:var(--pink); }
 body.ctx-demo  #nav::before { background:var(--green); }
-.nav-arrow { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:var(--text); padding:6px 14px; border-radius:6px; cursor:pointer; font-size:15px; transition:background 0.2s; flex-shrink:0; }
+.nav-arrow { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:var(--text); padding:6px 14px; border-radius:6px; cursor:pointer; font-size:22px; transition:background 0.2s; flex-shrink:0; }
 .nav-arrow:hover { background:rgba(255,255,255,0.12); }
 .nav-arrow:disabled { opacity:0.3; cursor:default; }
 .nav-ctx { display:flex; gap:3px; flex:1; justify-content:center; flex-wrap:wrap; }
-.nav-btn { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--text-muted); padding:5px 10px; border-radius:6px; cursor:pointer; font-size:10px; font-weight:500; letter-spacing:0.02em; transition:background 0.2s,border-color 0.2s,color 0.2s; white-space:nowrap; }
+.nav-btn { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--text-muted); padding:5px 10px; border-radius:6px; cursor:pointer; font-size:15px; font-weight:500; letter-spacing:0.02em; transition:background 0.2s,border-color 0.2s,color 0.2s; white-space:nowrap; }
 .nav-btn:hover { background:rgba(255,255,255,0.1); color:var(--text); }
 .nav-btn.main-btn.active  { background:rgba(232,180,92,0.2); color:#f0c878; border-color:rgba(232,180,92,0.45); }
 .nav-btn.f1-btn.active    { background:rgba(217,82,74,0.22); color:#e8887e; border-color:var(--red); }
@@ -88,7 +88,7 @@ body.ctx-demo  #nav::before { background:var(--green); }
 .nav-btn.f5-btn:hover  { border-color:var(--purple); }
 .nav-btn.f6-btn:hover  { border-color:var(--pink); }
 .nav-btn.demo-btn:hover { border-color:var(--green); }
-#ctx-indicator { position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size:11px; color:var(--text-muted); white-space:nowrap; pointer-events:none; background:rgba(8,10,24,0.9); padding:2px 10px; border-radius:4px 4px 0 0; }
+#ctx-indicator { position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size:16px; color:var(--text-muted); white-space:nowrap; pointer-events:none; background:rgba(8,10,24,0.9); padding:2px 10px; border-radius:4px 4px 0 0; }
 .radial-bg { position:absolute; inset:0; background:radial-gradient(ellipse at 40% 50%,rgba(217,82,74,0.12) 0%,transparent 55%),radial-gradient(ellipse at 75% 30%,rgba(184,90,66,0.08) 0%,transparent 50%); pointer-events:none; }
 .radial-bg.red    { background:radial-gradient(ellipse at 35% 50%,rgba(217,82,74,0.18) 0%,transparent 55%); }
 .radial-bg.orange { background:radial-gradient(ellipse at 35% 50%,rgba(217,151,92,0.12) 0%,transparent 55%); }
@@ -97,7 +97,7 @@ body.ctx-demo  #nav::before { background:var(--green); }
 .radial-bg.amber  { background:radial-gradient(ellipse at 35% 50%,rgba(232,180,92,0.18) 0%,transparent 55%); }
 .radial-bg.pink   { background:radial-gradient(ellipse at 35% 50%,rgba(216,138,174,0.18) 0%,transparent 55%); }
 .radial-bg.teal   { background:radial-gradient(ellipse at 35% 50%,rgba(92,184,216,0.18) 0%,transparent 55%); }
-.slide-tag { font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--red-light); margin-bottom:14px; }
+.slide-tag { font-size:16px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--red-light); margin-bottom:14px; }
 .slide-tag::before { content:'//'; margin-right:0.5em; opacity:0.55; font-weight:400; }
 .slide-tag.red    { color:#e8887e; }
 .slide-tag.orange { color:var(--orange-light); }
@@ -106,13 +106,13 @@ body.ctx-demo  #nav::before { background:var(--green); }
 .slide-tag.purple { color:#c4aee8; }
 .slide-tag.pink   { color:#e8a8c8; }
 .slide-tag.green  { color:#a8d89a; }
-h1.slide-title { font-size:58px; font-weight:600; line-height:1.08; letter-spacing:-0.02em; margin-bottom:16px; }
-h2.slide-title { font-size:42px; font-weight:600; line-height:1.12; letter-spacing:-0.02em; margin-bottom:14px; }
-.slide-sub { font-size:19px; color:var(--text-dim); line-height:1.55; margin-bottom:10px; }
-.slide-note { font-size:12px; color:var(--text-muted); margin-top:10px; }
-.slide-footer { position:absolute; bottom:18px; left:56px; right:56px; font-size:11px; color:var(--text-muted); border-top:1px solid rgba(255,255,255,0.07); padding-top:10px; }
-.statement { font-family:var(--t-disp); font-weight:300; font-size:27px; font-style:italic; color:var(--text-dim); line-height:1.55; max-width:800px; margin-bottom:28px; position:relative; z-index:1; }
-.badge { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:4px; margin-bottom:10px; }
+h1.slide-title { font-size:87px; font-weight:600; line-height:1.08; letter-spacing:-0.02em; margin-bottom:16px; }
+h2.slide-title { font-size:63px; font-weight:600; line-height:1.12; letter-spacing:-0.02em; margin-bottom:14px; }
+.slide-sub { font-size:28px; color:var(--text-dim); line-height:1.55; margin-bottom:10px; }
+.slide-note { font-size:18px; color:var(--text-muted); margin-top:10px; }
+.slide-footer { position:absolute; bottom:18px; left:56px; right:56px; font-size:16px; color:var(--text-muted); border-top:1px solid rgba(255,255,255,0.07); padding-top:10px; }
+.statement { font-family:var(--t-disp); font-weight:300; font-size:40px; font-style:italic; color:var(--text-dim); line-height:1.55; max-width:800px; margin-bottom:28px; position:relative; z-index:1; }
+.badge { display:inline-block; font-size:16px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:4px; margin-bottom:10px; }
 .badge.red    { background:rgba(217,82,74,0.18); color:#e8887e; border:1px solid rgba(217,82,74,0.35); }
 .badge.amber  { background:rgba(232,180,92,0.18); color:#f0c878; border:1px solid rgba(232,180,92,0.35); }
 .badge.green  { background:rgba(138,184,122,0.15);  color:#a8d89a; border:1px solid rgba(138,184,122,0.3); }
@@ -126,29 +126,31 @@ h2.slide-title { font-size:42px; font-weight:600; line-height:1.12; letter-spaci
 .card { background:rgba(10,11,13,0.55); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:14px; transition:background 0.2s,border-color 0.2s; }
 .card.red   { background:rgba(217,82,74,0.06); border-color:rgba(217,82,74,0.2); }
 .card.green { background:rgba(138,184,122,0.06); border-color:rgba(138,184,122,0.2); }
-.card-num { font-size:11px; color:var(--text-muted); font-weight:600; margin-bottom:8px; }
-.card-q { font-size:14px; font-weight:600; color:var(--text); line-height:1.4; }
-.slide-table { width:100%; border-collapse:collapse; margin-top:14px; font-size:13px; }
-.slide-table th { text-align:left; padding:7px 12px; background:rgba(255,255,255,0.05); color:var(--text-muted); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid rgba(255,255,255,0.1); }
+.card-num { font-size:16px; color:var(--text-muted); font-weight:600; margin-bottom:8px; }
+.card-q { font-size:21px; font-weight:600; color:var(--text); line-height:1.4; }
+.slide-table { width:100%; border-collapse:collapse; margin-top:14px; font-size:20px; }
+.slide-table th { text-align:left; padding:7px 12px; background:rgba(255,255,255,0.05); color:var(--text-muted); font-weight:600; font-size:16px; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid rgba(255,255,255,0.1); }
 .slide-table td { padding:7px 12px; border-bottom:1px solid rgba(255,255,255,0.05); color:var(--text-dim); line-height:1.35; vertical-align:top; }
-.code-block { background:var(--code-bg); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:13px 18px; font-family:'SF Mono','Fira Code','Cascadia Code',monospace; font-size:12.5px; line-height:1.55; margin-top:12px; overflow-x:auto; white-space:pre; }
+.code-block { background:var(--code-bg); border:1px solid rgba(255,255,255,0.09); border-radius:10px; padding:13px 18px; font-family:'SF Mono','Fira Code','Cascadia Code',monospace; font-size:18px; line-height:1.35; margin-top:12px; overflow-x:auto; white-space:pre; }
 .code-block .k { color:#8ad0e8; } .code-block .v { color:#e8be94; } .code-block .s { color:#a8d89a; }
 .code-block .c { color:#475569; font-style:italic; } .code-block .cmd { color:#c4aee8; } .code-block .arg { color:#93c5fd; }
-blockquote.slide-quote { font-family:var(--t-disp); font-weight:300; border-left:4px solid var(--red); padding:14px 22px; margin:20px 0; background:rgba(217,82,74,0.07); border-radius:0 10px 10px 0; font-size:19px; font-style:italic; color:var(--text-dim); line-height:1.5; }
+blockquote.slide-quote { font-family:var(--t-disp); font-weight:300; border-left:4px solid var(--red); padding:14px 22px; margin:20px 0; background:rgba(217,82,74,0.07); border-radius:0 10px 10px 0; font-size:28px; font-style:italic; color:var(--text-dim); line-height:1.5; }
 blockquote.slide-quote.green  { border-color:var(--green); background:rgba(138,184,122,0.07); }
 blockquote.slide-quote.orange { border-color:var(--orange); background:rgba(217,151,92,0.07); }
 blockquote.slide-quote.amber  { border-color:var(--amber); background:rgba(232,180,92,0.07); }
 blockquote.slide-quote.purple { border-color:var(--purple); background:rgba(168,138,216,0.07); }
 blockquote.slide-quote.teal   { border-color:var(--teal); background:rgba(92,184,216,0.07); }
 blockquote.slide-quote.pink   { border-color:var(--pink); background:rgba(216,138,174,0.07); }
-.steps { margin-top:14px; display:flex; flex-direction:column; gap:8px; width:100%; }
-.step { display:flex; align-items:flex-start; gap:14px; background:rgba(10,11,13,0.5); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:10px 16px; }
-.step-num { width:30px; height:30px; border-radius:50%; background:var(--red); color:#e8e4da; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.steps { margin-top:8px; display:flex; flex-direction:column; gap:4px; width:100%; }
+.step { display:flex; align-items:flex-start; gap:14px; background:rgba(10,11,13,0.5); border:1px solid rgba(255,255,255,0.07); border-radius:10px; padding:6px 16px; }
+.step-num { width:30px; height:30px; border-radius:50%; background:var(--red); color:#e8e4da; font-size:20px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .step-num.orange { background:var(--orange); } .step-num.amber  { background:var(--amber); color:#000; }
 .step-num.teal   { background:var(--teal); }   .step-num.purple { background:var(--purple); }
 .step-num.green  { background:var(--green); color:#000; } .step-num.pink { background:var(--pink); }
-.step-content strong { font-size:14px; color:var(--text); }
-.step-content p { font-size:13px; color:var(--text-muted); margin-top:3px; line-height:1.5; }
+.step-content strong { font-size:21px; color:var(--text); }
+.step-content p { font-size:20px; color:var(--text-muted); margin-top:3px; line-height:1.5; }
+#f5-4 .step-content strong { font-size:18px; }
+#f5-4 .step-content p { font-size:16px; line-height:1.4; }
 .callouts { display:flex; flex-direction:column; gap:7px; }
 .callout { background:rgba(10,11,13,0.55); border-left:3px solid var(--text-muted); border-radius:0 8px 8px 0; padding:7px 13px; }
 .callout.red    { border-left-color:var(--red);    background:linear-gradient(rgba(217,82,74,0.10),rgba(217,82,74,0.10)), rgba(10,11,13,0.55); }
@@ -158,16 +160,16 @@ blockquote.slide-quote.pink   { border-color:var(--pink); background:rgba(216,13
 .callout.teal   { border-left-color:var(--teal);   background:linear-gradient(rgba(92,184,216,0.10),rgba(92,184,216,0.10)), rgba(10,11,13,0.55); }
 .callout.purple { border-left-color:var(--purple); background:linear-gradient(rgba(168,138,216,0.10),rgba(168,138,216,0.10)), rgba(10,11,13,0.55); }
 .callout.pink   { border-left-color:var(--pink);   background:linear-gradient(rgba(216,138,174,0.10),rgba(216,138,174,0.10)), rgba(10,11,13,0.55); }
-.callout strong { font-size:12px; font-weight:700; color:var(--text); display:block; margin-bottom:2px; }
-.callout span   { font-size:12px; color:var(--text-muted); line-height:1.4; display:block; }
-.term-line { font-size:13px; color:var(--text-muted); letter-spacing:0.02em; }
+.callout strong { font-size:18px; font-weight:700; color:var(--text); display:block; margin-bottom:2px; }
+.callout span   { font-size:18px; color:var(--text-muted); line-height:1.4; display:block; }
+.term-line { font-size:20px; color:var(--text-muted); letter-spacing:0.02em; }
 .term-line .prompt { color:var(--red-light); }
 .fear-list { border-top:1px solid rgba(255,255,255,0.08); margin-top:6px; }
-.fear-row { display:flex; gap:18px; align-items:baseline; padding:6px 2px; border-bottom:1px solid rgba(255,255,255,0.08); font-size:14px; color:var(--text-dim); }
-.fear-mark { color:var(--red-light); font-weight:500; flex-shrink:0; width:22px; font-size:12px; }
-.callout p      { font-size:13px; color:var(--text-dim); line-height:1.55; }
-.ba-table { width:100%; border-collapse:collapse; margin-top:18px; font-size:13px; }
-.ba-table th { padding:9px 15px; text-align:left; font-size:11px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; }
+.fear-row { display:flex; gap:18px; align-items:baseline; padding:6px 2px; border-bottom:1px solid rgba(255,255,255,0.08); font-size:21px; color:var(--text-dim); }
+.fear-mark { color:var(--red-light); font-weight:500; flex-shrink:0; width:22px; font-size:18px; }
+.callout p      { font-size:20px; color:var(--text-dim); line-height:1.55; }
+.ba-table { width:100%; border-collapse:collapse; margin-top:18px; font-size:20px; }
+.ba-table th { padding:9px 15px; text-align:left; font-size:16px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; }
 .ba-table th.before { background:rgba(232,160,136,0.09); color:#e8887e; }
 .ba-table th.after  { background:rgba(138,184,122,0.09);  color:#a8d89a; }
 .ba-table td { padding:9px 15px; border-bottom:1px solid rgba(255,255,255,0.05); color:var(--text-dim); line-height:1.45; vertical-align:top; }
@@ -178,8 +180,8 @@ blockquote.slide-quote.pink   { border-color:var(--pink); background:rgba(216,13
 .stat-card.red    { background:rgba(217,82,74,0.07);  border:1px solid rgba(217,82,74,0.25); }
 .stat-card.teal   { background:rgba(92,184,216,0.07);  border:1px solid rgba(92,184,216,0.25); }
 .stat-card.purple { background:rgba(168,138,216,0.07); border:1px solid rgba(168,138,216,0.25); }
-.stat-card .stat-num   { font-size:48px; font-weight:800; line-height:1; }
-.stat-card .stat-label { font-size:13px; color:var(--text-dim); margin-top:8px; line-height:1.4; }
+.stat-card .stat-num   { font-size:50px; font-weight:800; line-height:1; }
+.stat-card .stat-label { font-size:20px; color:var(--text-dim); margin-top:8px; line-height:1.4; }
 .stat-card.green  .stat-num { color:#a8d89a; }
 .stat-card.red    .stat-num { color:#e8887e; }
 .stat-card.teal   .stat-num { color:#8ad0e8; }
@@ -190,38 +192,38 @@ blockquote.slide-quote.pink   { border-color:var(--pink); background:rgba(216,13
 #overlay { display:none; position:fixed; inset:0; z-index:2000; background:rgba(4,6,18,0.92); backdrop-filter:blur(10px); align-items:center; justify-content:center; padding:40px; }
 #overlay.open { display:flex; }
 #overlay-inner { background:var(--navy2); border:1px solid rgba(255,255,255,0.14); border-radius:16px; padding:38px; max-width:640px; width:100%; position:relative; }
-#overlay-q { font-size:18px; font-weight:700; margin-bottom:18px; color:var(--text); }
-#overlay-a { font-size:15px; color:var(--text-dim); line-height:1.75; }
-#overlay-close { position:absolute; top:14px; right:18px; background:none; border:none; color:var(--text-muted); font-size:22px; cursor:pointer; }
+#overlay-q { font-size:27px; font-weight:700; margin-bottom:18px; color:var(--text); }
+#overlay-a { font-size:22px; color:var(--text-dim); line-height:1.75; }
+#overlay-close { position:absolute; top:14px; right:18px; background:none; border:none; color:var(--text-muted); font-size:33px; cursor:pointer; }
 #shortcut-overlay { display:none; position:fixed; inset:0; z-index:2000; background:rgba(4,6,18,0.92); backdrop-filter:blur(10px); align-items:center; justify-content:center; }
 #shortcut-overlay.open { display:flex; }
 .shortcut-box { background:var(--navy2); border:1px solid rgba(255,255,255,0.14); border-radius:16px; padding:36px; min-width:400px; }
-.shortcut-box h3 { font-size:17px; font-weight:700; margin-bottom:20px; }
-.shortcut-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:14px; color:var(--text-dim); }
-kbd { background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:3px 7px; font-size:12px; font-family:monospace; color:var(--text); }
-#narrator-bar { position:fixed; bottom:var(--nav-h); left:0; right:0; background:rgba(15,20,40,0.95); border-top:1px solid rgba(217,82,74,0.3); padding:10px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; z-index:999; backdrop-filter:blur(8px); font-size:13px; }
+.shortcut-box h3 { font-size:26px; font-weight:700; margin-bottom:20px; }
+.shortcut-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:21px; color:var(--text-dim); }
+kbd { background:rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:3px 7px; font-size:18px; font-family:monospace; color:var(--text); }
+#narrator-bar { position:fixed; bottom:var(--nav-h); left:0; right:0; background:rgba(15,20,40,0.95); border-top:1px solid rgba(217,82,74,0.3); padding:10px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; z-index:999; backdrop-filter:blur(8px); font-size:20px; }
 #narrator-content { display:flex; align-items:flex-start; gap:10px; flex:1; line-height:1.5; }
-#narrator-icon { font-size:16px; flex-shrink:0; margin-top:1px; }
+#narrator-icon { font-size:24px; flex-shrink:0; margin-top:1px; }
 #narrator-text { color:#c9c4b4; }
-#narrator-toggle { background:none; border:1px solid rgba(217,82,74,0.3); color:#8a8478; padding:3px 10px; border-radius:4px; cursor:pointer; font-size:11px; flex-shrink:0; }
+#narrator-toggle { background:none; border:1px solid rgba(217,82,74,0.3); color:#8a8478; padding:3px 10px; border-radius:4px; cursor:pointer; font-size:16px; flex-shrink:0; }
 #narrator-toggle:hover { border-color:rgba(217,82,74,0.6); color:#e8887e; }
 body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
-.terminal-window { background:rgba(13,17,23,0.8); backdrop-filter:blur(2px); border-radius:10px; border:1px solid rgba(255,255,255,0.1); font-family:'JetBrains Mono','Fira Code','Courier New',monospace; font-size:13px; line-height:1.6; width:100%; max-width:640px; margin:0 auto; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
+.terminal-window { background:rgba(13,17,23,0.8); backdrop-filter:blur(2px); border-radius:10px; border:1px solid rgba(255,255,255,0.1); font-family:'JetBrains Mono','Fira Code','Courier New',monospace; font-size:20px; line-height:1.6; width:100%; max-width:880px; margin:0 auto; box-shadow:0 20px 60px rgba(0,0,0,0.5); }
 .terminal-titlebar { background:rgba(28,33,40,0.82); border-bottom:1px solid rgba(255,255,255,0.08); padding:10px 16px; display:flex; align-items:center; gap:8px; border-radius:10px 10px 0 0; }
 .term-dot { width:12px; height:12px; border-radius:50%; }
 .term-dot.red { background:#ff5f56; } .term-dot.yellow { background:#ffbd2e; } .term-dot.green { background:#27c93f; }
-.terminal-titlebar span { font-size:12px; color:#8b949e; margin-left:8px; font-family:sans-serif; }
-.terminal-body { padding:14px 20px; min-height:0; max-height:380px; overflow-y:auto; }
+.terminal-titlebar span { font-size:18px; color:#8b949e; margin-left:8px; font-family:sans-serif; }
+.terminal-body { padding:14px 20px; min-height:0; max-height:630px; overflow-y:auto; }
 .term-prompt { color:#58a6ff; } .term-cmd { color:#e6edf3; } .term-out { color:#8b949e; }
 .term-ok { color:#3fb950; } .term-warn { color:#e3b341; } .term-err { color:#f85149; }
 .term-highlight { color:#ffa657; } .term-dim { color:#484f58; }
-.term-line { margin:0; white-space:pre-wrap; word-break:break-all; }
+.term-line { margin:0; white-space:pre-wrap; word-break:normal; overflow-wrap:anywhere; }
 .formula-chain { display:flex; align-items:center; flex-wrap:wrap; gap:10px; margin:28px 0; justify-content:center; }
-.formula-node { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:10px 18px; font-size:15px; font-weight:600; color:var(--text); }
+.formula-node { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:10px 18px; font-size:22px; font-weight:600; color:var(--text); }
 .formula-node.red    { background:rgba(217,82,74,0.12);  border-color:rgba(217,82,74,0.3);  color:#e8887e; }
 .formula-node.green  { background:rgba(138,184,122,0.12);  border-color:rgba(138,184,122,0.3);  color:#a8d89a; }
 .formula-node.amber  { background:rgba(232,180,92,0.12); border-color:rgba(232,180,92,0.3); color:#f0c878; }
-.formula-arrow { font-size:20px; color:var(--text-muted); }
+.formula-arrow { font-size:30px; color:var(--text-muted); }
 </style>
 </head>
 <body class="ctx-main">
@@ -242,7 +244,7 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
     <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.8) 0%, rgba(10,11,13,0.4) 45%, transparent 70%);"></div>
     <div style="position:relative;z-index:1;text-align:left;max-width:520px;">
       <div class="slide-tag" style="color:var(--text-muted);">JavaZone &middot; September 2026</div>
-      <h1 class="slide-title" style="font-size:48px;"><span style="color:var(--amber);">Fear</span>-Driven Development</h1>
+      <h1 class="slide-title" style="font-size:72px;"><span style="color:var(--amber);">Fear</span>-Driven Development</h1>
       <p class="slide-sub" style="max-width:480px;">Thor Henning Hetland &middot; eXOReaction</p>
       <p class="slide-note" style="margin-top:32px;opacity:0.75;">We'll begin shortly.<span class="caret">&#9615;</span></p>
     </div>
@@ -260,7 +262,7 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
       <div class="slide-tag">The Hook</div>
       <h2 class="slide-title">Most developers won't admit this.</h2>
       <div class="term-line" style="margin:14px 0 8px;"><span class="prompt">$</span> whoami --honest</div>
-      <blockquote class="slide-quote" style="font-size:20px;padding:11px 20px;margin:10px 0 16px;">"I'm scared of AI."</blockquote>
+      <blockquote class="slide-quote" style="font-size:30px;padding:11px 20px;margin:10px 0 16px;">"I'm scared of AI."</blockquote>
       <div class="fear-list">
         <div class="fear-row"><span class="fear-mark">01</span><span>Scared the AI is hallucinating and I can't tell</span></div>
         <div class="fear-row"><span class="fear-mark">02</span><span>Scared something will break in production</span></div>
@@ -269,7 +271,7 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
         <div class="fear-row"><span class="fear-mark">05</span><span>Scared of losing control to the AI</span></div>
         <div class="fear-row"><span class="fear-mark">06</span><span>Scared of silent failures nobody notices</span></div>
       </div>
-      <p style="margin-top:16px;font-size:17px;font-weight:600;color:var(--text);">Those fears built the system.<span class="caret">&#9615;</span></p>
+      <p style="margin-top:16px;font-size:26px;font-weight:600;color:var(--text);">Those fears built the system.<span class="caret">&#9615;</span></p>
     </div>
   </div>
 
@@ -289,7 +291,7 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
           <img src="./assets/who-is-totto-console.webp" alt="Totto at the console, running a fleet of AI agents" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
       </div>
-      <p style="margin-top:20px;font-size:16px;color:var(--text-dim);">These days: shipping production code with AI agents at speeds that shouldn't be possible.</p>
+      <p style="margin-top:20px;font-size:24px;color:var(--text-dim);">These days: shipping production code with AI agents at speeds that shouldn't be possible.</p>
     </div>
   </div>
 
@@ -298,15 +300,15 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
     <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
     <div style="position:relative;z-index:1;max-width:920px;width:100%;">
       <div class="slide-tag">The Experiment</div>
-      <h2 class="slide-title">January 16, 2026. I wanted to see how far I could push Claude Code in a weekend.</h2>
-      <p style="margin-top:14px;font-size:15px;color:var(--text-dim);line-height:1.6;max-width:760px;">The domain: PCB manufacturing file formats &mdash; binary parsers, validators, industry specs. I chose it because I knew almost nothing about it. Not a prototype. Production code, handling real manufacturing data for actual fabricators.</p>
-      <div class="stat-cards" style="margin-top:20px;">
+      <h2 class="slide-title" style="font-size:52px;">January 16, 2026. I wanted to see how far I could push Claude Code in a weekend.</h2>
+      <p style="margin-top:10px;font-size:18px;color:var(--text-dim);line-height:1.5;max-width:760px;">The domain: PCB manufacturing file formats &mdash; binary parsers, validators, industry specs. I chose it because I knew almost nothing about it. Not a prototype. Production code, handling real manufacturing data for actual fabricators.</p>
+      <div class="stat-cards" style="margin-top:16px;">
         <div class="stat-card purple"><div class="stat-num">197,831</div><div class="stat-label">Lines of Java (day 11)</div></div>
         <div class="stat-card teal"><div class="stat-num">7,461</div><div class="stat-label">Tests, day 11 (99.8% pass rate)</div></div>
         <div class="stat-card purple"><div class="stat-num">445</div><div class="stat-label">Commits, day 11, all via PR</div></div>
         <div class="stat-card teal"><div class="stat-num">25&ndash;66&times;</div><div class="stat-label">vs. a 9&ndash;24 month industry estimate</div></div>
       </div>
-      <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">8 file-format parsers &middot; 28 validators &middot; 17 auto-fix types &middot; a domain I didn't know &mdash; still a week of hardening left; final numbers land on the Proof slide.</p>
+      <p style="margin-top:16px;font-size:16px;color:var(--text-muted);">8 file-format parsers &middot; 28 validators &middot; 17 auto-fix types &middot; a domain I didn't know &mdash; still a week of hardening left; final numbers land on the Proof slide.</p>
     </div>
   </div>
 
@@ -331,9 +333,9 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
   <div class="slide custom" id="main-6" data-note="This is the pivot. You've confessed the fears, shown the experiment — now name the pattern out loud: every fear, left alone, is just anxiety. But turn it into a system and it compounds into speed. Say it like you're realizing it live. Then move to Fear #1." style="background-color:var(--bg-dark);background-image:url('./assets/framework-background-thought-bubble.webp');background-size:cover;background-position:center;background-repeat:no-repeat;justify-content:center;align-items:center;">
     <div class="slide-tag" style="position:absolute;top:36px;left:56px;">The Framework</div>
     <div style="position:relative;z-index:1;text-align:center;max-width:520px;transform:translateY(-11%);">
-      <div style="font-size:21px;font-weight:800;color:#e8887e;margin-bottom:12px;">Fear Without Systems = Just Anxiety</div>
-      <div style="font-size:21px;font-weight:800;color:#a8d89a;margin-bottom:22px;">Fear With Systems = 10&times; Productivity</div>
-      <p style="font-family:var(--t-disp);font-weight:300;font-style:italic;font-size:15px;color:var(--text-dim);line-height:1.6;">Every fear in this talk became a system.<br>Every system made things faster. Watch how.</p>
+      <div style="font-size:32px;font-weight:800;color:#e8887e;margin-bottom:12px;">Fear Without Systems = Just Anxiety</div>
+      <div style="font-size:32px;font-weight:800;color:#a8d89a;margin-bottom:22px;">Fear With Systems = 10&times; Productivity</div>
+      <p style="font-family:var(--t-disp);font-weight:300;font-style:italic;font-size:22px;color:var(--text-dim);line-height:1.6;">Every fear in this talk became a system.<br>Every system made things faster. Watch how.</p>
     </div>
   </div>
 
@@ -349,11 +351,11 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
         <div class="callout"><span>"One misplaced field type. The whole byte stream silently misaligned."</span></div>
         <div class="callout red"><strong>The crash:</strong><span>"Requested 1174405120 bytes (1.1GB) for string length exceeds buffer size."</span></div>
       </div>
-      <div class="code-block" style="max-width:470px;"><span class="c">// Spec: 11 primitives BEFORE strings.</span>
+      <div class="code-block" style="max-width:470px;white-space:pre-wrap;"><span class="c">// Spec: 11 primitives BEFORE strings.</span>
 <span class="k">String</span> name = reader.readString(); <span class="c">// ← reads garbage</span>
 <span class="k">int</span> type = reader.readInt8();
 <span class="c">// 575KB later: misalignment explodes → 1.1GB requested</span></div>
-      <p style="margin-top:10px;font-size:16px;font-weight:700;color:#e8887e;max-width:470px;">I can't trust my ability to spot hallucinations by reading code.</p>
+      <p style="margin-top:10px;font-size:24px;font-weight:700;color:#e8887e;max-width:470px;">I can't trust my ability to spot hallucinations by reading code.</p>
     </div>
   </div>
 
@@ -366,16 +368,16 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
       <h2 class="slide-title">If You Can't Trust What You Read, Prove What It Does</h2>
       <div class="two-col">
         <div>
-          <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Round-trip test</div>
-          <div class="code-block" style="margin-top:0;font-size:12px;background:rgba(22,24,29,0.72);backdrop-filter:blur(2px);"><span class="k">byte</span>[] original = Files.readAllBytes(testFile);
+          <div style="font-size:18px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Round-trip test</div>
+          <div class="code-block" style="margin-top:0;font-size:18px;background:rgba(22,24,29,0.72);backdrop-filter:blur(2px);"><span class="k">byte</span>[] original = Files.readAllBytes(testFile);
 <span class="k">PCBDesign</span> design = parser.parse(testFile);
 <span class="k">byte</span>[] written = writer.write(design);
 assertArrayEquals(original, written);
 <span class="c">// If this fails → AI lied somewhere</span></div>
         </div>
         <div>
-          <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Property-based test</div>
-          <div class="code-block" style="margin-top:0;font-size:12px;background:rgba(22,24,29,0.72);backdrop-filter:blur(2px);"><span class="cmd">@Property</span>
+          <div style="font-size:18px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Property-based test</div>
+          <div class="code-block" style="margin-top:0;font-size:18px;background:rgba(22,24,29,0.72);backdrop-filter:blur(2px);"><span class="cmd">@Property</span>
 <span class="k">void</span> boundingBoxContainsAllFeatures(<span class="k">Layer</span> layer) {
     <span class="k">BoundBox</span> box = layer.getBoundBox();
     <span class="k">for</span> (<span class="k">Feature</span> f : layer.getFeatures()) {
@@ -385,7 +387,7 @@ assertArrayEquals(original, written);
 <span class="c">// AI can't hallucinate away invariants</span></div>
         </div>
       </div>
-      <div style="margin-top:20px;padding:14px 18px;background:rgba(138,184,122,0.07);border:1px solid rgba(138,184,122,0.25);border-radius:10px;font-size:15px;font-weight:700;color:#a8d89a;">23 tests &rarr; 10,035 tests. Zero false confidence.</div>
+      <div style="margin-top:20px;padding:14px 18px;background:rgba(138,184,122,0.07);border:1px solid rgba(138,184,122,0.25);border-radius:10px;font-size:22px;font-weight:700;color:#a8d89a;">23 tests &rarr; 10,035 tests. Zero false confidence.</div>
     </div>
   </div>
 
@@ -401,7 +403,7 @@ assertArrayEquals(original, written);
         <div class="callout red"><strong>User reports:</strong><span>"The drill holes are 2&times; too large."</span></div>
         <div class="callout"><span>"Coordinate scaling in DrillListing.java was calibrated against inflated dimensions (400mm). After filtering, actual PCB is 216mm &mdash; but drill holes still scale to 432mm."</span></div>
       </div>
-      <p style="font-size:16px;font-weight:700;color:#e8887e;">The code looked fine. But there was a <em>lurking</em> interaction between two features I'd never tested together.</p>
+      <p style="font-size:24px;font-weight:700;color:#e8887e;">The code looked fine. But there was a <em>lurking</em> interaction between two features I'd never tested together.</p>
     </div>
   </div>
 
@@ -445,7 +447,7 @@ assertArrayEquals(original, written);
         <div class="callout"><span>Working directly on main, accepting AI suggestions, committing fast.</span></div>
         <div class="callout red"><span>The 'fix' introduced a bug that broke 47 tests. For 23 minutes, main was broken.</span></div>
       </div>
-      <p style="margin-top:18px;font-size:16px;font-weight:700;color:#e8887e;">Direct commits to main with AI-generated code is playing Russian roulette.</p>
+      <p style="margin-top:18px;font-size:24px;font-weight:700;color:#e8887e;">Direct commits to main with AI-generated code is playing Russian roulette.</p>
     </div>
   </div>
 
@@ -456,7 +458,7 @@ assertArrayEquals(original, written);
     <div style="max-width:860px;width:100%;margin-top:8px;position:relative;z-index:1;">
       <div class="slide-tag amber">System #3 &middot; CI as Final Arbiter</div>
       <h2 class="slide-title">CI is the Truth. Not My Code Review.</h2>
-      <div class="code-block" style="margin-bottom:20px;max-width:560px;background:rgba(22,24,29,0.7);backdrop-filter:blur(2px);"><span class="c">#!/bin/bash</span>
+      <div class="code-block" style="margin-bottom:20px;max-width:560px;font-size:15px;background:rgba(22,24,29,0.7);backdrop-filter:blur(2px);"><span class="c">#!/bin/bash</span>
 <span class="k">if</span> [ <span class="s">"$(git rev-parse --abbrev-ref HEAD)"</span> = <span class="s">"main"</span> ]; <span class="k">then</span>
   <span class="cmd">echo</span> <span class="s">"ERROR: Direct commits to main are forbidden"</span>
   <span class="cmd">echo</span> <span class="s">"Use: git checkout -b feature/your-branch"</span>
@@ -473,8 +475,8 @@ assertArrayEquals(original, written);
         <div class="formula-arrow">&rarr;</div>
         <div class="formula-node green">Merge</div>
       </div>
-      <p style="font-size:13px;color:var(--text-muted);">CI is the final gate. AI can convince me. It cannot convince CI.</p>
-      <p style="margin-top:10px;font-size:14px;font-weight:700;color:#a8d89a;">695 commits. Zero broken builds on main.</p>
+      <p style="font-size:20px;color:var(--text-muted);">CI is the final gate. AI can convince me. It cannot convince CI.</p>
+      <p style="margin-top:10px;font-size:21px;font-weight:700;color:#a8d89a;">695 commits. Zero broken builds on main.</p>
     </div>
   </div>
 
@@ -486,8 +488,8 @@ assertArrayEquals(original, written);
     <div style="position:relative;z-index:1;text-align:center;max-width:820px;margin-top:8px;">
       <div class="slide-tag red" style="display:flex;justify-content:center;">Fear #4 &middot; Cost Spiral</div>
       <h2 class="slide-title">$80,000&ndash;$120,000. For one 2.5-week project.</h2>
-      <div style="font-size:76px;font-weight:900;color:#e8887e;line-height:1;margin:20px 0;">$80K&ndash;$120K</div>
-      <p style="font-size:18px;color:var(--text-dim);margin-bottom:20px;">Not per year. For this one project, at heavy usage, metered.</p>
+      <div style="font-size:114px;font-weight:900;color:#e8887e;line-height:1;margin:20px 0;">$80K&ndash;$120K</div>
+      <p style="font-size:27px;color:var(--text-dim);margin-bottom:20px;">Not per year. For this one project, at heavy usage, metered.</p>
       <div class="callout" style="text-align:left;margin-bottom:16px;"><span>Heavy AI usage. Multiple sessions per day. Long context windows. All the testing, verification, and measurement required for Fear-Driven Development.</span></div>
       <div class="callout red" style="text-align:left;"><span>What if I build my entire workflow around this and the pricing changes?</span></div>
     </div>
@@ -501,8 +503,8 @@ assertArrayEquals(original, written);
       <div class="slide-tag amber">System #4 &middot; Sustainable Economics</div>
       <h2 class="slide-title">Make the Economics Non-Negotiable</h2>
       <div class="callout amber" style="margin-bottom:10px;"><strong>Claude MAX</strong><span>Flat-rate usage makes FDD economically possible. Without it, testing everything, verifying everything can run $80K&ndash;$120K per project.</span></div>
-      <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Why optimize even on flat-rate? Latency + discipline + future-proofing.</p>
-      <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Model selection</div>
+      <p style="font-size:20px;color:var(--text-muted);margin-bottom:14px;">Why optimize even on flat-rate? Latency + discipline + future-proofing.</p>
+      <div style="font-size:18px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Model selection</div>
       <table class="slide-table">
         <thead><tr><th>Complexity</th><th>Model</th><th>Use</th></tr></thead>
         <tbody>
@@ -527,7 +529,7 @@ assertArrayEquals(original, written);
         <div class="callout"><span>"I merged it. Tests passed."</span></div>
         <div class="callout red"><span>"But I had this nagging feeling: I just shipped code I don't understand."</span></div>
       </div>
-      <blockquote class="slide-quote" style="font-size:19px;padding:11px 20px;">Am I still a developer if the AI is doing the thinking?</blockquote>
+      <blockquote class="slide-quote" style="font-size:28px;padding:11px 20px;">Am I still a developer if the AI is doing the thinking?</blockquote>
     </div>
   </div>
 
@@ -538,13 +540,13 @@ assertArrayEquals(original, written);
     <div style="max-width:620px;width:100%;margin-top:8px;position:relative;z-index:1;">
       <div class="slide-tag amber">System #5 &middot; Directed Synthesis</div>
       <h2 class="slide-title">Don't Grade Your Own Homework</h2>
-      <p style="margin-top:6px;font-size:14px;color:var(--text-dim);">When something needs spot-checking &mdash; a deep-dive report, 10+ pages &mdash; I don't just re-read it. I ask ExoCortex to write it, then pick whichever of these actually answers the question I have &mdash; rarely all three.</p>
+      <p style="margin-top:6px;font-size:21px;color:var(--text-dim);">When something needs spot-checking &mdash; a deep-dive report, 10+ pages &mdash; I don't just re-read it. I ask ExoCortex to write it, then pick whichever of these actually answers the question I have &mdash; rarely all three.</p>
       <div class="cards" style="margin-top:16px;">
-        <div class="card"><div class="card-q">Is the science real?</div><div style="margin-top:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">ChatGPT deep-research &mdash; peer-review it against actual published research.</div></div>
-        <div class="card"><div class="card-q">Does it match my mental model?</div><div style="margin-top:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">NotebookLM &rarr; infographic &mdash; a fast visual gut-check against what I expected.</div></div>
-        <div class="card"><div class="card-q">Do I actually understand it?</div><div style="margin-top:6px;font-size:12px;color:var(--text-muted);line-height:1.5;">NotebookLM &rarr; slide deck, 10&ndash;20 slides &mdash; forces me to learn it, not just skim it.</div></div>
+        <div class="card"><div class="card-q">Is the science real?</div><div style="margin-top:6px;font-size:18px;color:var(--text-muted);line-height:1.5;">ChatGPT deep-research &mdash; peer-review it against actual published research.</div></div>
+        <div class="card"><div class="card-q">Does it match my mental model?</div><div style="margin-top:6px;font-size:18px;color:var(--text-muted);line-height:1.5;">NotebookLM &rarr; infographic &mdash; a fast visual gut-check against what I expected.</div></div>
+        <div class="card"><div class="card-q">Do I actually understand it?</div><div style="margin-top:6px;font-size:18px;color:var(--text-muted);line-height:1.5;">NotebookLM &rarr; slide deck, 10&ndash;20 slides &mdash; forces me to learn it, not just skim it.</div></div>
       </div>
-      <div style="margin-top:16px;padding:12px 18px;background:rgba(232,180,92,0.08);border:1px solid rgba(232,180,92,0.2);border-radius:8px;font-size:13px;color:var(--text-muted);">
+      <div style="margin-top:16px;padding:12px 18px;background:rgba(232,180,92,0.08);border:1px solid rgba(232,180,92,0.2);border-radius:8px;font-size:20px;color:var(--text-muted);">
         Different product areas need different lenses. The point isn't running all three &mdash; it's never checking the AI's work with the same kind of AI that produced it.
       </div>
     </div>
@@ -563,7 +565,7 @@ assertArrayEquals(original, written);
         <div class="callout"><span>"Overall bounding box: including a documentation layer with inflated coordinates."</span></div>
         <div class="callout red"><span>Tests were green. The code worked. But the result was wrong because I was measuring the wrong thing.</span></div>
       </div>
-      <p style="font-size:16px;font-weight:700;color:#e8887e;">Green tests don't mean the system is correct. They mean it matches what you tested.</p>
+      <p style="font-size:24px;font-weight:700;color:#e8887e;">Green tests don't mean the system is correct. They mean it matches what you tested.</p>
     </div>
   </div>
 
@@ -571,10 +573,10 @@ assertArrayEquals(original, written);
   <div class="slide custom" id="main-18" data-note="Not 'did it crash?' but 'are the values reasonable?' That's the shift." style="background-color:var(--bg-dark);background-image:url('./assets/sys6-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
     <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(10,11,13,0.85) 0%, rgba(10,11,13,0.5) 50%, transparent 75%);"></div>
     <div class="universe-bar f6" style="background:var(--amber);"></div>
-    <div style="max-width:600px;width:100%;margin-top:8px;position:relative;z-index:1;">
+    <div style="max-width:820px;width:100%;margin-top:8px;position:relative;z-index:1;">
       <div class="slide-tag amber">System #6 &middot; Extreme Measurement</div>
       <h2 class="slide-title">Don't Just Test. Measure.</h2>
-      <div class="code-block" style="font-size:12px;background:rgba(22,24,29,0.7);backdrop-filter:blur(2px);">System.out.printf(<span class="s">"PCB boundBox: %.1fmm × %.1fmm%n"</span>,
+      <div class="code-block" style="font-size:18px;background:rgba(22,24,29,0.7);backdrop-filter:blur(2px);">System.out.printf(<span class="s">"PCB boundBox: %.1fmm × %.1fmm%n"</span>,
     width / <span class="v">1_000_000.0</span>, height / <span class="v">1_000_000.0</span>);
 System.out.printf(<span class="s">"Expected: ~216mm × 206mm%n"</span>);
 System.out.printf(<span class="s">"Alignment: %.1f%%%n"</span>, misalignment * <span class="v">100</span>);
@@ -612,7 +614,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
           <tr><td style="color:#e8a8c8;">Silent failures</td><td>Extreme measurement</td><td style="color:#a8d89a;">Fast bug detection</td></tr>
         </tbody>
       </table>
-      <p style="margin-top:20px;font-size:16px;font-weight:700;color:var(--text);">Formula: <span class="hl-red">Fear</span> &rarr; <span class="hl-amber">Discipline</span> &rarr; <span class="hl-green">Results</span></p>
+      <p style="margin-top:20px;font-size:24px;font-weight:700;color:var(--text);">Formula: <span class="hl-red">Fear</span> &rarr; <span class="hl-amber">Discipline</span> &rarr; <span class="hl-green">Results</span></p>
     </div>
   </div>
 
@@ -628,7 +630,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         <div class="stat-card green"><div class="stat-num">0</div><div class="stat-label">AI-induced bugs past the systems</div></div>
         <div class="stat-card green"><div class="stat-num">$0</div><div class="stat-label">API costs (Claude MAX)</div></div>
       </div>
-      <div style="margin-top:20px;padding:14px 18px;max-width:600px;background:linear-gradient(rgba(138,184,122,0.08),rgba(138,184,122,0.08)), rgba(10,11,13,0.68);border:1px solid rgba(138,184,122,0.15);border-radius:10px;font-size:13px;color:var(--text-muted);">
+      <div style="margin-top:20px;padding:14px 18px;max-width:600px;background:linear-gradient(rgba(138,184,122,0.08),rgba(138,184,122,0.08)), rgba(10,11,13,0.68);border:1px solid rgba(138,184,122,0.15);border-radius:10px;font-size:20px;color:var(--text-muted);">
         191 real-world PCB files in battle suite<br>main branch: always green &nbsp;&middot;&nbsp; lib-pcb: 2.5 weeks, Jan&ndash;Feb 2026
       </div>
     </div>
@@ -640,13 +642,13 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div class="universe-bar" style="background:var(--teal);"></div>
     <div style="max-width:620px;width:100%;margin-top:8px;position:relative;z-index:1;">
       <div class="slide-tag teal">Down the Rabbit Hole</div>
-      <h2 class="slide-title">I'd solved the generation problem.<br>I'd created a comprehension problem.</h2>
-      <div class="callouts" style="margin-top:16px;">
+      <h2 class="slide-title" style="font-size:54px;">I'd solved the generation problem.<br>I'd created a comprehension problem.</h2>
+      <div class="callouts" style="margin-top:10px;">
         <div class="callout teal"><span>8,934 files across the workspace by the time lib-pcb shipped &mdash; not just code, but skills, docs, tests, plans</span></div>
         <div class="callout teal"><span>Standard RAG (vector search) was categorically inadequate &mdash; it answers "find something like X," not "what breaks if I change this?"</span></div>
         <div class="callout teal"><span>Graph questions need graph answers, not semantic similarity</span></div>
       </div>
-      <p style="margin-top:20px;font-size:16px;font-weight:700;color:var(--text);">So I built the tool I needed: Synthesis &mdash; an open-source knowledge graph over the codebase.</p>
+      <p style="margin-top:10px;font-size:24px;font-weight:700;color:var(--text);">So I built the tool I needed: Synthesis &mdash; an open-source knowledge graph over the codebase.</p>
     </div>
   </div>
 
@@ -667,7 +669,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         <div class="formula-node purple">KCP</div>
       </div>
       <p class="statement" style="margin:0 auto;">KCP &mdash; Knowledge Context Protocol &mdash; is where I am now. Not a product. A proposal: what an AI agent should <em>know</em> before it acts, not just what it can <em>do</em>.</p>
-      <p style="margin-top:16px;font-size:15px;color:var(--text-muted);">I don't know where the bottom of this rabbit hole is. I'm not sure there is one.</p>
+      <p style="margin-top:16px;font-size:22px;color:var(--text-muted);">I don't know where the bottom of this rabbit hole is. I'm not sure there is one.</p>
     </div>
   </div>
 
@@ -678,14 +680,14 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div style="max-width:960px;width:100%;margin-top:8px;position:relative;z-index:1;">
       <div class="slide-tag purple">June &ndash; August 2026</div>
       <h2 class="slide-title">A spec isn't a system. So I built the system.</h2>
-      <p style="margin-top:6px;font-size:14px;color:var(--text-dim);max-width:780px;">KCP stopped being just a proposal. Four things made it real, each testing a different piece of the idea.</p>
+      <p style="margin-top:6px;font-size:21px;color:var(--text-dim);max-width:780px;">KCP stopped being just a proposal. Four things made it real, each testing a different piece of the idea.</p>
       <div class="cards" style="margin-top:20px;">
-        <div class="card"><div class="card-q">kcp-agent</div><div style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5;">The reference deterministic agent. The model proposes a plan, the planner disposes &mdash; fail-closed, every step audited before it runs.</div></div>
-        <div class="card"><div class="card-q">kcp-harness</div><div style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5;">Governance from outside: an MCP proxy that checks every tool call against policy before it reaches the downstream server.</div></div>
-        <div class="card"><div class="card-q">pi-kcp</div><div style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5;">Governance from inside: the same enforcement, but living inside the agent's own turn instead of in front of it.</div></div>
-        <div class="card"><div class="card-q">Sunstone Atlas</div><div style="margin-top:8px;font-size:12px;color:var(--text-muted);line-height:1.5;">The first real product built on top of it &mdash; a governed knowledge, skill, and playbook substrate for an actual organization.</div></div>
+        <div class="card"><div class="card-q">kcp-agent</div><div style="margin-top:8px;font-size:18px;color:var(--text-muted);line-height:1.5;">The reference deterministic agent. The model proposes a plan, the planner disposes &mdash; fail-closed, every step audited before it runs.</div></div>
+        <div class="card"><div class="card-q">kcp-harness</div><div style="margin-top:8px;font-size:18px;color:var(--text-muted);line-height:1.5;">Governance from outside: an MCP proxy that checks every tool call against policy before it reaches the downstream server.</div></div>
+        <div class="card"><div class="card-q">pi-kcp</div><div style="margin-top:8px;font-size:18px;color:var(--text-muted);line-height:1.5;">Governance from inside: the same enforcement, but living inside the agent's own turn instead of in front of it.</div></div>
+        <div class="card"><div class="card-q">Sunstone Atlas</div><div style="margin-top:8px;font-size:18px;color:var(--text-muted);line-height:1.5;">The first real product built on top of it &mdash; a governed knowledge, skill, and playbook substrate for an actual organization.</div></div>
       </div>
-      <p style="margin-top:16px;font-size:15px;color:var(--text-muted);">Two different enforcement points, tested in parallel, on purpose. I still don't know which one wins.</p>
+      <p style="margin-top:16px;font-size:22px;color:var(--text-muted);">Two different enforcement points, tested in parallel, on purpose. I still don't know which one wins.</p>
     </div>
   </div>
 
@@ -701,10 +703,10 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         <div class="stat-card teal"><div class="stat-num">90,050</div><div class="stat-label">Files indexed across them (66,350 in May)</div></div>
         <div class="stat-card purple"><div class="stat-num">252</div><div class="stat-label">KCP command manifests (152 in May)</div></div>
       </div>
-      <div style="margin-top:20px;padding:14px 18px;background:linear-gradient(rgba(216,138,174,0.08),rgba(216,138,174,0.08)), rgba(10,11,13,0.62);border:1px solid rgba(216,138,174,0.15);border-radius:10px;font-size:13px;color:var(--text-muted);">
+      <div style="margin-top:20px;padding:14px 18px;background:linear-gradient(rgba(216,138,174,0.08),rgba(216,138,174,0.08)), rgba(10,11,13,0.62);border:1px solid rgba(216,138,174,0.15);border-radius:10px;font-size:20px;color:var(--text-muted);">
         The hard part now isn't writing more code &mdash; it's staying oriented inside what you've already built.
       </div>
-      <p style="margin-top:20px;padding:12px 18px;background:rgba(10,11,13,0.55);border-radius:10px;font-size:15px;color:var(--text-dim);line-height:1.6;">A harder confession: even <em>measuring</em> this got harder. Session counts fell 25&times; between February and July &mdash; not because the work stopped, but because sessions got longer: 61 turns per session in February, 1,737 by June. The naive metric would have told you the opposite of what actually happened.</p>
+      <p style="margin-top:20px;padding:12px 18px;background:rgba(10,11,13,0.55);border-radius:10px;font-size:22px;color:var(--text-dim);line-height:1.6;">A harder confession: even <em>measuring</em> this got harder. Session counts fell 25&times; between February and July &mdash; not because the work stopped, but because sessions got longer: 61 turns per session in February, 1,737 by June. The naive metric would have told you the opposite of what actually happened.</p>
     </div>
   </div>
 
@@ -719,13 +721,13 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div class="radial-bg green"></div>
     <div style="position:relative;z-index:1;text-align:center;max-width:960px;">
       <div class="slide-tag green" style="display:flex;justify-content:center;">The Lesson</div>
-      <h2 class="slide-title" style="font-size:40px;margin-bottom:28px;">The developers who are scared of AI<br>get the most value from it.</h2>
+      <h2 class="slide-title" style="font-size:60px;margin-bottom:28px;">The developers who are scared of AI<br>get the most value from it.</h2>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left;margin-bottom:24px;">
         <div class="callout red"><strong>The confident ones</strong><span>Trust the AI. Ship without tests. Wake up to production bugs.</span></div>
         <div class="callout green"><strong>The scared ones</strong><span>Test everything. Measure everything. Automate their paranoia.</span></div>
         <div class="callout"><strong>The paranoid ones</strong><span>Trust nothing. Read every line by hand. No automation, no sleep, no shipping.</span></div>
       </div>
-      <div style="font-size:30px;font-weight:700;color:var(--text);">Only the ones who automate their fear sleep well at night.</div>
+      <div style="font-size:45px;font-weight:700;color:var(--text);">Only the ones who automate their fear sleep well at night.</div>
     </div>
   </div>
 
@@ -753,7 +755,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         <strong>Think of your agent as a colleague, not a tool.</strong>
         <span>When you see it struggle &mdash; a wrong turn, a missing detail, a shortcut taken under pressure &mdash; you don't just catch the mistake. You give it what it needs: a skill, a tool, the context it was missing. Fewer hallucinations aren't caught. They're prevented.</span>
       </div>
-      <p style="font-size:18px;font-weight:700;color:var(--text);margin-top:20px;">That's Fear-Driven Development.</p>
+      <p style="font-size:27px;font-weight:700;color:var(--text);margin-top:20px;">That's Fear-Driven Development.</p>
       <p class="slide-note" style="margin-top:16px;">Questions? &nbsp;&middot;&nbsp; Press <kbd>1</kbd>&ndash;<kbd>6</kbd> for deep-dives &nbsp;&middot;&nbsp; <kbd>N</kbd> for notes</p>
     </div>
   </div>
@@ -764,10 +766,10 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:48px;max-width:1100px;width:100%;">
       <div style="text-align:left;max-width:420px;">
         <div class="slide-tag amber">Stay in Touch</div>
-        <h2 class="slide-title" style="font-size:42px;">Thanks. Come find me.</h2>
-        <p style="font-size:16px;color:var(--text-dim);margin-top:14px;">Thor Henning Hetland (Totto) &middot; eXOReaction</p>
-        <p style="font-size:22px;font-weight:700;color:var(--amber);margin-top:8px;">wiki.totto.org</p>
-        <p style="font-size:14px;color:var(--text-muted);margin-top:20px;line-height:1.6;">This talk, the source incidents, and the rest of what I write up are all there. And if you want to keep arguing about any of it over a beer &mdash; that's a standing weekly thing, not just tonight.</p>
+        <h2 class="slide-title" style="font-size:63px;">Thanks. Come find me.</h2>
+        <p style="font-size:24px;color:var(--text-dim);margin-top:14px;">Thor Henning Hetland (Totto) &middot; eXOReaction</p>
+        <p style="font-size:33px;font-weight:700;color:var(--amber);margin-top:8px;">wiki.totto.org</p>
+        <p style="font-size:21px;color:var(--text-muted);margin-top:20px;line-height:1.6;">This talk, the source incidents, and the rest of what I write up are all there. And if you want to keep arguing about any of it over a beer &mdash; that's a standing weekly thing, not just tonight.</p>
       </div>
       <img src="./assets/agent-pilsen-poster.webp" alt="Agent Pilsen &amp; Skill-Driven Development — Thursdays 17:00 at Eileff Landhandleri. Informal discussions, peer learning, cold beers." style="max-height:560px;width:auto;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,0.6);">
     </div>
@@ -783,7 +785,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
   <!-- f1-0: The Moment -->
   <div class="slide custom" id="f1-0" data-note="Start here when they press 1. Tell the bounding box story in full. This is the bug that started everything.">
     <div class="universe-bar f1"></div>
-    <div style="max-width:860px;width:100%;margin-top:8px;">
+    <div style="max-width:1200px;width:100%;margin-top:8px;">
       <div class="slide-tag red">Fear 1 &middot; The Moment</div>
       <h2 class="slide-title">The bounding box bug.</h2>
       <div class="callouts" style="margin-bottom:10px;">
@@ -792,14 +794,14 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         <div class="callout"><span>Tests pass. I write a few unit tests. Those pass too. Ship it.</span></div>
         <div class="callout red"><strong>Three days later:</strong><span>"The layer thumbnail is completely black."</span></div>
       </div>
-      <div class="code-block" style="font-size:12px;"><span class="c">// Claude's code — looks correct, isn't</span>
+      <div class="code-block" style="font-size:18px;"><span class="c">// Claude's code — looks correct, isn't</span>
 <span class="k">BoundBox</span> result = features.get(<span class="v">0</span>).getBoundBox(); <span class="c">// &larr; problem here</span>
 <span class="k">for</span> (<span class="k">Feature</span> f : features) {
     result = result.union(f.getBoundBox());
 }
 <span class="c">// features.get(0) often has empty bbox (0,0,0,0) — common for metadata features</span>
 <span class="c">// union(0,0,0,0, real) expands to include origin → wrong dimensions → thumbnail all black</span></div>
-      <p style="margin-top:10px;font-size:15px;color:var(--text-muted);">The fix was trivial. The lesson was not: <span style="color:#e8887e;font-weight:700;">I cannot trust code review for AI-generated code.</span></p>
+      <p style="margin-top:10px;font-size:22px;color:var(--text-muted);">The fix was trivial. The lesson was not: <span style="color:#e8887e;font-weight:700;">I cannot trust code review for AI-generated code.</span></p>
     </div>
   </div>
 
@@ -816,14 +818,14 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         <div class="callout red"><strong>Edge case blindness</strong><span>AI generates for the happy path. Features with empty bboxes, features with negative coordinates, features at the origin — AI doesn't think to guard against these.</span></div>
         <div class="callout red"><strong>Semantic correctness</strong><span>The code can be syntactically perfect and logically coherent while being semantically wrong for your domain.</span></div>
       </div>
-      <p style="margin-top:16px;font-size:15px;font-weight:700;color:var(--text);">Solution: stop reading for correctness. Prove correctness mechanically.</p>
+      <p style="margin-top:16px;font-size:22px;font-weight:700;color:var(--text);">Solution: stop reading for correctness. Prove correctness mechanically.</p>
     </div>
   </div>
 
   <!-- f1-2: Round-Trip Testing -->
   <div class="slide custom" id="f1-2" data-note="The round-trip test is the single most powerful thing in the whole talk. Parse → write → compare bytes. If bytes differ, something was lost or transformed.">
     <div class="universe-bar f1"></div>
-    <div style="max-width:860px;width:100%;margin-top:8px;">
+    <div style="max-width:1220px;width:100%;margin-top:8px;">
       <div class="slide-tag red">Fear 1 &middot; Round-Trip Testing</div>
       <h2 class="slide-title">Parse &rarr; Write &rarr; Compare bytes.</h2>
       <div class="code-block" style="margin-bottom:10px;"><span class="cmd">@Test</span>
@@ -844,7 +846,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
   <!-- f1-3: Property-Based Testing -->
   <div class="slide custom" id="f1-3" data-note="Property-based testing is the second pillar. Mathematical invariants that must hold for ANY valid input. The AI can't hallucinate a universe where a bounding box doesn't contain its features.">
     <div class="universe-bar f1"></div>
-    <div style="max-width:860px;width:100%;margin-top:8px;">
+    <div style="max-width:970px;width:100%;margin-top:8px;">
       <div class="slide-tag red">Fear 1 &middot; Property-Based Testing</div>
       <h2 class="slide-title">Mathematical invariants the AI can't violate.</h2>
       <div class="code-block" style="margin-bottom:12px;"><span class="c">// jqwik property-based test — runs with hundreds of random inputs</span>
@@ -902,7 +904,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         <div class="callout orange"><span>But DrillListing.java had a coordinate scaling factor calibrated against the pre-filter 400mm coordinate space. After filtering: scale factor is now 2&times; too large.</span></div>
         <div class="callout red"><strong>Next day:</strong><span>"The drill holes are 2&times; too large. Every board we ordered is scrap."</span></div>
       </div>
-      <p style="font-size:15px;color:var(--text-muted);">This was not an AI hallucination. This was a correct change that broke a correct assumption in a different module. <span style="color:#e8be94;font-weight:700;">The bug was lurking in the interaction.</span></p>
+      <p style="font-size:22px;color:var(--text-muted);">This was not an AI hallucination. This was a correct change that broke a correct assumption in a different module. <span style="color:#e8be94;font-weight:700;">The bug was lurking in the interaction.</span></p>
     </div>
   </div>
 
@@ -955,7 +957,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
           <tr><td style="color:#e8be94;">Flex PCB designs</td><td>Non-rectangular board outlines, unusual layer counts, overlay geometries</td></tr>
         </tbody>
       </table>
-      <div style="margin-top:16px;padding:12px 18px;background:rgba(217,151,92,0.06);border:1px solid rgba(217,151,92,0.2);border-radius:8px;font-size:13px;color:var(--text-muted);">
+      <div style="margin-top:16px;padding:12px 18px;background:rgba(217,151,92,0.06);border:1px solid rgba(217,151,92,0.2);border-radius:8px;font-size:20px;color:var(--text-muted);">
         191 files. 10,035 tests. If something regresses on any of these, CI fails before it reaches production.
       </div>
     </div>
@@ -1008,7 +1010,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         <div class="callout amber"><span>8b9c4d2 introduced a regression that broke 47 tests. I didn't run the full suite before committing &mdash; "it's a small change."</span></div>
         <div class="callout red"><span>For 23 minutes, main was broken. Anyone who pulled during that window got a broken build.</span></div>
       </div>
-      <p style="margin-top:16px;font-size:15px;font-weight:700;color:#f0c878;">The AI's confidence is contagious. Its mistakes are invisible until they aren't.</p>
+      <p style="margin-top:16px;font-size:22px;font-weight:700;color:#f0c878;">The AI's confidence is contagious. Its mistakes are invisible until they aren't.</p>
     </div>
   </div>
 
@@ -1040,9 +1042,9 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
   <span class="cmd">echo</span> <span class="s">"&#128273; Use: git checkout -b feature/your-branch"</span>
   <span class="cmd">exit</span> <span class="v">1</span>
 <span class="k">fi</span></div>
-      <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">The PR workflow</div>
+      <div style="font-size:18px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">The PR workflow</div>
       <div class="steps" style="margin-top:0;">
-        <div class="step"><div class="step-num amber" style="color:#000;">1</div><div class="step-content"><strong>Branch</strong><p><code style="font-size:12px;">git checkout -b feature/fix-bounding-box</code></p></div></div>
+        <div class="step"><div class="step-num amber" style="color:#000;">1</div><div class="step-content"><strong>Branch</strong><p><code style="font-size:18px;">git checkout -b feature/fix-bounding-box</code></p></div></div>
         <div class="step"><div class="step-num amber" style="color:#000;">2</div><div class="step-content"><strong>AI generates &amp; I review</strong><p>Multiple commits, reverts, experiments — all safely on the branch</p></div></div>
         <div class="step"><div class="step-num amber" style="color:#000;">3</div><div class="step-content"><strong>Full test suite locally</strong><p>10,035 tests. If any fail, fix before pushing.</p></div></div>
         <div class="step"><div class="step-num amber" style="color:#000;">4</div><div class="step-content"><strong>Push PR &rarr; CI gates &rarr; Merge</strong><p>CI is the final arbiter. The AI can convince me. It cannot convince CI.</p></div></div>
@@ -1089,11 +1091,11 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
           <tr><td>Test generation (full suite)</td><td style="color:#8ad0e8;">~800K output</td><td style="color:#e8887e;">$12</td></tr>
           <tr><td>Code review + analysis</td><td style="color:#8ad0e8;">~500K input</td><td style="color:#e8887e;">$1.50</td></tr>
           <tr><td>Battle test analysis</td><td style="color:#8ad0e8;">~300K output</td><td style="color:#e8887e;">$4.50</td></tr>
-          <tr><td style="font-weight:700;color:var(--text);">Over 17.5 days (2.5 weeks)</td><td></td><td style="color:#e8887e;font-weight:700;font-size:16px;">~$840</td></tr>
+          <tr><td style="font-weight:700;color:var(--text);">Over 17.5 days (2.5 weeks)</td><td></td><td style="color:#e8887e;font-weight:700;font-size:24px;">~$840</td></tr>
         </tbody>
       </table>
       <div class="callout red" style="margin-bottom:10px;"><strong>Undisciplined, heavy parallel usage: a real number, not a guess</strong><span>A burn rate I've actually hit since: $850 in 90 minutes on a heavy multi-session sprint &mdash; $566/hour. Run anything close to that pace for 8&ndash;12 hours a day across a 2.5-week project and you land at $80,000&ndash;$120,000. Extrapolated from something real, not assumed Opus pricing.</span></div>
-      <p style="margin-top:10px;font-size:13px;color:var(--text-muted);">The $100k fear was never precise math. But the range it was pointing at turns out to be real &mdash; the gap between $840 and six figures is entirely which of these two ways you're running.</p>
+      <p style="margin-top:10px;font-size:20px;color:var(--text-muted);">The $100k fear was never precise math. But the range it was pointing at turns out to be real &mdash; the gap between $840 and six figures is entirely which of these two ways you're running.</p>
     </div>
   </div>
 
@@ -1133,7 +1135,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
               <tr><td style="color:#e8887e;">Opus</td><td>Architecture, complex debugging</td><td>When thinking matters most</td></tr>
             </tbody>
           </table>
-          <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">Even on flat-rate: wrong model = slow feedback loops = less FDD discipline = closer to that weekly quota.</p>
+          <p style="margin-top:12px;font-size:20px;color:var(--text-muted);">Even on flat-rate: wrong model = slow feedback loops = less FDD discipline = closer to that weekly quota.</p>
         </div>
       </div>
     </div>
@@ -1233,22 +1235,22 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
       <h2 class="slide-title">Break it down before you hand it over.</h2>
       <div class="two-col">
         <div>
-          <div style="font-size:12px;font-weight:700;color:#e8887e;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Black box (what I said before)</div>
+          <div style="font-size:18px;font-weight:700;color:#e8887e;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Black box (what I said before)</div>
           <div class="callout red" style="margin-bottom:8px;"><span>"Refactor the coordinate system to support both metric and imperial units."</span></div>
-          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Result: 47 changed files, 19 I don't fully understand, a nagging feeling for 3 days.</p>
+          <p style="font-size:20px;color:var(--text-muted);margin-top:8px;">Result: 47 changed files, 19 I don't fully understand, a nagging feeling for 3 days.</p>
         </div>
         <div>
-          <div style="font-size:12px;font-weight:700;color:#a8d89a;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Directed synthesis (what I do now)</div>
+          <div style="font-size:18px;font-weight:700;color:#a8d89a;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Directed synthesis (what I do now)</div>
           <div class="steps" style="margin-top:0;gap:8px;">
-            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">1</div><div class="step-content"><strong style="font-size:13px;">Find all files using coordinate scaling</strong></div></div>
-            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">2</div><div class="step-content"><strong style="font-size:13px;">Identify 2.5&times; vs 1.0&times; usage patterns</strong></div></div>
-            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">3</div><div class="step-content"><strong style="font-size:13px;">Create CoordinateMode enum + conditional logic</strong></div></div>
-            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">4</div><div class="step-content"><strong style="font-size:13px;">Update each converter separately (one PR each)</strong></div></div>
-            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:11px;">5</div><div class="step-content"><strong style="font-size:13px;">Add tests for both metric and imperial mode</strong></div></div>
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:16px;">1</div><div class="step-content"><strong style="font-size:20px;">Find all files using coordinate scaling</strong></div></div>
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:16px;">2</div><div class="step-content"><strong style="font-size:20px;">Identify 2.5&times; vs 1.0&times; usage patterns</strong></div></div>
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:16px;">3</div><div class="step-content"><strong style="font-size:20px;">Create CoordinateMode enum + conditional logic</strong></div></div>
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:16px;">4</div><div class="step-content"><strong style="font-size:20px;">Update each converter separately (one PR each)</strong></div></div>
+            <div class="step" style="padding:8px 12px;"><div class="step-num purple" style="width:22px;height:22px;font-size:16px;">5</div><div class="step-content"><strong style="font-size:20px;">Add tests for both metric and imperial mode</strong></div></div>
           </div>
         </div>
       </div>
-      <p style="margin-top:16px;font-size:14px;color:var(--text-muted);">Each task: 3&ndash;8 changed files. Each reviewable in minutes. Total understanding: 100%.</p>
+      <p style="margin-top:16px;font-size:21px;color:var(--text-muted);">Each task: 3&ndash;8 changed files. Each reviewable in minutes. Total understanding: 100%.</p>
     </div>
   </div>
 
@@ -1290,7 +1292,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         <div class="callout pink"><span>Overall bounding box: 425mm. Includes a documentation layer &mdash; frame, title block, revision table &mdash; that extends well outside the board boundary.</span></div>
         <div class="callout red"><strong>CI was green.</strong><span>All 2,847 tests at the time passed. The code worked correctly. My tests just didn't test what the user needed.</span></div>
       </div>
-      <p style="font-size:15px;font-weight:700;color:#e8a8c8;">I was testing whether the code ran. Not whether the output was correct.</p>
+      <p style="font-size:22px;font-weight:700;color:#e8a8c8;">I was testing whether the code ran. Not whether the output was correct.</p>
     </div>
   </div>
 
@@ -1313,10 +1315,10 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
   <!-- f6-2: Extreme Measurement -->
   <div class="slide custom" id="f6-2" data-note="The full measurement system. Printf is not just debugging — it's an audit trail. Assertions with values are documentation of what's expected.">
     <div class="universe-bar f6"></div>
-    <div style="max-width:860px;width:100%;margin-top:8px;">
+    <div style="max-width:1050px;width:100%;margin-top:8px;">
       <div class="slide-tag pink">Fear 6 &middot; Extreme Measurement</div>
       <h2 class="slide-title">Assert values, not just existence.</h2>
-      <div class="code-block" style="font-size:12px;"><span class="c">// Don't just assert non-null. Assert the value makes sense.</span>
+      <div class="code-block" style="font-size:18px;"><span class="c">// Don't just assert non-null. Assert the value makes sense.</span>
 <span class="k">double</span> widthMm  = design.getBoundBox().getWidth()  / <span class="v">1_000_000.0</span>;
 <span class="k">double</span> heightMm = design.getBoundBox().getHeight() / <span class="v">1_000_000.0</span>;
 
@@ -1338,7 +1340,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
         logger.warn(<span class="s">"Extreme coordinate: {}mm. Possible overflow."</span>, f.getX()/<span class="v">1_000_000.0</span>);
     }
 }</div>
-      <p style="margin-top:12px;font-size:14px;color:var(--text-muted);">The printf output appears in CI logs. When something's wrong, you see the actual values, not just a pass/fail.</p>
+      <p style="margin-top:12px;font-size:21px;color:var(--text-muted);">The printf output appears in CI logs. When something's wrong, you see the actual values, not just a pass/fail.</p>
     </div>
   </div>
 
@@ -1347,13 +1349,13 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div class="universe-bar f6"></div>
     <div style="max-width:860px;width:100%;margin-top:8px;">
       <div class="slide-tag pink">Fear 6 &middot; The Results</div>
-      <h2 class="slide-title">Fast detection. Confidence through numbers.</h2>
-      <div class="stat-cards" style="margin-bottom:20px;">
+      <h2 class="slide-title" style="font-size:60px;">Fast detection. Confidence through numbers.</h2>
+      <div class="stat-cards" style="margin-bottom:12px;">
         <div class="stat-card green"><div class="stat-num">minutes</div><div class="stat-label">Time to detect semantic bugs (was: weeks)</div></div>
         <div class="stat-card green"><div class="stat-num">100%</div><div class="stat-label">Test output includes actual measured values</div></div>
         <div class="stat-card green"><div class="stat-num">0</div><div class="stat-label">Silent failures since measurement system added</div></div>
       </div>
-      <div class="callouts">
+      <div class="callouts" style="margin-top:8px;">
         <div class="callout green"><strong>The shift</strong><span>From: "Did it crash?" To: "Are the values physically reasonable?" That one-sentence shift in your testing mindset eliminates an entire category of bugs.</span></div>
         <div class="callout green"><strong>CI as measurement dashboard</strong><span>Every CI run now prints actual PCB dimensions for 191 files. If any value looks wrong, you investigate immediately. The numbers don't lie.</span></div>
         <div class="callout green"><strong>The fear becomes the metric</strong><span>"I'm scared the output is semantically wrong" → assert that the output is semantically correct, with domain-specific bounds. Fear drives the assertion design.</span></div>
@@ -1381,7 +1383,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
       <h2 class="slide-title">lib-pcb: 2.5 weeks, Jan&ndash;Feb 2026.</h2>
       <div class="two-col">
         <div>
-          <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Project metrics</div>
+          <div style="font-size:18px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Project metrics</div>
           <table class="slide-table">
             <tbody>
               <tr><td style="color:#a8d89a;">Tests</td><td>10,035 (99.8% pass rate)</td></tr>
@@ -1394,7 +1396,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
           </table>
         </div>
         <div>
-          <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Timeline</div>
+          <div style="font-size:18px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Timeline</div>
           <table class="slide-table">
             <tbody>
               <tr><td style="color:#f0c878;">Week 1</td><td>Core parser, 23 tests, first hallucination bug</td></tr>
@@ -1403,7 +1405,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
               <tr><td style="color:#f0c878;">Week 2.5</td><td>Extreme measurement. 10,035 tests. Main always green.</td></tr>
             </tbody>
           </table>
-          <div style="margin-top:12px;padding:10px 14px;background:rgba(138,184,122,0.06);border:1px solid rgba(138,184,122,0.2);border-radius:8px;font-size:13px;color:var(--text-muted);">
+          <div style="margin-top:12px;padding:10px 14px;background:rgba(138,184,122,0.06);border:1px solid rgba(138,184,122,0.2);border-radius:8px;font-size:20px;color:var(--text-muted);">
             Each fear emerged as a real incident. Each system was built in response. No upfront planning. Pure reaction.
           </div>
         </div>
@@ -1433,7 +1435,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
           <p class="term-line term-dim">Total time: 4:32 min</p>
         </div>
       </div>
-      <p style="margin-top:12px;font-size:14px;color:var(--text-muted);">Every line with "bytes identical" is a hallucination that could not survive. 2,847 assertions that the AI told the truth about the file format.</p>
+      <p style="margin-top:12px;font-size:21px;color:var(--text-muted);">Every line with "bytes identical" is a hallucination that could not survive. 2,847 assertions that the AI told the truth about the file format.</p>
     </div>
   </div>
 
@@ -1459,7 +1461,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
           <p class="term-line term-dim">Total time: 6:48 min</p>
         </div>
       </div>
-      <p style="margin-top:12px;font-size:14px;color:var(--text-muted);">The 30 skipped: known format variants not yet implemented. Documented, tracked, not hidden.</p>
+      <p style="margin-top:12px;font-size:21px;color:var(--text-muted);">The 30 skipped: known format variants not yet implemented. Documented, tracked, not hidden.</p>
     </div>
   </div>
 
@@ -1542,7 +1544,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
           </tr>
         </tbody>
       </table>
-      <div style="margin-top:20px;text-align:center;font-size:16px;font-weight:700;color:var(--text);">
+      <div style="margin-top:20px;text-align:center;font-size:24px;font-weight:700;color:var(--text);">
         Formula: <span class="hl-red">Fear</span> &rarr; <span class="hl-amber">Discipline</span> &rarr; <span class="hl-green">Results</span> &rarr; <span style="color:#8ad0e8;">Sleep</span>
       </div>
     </div>
@@ -1599,7 +1601,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div class="shortcut-row"><span>Show shortcuts</span><kbd>?</kbd></div>
     <div class="shortcut-row"><span>Return to main</span><kbd>Esc</kbd></div>
     <div style="margin-top:18px;text-align:center;">
-      <button onclick="closeShortcuts()" style="background:rgba(217,82,74,0.15);border:1px solid rgba(217,82,74,0.3);color:#e8887e;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:13px;">Close</button>
+      <button onclick="closeShortcuts()" style="background:rgba(217,82,74,0.15);border:1px solid rgba(217,82,74,0.3);color:#e8887e;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:20px;">Close</button>
     </div>
   </div>
 </div>
@@ -1620,22 +1622,29 @@ function getTrack(c)    { return document.getElementById('track-' + c); }
 var REVEAL_SELECTOR = '.callout, .card, .stat-card, .badge, .fear-row, .slide-table tbody tr, .formula-node';
 
 function animateCountUp(el) {
-  var raw = el.textContent.trim();
-  var m = raw.match(/^([^\d]*)([\d,]+)([^\d]*)$/);
-  if (!m) return;
-  var prefix = m[1], suffix = m[3];
-  var target = parseInt(m[2].replace(/,/g, ''), 10);
-  if (isNaN(target)) return;
+  if (el._countRAF) cancelAnimationFrame(el._countRAF);
+  if (!el.dataset.countTarget) {
+    var raw = el.textContent.trim();
+    var m = raw.match(/^([^\d]*)([\d,]+)([^\d]*)$/);
+    if (!m) return;
+    el.dataset.countPrefix = m[1];
+    el.dataset.countSuffix = m[3];
+    var parsed = parseInt(m[2].replace(/,/g, ''), 10);
+    if (isNaN(parsed)) return;
+    el.dataset.countTarget = parsed;
+  }
+  var prefix = el.dataset.countPrefix, suffix = el.dataset.countSuffix;
+  var target = parseInt(el.dataset.countTarget, 10);
   var start = null, dur = 700;
   function tick(now) {
     if (start === null) start = now;
     var t = Math.min(1, (now - start) / dur);
     var eased = 1 - Math.pow(1 - t, 3);
     el.textContent = prefix + Math.round(target * eased).toLocaleString('en-US') + suffix;
-    if (t < 1) requestAnimationFrame(tick);
-    else el.textContent = prefix + target.toLocaleString('en-US') + suffix;
+    if (t < 1) { el._countRAF = requestAnimationFrame(tick); }
+    else { el.textContent = prefix + target.toLocaleString('en-US') + suffix; el._countRAF = null; }
   }
-  requestAnimationFrame(tick);
+  el._countRAF = requestAnimationFrame(tick);
 }
 
 function runReveal(sl) {
