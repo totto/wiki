@@ -283,18 +283,19 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
 
   <!-- main-2: Who is Totto -->
   <div class="slide custom" id="main-3" data-note="Quick, humble, concrete. Just enough credibility to earn the next slide's confession — don't linger, don't sell." style="background-color:var(--bg-dark);background-image:url('./assets/bio-background.webp');background-size:cover;background-position:center;background-repeat:no-repeat;">
-    <div style="max-width:1300px;width:100%;position:relative;z-index:1;">
+    <div style="max-width:1674px;width:100%;position:relative;z-index:1;">
       <div class="slide-tag amber">Before We Start</div>
       <h2 class="slide-title">Who's talking.</h2>
-      <div class="two-col" style="margin-top:10px;align-items:center;">
-        <div class="callouts">
+      <div class="two-col" style="margin-top:10px;align-items:stretch;grid-template-columns:1fr 1.25fr;">
+        <div class="callouts" style="justify-content:center;gap:20px;">
           <div class="callout"><span>40 years building software</span></div>
           <div class="callout"><span>Co-founder of JavaZone, 2001</span></div>
-          <div class="callout"><span>Founder, eXOReaction &middot; Ægis &middot; Quadim &middot; Sunstone Tech &middot; Cantara &middot; former president, javaBin</span></div>
+          <div class="callout"><span>Founder, eXOReaction &middot; Ægis &middot; Quadim</span></div>
+          <div class="callout"><span>Sunstone Tech &middot; Cantara &middot; former president, javaBin</span></div>
           <div class="callout"><span>Java Champion since 2005</span></div>
         </div>
-        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);">
-          <img src="./assets/who-is-totto-console.webp" alt="Totto at the console, running a fleet of AI agents" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);justify-self:end;width:100%;">
+          <img src="./assets/who-is-totto-console.webp" alt="Totto at the console, running a fleet of AI agents" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
         </div>
       </div>
       <p style="margin-top:20px;font-size:36px;color:var(--text-dim);">These days: running ExoCortex &mdash; my AI practitioner rig &mdash; to ship production code at speeds that shouldn't be possible.</p>
