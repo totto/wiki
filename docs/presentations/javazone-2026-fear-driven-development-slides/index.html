@@ -1738,6 +1738,7 @@ function updateNav() {
   });
   document.body.className = 'ctx-' + ctx;
   if (narratorVisible) document.body.classList.add('narrator-visible');
+  if (navHidden) document.body.classList.add('nav-hidden');
 }
 
 function navigate(dir) {
@@ -1766,6 +1767,7 @@ function closeShortcuts() { document.getElementById('shortcut-overlay').classLis
 
 var narratorHidden  = true;
 var narratorVisible = false;
+var navHidden = false;
 
 function showNarrator(text) {
   if (narratorHidden) return;
@@ -1810,7 +1812,7 @@ document.addEventListener('keydown', function(e) {
     case '6': switchCtx('f6');   break;
     case '7': switchCtx('demo'); break;
     case 'n': case 'N': toggleNarrator(); break;
-    case 'b': case 'B': document.body.classList.toggle('nav-hidden'); break;
+    case 'b': case 'B': navHidden = !navHidden; document.body.classList.toggle('nav-hidden', navHidden); break;
     case 'p': case 'P':
       var gitmVideo = document.getElementById('gitm-video');
       if (gitmVideo) { if (gitmVideo.paused) gitmVideo.play(); else gitmVideo.pause(); }
