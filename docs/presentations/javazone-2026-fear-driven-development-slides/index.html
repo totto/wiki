@@ -258,7 +258,7 @@ body.narrator-visible #viewport { bottom:calc(var(--nav-h) + 48px); }
 
   <!-- main-1: Ghost in the Machine — video cold open -->
   <div class="slide img-slide" id="main-1" data-note="Cue this and step aside. Let it play in near-silence, full 119 seconds — don't talk over it. When it ends, pause 5 seconds, then: I have a confession to make. I'm scared of AI.">
-    <video src="./assets/ghost-in-the-machine.mp4" poster="./assets/gitm-cover-poster.webp" controls preload="metadata" style="width:100%;height:100%;object-fit:contain;background:#000;"></video>
+    <video id="gitm-video" src="./assets/ghost-in-the-machine.mp4" poster="./assets/gitm-cover-poster.webp" controls preload="metadata" style="width:100%;height:100%;object-fit:contain;background:#000;"></video>
   </div>
 
   <!-- main-2: The Confession (moved up from old main-5, replaces Title slide) -->
@@ -1633,6 +1633,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div class="shortcut-row"><span>Fear 6 &mdash; Silent Failures</span><kbd>6</kbd></div>
     <div class="shortcut-row"><span>Demo</span><kbd>7</kbd></div>
     <div class="shortcut-row"><span>Toggle narrator</span><kbd>N</kbd></div>
+    <div class="shortcut-row"><span>Play / pause video</span><kbd>P</kbd></div>
     <div class="shortcut-row"><span>Fullscreen</span><kbd>F</kbd></div>
     <div class="shortcut-row"><span>Bigger / smaller</span><div><kbd>+</kbd> <kbd>-</kbd></div></div>
     <div class="shortcut-row"><span>Reset size</span><kbd>0</kbd></div>
@@ -1804,6 +1805,10 @@ document.addEventListener('keydown', function(e) {
     case '6': switchCtx('f6');   break;
     case '7': switchCtx('demo'); break;
     case 'n': case 'N': toggleNarrator(); break;
+    case 'p': case 'P':
+      var gitmVideo = document.getElementById('gitm-video');
+      if (gitmVideo) { if (gitmVideo.paused) gitmVideo.play(); else gitmVideo.pause(); }
+      break;
     case 'f': case 'F':
       if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(function(){});
       else document.exitFullscreen().catch(function(){});
