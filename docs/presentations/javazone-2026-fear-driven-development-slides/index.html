@@ -30,6 +30,10 @@ body { position:relative; }
    of actual browser size. See fitStage() near the end of the script. */
 #stage { position:absolute; top:0; left:0; width:1786px; height:950px; transform-origin:top left; overflow:hidden; background:var(--bg-dark); }
 #viewport { position:absolute; inset:0 0 var(--nav-h) 0; overflow:hidden; }
+body.nav-hidden #nav { display:none; }
+body.nav-hidden #viewport { bottom:0; }
+body.nav-hidden #narrator-bar { bottom:0; }
+body.nav-hidden.narrator-visible #viewport { bottom:48px; }
 .slide-track { position:absolute; inset:0; display:none; }
 .slide-track.active { display:block; }
 .slide { position:absolute; inset:0; display:none; align-items:center; justify-content:center; }
@@ -1633,6 +1637,7 @@ assertTrue(misalignment &lt; <span class="v">0.25</span>,
     <div class="shortcut-row"><span>Fear 6 &mdash; Silent Failures</span><kbd>6</kbd></div>
     <div class="shortcut-row"><span>Demo</span><kbd>7</kbd></div>
     <div class="shortcut-row"><span>Toggle narrator</span><kbd>N</kbd></div>
+    <div class="shortcut-row"><span>Toggle nav bar</span><kbd>B</kbd></div>
     <div class="shortcut-row"><span>Play / pause video</span><kbd>P</kbd></div>
     <div class="shortcut-row"><span>Fullscreen</span><kbd>F</kbd></div>
     <div class="shortcut-row"><span>Bigger / smaller</span><div><kbd>+</kbd> <kbd>-</kbd></div></div>
@@ -1805,6 +1810,7 @@ document.addEventListener('keydown', function(e) {
     case '6': switchCtx('f6');   break;
     case '7': switchCtx('demo'); break;
     case 'n': case 'N': toggleNarrator(); break;
+    case 'b': case 'B': document.body.classList.toggle('nav-hidden'); break;
     case 'p': case 'P':
       var gitmVideo = document.getElementById('gitm-video');
       if (gitmVideo) { if (gitmVideo.paused) gitmVideo.play(); else gitmVideo.pause(); }
