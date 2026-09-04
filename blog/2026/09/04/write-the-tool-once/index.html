@@ -1,0 +1,7236 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A thought experiment: that the agentic web -- a direction, not yet a standard -- may be the cheaper, more testable, better-incentivised route to accessibility, and a hypothesis about who gets to build the tools.">
+      
+      
+        <meta name="author" content="Thor Henning Hetland">
+      
+      
+        <link rel="canonical" href="https://wiki.totto.org/blog/2026/09/04/write-the-tool-once/">
+      
+      
+        <link rel="prev" href="../../../08/25/the-negative-control/">
+      
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../../assets/images/totto-2025.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Write the tool once - Thor Henning Hetland</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <script data-goatcounter="https://totto.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+<link rel="knowledge" href="/knowledge.yaml" type="application/yaml" title="KCP v0.20 — 101 units">
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Thor Henning Hetland">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wiki.totto.org/blog/2026/09/04/write-the-tool-once/">
+<meta property="og:title" content="Write the tool once">
+<meta property="og:description" content="A thought experiment: that the agentic web -- a direction, not yet a standard -- may be the cheaper, more testable, better-incentivised route to accessibility, and a hypothesis about who gets to build the tools.">
+<meta property="og:image" content="https://wiki.totto.org/assets/images/blog/write-the-tool-once/hero.png">
+<meta property="og:image:alt" content="Write the tool once">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@javatotto">
+<meta name="twitter:creator" content="@javatotto">
+<meta name="twitter:title" content="Write the tool once">
+<meta name="twitter:description" content="A thought experiment: that the agentic web -- a direction, not yet a standard -- may be the cheaper, more testable, better-incentivised route to accessibility, and a hypothesis about who gets to build the tools.">
+<meta name="twitter:image" content="https://wiki.totto.org/assets/images/blog/write-the-tool-once/hero.png">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Write the tool once",
+  "url": "https://wiki.totto.org/blog/2026/09/04/write-the-tool-once/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wiki.totto.org/blog/2026/09/04/write-the-tool-once/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Thor Henning Hetland",
+    "url": "https://wiki.totto.org",
+    "image": "https://wiki.totto.org/assets/images/totto-2025.jpg"
+  },
+  "image": "https://wiki.totto.org/assets/images/blog/write-the-tool-once/hero.png",
+  "datePublished": "2026-09-04 12:00:00",
+  "dateModified": "2026-09-04 07:35:12",
+  "description": "A thought experiment: that the agentic web -- a direction, not yet a standard -- may be the cheaper, more testable, better-incentivised route to accessibility, and a hypothesis about who gets to build the tools.",
+  "articleSection": "AI Agents \u0026 the Agentic Web, Knowledge Context Protocol",
+  "keywords": "kcp, mcp, webmcp, accessibility, a11y, agentic-web, disability"
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://wiki.totto.org/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Writing",
+      "item": "https://wiki.totto.org/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Write the tool once",
+      "item": "https://wiki.totto.org/blog/2026/09/04/write-the-tool-once/"
+    }
+  ]
+}
+</script>
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#write-the-tool-once" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+
+<a href="/blog/2026/06/23/production-scars-are-architecture/">
+  New: Production Scars Are Architecture — six lessons from running an autonomous AI agent in production &rarr;
+</a>
+
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-header__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Thor Henning Hetland
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Write the tool once
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../start-here/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Start Here
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../about/presentations/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Talks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../knowledge-infrastructure/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Knowledge Infrastructure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../topics/defendable-agents/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Defendable Agents
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../open-source/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Open Source
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../interests/sci-fi/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reading
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../interests/food-and-wine/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Archive
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../tags/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tags
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Thor Henning Hetland" class="md-nav__button md-logo" aria-label="Thor Henning Hetland" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/totto-2025.jpg" alt="logo">
+
+    </a>
+    Thor Henning Hetland
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../start-here/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browse by Topic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../series/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Series
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    August 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    July 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    June 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    May 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    April 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    March 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    February 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    January 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/12/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    December 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    November 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    October 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    August 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    May 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    April 2025
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    June 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    May 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    April 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    March 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2009/02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    February 2009
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-agents--the-agentic-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Agents &amp; the Agentic Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ai-augmented-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI-Augmented Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/career--community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Career &amp; Community
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/cloud-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/governance-trust--compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance, Trust &amp; Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/knowledge-context-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Context Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/knowledge-infrastructure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/quantum-computing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Computing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/software-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/ways-of-working/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ways of Working
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/ventures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ventures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/cv-english/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV (English)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/cv-norwegian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CV (Norwegian)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/organizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Talks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Talks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/presentations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    All Presentations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2026
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/javazone-2026-fear-driven-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fear-Driven Development: Turn Your Anxiety Into Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2019--2023
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2019--2023
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/delivering-continuous-innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Delivering Continuous Innovation: Thousands of Releases a Year with Zero Downtime
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/thousands-of-releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Thousands of Releases per Year, 24/7 with No Downtime, with a Team of 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/best-practice-wtf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practice - WTF!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/fixing-the-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fixing the Problem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2010--2014
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2010--2014
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/internet-of-things/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Internet of Things: What Is Really Happening
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/nyere-forskningsresultater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nyere forskningsresultater som er viktige for software arkitekten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/neo4dogs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neo4Dogs: A Data Quality Platform Approach with SolrCloud and Graphs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/kan-vi-skape-verdi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kan vi skape mye mere verdi i softwareprosjekter?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/agile-wine-2011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    An Agile Tragedy: The Agile Practitioner Visits the Wine Store
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/cloud-psychology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Psychology: Why Many Businesses Will Go Out of Business
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/architecture-vs-agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture vs Agile (2012)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2006--2009
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2006--2009
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/robust-smidig-utvikling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robust smidig utvikling - når resultater er viktigere enn religion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/edr-mds-mdm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EDR MDS: A Less Is More Approach to SOA Master Data Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/laws-of-soa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Laws of SOA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../presentations/design-time-governance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Time Governance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/twitter-archive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Twitter Archive (2009)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../knowledge-infrastructure/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Knowledge Infrastructure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/agentic-web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Agentic Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/knowledge-context-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Context Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/skill-driven-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill-Driven Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparisons
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comparisons
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/kcp-vs-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KCP vs MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/sdd-vs-spec-driven/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill-Driven vs Spec-Driven
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/synthesis-releases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthesis Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../notes/linkedin-posts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedIn Posts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../linkedin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinkedIn Archive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../topics/defendable-agents/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defendable Agents
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Defendable Agents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orientation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Orientation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/orientation/how-to-read/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Read This Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/orientation/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Argument
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Argument
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/argument/the-governance-gap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Gap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/argument/what-defendable-means/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What "Defendable" Means
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/argument/threat-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Threat Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/argument/determinism-vs-probabilism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Determinism vs Probabilism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/argument/why-guardrails-fail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Bolt-On Guardrails Fail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference Architecture: The Inversion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/architecture/deterministic-planner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Deterministic Planner
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/architecture/governance-harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Harness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/architecture/model-at-the-edge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Where the Model Lives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/architecture/data-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    From Task to Evidence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/architecture/fail-closed-behavior/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fail-Closed Behavior
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Governance Primitives
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Governance Primitives
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/primitives/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Governance Primitives
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/primitives/fail-closed-policy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fail-Closed Policy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/primitives/audit-trail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Append-Only Audit Trail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/primitives/decision-traces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decision Traces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/primitives/budget-and-bounding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Budget & Bounding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/primitives/temporal-pinning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Temporal Pinning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/primitives/drift-detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drift Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/primitives/trust-and-attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trust & Attestation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/primitives/multi-tenancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Tenancy & Isolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deterministic Decisions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deterministic Decisions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/decisions/anatomy-of-a-score/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anatomy of a Defensible Score
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/decisions/scoring-model-manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Scoring-Model Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/decisions/layers-weights-bands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Layers, Weights & Bands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/decisions/variable-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Designing 1-5 Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/decisions/reproducibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reproducibility Guarantees
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/decisions/versioning-models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning Decision Models
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KCP Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    KCP Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/kcp/manifest-basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The KCP Manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/kcp/declaring-governed-units/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Declaring Governed Units
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/kcp/wiring-kcp-agent-mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiring kcp-agent as MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/kcp/federation-and-dogfood/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Federation & Dogfooding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/tutorials/00-project-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial 0: Project Layout
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/tutorials/01-first-harness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial 1: Your First harness.yaml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/tutorials/02-scoring-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial 2: A Deterministic Scoring Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/tutorials/03-governed-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial 3: The Governed Session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/tutorials/04-audit-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial 4: The Append-Only Audit Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/tutorials/05-budget-ceiling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial 5: Enforcing a Budget Ceiling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/tutorials/06-temporal-drift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial 6: Temporal Pinning & a Drift Report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/tutorials/07-multi-tenant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial 7: Multi-Tenant Isolation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/tutorials/08-evidence-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial 8: Exporting Evidence for an Auditor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Worked Examples
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Worked Examples
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/examples/buyer-scoring-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example: A Buyer-Scoring Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/examples/spend-approval-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example: A Spend-Approval Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/examples/regulatory-qa-provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example: A Regulatory Q&A Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/examples/reproduce-a-decision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example: Reproducing a Decision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/examples/catch-an-injection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example: Catching an Injection at the Gate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/examples/compliant-screening-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example: A Compliant Screening Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_10" id="__nav_7_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compliance & Assurance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compliance & Assurance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/compliance/control-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Mapping: SOC 2 / ISO 27001 / GDPR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/compliance/evidence-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auditor Evidence Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/compliance/verifying-defendability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verifying Defendability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/compliance/operating-and-maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating & Maintaining One
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_11" id="__nav_7_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study & Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Case Study & Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/reference/case-study-lodestar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Case Study: Lodestar (Deep)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/reference/starter-kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starter Kit & Reference Configs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/reference/anti-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anti-Patterns & Pitfalls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../topics/defendable-agents/reference/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frequently Asked Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../open-source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../interests/sci-fi/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reading
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reading
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2025 (53 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2024 (37 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2023 (46 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2022 (22 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2021 (42 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2020/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2020 (29 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2019/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2019 (35 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2018/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2018 (32 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2017/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2017 (12 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2016/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2016 (33 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2015/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2015 (33 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2014/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2014 (66 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2013/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2013 (57 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2012/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2012 (78 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/sci-fi/books-2011/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2011 (8 books)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/food-and-wine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Food & Wine (2007--2009)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../interests/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My Tools (circa 2010)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-same-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The same tree
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-doors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three doors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-cheaper-to-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (a) Cheaper to build
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b-easier-to-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (b) Easier to test
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-the-incentives-are-already-pointed-there" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (c) The incentives are already pointed there
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d-hypothesis-write-the-tool-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (d) Hypothesis: write the tool once
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-audit-channel-you-never-knew-you-had" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The audit channel you never knew you had
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-the-idea-holds-population-by-population-and-where-it-doesnt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where the idea holds, population by population — and where it doesn't
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#somebody-set-out-to-do-this-and-was-told-no" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Somebody set out to do this — and was told no
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-counterargument-i-have-to-take-seriously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The counterargument I have to take seriously
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-i-am-watching-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What I am watching for
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          Thor Henning Hetland
+                        
+                      </strong>
+                      <br>
+                      Co-founder of JavaZone, Java Champion, Founder of eXOReaction
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2026-09-04 12:00:00+00:00" class="md-ellipsis">September 4, 2026</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/ai-agents--the-agentic-web/">AI Agents &amp; the Agentic Web</a>, 
+                              <a href="../../../../category/knowledge-context-protocol/">Knowledge Context Protocol</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              49 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">a11y</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">accessibility</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">agentic-web</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">disability</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">kcp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">mcp</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">webmcp</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="write-the-tool-once">Write the tool once<a class="headerlink" href="#write-the-tool-once" title="Permanent link">&para;</a></h1>
+<p><em>A thought experiment: that the agentic web — a direction, not yet a standard — may be the cheaper, more testable, better-incentivised route to accessibility, and a hypothesis about who gets to build the tools</em></p>
+<p><img alt="Diagram titled &quot;Write the Tool Once&quot; showing a unified capability hub connecting human users, AI agents, and IoT clients through a shared interface, with the abstract: exploring how capability protocols like MCP and KCP — built for AI reliability — accidentally provide the testable, better-incentivized accessibility infrastructure the web has requested for thirty years." src="/assets/images/blog/write-the-tool-once/hero.png" /></p>
+<p>For the eighth year in a row, WebAIM ran an automated accessibility evaluation of the top one million home pages on the web. The 2026 numbers are not a story of slow progress. They are a story of regression: 95.9% of home pages had detectable WCAG 2 failures, up from 94.8% the year before — reversing six consecutive years of small improvements. The average page carried 56.1 detectable errors, up 10.1% in a single year. Half of all home pages had form inputs with no labels. Nearly half had links that go somewhere but say nothing. A person using assistive technology should expect to hit an error on one in every twenty-six page elements. And WebAIM's own conclusion names a culprit for the reversal: "automated or AI-assisted coding practices ('vibe coding')."</p>
+<p><img alt="Line chart showing web accessibility errors declining slowly from 2020 to 2025 then sharply increasing in 2026, labeled &quot;Critical System Regression, Error Code: VIBE-CODE-2026,&quot; alongside four stats: 95.9% of top home pages have detectable WCAG failures (up from 94.8%), 56.1 average detectable errors per page (+10.1% in one year), 1-in-26 frequency of broken elements encountered by assistive technology, and pages attempting ARIA remediation carrying more errors (59.1) than pages without it (42)." src="/assets/images/blog/write-the-tool-once/02-stark-reality-visual-web.png" /></p>
+<p>Sit with that for a moment, because it is the uncomfortable place this essay starts from: right now, AI is making the web less accessible. Thirty-odd years of advocacy sit behind those numbers. The moral argument has been made, patiently and well, since before I started working with the web. The legal argument exists in most jurisdictions I care about. Neither has bent the curve.</p>
+<!-- more -->
+
+<p>This essay started at a dinner. On the evening before JavaZone 2026 I was seated next to Radostina — Ina — Tsvetkova, Senior Advisor in Digital Accessibility and Inclusive Design at NAV, the Norwegian Directorate of Labour and Welfare, and an invited expert in the W3C working group that owns WCAG itself. Her talk the next day was titled "Secure-by-Inclusion: Preventing Accessibility Barriers from Becoming Security Vulnerabilities," and its argument is the one she walked me through over dinner: the mechanisms we build to protect users — CAPTCHAs, multi-factor prompts, biometric logins, time-limited one-time codes, brittle account recovery — systematically exclude disabled and older users, and the exclusion becomes the vulnerability. In the words of her abstract: "Users facing accessibility barriers often adopt insecure coping mechanisms: they share passwords, delegate authentication to others, store credentials insecurely, rely on weaker fallback paths, or abandon security measures altogether. Each workaround is a predictable security failure caused not by user negligence, but by design choices that made the secure path inaccessible."</p>
+<p><em>Delegate authentication to others.</em> Hold that phrase; it comes back. I had come to the table from a different rabbit-hole. For the past year or so I have been building toward the other side of this: services that expose what they can do to AI agents as declared, typed capabilities — experiments on my own blog, and the direction I am pushing at Mynder where I am interim CTO, in Sunstone Atlas, in Synthesis — and an open protocol, KCP, for governing what an agent may know and do once it gets there, including who it may act <em>as</em> and how far. None of that is finished. It is where I am heading, and this essay is me thinking out loud about why. Somewhere between the main course and the coffee the two rabbit-holes met. Ina's field documents disabled users being forced, today, into <em>informal, unscoped, unaudited</em> delegation — handing a password to a relative — because the secure path was built for someone else's body. My field is, whether it meant to be or not, the engineering of <em>formal, scoped, audited</em> delegation. The thought I could not shake afterwards, and have not been able to put down since, is this: the way we are building the agentic web looks to me like a cheaper, more testable, and — for the people at Ina's end of the table — potentially far richer route to accessibility than the way the accessibility industry has been forced to work for thirty years. Not because anyone designed it that way. Because of what an agent needs.</p>
+<p>A note on interest before anything else, and I will repeat it wherever it matters. KCP is not a product. It is an open specification under the Apache 2.0 license — its README says, in as many words, that it "remains an Apache 2.0 open specification proposed by eXOReaction AS" — and nobody pays anyone to use it. But I co-created it and I maintain it, which gives me an author's stake in seeing it adopted and a reputation tied to whether its ideas hold up. Separately, I hold a paid role at Mynder, and I build Sunstone Atlas and Synthesis, and all three stand to do better in a world where services expose declared capabilities the way I am about to describe. That is not a sales interest in the protocol. It is an author's and a builder's interest in the idea, and it is enough that you should check every claim against the public artifacts I link. What follows is not a recommendation I am pushing. It is something I noticed from where I sit, put forward to be examined, tested, and argued with — and if you are a disabled reader, I would rather you held me to the standard the accessibility community has earned the right to apply to anyone who arrives from the technology side with an idea about your life.</p>
+<p>One more framing note, because it governs everything below. The agentic web I am describing — WebMCP, MCP reaching the consumer web, KCP, the whole notion of services declaring their capabilities to agents — is a direction, not an established standard. WebMCP is an origin trial. MCP on the consumer web is mostly absent. KCP is a proposal. What follows is a reflection on where that direction leads if it holds, argued as carefully as I can, and not a technical brief or a documented practice. Read it as a thought experiment with receipts.</p>
+<p>Here is the idea, in four parts. Three I think hold up as arguments today; the fourth is a hypothesis, and I will keep calling it one.</p>
+<p><strong>(a) It is cheaper to build.</strong> Declaring a service's capabilities once, as typed tools, is less work than auditing and retrofitting every page, every state, every breakpoint of a visually rendered site — which is what accessibility remediation has meant since the 1990s.</p>
+<p><strong>(b) It is easier to test.</strong> A typed tool contract can be tested deterministically, fast, and without a browser. Rendering correctness — of which accessibility correctness is a subset — sits at the slowest, flakiest, most expensive layer of the testing pyramid, and the whole industry has known that for a decade and a half.</p>
+<p><strong>(c) The incentives are already pointed there.</strong> Services are building the agent door for reasons that have nothing to do with disability — agent reliability, agent commerce, not being left off the agentic web. The accessibility benefit does not need its own budget line. It rides.</p>
+<p><strong>(d) Hypothesis: the assistive tools get better, because they get written once.</strong> A switch-scanning agent, an AAC authorship-protection layer, whatever a specific disability community actually needs — built against a shared, typed capability declaration — is written once and works on every service that exposes tools the same way. Today an assistive tool has to contend with every individual site's bespoke, drifting DOM. That is N tools times M sites. A shared protocol collapses it.</p>
+<p>Each of those needs an argument, and the last needs a warning label. But first the machinery underneath all four, because the idea only makes sense once you see what an agent is actually reading when it reads a web page.</p>
+<h2 id="the-same-tree">The same tree<a class="headerlink" href="#the-same-tree" title="Permanent link">&para;</a></h2>
+<p>When a browser renders a page, it builds the DOM — and then it builds a second structure from it: the accessibility tree. MDN's definition is worth quoting because nothing about it is new: browsers "create an accessibility tree based on the DOM tree, which is used by platform-specific Accessibility APIs to provide a representation that can be understood by assistive technologies, such as screen readers." Every node carries a name, a role, a state, a description. This is the machinery WAI-ARIA feeds and that screen readers have consumed for decades. (One precision, because the ARIA spec itself makes it: some assistive technologies read the DOM's semantics directly rather than through the tree. What none of them read is the rendered pixels.)</p>
+<p>Now look at what the current generation of agent browser tooling does. Microsoft's Playwright MCP server — one of the most widely used ways to give a language model a browser — describes itself like this: it "enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models." Its lead feature bullets: "Uses Playwright's accessibility tree, not pixel-based input." "No vision models needed, operates purely on structured data." "Deterministic tool application. Avoids ambiguity common with screenshot-based approaches." Google's Chrome DevTools MCP server does the same, and this one I can verify first-hand, because it is the browser tool available in the environment where I am writing this. Its snapshot tool describes itself, verbatim: "Take a text snapshot of the target page based on the a11y tree… Prefer taking a snapshot over taking a screenshot."</p>
+<p><img alt="Diagram showing a screen reader user and an AI agent (via Playwright MCP / Chrome DevTools MCP) both drawing from the same accessibility tree — the common language — captioned that WCAG success criterion 4.1.2, written in 2008 for blind users, is precisely the perceive-act-observe loop required for autonomous agent architecture today, and that every accessibility defect is mechanically an agent-reliability defect." src="/assets/images/blog/write-the-tool-once/03-shared-substrate.png" /></p>
+<p>So, without any speculation: the screen reader and the browser agent are two consumers of the same semantic layer. When a developer ships an unlabeled button, the screen reader announces "button" — and the agent sees an anonymous node it cannot confidently invoke. Every one of WebAIM's six dominant error types breaks both clients the same way. Every accessibility defect is now, mechanically, an agent-reliability defect.</p>
+<p>The accessibility community wrote the specification for this eighteen years early. WCAG success criterion 4.1.2, "Name, Role, Value," normative since 2008, requires that for all user interface components "the name and role can be programmatically determined; states, properties, and values that can be set by the user can be programmatically set; and notification of changes to these items is available to user agents, including assistive technologies." Gather information about. Activate. Keep up to date on the status of. That is the perceive–act–observe loop of every agent architecture of the last two years, specified as a web standard because blind users needed it. They were writing the functional requirements of a non-visual software client operating an interface on a human's behalf — which is what a screen reader is, and what an agent is.</p>
+<p>I want to be precise about that claim's scope, because later I will show you the people building the agentic web rejecting a stronger version of it. The two clients <em>perceive</em> through the same layer and <em>fail</em> on the same defects. Whether an agent's tools also belong <em>in</em> that layer was argued out in public this year, and the answer was no — for reasons that turn out to matter enormously for claim (d). Hold that.</p>
+<h2 id="three-doors">Three doors<a class="headerlink" href="#three-doors" title="Permanent link">&para;</a></h2>
+<p>Everything above is about reading a rendered page better. A page still gets built, a DOM still exists, an accessibility tree still gets derived from it, and two non-visual clients reverse-engineer the service's capabilities from that derivation. I have called this before a translation of a translation: the service knows what it can do; it translates that into pixels for sighted users with pointing devices; the screen reader translates the pixels' skeleton back into something structured. Doing the second translation more faithfully is what accessibility remediation <em>is</em>. It is also, precisely, where the entire old-school accessibility budget lives.</p>
+<p>There are, right now, three ways for an agent to reach what a service can do. I think of them as three doors, and the whole idea turns on which door the money goes to.</p>
+<p><img alt="Diagram comparing three doors to the agentic web: Door 1, read the rendering — high friction, a translation of a translation from Service through Pixels through the Accessibility Tree to the AI Agent; Door 2, annotate the page (WebMCP) — keeps the human UI primary to protect merchandising, agent stays on the page; Door 3, no page — the service exposes declared typed tools (JSON schemas / KCP / MCP) directly to an AI client, and the raw capability is the artifact. Caption: for thirty years, accessibility budgets have lived entirely in Door 1; Door 3 eliminates the translation entirely." src="/assets/images/blog/write-the-tool-once/04-three-doors.png" /></p>
+<p><strong>Door one: read the rendering.</strong> The agent loads the page and reads its accessibility tree. This is Playwright MCP and Chrome DevTools MCP; it is what every agentic browser shipping today falls back to; and it is where all of the evidence above lives. It is also the only door the accessibility industry has ever had. Every audit, every ARIA retrofit, every overlay, every per-site fix is work done on this door.</p>
+<p><strong>Door two: the page annotates itself.</strong> WebMCP — the W3C community-group proposal from Google and Microsoft engineers, in origin trial in Chrome 149 and Edge 150 as I write — lets a page register tools in its own JavaScript (<code>document.modelContext.registerTool()</code>) or mark up an ordinary form with <code>toolname</code> and <code>tooldescription</code>, so an agent can call "add to cart" as a typed function instead of finding the button. This shortens the second translation without removing it, and it is page-bound by <em>design</em>: headless browsing is a listed non-goal, so are "fully autonomous workflows… where a browser UI is not present," and the goals include "Prevent web content disintermediation: Prevent disintermediation of web apps by backend integrations by adapting front-ends for use by agents, rather than replacing them" and, flatly, "The human web interface remains primary." Static manifests were considered and rejected because they cannot follow "the active page state or user authentication status." Chrome's documentation states the consequence: "Clients and browsers must visit a site directly to know if it has callable tools."</p>
+<p>Read those goals again with the first half of this essay in mind. The reason WebMCP keeps the agent on the page is commercial: a service whose capabilities are a backend API is a service whose front end can be bypassed, and the front end is where the merchandising lives. That is a legitimate concern. It is also, exactly, the incentive structure that produced a web where ninety-six percent of front doors are broken — the visual rendering is the product, and everything non-visual is derived from it after the fact.</p>
+<p><strong>Door three: there is no page.</strong> A service exposes its capabilities directly as typed, described tools, and nothing is rendered for anyone. This is what the Model Context Protocol does natively: a client sends <code>tools/list</code>, gets back names, descriptions and JSON schemas, and sends <code>tools/call</code>. Nothing in the tools chapter or the transports chapter of the specification mentions a page, a DOM, or a rendering, because there isn't one. Google's A2A agent cards do the same for agents. And — interest noted again — the KCP manifests I help maintain do the same for knowledge and governed procedures: a <code>knowledge.yaml</code> at a repository root, or discovered through <code>/.well-known/kcp.json</code>, or distributed as a static catalog "independently of any running service," with an MCP bridge that answers <code>tools/list</code> and never touches a browser. KCP even has a name for door one in its own discovery vocabulary — <code>web_traversal</code>, glossed as "Playwright, headless browser" — and files it as a lower-provenance source than <code>manual</code> declaration. Reverse-engineering the rendering is, in the protocol's own taxonomy, the fallback.</p>
+<p>Here is why door three is where this essay's idea lives. On door one, a screen reader and an agent reverse-engineer the same rendering. On door two, the rendering carries a machine-readable annotation of itself. On door three there is no rendering, so there is no translation of a translation — there is no translation at all. The service's declared capabilities are the artifact. A voice client, a braille display, a switch-scanning interface, an agent, and whatever modality nobody has invented yet each consume the same declaration and render it however serves that user. Every modality is exactly one step from ground truth, and the sighted user's pointing-device interface is one rendering among equals rather than the original everyone else derives from. That is the architecture the accessibility community has been asking for since the 1990s, arrived at by people who were trying to make agents reliable.</p>
+<p>Three honesties, before I build on that. First, door three is where MCP lives today, and MCP lives mostly among developer tools and enterprise integrations; the consumer web — the checkout, the booking, the government form — is still door one with door two arriving. Anyone who tells you the page-free web is here is describing their IDE. Second, door three is already growing a rendering back: MCP Apps, the protocol's first official extension, lets a tool ship an HTML document rendered in a sandboxed iframe, and its specification contains no occurrence of the words accessibility, ARIA, screen reader, or keyboard; the issue asking for accessibility guidance has been open since February with no reply. What saves it for now is that the HTML is optional by rule. Third — and this is the one that shapes claim (d) — door three only helps a disabled user if something on their side renders the declaration for them. A screen reader will not do that, and the person who explained why is a blind screen-reader user. I will get to her.</p>
+<h2 id="a-cheaper-to-build">(a) Cheaper to build<a class="headerlink" href="#a-cheaper-to-build" title="Permanent link">&para;</a></h2>
+<p>Start with what accessibility remediation on door one actually obligates you to do. Not fix the business logic — that part was fine. The obligation is to make the <em>rendering</em> of that logic faithfully reverse-engineerable, across every page, every interactive state, every breakpoint, every browser, and to keep it that way through every redesign. WebAIM's numbers are the price of that obligation, measured: 56 detectable errors per home page on average, on the top million sites, after thirty years. Pages that <em>tried</em> — the ones carrying ARIA — had significantly <em>more</em> errors than pages that didn't (59.1 against 42), because semantics applied badly are worse than none. That is not a story of lazy developers. It is a story of a layer that is structurally expensive to get right and stays expensive, because the artifact being audited was never designed to carry the meaning being audited for.</p>
+<p>Now the door-three obligation. A service declares, once, what it can do: a name, a description, an input schema, an output schema, an annotation of what is safe and what is consequential. In the services I am moving toward this, that is a file, or a small server, per capability — and the point of the exercise is that it would be the same file whether the consumer is Claude, a switch-scanning agent, or a compliance auditor. There is no second rendering to keep in step, because there is no first one in the loop.</p>
+<p>I want to be careful about the shape of this claim, because the "agentic web makes everything cheaper" genre is the lowest-trust content category in tech right now, and I have no interest in adding to it. So, the narrow version: <strong>the cost of accessibility does not disappear on door three; it moves — from the layer we are worst at verifying to a layer we are better at.</strong> Two things do not get cheaper. The business logic behind the tool surface is exactly as hard as before. And for years, serious services will run both surfaces — the human UI and the agent tools — and pay to keep them consistent; the transition costs more, not less, and anyone quoting you a near-term saving is invoicing you for the end state. What gets cheaper is the specific thing the accessibility industry has been paying for: the labor of making a visual artifact faithfully legible to a non-visual client. On door three that labor is the <em>declaration</em>, and the declaration is work you are doing anyway — which is claim (c).</p>
+<p>One more honesty. I looked for a defensible number — a study showing that a declared contract costs some fraction of the equivalent rendering-plus-remediation — and did not find one I would stake this on. The "retrofit costs ten times more" figures that circulate are vendor content. So this is a practitioner's claim, from someone who has built the first and is building toward the second, and you should weight it as one. What I can point to is the next claim, where the industry's own evidence is unusually clear.</p>
+<h2 id="b-easier-to-test">(b) Easier to test<a class="headerlink" href="#b-easier-to-test" title="Permanent link">&para;</a></h2>
+<p>The testing pyramid is fifteen years old and its lesson has not changed: put most of your tests at the unit and contract level, few at the UI level, because UI-level tests are the worst kind. Google's testing blog said it in 2015 under the title "Just Say No to More End-to-End Tests," on three grounds — slow feedback, flakiness, and the effort of finding the root cause when one fails — and concluded: "The exact mix will be different for each team, but in general, it should retain that pyramid shape." The following year the same blog measured the flakiness: "across our entire corpus of tests, we see a continual rate of about 1.5% of all test runs reporting a 'flaky' result," and "Almost 16% of our tests have some level of flakiness associated with them!" The canonical write-up on Martin Fowler's site puts it without hedging: end-to-end tests "are notoriously flaky and often fail for unexpected and unforeseeable reasons," they "require a lot of maintenance and run pretty slowly," and — the sentence that matters here — "Testing your user interface doesn't have to be done in an end-to-end fashion"; you can put "proper integration tests around your API" instead. And on contracts: "Automated contract tests make sure that the implementations on the consumer and provider side still stick to the defined contract."</p>
+<p><img alt="Two testing pyramids compared. &quot;The Old Way&quot;: an inverted, top-heavy orange shape dominated by slow, flaky UI/browser/screen-reader manual testing, with only a small sliver of integration and unit tests at the bottom — annotated with a 1.5% flaky rate across the corpus and 16% of tests carrying some flakiness. &quot;The Door 3 Way&quot;: a normal blue pyramid dominated by deterministic contract testing at its base — tested in milliseconds, using JSON schemas and API contracts, automated and highly deterministic — with only a small UI-tests layer at the top. Caption: accessibility remediation has historically been trapped at the top of the pyramid; by declaring typed tool surfaces, accessibility correctness moves to the base." src="/assets/images/blog/write-the-tool-once/06-testing-pyramid.png" /></p>
+<p>Now notice where accessibility testing lives. It lives at the top of the pyramid, by necessity: it is a property of the rendered artifact, so it can only be verified against the rendered artifact, in a browser, with a real or simulated assistive client, across states and breakpoints. Automated checkers catch a fraction (WebAIM's are automated, and they only detect what is detectable), and the rest is manual screen-reader passes on a sprint cadence — the slowest, most expensive, least repeatable kind of test there is, done by the people whose time is scarcest. The accessibility community did not choose that layer. The architecture chose it for them. We test pixels as a proxy for testing capabilities, because the pixels are the only contract we published.</p>
+<p>A declared tool surface <em>is</em> the contract, published directly, and it is tested the way contracts are tested: deterministically, in parallel, in milliseconds, with no browser in sight. Does the tool exist? Does its schema validate? Does calling it with these arguments produce this result? Does the annotation say it is read-only, and is it? Is the description complete enough for a client that has never seen the site to choose it correctly? Those are questions with yes-or-no answers, and they can run on every commit, in seconds — which is the shape of testing I am moving my own work toward. Nothing in that list requires a rendering, a breakpoint, or a screen reader — which means the <em>accessibility</em> correctness of the capability layer is testable at the base of the pyramid rather than the top. That is the real simplification: not less testing, but <em>a testable contract replacing an untestable rendering as the thing you stake correctness on.</em></p>
+<p>And the honest other half, because there is one, and it is new. With a UI you tested whether the button works. With a tool surface consumed by a model, you also have to test whether <em>an agent, reading your descriptions, reliably chooses and composes the right tools</em> — a statistical, model-versioned, nondeterministic property. Léonie Watson put the legal version of that problem better than I can: when the same prompt never yields the same output twice, "where does that leave the concept of representative sampling, and how can we be sure our digital products meet our legal obligations?" We are trading a testing problem we understand and hate for one we do not yet understand. I lean toward "the new one is more automatable" — a description is text, and text can be evaluated at scale — but that is a lean, not a finding, and it is the single strongest objection to this claim.</p>
+<h2 id="c-the-incentives-are-already-pointed-there">(c) The incentives are already pointed there<a class="headerlink" href="#c-the-incentives-are-already-pointed-there" title="Permanent link">&para;</a></h2>
+<p>Here is the thing that separates this from every previous run at fixing the web. For thirty years the ask — label your controls, structure your content, make everything operable without a pointer — came from people whose market power could be, and was, ignored. The 2026 WebAIM numbers are what ignoring it looks like. Now the identical ask arrives attached to agent-mediated traffic and the revenue behind it. Sites will not label their buttons because it is right. They will label their buttons because unlabeled buttons don't convert when the customer's agent can't find them. And they will not declare their capabilities as tools out of virtue either; they will do it because a service the agents cannot use is a service that is not on the agentic web, and because the agent-commerce protocols being drafted by payment networks and platforms are, as far as I can read them, written in the vocabulary of declared capabilities, not rendered pages.</p>
+<p><img alt="Illustration of two connected engines: &quot;Agent Commerce &amp; Reliability&quot; feeding into &quot;Accessibility Infrastructure.&quot; Three supporting points: Protocol Shift — agent-commerce protocols from payment networks are being drafted entirely in the vocabulary of declared capabilities, not rendered pages; Economic Exclusion — a service that an agent cannot navigate is a service excluded from the agentic economy; The KCP Proof Point — across the KCP specification, &quot;accessibility&quot; appears zero times, yet to ensure agent reliability it inadvertently built the exact trust infrastructure blind users have requested for decades. Caption: the accessibility benefit does not need its own budget; it rides on the commerce budget." src="/assets/images/blog/write-the-tool-once/07-incentive-shift.png" /></p>
+<p>Which means the accessibility benefit is not a separate line item competing for priority against features. It rides. I can show you what that looks like from the inside, and this is where my interest matters most, so weigh it. Across KCP's quarter-megabyte specification, its README, and its standards proposal, the words "accessibility," "disability," "screen reader," and "assistive" appear exactly zero times — re-checked this week against the current head of the repository — and I can confirm from the inside what the grep suggests from the outside: none of it was designed for disabled users. It was built for agent reliability, auditability, and tool interoperability — the reasons the people adopting it actually have — and it arrived, unbidden, at scoped capabilities, fail-closed boundaries, and modality-independent audit trails: the trust infrastructure a person who cannot watch the screen has always needed before they could safely delegate. Nobody working on KCP set out to do accessibility work. We did it anyway, because an agent needs what a blind user needs, and the agent was who we were building for. And the incentive runs on the security side too, which is Ina's point turned around: an organization that has a formal, scoped, audited way for a user to delegate — to an agent, under a declared boundary — has removed one of the workarounds her talk catalogues. The compliance budget and the security budget are already paying for the door. The accessibility benefit walks through it.</p>
+<p>The Linux Foundation's Agentic AI Foundation — to which KCP is submitted, a second and smaller interest, so noted — published the same observation from the MCP side in June, in an essay titled "Native speakers: why AI's most powerful users are blind": "Accessibility means both channels are complete. A flawlessly conformant interface is still a dead end for an agent-mediated user if the operations aren't in the tool surface." The curb-cut effect is usually offered as an analogy. This is not an analogy; it is the same artifact, consumed twice.</p>
+<p>There is a counter-incentive, and I named it under door two: the service whose front end is the product will resist door three, because a tool surface strips the merchandising. WebMCP's authors wrote that resistance into their goals. I take it seriously. It means the services most likely to reach door three first are the ones where the front end was never the product — infrastructure, B2B, government, compliance, the services I happen to build — and the consumer checkout comes later, through door two, with the human interface "primary." I do not think that reverses claim (c). I think it sets its order.</p>
+<h2 id="d-hypothesis-write-the-tool-once">(d) Hypothesis: write the tool once<a class="headerlink" href="#d-hypothesis-write-the-tool-once" title="Permanent link">&para;</a></h2>
+<p>This is the claim I was still turning over on the train home, and it is the one I want to state most carefully, because it is the sharpest and the least proven.</p>
+<p>Consider how an assistive tool is built today. The clearest precedent is the oldest: JAWS, the dominant Windows screen reader, has shipped for decades with per-application <em>script files</em> — Calc.jss for the calculator, Notepad.jss for Notepad — because, as an AccessWorld primer put it in 2003, "A JAWS script is merely a bridge between the screen reader and the mainstream application." One bridge per application, written by the vendor or the community, maintained as the application changes. On the web the same shape reappears at every scale: the screen reader's heuristics for a thousand common widget patterns; the voice-control tool's fallback from names to numbers to a grid when the names are missing; the overlay industry, which sells a JavaScript snippet that tries to patch each site's DOM at load time and is condemned by roughly a thousand practitioners in the Overlay Fact Sheet because "no overlay product on the market can cause a website to become fully compliant with any existing accessibility standard." Whatever you think of any one of these, they share an economics: every tool must contend with every site's bespoke, drifting rendering. N tools times M sites, each pairing its own integration burden, each one decaying as the site redesigns. This is why assistive technology is expensive, why it lags, and why so much of the field's effort goes into <em>coping</em> rather than into what a specific community actually needs.</p>
+<p><img alt="Before-and-after architectural schematic. &quot;Before: The N×M Nightmare&quot; — JAWS Scripts, Voice Fallbacks, and Overlay Snippets each wired in a tangled mesh to dozens of bespoke website DOMs. &quot;After: The Protocol Hub&quot; — Switch Scanners, AAC Interfaces, and Voice Clients each connecting once to a shared protocol (MCP/KCP), which fans out cleanly to all services globally. Caption: today, assistive-technology vendors waste their engineering capacity coping with bespoke, decaying DOMs; if services declare capabilities via a standard protocol, an assistive interface is written once and works on every service natively." src="/assets/images/blog/write-the-tool-once/08-nxm-write-once.png" /></p>
+<p>Now the hypothesis. On door three, the site's side of that integration is the <em>same declaration</em> for every consumer. An assistive tool built against the protocol — not against any site — is written once, and works on every service that exposes tools that way, with no per-site integration cost, and no decay when the service redesigns its human interface, because the human interface is not in the loop. Concretely: a switch-scanning agent that presents a service's declared tools as a short, ordered, scannable list, executes the chosen one from a single switch press, and reads back the result — written once, usable on every door-three service. An AAC layer that takes a single expressed intent, assembles the multi-step flow across whatever tools exist, and holds the whole thing at <em>prepared</em> until the user's own selection commits — written once. A voice client that never needs "Show numbers" or "Show grid" because the tool names are the interface. Whatever the cognitive-accessibility community decides an intermediary should do — written once. The specialist effort goes into the tool's quality for its community, not into keeping up with a million DOMs. That is the same "N×M gets absorbed" argument people make about generic agents and multi-site composition, applied to a much narrower and more consequential question: who builds disability tooling, and how far one person's work reaches.</p>
+<p>Here is why it is a hypothesis and not a claim, and I want to give the evidence its full weight in both directions.</p>
+<p><em>For it:</em> the architecture is real and shipping, at least in developer tooling (door three exists there; MCP clients already consume any MCP server with no per-server code). The convergence it depends on has been noticed by the people building assistive technology — I will show you the record in a moment. And the interaction-economics research points the same way: Google's SpeakFaster work with eye-gaze typists with ALS saved "57% more motor actions than traditional predictive keyboards," which is the shape of gain an intent-once-execute-many tool would deliver for action rather than text.</p>
+<p><em>Against it, or not yet for it:</em> I could find nobody actually doing this — no assistive-technology vendor building against MCP or WebMCP rather than against sites. The strongest current signal is Vispero's AI agent for JAWS, which Léonie Watson reported in August is being built to ship inside the screen reader, and which she has pointed at WebMCP. But read the mechanics as reported: accessibility tree plus screen capture plus coordinate clicking when the software exposes nothing better. That is door one. It is evidence that the <em>vendors</em> are building agents; it is not yet evidence that they are building them against a typed protocol, and Watson's suggestion is a comment in a public thread, not a roadmap. Then there is the plural problem: "write it once" assumes one protocol, and today there are at least three — WebMCP for annotated pages, MCP for page-free tools, KCP for governed knowledge and procedures, A2A for agents — so the honest near-term version is "write it once per protocol," which is a small number rather than one, but not one. And finally: a protocol lowers the cost of building a tool. It does not decide what the tool should do. That decision belongs to the community the tool is for, and if door three simply lets more people like me build more things <em>for</em> disabled users without them, it will have reproduced the overlay industry's original sin at a new layer. I would rather say that now than have it said to me.</p>
+<p>So: hypothesis. The most testable one in this essay, and the one I would most like to be shown wrong about in public, by someone who has built the tool.</p>
+<h2 id="the-audit-channel-you-never-knew-you-had">The audit channel you never knew you had<a class="headerlink" href="#the-audit-channel-you-never-knew-you-had" title="Permanent link">&para;</a></h2>
+<p>One more piece of machinery, because all four claims end at the same place: a user who has handed a task to an agent, and now has to trust what it did.</p>
+<p>When a sighted user delegates a task to an agent, they lose something they never had to think about: the ambient audit channel of watching the screen while things happen. A blind user never had that channel. Every delegating user of the agentic web is, structurally, in the position blind users have always occupied — trusting a mediated account of what was done on their behalf. Which means the governance disciplines that make delegation safe — action envelopes that fail closed, capability grants scoped per task, audit trails readable after the fact in any modality — are not enterprise compliance features that happen to help disabled users. They are the generalization of what non-visual computing always required.</p>
+<p>And here is the phrase from dinner. Ina's abstract lists, among the coping mechanisms an inaccessible secure path forces on disabled users, that they "delegate authentication to others."</p>
+<p><img alt="Quote card on a grid background: &quot;Users facing accessibility barriers often adopt insecure coping mechanisms: they share passwords, delegate authentication to others... Each workaround is a predictable security failure caused not by user negligence, but by design choices that made the secure path inaccessible.&quot; — Ina Tsvetkova, Senior Advisor in Digital Accessibility, NAV (W3C AGWG). Caption: disabled users are forced into informal, unscoped, unaudited delegation because secure visual paths exclude them; the question is whether their delegation finally gets a boundary and a log." src="/assets/images/blog/write-the-tool-once/10-unsafe-coping-mechanism.png" /></p>
+<p>Read that as an engineer. It describes delegation with no scope — the relative who has your password can do anything you can do; no ceiling — there is no "read-only" mode for a shared credential; and no audit — nothing records what was done in your name, by whom, or what they declined to do. That is not a user's failure. It is, in her framing, "a predictable security failure caused… by design choices that made the secure path inaccessible." It is also, precisely, the threat model the agentic-governance work was built to answer: delegation that <em>is</em> scoped, <em>has</em> a ceiling, and <em>is</em> recorded. Disabled users are not waiting to be handed delegation by the agentic web. They are already delegating, informally and unsafely, because the alternative was exclusion. The question this approach answers is not "should they delegate?" — it is whether the delegation they already do gets a declared boundary and a log.</p>
+<p>The doors make this concrete. On door two, the trust model is explicitly visual — Chrome's WebMCP documentation puts it in one sentence: "Tools execute on your webpage visibly, so users gain trust that tasks are completed as expected." That is the sighted user's ambient audit channel, rebuilt as a product feature, for the users who already had it. On door three there is no page to watch; the MCP specification asks hosts to "insert clear visual indicators when tools are invoked" and to "present confirmation prompts," and says nothing about what the user who cannot see the indicator gets instead. The further you go from the page, the more the trust question has to be answered by a <em>record</em> rather than by <em>watching</em> — which is the question non-visual users have been answering for thirty years.</p>
+<p>Interest noted again: the example is one I helped write. KCP's skills carry an <code>action_scope</code> with an explicit <code>deny</code> — in the release's own words, "an explicit negative scope… meaning 'never, regardless of any allow'," evaluated deny-first, fail-closed — alongside an authority ceiling (<code>observe &lt; explain &lt; suggest &lt; prepare &lt; commit</code>) where "the lowest still wins": an agent declared at <em>suggest</em> cannot be escalated to <em>commit</em> by any grant anywhere in the stack. "A deny is never grantable — a deny-hit raises a notify-only <em>prohibited-attempt</em> event; no response to it enacts. The only way past a <code>deny</code> is a superseding, reviewed, signed manifest version." A refused attempt becomes a row in a structured table (<code>prohibited_attempt_events</code>, spec §17), with the matched rule named. That is a replacement for the ambient audit channel — not watching pixels move, but a machine-readable record of what was attempted, what was allowed, what was refused and under which declared boundary, equally legible through a dashboard, a terminal, or a screen reader. <em>A refusal log you can read instead of a screen you must watch.</em></p>
+<p><img alt="Flowchart: &quot;Agent Intent&quot; leads into &quot;The Governance Envelope,&quot; defined by an authority ceiling (Observe &lt; Explain &lt; Suggest &lt; Prepare &lt; Commit), evaluated deny-first and fail-closed, which branches to either &quot;Execution&quot; or a &quot;Structured Refusal Log&quot; (prohibited_attempt_events). Caption: sighted users audit agents by passively watching pixels move on a screen; blind or delegating users require a machine-readable record. Protocols like KCP replace the ambient visual audit channel with a fail-closed boundary and a refusal log — you read the log instead of watching the screen." src="/assets/images/blog/write-the-tool-once/11-audit-channel.png" /></p>
+<p>And its boundary: this matters where a user has delegated a multi-step <em>action</em>. Where the barrier is content — a missing caption, a wall of dense text — governance governs nothing, and I will say so when we get there.</p>
+<h2 id="where-the-idea-holds-population-by-population-and-where-it-doesnt">Where the idea holds, population by population — and where it doesn't<a class="headerlink" href="#where-the-idea-holds-population-by-population-and-where-it-doesnt" title="Permanent link">&para;</a></h2>
+<p>An idea that claims to serve "people with disabilities" as one group is already wrong. So here is the idea tested against six populations, asking each the same three questions: What is broken today? What does the agentic web — doors one through three — mechanically change? And what does trust rest on once the task is delegated? The table is the claim; the paragraphs are the evidence, including where the cells are weakest.</p>
+<p><img alt="Diagnostic matrix table with four rows — Blind/Low-Vision, Motor/Switch, Voice, and Deaf/HoH — each showing what's broken today, the agentic fix under Door 3, and the governance need. The Deaf/HoH row is highlighted in an orange box: broken today is missing media captions, the agentic fix is &quot;None — protocol solves operability, not media equivalence,&quot; and governance need is marked N/A. Caption: the architecture perfectly solves interface operability, but offers nothing for understandability or media equivalence." src="/assets/images/blog/write-the-tool-once/09-modality-matrix.png" /></p>
+<p><strong>Blind and low-vision users.</strong> <em>Today:</em> the numbers this essay opened with are this population's daily commute. <em>The mechanism:</em> the strongest case, and not an analogy — shared substrate, shared failure modes. A July 2026 arXiv paper ("MCP-Driven Accessibility Tree Standardization for AI-Powered Screen Reader Agents") proposes making the convergence official — an MCP layer exposing "ARIA-aligned roles, labels, states, and focusable-element hierarchies" to LLM-based assistive agents — and it is a conceptual framework, not an implemented system; worth saying plainly. The more important development is a correction to how I had been thinking about the last mile, and it came from Léonie Watson — a blind screen-reader user and a member of the W3C Advisory Board — in WebMCP's own issue tracker. There is a <em>direct</em> model, in which the screen reader itself reads a page's tool declarations, and an <em>indirect</em> model, in which an agent acts on the screen-reader user's behalf. The direct model does not work, and not because of a gap ARIA could close: "Screen readers are essentially reactive. They expose what's in the accessibility tree as the user navigates the page. They don't make decisions about which actions to take, construct arguments, or how to interpret structured data… This isn't a gap that can be closed with ARIA or the AOM, it's a fundamental difference between a screen reader and an agent." The benefit, she concludes, "has to flow through agents not through the screen reader directly." That sentence is the constraint on claim (d): the write-once tool for this population is an <em>agent</em>, not a screen-reader plug-in — and the agent that ships inside JAWS is the first candidate. <em>After delegation:</em> this is the one population for whom delegating removes nothing, because the ambient audit channel never existed here. What the governance layer changes is the <em>quality</em> of the mediated account: a fail-closed envelope declared before the fact and a structured refusal log after it — rows a screen reader traverses exactly as a dashboard renders them. Secondary reporting on the JAWS agent describes it pausing before high-risk actions to narrate and ask permission — the confirmation step kept on the user's side of the line, which is what an authority ceiling declares in advance rather than leaving to the agent's manners.</p>
+<p><strong>Motor disabilities — switch access, sip-and-puff, scanning.</strong> <em>Today:</em> a switch user operates the web through sequential scanning; Apple's documentation: "Item scanning highlights items or groups on the screen one at a time," and one or two switches select. When a page doesn't expose discrete items, Switch Control degrades to <em>point scanning</em> — crosshairs to raw coordinates — and a multi-step flow becomes an ordeal of linear traversals. <em>The mechanism:</em> an agent needs precisely what item scanning needs — a finite, enumerable list of discrete, well-bounded, programmatically actionable targets — which is why the Chrome DevTools snapshot assigns every element a unique identifier and Playwright MCP calls its approach "deterministic." An agent degrades from semantic invocation to pixel-clicking exactly where Switch Control degrades to point scanning. On door three the parallel becomes identity: a service's <code>tools/list</code> <em>is</em> a scan list, short and ordered and typed, with nothing to degrade to. One honest exception: target-size requirements — the 24-pixel minimums tremor and eye-tracking users depend on — have no agent analogue; the convergence is about semantics and structure, not geometry. <em>After delegation:</em> the economics invert — one expressed intent replaces the hundreds of scan-and-select cycles a checkout costs today — which makes this a population that will actually delegate, which makes the trust question live. The record of what was done and refused is discrete, ordered text — the shape switch navigation is built for — and the authority ceiling means the confirmation a user keeps for themselves cannot be escalated away by any grant. The switch press remains the <em>commit</em>.</p>
+<p><strong>Voice control.</strong> <em>Today:</em> a voice-control user speaks the names of controls, and WCAG 2.5.3 exists because this breaks when visible label and accessible name diverge: speech-input users "will be unsuccessful… because the visible label spoken by the users does not match (or is not part of) the accessible name." Apple Voice Control's fallback ladder is the same as switch access: name; failing that, "Show numbers"; failing that, "Show grid." <em>The mechanism:</em> an agent told to "click Submit" grounds a spoken reference to a named element and fails identically when the name is missing or wrong. On door three the tool name is the command, and the ladder has no lower rungs. <em>After delegation:</em> today, recovering from a misfired interaction means re-dictating navigation, command by command. Against a structured audit trail it becomes one question — "what did you do, and what did you refuse?" — answered from a log that is text, and therefore speakable.</p>
+<p><strong>Speech disabilities and AAC users.</strong> <em>Today:</em> every selection is slow and effortful; cost per interaction, not semantics, is the binding constraint. <em>The mechanism:</em> different from the shared-tree story, and I want to be honest about that — this is interaction economics, not shared infrastructure. Google's SpeakFaster work with eye-gaze typists with ALS saved "57% more motor actions than traditional predictive keyboards," with text entry 29–60% faster; the agentic model — express an intent once, and an agent performs the ten-step flow — is the same keystroke economics applied to action instead of conversation. <em>After delegation:</em> the trust question has a sharper edge here than anywhere, because the AAC research community has already articulated the condition: in the CHI study titled "The less I type, the better," AAC users welcomed the saving of "time, physical and cognitive effort" while insisting AI-generated output "reflect their own communication style and preferences." The user, not the agent, must remain the author — and an "after" that slides from <em>amplifying</em> a person's intent to <em>ventriloquizing</em> it has failed this population whatever it saved. This is where a declared authority ceiling reads as if designed for the requirement, though it wasn't: pin the agent at <em>prepare</em>, and every flow is assembled but nothing enacts until the user's own action commits it — agency preserved at exactly one selection's cost, by declaration rather than by the agent's good behavior. I flag that mapping as my design inference, not something any AAC study has evaluated — and as the clearest example of a write-once tool this essay can imagine, which is exactly why it must be an AAC community's decision, not mine.</p>
+<p><img alt="Diagram of a ten-step task: steps 1 through 9 are handled autonomously by the agent (fill cart, add shipping, apply coupons), then a red line marks the &quot;Authority Ceiling: PREPARE,&quot; with step 10, labeled COMMIT, requiring a human switch press. Caption: for AAC users, AI must amplify intent but never ventriloquize authorship — the agent navigates the complex ten-step friction of the web, but holds the flow at PREPARE. Agency is completely preserved at the cost of exactly one physical selection. Google's SpeakFaster research found intent-driven delegation saves 57% of motor actions." src="/assets/images/blog/write-the-tool-once/12-aac-authority-ceiling.png" /></p>
+<p><strong>Cognitive and learning disabilities.</strong> <em>Today:</em> the W3C's COGA guidance asks for eight things, about content and comprehension: help users understand, help users find, use clear language, help users avoid mistakes, help users focus, don't rely on memory, provide help, support personalization. <em>The mechanism:</em> here I have to slow down, because a page can be perfectly semantic and still cognitively hostile — the accessibility tree delivers none of COGA's content qualities, and neither does a tool schema. There is an indirect form I believe cautiously: an agent that executes a multi-step task removes the maze and the overload — functionally a memory and executive-function prosthesis, mapping onto perhaps four of COGA's eight objectives. I can point to no research on agents and cognitive accessibility specifically. Plausible, unproven. <em>After delegation:</em> the weakest "after" of the five where one exists: delegation has its own cognitive costs — trust calibration, verification, recovering from an agent's mistake — and a structured refusal log only helps a user who can consume it. COGA's demands for clear language and low memory load apply to the audit trail itself, and nothing in the governance layer guarantees them.</p>
+<p><strong>Deaf and hard-of-hearing users.</strong> <em>Today:</em> the barriers are media and language — missing captions, missing transcripts, missing sign-language interpretation, dense text for people whose first language is a signed one. <em>The mechanism:</em> approximately nothing, and I would rather say so than force the pattern. An agent does not need captions to call a tool, and a capability declaration captions nothing. Worse, the obvious "AI fixes this" move is explicitly rejected by the best current guidance: W3C states that "automatically-generated captions do not meet user needs or accessibility requirements, unless they are confirmed to be fully accurate," illustrating with a recipe video where "broil on high for 4 to 5 minutes" became "broil on high for 45 minutes." <em>After delegation:</em> there is no honest "after" here, and nothing in this essay's approach touches it. If this piece claimed universal benefit, this population would be the counterexample. So it doesn't claim that.</p>
+<p>Honestly tallied, then: the idea holds for <em>operability</em> — perceiving and acting on interfaces — and the trust machinery holds wherever multi-step action is delegated. It does not extend to <em>understandability</em> or <em>media equivalence</em>. A strong pattern, not a universal one, and an idea about part of the problem.</p>
+<h2 id="somebody-set-out-to-do-this-and-was-told-no">Somebody set out to do this — and was told no<a class="headerlink" href="#somebody-set-out-to-do-this-and-was-told-no" title="Permanent link">&para;</a></h2>
+<p>I said the convergence had been noticed by the people building assistive technology. Here is the record, and it is the best evidence in this essay for claim (d) — as well as its most important constraint.</p>
+<p>WebMCP's explainer lists "Improve accessibility through agents" among its goals, and in the same breath draws a line: WebMCP "is not designed for ingestion by accessibility technology, nor is it designed to interact directly with a page's accessibility tree; rather, it enables agents to act as highly capable intermediaries." That sentence exists because of an argument. In February, someone opened an issue in the WebMCP repository titled "Redundancy with the accessibility tree," and made the case the first part of this essay makes: the accessibility tree already is a machine-readable description of a page's action space; assistive technology already uses it to act; "an AI agent can use the same interface. No additional protocol is needed"; and a separately maintained tool registry "can and will" drift from the tree. Twenty-nine comments later, in August, the Chrome editor closed it as not planned: no browser, Apple included, will let WebMCP contribute to the accessibility tree.</p>
+<p>The reasons are the ones this idea has to carry. A Chrome engineer reported that the W3C conversations were "trending against reusing accessibility trees and ARIA tags for AI agents, as this could actually result in a worse outcome for human users of assistive software" — if agents consume ARIA, developers will tune ARIA for machines over humans, and sites that use ARIA patterns to detect bots will block screen-reader users along with them. The editor's summary: "These simply are not the same thing, and they are not directed at the same users, technology, or sinks." And then the resolution came from the accessibility side, from Léonie Watson, in the direct/indirect distinction above: the shared tree is the right substrate for perceiving a page and the wrong place to put an agent's tools, not because agents and disabled users need different things, but because a screen reader is not an agent. The benefit for screen-reader users is real and it flows through an agent. The Chrome editor's reply: "I couldn't agree more."</p>
+<p><img alt="Diagram titled &quot;The Critical Constraint: A Screen Reader is Not an Agent.&quot; A rejected &quot;direct model&quot; shows Standard Web routed to &quot;Screen Reader reads standard ARIA tags alongside AI Agents,&quot; crossed out with a red X. An approved &quot;indirect model&quot; shows Standard Web routed to a &quot;Dedicated User-Controlled AI Agent,&quot; which then feeds the Screen Reader. Caption: the W3C ruling (issue #91) — standards bodies explicitly rejected letting agents read and write directly to the primary accessibility tree, because if agents consume ARIA, developers will tune ARIA for machines, turning websites into bot-traps that block humans. A screen reader is reactive; the &quot;write-once tool&quot; cannot be a browser plug-in — it must be a dedicated assistive AI agent acting as a highly capable intermediary." src="/assets/images/blog/write-the-tool-once/13-screen-reader-not-agent.png" /></p>
+<p>Read that as a builder. The convergence was noticed, proposed as a design principle, argued for six months by browser engineers and a blind standards veteran, and <em>declined</em> — in favour of exactly the shape claim (d) needs: the disabled user's gain is delegation; delegation runs on declared capabilities; and the thing that consumes the declarations on the user's side is an agent built for that user, not the screen reader carrying a second job. The standards body did not reject the write-once tool. It told us what the write-once tool has to be.</p>
+<h2 id="the-counterargument-i-have-to-take-seriously">The counterargument I have to take seriously<a class="headerlink" href="#the-counterargument-i-have-to-take-seriously" title="Permanent link">&para;</a></h2>
+<p>There is a second school of agent design that reads pixels, not trees. Anthropic's computer-use tooling gives the model "screenshot capabilities and mouse/keyboard control"; OpenAI's computer-using agent is likewise vision-first. If vision models get good enough, an agent could cope with an inaccessible page the way a sighted human does — by looking at it — and claim (c) weakens, because agents would no longer need what disabled users need, and claim (a) weakens with it, because nobody would need to declare anything.</p>
+<p>Three things make me think the structured path still wins where it matters. First, the tools built specifically for the web chose the tree, and say why: determinism, no ambiguity, no vision model in the loop, less cost. Second, a screenshot lacks the semantic roles and relationships, so a vision agent must reconstruct them probabilistically — the lossy reverse-engineering screen readers have been forced into for thirty years, with the same failure modes. Betting on vision agents is betting that translation-of-a-translation, done by a bigger model, stops being lossy. It has never been true before. Third — the detail I find most persuasive — assistive technology already runs both strategies in the same order agents do. Apple's VoiceOver Recognition uses on-device machine learning to recognize images and text "where VoiceOver support—like alt text or ARIA labels—is missing." And the JAWS agent, as described in the reporting I could find, does the same: accessibility tree first, screen capture alongside, coordinate clicking when the software exposes nothing better. Semantics first; vision as the fallback. The two fields have converged on the same degradation ladder. What door three offers is a floor under the ladder: a service that declares its tools cannot fail the way a page fails, because there is no rendering to fail.</p>
+<h2 id="what-i-am-watching-for">What I am watching for<a class="headerlink" href="#what-i-am-watching-for" title="Permanent link">&para;</a></h2>
+<p>The accessibility community has earned its skepticism of exactly this kind of essay, and I am close enough to the kind of author it has learned to be skeptical of — someone from the technology side, with a protocol he helped write, suggesting a new layer might fix an old problem — that I should be held to the same standard. It spent years fighting overlay companies who made that promise for money; Adrian Roselli's standing rebuttal is titled, without hedging, "No, 'AI' Will Not Fix Accessibility." And Watson, who has thought about the agentic web from inside both communities, poses the question this essay cannot yet answer: if organizations replace their websites with agentic interfaces, "will that help or hinder accessibility?"</p>
+<p>So let me state the idea at its narrowest, which is also its strongest. Agents don't fix inaccessible pages; agents <em>fail on</em> inaccessible pages, and that failure gives the people who build pages a selfish reason to fix them. Door three would remove the page from the loop for the users who can delegate, and the work of building it is work the service would be doing anyway, if the direction holds. A tool built against the declaration is written once. That is the whole claim, and every verb in it is conditional. Here is what would sour it.</p>
+<p><img alt="Risk matrix listing three hazards. Hazard 1, the two-tier web: if Door 2 (WebMCP annotations) wins over Door 3, a rotting human UI sits alongside a pristine AI tool surface, stranding any disabled user who chooses not to delegate. Hazard 2, order of adoption: if e-commerce checkouts adopt capability protocols years before public government benefits portals — where inaccessible security hurts the most — the architecture serves the market before the vulnerable. Hazard 3, the rebuilt overlay industry: if open protocols simply lower the cost for startups to build tools for disabled users without consulting them, it merely recreates the predatory overlay industry with better plumbing." src="/assets/images/blog/write-the-tool-once/14-risk-matrix.png" /></p>
+<p><strong>The two-tier web, which is now a stated architecture.</strong> WebMCP is, by design, a second description of a page maintained alongside the accessibility tree, in separate code, for a separate consumer, with the human interface declared primary; the issue that pointed out those two descriptions "will diverge over time" was closed without that point being rebutted. The editors' reason is a good one — protecting human users of assistive technology from ARIA tuned for machines — and I take it. But it means every gain in this essay accrues to the <em>delegating</em> user, and today that is nearly nobody. A clean tool surface over a rotting interface strands everyone who is not yet delegating. One source, two renderings, kept in step by something other than good intentions — or the drift the issue predicted.</p>
+<p><strong>Door three growing its rendering back.</strong> MCP Apps is six months old, shipping in real hosts, and its specification does not contain the word accessibility. WebMCP's specification has an "Accessibility considerations" heading with nothing under it. Both are drafts and both can be fixed; the accessibility community knows better than anyone what it costs to fix them later. And quantity is not quality: WebAIM found pages <em>with</em> ARIA carry more errors than pages without, and the same will be true of tool manifests — the ones my own ecosystem ships every bit as much as anyone else's.</p>
+<p><strong>The order of adoption.</strong> The services with the strongest reason to reach door three first are the ones where the front end was never the product. The services where an inaccessible front door does the most damage — the benefits portal, the health booking, the tax form — are neither commercial nor quick, and they are the ones Ina works on. The inaccessible login that forces someone to hand over a password is, very often, a public one. If the agentic web reaches the checkout years before it reaches the benefits portal, the approach in this essay will have served the market before it served the people this essay is about — and the informal, unaudited delegation her talk describes will go on exactly as before, at the doors that matter most. I do not have an answer to that. I have a preference for saying it.</p>
+<p><strong>Who builds the tool.</strong> Claim (d) says the specialist tool gets written once. It does not say by whom. If a shared protocol simply makes it cheaper for people like me to ship tools <em>for</em> disabled users without them, it will have rebuilt the overlay industry one layer down, with better plumbing. The protocol is the cheap part. It always was.</p>
+<p>Thirty years of asking politely produced a web where ninety-six percent of front doors are broken, and the first year of AI-assisted development made it worse. I don't expect the agentic web to be built out of virtue either. I expect it to be built out of incentives — and, if this direction holds, for once the incentives point at the same infrastructure the politeness always asked for, one door further from the page. Whether a tool written once against that infrastructure is actually better for the people at Ina's end of the table is the part I am least sure of, most interested in, and least entitled to decide. If you have built such a tool, or you are the person it would be for, I would rather hear where this is wrong than be agreed with.</p>
+<p><img alt="Balance scale weighing &quot;Agentic AI Economics&quot; against &quot;Accessible Infrastructure.&quot; Text: agents don't fix inaccessible pages; they fail on them. This creates a selfish incentive for builders to expose raw, testable capabilities. If this direction holds, for the first time, the economic incentives of the web point at the exact infrastructure the accessibility community has politely requested for 30 years. This is a hypothesis. Test it. Argue with it. Build it." src="/assets/images/blog/write-the-tool-once/15-closing-scale.png" /></p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 4, 2026 07:35:12 UTC">September 4, 2026</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 4, 2026 07:35:12 UTC">September 4, 2026</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../../08/25/the-negative-control/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The Negative Control">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                The Negative Control
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Thor Henning Hetland &nbsp;&middot;&nbsp; Co-authored with <a href="https://claude.ai/claude-code" target="_blank" rel="noopener">Claude Code</a> &nbsp;&middot;&nbsp; Indexed by Synthesis
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/hetland/" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/totto" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/javatotto" target="_blank" rel="noopener" title="Twitter / X" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.tabs", "navigation.tabs.sticky", "navigation.footer", "navigation.tracking", "navigation.path", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips", "toc.follow", "announce.dismiss"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -820,6 +820,8 @@
       
         
       
+        
+      
     
     
     
@@ -867,6 +869,36 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2026/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -6654,6 +6686,63 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-07-06 09:00:00+00:00">July 6, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              10 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-borrowed-leash-determinism-as-a-service-for-the-agentic-web"><a class="toclink" href="../../2026/07/06/the-borrowed-leash-determinism-as-a-service-for-the-agentic-web/">The Borrowed Leash: Determinism as a Service for the Agentic Web</a></h2>
+<p>Yesterday's post ended with an architectural claim: the model belongs at the edge, on a leash, and <a href="../../2026/07/05/the-vibes-based-agent-era-deserves-to-end/">the vibes-based agent era deserves to end</a>. The obvious objection arrived on schedule: <em>"Nice. But I already have an agent. I'm not rewriting it around your planner."</em></p>
+<p>Good. You don't have to.</p>
+<p><strong>kcp-agent 0.3.0</strong> ships the answer as one command:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>claude<span class="w"> </span>mcp<span class="w"> </span>add<span class="w"> </span>kcp<span class="w"> </span>--<span class="w"> </span>npx<span class="w"> </span>-y<span class="w"> </span>kcp-agent<span class="w"> </span>mcp
+</span></code></pre></div>
+<p>That line hands <em>any</em> MCP-capable agent — Claude Code, an IDE, your homegrown orchestrator, somebody else's swarm — a deterministic knowledge navigator as a set of tools. The borrowing agent stays exactly as probabilistic as it was this morning. But every knowledge decision it delegates across that boundary comes back planned, gated, budgeted, and reproducible.</p>
+<p>Your agent doesn't have to become deterministic. <strong>It just has to ask someone who is.</strong></p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/07/06/the-borrowed-leash-determinism-as-a-service-for-the-agentic-web/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-07-05 15:00:00+00:00">July 5, 2026</time></li>
         
           <li class="md-meta__item">
@@ -7110,59 +7199,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/06/23/production-scars-are-architecture/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-06-22 00:00:00+00:00">June 22, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              20 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="your-ai-agent-does-not-know-the-law-and-how-to-fix-that"><a class="toclink" href="../../2026/06/22/your-ai-agent-does-not-know-the-law-and-how-to-fix-that/">Your AI Agent Does Not Know the Law (and How to Fix That)</a></h2>
-<p>You're building a product. It handles personal data. You've added an AI assistant that helps customers understand their compliance obligations. Good instinct, bad outcome -- because the assistant will tell a customer their processing of health data is fine since they have consent. It will say this fluently, with bullet points, citing GDPR Article 6. It will be wrong.</p>
-<p>Article 9 requires a <em>separate</em> legal basis for special category data. Consent under Article 9(2)(a) must be <em>explicit</em> -- a higher bar than the regular consent in Article 6(1)(a). The agent doesn't know this, because it has no authoritative source for it. It's working from training data where "consent" is the answer to most GDPR questions.</p>
-<p>This post shows the architecture that fixes that. Six layers, each solving a distinct failure mode, each buildable independently. By the end you'll have a pattern for turning any regulation into machine-readable knowledge, wiring it into an agent, and proving the agent's answers are correct.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/06/22/your-ai-agent-does-not-know-the-law-and-how-to-fix-that/">
           Continue reading
         </a>
       </nav>

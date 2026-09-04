@@ -820,6 +820,8 @@
       
         
       
+        
+      
     
     
     
@@ -867,6 +869,36 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -6666,6 +6698,67 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-03-31 00:00:00+00:00">March 31, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../../ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              14 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="the-kcp-ecosystem-how-five-tools-turn-claude-code-into-a-persistent-intelligence-platform"><a class="toclink" href="../../../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/">The KCP Ecosystem: How Five Tools Turn Claude Code Into a Persistent Intelligence Platform</a></h2>
+<p><img alt="The KCP Ecosystem — Turning Claude Code into a Persistent Intelligence Platform" src="/assets/images/blog/kcp-ecosystem-slide-01-cover.webp" /></p>
+<hr />
+<h3 id="the-problem"><a class="toclink" href="../../../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/#the-problem">The Problem</a></h3>
+<p>Every session with Claude Code starts from zero.</p>
+<p><img alt="Every AI session starts from zero — the Start-From-Zero Loop" src="/assets/images/blog/kcp-ecosystem-slide-02-start-from-zero.webp" /></p>
+<p>You open a new session, and the model has no idea what you were doing yesterday. Which services are running. What you decided about the database schema last Thursday. Why you chose the library you chose. You re-explain it. Claude asks clarifying questions you answered two sessions ago. You paste the same background context you always paste. Then the work begins.</p>
+<p>And when the work does begin, there's a different problem: output flooding the context window. Run <code>mvn package</code> and you get 400 lines of Maven lifecycle noise. Run <code>terraform plan</code> and the diff buries the actual changes in scaffolding. Run <code>kubectl get pods</code> cluster-wide and you've spent 8,000 tokens on status rows you didn't need.</p>
+<p><img alt="Context flooding destroys working memory — 33.7% of a 200K context is recovery overhead" src="/assets/images/blog/kcp-ecosystem-slide-03-context-flooding.webp" /></p>
+<p>The context window is your working memory. Filling it with boilerplate and re-explaining the same setup repeatedly is waste — not just inconvenient, but structurally limiting. A 200K token context sounds vast until a third of it is recovery overhead.</p>
+<p>What's missing is infrastructure. Not smarter prompting. Not longer context. Infrastructure — a persistent layer that handles memory, filters noise, and gives the model the right knowledge at the right moment without you having to manage it manually.</p>
+<p>That infrastructure is KCP.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/03/31/kcp-ecosystem-five-tools-persistent-intelligence/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-03-28 00:00:00+00:00">March 28, 2026</time></li>
         
           <li class="md-meta__item">
@@ -7135,60 +7228,6 @@ to each other reliably. We are not there yet. The reason is interesting.</p>
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-13 00:00:00+00:00">March 13, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-v010-pre-invocation-discovery"><a class="toclink" href="../../../../2026/03/13/kcp-v010-pre-invocation-discovery/">KCP v0.10: Pre-Invocation Discovery</a></h2>
-<p>An agent is about to call a knowledge server. It has no idea what that server
-knows, how sensitive the content is, or whether the answer will fit in its
-remaining context window. So it calls blindly and hopes for the best.</p>
-<p>v0.10 fixes that with RFC-0007: a normative query vocabulary that lets agents
-ask before they invoke.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/13/kcp-v010-pre-invocation-discovery/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
       
         
           
@@ -7196,7 +7235,7 @@ ask before they invoke.</p>
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__current">6</span> <a class="md-pagination__link" href="../7/">7</a> <a class="md-pagination__link" href="../8/">8</a> <a class="md-pagination__link" href="../9/">9</a>
+  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__current">6</span> <a class="md-pagination__link" href="../7/">7</a> <a class="md-pagination__link" href="../8/">8</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../10/">10</a>
 </nav>
         
       

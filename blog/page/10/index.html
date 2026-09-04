@@ -820,6 +820,8 @@
       
         
       
+        
+      
     
     
     
@@ -867,6 +869,36 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archive/2026/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -6676,6 +6708,58 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
+    <h2 id="the-manifest-quality-feedback-loop"><a class="toclink" href="../../2026/03/24/kcp-manifest-quality-feedback-loop/">The Manifest Quality Feedback Loop</a></h2>
+<p>kcp-commands ships 291 manifests. Each one is a bet: that the flags we chose are the ones the agent will actually need, that the output filter is tight enough, that the preferred invocations match real usage. Some of those bets pay off. Some do not.</p>
+<p>Until now there was no way to know which. A manifest for <code>kubectl apply</code> could be steering the agent into the wrong flags on every invocation, and we would never see it unless we happened to watch the session in real time. At 291 manifests and hundreds of tool calls per day, that does not scale.</p>
+<p>Today we are shipping two small releases that close that gap: <strong>kcp-commands v0.15.0</strong> and <strong>kcp-memory v0.7.0</strong>. Together they create a feedback loop from agent behaviour back to manifest quality -- not by guessing, but by measuring what actually happened.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/03/24/kcp-manifest-quality-feedback-loop/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-03-24 00:00:00+00:00">March 24, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              8 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
     <h2 id="from-instrumentation-to-infrastructure"><a class="toclink" href="../../2026/03/24/kcp-tools-from-instrumentation-to-infrastructure/">From Instrumentation to Infrastructure</a></h2>
 <p>AI agents like Claude Code run dozens of CLI commands per session, orchestrating complex multi-step workflows. Without structured knowledge of each tool, the agent guesses flags, calls <code>--help</code> to discover syntax, or retries when the first attempt fails. Each mistake compounds: a wrong flag in step 3 can invalidate everything that follows.</p>
 <p>kcp-commands solves this with manifests -- YAML files that encode exactly what an agent needs to use a CLI tool correctly: key flags, preferred invocations, output patterns to strip. The daemon injects the right manifest before each Bash call, turning an uninformed first attempt into a guided one.</p>
@@ -7116,59 +7200,6 @@ ask before they invoke.</p>
     
       <nav class="md-post__action">
         <a href="../../2026/03/09/the-code-was-never-the-moat/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-08 00:00:00+00:00">March 8, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              14 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="the-front-door-and-the-filing-cabinet-a2a-agent-cards-meet-kcp"><a class="toclink" href="../../2026/03/08/the-front-door-and-the-filing-cabinet-a2a-agent-cards-meet-kcp/">The Front Door and the Filing Cabinet: A2A Agent Cards Meet KCP</a></h2>
-<p><img alt="The Front Door and the Filing Cabinet: Composing A2A and KCP in Multi-Agent Systems" src="/assets/images/blog/a2a-cards-and-kcp/a2a-kcp-slide-01.webp" /></p>
-<p>Multi-agent systems need two kinds of identity. The first answers "who is this agent and how do I call it." The second answers "what knowledge does this agent have and who is allowed to see each piece of it." Google's A2A protocol handles the first. KCP handles the second. They are not competitors. They are different layers of the same stack.</p>
-<p>This post started as that explanation. Then, the same day it was published, we built four simulators and 150 adversarial tests against the spec. The tests found 8 concrete gaps. Those gaps are now driving KCP v0.7. The full story follows.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/08/the-front-door-and-the-filing-cabinet-a2a-agent-cards-meet-kcp/">
           Continue reading
         </a>
       </nav>

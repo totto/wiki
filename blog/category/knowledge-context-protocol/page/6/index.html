@@ -820,6 +820,8 @@
       
         
       
+        
+      
     
     
     
@@ -867,6 +869,36 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    September 2026
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -6688,6 +6720,58 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
+    <h2 id="the-manifest-quality-feedback-loop"><a class="toclink" href="../../../../2026/03/24/kcp-manifest-quality-feedback-loop/">The Manifest Quality Feedback Loop</a></h2>
+<p>kcp-commands ships 291 manifests. Each one is a bet: that the flags we chose are the ones the agent will actually need, that the output filter is tight enough, that the preferred invocations match real usage. Some of those bets pay off. Some do not.</p>
+<p>Until now there was no way to know which. A manifest for <code>kubectl apply</code> could be steering the agent into the wrong flags on every invocation, and we would never see it unless we happened to watch the session in real time. At 291 manifests and hundreds of tool calls per day, that does not scale.</p>
+<p>Today we are shipping two small releases that close that gap: <strong>kcp-commands v0.15.0</strong> and <strong>kcp-memory v0.7.0</strong>. Together they create a feedback loop from agent behaviour back to manifest quality -- not by guessing, but by measuring what actually happened.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../../../2026/03/24/kcp-manifest-quality-feedback-loop/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-03-24 00:00:00+00:00">March 24, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../" class="md-meta__link">Knowledge Context Protocol</a>, 
+              <a href="../../../ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              8 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
     <h2 id="from-instrumentation-to-infrastructure"><a class="toclink" href="../../../../2026/03/24/kcp-tools-from-instrumentation-to-infrastructure/">From Instrumentation to Infrastructure</a></h2>
 <p>AI agents like Claude Code run dozens of CLI commands per session, orchestrating complex multi-step workflows. Without structured knowledge of each tool, the agent guesses flags, calls <code>--help</code> to discover syntax, or retries when the first attempt fails. Each mistake compounds: a wrong flag in step 3 can invalidate everything that follows.</p>
 <p>kcp-commands solves this with manifests -- YAML files that encode exactly what an agent needs to use a CLI tool correctly: key flags, preferred invocations, output patterns to strip. The daemon injects the right manifest before each Bash call, turning an uninformed first attempt into a guided one.</p>
@@ -7138,59 +7222,6 @@ ask before they invoke.</p>
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-06 00:00:00+00:00">March 6, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../../ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../../ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              9 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="kcp-mcp-v0100-github-copilot-gets-kcp-including-mcp-locked-enterprises"><a class="toclink" href="../../../../2026/03/06/kcp-mcp-v0100-github-copilot-gets-kcp--including-mcp-locked-enterprises/">kcp-mcp v0.10.0: GitHub Copilot Gets KCP — Including MCP-Locked Enterprises</a></h2>
-<p>A few days ago we prepared a roadmap for bringing KCP to GitHub Copilot users. Three phases,
-estimated ten days. This is the post where I explain that we shipped all three phases today —
-and then shipped a fourth: a complete zero-MCP path for enterprises that cannot run MCP servers.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../../2026/03/06/kcp-mcp-v0100-github-copilot-gets-kcp--including-mcp-locked-enterprises/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
       
         
           
@@ -7198,7 +7229,7 @@ and then shipped a fourth: a complete zero-MCP path for enterprises that cannot 
 
 
 <nav class="md-pagination">
-  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__current">6</span> <a class="md-pagination__link" href="../7/">7</a> <a class="md-pagination__link" href="../8/">8</a>
+  <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__dots">..</span> <a class="md-pagination__link" href="../4/">4</a> <a class="md-pagination__link" href="../5/">5</a> <span class="md-pagination__current">6</span> <a class="md-pagination__link" href="../7/">7</a> <a class="md-pagination__link" href="../8/">8</a> <a class="md-pagination__link" href="../9/">9</a>
 </nav>
         
       
