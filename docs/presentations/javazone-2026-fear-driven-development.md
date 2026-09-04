@@ -27,6 +27,37 @@ An honest talk about what actually goes wrong when an AI agent writes code for y
 
 Recorded live at JavaZone 2026. Spoken in Norwegian — turn on captions (the CC button in the player) and pick Norsk, English, or Español.
 
+### Prefer to watch fully dubbed?
+
+AI-dubbed full versions, voice-cloned from the original recording — no subtitles needed.
+
+**English**
+
+<div class="presentation-video">
+  <video controls preload="metadata">
+    <source src="/assets/videos/javazone-2026-trust-but-verify/recording-en.mp4" type="video/mp4">
+    Your browser doesn't support embedded video — <a href="/assets/videos/javazone-2026-trust-but-verify/recording-en.mp4">download the English version</a> instead.
+  </video>
+</div>
+
+**Español**
+
+<div class="presentation-video">
+  <video controls preload="metadata">
+    <source src="/assets/videos/javazone-2026-trust-but-verify/recording-es.mp4" type="video/mp4">
+    Your browser doesn't support embedded video — <a href="/assets/videos/javazone-2026-trust-but-verify/recording-es.mp4">download the Spanish version</a> instead.
+  </video>
+</div>
+
+**Português**
+
+<div class="presentation-video">
+  <video controls preload="metadata">
+    <source src="/assets/videos/javazone-2026-trust-but-verify/recording-pt.mp4" type="video/mp4">
+    Your browser doesn't support embedded video — <a href="/assets/videos/javazone-2026-trust-but-verify/recording-pt.mp4">download the Portuguese version</a> instead.
+  </video>
+</div>
+
 ## What the talk covers
 
 **Six fears, six systems.** Each fear is a real incident, not a hypothetical: a 500KB file that wanted to allocate 1.1 gigabytes from a single misaligned field, a filter that passed tests but broke production the next day, 23 minutes of a broken `main` branch, a $100,000 cost projection for one 2.5-week project, 47 changed files understood maybe 60%, and green tests reporting the wrong answer. Each one gets paired with the system built in response — round-trip and property-based testing, battle-testing against 191 real-world files, CI as the only arbiter that can override the AI's confidence, disciplined model selection, directed synthesis through independent verification tools, and measurement instead of just pass/fail.
