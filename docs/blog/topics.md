@@ -23,7 +23,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     KCP from first sketch to full protocol — RFCs, releases, the `kcp-*` tools, and the reference agent. How agents find and trust knowledge.
 
-    [:octicons-arrow-right-24: 80 posts](/blog/category/knowledge-context-protocol/)
+    [:octicons-arrow-right-24: 81 posts](/blog/category/knowledge-context-protocol/)
 
 -   :material-rocket-launch-outline:{ .lg .middle } **AI-Augmented Development**
 
@@ -39,7 +39,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Agent architecture, multi-agent systems, MCP and A2A, identity and federation — how autonomous agents actually navigate the web.
 
-    [:octicons-arrow-right-24: 90 posts](/blog/category/ai-agents--the-agentic-web/)
+    [:octicons-arrow-right-24: 91 posts](/blog/category/ai-agents--the-agentic-web/)
 
 -   :material-shield-check-outline:{ .lg .middle } **Governance, Trust & Compliance**
 
