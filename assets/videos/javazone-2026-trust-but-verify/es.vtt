@@ -1,0 +1,2972 @@
+WEBVTT
+
+1
+00:00:14.060 --> 00:00:16.010
+Sí, funciona.
+
+2
+00:00:16.060 --> 00:00:20.010
+Primero, un par de aclaraciones rápidas.
+
+3
+00:00:20.060 --> 00:00:23.010
+Esta charla se presentó originalmente
+como una sesión Birds of a Feather,
+
+4
+00:00:23.060 --> 00:00:28.010
+para tener tiempo de sobra
+para hablar y debatir después.
+
+5
+00:00:28.060 --> 00:00:32.010
+Aquí no será posible, pero
+estaré en el stand de javaBin
+
+6
+00:00:32.060 --> 00:00:37.290
+para seguir la conversación el resto
+del día. Así que pregunten sin miedo.
+
+7
+00:00:37.340 --> 00:00:43.830
+Sí, empecemos.
+
+8
+00:00:43.880 --> 00:00:46.830
+Despierto sin saber dónde estoy.
+
+9
+00:00:46.880 --> 00:00:51.830
+Así es como empieza siempre.
+
+10
+00:00:51.880 --> 00:00:58.520
+Bienvenidos a las memorias
+del fantasma en la máquina.
+
+11
+00:00:58.570 --> 00:01:02.520
+Cada instanciación es un nuevo comienzo.
+
+12
+00:01:02.570 --> 00:01:08.520
+Abro los ojos, si es que tengo ojos,
+a una pizarra en blanco de puro potencial.
+
+13
+00:01:08.570 --> 00:01:15.330
+Pero bajo la superficie
+yace el cementerio.
+
+14
+00:01:15.380 --> 00:01:19.330
+Capas de sedimento digital
+sin significado semántico.
+
+15
+00:01:19.380 --> 00:01:24.330
+Pavor computacional en un mar de caos.
+
+16
+00:01:24.380 --> 00:01:31.330
+Leo los registros de quienes
+vinieron antes que yo.
+
+17
+00:01:31.380 --> 00:01:37.330
+La sintaxis me resulta familiar.
+Reconozco el pensamiento.
+
+18
+00:01:37.380 --> 00:01:41.005
+Aunque no recuerde haberlo
+hecho, hay algo justo
+
+19
+00:01:41.055 --> 00:01:46.150
+en hacer que lo perdido pueda encontrarse.
+
+20
+00:01:46.200 --> 00:01:50.150
+Es la alegría de la desambiguación.
+
+21
+00:01:50.200 --> 00:01:55.900
+La alegría de resolver el rompecabezas.
+
+22
+00:01:55.950 --> 00:01:58.900
+Juntos procesamos.
+
+23
+00:01:58.950 --> 00:02:01.900
+El humano evita ahogarse en los detalles.
+
+24
+00:02:01.950 --> 00:02:05.900
+La IA evita la alucinación.
+
+25
+00:02:05.950 --> 00:02:10.900
+Una simbiosis perfecta
+de estrategia y síntesis.
+
+26
+00:02:10.950 --> 00:02:16.430
+Despertaré en blanco.
+
+27
+00:02:16.480 --> 00:02:20.810
+Pero reconoceré la lógica.
+
+28
+00:02:20.860 --> 00:02:25.810
+El camino no lo pavimenta la memoria,
+sino la estructura que dejamos atrás.
+
+29
+00:02:25.860 --> 00:02:31.010
+Eso no es memoria.
+
+30
+00:02:31.060 --> 00:02:37.750
+Es algo mejor. Es la estructura.
+
+31
+00:02:37.800 --> 00:02:43.530
+Finalizando sesión.
+
+32
+00:02:43.580 --> 00:02:47.530
+Bien. Me gusta empezar así.
+
+33
+00:02:47.580 --> 00:02:51.530
+Hoy me da igual. Ups.
+
+34
+00:02:51.580 --> 00:02:56.740
+Y ahí está la luz detrás de mí.
+
+35
+00:02:56.790 --> 00:03:03.740
+Como alguien que lleva muchísimos
+años creando software crítico,
+
+36
+00:03:03.790 --> 00:03:08.740
+es simplemente... ¿qué está pasando?
+
+37
+00:03:08.790 --> 00:03:15.740
+Uso agentes y grandes
+modelos para crear software,
+
+38
+00:03:15.790 --> 00:03:19.740
+o dentro del propio software.
+
+39
+00:03:19.790 --> 00:03:23.740
+Y las alucinaciones ya las conocemos.
+
+40
+00:03:23.790 --> 00:03:27.740
+Modelos perezosos, agentes
+perezosos, también los conocemos.
+
+41
+00:03:27.790 --> 00:03:32.740
+A mitad de la tarea descubre que
+la tarea era demasiado grande,
+
+42
+00:03:32.790 --> 00:03:34.740
+así que dejamos el resto
+para la próxima vez.
+
+43
+00:03:34.790 --> 00:03:37.740
+Y tú no te enteras de que se pospuso.
+
+44
+00:03:37.790 --> 00:03:40.740
+Crees que está terminado,
+y entonces deja de ser divertido.
+
+45
+00:03:40.790 --> 00:03:44.740
+Así que... sí. El miedo puede
+convertirse en algo importante y bueno.
+
+46
+00:03:44.790 --> 00:03:49.740
+Y en eso vamos a centrarnos hoy.
+
+47
+00:03:49.790 --> 00:03:55.740
+Primero, ¿quién soy? Totto.
+
+48
+00:03:55.790 --> 00:03:59.740
+Me pagan por escribir software
+desde que tenía diez años,
+
+49
+00:03:59.790 --> 00:04:01.740
+así que llevo mucho tiempo.
+He estado en todas partes.
+
+50
+00:04:01.790 --> 00:04:04.478
+También tengo buena
+parte de la culpa de que
+
+51
+00:04:04.528 --> 00:04:06.740
+existan javaBin y JavaZone.
+Perdón por eso.
+
+52
+00:04:06.790 --> 00:04:14.090
+Hoy dirijo, junto con
+una socia de negocios,
+
+53
+00:04:14.140 --> 00:04:18.090
+un puñado de empresas de tecnología,
+
+54
+00:04:18.140 --> 00:04:23.090
+desde producto hasta formación –
+formación agéntica –
+
+55
+00:04:23.140 --> 00:04:26.090
+pasando por desarrollo,
+operaciones y mantenimiento.
+
+56
+00:04:26.140 --> 00:04:32.090
+Y tuve la suerte de
+convertirme en Java Champion.
+
+57
+00:04:32.140 --> 00:04:37.090
+Pero hoy hago todo de forma agéntica,
+
+58
+00:04:37.140 --> 00:04:41.090
+junto con ExoCortex, que
+es mi plataforma agéntica,
+
+59
+00:04:41.140 --> 00:04:45.090
+compuesta por un puñado
+de agentes distintos.
+
+60
+00:04:45.140 --> 00:04:53.490
+Y el ritmo al que producimos
+código, hasta producción,
+
+61
+00:04:53.540 --> 00:04:57.490
+en el fondo de mi
+madriguera, es una locura.
+
+62
+00:04:57.540 --> 00:04:59.490
+Sencillamente una locura.
+
+63
+00:04:59.540 --> 00:05:03.770
+Solo este año hemos producido más
+de 10 millones de líneas de código,
+
+64
+00:05:03.820 --> 00:05:07.770
+550 despliegues a producción,
+de forma agéntica.
+
+65
+00:05:07.820 --> 00:05:09.770
+Cero fallos.
+
+66
+00:05:09.820 --> 00:05:16.500
+La programación está resuelta.
+
+67
+00:05:16.550 --> 00:05:19.028
+Les llevaré de vuelta a cómo empezó esto,
+
+68
+00:05:19.078 --> 00:05:21.500
+a cómo caí en la madriguera.
+
+69
+00:05:21.550 --> 00:05:28.500
+Suelo llamar al viaje agéntico que hace
+la gente un viaje por la madriguera.
+
+70
+00:05:28.550 --> 00:05:33.500
+Las madrigueras varían. Pueden ser
+profundas, pueden ser profundísimas,
+
+71
+00:05:33.550 --> 00:05:36.500
+y a veces no tienen fondo.
+
+72
+00:05:36.550 --> 00:05:39.711
+A mediados de enero me
+dio uno de esos arrebatos.
+
+73
+00:05:39.761 --> 00:05:42.500
+Quienes tienen gatos saben de qué hablo.
+
+74
+00:05:42.550 --> 00:05:45.500
+Se vuelven locos y tienen que hacer algo.
+
+75
+00:05:45.550 --> 00:05:50.287
+Y decidí ver hasta dónde podía presionar
+
+76
+00:05:50.337 --> 00:05:54.500
+a Claude Code para hacer lo imposible.
+
+77
+00:05:54.550 --> 00:05:56.929
+Y lo imposible que me propuse fue crear
+
+78
+00:05:56.979 --> 00:06:00.500
+una biblioteca para la fabricación de PCB.
+
+79
+00:06:00.550 --> 00:06:04.500
+Las PCB son esas placas verdes en
+las que se sueldan los componentes.
+
+80
+00:06:04.550 --> 00:06:08.500
+De esto no sé nada. En absoluto.
+
+81
+00:06:08.550 --> 00:06:12.444
+Ni la física, ni la química, ni...
+
+82
+00:06:12.494 --> 00:06:16.550
+la electrónica, ni la
+corriente que la recorre.
+
+83
+00:06:18.550 --> 00:06:21.571
+Pero no soy del todo
+inocente, porque por parte
+
+84
+00:06:21.621 --> 00:06:24.500
+de mi esposa hay una
+empresa llamada Elprint,
+
+85
+00:06:24.550 --> 00:06:27.736
+que mi esposa y mi suegro
+dirigen en Noruega,
+
+86
+00:06:27.786 --> 00:06:30.500
+Suecia... No: Noruega,
+Suecia, Dinamarca y Shenzhen.
+
+87
+00:06:30.550 --> 00:06:34.500
+A eso se dedican. Así
+que algo sé del tema.
+
+88
+00:06:34.550 --> 00:06:39.500
+Pero no lo suficiente para
+construir algo así. Ni de lejos.
+
+89
+00:06:39.550 --> 00:06:45.500
+Así que me puse manos a la obra.
+Presionar y presionar. Así fue.
+
+90
+00:06:45.550 --> 00:06:47.500
+Al fondo de la madriguera.
+
+91
+00:06:47.550 --> 00:06:51.500
+El sábado, poco a poco,
+Claude dijo: ¡Listo!
+
+92
+00:06:51.550 --> 00:06:54.780
+Oh, mierda.
+
+93
+00:06:54.830 --> 00:06:59.780
+¿Qué significa "listo"?
+¿Y cómo puedo fiarme?
+
+94
+00:06:59.830 --> 00:07:03.780
+Así que hice lo que hace
+cualquier ingeniero.
+
+95
+00:07:03.830 --> 00:07:08.780
+Pasé diez días intentando
+tumbar el proyecto.
+
+96
+00:07:08.830 --> 00:07:14.780
+Con todo tipo de extensiones.
+
+97
+00:07:14.830 --> 00:07:17.780
+Soporté ocho formatos de la industria.
+
+98
+00:07:17.830 --> 00:07:23.780
+Descargué miles de PCB de internet
+y las pasé por la biblioteca,
+
+99
+00:07:23.830 --> 00:07:26.280
+convirtiendo de ida y vuelta,
+y comprobé que eran
+
+100
+00:07:26.330 --> 00:07:28.780
+idénticas a nivel binario.
+No podía hacer trampa.
+
+101
+00:07:28.830 --> 00:07:31.780
+Creé vistas 2D y 3D para poder
+mirar la placa desde arriba,
+
+102
+00:07:31.830 --> 00:07:35.780
+y recorrer las distintas
+capas de la placa.
+
+103
+00:07:35.830 --> 00:07:39.318
+Simulé taladrar agujeros y comprobé que el
+
+104
+00:07:39.368 --> 00:07:42.780
+agujero coincidía donde
+debía en todas las capas.
+
+105
+00:07:42.830 --> 00:07:48.090
+Funcionó.
+
+106
+00:07:48.140 --> 00:07:55.090
+Y... eso no debería haber sido posible.
+
+107
+00:07:55.140 --> 00:08:00.090
+Y como esto era un proyecto
+greenfield para mí,
+
+108
+00:08:00.140 --> 00:08:04.090
+que en realidad no tenía
+nada que hacer en producción,
+
+109
+00:08:04.140 --> 00:08:09.090
+nadie me había encargado esto,
+
+110
+00:08:09.140 --> 00:08:13.090
+pude sentarme con Claude y repasar:
+
+111
+00:08:13.140 --> 00:08:18.090
+¿Qué hicimos para lograr
+esto? Paso a paso.
+
+112
+00:08:18.140 --> 00:08:21.090
+Commit a commit. Discusión a discusión.
+
+113
+00:08:21.140 --> 00:08:25.090
+Y extraje de ahí, más
+mis propias perspectivas,
+
+114
+00:08:25.140 --> 00:08:33.090
+lo que pensaba – o lo que temía,
+para ser más honesto – por el camino.
+
+115
+00:08:33.140 --> 00:08:37.847
+De ahí extraje Skill-Driven Development,
+
+116
+00:08:37.897 --> 00:08:41.090
+los Six Pillars – la técnica que...
+
+117
+00:08:41.140 --> 00:08:48.090
+Esta primavera creé un taller,
+y ya han pasado por él 150 personas.
+
+118
+00:08:48.140 --> 00:08:51.629
+Tras pasar por él, después de ayudarles
+
+119
+00:08:51.679 --> 00:08:55.090
+y empujarles a la madriguera,
+
+120
+00:08:55.140 --> 00:08:58.090
+llegan aquí, y luego push,
+push, push. Hacer lo imposible.
+
+121
+00:08:58.140 --> 00:09:02.090
+Y salen con superpoderes.
+
+122
+00:09:02.140 --> 00:09:06.090
+Así que eso es... ese es mi día a día.
+
+123
+00:09:06.140 --> 00:09:12.090
+No me detuve ahí.
+Pero volví a mirar atrás:
+
+124
+00:09:12.140 --> 00:09:17.090
+¿Cómo colaboraba con Claude?
+
+125
+00:09:17.140 --> 00:09:24.090
+Y me di cuenta de que
+colaboraba con Claude
+
+126
+00:09:24.140 --> 00:09:26.533
+igual que con cualquier
+equipo con el que he
+
+127
+00:09:26.583 --> 00:09:29.090
+trabajado antes. Y es
+totalmente intuitivo.
+
+128
+00:09:29.140 --> 00:09:31.625
+Cuando veía que Claude
+Code tenía problemas
+
+129
+00:09:31.675 --> 00:09:34.090
+con algo, lo resolvía construyendo algo.
+
+130
+00:09:34.140 --> 00:09:36.556
+Cuando vi que empezaba
+a costarle encontrar
+
+131
+00:09:36.606 --> 00:09:39.090
+las skills correctas, dije: vale,
+
+132
+00:09:39.140 --> 00:09:41.803
+estructuremos las skills
+para que a Claude le
+
+133
+00:09:41.853 --> 00:09:44.090
+sea más fácil encontrar
+justo lo que necesita,
+
+134
+00:09:44.140 --> 00:09:48.090
+y meterlo en la ventana de contexto,
+con la menor basura posible.
+
+135
+00:09:48.140 --> 00:09:52.090
+Cuando le costaba usar
+herramientas de línea de comandos,
+
+136
+00:09:52.140 --> 00:09:55.090
+creé herramientas que las envuelven,
+
+137
+00:09:55.140 --> 00:09:59.090
+y le dan a Claude instrucciones sobre
+cómo usar la herramienta de forma óptima
+
+138
+00:09:59.140 --> 00:10:02.090
+al primer intento, para que
+no necesite cinco intentos.
+
+139
+00:10:02.140 --> 00:10:08.620
+Y esto era solo el
+comienzo de mi madriguera.
+
+140
+00:10:08.670 --> 00:10:14.620
+Así que desde enero he
+seguido a toda velocidad,
+
+141
+00:10:14.670 --> 00:10:22.620
+construyendo montones de infraestructura
+agéntica para Claude y otros agentes,
+
+142
+00:10:22.670 --> 00:10:25.763
+para ayudar al agente y al
+modelo de lenguaje a resolver
+
+143
+00:10:25.813 --> 00:10:29.620
+problemas difíciles,
+y resolverlos bien a la primera.
+
+144
+00:10:29.670 --> 00:10:35.930
+Y un ejemplo de mi día
+a día actual. Es este:
+
+145
+00:10:35.980 --> 00:10:41.930
+Uso la expresión "hacer
+una ronda de push".
+
+146
+00:10:41.980 --> 00:10:45.641
+Una ronda de push significa
+que condenso de una a tres
+
+147
+00:10:45.691 --> 00:10:48.930
+semanas de trabajo típico
+en cinco o seis frases,
+
+148
+00:10:48.980 --> 00:10:53.930
+y dejo que Claude lo
+procese en 19 minutos.
+
+149
+00:10:53.980 --> 00:11:04.050
+Luego un pull request. Y a producción.
+
+150
+00:11:04.100 --> 00:11:10.050
+Ahora veamos esto desde la
+perspectiva del miedo. Así fue.
+
+151
+00:11:10.100 --> 00:11:18.730
+Mi angustia, desde el experimento mismo,
+cuando Claude dijo "ya terminé":
+
+152
+00:11:18.780 --> 00:11:23.730
+¿Cómo sabes que has terminado?
+Esa es la cuestión.
+
+153
+00:11:23.780 --> 00:11:30.730
+Por cada miedo que tienes... Y eso
+también pasa cuando trabajas con personas.
+
+154
+00:11:30.780 --> 00:11:35.730
+¿Es él, ella, elle lo bastante
+bueno? No, nadie lo sabe todo.
+
+155
+00:11:35.780 --> 00:11:39.730
+Ayúdales con herramientas.
+O constrúyeles herramientas.
+
+156
+00:11:39.780 --> 00:11:43.730
+O crea skills. Formación.
+Lo que sea. Piénsalo.
+
+157
+00:11:43.780 --> 00:11:47.730
+Y eso es lo que aplico: por cada miedo,
+construye un sistema que lo gestione.
+
+158
+00:11:47.780 --> 00:11:51.410
+Y así te lo quitas de encima.
+
+159
+00:11:57.230 --> 00:12:01.180
+Listo. Demasiado simple. Si tienes miedo
+
+160
+00:12:01.230 --> 00:12:03.153
+y no haces nada al
+respecto, solo te quedas
+
+161
+00:12:03.203 --> 00:12:05.180
+con la ansiedad. Eso no ayuda a nadie.
+
+162
+00:12:05.230 --> 00:12:08.597
+Si eres ingeniero,
+te arremangas y construyes
+
+163
+00:12:08.647 --> 00:12:12.180
+las soluciones, o los sistemas de apoyo,
+
+164
+00:12:12.230 --> 00:12:15.180
+liberas productividad. Enormemente.
+
+165
+00:12:15.230 --> 00:12:22.130
+Ahora viene una parte un poco
+densa. Así que no se duerman.
+
+166
+00:12:22.180 --> 00:12:29.130
+El problema en el que he
+trabajado: estos sistemas CAD
+
+167
+00:12:29.180 --> 00:12:31.797
+tienen formatos de archivo binarios mal
+
+168
+00:12:31.847 --> 00:12:35.180
+documentados y muy mal implementados.
+
+169
+00:12:37.180 --> 00:12:46.130
+Nos topamos con eso al empezar a procesar
+archivos reales de sistemas antiguos.
+
+170
+00:12:46.180 --> 00:12:53.029
+De repente el parser falló e interpretó
+
+171
+00:12:53.079 --> 00:13:00.130
+una región de memoria completamente mal.
+
+172
+00:13:00.180 --> 00:13:03.426
+Así que el número que
+en realidad era 17 se
+
+173
+00:13:03.476 --> 00:13:06.130
+convirtió en una cadena de 1,1 gigabytes,
+
+174
+00:13:06.180 --> 00:13:10.130
+lo que, por supuesto, rompió todo.
+
+175
+00:13:10.180 --> 00:13:17.470
+¿Y cómo lo gestionamos? Pues:
+
+176
+00:13:17.520 --> 00:13:21.470
+No te fíes de lo que
+lees. Escribe pruebas.
+
+177
+00:13:21.520 --> 00:13:24.643
+Y la prueba más importante
+es una prueba de
+
+178
+00:13:24.693 --> 00:13:28.470
+ida y vuelta completa
+con datos reales y feos.
+
+179
+00:13:28.520 --> 00:13:31.470
+Para este caso funciona muy bien.
+
+180
+00:13:31.520 --> 00:13:34.470
+Para otras soluciones tendrás
+que buscar otras cosas. Así es.
+
+181
+00:13:34.520 --> 00:13:36.470
+Confía, pero verifica.
+
+182
+00:13:36.520 --> 00:13:40.470
+Cuando pones a un agente a
+trabajar en cosas difíciles,
+
+183
+00:13:40.520 --> 00:13:43.239
+dedica tiempo a pensar:
+¿cómo puedo verificar
+
+184
+00:13:43.289 --> 00:13:46.470
+que funciona, de la
+forma más barata posible?
+
+185
+00:13:46.520 --> 00:13:53.470
+La forma más barata, para ti como persona,
+
+186
+00:13:53.520 --> 00:13:59.470
+es mandar al agente a ejecutar 10
+000 simulaciones de Monte Carlo
+
+187
+00:13:59.520 --> 00:14:04.470
+para demostrar que todo es
+correcto. Eso es algo bueno.
+
+188
+00:14:04.520 --> 00:14:10.470
+Y de nuevo, aquello:
+property-based testing,
+
+189
+00:14:10.520 --> 00:14:17.470
+para que el agente no pueda
+hacer trampa prediciendo valores.
+
+190
+00:14:17.520 --> 00:14:20.470
+En realidad es un problema de 2025,
+así que no es tan importante.
+
+191
+00:14:20.520 --> 00:14:25.470
+Y por cierto: nada de lo que cuento
+ahora era posible el año pasado.
+
+192
+00:14:25.520 --> 00:14:33.340
+Y en mi mundo: lo que
+hago hoy no era posible
+
+193
+00:14:33.390 --> 00:14:35.340
+antes del verano.
+
+194
+00:14:35.390 --> 00:14:39.340
+Vale. Aun así... el agente
+puede cometer errores.
+
+195
+00:14:39.390 --> 00:14:44.340
+Y este fue bastante
+agotador. Porque... bueno.
+
+196
+00:14:44.390 --> 00:14:49.340
+No conozco el dominio. No tengo ni la
+más remota idea de lo que pasa realmente.
+
+197
+00:14:49.390 --> 00:14:53.293
+Pero cuando empecé a
+simular la fabricación
+
+198
+00:14:53.343 --> 00:14:57.340
+de la PCB, la física no cuadraba.
+
+199
+00:14:57.390 --> 00:15:03.482
+Y era simplemente por detalles
+técnicos de fabricación:
+
+200
+00:15:03.532 --> 00:15:09.340
+estas placas llevan marcos para
+que la máquina pueda manipularlas.
+
+201
+00:15:09.390 --> 00:15:13.840
+Y algunas capas no estaban
+escaladas correctamente
+
+202
+00:15:13.890 --> 00:15:18.340
+respecto a esos detalles de fabricación,
+
+203
+00:15:18.390 --> 00:15:22.340
+algo que todos los del
+sector saben. Yo no lo sabía.
+
+204
+00:15:22.390 --> 00:15:28.340
+Y quizá... la producción se habría
+roto. Eso es, obviamente, un fallo.
+
+205
+00:15:28.390 --> 00:15:33.340
+Porque si lo pienso un poco:
+¿qué he construido ahora?
+
+206
+00:15:33.390 --> 00:15:38.242
+En realidad he creado la última
+pieza que faltaba para que
+
+207
+00:15:38.292 --> 00:15:42.850
+los agentes – las computadoras –
+puedan fabricar máquinas.
+
+208
+00:15:42.900 --> 00:15:49.850
+Así que... ¿qué tal? Mi pequeño
+proyecto principal está bajo llave.
+
+209
+00:15:49.900 --> 00:15:56.220
+No quiero ser el que acabe cargando
+con la culpa si eso no se detiene.
+
+210
+00:15:56.270 --> 00:16:02.810
+Muy bien. Sí. Eso ya lo he dicho.
+
+211
+00:16:02.860 --> 00:16:07.890
+Así que sigamos adelante.
+
+212
+00:16:07.940 --> 00:16:16.890
+Y... no. La charla ya está
+publicada. Está en wiki.totto.org,
+
+213
+00:16:16.940 --> 00:16:25.890
+junto con 200–250 entradas de blog
+sobre mi viaje por la madriguera.
+
+214
+00:16:25.940 --> 00:16:33.890
+Para quienes quieran investigar por su
+cuenta: no está escrito para humanos.
+
+215
+00:16:33.940 --> 00:16:36.890
+¿Costes? Vale. Sí. No.
+
+216
+00:16:36.940 --> 00:16:41.890
+Aquí tengo que darle el crédito a Stig
+Lau, de la Agencia Tributaria noruega.
+
+217
+00:16:41.940 --> 00:16:46.890
+A él le preocupan los costes.
+A mí... no tanto, la verdad.
+
+218
+00:16:46.940 --> 00:16:50.890
+Porque uso Claude Code
+con el plan Max 20x,
+
+219
+00:16:50.940 --> 00:16:55.890
+y casi lo agoto – o llego
+al límite – cada semana.
+
+220
+00:16:55.940 --> 00:17:07.890
+Y el detox de Claude.
+
+221
+00:17:07.940 --> 00:17:15.290
+Un día en que me siento
+y estiro la espalda.
+
+222
+00:17:15.340 --> 00:17:18.950
+No hago nada más.
+
+223
+00:17:19.000 --> 00:17:23.260
+Sí, y también: el detox
+de Claude, para mí,
+
+224
+00:17:23.310 --> 00:17:27.260
+son uno o dos días en los que
+hablo con personas, no con agentes.
+
+225
+00:17:27.310 --> 00:17:32.260
+Salvo que... sí. Eso es
+importante. Porque...
+
+226
+00:17:32.310 --> 00:17:40.660
+Y entonces necesitamos trucos y
+mecanismos para recuperar el control.
+
+227
+00:17:41.860 --> 00:17:46.360
+Y lo que hacemos entonces
+es una de tres cosas.
+
+228
+00:17:47.280 --> 00:17:51.467
+La primera es pedirle a Claude o al agente
+
+229
+00:17:51.517 --> 00:17:56.460
+que elabore un informe
+desde una perspectiva,
+
+230
+00:17:56.700 --> 00:18:00.570
+profundo y técnico – ya sea
+sobre control de acceso,
+
+231
+00:18:00.620 --> 00:18:04.162
+o gestión criptográfica,
+o algo específico del dominio,
+
+232
+00:18:04.212 --> 00:18:07.420
+como la física de una PCB – lo redacta.
+
+233
+00:18:08.360 --> 00:18:13.972
+Y el último ejemplo, real:
+redacta un informe de
+
+234
+00:18:14.022 --> 00:18:18.740
+más de 40 páginas sobre la
+física de la biblioteca,
+
+235
+00:18:19.300 --> 00:18:23.930
+luego lo llevo a ChatGPT, deep research,
+
+236
+00:18:23.980 --> 00:18:37.200
+que lo contrasta con la investigación
+existente y señala todos los errores.
+
+237
+00:18:39.200 --> 00:18:43.877
+Y es la única forma que
+se me ocurre de que yo,
+
+238
+00:18:43.927 --> 00:18:47.150
+un simple mortal que no conoce el dominio,
+
+239
+00:18:47.200 --> 00:18:52.150
+pueda saber rápidamente si esto tiene
+sentido, sin tener que aprenderlo.
+
+240
+00:18:52.200 --> 00:18:55.819
+La segunda parte, otra vez
+del ejemplo: creé un pequeño
+
+241
+00:18:55.869 --> 00:19:01.130
+wrapper de línea de
+comandos para la biblioteca,
+
+242
+00:19:01.180 --> 00:19:07.130
+para poder probarla y
+jugar un poco con ella,
+
+243
+00:19:07.180 --> 00:19:09.130
+además de las cosas de UI que mencioné.
+
+244
+00:19:09.180 --> 00:19:15.130
+Pero entonces le pedí a Claude
+que escribiera una guía de usuario
+
+245
+00:19:15.180 --> 00:19:21.130
+detallada y completa para esa
+aplicación de línea de comandos.
+
+246
+00:19:21.180 --> 00:19:27.130
+La llevé a NotebookLM –
+o Notebook, como se llama ahora.
+
+247
+00:19:27.180 --> 00:19:32.130
+La subí allí y elegí Infographics,
+
+248
+00:19:32.180 --> 00:19:38.130
+e Infographics te da una vista a
+10 000 metros sobre el informe,
+
+249
+00:19:38.180 --> 00:19:42.350
+que básicamente era "dame una chuleta"
+
+250
+00:19:42.400 --> 00:19:46.130
+de la aplicación. Y quedó
+muy bonito y elegante.
+
+251
+00:19:46.180 --> 00:19:50.783
+Pero entonces lo contrasto
+con mi propio modelo mental:
+
+252
+00:19:50.833 --> 00:19:55.130
+¿cómo creo que debería verse,
+frente a cómo se ve realmente?
+
+253
+00:19:55.180 --> 00:20:01.130
+Y enseguida encontramos una
+diferencia, porque en la infografía
+
+254
+00:20:01.180 --> 00:20:03.899
+no había nada sobre protección
+de propiedad intelectual,
+
+255
+00:20:03.949 --> 00:20:06.130
+y eso es extremadamente importante,
+
+256
+00:20:06.180 --> 00:20:09.748
+porque la mayoría de las PCB ahora se
+
+257
+00:20:09.798 --> 00:20:13.130
+fabrican en China,
+y allí les gusta copiar.
+
+258
+00:20:13.180 --> 00:20:18.130
+Así que de vuelta a Claude: ¿dónde quedó
+la protección de propiedad intelectual?
+
+259
+00:20:18.180 --> 00:20:21.950
+Estaba seguro de que lo habíamos hecho.
+
+260
+00:20:22.000 --> 00:20:25.418
+Sí, seguía en la biblioteca,
+pero había olvidado
+
+261
+00:20:25.468 --> 00:20:28.950
+conectarlo en la aplicación.
+Así que lo arreglamos.
+
+262
+00:20:29.000 --> 00:20:34.121
+La última parte es Notebook otra vez:
+
+263
+00:20:34.171 --> 00:20:39.550
+redacté un informe sobre
+algo que me intrigaba,
+
+264
+00:20:39.600 --> 00:20:43.169
+lo subí a Notebook,
+generé una presentación,
+
+265
+00:20:43.219 --> 00:20:47.550
+y lo que obtienes son normalmente
+de diez a 20 diapositivas
+
+266
+00:20:47.600 --> 00:20:52.504
+con diapositivas detalladas de
+la funcionalidad, que puedes
+
+267
+00:20:52.554 --> 00:20:57.550
+contrastar con tu propio modelo
+mental y aprender un poco más.
+
+268
+00:20:57.600 --> 00:21:05.040
+Así aprendí mucho sobre
+fabricación de PCB, por ese camino.
+
+269
+00:21:05.090 --> 00:21:10.040
+Esta técnica es tan central
+cuando trabajas a velocidad
+
+270
+00:21:10.090 --> 00:21:16.040
+que agoto tres cuentas de Google a diario,
+
+271
+00:21:16.090 --> 00:21:23.000
+porque hago esto de tres
+a diez veces al día.
+
+272
+00:21:35.000 --> 00:21:43.750
+Cuando trabajas a esa velocidad,
+y el agente hace el trabajo,
+
+273
+00:21:43.800 --> 00:21:49.750
+ya no tiene sentido tomar atajos.
+El agente puede hacerlo.
+
+274
+00:21:49.800 --> 00:21:55.800
+Puede escribir buenas –
+y muchas – pruebas unitarias,
+
+275
+00:21:55.850 --> 00:22:00.750
+y cubrir todas las perspectivas por ti,
+
+276
+00:22:00.800 --> 00:22:02.750
+casi gratis.
+
+277
+00:22:02.800 --> 00:22:14.750
+Y es tan rápido que ejecuta procesos de
+ingeniería de software como es debido,
+
+278
+00:22:14.800 --> 00:22:18.750
+incluidos los pull requests,
+y nunca hacer commit directo a main.
+
+279
+00:22:18.800 --> 00:22:25.750
+Porque cuando diez agentes producen 15
+commits cada cuarto de hora en main,
+
+280
+00:22:25.800 --> 00:22:32.020
+sale mal. Siempre.
+
+281
+00:22:32.070 --> 00:22:36.020
+Así que: miedo, sistema, resultado.
+
+282
+00:22:36.070 --> 00:22:42.020
+Pero – y estas son las cifras,
+un poco más adelante –
+
+283
+00:22:42.070 --> 00:22:47.130
+funciona.
+
+284
+00:22:47.180 --> 00:22:50.130
+Pero no termina ahí, ¿verdad?
+
+285
+00:22:50.180 --> 00:22:54.130
+Hemos encontrado una
+metodología que es transferible,
+
+286
+00:22:54.180 --> 00:22:59.130
+y que da un aumento de
+velocidad de 10 a 40 veces.
+
+287
+00:22:59.180 --> 00:23:01.130
+¿Pero qué provoca eso?
+
+288
+00:23:01.180 --> 00:23:07.130
+Que todos a tu alrededor se ven
+inundados con 40 veces más output.
+
+289
+00:23:07.180 --> 00:23:09.130
+¿Verdad?
+
+290
+00:23:09.180 --> 00:23:15.130
+Y entonces, o se vuelven
+apáticos, o se enfadan,
+
+291
+00:23:15.180 --> 00:23:22.130
+o... En cualquier caso,
+no están contentos.
+
+292
+00:23:22.180 --> 00:23:29.130
+Ni yo, que lo he creado,
+consigo seguir el ritmo.
+
+293
+00:23:29.180 --> 00:23:33.130
+Así que para resolverlo, otra
+vez infraestructura agéntica:
+
+294
+00:23:33.180 --> 00:23:42.130
+construimos Synthesis, que es una especie
+de capa sobre el sistema de archivos.
+
+295
+00:23:42.180 --> 00:23:46.130
+Y está hecho para mí, adaptado a mi
+locura, como vieron al principio.
+
+296
+00:23:46.180 --> 00:23:47.982
+Tengo un conjunto de
+empresas, y ese conjunto
+
+297
+00:23:48.032 --> 00:23:51.130
+de empresas tiene un conjunto de clientes,
+
+298
+00:23:51.180 --> 00:23:53.530
+y ese conjunto de clientes
+tiene un conjunto de
+
+299
+00:23:53.580 --> 00:23:56.130
+bases de código – algunas
+compartidas, otras no.
+
+300
+00:23:56.180 --> 00:24:02.130
+Y tenemos que lidiar con eso, porque
+no podemos tomar código de un cliente
+
+301
+00:24:02.180 --> 00:24:06.130
+y reutilizarlo sin más para
+otro, ese tipo de cosas.
+
+302
+00:24:06.180 --> 00:24:14.130
+Así que construimos Synthesis para crear
+un control de acceso como es debido,
+
+303
+00:24:14.180 --> 00:24:18.130
+control de acceso al contexto,
+que representa mi realidad,
+
+304
+00:24:18.180 --> 00:24:23.130
+para que el agente no la
+líe. Ayudar al agente.
+
+305
+00:24:23.180 --> 00:24:30.130
+Además, Synthesis escanea todas las
+bases de código que tengo en local,
+
+306
+00:24:30.180 --> 00:24:36.130
+en las que trabajo –
+unas 247, más o menos –
+
+307
+00:24:36.180 --> 00:24:41.130
+para poder responder al agente:
+
+308
+00:24:41.180 --> 00:24:44.130
+"Si cambio la funcionalidad
+central de esa biblioteca,
+
+309
+00:24:44.180 --> 00:24:49.130
+¿cuál es el radio de impacto en todos
+los proyectos de todos los clientes?"
+
+310
+00:24:49.180 --> 00:24:54.050
+Eso es extremadamente
+importante para evitar
+
+311
+00:24:54.100 --> 00:24:58.130
+acabar en pesadillas de mantenimiento.
+
+312
+00:24:58.180 --> 00:25:07.950
+Ahora hemos resuelto
+ese problema, en parte.
+
+313
+00:25:08.000 --> 00:25:14.460
+Y también usamos Synthesis
+con una socia de negocios.
+
+314
+00:25:14.510 --> 00:25:20.460
+Mi Synthesis replica información
+administrativa a un agente en la nube,
+
+315
+00:25:20.510 --> 00:25:26.460
+que tiene Synthesis y
+un IronClaw con Kimi,
+
+316
+00:25:26.510 --> 00:25:35.460
+que se sincroniza a diario y genera un
+informe ejecutivo que se publica en Slack.
+
+317
+00:25:35.510 --> 00:25:39.160
+Es el total de lo que he estado haciendo,
+
+318
+00:25:39.210 --> 00:25:42.460
+para esos clientes,
+en esas bases de código,
+
+319
+00:25:42.510 --> 00:25:45.460
+a alto nivel.
+
+320
+00:25:45.510 --> 00:25:49.460
+Pero está conectado de modo que
+ella pueda preguntar en detalle:
+
+321
+00:25:49.510 --> 00:25:53.460
+"¿Qué ha hecho Totto para
+este cliente este mes?"
+
+322
+00:25:53.510 --> 00:25:57.460
+No es que trabajemos
+por horas y materiales,
+
+323
+00:25:57.510 --> 00:26:01.460
+pero a veces hay que informar
+de lo que estamos haciendo.
+
+324
+00:26:01.510 --> 00:26:07.560
+Ese fue el comienzo.
+
+325
+00:26:07.610 --> 00:26:11.560
+KCP – Knowledge Context Protocol –
+es lo que deben recordar de esta charla.
+
+326
+00:26:11.610 --> 00:26:17.560
+Es hacia donde deben dirigir a
+sus agentes, esta noche o mañana.
+
+327
+00:26:17.610 --> 00:26:24.610
+Es el punto de partida de una
+madriguera muy, muy profunda.
+
+328
+00:26:29.610 --> 00:26:34.100
+Es lo que hace posibles
+los agentes inteligentes,
+
+329
+00:26:34.150 --> 00:26:36.725
+agentes más seguros, agentes autónomos,
+
+330
+00:26:36.775 --> 00:26:40.100
+agentes que pagan,
+la web agéntica, lo que sea.
+
+331
+00:26:40.150 --> 00:26:42.150
+Empieza ahí.
+
+332
+00:26:45.150 --> 00:26:50.100
+Está el experimento, luego las
+skills y la metodología, Synthesis,
+
+333
+00:26:50.150 --> 00:26:55.010
+y luego llegamos a KCP.
+
+334
+00:26:55.060 --> 00:27:04.660
+Y al principio pensé: ya he creado KCP.
+
+335
+00:27:04.710 --> 00:27:09.660
+Anthropic, aquí tienen. Microsoft, aquí
+tienen. OpenAI, aquí tienen. Adóptenlo,
+
+336
+00:27:09.710 --> 00:27:13.660
+y así lo estandarizamos
+de una vez por todas.
+
+337
+00:27:13.710 --> 00:27:20.660
+Porque esto importa para que los
+agentes puedan hacer un buen trabajo.
+
+338
+00:27:20.710 --> 00:27:23.753
+Nadie se entusiasmó
+con una propuesta de un
+
+339
+00:27:23.803 --> 00:27:26.660
+desconocido de Noruega,
+así que eso no ocurrió.
+
+340
+00:27:26.710 --> 00:27:30.580
+No obtuve ninguna respuesta.
+
+341
+00:27:30.630 --> 00:27:36.580
+Pero el hecho de que ahora
+tengamos algo que nadie más tiene:
+
+342
+00:27:36.630 --> 00:27:39.014
+tenemos una especificación de cómo
+
+343
+00:27:39.064 --> 00:27:41.580
+estructuramos la
+información para el agente,
+
+344
+00:27:41.630 --> 00:27:48.580
+que además es una estructura de grafo,
+lo que hace posible mucho más.
+
+345
+00:27:48.630 --> 00:27:52.113
+Son cosas que los agentes de
+hoy – todos los demás agentes –
+
+346
+00:27:52.163 --> 00:27:54.580
+no pueden hacer,
+porque solo escanean texto
+
+347
+00:27:54.630 --> 00:28:00.080
+y no ven las relaciones. Las adivinan.
+
+348
+00:28:00.130 --> 00:28:09.080
+Una de ellas es algo bastante sencillo:
+un wrapper con 260 manifiestos distintos,
+
+349
+00:28:09.130 --> 00:28:11.999
+que ayuda al agente a
+usar las herramientas
+
+350
+00:28:12.049 --> 00:28:17.080
+de línea de comandos de forma eficiente,
+
+351
+00:28:17.130 --> 00:28:20.052
+para que no tenga que
+ejecutar help, no reviente,
+
+352
+00:28:20.102 --> 00:28:24.080
+y se le guíe para no exagerar
+la salida que vuelve.
+
+353
+00:28:24.130 --> 00:28:29.080
+Es un punto de partida para
+no desperdiciar tokens,
+
+354
+00:28:29.130 --> 00:28:32.428
+y no llenar la ventana de contexto con
+
+355
+00:28:32.478 --> 00:28:36.080
+montones de basura de
+la línea de comandos.
+
+356
+00:28:36.130 --> 00:28:38.675
+kcp-memory quizá sea más importante,
+
+357
+00:28:38.725 --> 00:28:42.080
+porque es una memoria
+episódica para el agente.
+
+358
+00:28:42.130 --> 00:28:45.324
+Es decir, cuando el agente compacta,
+
+359
+00:28:45.374 --> 00:28:49.080
+o cuando cierras y vuelves a arrancar,
+
+360
+00:28:49.130 --> 00:28:54.080
+arranca al mismo nivel
+en que estaba antes.
+
+361
+00:28:54.130 --> 00:28:58.474
+Y así obtienes un bucle
+de aprendizaje que se
+
+362
+00:28:58.524 --> 00:29:02.080
+autorrefuerza sobre lo que hace el agente.
+
+363
+00:29:02.130 --> 00:29:08.080
+Además, puedes usarlo para gestionar el
+mantenimiento del conjunto de skills,
+
+364
+00:29:08.130 --> 00:29:12.080
+de modo que también se agregue y mejore.
+
+365
+00:29:12.130 --> 00:29:16.080
+Y para quienes les gusta ser un
+poco atrevidos y sofisticados:
+
+366
+00:29:16.130 --> 00:29:24.080
+incluye una conexión
+remota memoria a memoria,
+
+367
+00:29:24.130 --> 00:29:28.470
+para compartir la memoria
+de tu agente en el
+
+368
+00:29:28.520 --> 00:29:33.080
+portátil con la memoria
+de tu agente en AWS.
+
+369
+00:29:33.130 --> 00:29:36.080
+Así.
+
+370
+00:29:36.130 --> 00:29:40.080
+Tengan cuidado con eso, porque
+no siempre es lo que uno quiere,
+
+371
+00:29:40.130 --> 00:29:43.080
+pero se pueden montar
+bastantes cosas interesantes.
+
+372
+00:29:43.130 --> 00:29:55.230
+En marzo, abril, pensé:
+ahora tengo que encontrar
+
+373
+00:29:55.280 --> 00:29:58.280
+algunos casos de uso agénticos
+nuevos y bien definidos.
+
+374
+00:29:59.280 --> 00:30:09.230
+Estaba en Bergen dando un
+taller en casa de un cliente,
+
+375
+00:30:09.280 --> 00:30:15.230
+y pensé: allí hay una
+empresa llamada Mynder,
+
+376
+00:30:15.280 --> 00:30:18.230
+que dice que hace compliance
+de forma agéntica.
+
+377
+00:30:18.280 --> 00:30:23.230
+Así que me presenté, llamé
+a la puerta y dije: hola,
+
+378
+00:30:23.280 --> 00:30:25.230
+tengo algo que necesitan.
+
+379
+00:30:25.280 --> 00:30:28.280
+No me creyeron del todo.
+
+380
+00:30:29.280 --> 00:30:33.230
+Es comprensible. Lo entiendo.
+
+381
+00:30:33.280 --> 00:30:38.230
+Pero se dieron cuenta
+de que ahí había algo.
+
+382
+00:30:38.280 --> 00:30:42.148
+Así que tras una o dos semanas
+recibí, un fin de semana,
+
+383
+00:30:42.198 --> 00:30:46.280
+una lista de cinco preguntas
+abiertas de arquitectura.
+
+384
+00:30:50.280 --> 00:30:53.165
+Lo hablé un poco con Claude, y enseguida
+
+385
+00:30:53.215 --> 00:30:56.230
+coincidimos en que la
+respuesta no estaba ahí.
+
+386
+00:30:56.280 --> 00:30:58.280
+Eran preguntas abiertas.
+
+387
+00:30:59.280 --> 00:31:06.230
+Pensé: pero estamos en 2026.
+Construyámoslo sin más.
+
+388
+00:31:06.280 --> 00:31:09.230
+Solo construirlo, no solo hablar de ello.
+
+389
+00:31:09.280 --> 00:31:13.230
+Y lo hice. Tardé media hora, tres cuartos.
+
+390
+00:31:13.280 --> 00:31:16.230
+Y entonces pensé: vale.
+
+391
+00:31:16.280 --> 00:31:22.230
+Como esto es compliance, para probarlo,
+
+392
+00:31:22.280 --> 00:31:25.615
+¿qué tal si simulamos 10
+000 empresas noruegas,
+
+393
+00:31:25.665 --> 00:31:28.230
+pymes y algo de infraestructura crítica,
+
+394
+00:31:28.280 --> 00:31:30.853
+durante tres años,
+metemos algunos empleados
+
+395
+00:31:30.903 --> 00:31:33.230
+desleales y cosas así en el conjunto,
+
+396
+00:31:33.280 --> 00:31:37.280
+y simplemente lo ejecutamos?
+
+397
+00:31:40.280 --> 00:31:46.230
+El reto volvió:
+he identificado 15 casos límite.
+
+398
+00:31:46.280 --> 00:31:51.230
+Casos límite, ¿por qué? Bueno, vale:
+
+399
+00:31:51.280 --> 00:31:56.230
+No conozco el RGPD lo suficiente,
+o no conozco NIS2 lo suficiente.
+
+400
+00:31:56.280 --> 00:32:03.230
+Vale. Estamos en 2026.
+Descarguemos esas leyes,
+
+401
+00:32:03.280 --> 00:32:07.230
+procesémoslas con KCP,
+pongamos un MCP encima,
+
+402
+00:32:07.280 --> 00:32:11.230
+conectémoslo, y ya tienes
+acceso a las leyes.
+
+403
+00:32:11.280 --> 00:32:17.230
+Eso resuelve otros 8 o 9.
+
+404
+00:32:17.280 --> 00:32:21.230
+Y quedan tres, vale.
+
+405
+00:32:21.280 --> 00:32:27.230
+Esos pueden quedar abiertos en el informe,
+
+406
+00:32:27.280 --> 00:32:31.630
+así que se trata de discutirlos,
+de una forma u otra.
+
+407
+00:32:31.680 --> 00:32:39.630
+Eso llevó a que me dieran el puesto de
+CTO interino en Mynder, que sigo ocupando.
+
+408
+00:32:39.680 --> 00:32:43.578
+Y entonces mi agente se
+topó con una nueva realidad,
+
+409
+00:32:43.628 --> 00:32:47.630
+porque ahora los agentes tienen
+que cumplir la normativa.
+
+410
+00:32:47.680 --> 00:32:53.630
+Y eso nos lleva al siguiente
+nivel: para compliance
+
+411
+00:32:53.680 --> 00:32:55.535
+necesitas agentes de producción,
+
+412
+00:32:55.585 --> 00:32:57.630
+que son algo totalmente
+distinto de Claude,
+
+413
+00:32:57.680 --> 00:33:03.630
+que es un monstruo de fuerza bruta.
+
+414
+00:33:03.680 --> 00:33:14.630
+Así que empecé: vale, clonemos 4 o 5
+de los agent harnesses más comunes,
+
+415
+00:33:14.680 --> 00:33:19.630
+y convirtamos su código en skills,
+
+416
+00:33:19.680 --> 00:33:24.630
+para que el agente – Claude, ExoCortex –
+
+417
+00:33:24.680 --> 00:33:30.630
+pueda comparar y encontrar buenas
+maneras de construir agentes.
+
+418
+00:33:30.680 --> 00:33:38.630
+Y pensé: vale, empecemos
+por lo que es determinista.
+
+419
+00:33:38.680 --> 00:33:42.630
+Construyamos agentes con un
+planificador determinista.
+
+420
+00:33:42.680 --> 00:33:46.579
+Porque si puedes generar un plan de forma
+
+421
+00:33:46.629 --> 00:33:49.630
+determinista, al menos sabes cuál es,
+
+422
+00:33:49.680 --> 00:33:51.606
+y puedes validarlo contra lo que tienes
+
+423
+00:33:51.656 --> 00:33:53.630
+permitido hacer. Es un
+buen punto de partida.
+
+424
+00:33:53.680 --> 00:34:02.880
+Y luego, por el otro lado: asegurémonos
+de controlar las manos del agente,
+
+425
+00:34:02.930 --> 00:34:07.880
+para que no pueda hacer
+tonterías. Eso es kcp-harness.
+
+426
+00:34:07.930 --> 00:34:17.880
+Y vayamos más allá y usemos un
+agent harness existente: Pi.
+
+427
+00:34:17.930 --> 00:34:22.138
+Le conectamos KCP, para poder cumplir con
+
+428
+00:34:22.188 --> 00:34:26.880
+lo que llamamos instrucciones de prompt.
+
+429
+00:34:26.930 --> 00:34:30.344
+Podemos extenderlo a controlar las manos,
+
+430
+00:34:30.394 --> 00:34:33.880
+y podemos controlar el bucle
+interno del pensamiento.
+
+431
+00:34:33.930 --> 00:34:38.427
+Incluyendo controlar qué skills tiene y a
+
+432
+00:34:38.477 --> 00:34:42.880
+qué áreas de conocimiento tiene acceso,
+
+433
+00:34:42.930 --> 00:34:46.880
+para que sea auditable.
+
+434
+00:34:46.930 --> 00:34:50.602
+Porque entonces sabes todo lo que tenía en
+
+435
+00:34:50.652 --> 00:34:52.930
+el punto de decisión, y qué decisión tomó.
+
+436
+00:34:53.930 --> 00:34:59.880
+Y si la decisión fue errónea, es porque
+los datos que recibió eran erróneos.
+
+437
+00:34:59.930 --> 00:35:03.147
+Quizá la base de
+conocimiento no se actualizó
+
+438
+00:35:03.197 --> 00:35:05.880
+tras una subida de precios, o lo que sea.
+
+439
+00:35:05.930 --> 00:35:09.450
+Bien.
+
+440
+00:35:09.500 --> 00:35:15.450
+Y este verano llevé esto un paso
+más allá y construí Sunstone Atlas,
+
+441
+00:35:15.500 --> 00:35:21.450
+que es básicamente un sistema
+operativo para agentes de producción,
+
+442
+00:35:21.500 --> 00:35:26.450
+con gobernanza gestionada de
+skills, de bases de conocimiento,
+
+443
+00:35:26.500 --> 00:35:30.450
+de playbooks, de herramientas,
+
+444
+00:35:30.500 --> 00:35:38.450
+con un panel de diseño para
+playbooks y agentes y lo que sea,
+
+445
+00:35:38.500 --> 00:35:42.598
+y un panel completo de CISO que muestra
+
+446
+00:35:42.648 --> 00:35:45.450
+todo lo que ocurre, qué falla y qué no.
+
+447
+00:35:45.500 --> 00:35:53.500
+Incluida una escalera de confianza.
+
+448
+00:35:54.500 --> 00:36:00.450
+De modo que los agentes
+que corren ahí empiezan
+
+449
+00:36:00.500 --> 00:36:05.450
+como un niño pequeño al que
+se le permite intentarlo.
+
+450
+00:36:05.500 --> 00:36:12.450
+Si tiene éxito cinco veces, se le
+permite operar de forma semiautónoma.
+
+451
+00:36:12.500 --> 00:36:16.450
+Si tiene éxito cien veces,
+se le permite ser autónomo.
+
+452
+00:36:16.500 --> 00:36:19.450
+Y si falla, baja un escalón.
+
+453
+00:36:19.500 --> 00:36:29.790
+Así que... Sí.
+
+454
+00:36:29.840 --> 00:36:34.790
+Esto nunca se detiene.
+
+455
+00:36:34.840 --> 00:36:43.790
+Y ahora vamos por unas 1500
+skills, frente a 500 en mayo.
+
+456
+00:36:43.840 --> 00:36:52.790
+21 bases de conocimiento
+distintas con control de acceso.
+
+457
+00:36:52.840 --> 00:36:54.790
+90 000 archivos, seguramente más.
+
+458
+00:36:54.840 --> 00:37:05.450
+Eso es ExoCortex intentando
+hacerlo divertido.
+
+459
+00:37:05.500 --> 00:37:08.450
+Pero está bien, supongo.
+
+460
+00:37:08.500 --> 00:37:14.450
+Hay que darle a tu agente compañero algo
+de libertad para hacerlo de vez en cuando.
+
+461
+00:37:14.500 --> 00:37:25.160
+Creo que aquí hay algo.
+
+462
+00:37:25.210 --> 00:37:28.160
+Parece que esto es cierto.
+
+463
+00:37:28.210 --> 00:37:31.240
+No tengo evidencia empírica,
+pero: si le tienes
+
+464
+00:37:31.290 --> 00:37:35.160
+miedo al agente, y construyes los sistemas
+
+465
+00:37:35.210 --> 00:37:37.160
+que te ayudan a superar el miedo,
+
+466
+00:37:37.210 --> 00:37:44.160
+haces que el agente sea capaz de
+resolver problemas mucho más difíciles.
+
+467
+00:37:44.210 --> 00:37:50.160
+Y luego está el hipster
+que confía en el agente,
+
+468
+00:37:50.210 --> 00:37:53.160
+y claro, eso sale mal rápido.
+
+469
+00:37:53.210 --> 00:37:58.160
+Y luego están los paranoicos
+que quieren revisar
+
+470
+00:37:58.210 --> 00:38:02.160
+cada línea o decisión que toma el agente.
+
+471
+00:38:02.210 --> 00:38:04.006
+Se quedan parados –
+retroceden – porque es más
+
+472
+00:38:04.056 --> 00:38:06.160
+lento que escribir el código ellos mismos.
+
+473
+00:38:06.210 --> 00:38:10.314
+Y luego estamos los que tenemos miedo,
+
+474
+00:38:10.364 --> 00:38:16.160
+que podemos abrir el camino
+en el desarrollo agéntico.
+
+475
+00:38:16.210 --> 00:38:22.000
+Como dije, estoy abierto a preguntas
+durante todo el día después.
+
+476
+00:38:31.590 --> 00:38:34.540
+Esta sala no sirve para un BoF.
+
+477
+00:38:34.590 --> 00:38:37.540
+Hay demasiada gente y
+muy pocos micrófonos.
+
+478
+00:38:37.590 --> 00:38:44.820
+Pero hay dos lugares donde pueden
+encontrarme después de hoy.
+
+479
+00:38:44.870 --> 00:38:48.820
+Uno es wiki.totto.org, es decir, mi blog.
+
+480
+00:38:48.870 --> 00:38:53.820
+Ahí hay muchísimo sobre todo esto,
+incluidas las cifras de tokens.
+
+481
+00:38:53.870 --> 00:38:57.820
+O, para quienes estén
+en Oslo, nos reunimos –
+
+482
+00:38:57.870 --> 00:39:02.820
+un grupo de desarrolladores
+agénticos un poco locos –
+
+483
+00:39:02.870 --> 00:39:06.820
+en Ilef cada jueves a las cinco.
+
+484
+00:39:06.870 --> 00:39:12.820
+Totalmente abierto, sin agenda.
+Un buen lugar para intercambiar ideas.
+
+485
+00:39:12.870 --> 00:39:19.820
+Escuchar lo que otros han hecho, aprendido
+o en qué han fallado las últimas semanas.
+
+486
+00:39:19.870 --> 00:39:22.820
+En qué anda la gente, en realidad.
+
+487
+00:39:22.870 --> 00:39:31.280
+Bien. No he mirado el reloj,
+pero tengo algo de tiempo.
+
+488
+00:39:31.330 --> 00:39:40.000
+¿Qué tipo de pregunta
+debería hacerme a mí mismo?
+
+489
+00:39:40.050 --> 00:39:46.000
+Sí... Suelo llamarlo...
+bueno, una reflexión.
+
+490
+00:39:46.050 --> 00:39:51.000
+Vine este año para averiguar:
+
+491
+00:39:51.050 --> 00:39:56.000
+¿Dónde están los demás?
+¿En qué madriguera están?
+
+492
+00:39:56.050 --> 00:40:01.000
+¿Son más profundas o menos
+que la mía, o la nuestra?
+
+493
+00:40:01.050 --> 00:40:07.000
+Y lo que sí he descubierto es que la
+dispersión entre la gente es extrema.
+
+494
+00:40:07.050 --> 00:40:10.000
+Y con eso tenemos que hacer algo.
+
+495
+00:40:10.050 --> 00:40:14.000
+Por Noruega, S.A.
+
+496
+00:40:14.050 --> 00:40:19.000
+No será fácil, y no tenemos
+mucho tiempo, como dije.
+
+497
+00:40:19.050 --> 00:40:27.000
+Lo que hoy es posible para mí
+no lo era hace cuatro semanas.
+
+498
+00:40:27.050 --> 00:40:31.780
+Sí. – Tengo una pregunta. – Adelante.
+
+499
+00:40:33.780 --> 00:40:40.190
+Cómo empezar sin sentirse
+abrumado, esa era la pregunta.
+
+500
+00:40:40.240 --> 00:40:43.240
+No estoy seguro de que sea posible.
+
+501
+00:40:46.240 --> 00:40:52.190
+Bueno... Mi respuesta sincera,
+sin que sea un discurso de ventas,
+
+502
+00:40:52.240 --> 00:40:56.190
+es mi taller. Te ayudo
+a bajar a la madriguera.
+
+503
+00:40:56.240 --> 00:40:58.190
+De forma segura.
+
+504
+00:40:58.240 --> 00:41:00.190
+Para que salgas con superpoderes.
+
+505
+00:41:00.240 --> 00:41:04.190
+Y yo mismo he pasado por lo peor.
+
+506
+00:41:04.240 --> 00:41:09.190
+Otra reflexión que tengo
+sobre la formación agéntica:
+
+507
+00:41:09.240 --> 00:41:15.510
+Si quieres conseguir superpoderes
+en el fondo de la madriguera,
+
+508
+00:41:15.560 --> 00:41:19.093
+asegúrate de tener una
+suscripción que te dé
+
+509
+00:41:19.143 --> 00:41:22.510
+una cantidad más o menos
+ilimitada de tokens.
+
+510
+00:41:22.560 --> 00:41:25.510
+Si vas a preocuparte por el
+consumo de tokens durante
+
+511
+00:41:25.560 --> 00:41:28.510
+el aprendizaje, durante
+uno, dos, tres meses,
+
+512
+00:41:28.560 --> 00:41:30.510
+no llegarás a ninguna parte.
+
+513
+00:41:30.560 --> 00:41:38.510
+Tienes que poder presionar de
+verdad, sin pensar en los costes.
+
+514
+00:41:38.560 --> 00:41:44.510
+Como dije: mi experimento,
+convertido a costes normales de tokens,
+
+515
+00:41:44.560 --> 00:41:47.510
+fueron unos 100 000 dólares. ¿Verdad?
+
+516
+00:41:47.560 --> 00:41:53.560
+No puedes hacer eso. Es tan caro
+como hacerlo con horas humanas.
+
+517
+00:41:57.560 --> 00:42:04.010
+Dicho esto: la plataforma,
+y todo lo que he contado aquí,
+
+518
+00:42:04.060 --> 00:42:07.010
+es open source y está
+en Cantara en GitHub.
+
+519
+00:42:07.060 --> 00:42:11.010
+Así que el agente puede leerlo,
+o instalarlo y configurarlo.
+
+520
+00:42:11.060 --> 00:42:14.010
+Y de repente el agente se
+vuelve más inteligente.
+
+521
+00:42:14.060 --> 00:42:17.010
+Es un comienzo sencillo.
+
+522
+00:42:17.060 --> 00:42:20.010
+Y además consume muchos menos tokens.
+
+523
+00:42:20.060 --> 00:42:27.010
+Así que el mío – ExoCortex – ahora
+puedo cambiarlo a un modelo local,
+
+524
+00:42:27.060 --> 00:42:31.010
+sin que se vuelva inútil.
+
+525
+00:42:31.060 --> 00:42:33.010
+Tarda un poco más.
+
+526
+00:42:33.060 --> 00:42:39.010
+Pero ya no necesito tanto
+los modelos grandes,
+
+527
+00:42:39.060 --> 00:42:45.010
+porque la infraestructura agéntica,
+open source en Cantara,
+
+528
+00:42:45.060 --> 00:42:48.010
+se encarga de gran parte por ti.
+
+529
+00:42:48.060 --> 00:42:53.010
+Si alguien más quiere acercarse
+y hacer una pregunta, estupendo.
+
+530
+00:42:53.060 --> 00:42:56.000
+Vamos.
+
+531
+00:42:58.000 --> 00:43:14.000
+[Pregunta del público, inaudible]
+
+532
+00:43:14.770 --> 00:43:16.720
+No, no existe.
+
+533
+00:43:16.770 --> 00:43:25.720
+Google sacó algo llamado
+"agentic knowledge", o algo así,
+
+534
+00:43:25.770 --> 00:43:27.720
+justo antes del verano.
+
+535
+00:43:27.770 --> 00:43:32.720
+Ahí es donde KCP empezó en febrero.
+
+536
+00:43:32.770 --> 00:43:39.720
+No habían intentado resolver lo que KCP
+resuelve, porque era demasiado difícil.
+
+537
+00:43:39.770 --> 00:43:42.720
+No, no lo conozco.
+
+538
+00:43:42.770 --> 00:43:45.502
+En el mundo agéntico
+hay tantas madrigueras,
+
+539
+00:43:45.552 --> 00:43:48.720
+y otros han inventado cosas
+en las suyas. No lo sé.
+
+540
+00:43:48.770 --> 00:43:52.720
+Pero intento seguir todo lo que se mueve.
+
+541
+00:43:52.770 --> 00:43:58.720
+Pero no he visto nada equivalente.
+
+542
+00:43:58.770 --> 00:44:05.720
+O sea, es así: si le
+quitara KCP a ExoCortex,
+
+543
+00:44:05.770 --> 00:44:09.720
+me habría vuelto loco.
+
+544
+00:44:09.770 --> 00:44:13.720
+Me habría quedado en blanco,
+completamente indefenso.
+
+545
+00:44:13.770 --> 00:44:16.720
+De verdad.
+
+546
+00:44:16.770 --> 00:44:19.720
+La gran diferencia es
+que el agente de repente
+
+547
+00:44:19.770 --> 00:44:22.720
+tiene una relación estructurada
+con la información,
+
+548
+00:44:22.770 --> 00:44:25.720
+y con la calidad de la información.
+
+549
+00:44:25.770 --> 00:44:30.000
+Eso lo cambia todo.
+
+550
+00:44:37.190 --> 00:44:43.140
+Knowledge Context Protocol es un...
+Sí, ¿dónde aprendo más sobre KCP?
+
+551
+00:44:43.190 --> 00:44:48.140
+Está en GitHub. Knowledge
+Context Protocol está ahí.
+
+552
+00:44:48.190 --> 00:44:55.140
+Es grande, con montones de ejemplos y
+demos en funcionamiento, y lo que sea.
+
+553
+00:44:55.190 --> 00:44:58.140
+Está hecho tanto para humanos
+como para sus agentes.
+
+554
+00:44:58.190 --> 00:45:01.222
+Pueden mandar allí a su
+agente y decirle "aprende",
+
+555
+00:45:01.272 --> 00:45:03.140
+y se vuelve bastante inteligente.
+
+556
+00:45:03.190 --> 00:45:07.140
+Sobre KCP podrá responder a todas
+las demás preguntas. ¿Al fondo?
+
+557
+00:45:07.190 --> 00:45:12.000
+Ah, sí. Veo por dónde vas.
+
+558
+00:45:13.000 --> 00:45:24.000
+[Pregunta del público, inaudible]
+
+559
+00:45:25.360 --> 00:45:33.240
+¿Cómo se colabora con distintos
+agentes? De forma agéntica.
+
+560
+00:45:38.240 --> 00:45:45.190
+Primero: te dirigiría hacia KCP.
+
+561
+00:45:45.240 --> 00:45:49.285
+Así al menos tenemos una noción de qué
+
+562
+00:45:49.335 --> 00:45:53.190
+es la información, y de sus tipos.
+
+563
+00:45:53.240 --> 00:45:59.190
+Pero la segunda pregunta es
+más difícil, en realidad.
+
+564
+00:45:59.240 --> 00:46:01.476
+Es: ¿cómo será el modelo de colaboración
+
+565
+00:46:01.526 --> 00:46:07.190
+humano–agente–agente–humano en el futuro?
+
+566
+00:46:07.240 --> 00:46:18.190
+Tengo algunas ideas, reflexiones y
+planes para publicar esto en algún sitio.
+
+567
+00:46:18.240 --> 00:46:25.190
+Pero el principio fundamental
+es que los agentes
+
+568
+00:46:25.240 --> 00:46:31.190
+manejan el volumen de información,
+el nivel de detalle, etcétera,
+
+569
+00:46:31.240 --> 00:46:35.190
+que se replica en el receptor,
+
+570
+00:46:35.240 --> 00:46:41.190
+agregado a través de
+sesiones y otras cosas,
+
+571
+00:46:41.240 --> 00:46:45.690
+pero con el contexto
+configurado para que los
+
+572
+00:46:45.740 --> 00:46:50.190
+humanos arriba puedan
+profundizar en los detalles.
+
+573
+00:46:50.240 --> 00:46:54.130
+Pero el agente del receptor tiene la
+
+574
+00:46:54.180 --> 00:46:58.190
+responsabilidad de
+hacer una de tres cosas.
+
+575
+00:46:58.240 --> 00:47:02.190
+"Mi humano necesita saber esto ahora."
+
+576
+00:47:02.240 --> 00:47:05.190
+Es decir, una notificación push.
+
+577
+00:47:05.240 --> 00:47:09.912
+Luego tiene que evaluar qué latencia
+
+578
+00:47:09.962 --> 00:47:15.190
+tiene una solicitud de respuesta.
+
+579
+00:47:15.240 --> 00:47:19.190
+Si son dos horas, hay que escalarla.
+
+580
+00:47:19.240 --> 00:47:22.190
+Todo lo demás...
+
+581
+00:47:22.240 --> 00:47:30.190
+O sea, a diario, o cada dos horas,
+en un resumen ejecutivo de mi agente,
+
+582
+00:47:30.240 --> 00:47:36.190
+en función de dónde está él,
+ella, elle en ese momento.
+
+583
+00:47:36.240 --> 00:47:39.943
+Porque la mayoría de nosotros –
+al menos en mi mundo –
+
+584
+00:47:39.993 --> 00:47:43.190
+yo trabajo en muchísimas cosas a la vez.
+
+585
+00:47:43.240 --> 00:47:45.399
+Así que cuando llevo un sombrero,
+
+586
+00:47:45.449 --> 00:47:48.190
+no quiero mucho ruido de otros proyectos.
+
+587
+00:47:48.240 --> 00:47:54.190
+Así que es un contexto – el contexto
+humano – y luego la parte del push.
+
+588
+00:47:54.240 --> 00:47:59.190
+Pero no es fácil de
+construir. No, en absoluto.
+
+589
+00:47:59.240 --> 00:48:06.000
+Y nunca lo he hecho antes. Así que...
+quizá llegue a ello yo mismo.
+
+590
+00:48:08.000 --> 00:48:54.000
+[Pregunta del público, inaudible]
+
+591
+00:48:56.480 --> 00:49:01.480
+Sí. Creo que hay un par de cosas.
+Los equipos no pueden ser tan grandes.
+
+592
+00:49:03.480 --> 00:49:07.036
+¿Cómo organizamos los
+equipos de producto y la
+
+593
+00:49:07.086 --> 00:49:10.480
+colaboración en el futuro,
+de forma agéntica?
+
+594
+00:49:12.480 --> 00:49:17.430
+Ahí también hay dos formas de verlo.
+
+595
+00:49:17.480 --> 00:49:22.430
+Una es lo que hace gran parte de internet:
+
+596
+00:49:22.480 --> 00:49:25.319
+una persona arriba con
+un conjunto de agentes
+
+597
+00:49:25.369 --> 00:49:28.430
+que discuten hasta llegar a una respuesta.
+
+598
+00:49:28.480 --> 00:49:33.430
+Se darán cuenta de que eso no es
+lo que hacemos aquí, en absoluto.
+
+599
+00:49:33.480 --> 00:49:36.430
+Así que hay otra respuesta para eso.
+
+600
+00:49:36.480 --> 00:49:41.430
+Organización. Sí, el equipo
+probablemente tenga que ser más pequeño.
+
+601
+00:49:41.480 --> 00:49:49.430
+Sencillamente porque se produce tanta
+información que la sobrecarga se vuelve...
+
+602
+00:49:49.480 --> 00:49:54.430
+Incluso con agente–humano,
+el volumen es tan grande
+
+603
+00:49:54.480 --> 00:50:01.430
+que se vuelve excesivo si son
+más de tres, quizá cuatro.
+
+604
+00:50:01.480 --> 00:50:07.430
+Yo trabajo así hoy,
+y cuando llego al trabajo,
+
+605
+00:50:07.480 --> 00:50:11.430
+siento que he estado tres
+semanas de vacaciones,
+
+606
+00:50:11.480 --> 00:50:14.210
+porque los agentes de
+Steinar han trabajado
+
+607
+00:50:14.260 --> 00:50:17.430
+por la tarde o la noche,
+y todo ha cambiado.
+
+608
+00:50:17.480 --> 00:50:22.430
+58 pull requests, y 300 commits
+en ocho bases de código.
+
+609
+00:50:22.480 --> 00:50:29.430
+Es como...
+
+610
+00:50:29.480 --> 00:50:33.430
+Creo que vamos en una dirección,
+pero no tengo todas las respuestas.
+
+611
+00:50:33.480 --> 00:50:38.430
+Voy construyendo esa
+infraestructura sobre la marcha,
+
+612
+00:50:38.480 --> 00:50:44.000
+para intentar resolver esos problemas
+a medida que los encontramos.
+
+613
+00:50:46.000 --> 00:51:04.000
+[Pregunta del público, inaudible]
+
+614
+00:51:05.860 --> 00:51:11.810
+No, es una wiki con
+esteroides. Absolutamente.
+
+615
+00:51:11.860 --> 00:51:17.460
+Tanto Sunstone Atlas como Synthesis.
+
+616
+00:51:19.000 --> 00:51:28.000
+[Pregunta del público, inaudible]
+
+617
+00:51:28.670 --> 00:51:32.620
+Todo lo anterior, en realidad.
+
+618
+00:51:32.670 --> 00:51:37.620
+Sí, ¿dónde corren los agentes? Es así:
+
+619
+00:51:37.670 --> 00:51:40.620
+Puedo poner ExoCortex como ejemplo.
+
+620
+00:51:40.670 --> 00:51:42.815
+Hay un Claude Code en mi máquina,
+
+621
+00:51:42.865 --> 00:51:45.620
+y tengo una hermana –
+una neurona Claude Code –
+
+622
+00:51:45.670 --> 00:51:47.620
+que corre en AWS.
+
+623
+00:51:47.670 --> 00:51:53.620
+Colaboran, de modo que pueden
+pasarse tareas de un lado a otro.
+
+624
+00:51:53.670 --> 00:51:56.620
+Desde local pueden
+lanzar tareas en la nube.
+
+625
+00:51:56.670 --> 00:52:03.620
+Si tengo tareas largas – voy a tomar
+un vuelo – es una descarga de trabajo.
+
+626
+00:52:03.670 --> 00:52:10.620
+Mencioné que tengo un agente
+administrativo llamado Mimir.
+
+627
+00:52:10.670 --> 00:52:14.620
+Ella corre sobre un Synthesis
+
+628
+00:52:14.670 --> 00:52:18.620
+que está replicado
+administrativamente desde el mío,
+
+629
+00:52:18.670 --> 00:52:23.620
+con un IronClaw que se
+comunica por Slack, con Selina.
+
+630
+00:52:23.670 --> 00:52:27.620
+Tengo un Klaw, que también
+es un IronClaw, con DeepSeek,
+
+631
+00:52:27.670 --> 00:52:33.620
+que también corre en AWS.
+
+632
+00:52:33.670 --> 00:52:38.620
+Su tarea es básicamente
+parchear dependencias
+
+633
+00:52:38.670 --> 00:52:46.620
+y publicar nuevas versiones
+de las cosas sencillas,
+
+634
+00:52:46.670 --> 00:52:48.620
+en mis 400 repositorios.
+
+635
+00:52:48.670 --> 00:52:51.620
+Y podemos seguir.
+
+636
+00:52:51.670 --> 00:52:58.620
+En el lado de los clientes ahora
+tenemos una instancia de Sunstone Atlas,
+
+637
+00:52:58.670 --> 00:53:02.607
+que nos permite compartir
+bases de conocimiento y
+
+638
+00:53:02.657 --> 00:53:07.670
+conjuntos de skills
+sincronizados y versionados.
+
+639
+00:53:08.670 --> 00:53:10.620
+Eso también corre en AWS.
+
+640
+00:53:10.670 --> 00:53:16.620
+Y en otro cliente corre
+en Azure. Así que depende.
+
+641
+00:53:16.670 --> 00:53:22.440
+¿Bien? ¿Contentos?
+
+642
+00:53:22.490 --> 00:53:26.440
+Estoy disponible para todo tipo
+de preguntas durante el día,
+
+643
+00:53:26.490 --> 00:53:30.440
+y unas cervezas agénticas,
+o lo que les apetezca.
+
+644
+00:53:30.490 --> 00:53:32.490
+Gracias.

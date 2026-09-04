@@ -214,6 +214,15 @@
   margin: 1.5rem 0;
 }
 
+.presentation-video video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+  display: block;
+  margin: 1.5rem 0;
+  background: #000;
+}
+
 .pdf-fallback {
   background: var(--md-code-bg-color);
   border-radius: 6px;
