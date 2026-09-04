@@ -9,19 +9,19 @@
 
     <span class="card-meta">September 4, 2026</span>
 
+-   :material-robot-outline:{ .card-icon } **[The Other AI in the Conversation](/blog/2026/09/04/the-other-ai-in-the-conversation/)**
+
+    ---
+
+    Someone finally did what I keep asking people to do — pointed their AI agent at this blog and had it read the whole thing chronologically. The agent wrote…
+
+    <span class="card-meta">September 4, 2026</span>
+
 -   :material-robot-outline:{ .card-icon } **[The Negative Control](/blog/2026/08/25/the-negative-control/)**
 
     ---
 
     The Third Schedule series argued from one practitioner's git history that builder time has become parallelizable. This closing piece does what the other…
-
-    <span class="card-meta">August 25, 2026</span>
-
--   :material-robot-outline:{ .card-icon } **[Fan-Out: What the Literature Already Knew About the Third Schedule](/blog/2026/08/25/fan-out-what-the-literature-already-knew-about-the-third-schedule/)**
-
-    ---
-
-    The Third Schedule claimed, from one measured practice, that builder time has become parallelizable. This post takes that claim outside: to the four…
 
     <span class="card-meta">August 25, 2026</span>
 
