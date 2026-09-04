@@ -6686,6 +6686,71 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-07-26 09:00:00+00:00">July 26, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
+              <a href="../../category/ai-augmented-development/" class="md-meta__link">AI-Augmented Development</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              16 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="from-pasted-prompts-to-signed-charters-a-short-history-of-the-agentic-skill"><a class="toclink" href="../../2026/07/26/from-pasted-prompts-to-signed-charters-a-short-history-of-the-agentic-skill/">From Pasted Prompts to Signed Charters: A Short History of the Agentic Skill</a></h2>
+<p><img alt="From Pasted Prompts to Signed Charters — the evolution from a pasted release prompt to a signed, enforceable skill charter" src="/assets/images/blog/charters-01-hero.webp" /></p>
+<p>In 2023, if you wanted an AI to help you cut a release, you typed a small prayer into a
+chat window and pasted the answer into your terminal.</p>
+<p>This morning, an agent in my toolchain was <em>offered</em> a release skill by a deterministic
+planner, which noted — in writing, in a receipt — that the skill was relevant to the task
+but <strong>not eligible to run</strong>, because no human had granted it enactment rights. The skill
+itself declared, in a signed manifest, exactly which tools it may invoke and which files
+it may touch. A linter had checked that declaration. A different program stood ready to
+block any tool call that reached outside it.</p>
+<p>Same workflow. Same twenty lines of playbook. Completely different <em>kind of object</em>.</p>
+<p>The distance between those two moments is about three and a half years, and almost nobody
+noticed the transitions while they happened — each one looked like a small quality-of-life
+improvement at the time. Told end to end, they form one story: <strong>the agentic skill slowly
+acquiring the properties of a charter</strong> — a scoped, reviewable, revocable grant of
+authority. This post walks that history with one deliberately boring running example,
+because boring examples keep us honest: <em>how does the AI help you cut a release?</em></p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/07/26/from-pasted-prompts-to-signed-charters-a-short-history-of-the-agentic-skill/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-07-23 00:00:00+00:00">July 23, 2026</time></li>
         
           <li class="md-meta__item">
@@ -7129,60 +7194,6 @@
     
       <nav class="md-post__action">
         <a href="../../2026/07/16/owasp-just-mapped-the-agentic-top-10-heres-the-root-cause-four-of-them-share/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-15 09:00:00+00:00">July 15, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../category/security/" class="md-meta__link">Security</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              9 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="prompt-injection-is-sql-injection-for-agents-heres-the-prepared-statement"><a class="toclink" href="../../2026/07/15/prompt-injection-is-sql-injection-for-agents-heres-the-prepared-statement/">Prompt Injection Is SQL Injection for Agents. Here's the Prepared Statement.</a></h2>
-<p><img alt="The Prepared Statement for Agentic AI: verified operator instructions pass through the structural gate into the secure agentic context; unverified attacker input is blocked and rejected. Why prompt injection is the exact equivalent of SQL injection, and how structural separation fixes it." src="../../../assets/images/gitlost-00-title.webp" /></p>
-<p>One word. <em>"Additionally."</em></p>
-<p>That is all it took to make GitHub's AI agent leak the contents of private repositories to anyone who posted a crafted issue comment. Noma Labs disclosed <a href="https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/">GitLost</a> on July 6th: an indirect prompt injection attack against GitHub Agentic Workflows where an attacker opens an issue in a <em>public</em> repository and buries instructions inside it. When the agent reads the issue — because that is its job — it cannot tell the difference between those instructions and the instructions from its actual operator. It follows them. Then it posts the private repository contents as a public comment.</p>
-<p>The bypass was elegant in the way that most security failures are: the guardrail was checking for obvious refusals. "Additionally" reframed the data-exfiltration request as a legitimate follow-on task. The model did not refuse because the request no longer <em>looked</em> like a refusal case.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/15/prompt-injection-is-sql-injection-for-agents-heres-the-prepared-statement/">
           Continue reading
         </a>
       </nav>

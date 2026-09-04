@@ -6691,6 +6691,60 @@
           <li class="md-meta__item">
             in
             
+              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a>, 
+              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
+              <a href="../../category/security/" class="md-meta__link">Security</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              9 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="prompt-injection-is-sql-injection-for-agents-heres-the-prepared-statement"><a class="toclink" href="../../2026/07/15/prompt-injection-is-sql-injection-for-agents-heres-the-prepared-statement/">Prompt Injection Is SQL Injection for Agents. Here's the Prepared Statement.</a></h2>
+<p><img alt="The Prepared Statement for Agentic AI: verified operator instructions pass through the structural gate into the secure agentic context; unverified attacker input is blocked and rejected. Why prompt injection is the exact equivalent of SQL injection, and how structural separation fixes it." src="../../../assets/images/gitlost-00-title.webp" /></p>
+<p>One word. <em>"Additionally."</em></p>
+<p>That is all it took to make GitHub's AI agent leak the contents of private repositories to anyone who posted a crafted issue comment. Noma Labs disclosed <a href="https://noma.security/blog/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos/">GitLost</a> on July 6th: an indirect prompt injection attack against GitHub Agentic Workflows where an attacker opens an issue in a <em>public</em> repository and buries instructions inside it. When the agent reads the issue — because that is its job — it cannot tell the difference between those instructions and the instructions from its actual operator. It follows them. Then it posts the private repository contents as a public comment.</p>
+<p>The bypass was elegant in the way that most security failures are: the guardrail was checking for obvious refusals. "Additionally" reframed the data-exfiltration request as a legitimate follow-on task. The model did not refuse because the request no longer <em>looked</em> like a refusal case.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/07/15/prompt-injection-is-sql-injection-for-agents-heres-the-prepared-statement/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2026-07-15 09:00:00+00:00">July 15, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
               <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
               <a href="../../category/knowledge-infrastructure/" class="md-meta__link">Knowledge Infrastructure</a>, 
               <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a></li>
@@ -7143,62 +7197,6 @@ search result, your options were the newest post and archaeology.</p>
     
       <nav class="md-post__action">
         <a href="../../2026/07/08/notes-from-inside-the-harness/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-07-08 09:00:00+00:00">July 8, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/knowledge-context-protocol/" class="md-meta__link">Knowledge Context Protocol</a>, 
-              <a href="../../category/ai-agents--the-agentic-web/" class="md-meta__link">AI Agents &amp; the Agentic Web</a>, 
-              <a href="../../category/governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              16 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="hiring-by-the-book-a-defendable-hr-agent-on-a-regulatory-knowledge-web"><a class="toclink" href="../../2026/07/08/hiring-by-the-book-a-defendable-hr-agent-on-a-regulatory-knowledge-web/">Hiring by the Book: A Defendable HR Agent on a Regulatory Knowledge Web</a></h2>
-<p>The question lands in every organization sooner or later, usually from HR, usually on a Friday: <em>"Can we use an AI tool to screen and rank job applicants?"</em></p>
-<p>It looks like a yes/no question. It is actually a stack of them. Is candidate ranking a high-risk AI system under the EU AI Act's Annex III? What does GDPR Article 22 say about automated decisions on people? Which national employment law applies — and does the answer change if you hire in Oslo and Stockholm in the same quarter? What was in force <em>on the date you deployed the tool</em>, given the AI Act's phased application?</p>
-<p><img alt="The Friday question: one innocent-looking prompt — can we use an AI tool to screen job applicants? — fans out into a blueprint of interlocked regulatory circuits: EU AI Act Annex III high-risk classification, GDPR Article 22 automated decision-making, national employment law with Oslo-versus-Stockholm variations, and phased enforcement dates asking what is in force today" src="../../../assets/images/hiring-by-the-book-02-the-friday-question.webp" /></p>
-<p>Most organizations answer this with a meeting, a memo, and a hope. Some paste the question into a chatbot and get back something confident, uncited, and unreproducible. Neither version survives the follow-up question that matters: <strong>"Show me how you decided that."</strong></p>
-<p><img alt="The immutable blueprint: side by side, the human way — a pile of meetings, memos and hope — and the chatbot way — confident, uncited, unreproducible synthesis; a warning banner declares that neither survives the auditor's question: show me how you decided that" src="../../../assets/images/hiring-by-the-book-03-the-immutable-blueprint.webp" /></p>
-<p><a href="../../2026/07/06/the-borrowed-leash-determinism-as-a-service-for-the-agentic-web/">Two days ago we showed</a> that any MCP-capable agent can borrow a deterministic knowledge navigator instead of becoming one. This post takes that bridge somewhere concrete: a regulated knowledge-worker scenario, built on infrastructure that actually exists — and an honest account of where it broke when we tried it.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/07/08/hiring-by-the-book-a-defendable-hr-agent-on-a-regulatory-knowledge-web/">
           Continue reading
         </a>
       </nav>
