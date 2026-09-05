@@ -49,7 +49,14 @@ AI-dubbed full versions, voice-cloned from the original recording — no subtitl
   </video>
 </div>
 
-Português coming shortly — re-encoding after a bad export.
+**Português**
+
+<div class="presentation-video">
+  <video controls preload="metadata">
+    <source src="/assets/videos/javazone-2026-trust-but-verify/recording-pt.mp4" type="video/mp4">
+    Your browser doesn't support embedded video — <a href="/assets/videos/javazone-2026-trust-but-verify/recording-pt.mp4">download the Portuguese version</a> instead.
+  </video>
+</div>
 
 ## What the talk covers
 
