@@ -15,7 +15,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Synthesis, ExoCortex, and the memory systems that stop agents forgetting — temporal analytics, knowledge graphs, episodic and semantic memory.
 
-    [:octicons-arrow-right-24: 86 posts](/blog/category/knowledge-infrastructure/)
+    [:octicons-arrow-right-24: 87 posts](/blog/category/knowledge-infrastructure/)
 
 -   :material-map-marker-path:{ .lg .middle } **Knowledge Context Protocol**
 
@@ -31,7 +31,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     The practice of building software with AI — Skill-Driven Development, verification, testing discipline, velocity, and the developer's changing role.
 
-    [:octicons-arrow-right-24: 74 posts](/blog/category/ai-augmented-development/)
+    [:octicons-arrow-right-24: 75 posts](/blog/category/ai-augmented-development/)
 
 -   :material-robot-outline:{ .lg .middle } **AI Agents & the Agentic Web**
 
