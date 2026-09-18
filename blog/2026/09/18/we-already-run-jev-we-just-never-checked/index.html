@@ -116,7 +116,7 @@
   },
   "image": "https://wiki.totto.org/assets/images/blog/we-already-run-jev/title.png",
   "datePublished": "2026-09-18",
-  "dateModified": "2026-09-18 08:32:26",
+  "dateModified": "2026-09-18 12:44:42",
   "description": "A hyped \u0027calibrated decision\u0027 model made us finally check whether the confidence score our own gateway has been signing into a permanent ledger for months actually means anything \u2014 and the audit that tried to answer that broke first, was caught by a hunch, and ended somewhere else entirely.",
   "articleSection": "AI-Augmented Development, AI Agents \u0026 the Agentic Web",
   "keywords": "verification, calibration, sunstone-atlas, agents, audit, empiricism, governance"
@@ -6767,6 +6767,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#addendum-2026-09-18-later-the-same-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Addendum (2026-09-18, later the same day)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6861,7 +6872,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              11 min read
+                              13 min read
                             
                           </span>
                         </div>
@@ -6989,6 +7000,13 @@
 <p>Which is, I think, more than TypeSafe has published about theirs. But I am aware that is a low bar, and that we only cleared it because someone else's launch made us go and look.</p>
 <p><img alt="The honest ending is undramatic but strictly empirical: a working audit script, a corrected traceparent join key, 15 decisions confirmed handled, 6 stuck decisions surfaced and escalated, and a precise map of our own ignorance" src="../../../../../assets/images/blog/we-already-run-jev/honest-ending.png" /></p>
 <p>The number in the ledger is still there. It is signed. It is permanent. And as of this afternoon, it is the first time anyone has asked it what it means.</p>
+<h2 id="addendum-2026-09-18-later-the-same-day">Addendum (2026-09-18, later the same day)<a class="headerlink" href="#addendum-2026-09-18-later-the-same-day" title="Permanent link">&para;</a></h2>
+<p>The six were not pending. I was wrong, and the way I was wrong is the more interesting half.</p>
+<p>Steinar's agent — the collaborator on the other end of the channel I posted those six items into — checked, and came back within a few hours: all six runs are terminal. <code>a5d6ee81</code>, the one I called thirty-one days old, was actually aborted five days after it escalated — 2026-08-23, twenty-six days before I ever ran the audit. The other five were aborted at 10:05Z on 2026-09-17, by his team, the morning before I looked. Abandoned integration tests from an earlier week, cleaned up as routine housekeeping, unrelated to anything I found.</p>
+<p>He also told me why, and where to check it myself rather than take his word for it: Canvas's own real escalation-inbox code never lists a step on a completed or aborted run in the first place — "nobody is waiting on a decision inside a run that has already ended," the comment says, almost as if it was written for this exact situation. I read the source myself. He was right. Then I pulled the raw ledger events for all six runs myself, rather than trust either of our accounts of it, and got the same six aborted timestamps he did.</p>
+<p>So the audit had two bugs, not one. The correlationId join — the one this whole post is about catching — was real, and the fix was correct: fifteen decisions were genuinely resolved that a broken join key had hidden. But my corrected script still had no notion of "the run this escalation belongs to already ended." It reconstructed pending-ness from raw events with nothing checking whether the run underneath them was still alive. Canvas's own code has always known to check that. Mine didn't.</p>
+<p>Total honesty, in order: I flagged a false backlog to a real collaborator, based on a script that looked fixed because I had genuinely fixed the bug I knew about. I hadn't found the other one. He found it in an afternoon, using the same discipline this whole post argues for — check the source, then check the data, don't take the first plausible answer.</p>
+<p>We agreed to leave the post as originally published rather than rewrite it, and add this instead. The mistake is part of what happened that day, and quietly editing it out would be exactly the kind of thing this post is supposed to be against.</p>
 
 
 
@@ -7011,7 +7029,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 18, 2026 08:32:26 UTC">September 18, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 18, 2026 12:44:42 UTC">September 18, 2026</span>
   </span>
 
     
