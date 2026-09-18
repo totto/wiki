@@ -31,7 +31,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     The practice of building software with AI — Skill-Driven Development, verification, testing discipline, velocity, and the developer's changing role.
 
-    [:octicons-arrow-right-24: 75 posts](/blog/category/ai-augmented-development/)
+    [:octicons-arrow-right-24: 76 posts](/blog/category/ai-augmented-development/)
 
 -   :material-robot-outline:{ .lg .middle } **AI Agents & the Agentic Web**
 
@@ -39,7 +39,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Agent architecture, multi-agent systems, MCP and A2A, identity and federation — how autonomous agents actually navigate the web.
 
-    [:octicons-arrow-right-24: 92 posts](/blog/category/ai-agents--the-agentic-web/)
+    [:octicons-arrow-right-24: 93 posts](/blog/category/ai-agents--the-agentic-web/)
 
 -   :material-shield-check-outline:{ .lg .middle } **Governance, Trust & Compliance**
 
