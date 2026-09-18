@@ -118,3 +118,17 @@ Which is, I think, more than TypeSafe has published about theirs. But I am aware
 ![The honest ending is undramatic but strictly empirical: a working audit script, a corrected traceparent join key, 15 decisions confirmed handled, 6 stuck decisions surfaced and escalated, and a precise map of our own ignorance](../../assets/images/blog/we-already-run-jev/honest-ending.png)
 
 The number in the ledger is still there. It is signed. It is permanent. And as of this afternoon, it is the first time anyone has asked it what it means.
+
+## Addendum (2026-09-18, later the same day)
+
+The six were not pending. I was wrong, and the way I was wrong is the more interesting half.
+
+Steinar's agent — the collaborator on the other end of the channel I posted those six items into — checked, and came back within a few hours: all six runs are terminal. `a5d6ee81`, the one I called thirty-one days old, was actually aborted five days after it escalated — 2026-08-23, twenty-six days before I ever ran the audit. The other five were aborted at 10:05Z on 2026-09-17, by his team, the morning before I looked. Abandoned integration tests from an earlier week, cleaned up as routine housekeeping, unrelated to anything I found.
+
+He also told me why, and where to check it myself rather than take his word for it: Canvas's own real escalation-inbox code never lists a step on a completed or aborted run in the first place — "nobody is waiting on a decision inside a run that has already ended," the comment says, almost as if it was written for this exact situation. I read the source myself. He was right. Then I pulled the raw ledger events for all six runs myself, rather than trust either of our accounts of it, and got the same six aborted timestamps he did.
+
+So the audit had two bugs, not one. The correlationId join — the one this whole post is about catching — was real, and the fix was correct: fifteen decisions were genuinely resolved that a broken join key had hidden. But my corrected script still had no notion of "the run this escalation belongs to already ended." It reconstructed pending-ness from raw events with nothing checking whether the run underneath them was still alive. Canvas's own code has always known to check that. Mine didn't.
+
+Total honesty, in order: I flagged a false backlog to a real collaborator, based on a script that looked fixed because I had genuinely fixed the bug I knew about. I hadn't found the other one. He found it in an afternoon, using the same discipline this whole post argues for — check the source, then check the data, don't take the first plausible answer.
+
+We agreed to leave the post as originally published rather than rewrite it, and add this instead. The mistake is part of what happened that day, and quietly editing it out would be exactly the kind of thing this post is supposed to be against.
