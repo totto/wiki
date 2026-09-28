@@ -172,8 +172,9 @@ Some posts form a natural sequence and are best read in order. Each series below
         1. Trust is earned, not asserted: introducing Sunstone Atlas
         2. What's next for Sunstone Atlas: scoped reads, and the handoff problem
         3. Arms, not just a voice: what it takes to let agents act
+        4. The Platform Said No, Even to Me: building an agent team on Sunstone Atlas
 
-    **3 posts &nbsp;·&nbsp; August 2026**
+    **4 posts &nbsp;·&nbsp; August – September 2026**
 
     [:octicons-arrow-right-24: Start reading](/blog/2026/08/24/trust-is-earned-not-asserted-introducing-sunstone-atlas/)
 
