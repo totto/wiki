@@ -23,7 +23,6 @@ authors:
 image: assets/images/blog/agentic-engineering-teams-on-sunstone-atlas/d6-five-role-loop.webp
 ---
 
-<!-- DRAFT, unpublished. Totto reviews before anything goes to wiki.totto.org. Claims file: claims1.md. Companion post: post2.md -->
 
 # Agentic Engineering Teams on Sunstone Atlas: What They Are Made Of
 
