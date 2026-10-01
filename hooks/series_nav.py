@@ -45,7 +45,8 @@ def _build_registry(docs_dir: str) -> dict:
         m = re.search(r"^# (.+)$", body, re.MULTILINE)
         title = m.group(1).strip() if m else md_file.stem
         d = date_ymd.split("-")
-        url = f"/blog/{d[0]}/{d[1]}/{d[2]}/{_slugify(title)}/"
+        slug = fm.get("slug") or _slugify(title)
+        url = f"/blog/{d[0]}/{d[1]}/{d[2]}/{slug}/"
         _registry.setdefault(series, []).append(
             {
                 "date_sort": date_sort,

@@ -174,8 +174,9 @@ Some posts form a natural sequence and are best read in order. Each series below
         3. Arms, not just a voice: what it takes to let agents act
         4. The Platform Said No, Even to Me: building an agent team on Sunstone Atlas
         5. We Asked the Team to Design Its Own Upgrade. It Told Us Not To Build It.
+        6. Agentic Engineering Teams on Sunstone Atlas: What They Are Made Of
 
-    **5 posts &nbsp;·&nbsp; August – September 2026**
+    **6 posts &nbsp;·&nbsp; August – October 2026**
 
     [:octicons-arrow-right-24: Start reading](/blog/2026/08/24/trust-is-earned-not-asserted-introducing-sunstone-atlas/)
 
