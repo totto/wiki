@@ -247,4 +247,16 @@ We are sharing, not selling. Nothing about the agent team in this post is runnab
 
 ---
 
+**The slide version.** Five slides from a NotebookLM deck generated from this post, each checked against the text above. The remaining slides were left out until their wording is corrected. The hexadecimal strings on them are decoration, not real hashes.
+
+![The substrate: identity, channels and append-only ledgers](/assets/images/blog/agentic-engineering-teams-on-sunstone-atlas/slides-substrate.webp)
+
+![Playbook engine versus agent-team daemons](/assets/images/blog/agentic-engineering-teams-on-sunstone-atlas/slides-playbooks-vs-daemons.webp)
+
+![Anatomy of a co-worker](/assets/images/blog/agentic-engineering-teams-on-sunstone-atlas/slides-coworker.webp)
+
+![The team.review protocol](/assets/images/blog/agentic-engineering-teams-on-sunstone-atlas/slides-team-review.webp)
+
+![The offline verifier and what a signature proves](/assets/images/blog/agentic-engineering-teams-on-sunstone-atlas/slides-offline-verifier.webp)
+
 **Next: what happened when we used all of this on ourselves.** On 1 October 2026 we pointed the team at its own orchestrator. We gave it a pinned 45 KB specification for the multi-round build loop it lacks, and planted a bug in the deployed orchestrator where 318 tests could not see it. The bug had an approved fix 4 minutes 22 seconds after it was detected; the run built five of seven steps on a branch and then stopped itself on a contradiction in our own specification. Nothing was merged, and it is n = 1. The second post, "We Hid a Bug in Our Own Platform", tells it in full and follows shortly.
