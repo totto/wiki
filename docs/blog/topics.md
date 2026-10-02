@@ -15,7 +15,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Synthesis, ExoCortex, and the memory systems that stop agents forgetting — temporal analytics, knowledge graphs, episodic and semantic memory.
 
-    [:octicons-arrow-right-24: 87 posts](/blog/category/knowledge-infrastructure/)
+    [:octicons-arrow-right-24: 88 posts](/blog/category/knowledge-infrastructure/)
 
 -   :material-map-marker-path:{ .lg .middle } **Knowledge Context Protocol**
 
@@ -47,7 +47,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     GDPR, the EU AI Act, audit and provenance, signing and attestation — making AI agents defendable, not just capable.
 
-    [:octicons-arrow-right-24: 42 posts](/blog/category/governance-trust--compliance/)
+    [:octicons-arrow-right-24: 43 posts](/blog/category/governance-trust--compliance/)
 
 -   :material-vector-arrange-below:{ .lg .middle } **Software Architecture**
 
