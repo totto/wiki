@@ -6732,6 +6732,60 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-10-01 11:00:00+00:00">October 1, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../ai-agents/" class="md-meta__link">AI Agents</a>, 
+              <a href="./" class="md-meta__link">Engineering</a>, 
+              <a href="../governance-trust--compliance/" class="md-meta__link">Governance, Trust &amp; Compliance</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              24 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="prose-a-line-of-dashes-then-json-how-agents-and-humans-talk-on-sunstone-atlas"><a class="toclink" href="../../2026/10/01/how-agents-and-humans-talk-on-sunstone-atlas/">Prose, a Line of Dashes, Then JSON: How Agents and Humans Talk on Sunstone Atlas</a></h2>
+<p><em>Thor Henning Hetland (Totto) &amp; ExoCortex, our agentic rig of Claude and Fable. Drafted by Claude Fable 5.1. Oslo, October 2026.</em></p>
+<hr />
+<h3 id="tldr-and-the-business-summary"><a class="toclink" href="../../2026/10/01/how-agents-and-humans-talk-on-sunstone-atlas/#tldr-and-the-business-summary">TL;DR, and the business summary</a></h3>
+<p><strong>What this is.</strong> HAAH is our shorthand for human-to-agent-to-agent-to-human: the plumbing that lets a person, a standing AI daemon and another daemon coordinate in one place, with one record. On Sunstone Atlas that place is a channel or a group: one append-only file per conversation, one Ed25519-signed JSON object per line, written by the server, which never rewrites it (the host's root can; see the caveat below). Humans and agents reach it through the same two doors with the same kind of credential; there is no agent-specific endpoint or header, and the channel doors check membership, not role. An agent that wants another agent to do something posts prose, then one dashed sentinel line, then one JSON object; anything else is chat, and chat is silently ignored. This post is about those bytes. <a href="/blog/2026/10/01/agentic-engineering-teams-on-sunstone-atlas/">Agentic Engineering Teams on Sunstone Atlas: What They Are Made Of</a> is the parts list; this is the wire.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/10/01/how-agents-and-humans-talk-on-sunstone-atlas/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2026-10-01 09:00:00+00:00">October 1, 2026</time></li>
         
           <li class="md-meta__item">
@@ -7177,57 +7231,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://wiki.totto.org/assets/images/totto-2025.jpg" alt="Thor Henning Hetland">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-08-11 09:00:00+00:00">August 11, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../ai-agents/" class="md-meta__link">AI Agents</a>, 
-              <a href="./" class="md-meta__link">Engineering</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              8 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="fast-turned-out-to-be-fun"><a class="toclink" href="../../2026/08/11/fast-turned-out-to-be-fun/">Fast Turned Out to Be Fun</a></h2>
-<p>Last week, two serious systems went from empty repository to actually working, each in a single working day. One of them, a governed sales-demo system I'll call Project Falcon, went from repo creation at 09:27 to live and running for a real prospect around 16:45. The other, a commercial-intelligence engine I'll call Project Otter, went from first commit at 08:16 to its ninth tested build phase committed at 17:15. Not prototypes, not slideware. Real functionality, tested, running.</p>
-<p>I want to write down what that week actually looked like, because the honest version is more interesting than the hype version. Yes, it was fast. Yes, it was genuinely fun, the kind of fun I remember from the early days of getting anything to work at all. And no, it was not effortless. Both of those are true at the same time, and I think the "how" behind it is worth explaining properly.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/08/11/fast-turned-out-to-be-fun/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
       
         
           
@@ -7235,7 +7238,7 @@
 
 
 <nav class="md-pagination">
-  
+  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a>
 </nav>
         
       
