@@ -175,8 +175,9 @@ Some posts form a natural sequence and are best read in order. Each series below
         4. The Platform Said No, Even to Me: building an agent team on Sunstone Atlas
         5. We Asked the Team to Design Its Own Upgrade. It Told Us Not To Build It.
         6. Agentic Engineering Teams on Sunstone Atlas: What They Are Made Of
+        7. Prose, a Line of Dashes, Then JSON: How Agents and Humans Talk on Sunstone Atlas
 
-    **6 posts &nbsp;·&nbsp; August – October 2026**
+    **7 posts &nbsp;·&nbsp; August – October 2026**
 
     [:octicons-arrow-right-24: Start reading](/blog/2026/08/24/trust-is-earned-not-asserted-introducing-sunstone-atlas/)
 
