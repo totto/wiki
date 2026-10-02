@@ -47,7 +47,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     GDPR, the EU AI Act, audit and provenance, signing and attestation — making AI agents defendable, not just capable.
 
-    [:octicons-arrow-right-24: 41 posts](/blog/category/governance-trust--compliance/)
+    [:octicons-arrow-right-24: 42 posts](/blog/category/governance-trust--compliance/)
 
 -   :material-vector-arrange-below:{ .lg .middle } **Software Architecture**
 
