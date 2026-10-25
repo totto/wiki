@@ -55,7 +55,7 @@ It also went wrong in instructive ways. Once, a chain of commands kept running a
 
 An app that stores names, e-mail addresses and opinions deserves a serious privacy story. We have a versioned consent, a tested recipe for deleting a person completely, photos that disappear from view when the uploader withdraws, and administrators who can see only what they need to catch cheating. The full text was long and honest, and nobody reads long and honest.
 
-So this weekend we added a seven-bullet summary in plain language, with the full statement one click below. It says what we store, who sees what, that your rolls stay hidden until the table reveals, and how to leave. The full text still governs. The Cantara admins still need to approve the wording before the season opens, so treat that part as a draft until they have.
+So this weekend we added a seven-bullet summary in plain language, with the full statement one click below. It says what we store, who sees what, that your rolls stay hidden until the table reveals, and how to leave. The full text still governs.
 
 ## What I'd take from it
 
