@@ -22,9 +22,6 @@ This autumn we rebuilt the whole thing as an app. It's called **julebrus**, it l
 
 <!-- more -->
 
-![Infographic: Reinventing Cantara's Juleølsmaking, from spreadsheets to an AI-built app. Four panels: legacy data and community history, the core julebrus app features, built with AI agents and human gates, and privacy and governance.](/assets/images/blog/reinventing-juleolsmaking/infographic.webp)
-*Infographic generated with Gemini Notebook.*
-
 ## What it does
 
 You log in with Google, sit down at a table with friends, and roll a die for each beer: one to six pips. Nobody sees anyone else's roll until everyone at the table has rolled, and then the table reveals together, live, on every phone. There are duels between two beers, blind pours, a tipping game ("Tipp pallen": guess the podium before the finale), two teams that compete all season, an advent calendar, photos of labels, and a wall called "I kveld" where you can see which beers the house has tasted today and cheer for them. There's even an MCP server, so an agent can ask the tasting data questions.
@@ -35,11 +32,17 @@ The most emotional part turned out to be the old data. We imported the tastings 
 
 Old data is full of truth and typos. "Rignes Julebokk". "Schaus Juleøl". "Hansddbrygggirier, nissefar". A friend in the community went through the sheets by hand, fixed 41 names, and pushed the fixes straight to `main`. That broke our tidy plan in a good way: the importer reads each season only once, so his corrections would never have reached the live database. We turned his 41 changes into one-time correction rows so production got them too. A human cared about the data, and the software had to catch up.
 
+![Slide: handwritten misspellings (Rignes, Schaus, Hansddbryggirier) and the community member who fixed 41 names, turned into one-time correction rows in production.](/assets/images/blog/reinventing-juleolsmaking/legacy-names.webp)
+
 Then we found that some years' winners were not beers. In 2008 the best-scoring item was a *fenalår*, a Norwegian cured leg of lamb. In 2010 it was another one. In 2011 it was *Vertskapet*, the hosts. Apparently some years we tasted the food and the people too, and gave them dice. The fix was a one-line rule: the winner must be a beer. The votes stay in the data, and the page now says, in plain words, that cured meat and hosts were scored as well.
+
+![Slide: three year-winner cards (2008 and 2010 fenalår, 2011 the hosts) funnelled through the one-line rule that the winner must be a beer.](/assets/images/blog/reinventing-juleolsmaking/cured-lamb-rule.webp)
 
 ## How we built it
 
 I built this with my agent setup, and I want to be precise about what that means, because it's easy to oversell.
+
+![Slide: three agents (label photos, tipping game, history import) each in their own git worktree, feeding pinned guardrail scripts before the production branch.](/assets/images/blog/reinventing-juleolsmaking/builders-in-worktrees.webp)
 
 - **Builders in their own worktrees.** Each feature (the teams, the tipping game, label photos, the history import, the landing page) was a branch built in its own git worktree by a separate agent session. Several ran in parallel.
 - **A human at every gate.** The agents never pushed, merged, tagged or deployed. I ran pinned scripts that refuse to proceed if `main` has moved or a database migration is out of order. Those scripts refused a lot, usually because I had merged something else in the meantime.
@@ -60,4 +63,6 @@ Reinventing a small tradition with agents was not mostly about code. The code wa
 
 If you're in the Cantara community, come and taste. The first beer is on 1 November.
 
-*Built with [Claude Code](https://claude.com/claude-code) under human review. The app is hosted by eXOReaction.*
+![Slide: The season opens November 1st. Visit xmas.cantara.no, explore github.com/Cantara/julebrus.](/assets/images/blog/reinventing-juleolsmaking/season-opens.webp)
+
+*Slides generated with Gemini Notebook. Built with [Claude Code](https://claude.com/claude-code) under human review. The app is hosted by eXOReaction.*
