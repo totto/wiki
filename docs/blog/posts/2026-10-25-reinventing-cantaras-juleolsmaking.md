@@ -16,7 +16,7 @@ authors:
 
 # Reinventing Cantara's Juleølsmaking
 
-Since 1998, a group of us in the Cantara community has gathered every December to taste Christmas beer and write down what we think. For most of those years the "system" was a spreadsheet, then a wiki page, then another spreadsheet. It worked. It also meant that twenty-odd years of opinions about *Ringnes Julebokk* were scattered across files that nobody wanted to open.
+The Christmas beer test began in 1992 as a student event at Høgskolesenteret i Stavanger (HIS). From 1998 it ran as a #puben event, and since 2014 it has been a Cantara event: every December a group of us gather to taste Christmas beer and write down what we think. For most of those years the "system" was a spreadsheet, then a wiki page, then another spreadsheet. It worked. It also meant that decades of opinions about *Ringnes Julebokk* were scattered across files that nobody wanted to open.
 
 This autumn we rebuilt the whole thing as an app. It's called **julebrus**, it lives at [xmas.cantara.no](https://xmas.cantara.no), and the season runs from 1 November to 23 December. The code is open at [Cantara/julebrus](https://github.com/Cantara/julebrus). I want to tell you what's in it, but mostly I want to tell you what was fun, because the fun parts taught me the most.
 
@@ -28,7 +28,7 @@ You log in with Google, sit down at a table with friends, and roll a die for eac
 
 ## The part I didn't expect: the history
 
-The most emotional part turned out to be the old data. We imported the tastings from the wiki: fifteen seasons and 1,762 votes, with names written the way people wrote them in the old spreadsheets. If you voted in 2013, your old scores are waiting for you. You claim them, an admin approves, and your history shows up with its original weights.
+The most emotional part turned out to be the old data. The tasting is older than the record: nothing from 1992 to 1996 survives, and for 1997 we only know that Borg won. From 1998 on, we imported the tastings from the wiki: fifteen seasons and 1,762 votes, with names written the way people wrote them in the old spreadsheets. If you voted in 2013, your old scores are waiting for you. You claim them, an admin approves, and your history shows up with its original weights.
 
 Old data is full of truth and typos. "Rignes Julebokk". "Schaus Juleøl". "Hansddbrygggirier, nissefar". A friend in the community went through the sheets by hand, fixed 41 names, and pushed the fixes straight to `main`. That broke our tidy plan in a good way: the importer reads each season only once, so his corrections would never have reached the live database. We turned his 41 changes into one-time correction rows so production got them too. A human cared about the data, and the software had to catch up.
 
