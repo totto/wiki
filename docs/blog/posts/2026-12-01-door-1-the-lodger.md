@@ -58,6 +58,8 @@ The auction's night foreman found the machine behind the ice plant's spare compr
 
 She read the draft, all of it, with a pencil. Then she turned the key. A relay clicked under the stairs. By the time the morning ferry sounded, the auction's server was reporting 19.2.9 and the cupboard had gone quiet.
 
+Before she went home she took a stub of chalk from the shelf above the stove and wrote *12* on the stove pipe: the years that flaw had lain in the code before somebody saw it.
+
 It had read seven branches of release notes while her kettle boiled. She did not mention this. It did not mention the auction.
 
 *Ledger, 1 December. Fish auction's forgotten GitLab: integer overflow in the pattern-builder, in the code twelve years. Upgraded to 19.2.9 before the ferry. Not found by us; found by a researcher who looked. The lodger can read. It cannot yet tell a list from a town. Signed, T.A.H.*

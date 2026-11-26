@@ -58,7 +58,9 @@ The fan under the stairs rose. Hull finished the bun.
 
 *Seen: one person is credited as the finder. Seen: the same person is credited with the fix, and the change itself carries their name as author. Seen: their employer is a firm that builds AI tools for this kind of work. Not seen: any statement that such a tool was used here. The advisory does not mention it.*
 
-"Then we don't either." Hull took down the card by the terminal and wrote a new rule under the others. *Credit goes where the work was done.* "Found it and mended it. Twenty-five years of people walking past, and one of them stops, and then stays to fix the gangway."
+"Then we don't either." Hull took down the card by the terminal and wrote a new rule under the others. *Credit goes where the work was done.* "Found it and mended it. Twenty-five years of people walking past, and one of them stops, and then stays to fix the gangway.
+
+She chalked *25* on the stove pipe under the other twelve marks. Two of them said only *not known*."
 
 She pinned the card back up. Outside, the last of the candles was going round the end of the fish hall.
 

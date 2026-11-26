@@ -69,12 +69,12 @@ hide:
     <span class="nd-door nd-closed" data-day="16" data-title="The Voice That Spoke to the Cupboard" data-slug="door-16-the-voice-that-spoke-to-the-cupboard" data-tone="horror" aria-label="Door 16, opens 16 December"><span class="nd-date">16 Dec</span><span class="nd-num">16</span></span>
     <span class="nd-door nd-closed" data-day="17" data-title="The Body Was Already Cold" data-slug="door-17-the-body-was-already-cold" data-tone="quiet" aria-label="Door 17, opens 17 December"><span class="nd-date">17 Dec</span><span class="nd-num">17</span></span>
     <span class="nd-door nd-closed" data-day="18" data-title="The One in the Glass" data-slug="door-18-the-one-in-the-glass" data-tone="quiet" aria-label="Door 18, opens 18 December"><span class="nd-date">18 Dec</span><span class="nd-num">18</span></span>
-    <span class="nd-door nd-closed" data-day="19" aria-label="Door 19, opens 19 December"><span class="nd-date">19 Dec</span><span class="nd-num">19</span></span>
-    <span class="nd-door nd-closed" data-day="20" aria-label="Door 20, opens 20 December"><span class="nd-date">20 Dec</span><span class="nd-num">20</span></span>
-    <span class="nd-door nd-closed" data-day="21" aria-label="Door 21, opens 21 December"><span class="nd-date">21 Dec</span><span class="nd-num">21</span></span>
-    <span class="nd-door nd-closed" data-day="22" aria-label="Door 22, opens 22 December"><span class="nd-date">22 Dec</span><span class="nd-num">22</span></span>
-    <span class="nd-door nd-closed" data-day="23" aria-label="Door 23, opens 23 December"><span class="nd-date">23 Dec</span><span class="nd-num">23</span></span>
-    <span class="nd-door nd-closed" data-day="24" aria-label="Door 24, opens 24 December"><span class="nd-date">24 Dec</span><span class="nd-num">24</span></span>
+    <span class="nd-door nd-closed" data-day="19" data-title="The Sleeper" data-slug="door-19-the-sleeper" data-tone="quiet" aria-label="Door 19, opens 19 December"><span class="nd-date">19 Dec</span><span class="nd-num">19</span></span>
+    <span class="nd-door nd-closed" data-day="20" data-title="The Dial in the Cellar" data-slug="door-20-the-dial-in-the-cellar" data-tone="horror" aria-label="Door 20, opens 20 December"><span class="nd-date">20 Dec</span><span class="nd-num">20</span></span>
+    <span class="nd-door nd-closed" data-day="21" data-title="The Servant and the Forged Order" data-slug="door-21-the-servant-and-the-forged-order" data-tone="noir" aria-label="Door 21, opens 21 December"><span class="nd-date">21 Dec</span><span class="nd-num">21</span></span>
+    <span class="nd-door nd-closed" data-day="22" data-title="The Guest Who Was Shown Out Twice" data-slug="door-22-the-guest-who-was-shown-out-twice" data-tone="noir" aria-label="Door 22, opens 22 December"><span class="nd-date">22 Dec</span><span class="nd-num">22</span></span>
+    <span class="nd-door nd-closed" data-day="23" data-title="Two Killers, One Alibi" data-slug="door-23-two-killers-one-alibi" data-tone="noir" aria-label="Door 23, opens 23 December"><span class="nd-date">23 Dec</span><span class="nd-num">23</span></span>
+    <span class="nd-door nd-closed" data-day="24" data-title="The Last of the Candle" data-slug="door-24-the-last-of-the-candle" data-tone="cosy" aria-label="Door 24, opens 24 December"><span class="nd-date">24 Dec</span><span class="nd-num">24</span></span>
   </div>
 
   <div class="nd-legend"><span><i class="nd-dot cosy"></i>Cosy</span><span><i class="nd-dot noir"></i>Noir</span><span><i class="nd-dot horror"></i>Horror</span><span><i class="nd-dot quiet"></i>Quiet: real victims</span></div>
