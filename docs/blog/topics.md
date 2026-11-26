@@ -39,7 +39,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     Agent architecture, multi-agent systems, MCP and A2A, identity and federation — how autonomous agents actually navigate the web.
 
-    [:octicons-arrow-right-24: 93 posts](/blog/category/ai-agents--the-agentic-web/)
+    [:octicons-arrow-right-24: 94 posts](/blog/category/ai-agents--the-agentic-web/)
 
 -   :material-shield-check-outline:{ .lg .middle } **Governance, Trust & Compliance**
 
@@ -47,7 +47,7 @@ Every post is filed under one or more themes. Pick a thread and follow it, or he
 
     GDPR, the EU AI Act, audit and provenance, signing and attestation — making AI agents defendable, not just capable.
 
-    [:octicons-arrow-right-24: 43 posts](/blog/category/governance-trust--compliance/)
+    [:octicons-arrow-right-24: 44 posts](/blog/category/governance-trust--compliance/)
 
 -   :material-vector-arrange-below:{ .lg .middle } **Software Architecture**
 
