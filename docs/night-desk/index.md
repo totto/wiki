@@ -96,6 +96,8 @@ hide:
       var today=(d===openTo&&y===2026&&mo===12);
       a.className='nd-door nd-open'+(today?' nd-today':'');
       a.href='../blog/2026/12/'+String(d).padStart(2,'0')+'/'+slug+'/';
+      var focus={3:'74% 50%'};
+      if(focus[d]) a.style.backgroundPosition=focus[d];
       a.style.backgroundImage='url(../assets/images/night-desk/door-'+String(d).padStart(2,'0')+'-thumb.webp)';
       var tone=el.dataset.tone||'';
       a.setAttribute('aria-label','Door '+d+': '+(el.dataset.title||''));
