@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Daily rebuild so future-dated posts (draft_if_future_date) appear on their day.
+    # 05:05 UTC = 06:05 Oslo in winter. GitHub may start scheduled runs late.
+    - cron: "5 5 * * *"
 
 permissions:
   contents: write

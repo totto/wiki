@@ -128,7 +128,15 @@
 {% endblock %}
 
 {% block announce %}
-{% if page and page.url != "blog/" and not page.url.startswith("blog/2026/06/23/production-scars") %}
+{# The Night Desk advent calendar banner: shown from the daily rebuild on 1 Dec 2026 until 6 Jan 2027. #}
+{% set _build_day = build_date_utc.strftime('%Y-%m-%d') %}
+{% if _build_day >= '2026-12-01' and _build_day < '2027-01-07' %}
+{% if page and page.url != "night-desk/" %}
+<a href="/night-desk/">
+  The Night Desk: 24 doors, 24 bugs. A December calendar of real security bugs and the night shift that gets the fixes onto the machines. Open tonight's door &rarr;
+</a>
+{% endif %}
+{% elif page and page.url != "blog/" and not page.url.startswith("blog/2026/06/23/production-scars") %}
 <a href="/blog/2026/06/23/production-scars-are-architecture/">
   New: Production Scars Are Architecture — six lessons from running an autonomous AI agent in production &rarr;
 </a>
